@@ -1,4 +1,5 @@
-#pragma once
+#ifndef lib_binpow
+#define lib_binpow
 #include "lib1/alias_declaration.hpp"
 
 ll binpow(ll a, ll ex, ll p) {
@@ -10,3 +11,5 @@ ll binpow(ll a, ll ex, ll p) {
 	}
 	return result;
 }
+
+#endif /* lib_binpow */

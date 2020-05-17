@@ -1,4 +1,5 @@
-#pragma once
+#ifndef lib_macros
+#define lib_macros
 #define PI 3.141592653589793
 #define INTINF 1<<30
 #define LLINF 1LL<<60
@@ -17,3 +18,5 @@
 #define init(v,size) v.resize(size); for(auto &a__: v) cin>>a__
 #define matin(mat,H,W) for(int i__=0; i__<H; i__++)for(int j__=0; j__<W; j__++) cin>>mat[i__][j__]
 #define out(n) cout<<n<<endl
+
+#endif /* lib_macros */

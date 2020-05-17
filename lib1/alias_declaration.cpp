@@ -1,5 +1,6 @@
-#pragma once
-#include "lib1/include_files.hpp"
+#ifndef lib_alias_declaration
+#define lib_alias_declaration
+#include "lib1/include_files.cpp"
 
 using ll=long long;
 using intpair=pair<int,int>;
@@ -20,3 +21,5 @@ template<typename T>
 using pque=priority_queue<T>;
 template<typename T>
 using lpque=priority_queue<T,vector<T>,greater<T>>;
+
+#endif /* lib_alias_declaration */

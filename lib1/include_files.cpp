@@ -1,4 +1,5 @@
-#pragma once
+#ifndef lib_include_files
+#define lib_include_files
 #include <stdio.h>
 #include <iostream>
 #include <iomanip>
@@ -17,3 +18,5 @@
 #include <bitset>
 
 using namespace std;
+
+#endif /* lib_include_files */
