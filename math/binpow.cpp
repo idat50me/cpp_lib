@@ -7,7 +7,7 @@
 using namespace std;
 #endif
 
-long long binpow(long long a, long long ex, long long p) {
+long long binpow(long long a, long long ex, long long p=(1LL<<60)) {
 	long long result=1;
 	while(ex>0) {
 		if(ex&1) result=result*a%p;
