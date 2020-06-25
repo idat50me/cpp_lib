@@ -38,21 +38,15 @@ layout: default
 
 ### lib1
 
-* :warning: <a href="library/lib1/alias_declaration.cpp.html">lib1/alias_declaration.cpp</a>
-* :warning: <a href="library/lib1/binpow.cpp.html">lib1/binpow.cpp</a>
-* :warning: <a href="library/lib1/include_files.cpp.html">lib1/include_files.cpp</a>
-* :warning: <a href="library/lib1/macros.cpp.html">lib1/macros.cpp</a>
-
-
-<div id="0d0c91c0cca30af9c1c9faef0cf04aa9"></div>
-
-### test/aoj
-
-* :warning: <a href="library/test/aoj/NTL_1_B.cpp.html">test/aoj/NTL_1_B.cpp</a>
+* :heavy_check_mark: <a href="library/lib1/alias_declaration.cpp.html">lib1/alias_declaration.cpp</a>
+* :heavy_check_mark: <a href="library/lib1/binpow.cpp.html">lib1/binpow.cpp</a>
+* :heavy_check_mark: <a href="library/lib1/include_files.cpp.html">lib1/include_files.cpp</a>
+* :heavy_check_mark: <a href="library/lib1/macros.cpp.html">lib1/macros.cpp</a>
 
 
 ## Verify Files
 
 * :heavy_check_mark: <a href="verify/example.test.cpp.html">example.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj/NTL_1_B.test.cpp.html">test/aoj/NTL_1_B.test.cpp</a>
 
 

@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: lib1/alias_declaration.cpp
+# :heavy_check_mark: lib1/alias_declaration.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,13 +38,17 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="include_files.cpp.html">lib1/include_files.cpp</a>
+* :heavy_check_mark: <a href="include_files.cpp.html">lib1/include_files.cpp</a>
 
 
 ## Required by
 
-* :warning: <a href="binpow.cpp.html">lib1/binpow.cpp</a>
-* :warning: <a href="../test/aoj/NTL_1_B.cpp.html">test/aoj/NTL_1_B.cpp</a>
+* :heavy_check_mark: <a href="binpow.cpp.html">lib1/binpow.cpp</a>
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../verify/test/aoj/NTL_1_B.test.cpp.html">test/aoj/NTL_1_B.test.cpp</a>
 
 
 ## Code

@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :warning: test/aoj/NTL_1_B.cpp
+# :heavy_check_mark: test/aoj/NTL_1_B.test.cpp
 
 <a href="../../../index.html">Back to top page</a>
 
 * category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/NTL_1_B.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-25 17:22:02+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/NTL_1_B.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-06-25 17:27:07+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_B">https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_B</a>
@@ -39,10 +39,10 @@ layout: default
 
 ## Depends on
 
-* :warning: <a href="../../lib1/alias_declaration.cpp.html">lib1/alias_declaration.cpp</a>
-* :warning: <a href="../../lib1/binpow.cpp.html">lib1/binpow.cpp</a>
-* :warning: <a href="../../lib1/include_files.cpp.html">lib1/include_files.cpp</a>
-* :warning: <a href="../../lib1/macros.cpp.html">lib1/macros.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib1/alias_declaration.cpp.html">lib1/alias_declaration.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib1/binpow.cpp.html">lib1/binpow.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib1/include_files.cpp.html">lib1/include_files.cpp</a>
+* :heavy_check_mark: <a href="../../../library/lib1/macros.cpp.html">lib1/macros.cpp</a>
 
 
 ## Code
@@ -67,7 +67,7 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/aoj/NTL_1_B.cpp"
+#line 1 "test/aoj/NTL_1_B.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_B"
 #line 1 "lib1/include_files.cpp"
 
@@ -157,7 +157,7 @@ ll binpow(ll a, ll ex, ll p) {
 }
 
 
-#line 6 "test/aoj/NTL_1_B.cpp"
+#line 6 "test/aoj/NTL_1_B.test.cpp"
 
 int main() {
 	int m,n; cin>>m>>n;
