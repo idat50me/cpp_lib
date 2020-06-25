@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: lib1/macros.cpp
+# :warning: lib1/macros.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -36,9 +36,9 @@ layout: default
 
 
 
-## Verified with
+## Required by
 
-* :heavy_check_mark: <a href="../../verify/test/binpow.test.cpp.html">test/binpow.test.cpp</a>
+* :warning: <a href="../test/aoj/NTL_1_B.cpp.html">test/aoj/NTL_1_B.cpp</a>
 
 
 ## Code

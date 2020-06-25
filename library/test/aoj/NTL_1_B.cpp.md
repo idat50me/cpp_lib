@@ -21,17 +21,17 @@ layout: default
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="../../assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="../../assets/css/copy-button.css" />
+<script type="text/javascript" src="../../../assets/js/copy-button.js"></script>
+<link rel="stylesheet" href="../../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/binpow.test.cpp
+# :warning: test/aoj/NTL_1_B.cpp
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/binpow.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-25 15:58:45+09:00
+* category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/aoj/NTL_1_B.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-06-25 17:22:02+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_B">https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_B</a>
@@ -39,10 +39,10 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/lib1/alias_declaration.cpp.html">lib1/alias_declaration.cpp</a>
-* :heavy_check_mark: <a href="../../library/lib1/binpow.cpp.html">lib1/binpow.cpp</a>
-* :heavy_check_mark: <a href="../../library/lib1/include_files.cpp.html">lib1/include_files.cpp</a>
-* :heavy_check_mark: <a href="../../library/lib1/macros.cpp.html">lib1/macros.cpp</a>
+* :warning: <a href="../../lib1/alias_declaration.cpp.html">lib1/alias_declaration.cpp</a>
+* :warning: <a href="../../lib1/binpow.cpp.html">lib1/binpow.cpp</a>
+* :warning: <a href="../../lib1/include_files.cpp.html">lib1/include_files.cpp</a>
+* :warning: <a href="../../lib1/macros.cpp.html">lib1/macros.cpp</a>
 
 
 ## Code
@@ -51,10 +51,10 @@ layout: default
 {% raw %}
 ```cpp
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_B"
-#include "../lib1/include_files.cpp"
-#include "../lib1/alias_declaration.cpp"
-#include "../lib1/macros.cpp"
-#include "../lib1/binpow.cpp"
+#include "lib1/include_files.cpp"
+#include "lib1/alias_declaration.cpp"
+#include "lib1/macros.cpp"
+#include "lib1/binpow.cpp"
 
 int main() {
 	int m,n; cin>>m>>n;
@@ -67,7 +67,7 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/binpow.test.cpp"
+#line 1 "test/aoj/NTL_1_B.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_B"
 #line 1 "lib1/include_files.cpp"
 
@@ -157,7 +157,7 @@ ll binpow(ll a, ll ex, ll p) {
 }
 
 
-#line 6 "test/binpow.test.cpp"
+#line 6 "test/aoj/NTL_1_B.cpp"
 
 int main() {
 	int m,n; cin>>m>>n;
@@ -167,5 +167,5 @@ int main() {
 ```
 {% endraw %}
 
-<a href="../../index.html">Back to top page</a>
+<a href="../../../index.html">Back to top page</a>
 
