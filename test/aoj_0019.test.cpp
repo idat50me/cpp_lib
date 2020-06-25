@@ -1,3 +1,4 @@
+#define IGNORE // テストケース取得不可
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/challenges/sources/PCK/Final/0019"
 
 #ifndef call_include
