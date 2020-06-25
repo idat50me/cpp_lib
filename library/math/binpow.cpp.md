@@ -25,15 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: lib1/macros.cpp
+# :heavy_check_mark: math/binpow.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#1a64425dc154a154c48dd8215d3c7c84">lib1</a>
-* <a href="{{ site.github.repository_url }}/blob/master/lib1/macros.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-17 15:13:12+09:00
+* category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
+* <a href="{{ site.github.repository_url }}/blob/master/math/binpow.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-06-25 18:26:42+09:00
 
 
+
+
+## Depends on
+
+* :heavy_check_mark: <a href="../pre/pre.cpp.html">pre/pre.cpp</a>
 
 
 ## Verified with
@@ -46,36 +51,72 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#ifndef lib_macros
-#define lib_macros
-#define PI 3.141592653589793
-#define INTINF 1<<30
-#define LLINF 1LL<<60
-#define MPRIME 1000000007
-#define MPRIME9 998244353
+#ifndef lib_binpow
+#define lib_binpow
+#include "pre/pre.cpp"
 
-#define pushb push_back
-#define fi first
-#define se second
+ll binpow(ll a, ll ex, ll p) {
+	ll result=1;
+	while(ex>0) {
+		if(ex&1) result=result*a%p;
+		ex>>=1;
+		a=a*a%p;
+	}
+	return result;
+}
 
-#define setpr fixed<<setprecision(15)
-#define iter(name) decltype(name)::iterator
-#define all(name) name.begin(),name.end()
-#define rall(name) name.rbegin(),name.rend()
-#define gsort(vbeg,vend) sort(vbeg,vend,greater<>())
-#define init(v,size) v.resize(size); for(auto &a__: v) cin>>a__
-#define matin(mat,H,W) for(int i__=0; i__<H; i__++)for(int j__=0; j__<W; j__++) cin>>mat[i__][j__]
-#define out(n) cout<<n<<endl
-
-#endif /* lib_macros */
+#endif /* lib_binpow */
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "lib1/macros.cpp"
+#line 1 "math/binpow.cpp"
 
+
+#line 1 "pre/pre.cpp"
+
+
+
+#include <iostream>
+#include <iomanip>
+#include <cstdio>
+#include <vector>
+#include <map>
+#include <unordered_map>
+#include <set>
+#include <tuple>
+#include <string>
+#include <algorithm>
+#include <functional>
+#include <queue>
+#include <stack>
+#include <cmath>
+#include <bitset>
+
+using namespace std;
+
+template<typename T, typename U>
+using pv=vector<pair<T,U>>;
+template<typename T>
+using matrix=vector<vector<T>>;
+template<typename T>
+using pque=priority_queue<T>;
+template<typename T>
+using lpque=priority_queue<T,vector<T>,greater<T>>;
+
+using ll=long long;
+using intpair=pair<int,int>;
+using llpair=pair<ll,ll>;
+using ilpair=pair<int,ll>;
+using lipair=pair<ll,int>;
+using intvec=vector<int>;
+using llvec=vector<ll>;
+using intq=queue<int>;
+using llq=queue<ll>;
+using intmat=vector<intvec>;
+using llmat=vector<llvec>;
 
 #define PI 3.141592653589793
 #define INTINF 1<<30
@@ -83,18 +124,28 @@ layout: default
 #define MPRIME 1000000007
 #define MPRIME9 998244353
 
+#define len length()
 #define pushb push_back
 #define fi first
 #define se second
 
 #define setpr fixed<<setprecision(15)
-#define iter(name) decltype(name)::iterator
 #define all(name) name.begin(),name.end()
 #define rall(name) name.rbegin(),name.rend()
 #define gsort(vbeg,vend) sort(vbeg,vend,greater<>())
-#define init(v,size) v.resize(size); for(auto &a__: v) cin>>a__
-#define matin(mat,H,W) for(int i__=0; i__<H; i__++)for(int j__=0; j__<W; j__++) cin>>mat[i__][j__]
-#define out(n) cout<<n<<endl
+
+
+#line 4 "math/binpow.cpp"
+
+ll binpow(ll a, ll ex, ll p) {
+	ll result=1;
+	while(ex>0) {
+		if(ex&1) result=result*a%p;
+		ex>>=1;
+		a=a*a%p;
+	}
+	return result;
+}
 
 
 

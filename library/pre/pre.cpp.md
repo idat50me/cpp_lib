@@ -25,25 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: lib1/alias_declaration.cpp
+# :heavy_check_mark: pre/pre.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#1a64425dc154a154c48dd8215d3c7c84">lib1</a>
-* <a href="{{ site.github.repository_url }}/blob/master/lib1/alias_declaration.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-05-17 15:13:12+09:00
+* category: <a href="../../index.html#6bf9e70a1f928aba143ef1eebe2720b5">pre</a>
+* <a href="{{ site.github.repository_url }}/blob/master/pre/pre.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-06-25 18:26:42+09:00
 
 
-
-
-## Depends on
-
-* :heavy_check_mark: <a href="include_files.cpp.html">lib1/include_files.cpp</a>
 
 
 ## Required by
 
-* :heavy_check_mark: <a href="binpow.cpp.html">lib1/binpow.cpp</a>
+* :heavy_check_mark: <a href="../math/binpow.cpp.html">math/binpow.cpp</a>
 
 
 ## Verified with
@@ -56,44 +51,9 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#ifndef lib_alias_declaration
-#define lib_alias_declaration
-#include "lib1/include_files.cpp"
+#ifndef lib_pre
+#define lib_pre
 
-using ll=long long;
-using intpair=pair<int,int>;
-using intpv=vector<intpair>;
-using llpair=pair<ll,ll>;
-using llpv=vector<llpair>;
-using intvec=vector<int>;
-using llvec=vector<ll>;
-using intq=queue<int>;
-using llq=queue<ll>;
-using intmat=vector<intvec>;
-using llmat=vector<llvec>;
-using pairmat=vector<llpv>;
-
-template<typename T>
-using matrix=vector<vector<T>>;
-template<typename T>
-using pque=priority_queue<T>;
-template<typename T>
-using lpque=priority_queue<T,vector<T>,greater<T>>;
-
-#endif /* lib_alias_declaration */
-```
-{% endraw %}
-
-<a id="bundled"></a>
-{% raw %}
-```cpp
-#line 1 "lib1/alias_declaration.cpp"
-
-
-#line 1 "lib1/include_files.cpp"
-
-
-#include <stdio.h>
 #include <iostream>
 #include <iomanip>
 #include <cstdio>
@@ -112,28 +72,109 @@ using lpque=priority_queue<T,vector<T>,greater<T>>;
 
 using namespace std;
 
-
-#line 4 "lib1/alias_declaration.cpp"
-
-using ll=long long;
-using intpair=pair<int,int>;
-using intpv=vector<intpair>;
-using llpair=pair<ll,ll>;
-using llpv=vector<llpair>;
-using intvec=vector<int>;
-using llvec=vector<ll>;
-using intq=queue<int>;
-using llq=queue<ll>;
-using intmat=vector<intvec>;
-using llmat=vector<llvec>;
-using pairmat=vector<llpv>;
-
+template<typename T, typename U>
+using pv=vector<pair<T,U>>;
 template<typename T>
 using matrix=vector<vector<T>>;
 template<typename T>
 using pque=priority_queue<T>;
 template<typename T>
 using lpque=priority_queue<T,vector<T>,greater<T>>;
+
+using ll=long long;
+using intpair=pair<int,int>;
+using llpair=pair<ll,ll>;
+using ilpair=pair<int,ll>;
+using lipair=pair<ll,int>;
+using intvec=vector<int>;
+using llvec=vector<ll>;
+using intq=queue<int>;
+using llq=queue<ll>;
+using intmat=vector<intvec>;
+using llmat=vector<llvec>;
+
+#define PI 3.141592653589793
+#define INTINF 1<<30
+#define LLINF 1LL<<60
+#define MPRIME 1000000007
+#define MPRIME9 998244353
+
+#define len length()
+#define pushb push_back
+#define fi first
+#define se second
+
+#define setpr fixed<<setprecision(15)
+#define all(name) name.begin(),name.end()
+#define rall(name) name.rbegin(),name.rend()
+#define gsort(vbeg,vend) sort(vbeg,vend,greater<>())
+
+#endif // lib_pre
+
+```
+{% endraw %}
+
+<a id="bundled"></a>
+{% raw %}
+```cpp
+#line 1 "pre/pre.cpp"
+
+
+
+#include <iostream>
+#include <iomanip>
+#include <cstdio>
+#include <vector>
+#include <map>
+#include <unordered_map>
+#include <set>
+#include <tuple>
+#include <string>
+#include <algorithm>
+#include <functional>
+#include <queue>
+#include <stack>
+#include <cmath>
+#include <bitset>
+
+using namespace std;
+
+template<typename T, typename U>
+using pv=vector<pair<T,U>>;
+template<typename T>
+using matrix=vector<vector<T>>;
+template<typename T>
+using pque=priority_queue<T>;
+template<typename T>
+using lpque=priority_queue<T,vector<T>,greater<T>>;
+
+using ll=long long;
+using intpair=pair<int,int>;
+using llpair=pair<ll,ll>;
+using ilpair=pair<int,ll>;
+using lipair=pair<ll,int>;
+using intvec=vector<int>;
+using llvec=vector<ll>;
+using intq=queue<int>;
+using llq=queue<ll>;
+using intmat=vector<intvec>;
+using llmat=vector<llvec>;
+
+#define PI 3.141592653589793
+#define INTINF 1<<30
+#define LLINF 1LL<<60
+#define MPRIME 1000000007
+#define MPRIME9 998244353
+
+#define len length()
+#define pushb push_back
+#define fi first
+#define se second
+
+#define setpr fixed<<setprecision(15)
+#define all(name) name.begin(),name.end()
+#define rall(name) name.rbegin(),name.rend()
+#define gsort(vbeg,vend) sort(vbeg,vend,greater<>())
 
 
 

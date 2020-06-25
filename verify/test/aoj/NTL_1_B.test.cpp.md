@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../../index.html#0d0c91c0cca30af9c1c9faef0cf04aa9">test/aoj</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj/NTL_1_B.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-25 17:27:07+09:00
+    - Last commit date: 2020-06-25 18:26:42+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_B">https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_B</a>
@@ -39,10 +39,8 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../../library/lib1/alias_declaration.cpp.html">lib1/alias_declaration.cpp</a>
-* :heavy_check_mark: <a href="../../../library/lib1/binpow.cpp.html">lib1/binpow.cpp</a>
-* :heavy_check_mark: <a href="../../../library/lib1/include_files.cpp.html">lib1/include_files.cpp</a>
-* :heavy_check_mark: <a href="../../../library/lib1/macros.cpp.html">lib1/macros.cpp</a>
+* :heavy_check_mark: <a href="../../../library/math/binpow.cpp.html">math/binpow.cpp</a>
+* :heavy_check_mark: <a href="../../../library/pre/pre.cpp.html">pre/pre.cpp</a>
 
 
 ## Code
@@ -51,10 +49,8 @@ layout: default
 {% raw %}
 ```cpp
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_B"
-#include "lib1/include_files.cpp"
-#include "lib1/alias_declaration.cpp"
-#include "lib1/macros.cpp"
-#include "lib1/binpow.cpp"
+#include "pre/pre.cpp"
+#include "math/binpow.cpp"
 
 int main() {
 	int m,n; cin>>m>>n;
@@ -69,10 +65,10 @@ int main() {
 ```cpp
 #line 1 "test/aoj/NTL_1_B.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_B"
-#line 1 "lib1/include_files.cpp"
+#line 1 "pre/pre.cpp"
 
 
-#include <stdio.h>
+
 #include <iostream>
 #include <iomanip>
 #include <cstdio>
@@ -91,25 +87,8 @@ int main() {
 
 using namespace std;
 
-
-#line 1 "lib1/alias_declaration.cpp"
-
-
-#line 4 "lib1/alias_declaration.cpp"
-
-using ll=long long;
-using intpair=pair<int,int>;
-using intpv=vector<intpair>;
-using llpair=pair<ll,ll>;
-using llpv=vector<llpair>;
-using intvec=vector<int>;
-using llvec=vector<ll>;
-using intq=queue<int>;
-using llq=queue<ll>;
-using intmat=vector<intvec>;
-using llmat=vector<llvec>;
-using pairmat=vector<llpv>;
-
+template<typename T, typename U>
+using pv=vector<pair<T,U>>;
 template<typename T>
 using matrix=vector<vector<T>>;
 template<typename T>
@@ -117,9 +96,17 @@ using pque=priority_queue<T>;
 template<typename T>
 using lpque=priority_queue<T,vector<T>,greater<T>>;
 
-
-#line 1 "lib1/macros.cpp"
-
+using ll=long long;
+using intpair=pair<int,int>;
+using llpair=pair<ll,ll>;
+using ilpair=pair<int,ll>;
+using lipair=pair<ll,int>;
+using intvec=vector<int>;
+using llvec=vector<ll>;
+using intq=queue<int>;
+using llq=queue<ll>;
+using intmat=vector<intvec>;
+using llmat=vector<llvec>;
 
 #define PI 3.141592653589793
 #define INTINF 1<<30
@@ -127,24 +114,21 @@ using lpque=priority_queue<T,vector<T>,greater<T>>;
 #define MPRIME 1000000007
 #define MPRIME9 998244353
 
+#define len length()
 #define pushb push_back
 #define fi first
 #define se second
 
 #define setpr fixed<<setprecision(15)
-#define iter(name) decltype(name)::iterator
 #define all(name) name.begin(),name.end()
 #define rall(name) name.rbegin(),name.rend()
 #define gsort(vbeg,vend) sort(vbeg,vend,greater<>())
-#define init(v,size) v.resize(size); for(auto &a__: v) cin>>a__
-#define matin(mat,H,W) for(int i__=0; i__<H; i__++)for(int j__=0; j__<W; j__++) cin>>mat[i__][j__]
-#define out(n) cout<<n<<endl
 
 
-#line 1 "lib1/binpow.cpp"
+#line 1 "math/binpow.cpp"
 
 
-#line 4 "lib1/binpow.cpp"
+#line 4 "math/binpow.cpp"
 
 ll binpow(ll a, ll ex, ll p) {
 	ll result=1;
@@ -157,7 +141,7 @@ ll binpow(ll a, ll ex, ll p) {
 }
 
 
-#line 6 "test/aoj/NTL_1_B.test.cpp"
+#line 4 "test/aoj/NTL_1_B.test.cpp"
 
 int main() {
 	int m,n; cin>>m>>n;
