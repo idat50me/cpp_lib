@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/factorial.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-25 22:10:41+09:00
+    - Last commit date: 2020-06-25 23:23:03+09:00
 
 
 
@@ -57,10 +57,7 @@ using namespace std;
 
 long long factorial(long long x, long long p=(1LL<<60)) {
 	long long res=1;
-	for(long long i=2; i<=x; i++) {
-		res*=i;
-		res%=p;
-	}
+	while(x>1) res = res*x%p;
 	return res;
 }
 
@@ -84,10 +81,7 @@ using namespace std;
 
 long long factorial(long long x, long long p=(1LL<<60)) {
 	long long res=1;
-	for(long long i=2; i<=x; i++) {
-		res*=i;
-		res%=p;
-	}
+	while(x>1) res = res*x%p;
 	return res;
 }
 
