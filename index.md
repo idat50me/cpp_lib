@@ -41,13 +41,6 @@ layout: default
 * :heavy_check_mark: <a href="library/math/binpow.cpp.html">math/binpow.cpp</a>
 
 
-<div id="6bf9e70a1f928aba143ef1eebe2720b5"></div>
-
-### pre
-
-* :heavy_check_mark: <a href="library/pre/pre.cpp.html">pre/pre.cpp</a>
-
-
 ## Verify Files
 
 * :heavy_check_mark: <a href="verify/test/aoj/NTL_1_B.test.cpp.html">test/aoj/NTL_1_B.test.cpp</a>

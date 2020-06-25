@@ -31,14 +31,9 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/binpow.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-25 18:26:42+09:00
+    - Last commit date: 2020-06-25 18:49:28+09:00
 
 
-
-
-## Depends on
-
-* :heavy_check_mark: <a href="../pre/pre.cpp.html">pre/pre.cpp</a>
 
 
 ## Verified with
@@ -53,10 +48,15 @@ layout: default
 ```cpp
 #ifndef lib_binpow
 #define lib_binpow
-#include "pre/pre.cpp"
 
-ll binpow(ll a, ll ex, ll p) {
-	ll result=1;
+#ifndef call_include
+#define call_include
+#include <bits/stdc++.h>
+using namespace std;
+#endif
+
+long long binpow(long long a, long long ex, long long p) {
+	long long result=1;
 	while(ex>0) {
 		if(ex&1) result=result*a%p;
 		ex>>=1;
@@ -75,70 +75,15 @@ ll binpow(ll a, ll ex, ll p) {
 #line 1 "math/binpow.cpp"
 
 
-#line 1 "pre/pre.cpp"
 
-
-
-#include <iostream>
-#include <iomanip>
-#include <cstdio>
-#include <vector>
-#include <map>
-#include <unordered_map>
-#include <set>
-#include <tuple>
-#include <string>
-#include <algorithm>
-#include <functional>
-#include <queue>
-#include <stack>
-#include <cmath>
-#include <bitset>
-
+#ifndef call_include
+#define call_include
+#include <bits/stdc++.h>
 using namespace std;
+#endif
 
-template<typename T, typename U>
-using pv=vector<pair<T,U>>;
-template<typename T>
-using matrix=vector<vector<T>>;
-template<typename T>
-using pque=priority_queue<T>;
-template<typename T>
-using lpque=priority_queue<T,vector<T>,greater<T>>;
-
-using ll=long long;
-using intpair=pair<int,int>;
-using llpair=pair<ll,ll>;
-using ilpair=pair<int,ll>;
-using lipair=pair<ll,int>;
-using intvec=vector<int>;
-using llvec=vector<ll>;
-using intq=queue<int>;
-using llq=queue<ll>;
-using intmat=vector<intvec>;
-using llmat=vector<llvec>;
-
-#define PI 3.141592653589793
-#define INTINF 1<<30
-#define LLINF 1LL<<60
-#define MPRIME 1000000007
-#define MPRIME9 998244353
-
-#define len length()
-#define pushb push_back
-#define fi first
-#define se second
-
-#define setpr fixed<<setprecision(15)
-#define all(name) name.begin(),name.end()
-#define rall(name) name.rbegin(),name.rend()
-#define gsort(vbeg,vend) sort(vbeg,vend,greater<>())
-
-
-#line 4 "math/binpow.cpp"
-
-ll binpow(ll a, ll ex, ll p) {
-	ll result=1;
+long long binpow(long long a, long long ex, long long p) {
+	long long result=1;
 	while(ex>0) {
 		if(ex&1) result=result*a%p;
 		ex>>=1;
