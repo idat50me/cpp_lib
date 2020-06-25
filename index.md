@@ -39,19 +39,13 @@ layout: default
 ### math
 
 * :heavy_check_mark: <a href="library/math/binpow.cpp.html">math/binpow.cpp</a>
-* :warning: <a href="library/math/factorial.cpp.html">math/factorial.cpp</a>
-
-
-<div id="098f6bcd4621d373cade4e832627b4f6"></div>
-
-### test
-
-* :warning: <a href="library/test/yuki_502.cpp.html">test/yuki_502.cpp</a>
+* :x: <a href="library/math/factorial.cpp.html">math/factorial.cpp</a>
 
 
 ## Verify Files
 
 * :heavy_check_mark: <a href="verify/test/a_example.test.cpp.html">test/a_example.test.cpp</a>
+* :x: <a href="verify/test/aoj_0019.test.cpp.html">test/aoj_0019.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_NTL_1_B.test.cpp.html">test/aoj_NTL_1_B.test.cpp</a>
 
 

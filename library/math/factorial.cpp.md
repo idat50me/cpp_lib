@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: math/factorial.cpp
+# :x: math/factorial.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -34,6 +34,11 @@ layout: default
     - Last commit date: 2020-06-25 22:10:41+09:00
 
 
+
+
+## Verified with
+
+* :x: <a href="../../verify/test/aoj_0019.test.cpp.html">test/aoj_0019.test.cpp</a>
 
 
 ## Code
