@@ -1,6 +1,6 @@
 #ifndef lib_binpow
 #define lib_binpow
-#include "lib1/alias_declaration.cpp"
+#include "pre/pre.cpp"
 
 ll binpow(ll a, ll ex, ll p) {
 	ll result=1;
