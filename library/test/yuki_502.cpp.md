@@ -25,20 +25,15 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/binpow.cpp
+# :warning: test/yuki_502.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
-* <a href="{{ site.github.repository_url }}/blob/master/math/binpow.cpp">View this file on GitHub</a>
+* category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/yuki_502.cpp">View this file on GitHub</a>
     - Last commit date: 2020-06-25 22:10:41+09:00
 
 
-
-
-## Verified with
-
-* :heavy_check_mark: <a href="../../verify/test/aoj_NTL_1_B.test.cpp.html">test/aoj_NTL_1_B.test.cpp</a>
 
 
 ## Code
@@ -46,52 +41,14 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#ifndef lib_binpow
-#define lib_binpow
 
-#ifndef call_include
-#define call_include
-#include <bits/stdc++.h>
-using namespace std;
-#endif
-
-long long binpow(long long a, long long ex, long long p=(1LL<<60)) {
-	long long result=1;
-	while(ex>0) {
-		if(ex&1) result=result*a%p;
-		ex>>=1;
-		a=a*a%p;
-	}
-	return result;
-}
-
-#endif /* lib_binpow */
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "math/binpow.cpp"
-
-
-
-#ifndef call_include
-#define call_include
-#include <bits/stdc++.h>
-using namespace std;
-#endif
-
-long long binpow(long long a, long long ex, long long p=(1LL<<60)) {
-	long long result=1;
-	while(ex>0) {
-		if(ex&1) result=result*a%p;
-		ex>>=1;
-		a=a*a%p;
-	}
-	return result;
-}
-
+#line 1 "test/yuki_502.cpp"
 
 
 ```

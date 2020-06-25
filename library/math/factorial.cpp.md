@@ -25,20 +25,15 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/binpow.cpp
+# :warning: math/factorial.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
-* <a href="{{ site.github.repository_url }}/blob/master/math/binpow.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/math/factorial.cpp">View this file on GitHub</a>
     - Last commit date: 2020-06-25 22:10:41+09:00
 
 
-
-
-## Verified with
-
-* :heavy_check_mark: <a href="../../verify/test/aoj_NTL_1_B.test.cpp.html">test/aoj_NTL_1_B.test.cpp</a>
 
 
 ## Code
@@ -46,8 +41,8 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#ifndef lib_binpow
-#define lib_binpow
+#ifndef lib_factorial
+#define lib_factorial
 
 #ifndef call_include
 #define call_include
@@ -55,24 +50,24 @@ layout: default
 using namespace std;
 #endif
 
-long long binpow(long long a, long long ex, long long p=(1LL<<60)) {
-	long long result=1;
-	while(ex>0) {
-		if(ex&1) result=result*a%p;
-		ex>>=1;
-		a=a*a%p;
+long long factorial(long long x, long long p=(1LL<<60)) {
+	long long res=1;
+	for(long long i=2; i<=x; i++) {
+		res*=i;
+		res%=p;
 	}
-	return result;
+	return res;
 }
 
-#endif /* lib_binpow */
+#endif // lib_factorial
+
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "math/binpow.cpp"
+#line 1 "math/factorial.cpp"
 
 
 
@@ -82,14 +77,13 @@ long long binpow(long long a, long long ex, long long p=(1LL<<60)) {
 using namespace std;
 #endif
 
-long long binpow(long long a, long long ex, long long p=(1LL<<60)) {
-	long long result=1;
-	while(ex>0) {
-		if(ex&1) result=result*a%p;
-		ex>>=1;
-		a=a*a%p;
+long long factorial(long long x, long long p=(1LL<<60)) {
+	long long res=1;
+	for(long long i=2; i<=x; i++) {
+		res*=i;
+		res%=p;
 	}
-	return result;
+	return res;
 }
 
 

@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/example.test.cpp
+# :heavy_check_mark: test/a_example.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/example.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-25 18:26:42+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/a_example.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-06-25 22:10:41+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B">https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B</a>
@@ -72,7 +72,7 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/example.test.cpp"
+#line 1 "test/a_example.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/1/ALDS1/4/ALDS1_4_B"
 #include <algorithm>
 #include <iostream>
