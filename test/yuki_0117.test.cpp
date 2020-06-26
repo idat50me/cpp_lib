@@ -15,7 +15,6 @@ using namespace std;
 int main() {
 	vector<ll> fact,inv,finv;
 	pre_mod_comb(2100000,MPRIME,fact,inv,finv);
-	for(int i=0; i<100; i++) cout<<fact[i]<<" "<<inv[i]<<" "<<finv[i]<<endl;
 
 	int T; cin>>T;
 	for(int i=0; i<T; i++) {
@@ -46,7 +45,6 @@ int main() {
 					break;
 			}
 		}
-		cout<<n<<" "<<r<<" ";
 		switch(mode) {
 			case 0:
 				cout<<mod_nCr(n,r,MPRIME,fact,inv,finv)<<endl;
