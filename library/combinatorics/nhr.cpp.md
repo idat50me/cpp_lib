@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
 * <a href="{{ site.github.repository_url }}/blob/master/combinatorics/nhr.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-26 20:29:51+09:00
+    - Last commit date: 2020-06-26 20:32:01+09:00
 
 
 
@@ -72,8 +72,6 @@ using namespace std;
 
 vector<ll> dummy;
 
-// ncrmd is func nCr mode
-// (0: nCr  1: mod_nCr)
 ll nHr(ll n, ll r) {
 	return nCr(n+r-1,n-1);
 }
@@ -220,8 +218,6 @@ ll mod_nCr2(ll n, ll r) {
 
 vector<ll> dummy;
 
-// ncrmd is func nCr mode
-// (0: nCr  1: mod_nCr)
 ll nHr(ll n, ll r) {
 	return nCr(n+r-1,n-1);
 }
