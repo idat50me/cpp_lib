@@ -25,25 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: math/npr.cpp
+# :warning: combinatorics/mod_npr.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
-* <a href="{{ site.github.repository_url }}/blob/master/math/npr.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-26 16:38:33+09:00
+* category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
+* <a href="{{ site.github.repository_url }}/blob/master/combinatorics/mod_npr.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-06-26 17:55:02+09:00
 
 
 
 
 ## Depends on
 
-* :question: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
-
-
-## Verified with
-
-* :x: <a href="../../verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
+* :warning: <a href="pre_mod_comb.cpp.html">combinatorics/pre_mod_comb.cpp</a>
+* :heavy_check_mark: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
 
 
 ## Code
@@ -51,33 +47,32 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#ifndef lib_npr
-#define lib_npr
+#ifndef lib_mod_npr
+#define lib_mod_npr
 
 #ifndef call_include
 #define call_include
 #include <bits/stdc++.h>
 using namespace std;
 #endif
+
 #include "pre/macros.cpp"
+#include "combinatorics/pre_mod_comb.cpp"
 
-ll nPr(ll n, ll r, ll p=numeric_limits<ll>::max()) {
-	if(n<r) return 0LL;
-
-	ll res=1LL;
-	for(int i=0; i<r; i++) res = res*(n-i)%p;
-	return res;
+ll mod_nCr(ll n, ll r) {
+	ll p=mod_comb_p__;
+	if (r > n) return 0;
+	return fact__[n]*finv__[n-r]%p;
 }
 
-#endif // lib_npr
-
+#endif // lib_mod_npr
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "math/npr.cpp"
+#line 1 "combinatorics/mod_npr.cpp"
 
 
 
@@ -86,23 +81,52 @@ ll nPr(ll n, ll r, ll p=numeric_limits<ll>::max()) {
 #include <bits/stdc++.h>
 using namespace std;
 #endif
+
 #line 1 "pre/macros.cpp"
 
 
 
 using ll = long long;
 
-#define MPRIME 10e9+7
+#define MPRIME (ll)10e9+7
+#define MMPRIME (1LL<<61)-1
 
 
-#line 10 "math/npr.cpp"
+#line 1 "combinatorics/pre_mod_comb.cpp"
 
-ll nPr(ll n, ll r, ll p=numeric_limits<ll>::max()) {
-	if(n<r) return 0LL;
 
-	ll res=1LL;
-	for(int i=0; i<r; i++) res = res*(n-i)%p;
-	return res;
+
+#ifndef call_include
+#define call_include
+#include <bits/stdc++.h>
+using namespace std;
+#endif
+
+#line 11 "combinatorics/pre_mod_comb.cpp"
+
+vector<ll> fact__,inv__,finv__;
+ll mod_comb_p__;
+
+void pre_mod_comb(ll mx, ll p) {
+	mod_comb_p__=p;
+	fact__.resize(mx+1);
+	inv__.resize(mx+1);
+	finv__.resize(mx+1);
+	fact__[0]=fact__[1]=inv__[1]=finv__[0]=finv__[1]=1LL;
+	for(ll i=2LL; i<=mx; i++) {
+		fact__[i]=fact__[i-1]*i%p;
+		inv__[i]=p-inv__[p%i]*(p/i)%p;
+		finv__[i]=finv__[i-1]*inv__[i]%p;
+	}
+}
+
+
+#line 12 "combinatorics/mod_npr.cpp"
+
+ll mod_nCr(ll n, ll r) {
+	ll p=mod_comb_p__;
+	if (r > n) return 0;
+	return fact__[n]*finv__[n-r]%p;
 }
 
 
