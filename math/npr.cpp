@@ -6,10 +6,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 #endif
-#ifndef call_macros
-#define call_macros
 #include "pre/macros.cpp"
-#endif
 
 ll nPr(ll n, ll r, ll p=numeric_limits<ll>::max()) {
 	if(n<r) return 0LL;
