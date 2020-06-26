@@ -48,11 +48,13 @@ layout: default
 * :heavy_check_mark: <a href="../math/binpow.cpp.html">math/binpow.cpp</a>
 * :warning: <a href="../math/factorial.cpp.html">math/factorial.cpp</a>
 * :heavy_check_mark: <a href="../math/isprime.cpp.html">math/isprime.cpp</a>
+* :heavy_check_mark: <a href="../math/sieve_of_eratosthenes.cpp.html">math/sieve_of_eratosthenes.cpp</a>
 
 
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj_ALDS1_1_C.test.cpp.html">test/aoj_ALDS1_1_C.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj_ALDS1_1_C_2.test.cpp.html">test/aoj_ALDS1_1_C_2.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj_DPC_5_D.test.cpp.html">test/aoj_DPC_5_D.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj_NTL_1_B.test.cpp.html">test/aoj_NTL_1_B.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>

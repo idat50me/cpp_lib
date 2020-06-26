@@ -25,22 +25,25 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj_ALDS1_1_C.test.cpp
+# :heavy_check_mark: math/sieve_of_eratosthenes.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/aoj_ALDS1_1_C.test.cpp">View this file on GitHub</a>
+* category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
+* <a href="{{ site.github.repository_url }}/blob/master/math/sieve_of_eratosthenes.cpp">View this file on GitHub</a>
     - Last commit date: 2020-06-26 22:31:28+09:00
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C">https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/math/sieve_of_eratosthenes.cpp.html">math/sieve_of_eratosthenes.cpp</a>
-* :heavy_check_mark: <a href="../../library/pre/macros.cpp.html">pre/macros.cpp</a>
+* :heavy_check_mark: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../verify/test/aoj_ALDS1_1_C.test.cpp.html">test/aoj_ALDS1_1_C.test.cpp</a>
 
 
 ## Code
@@ -48,7 +51,8 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C"
+#ifndef lib_sieve_of_eratosthenes
+#define lib_sieve_of_eratosthenes
 
 #ifndef call_include
 #define call_include
@@ -57,18 +61,50 @@ using namespace std;
 #endif
 
 #include "pre/macros.cpp"
-#include "math/sieve_of_eratosthenes.cpp"
 
-int main() {
-	Sieve sv(100000010);
-	int n; cin>>n;
-	int res=0;
-	for(int i=0; i<n; i++) {
-		int a; cin>>a;
-		if(sv.isprime(a)) res++;
+struct Sieve {
+	int N;
+	vector<int> f,primes;
+
+	Sieve(int N=1) : N(N), f(N+1) {
+		f[0]=f[1]=-1;
+		for(int i=2; i<=N; i++) {
+			if(f[i]) continue;
+			primes.push_back(i);
+			f[i]=i;
+			if(i>(1<<15)) continue;
+			for(int j=i*i; j<=N; j+=i) if(!f[j]) f[j]=i;
+		}
 	}
-	cout<<res<<endl;
-}
+
+	bool isprime(int x) { return f[x]==x; }
+
+	vector<int> factorlist(int x) {
+		vector<int> res;
+		while(x!=1) {
+			res.push_back(f[x]);
+			x/=f[x];
+		}
+		return res;
+	}
+
+	vector<pair<int,int>> factorcnt(int x) {
+		vector<int> fl=factorlist(x);
+		if(!fl.size()) return {};
+		vector<pair<int,int>> res(1,{fl[0],0});
+		for(int p: fl) {
+			if(res.back().first==p) {
+				res.back().second++;
+			}
+			else {
+				res.push_back({p,1});
+			}
+		}
+		return res;
+	}
+};
+
+#endif // lib_sieve_of_eratosthenes
 
 ```
 {% endraw %}
@@ -76,8 +112,9 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/aoj_ALDS1_1_C.test.cpp"
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C"
+#line 1 "math/sieve_of_eratosthenes.cpp"
+
+
 
 #ifndef call_include
 #define call_include
@@ -94,16 +131,6 @@ using ll = long long;
 #define MPRIME (ll)1e9+7
 #define MMPRIME (1LL<<61)-1
 
-
-#line 1 "math/sieve_of_eratosthenes.cpp"
-
-
-
-#ifndef call_include
-#define call_include
-#include <bits/stdc++.h>
-using namespace std;
-#endif
 
 #line 11 "math/sieve_of_eratosthenes.cpp"
 
@@ -150,18 +177,6 @@ struct Sieve {
 };
 
 
-#line 11 "test/aoj_ALDS1_1_C.test.cpp"
-
-int main() {
-	Sieve sv(100000010);
-	int n; cin>>n;
-	int res=0;
-	for(int i=0; i<n; i++) {
-		int a; cin>>a;
-		if(sv.isprime(a)) res++;
-	}
-	cout<<res<<endl;
-}
 
 ```
 {% endraw %}

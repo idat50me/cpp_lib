@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/isprime.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-26 22:21:23+09:00
+    - Last commit date: 2020-06-26 22:31:28+09:00
 
 
 
@@ -43,7 +43,7 @@ layout: default
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj_ALDS1_1_C.test.cpp.html">test/aoj_ALDS1_1_C.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj_ALDS1_1_C_2.test.cpp.html">test/aoj_ALDS1_1_C_2.test.cpp</a>
 
 
 ## Code
@@ -51,8 +51,8 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#ifndef lib_sieve_of_eratosthenes
-#define lib_sieve_of_eratosthenes
+#ifndef lib_isprime
+#define lib_isprime
 
 #ifndef call_include
 #define call_include
@@ -62,49 +62,17 @@ using namespace std;
 
 #include "pre/macros.cpp"
 
-struct Sieve {
-	int N;
-	vector<int> f,primes;
+bool isprime(ll n) {
+	if (n<2) return false;
+	if (n==2) return true;
+	if (n%2==0) return false;
 
-	Sieve(int N=1) : N(N), f(N+1) {
-		f[0]=f[1]=-1;
-		for(int i=2; i<=N; i++) {
-			if(f[i]) continue;
-			primes.push_back(i);
-			f[i]=i;
-			if(i>(1<<15)) continue;
-			for(int j=i*i; j<=N; j+=i) if(!f[j]) f[j]=i;
-		}
-	}
+	for (ll i=3; i*i<=n; i+=2) if (n%i==0) return false;
 
-	bool isprime(int x) { return f[x]==x; }
+	return true;
+}
 
-	vector<int> factorlist(int x) {
-		vector<int> res;
-		while(x!=1) {
-			res.push_back(f[x]);
-			x/=f[x];
-		}
-		return res;
-	}
-
-	vector<pair<int,int>> factorcnt(int x) {
-		vector<int> fl=factorlist(x);
-		if(!fl.size()) return {};
-		vector<pair<int,int>> res(1,{fl[0],0});
-		for(int p: fl) {
-			if(res.back().first==p) {
-				res.back().second++;
-			}
-			else {
-				res.push_back({p,1});
-			}
-		}
-		return res;
-	}
-};
-
-#endif // lib_sieve_of_eratosthenes
+#endif // lib_isprime
 
 ```
 {% endraw %}
@@ -134,47 +102,15 @@ using ll = long long;
 
 #line 11 "math/isprime.cpp"
 
-struct Sieve {
-	int N;
-	vector<int> f,primes;
+bool isprime(ll n) {
+	if (n<2) return false;
+	if (n==2) return true;
+	if (n%2==0) return false;
 
-	Sieve(int N=1) : N(N), f(N+1) {
-		f[0]=f[1]=-1;
-		for(int i=2; i<=N; i++) {
-			if(f[i]) continue;
-			primes.push_back(i);
-			f[i]=i;
-			if(i>(1<<15)) continue;
-			for(int j=i*i; j<=N; j+=i) if(!f[j]) f[j]=i;
-		}
-	}
+	for (ll i=3; i*i<=n; i+=2) if (n%i==0) return false;
 
-	bool isprime(int x) { return f[x]==x; }
-
-	vector<int> factorlist(int x) {
-		vector<int> res;
-		while(x!=1) {
-			res.push_back(f[x]);
-			x/=f[x];
-		}
-		return res;
-	}
-
-	vector<pair<int,int>> factorcnt(int x) {
-		vector<int> fl=factorlist(x);
-		if(!fl.size()) return {};
-		vector<pair<int,int>> res(1,{fl[0],0});
-		for(int p: fl) {
-			if(res.back().first==p) {
-				res.back().second++;
-			}
-			else {
-				res.push_back({p,1});
-			}
-		}
-		return res;
-	}
-};
+	return true;
+}
 
 
 

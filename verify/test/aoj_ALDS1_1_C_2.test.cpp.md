@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj_ALDS1_1_C.test.cpp
+# :heavy_check_mark: test/aoj_ALDS1_1_C_2.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/aoj_ALDS1_1_C.test.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/aoj_ALDS1_1_C_2.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-06-26 22:31:28+09:00
 
 
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/math/sieve_of_eratosthenes.cpp.html">math/sieve_of_eratosthenes.cpp</a>
+* :heavy_check_mark: <a href="../../library/math/isprime.cpp.html">math/isprime.cpp</a>
 * :heavy_check_mark: <a href="../../library/pre/macros.cpp.html">pre/macros.cpp</a>
 
 
@@ -57,15 +57,14 @@ using namespace std;
 #endif
 
 #include "pre/macros.cpp"
-#include "math/sieve_of_eratosthenes.cpp"
+#include "math/isprime.cpp"
 
 int main() {
-	Sieve sv(100000010);
 	int n; cin>>n;
 	int res=0;
 	for(int i=0; i<n; i++) {
 		int a; cin>>a;
-		if(sv.isprime(a)) res++;
+		if(isprime(a)) res++;
 	}
 	cout<<res<<endl;
 }
@@ -76,7 +75,7 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/aoj_ALDS1_1_C.test.cpp"
+#line 1 "test/aoj_ALDS1_1_C_2.test.cpp"
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C"
 
 #ifndef call_include
@@ -95,7 +94,7 @@ using ll = long long;
 #define MMPRIME (1LL<<61)-1
 
 
-#line 1 "math/sieve_of_eratosthenes.cpp"
+#line 1 "math/isprime.cpp"
 
 
 
@@ -105,60 +104,27 @@ using ll = long long;
 using namespace std;
 #endif
 
-#line 11 "math/sieve_of_eratosthenes.cpp"
+#line 11 "math/isprime.cpp"
 
-struct Sieve {
-	int N;
-	vector<int> f,primes;
+bool isprime(ll n) {
+	if (n<2) return false;
+	if (n==2) return true;
+	if (n%2==0) return false;
 
-	Sieve(int N=1) : N(N), f(N+1) {
-		f[0]=f[1]=-1;
-		for(int i=2; i<=N; i++) {
-			if(f[i]) continue;
-			primes.push_back(i);
-			f[i]=i;
-			if(i>(1<<15)) continue;
-			for(int j=i*i; j<=N; j+=i) if(!f[j]) f[j]=i;
-		}
-	}
+	for (ll i=3; i*i<=n; i+=2) if (n%i==0) return false;
 
-	bool isprime(int x) { return f[x]==x; }
-
-	vector<int> factorlist(int x) {
-		vector<int> res;
-		while(x!=1) {
-			res.push_back(f[x]);
-			x/=f[x];
-		}
-		return res;
-	}
-
-	vector<pair<int,int>> factorcnt(int x) {
-		vector<int> fl=factorlist(x);
-		if(!fl.size()) return {};
-		vector<pair<int,int>> res(1,{fl[0],0});
-		for(int p: fl) {
-			if(res.back().first==p) {
-				res.back().second++;
-			}
-			else {
-				res.push_back({p,1});
-			}
-		}
-		return res;
-	}
-};
+	return true;
+}
 
 
-#line 11 "test/aoj_ALDS1_1_C.test.cpp"
+#line 11 "test/aoj_ALDS1_1_C_2.test.cpp"
 
 int main() {
-	Sieve sv(100000010);
 	int n; cin>>n;
 	int res=0;
 	for(int i=0; i<n; i++) {
 		int a; cin>>a;
-		if(sv.isprime(a)) res++;
+		if(isprime(a)) res++;
 	}
 	cout<<res<<endl;
 }
