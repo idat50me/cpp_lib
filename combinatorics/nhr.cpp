@@ -15,8 +15,6 @@ using namespace std;
 
 vector<ll> dummy;
 
-// ncrmd is func nCr mode
-// (0: nCr  1: mod_nCr)
 ll nHr(ll n, ll r) {
 	return nCr(n+r-1,n-1);
 }

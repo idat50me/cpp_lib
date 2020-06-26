@@ -53,7 +53,7 @@ int main() {
 				cout<<mod_nPr(n,r,MPRIME,fact,inv,finv)<<endl;
 				break;
 			case 2:
-				cout<<nHr(n,r,MPRIME,fact,inv,finv,1)<<endl;
+				cout<<nHr(n,r,MPRIME,fact,inv,finv)<<endl;
 				break;
 		}
 	}
