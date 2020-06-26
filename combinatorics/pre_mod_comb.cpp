@@ -9,19 +9,15 @@ using namespace std;
 
 #include "pre/macros.cpp"
 
-vector<ll> fact__,inv__,finv__;
-ll mod_comb_p__;
-
-void pre_mod_comb(ll mx, ll p) {
-	mod_comb_p__=p;
-	fact__.resize(mx+1);
-	inv__.resize(mx+1);
-	finv__.resize(mx+1);
-	fact__[0]=fact__[1]=inv__[1]=finv__[0]=finv__[1]=1LL;
+void pre_mod_comb(ll mx, ll p, vector<ll> &fact, vector<ll> &inv, vector<ll> &finv) {
+	fact.resize(mx+1);
+	inv.resize(mx+1);
+	finv.resize(mx+1);
+	fact[0]=fact[1]=inv[1]=finv[0]=finv[1]=1LL;
 	for(ll i=2LL; i<=mx; i++) {
-		fact__[i]=fact__[i-1]*i%p;
-		inv__[i]=p-inv__[p%i]*(p/i)%p;
-		finv__[i]=finv__[i-1]*inv__[i]%p;
+		fact[i]=fact[i-1]*i%p;
+		inv[i]=p-inv[p%i]*(p/i)%p;
+		finv[i]=finv[i-1]*inv[i]%p;
 	}
 }
 

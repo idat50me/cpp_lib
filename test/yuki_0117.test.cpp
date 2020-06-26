@@ -12,7 +12,8 @@ using namespace std;
 #include "combinatorics/nhr.cpp"
 
 int main() {
-	pre_mod_comb(2100000,MPRIME);
+	vector<ll> fact,inv,finv;
+	pre_mod_comb(2100000,MPRIME,fact,inv,finv);
 
 	int T; cin>>T;
 	for(int i=0; i<T; i++) {
@@ -45,10 +46,10 @@ int main() {
 		}
 		switch(mode) {
 			case 0:
-				cout<<mod_nCr(n,r)<<endl;
+				cout<<mod_nCr(n,r,MPRIME,fact,inv,finv)<<endl;
 				break;
 			case 1:
-				cout<<mod_nPr(n,r)<<endl;
+				cout<<mod_nPr(n,r,MPRIME,fact,inv,finv)<<endl;
 				break;
 			case 2:
 				cout<<nHr(n,r,1)<<endl;

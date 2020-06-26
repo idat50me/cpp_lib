@@ -10,13 +10,9 @@ using namespace std;
 #include "pre/macros.cpp"
 #include "combinatorics/pre_mod_comb.cpp"
 
-extern vector<ll> fact__,inv__,finv__;
-extern ll mod_comb_p__;
-
-ll mod_nPr(ll n, ll r) {
-	ll p=mod_comb_p__;
+ll mod_nPr(ll n, ll r, ll p, vector<ll> &fact, vector<ll> &inv, vector<ll> &finv) {
 	if (r > n) return 0;
-	return fact__[n]*finv__[n-r]%p;
+	return fact[n]*finv[n-r]%p;
 }
 
 #endif // lib_mod_npr
