@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj_NTL_1_B.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-26 17:55:02+09:00
+    - Last commit date: 2020-06-26 20:22:46+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_B">https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_B</a>

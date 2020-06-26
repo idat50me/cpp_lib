@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
 * <a href="{{ site.github.repository_url }}/blob/master/combinatorics/nhr.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-26 18:23:19+09:00
+    - Last commit date: 2020-06-26 20:22:46+09:00
 
 
 
@@ -109,7 +109,7 @@ using namespace std;
 
 using ll = long long;
 
-#define MPRIME (ll)10e9+7
+#define MPRIME (ll)1e9+7
 #define MMPRIME (1LL<<61)-1
 
 
