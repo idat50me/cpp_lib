@@ -31,9 +31,14 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/binpow.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-25 22:10:41+09:00
+    - Last commit date: 2020-06-26 15:36:58+09:00
 
 
+
+
+## Depends on
+
+* :heavy_check_mark: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
 
 
 ## Verified with
@@ -54,9 +59,13 @@ layout: default
 #include <bits/stdc++.h>
 using namespace std;
 #endif
+#ifndef call_macros
+#define call_macros
+#include "pre/macros.cpp"
+#endif
 
-long long binpow(long long a, long long ex, long long p=(1LL<<60)) {
-	long long result=1;
+ll binpow(ll a, ll ex, ll p=(1LL<<60)) {
+	ll result=1;
 	while(ex>0) {
 		if(ex&1) result=result*a%p;
 		ex>>=1;
@@ -72,27 +81,14 @@ long long binpow(long long a, long long ex, long long p=(1LL<<60)) {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "math/binpow.cpp"
-
-
-
-#ifndef call_include
-#define call_include
-#include <bits/stdc++.h>
-using namespace std;
-#endif
-
-long long binpow(long long a, long long ex, long long p=(1LL<<60)) {
-	long long result=1;
-	while(ex>0) {
-		if(ex&1) result=result*a%p;
-		ex>>=1;
-		a=a*a%p;
-	}
-	return result;
-}
-
-
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 349, in write_contents
+    bundled_code = language.bundle(self.file_class.file_path, basedir=pathlib.Path.cwd())
+  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 185, in bundle
+    bundler.update(path)
+  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 306, in update
+    raise BundleErrorAt(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
+onlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: math/binpow.cpp: line 11: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}

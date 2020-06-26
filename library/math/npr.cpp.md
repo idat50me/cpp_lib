@@ -31,9 +31,14 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/npr.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-26 15:29:49+09:00
+    - Last commit date: 2020-06-26 15:36:58+09:00
 
 
+
+
+## Depends on
+
+* :heavy_check_mark: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
 
 
 ## Code
@@ -49,11 +54,15 @@ layout: default
 #include <bits/stdc++.h>
 using namespace std;
 #endif
+#ifndef call_macros
+#define call_macros
+#include "pre/macros.cpp"
+#endif
 
-long long nPr(long long n, long long r, long long p=numeric_limits<long long>::max()) {
+ll nPr(ll n, ll r, ll p=numeric_limits<ll>::max()) {
 	if(n<r) return 0LL;
 
-	long long res=1LL;
+	ll res=1LL;
 	for(int i=0; i<r; i++) res = res*(n-i)%p;
 	return res;
 }
@@ -65,25 +74,14 @@ long long nPr(long long n, long long r, long long p=numeric_limits<long long>::m
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "math/npr.cpp"
-
-
-
-#ifndef call_include
-#define call_include
-#include <bits/stdc++.h>
-using namespace std;
-#endif
-
-long long nPr(long long n, long long r, long long p=numeric_limits<long long>::max()) {
-	if(n<r) return 0LL;
-
-	long long res=1LL;
-	for(int i=0; i<r; i++) res = res*(n-i)%p;
-	return res;
-}
-
-
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 349, in write_contents
+    bundled_code = language.bundle(self.file_class.file_path, basedir=pathlib.Path.cwd())
+  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 185, in bundle
+    bundler.update(path)
+  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 306, in update
+    raise BundleErrorAt(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
+onlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: math/npr.cpp: line 11: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}
