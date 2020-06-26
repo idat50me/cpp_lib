@@ -15,7 +15,7 @@ using namespace std;
 int main() {
 	vector<ll> fact,inv,finv;
 	pre_mod_comb(2100000,MPRIME,fact,inv,finv);
-	cout<<fact[5]<<" "<<inv[5]<<" "<<finv[5]<<endl;
+	for(int i=0; i<100; i++) cout<<fact[i]<<" "<<inv[i]<<" "<<finv[i]<<endl;
 
 	int T; cin>>T;
 	for(int i=0; i<T; i++) {
