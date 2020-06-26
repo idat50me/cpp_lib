@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :question: pre/macros.cpp
+# :heavy_check_mark: pre/macros.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,13 +38,13 @@ layout: default
 
 ## Required by
 
-* :question: <a href="../combinatorics/mod_ncr.cpp.html">combinatorics/mod_ncr.cpp</a>
+* :heavy_check_mark: <a href="../combinatorics/mod_ncr.cpp.html">combinatorics/mod_ncr.cpp</a>
 * :warning: <a href="../combinatorics/mod_ncr2.cpp.html">combinatorics/mod_ncr2.cpp</a>
-* :x: <a href="../combinatorics/mod_npr.cpp.html">combinatorics/mod_npr.cpp</a>
-* :question: <a href="../combinatorics/ncr.cpp.html">combinatorics/ncr.cpp</a>
-* :question: <a href="../combinatorics/nhr.cpp.html">combinatorics/nhr.cpp</a>
+* :heavy_check_mark: <a href="../combinatorics/mod_npr.cpp.html">combinatorics/mod_npr.cpp</a>
+* :heavy_check_mark: <a href="../combinatorics/ncr.cpp.html">combinatorics/ncr.cpp</a>
+* :heavy_check_mark: <a href="../combinatorics/nhr.cpp.html">combinatorics/nhr.cpp</a>
 * :warning: <a href="../combinatorics/npr.cpp.html">combinatorics/npr.cpp</a>
-* :question: <a href="../combinatorics/pre_mod_comb.cpp.html">combinatorics/pre_mod_comb.cpp</a>
+* :heavy_check_mark: <a href="../combinatorics/pre_mod_comb.cpp.html">combinatorics/pre_mod_comb.cpp</a>
 * :heavy_check_mark: <a href="../math/binpow.cpp.html">math/binpow.cpp</a>
 * :warning: <a href="../math/factorial.cpp.html">math/factorial.cpp</a>
 
@@ -53,7 +53,7 @@ layout: default
 
 * :heavy_check_mark: <a href="../../verify/test/aoj_DPC_5_D.test.cpp.html">test/aoj_DPC_5_D.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj_NTL_1_B.test.cpp.html">test/aoj_NTL_1_B.test.cpp</a>
-* :x: <a href="../../verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
 
 
 ## Code
