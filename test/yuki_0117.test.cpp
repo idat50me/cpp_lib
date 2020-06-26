@@ -45,6 +45,7 @@ int main() {
 			}
 		}
 		switch(mode) {
+			cout<<n<<" "<<r<<" ";
 			case 0:
 				cout<<mod_nCr(n,r,MPRIME,fact,inv,finv)<<endl;
 				break;
