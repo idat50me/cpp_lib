@@ -39,7 +39,7 @@ layout: default
 ### combinatorics
 
 * :x: <a href="library/combinatorics/mod_ncr.cpp.html">combinatorics/mod_ncr.cpp</a>
-* :x: <a href="library/combinatorics/mod_ncr2.cpp.html">combinatorics/mod_ncr2.cpp</a>
+* :warning: <a href="library/combinatorics/mod_ncr2.cpp.html">combinatorics/mod_ncr2.cpp</a>
 * :x: <a href="library/combinatorics/mod_npr.cpp.html">combinatorics/mod_npr.cpp</a>
 * :x: <a href="library/combinatorics/ncr.cpp.html">combinatorics/ncr.cpp</a>
 * :x: <a href="library/combinatorics/nhr.cpp.html">combinatorics/nhr.cpp</a>

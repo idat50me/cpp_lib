@@ -31,14 +31,13 @@ layout: default
 
 * category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
 * <a href="{{ site.github.repository_url }}/blob/master/combinatorics/mod_ncr.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-26 20:22:46+09:00
+    - Last commit date: 2020-06-26 21:10:52+09:00
 
 
 
 
 ## Depends on
 
-* :x: <a href="pre_mod_comb.cpp.html">combinatorics/pre_mod_comb.cpp</a>
 * :question: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
 
 
@@ -67,7 +66,6 @@ using namespace std;
 #endif
 
 #include "pre/macros.cpp"
-#include "combinatorics/pre_mod_comb.cpp"
 
 ll mod_nCr(ll n, ll r, ll p, vector<ll> &fact, vector<ll> &inv, vector<ll> &finv) {
 	if (r > n) return 0;
@@ -101,32 +99,7 @@ using ll = long long;
 #define MMPRIME (1LL<<61)-1
 
 
-#line 1 "combinatorics/pre_mod_comb.cpp"
-
-
-
-#ifndef call_include
-#define call_include
-#include <bits/stdc++.h>
-using namespace std;
-#endif
-
-#line 11 "combinatorics/pre_mod_comb.cpp"
-
-void pre_mod_comb(ll mx, ll p, vector<ll> &fact, vector<ll> &inv, vector<ll> &finv) {
-	fact.resize(mx+1);
-	inv.resize(mx+1);
-	finv.resize(mx+1);
-	fact[0]=fact[1]=inv[1]=finv[0]=finv[1]=1LL;
-	for(ll i=2LL; i<=mx; i++) {
-		fact[i]=fact[i-1]*i%p;
-		inv[i]=p-inv[p%i]*(p/i)%p;
-		finv[i]=finv[i-1]*inv[i]%p;
-	}
-}
-
-
-#line 12 "combinatorics/mod_ncr.cpp"
+#line 11 "combinatorics/mod_ncr.cpp"
 
 ll mod_nCr(ll n, ll r, ll p, vector<ll> &fact, vector<ll> &inv, vector<ll> &finv) {
 	if (r > n) return 0;

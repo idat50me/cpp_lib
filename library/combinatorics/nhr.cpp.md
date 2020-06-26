@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
 * <a href="{{ site.github.repository_url }}/blob/master/combinatorics/nhr.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-26 20:42:17+09:00
+    - Last commit date: 2020-06-26 21:10:52+09:00
 
 
 
@@ -39,9 +39,7 @@ layout: default
 ## Depends on
 
 * :x: <a href="mod_ncr.cpp.html">combinatorics/mod_ncr.cpp</a>
-* :x: <a href="mod_ncr2.cpp.html">combinatorics/mod_ncr2.cpp</a>
 * :x: <a href="ncr.cpp.html">combinatorics/ncr.cpp</a>
-* :x: <a href="pre_mod_comb.cpp.html">combinatorics/pre_mod_comb.cpp</a>
 * :question: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
 
 
@@ -65,22 +63,16 @@ using namespace std;
 #endif
 
 #include "pre/macros.cpp"
-#include "combinatorics/pre_mod_comb.cpp"
 #include "combinatorics/ncr.cpp"
 #include "combinatorics/mod_ncr.cpp"
-#include "combinatorics/mod_ncr2.cpp"
-
-vector<ll> dummy;
 
 ll nHr(ll n, ll r) {
 	if(n==0) return 0;
-	if(r==0) return 1;
 	return nCr(n+r-1,n-1);
 }
 
 ll nHr(ll n, ll r, ll p, vector<ll> &fact, vector<ll> &inv, vector<ll> &finv) {
 	if(n==0) return 0;
-	if(r==0) return 1;
 	return mod_nCr(n+r-1,n-1,p,fact,inv,finv);
 }
 
@@ -110,31 +102,6 @@ using ll = long long;
 
 #define MPRIME (ll)1e9+7
 #define MMPRIME (1LL<<61)-1
-
-
-#line 1 "combinatorics/pre_mod_comb.cpp"
-
-
-
-#ifndef call_include
-#define call_include
-#include <bits/stdc++.h>
-using namespace std;
-#endif
-
-#line 11 "combinatorics/pre_mod_comb.cpp"
-
-void pre_mod_comb(ll mx, ll p, vector<ll> &fact, vector<ll> &inv, vector<ll> &finv) {
-	fact.resize(mx+1);
-	inv.resize(mx+1);
-	finv.resize(mx+1);
-	fact[0]=fact[1]=inv[1]=finv[0]=finv[1]=1LL;
-	for(ll i=2LL; i<=mx; i++) {
-		fact[i]=fact[i-1]*i%p;
-		inv[i]=p-inv[p%i]*(p/i)%p;
-		finv[i]=finv[i-1]*inv[i]%p;
-	}
-}
 
 
 #line 1 "combinatorics/ncr.cpp"
@@ -176,7 +143,7 @@ ll nCr(ll n, ll r) {
 using namespace std;
 #endif
 
-#line 12 "combinatorics/mod_ncr.cpp"
+#line 11 "combinatorics/mod_ncr.cpp"
 
 ll mod_nCr(ll n, ll r, ll p, vector<ll> &fact, vector<ll> &inv, vector<ll> &finv) {
 	if (r > n) return 0;
@@ -184,53 +151,15 @@ ll mod_nCr(ll n, ll r, ll p, vector<ll> &fact, vector<ll> &inv, vector<ll> &finv
 }
 
 
-#line 1 "combinatorics/mod_ncr2.cpp"
-
-
-
-#ifndef call_include
-#define call_include
-#include <bits/stdc++.h>
-using namespace std;
-#endif
-
-#line 11 "combinatorics/mod_ncr2.cpp"
-
-vector<ll> fact2__,inv2__,finv2__;
-ll mod_ncr2_p__;
-
-void pre_mod_nCr2(ll n, ll r, ll p) {
-	mod_ncr2_p__=p;
-	fact2__.resize(r+1);
-	inv2__.resize(r+1);
-	finv2__.resize(r+1);
-	fact2__[0]=n%p, fact2__[1]=n%p*(n-1)%p;
-	inv2__[1]=finv2__[0]=finv2__[1]=1LL;
-	for(ll i=2LL; i<=r; i++) {
-		fact2__[i]=fact2__[i-1]*(n-i)%p;
-		inv2__[i]=p-inv2__[p%i]*(p/i)%p;
-		finv2__[i]=finv2__[i-1]*inv2__[i]%p;
-	}
-}
-
-ll mod_nCr2(ll n, ll r) {
-	return fact2__[r-1]*finv2__[r]%mod_ncr2_p__;
-}
-
-
-#line 15 "combinatorics/nhr.cpp"
-
-vector<ll> dummy;
+#line 13 "combinatorics/nhr.cpp"
 
 ll nHr(ll n, ll r) {
 	if(n==0) return 0;
-	if(r==0) return 1;
 	return nCr(n+r-1,n-1);
 }
 
 ll nHr(ll n, ll r, ll p, vector<ll> &fact, vector<ll> &inv, vector<ll> &finv) {
 	if(n==0) return 0;
-	if(r==0) return 1;
 	return mod_nCr(n+r-1,n-1,p,fact,inv,finv);
 }
 

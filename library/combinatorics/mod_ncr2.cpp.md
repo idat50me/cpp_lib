@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: combinatorics/mod_ncr2.cpp
+# :warning: combinatorics/mod_ncr2.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -39,16 +39,6 @@ layout: default
 ## Depends on
 
 * :question: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
-
-
-## Required by
-
-* :x: <a href="nhr.cpp.html">combinatorics/nhr.cpp</a>
-
-
-## Verified with
-
-* :x: <a href="../../verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
 
 
 ## Code

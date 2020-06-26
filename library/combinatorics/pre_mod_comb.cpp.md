@@ -41,13 +41,6 @@ layout: default
 * :question: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
 
 
-## Required by
-
-* :x: <a href="mod_ncr.cpp.html">combinatorics/mod_ncr.cpp</a>
-* :x: <a href="mod_npr.cpp.html">combinatorics/mod_npr.cpp</a>
-* :x: <a href="nhr.cpp.html">combinatorics/nhr.cpp</a>
-
-
 ## Verified with
 
 * :x: <a href="../../verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>

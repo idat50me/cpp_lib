@@ -39,7 +39,7 @@ layout: default
 ## Required by
 
 * :x: <a href="../combinatorics/mod_ncr.cpp.html">combinatorics/mod_ncr.cpp</a>
-* :x: <a href="../combinatorics/mod_ncr2.cpp.html">combinatorics/mod_ncr2.cpp</a>
+* :warning: <a href="../combinatorics/mod_ncr2.cpp.html">combinatorics/mod_ncr2.cpp</a>
 * :x: <a href="../combinatorics/mod_npr.cpp.html">combinatorics/mod_npr.cpp</a>
 * :x: <a href="../combinatorics/ncr.cpp.html">combinatorics/ncr.cpp</a>
 * :x: <a href="../combinatorics/nhr.cpp.html">combinatorics/nhr.cpp</a>
