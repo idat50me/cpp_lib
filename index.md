@@ -40,19 +40,22 @@ layout: default
 
 * :heavy_check_mark: <a href="library/math/binpow.cpp.html">math/binpow.cpp</a>
 * :warning: <a href="library/math/factorial.cpp.html">math/factorial.cpp</a>
-* :warning: <a href="library/math/npr.cpp.html">math/npr.cpp</a>
+* :x: <a href="library/math/ncr.cpp.html">math/ncr.cpp</a>
+* :x: <a href="library/math/nhr.cpp.html">math/nhr.cpp</a>
+* :x: <a href="library/math/npr.cpp.html">math/npr.cpp</a>
 
 
 <div id="6bf9e70a1f928aba143ef1eebe2720b5"></div>
 
 ### pre
 
-* :heavy_check_mark: <a href="library/pre/macros.cpp.html">pre/macros.cpp</a>
+* :question: <a href="library/pre/macros.cpp.html">pre/macros.cpp</a>
 
 
 ## Verify Files
 
 * :heavy_check_mark: <a href="verify/test/a_example.test.cpp.html">test/a_example.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_NTL_1_B.test.cpp.html">test/aoj_NTL_1_B.test.cpp</a>
+* :x: <a href="verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
 
 

@@ -25,20 +25,25 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: math/npr.cpp
+# :x: math/npr.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/npr.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-26 15:36:58+09:00
+    - Last commit date: 2020-06-26 16:31:05+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
+* :question: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
+
+
+## Verified with
+
+* :x: <a href="../../verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
 
 
 ## Code
@@ -54,10 +59,7 @@ layout: default
 #include <bits/stdc++.h>
 using namespace std;
 #endif
-#ifndef call_macros
-#define call_macros
 #include "pre/macros.cpp"
-#endif
 
 ll nPr(ll n, ll r, ll p=numeric_limits<ll>::max()) {
 	if(n<r) return 0LL;
@@ -74,14 +76,35 @@ ll nPr(ll n, ll r, ll p=numeric_limits<ll>::max()) {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 349, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=pathlib.Path.cwd())
-  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 185, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 306, in update
-    raise BundleErrorAt(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: math/npr.cpp: line 11: unable to process #include in #if / #ifdef / #ifndef other than include guards
+#line 1 "math/npr.cpp"
+
+
+
+#ifndef call_include
+#define call_include
+#include <bits/stdc++.h>
+using namespace std;
+#endif
+#line 1 "pre/macros.cpp"
+
+
+
+using ll = long long;
+
+#define MPRIME 10e9+7
+
+
+#line 10 "math/npr.cpp"
+
+ll nPr(ll n, ll r, ll p=numeric_limits<ll>::max()) {
+	if(n<r) return 0LL;
+
+	ll res=1LL;
+	for(int i=0; i<r; i++) res = res*(n-i)%p;
+	return res;
+}
+
+
 
 ```
 {% endraw %}

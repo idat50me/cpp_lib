@@ -25,12 +25,12 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/binpow.cpp
+# :x: math/nhr.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
-* <a href="{{ site.github.repository_url }}/blob/master/math/binpow.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/math/nhr.cpp">View this file on GitHub</a>
     - Last commit date: 2020-06-26 16:31:05+09:00
 
 
@@ -38,12 +38,13 @@ layout: default
 
 ## Depends on
 
+* :x: <a href="ncr.cpp.html">math/ncr.cpp</a>
 * :question: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj_NTL_1_B.test.cpp.html">test/aoj_NTL_1_B.test.cpp</a>
+* :x: <a href="../../verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
 
 
 ## Code
@@ -51,44 +52,84 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#ifndef lib_binpow
-#define lib_binpow
+#ifndef lib_nhr
+#define lib_nhr
 
 #ifndef call_include
 #define call_include
 #include <bits/stdc++.h>
 using namespace std;
 #endif
-#ifndef call_macros
-#define call_macros
-#include "pre/macros.cpp"
-#endif
 
-ll binpow(ll a, ll ex, ll p=(1LL<<60)) {
-	ll result=1;
-	while(ex>0) {
-		if(ex&1) result=result*a%p;
-		ex>>=1;
-		a=a*a%p;
-	}
-	return result;
+#include "pre/macros.cpp"
+#include "math/ncr.cpp"
+
+ll nHr(ll n, ll r) {
+	return nCr(n+r-1,r-1);
 }
 
-#endif /* lib_binpow */
+#endif // lib_nhr
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 349, in write_contents
-    bundled_code = language.bundle(self.file_class.file_path, basedir=pathlib.Path.cwd())
-  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 185, in bundle
-    bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 306, in update
-    raise BundleErrorAt(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: math/binpow.cpp: line 11: unable to process #include in #if / #ifdef / #ifndef other than include guards
+#line 1 "math/nhr.cpp"
+
+
+
+#ifndef call_include
+#define call_include
+#include <bits/stdc++.h>
+using namespace std;
+#endif
+
+#line 1 "pre/macros.cpp"
+
+
+
+using ll = long long;
+
+#define MPRIME 10e9+7
+
+
+#line 1 "math/ncr.cpp"
+
+
+
+#ifndef call_include
+#define call_include
+#include <bits/stdc++.h>
+using namespace std;
+#endif
+
+#line 11 "math/ncr.cpp"
+
+ll nCr(ll n, ll r) {
+	if(n == r) return 1;
+	if(r > n) return 0;
+	if(n == 0) return 0;
+
+	if(r > n / 2) r = n-r;
+	if(r == 0) return 1;
+
+	ll res = 1;
+	for(ll i = 1; i <= r; i++) {
+		res *= (n - i + 1) / i;
+	}
+
+	return res;
+}
+
+
+#line 12 "math/nhr.cpp"
+
+ll nHr(ll n, ll r) {
+	return nCr(n+r-1,r-1);
+}
+
+
 
 ```
 {% endraw %}
