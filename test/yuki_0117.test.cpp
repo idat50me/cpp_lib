@@ -6,11 +6,14 @@
 using namespace std;
 #endif
 
-#include "math/npr.cpp"
-#include "math/ncr.cpp"
-#include "math/nhr.cpp"
+#include "pre/macros.cpp"
+#include "combinatorics/mod_npr.cpp"
+#include "combinatorics/mod_ncr.cpp"
+#include "combinatorics/nhr.cpp"
 
 int main() {
+	pre_mod_comb(2100000,MPRIME);
+
 	int T; cin>>T;
 	for(int i=0; i<T; i++) {
 		int n=0, r=0, mode;
@@ -42,13 +45,13 @@ int main() {
 		}
 		switch(mode) {
 			case 0:
-				cout<<nCr(n,r)<<endl;
+				cout<<mod_nCr(n,r)<<endl;
 				break;
 			case 1:
-				cout<<nPr(n,r)<<endl;
+				cout<<mod_nPr(n,r)<<endl;
 				break;
 			case 2:
-				cout<<nHr(n,r)<<endl;
+				cout<<nHr(n,r,1)<<endl;
 				break;
 		}
 	}
