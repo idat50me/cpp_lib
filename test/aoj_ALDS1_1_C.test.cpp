@@ -10,7 +10,7 @@ using namespace std;
 #include "math/isprime.cpp"
 
 int main() {
-	Sieve sv(10010);
+	Sieve sv(100010);
 	int n; cin>>n;
 	int res=0;
 	for(int i=0; i<n; i++) {
