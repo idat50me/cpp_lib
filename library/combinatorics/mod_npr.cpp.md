@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
 * <a href="{{ site.github.repository_url }}/blob/master/combinatorics/mod_npr.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-26 17:59:10+09:00
+    - Last commit date: 2020-06-26 18:06:56+09:00
 
 
 
@@ -63,6 +63,9 @@ using namespace std;
 
 #include "pre/macros.cpp"
 #include "combinatorics/pre_mod_comb.cpp"
+
+extern vector<ll> fact__,inv__,finv__;
+extern ll mod_comb_p__;
 
 ll mod_nPr(ll n, ll r) {
 	ll p=mod_comb_p__;
@@ -127,6 +130,9 @@ void pre_mod_comb(ll mx, ll p) {
 
 
 #line 12 "combinatorics/mod_npr.cpp"
+
+extern vector<ll> fact__,inv__,finv__;
+extern ll mod_comb_p__;
 
 ll mod_nPr(ll n, ll r) {
 	ll p=mod_comb_p__;
