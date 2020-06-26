@@ -3,6 +3,7 @@
 
 using ll = long long;
 
-#define MPRIME 10e9+7
+#define MPRIME (ll)10e9+7
+#define MMPRIME (1LL<<61)-1
 
 #endif // lib_macros

@@ -8,7 +8,7 @@ using namespace std;
 #endif
 #include "pre/macros.cpp"
 
-ll nPr(ll n, ll r, ll p=numeric_limits<ll>::max()) {
+ll nPr(ll n, ll r, ll p=MMPRIME) {
 	if(n<r) return 0LL;
 
 	ll res=1LL;
