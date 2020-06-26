@@ -25,20 +25,15 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: test/aoj_0019.test.cpp
+# :warning: math/npr.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/aoj_0019.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-25 23:28:47+09:00
+* category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
+* <a href="{{ site.github.repository_url }}/blob/master/math/npr.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-06-26 15:29:49+09:00
 
 
-
-
-## Depends on
-
-* :x: <a href="../../library/math/factorial.cpp.html">math/factorial.cpp</a>
 
 
 ## Code
@@ -46,8 +41,8 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define IGNORE // テストケース取得不可
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/challenges/sources/PCK/Final/0019"
+#ifndef lib_npr
+#define lib_npr
 
 #ifndef call_include
 #define call_include
@@ -55,29 +50,22 @@ layout: default
 using namespace std;
 #endif
 
-#include "math/factorial.cpp"
+long long nPr(long long n, long long r, long long p=numeric_limits<long long>::max()) {
+	if(n<r) return 0LL;
 
-int main() {
-	int n; cin>>n;
-	cout<<factorial(n)<<endl;
+	long long res=1LL;
+	for(int i=0; i<r; i++) res = res*(n-i)%p;
+	return res;
 }
+
+#endif // lib_npr
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/aoj_0019.test.cpp"
-#define IGNORE // テストケース取得不可
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/challenges/sources/PCK/Final/0019"
-
-#ifndef call_include
-#define call_include
-#include <bits/stdc++.h>
-using namespace std;
-#endif
-
-#line 1 "math/factorial.cpp"
+#line 1 "math/npr.cpp"
 
 
 
@@ -87,19 +75,15 @@ using namespace std;
 using namespace std;
 #endif
 
-long long factorial(long long x, long long p=(1LL<<60)) {
-	long long res=1;
-	while(x>1) res = res*x%p;
+long long nPr(long long n, long long r, long long p=numeric_limits<long long>::max()) {
+	if(n<r) return 0LL;
+
+	long long res=1LL;
+	for(int i=0; i<r; i++) res = res*(n-i)%p;
 	return res;
 }
 
 
-#line 11 "test/aoj_0019.test.cpp"
-
-int main() {
-	int n; cin>>n;
-	cout<<factorial(n)<<endl;
-}
 
 ```
 {% endraw %}
