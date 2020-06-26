@@ -17,15 +17,12 @@ vector<ll> dummy;
 
 // ncrmd is func nCr mode
 // (0: nCr  1: mod_nCr)
-ll nHr(ll n, ll r, ll p=-1, vector<ll> &fact=dummy, vector<ll> &inv=dummy, vector<ll> &finv=dummy, int ncrmd=0) {
-	switch(ncrmd) {
-		case 0:
-			return nCr(n+r-1,r-1);
-		case 1:
-			return mod_nCr(n+r-1,r-1,p,fact,inv,finv);
-		default:
-			return -1;
-	}
+ll nHr(ll n, ll r) {
+	return nCr(n+r-1,n-1);
+}
+
+ll nHr(ll n, ll r, ll p, vector<ll> &fact, vector<ll> &inv, vector<ll> &finv) {
+	return mod_nCr(n+r-1,n-1,p,fact,inv,finv);
 }
 
 #endif // lib_nhr
