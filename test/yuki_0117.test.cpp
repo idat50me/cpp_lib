@@ -7,6 +7,7 @@ using namespace std;
 #endif
 
 #include "pre/macros.cpp"
+#include "combinatorics/pre_mod_comb.cpp"
 #include "combinatorics/mod_npr.cpp"
 #include "combinatorics/mod_ncr.cpp"
 #include "combinatorics/nhr.cpp"
