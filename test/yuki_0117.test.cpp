@@ -18,7 +18,7 @@ int main() {
 
 	int T; cin>>T;
 	for(int i=0; i<T; i++) {
-		int n=0, r=0, mode;
+		int n=0, r=0, mode=-1;
 		string S; cin>>S;
 		bool fn=false;
 		for(int i=0; i<S.length(); i++) {
@@ -55,6 +55,8 @@ int main() {
 			case 2:
 				cout<<nHr(n,r,MPRIME,fact,inv,finv)<<endl;
 				break;
+			default:
+				return 0;
 		}
 	}
 }
