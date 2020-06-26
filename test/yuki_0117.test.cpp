@@ -21,8 +21,8 @@ int main() {
 		int n=0, r=0, mode=-1;
 		string S; cin>>S;
 		bool fn=false;
-		for(int i=0; i<S.length(); i++) {
-			char ch=S[i];
+		for(int j=0; j<S.length(); j++) {
+			char ch=S[j];
 			switch(ch) {
 				case 'C':
 					mode=0;
