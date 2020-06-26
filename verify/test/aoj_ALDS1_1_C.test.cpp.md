@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: test/aoj_ALDS1_1_C.test.cpp
+# :heavy_check_mark: test/aoj_ALDS1_1_C.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj_ALDS1_1_C.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-26 22:22:49+09:00
+    - Last commit date: 2020-06-26 22:24:38+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C">https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../library/math/isprime.cpp.html">math/isprime.cpp</a>
-* :question: <a href="../../library/pre/macros.cpp.html">pre/macros.cpp</a>
+* :heavy_check_mark: <a href="../../library/math/isprime.cpp.html">math/isprime.cpp</a>
+* :heavy_check_mark: <a href="../../library/pre/macros.cpp.html">pre/macros.cpp</a>
 
 
 ## Code
@@ -60,7 +60,7 @@ using namespace std;
 #include "math/isprime.cpp"
 
 int main() {
-	Sieve sv(100010);
+	Sieve sv(100000010);
 	int n; cin>>n;
 	int res=0;
 	for(int i=0; i<n; i++) {
@@ -153,7 +153,7 @@ struct Sieve {
 #line 11 "test/aoj_ALDS1_1_C.test.cpp"
 
 int main() {
-	Sieve sv(100010);
+	Sieve sv(100000010);
 	int n; cin>>n;
 	int res=0;
 	for(int i=0; i<n; i++) {

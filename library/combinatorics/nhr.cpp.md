@@ -40,7 +40,7 @@ layout: default
 
 * :heavy_check_mark: <a href="mod_ncr.cpp.html">combinatorics/mod_ncr.cpp</a>
 * :heavy_check_mark: <a href="ncr.cpp.html">combinatorics/ncr.cpp</a>
-* :question: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
+* :heavy_check_mark: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
 
 
 ## Verified with
