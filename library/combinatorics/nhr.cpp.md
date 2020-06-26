@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
 * <a href="{{ site.github.repository_url }}/blob/master/combinatorics/nhr.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-26 21:27:46+09:00
+    - Last commit date: 2020-06-26 21:55:37+09:00
 
 
 
@@ -68,11 +68,13 @@ using namespace std;
 #include "combinatorics/mod_ncr.cpp"
 
 ll nHr(ll n, ll r) {
+	if(r==0) return 1;
 	if(n==0) return 0;
 	return nCr(n+r-1,n-1);
 }
 
 ll nHr(ll n, ll r, ll p, vector<ll> &fact, vector<ll> &inv, vector<ll> &finv) {
+	if(r==0) return 1;
 	if(n==0) return 0;
 	return mod_nCr(n+r-1,n-1,p,fact,inv,finv);
 }
@@ -155,11 +157,13 @@ ll mod_nCr(ll n, ll r, ll p, vector<ll> &fact, vector<ll> &inv, vector<ll> &finv
 #line 13 "combinatorics/nhr.cpp"
 
 ll nHr(ll n, ll r) {
+	if(r==0) return 1;
 	if(n==0) return 0;
 	return nCr(n+r-1,n-1);
 }
 
 ll nHr(ll n, ll r, ll p, vector<ll> &fact, vector<ll> &inv, vector<ll> &finv) {
+	if(r==0) return 1;
 	if(n==0) return 0;
 	return mod_nCr(n+r-1,n-1,p,fact,inv,finv);
 }

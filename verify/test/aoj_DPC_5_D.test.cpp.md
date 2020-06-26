@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj_DPC_5_D.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-26 21:31:59+09:00
+    - Last commit date: 2020-06-26 21:55:37+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_D">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_D</a>
@@ -180,11 +180,13 @@ ll mod_nCr(ll n, ll r, ll p, vector<ll> &fact, vector<ll> &inv, vector<ll> &finv
 #line 13 "combinatorics/nhr.cpp"
 
 ll nHr(ll n, ll r) {
+	if(r==0) return 1;
 	if(n==0) return 0;
 	return nCr(n+r-1,n-1);
 }
 
 ll nHr(ll n, ll r, ll p, vector<ll> &fact, vector<ll> &inv, vector<ll> &finv) {
+	if(r==0) return 1;
 	if(n==0) return 0;
 	return mod_nCr(n+r-1,n-1,p,fact,inv,finv);
 }
