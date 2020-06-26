@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: pre/macros.cpp
+# :question: pre/macros.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -47,10 +47,12 @@ layout: default
 * :heavy_check_mark: <a href="../combinatorics/pre_mod_comb.cpp.html">combinatorics/pre_mod_comb.cpp</a>
 * :heavy_check_mark: <a href="../math/binpow.cpp.html">math/binpow.cpp</a>
 * :warning: <a href="../math/factorial.cpp.html">math/factorial.cpp</a>
+* :x: <a href="../math/isprime.cpp.html">math/isprime.cpp</a>
 
 
 ## Verified with
 
+* :x: <a href="../../verify/test/aoj_ALDS1_1_C.test.cpp.html">test/aoj_ALDS1_1_C.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj_DPC_5_D.test.cpp.html">test/aoj_DPC_5_D.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj_NTL_1_B.test.cpp.html">test/aoj_NTL_1_B.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>

@@ -53,18 +53,20 @@ layout: default
 
 * :heavy_check_mark: <a href="library/math/binpow.cpp.html">math/binpow.cpp</a>
 * :warning: <a href="library/math/factorial.cpp.html">math/factorial.cpp</a>
+* :x: <a href="library/math/isprime.cpp.html">math/isprime.cpp</a>
 
 
 <div id="6bf9e70a1f928aba143ef1eebe2720b5"></div>
 
 ### pre
 
-* :heavy_check_mark: <a href="library/pre/macros.cpp.html">pre/macros.cpp</a>
+* :question: <a href="library/pre/macros.cpp.html">pre/macros.cpp</a>
 
 
 ## Verify Files
 
 * :heavy_check_mark: <a href="verify/test/a_example.test.cpp.html">test/a_example.test.cpp</a>
+* :x: <a href="verify/test/aoj_ALDS1_1_C.test.cpp.html">test/aoj_ALDS1_1_C.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_DPC_5_D.test.cpp.html">test/aoj_DPC_5_D.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_NTL_1_B.test.cpp.html">test/aoj_NTL_1_B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
