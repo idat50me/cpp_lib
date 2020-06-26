@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/ncr.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-26 16:31:05+09:00
+    - Last commit date: 2020-06-26 16:38:33+09:00
 
 
 
@@ -84,6 +84,7 @@ ll nCr(ll n, ll r) {
 }
 
 #endif // lib_ncr
+
 ```
 {% endraw %}
 
