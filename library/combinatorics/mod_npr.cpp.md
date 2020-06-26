@@ -25,21 +25,26 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: combinatorics/mod_npr.cpp
+# :x: combinatorics/mod_npr.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
 * <a href="{{ site.github.repository_url }}/blob/master/combinatorics/mod_npr.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-26 17:55:02+09:00
+    - Last commit date: 2020-06-26 17:59:10+09:00
 
 
 
 
 ## Depends on
 
-* :warning: <a href="pre_mod_comb.cpp.html">combinatorics/pre_mod_comb.cpp</a>
-* :heavy_check_mark: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
+* :x: <a href="pre_mod_comb.cpp.html">combinatorics/pre_mod_comb.cpp</a>
+* :question: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
+
+
+## Verified with
+
+* :x: <a href="../../verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
 
 
 ## Code
@@ -59,7 +64,7 @@ using namespace std;
 #include "pre/macros.cpp"
 #include "combinatorics/pre_mod_comb.cpp"
 
-ll mod_nCr(ll n, ll r) {
+ll mod_nPr(ll n, ll r) {
 	ll p=mod_comb_p__;
 	if (r > n) return 0;
 	return fact__[n]*finv__[n-r]%p;
@@ -123,7 +128,7 @@ void pre_mod_comb(ll mx, ll p) {
 
 #line 12 "combinatorics/mod_npr.cpp"
 
-ll mod_nCr(ll n, ll r) {
+ll mod_nPr(ll n, ll r) {
 	ll p=mod_comb_p__;
 	if (r > n) return 0;
 	return fact__[n]*finv__[n-r]%p;
