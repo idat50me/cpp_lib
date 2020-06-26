@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: combinatorics/ncr.cpp
+# :question: combinatorics/ncr.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -43,11 +43,12 @@ layout: default
 
 ## Required by
 
-* :x: <a href="nhr.cpp.html">combinatorics/nhr.cpp</a>
+* :question: <a href="nhr.cpp.html">combinatorics/nhr.cpp</a>
 
 
 ## Verified with
 
+* :heavy_check_mark: <a href="../../verify/test/aoj_DPC_5_D.test.cpp.html">test/aoj_DPC_5_D.test.cpp</a>
 * :x: <a href="../../verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
 
 

@@ -38,13 +38,13 @@ layout: default
 
 ### combinatorics
 
-* :x: <a href="library/combinatorics/mod_ncr.cpp.html">combinatorics/mod_ncr.cpp</a>
+* :question: <a href="library/combinatorics/mod_ncr.cpp.html">combinatorics/mod_ncr.cpp</a>
 * :warning: <a href="library/combinatorics/mod_ncr2.cpp.html">combinatorics/mod_ncr2.cpp</a>
 * :x: <a href="library/combinatorics/mod_npr.cpp.html">combinatorics/mod_npr.cpp</a>
-* :x: <a href="library/combinatorics/ncr.cpp.html">combinatorics/ncr.cpp</a>
-* :x: <a href="library/combinatorics/nhr.cpp.html">combinatorics/nhr.cpp</a>
+* :question: <a href="library/combinatorics/ncr.cpp.html">combinatorics/ncr.cpp</a>
+* :question: <a href="library/combinatorics/nhr.cpp.html">combinatorics/nhr.cpp</a>
 * :warning: <a href="library/combinatorics/npr.cpp.html">combinatorics/npr.cpp</a>
-* :x: <a href="library/combinatorics/pre_mod_comb.cpp.html">combinatorics/pre_mod_comb.cpp</a>
+* :question: <a href="library/combinatorics/pre_mod_comb.cpp.html">combinatorics/pre_mod_comb.cpp</a>
 
 
 <div id="7e676e9e663beb40fd133f5ee24487c2"></div>
@@ -65,6 +65,7 @@ layout: default
 ## Verify Files
 
 * :heavy_check_mark: <a href="verify/test/a_example.test.cpp.html">test/a_example.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj_DPC_5_D.test.cpp.html">test/aoj_DPC_5_D.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_NTL_1_B.test.cpp.html">test/aoj_NTL_1_B.test.cpp</a>
 * :x: <a href="verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
 

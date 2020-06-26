@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: combinatorics/mod_ncr.cpp
+# :question: combinatorics/mod_ncr.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
 * <a href="{{ site.github.repository_url }}/blob/master/combinatorics/mod_ncr.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-26 21:10:52+09:00
+    - Last commit date: 2020-06-26 21:27:46+09:00
 
 
 
@@ -43,11 +43,12 @@ layout: default
 
 ## Required by
 
-* :x: <a href="nhr.cpp.html">combinatorics/nhr.cpp</a>
+* :question: <a href="nhr.cpp.html">combinatorics/nhr.cpp</a>
 
 
 ## Verified with
 
+* :heavy_check_mark: <a href="../../verify/test/aoj_DPC_5_D.test.cpp.html">test/aoj_DPC_5_D.test.cpp</a>
 * :x: <a href="../../verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
 
 
@@ -73,6 +74,7 @@ ll mod_nCr(ll n, ll r, ll p, vector<ll> &fact, vector<ll> &inv, vector<ll> &finv
 }
 
 #endif // lib_mod_ncr
+
 ```
 {% endraw %}
 
