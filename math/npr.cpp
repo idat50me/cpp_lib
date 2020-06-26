@@ -6,11 +6,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 #endif
+#ifndef call_macros
+#define call_macros
+#include "pre/macros.cpp"
+#endif
 
-long long nPr(long long n, long long r, long long p=numeric_limits<long long>::max()) {
+ll nPr(ll n, ll r, ll p=numeric_limits<ll>::max()) {
 	if(n<r) return 0LL;
 
-	long long res=1LL;
+	ll res=1LL;
 	for(int i=0; i<r; i++) res = res*(n-i)%p;
 	return res;
 }

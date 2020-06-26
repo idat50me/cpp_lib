@@ -6,9 +6,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 #endif
+#ifndef call_macros
+#define call_macros
+#include "pre/macros.cpp"
+#endif
 
-long long binpow(long long a, long long ex, long long p=(1LL<<60)) {
-	long long result=1;
+ll binpow(ll a, ll ex, ll p=(1LL<<60)) {
+	ll result=1;
 	while(ex>0) {
 		if(ex&1) result=result*a%p;
 		ex>>=1;
