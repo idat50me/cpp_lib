@@ -1,4 +1,4 @@
-// @docs docs/math/sieve_of_eratosthenes.md
+// @docs ../docs/sieve_of_eratosthenes.md
 
 #ifndef lib_sieve_of_eratosthenes
 #define lib_sieve_of_eratosthenes
