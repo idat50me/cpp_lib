@@ -22,10 +22,6 @@ public:
 		mat.resize(h,vector<T>(w));
 	}
 
-	inline vector<T> operator[](size_t idx) const {
-		return mat[idx];
-	}
-
 	inline vector<T>& operator[](size_t idx) {
 		return mat[idx];
 	}
