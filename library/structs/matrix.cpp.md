@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#5a8d55c70c1f3dcbee2f791cd477d649">structs</a>
 * <a href="{{ site.github.repository_url }}/blob/master/structs/matrix.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-30 00:38:22+09:00
+    - Last commit date: 2020-06-30 00:44:56+09:00
 
 
 
@@ -68,10 +68,6 @@ public:
 	void resize(int h, int w) {
 		height=h, width=w;
 		mat.resize(h,vector<T>(w));
-	}
-
-	inline vector<T> operator[](size_t idx) const {
-		return mat[idx];
 	}
 
 	inline vector<T>& operator[](size_t idx) {
@@ -126,10 +122,6 @@ public:
 	void resize(int h, int w) {
 		height=h, width=w;
 		mat.resize(h,vector<T>(w));
-	}
-
-	inline vector<T> operator[](size_t idx) const {
-		return mat[idx];
 	}
 
 	inline vector<T>& operator[](size_t idx) {
