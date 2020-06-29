@@ -31,14 +31,14 @@ layout: default
 
 * category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
 * <a href="{{ site.github.repository_url }}/blob/master/combinatorics/mod_ncr2.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-26 20:22:46+09:00
+    - Last commit date: 2020-06-29 22:12:44+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
+* :question: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
 
 
 ## Code
@@ -95,16 +95,16 @@ ll mod_nCr2(ll n, ll r) {
 using namespace std;
 #endif
 
-#line 1 "pre/macros.cpp"
-
-
+#line 2 "pre/macros.cpp"
+//#ifndef lib_macros
+//#define lib_macros
 
 using ll = long long;
 
 #define MPRIME (ll)1e9+7
 #define MMPRIME (1LL<<61)-1
 
-
+//#endif // lib_macros
 #line 11 "combinatorics/mod_ncr2.cpp"
 
 vector<ll> fact2__,inv2__,finv2__;

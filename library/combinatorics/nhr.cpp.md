@@ -25,28 +25,28 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: combinatorics/nhr.cpp
+# :question: combinatorics/nhr.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
 * <a href="{{ site.github.repository_url }}/blob/master/combinatorics/nhr.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-26 21:55:37+09:00
+    - Last commit date: 2020-06-29 22:12:44+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="mod_ncr.cpp.html">combinatorics/mod_ncr.cpp</a>
-* :heavy_check_mark: <a href="ncr.cpp.html">combinatorics/ncr.cpp</a>
-* :heavy_check_mark: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
+* :question: <a href="mod_ncr.cpp.html">combinatorics/mod_ncr.cpp</a>
+* :question: <a href="ncr.cpp.html">combinatorics/ncr.cpp</a>
+* :question: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
 
 
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj_DPC_5_D.test.cpp.html">test/aoj_DPC_5_D.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
+* :x: <a href="../../verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
 
 
 ## Code
@@ -97,16 +97,16 @@ ll nHr(ll n, ll r, ll p, vector<ll> &fact, vector<ll> &inv, vector<ll> &finv) {
 using namespace std;
 #endif
 
-#line 1 "pre/macros.cpp"
-
-
+#line 2 "pre/macros.cpp"
+//#ifndef lib_macros
+//#define lib_macros
 
 using ll = long long;
 
 #define MPRIME (ll)1e9+7
 #define MMPRIME (1LL<<61)-1
 
-
+//#endif // lib_macros
 #line 1 "combinatorics/ncr.cpp"
 
 

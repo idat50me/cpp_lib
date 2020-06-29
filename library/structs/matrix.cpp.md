@@ -25,25 +25,15 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: combinatorics/mod_npr.cpp
+# :warning: structs/matrix.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
-* <a href="{{ site.github.repository_url }}/blob/master/combinatorics/mod_npr.cpp">View this file on GitHub</a>
+* category: <a href="../../index.html#5a8d55c70c1f3dcbee2f791cd477d649">structs</a>
+* <a href="{{ site.github.repository_url }}/blob/master/structs/matrix.cpp">View this file on GitHub</a>
     - Last commit date: 2020-06-29 22:12:44+09:00
 
 
-
-
-## Depends on
-
-* :question: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
-
-
-## Verified with
-
-* :x: <a href="../../verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
 
 
 ## Code
@@ -51,56 +41,16 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#ifndef lib_mod_npr
-#define lib_mod_npr
+#pragma once
 
-#ifndef call_include
-#define call_include
-#include <bits/stdc++.h>
-using namespace std;
-#endif
 
-#include "pre/macros.cpp"
-
-ll mod_nPr(ll n, ll r, ll p, vector<ll> &fact, vector<ll> &inv, vector<ll> &finv) {
-	if (r > n) return 0;
-	return fact[n]*finv[n-r]%p;
-}
-
-#endif // lib_mod_npr
 ```
 {% endraw %}
 
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "combinatorics/mod_npr.cpp"
-
-
-
-#ifndef call_include
-#define call_include
-#include <bits/stdc++.h>
-using namespace std;
-#endif
-
-#line 2 "pre/macros.cpp"
-//#ifndef lib_macros
-//#define lib_macros
-
-using ll = long long;
-
-#define MPRIME (ll)1e9+7
-#define MMPRIME (1LL<<61)-1
-
-//#endif // lib_macros
-#line 11 "combinatorics/mod_npr.cpp"
-
-ll mod_nPr(ll n, ll r, ll p, vector<ll> &fact, vector<ll> &inv, vector<ll> &finv) {
-	if (r > n) return 0;
-	return fact[n]*finv[n-r]%p;
-}
-
+#line 2 "structs/matrix.cpp"
 
 
 ```

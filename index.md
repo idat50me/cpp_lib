@@ -38,13 +38,13 @@ layout: default
 
 ### combinatorics
 
-* :heavy_check_mark: <a href="library/combinatorics/mod_ncr.cpp.html">combinatorics/mod_ncr.cpp</a>
+* :question: <a href="library/combinatorics/mod_ncr.cpp.html">combinatorics/mod_ncr.cpp</a>
 * :warning: <a href="library/combinatorics/mod_ncr2.cpp.html">combinatorics/mod_ncr2.cpp</a>
-* :heavy_check_mark: <a href="library/combinatorics/mod_npr.cpp.html">combinatorics/mod_npr.cpp</a>
-* :heavy_check_mark: <a href="library/combinatorics/ncr.cpp.html">combinatorics/ncr.cpp</a>
-* :heavy_check_mark: <a href="library/combinatorics/nhr.cpp.html">combinatorics/nhr.cpp</a>
+* :x: <a href="library/combinatorics/mod_npr.cpp.html">combinatorics/mod_npr.cpp</a>
+* :question: <a href="library/combinatorics/ncr.cpp.html">combinatorics/ncr.cpp</a>
+* :question: <a href="library/combinatorics/nhr.cpp.html">combinatorics/nhr.cpp</a>
 * :warning: <a href="library/combinatorics/npr.cpp.html">combinatorics/npr.cpp</a>
-* :heavy_check_mark: <a href="library/combinatorics/pre_mod_comb.cpp.html">combinatorics/pre_mod_comb.cpp</a>
+* :question: <a href="library/combinatorics/pre_mod_comb.cpp.html">combinatorics/pre_mod_comb.cpp</a>
 
 
 <div id="7e676e9e663beb40fd133f5ee24487c2"></div>
@@ -61,7 +61,14 @@ layout: default
 
 ### pre
 
-* :heavy_check_mark: <a href="library/pre/macros.cpp.html">pre/macros.cpp</a>
+* :question: <a href="library/pre/macros.cpp.html">pre/macros.cpp</a>
+
+
+<div id="5a8d55c70c1f3dcbee2f791cd477d649"></div>
+
+### structs
+
+* :warning: <a href="library/structs/matrix.cpp.html">structs/matrix.cpp</a>
 
 
 ## Verify Files
@@ -71,6 +78,6 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj_ALDS1_1_C_2.test.cpp.html">test/aoj_ALDS1_1_C_2.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_DPC_5_D.test.cpp.html">test/aoj_DPC_5_D.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_NTL_1_B.test.cpp.html">test/aoj_NTL_1_B.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
+* :x: <a href="verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
 
 

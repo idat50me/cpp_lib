@@ -25,26 +25,26 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: pre/macros.cpp
+# :question: pre/macros.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#6bf9e70a1f928aba143ef1eebe2720b5">pre</a>
 * <a href="{{ site.github.repository_url }}/blob/master/pre/macros.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-26 20:22:46+09:00
+    - Last commit date: 2020-06-29 22:12:44+09:00
 
 
 
 
 ## Required by
 
-* :heavy_check_mark: <a href="../combinatorics/mod_ncr.cpp.html">combinatorics/mod_ncr.cpp</a>
+* :question: <a href="../combinatorics/mod_ncr.cpp.html">combinatorics/mod_ncr.cpp</a>
 * :warning: <a href="../combinatorics/mod_ncr2.cpp.html">combinatorics/mod_ncr2.cpp</a>
-* :heavy_check_mark: <a href="../combinatorics/mod_npr.cpp.html">combinatorics/mod_npr.cpp</a>
-* :heavy_check_mark: <a href="../combinatorics/ncr.cpp.html">combinatorics/ncr.cpp</a>
-* :heavy_check_mark: <a href="../combinatorics/nhr.cpp.html">combinatorics/nhr.cpp</a>
+* :x: <a href="../combinatorics/mod_npr.cpp.html">combinatorics/mod_npr.cpp</a>
+* :question: <a href="../combinatorics/ncr.cpp.html">combinatorics/ncr.cpp</a>
+* :question: <a href="../combinatorics/nhr.cpp.html">combinatorics/nhr.cpp</a>
 * :warning: <a href="../combinatorics/npr.cpp.html">combinatorics/npr.cpp</a>
-* :heavy_check_mark: <a href="../combinatorics/pre_mod_comb.cpp.html">combinatorics/pre_mod_comb.cpp</a>
+* :question: <a href="../combinatorics/pre_mod_comb.cpp.html">combinatorics/pre_mod_comb.cpp</a>
 * :heavy_check_mark: <a href="../math/binpow.cpp.html">math/binpow.cpp</a>
 * :warning: <a href="../math/factorial.cpp.html">math/factorial.cpp</a>
 * :heavy_check_mark: <a href="../math/isprime.cpp.html">math/isprime.cpp</a>
@@ -57,7 +57,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj_ALDS1_1_C_2.test.cpp.html">test/aoj_ALDS1_1_C_2.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj_DPC_5_D.test.cpp.html">test/aoj_DPC_5_D.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj_NTL_1_B.test.cpp.html">test/aoj_NTL_1_B.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
+* :x: <a href="../../verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
 
 
 ## Code
@@ -65,15 +65,16 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#ifndef lib_macros
-#define lib_macros
+#pragma once
+//#ifndef lib_macros
+//#define lib_macros
 
 using ll = long long;
 
 #define MPRIME (ll)1e9+7
 #define MMPRIME (1LL<<61)-1
 
-#endif // lib_macros
+//#endif // lib_macros
 
 ```
 {% endraw %}
@@ -81,16 +82,16 @@ using ll = long long;
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "pre/macros.cpp"
-
-
+#line 2 "pre/macros.cpp"
+//#ifndef lib_macros
+//#define lib_macros
 
 using ll = long long;
 
 #define MPRIME (ll)1e9+7
 #define MMPRIME (1LL<<61)-1
 
-
+//#endif // lib_macros
 
 ```
 {% endraw %}

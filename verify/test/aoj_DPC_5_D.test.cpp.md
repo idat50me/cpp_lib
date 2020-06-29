@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj_DPC_5_D.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-26 21:55:37+09:00
+    - Last commit date: 2020-06-29 22:12:44+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_D">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_D</a>
@@ -39,11 +39,11 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/combinatorics/mod_ncr.cpp.html">combinatorics/mod_ncr.cpp</a>
-* :heavy_check_mark: <a href="../../library/combinatorics/ncr.cpp.html">combinatorics/ncr.cpp</a>
-* :heavy_check_mark: <a href="../../library/combinatorics/nhr.cpp.html">combinatorics/nhr.cpp</a>
-* :heavy_check_mark: <a href="../../library/combinatorics/pre_mod_comb.cpp.html">combinatorics/pre_mod_comb.cpp</a>
-* :heavy_check_mark: <a href="../../library/pre/macros.cpp.html">pre/macros.cpp</a>
+* :question: <a href="../../library/combinatorics/mod_ncr.cpp.html">combinatorics/mod_ncr.cpp</a>
+* :question: <a href="../../library/combinatorics/ncr.cpp.html">combinatorics/ncr.cpp</a>
+* :question: <a href="../../library/combinatorics/nhr.cpp.html">combinatorics/nhr.cpp</a>
+* :question: <a href="../../library/combinatorics/pre_mod_comb.cpp.html">combinatorics/pre_mod_comb.cpp</a>
+* :question: <a href="../../library/pre/macros.cpp.html">pre/macros.cpp</a>
 
 
 ## Code
@@ -85,16 +85,16 @@ int main() {
 using namespace std;
 #endif
 
-#line 1 "pre/macros.cpp"
-
-
+#line 2 "pre/macros.cpp"
+//#ifndef lib_macros
+//#define lib_macros
 
 using ll = long long;
 
 #define MPRIME (ll)1e9+7
 #define MMPRIME (1LL<<61)-1
 
-
+//#endif // lib_macros
 #line 1 "combinatorics/pre_mod_comb.cpp"
 
 

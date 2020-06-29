@@ -25,26 +25,26 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: combinatorics/pre_mod_comb.cpp
+# :question: combinatorics/pre_mod_comb.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
 * <a href="{{ site.github.repository_url }}/blob/master/combinatorics/pre_mod_comb.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-26 20:22:46+09:00
+    - Last commit date: 2020-06-29 22:12:44+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
+* :question: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
 
 
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj_DPC_5_D.test.cpp.html">test/aoj_DPC_5_D.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
+* :x: <a href="../../verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
 
 
 ## Code
@@ -92,16 +92,16 @@ void pre_mod_comb(ll mx, ll p, vector<ll> &fact, vector<ll> &inv, vector<ll> &fi
 using namespace std;
 #endif
 
-#line 1 "pre/macros.cpp"
-
-
+#line 2 "pre/macros.cpp"
+//#ifndef lib_macros
+//#define lib_macros
 
 using ll = long long;
 
 #define MPRIME (ll)1e9+7
 #define MMPRIME (1LL<<61)-1
 
-
+//#endif // lib_macros
 #line 11 "combinatorics/pre_mod_comb.cpp"
 
 void pre_mod_comb(ll mx, ll p, vector<ll> &fact, vector<ll> &inv, vector<ll> &finv) {
