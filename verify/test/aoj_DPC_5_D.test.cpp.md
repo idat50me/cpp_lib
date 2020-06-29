@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj_DPC_5_D.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-29 22:12:44+09:00
+    - Last commit date: 2020-06-29 22:36:32+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_D">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_D</a>
@@ -85,16 +85,16 @@ int main() {
 using namespace std;
 #endif
 
-#line 2 "pre/macros.cpp"
-//#ifndef lib_macros
-//#define lib_macros
+#line 1 "pre/macros.cpp"
+
+
 
 using ll = long long;
 
 #define MPRIME (ll)1e9+7
 #define MMPRIME (1LL<<61)-1
 
-//#endif // lib_macros
+
 #line 1 "combinatorics/pre_mod_comb.cpp"
 
 

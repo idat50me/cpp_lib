@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
 * <a href="{{ site.github.repository_url }}/blob/master/combinatorics/ncr.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-29 22:12:44+09:00
+    - Last commit date: 2020-06-29 22:36:32+09:00
 
 
 
@@ -102,16 +102,16 @@ ll nCr(ll n, ll r) {
 using namespace std;
 #endif
 
-#line 2 "pre/macros.cpp"
-//#ifndef lib_macros
-//#define lib_macros
+#line 1 "pre/macros.cpp"
+
+
 
 using ll = long long;
 
 #define MPRIME (ll)1e9+7
 #define MMPRIME (1LL<<61)-1
 
-//#endif // lib_macros
+
 #line 11 "combinatorics/ncr.cpp"
 
 ll nCr(ll n, ll r) {

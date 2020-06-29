@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#6bf9e70a1f928aba143ef1eebe2720b5">pre</a>
 * <a href="{{ site.github.repository_url }}/blob/master/pre/macros.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-29 22:12:44+09:00
+    - Last commit date: 2020-06-29 22:36:32+09:00
 
 
 
@@ -56,6 +56,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj_ALDS1_1_C.test.cpp.html">test/aoj_ALDS1_1_C.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj_ALDS1_1_C_2.test.cpp.html">test/aoj_ALDS1_1_C_2.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj_DPC_5_D.test.cpp.html">test/aoj_DPC_5_D.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj_ITP1_6_B.test.cpp.html">test/aoj_ITP1_6_B.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj_NTL_1_B.test.cpp.html">test/aoj_NTL_1_B.test.cpp</a>
 * :x: <a href="../../verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
 
@@ -65,16 +66,15 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#pragma once
-//#ifndef lib_macros
-//#define lib_macros
+#ifndef lib_macros
+#define lib_macros
 
 using ll = long long;
 
 #define MPRIME (ll)1e9+7
 #define MMPRIME (1LL<<61)-1
 
-//#endif // lib_macros
+#endif // lib_macros
 
 ```
 {% endraw %}
@@ -82,16 +82,16 @@ using ll = long long;
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 2 "pre/macros.cpp"
-//#ifndef lib_macros
-//#define lib_macros
+#line 1 "pre/macros.cpp"
+
+
 
 using ll = long long;
 
 #define MPRIME (ll)1e9+7
 #define MMPRIME (1LL<<61)-1
 
-//#endif // lib_macros
+
 
 ```
 {% endraw %}

@@ -25,20 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: structs/matrix.cpp
+# :heavy_check_mark: test/aoj_ITP1_6_B.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#5a8d55c70c1f3dcbee2f791cd477d649">structs</a>
-* <a href="{{ site.github.repository_url }}/blob/master/structs/matrix.cpp">View this file on GitHub</a>
+* category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/aoj_ITP1_6_B.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-06-30 00:38:22+09:00
 
 
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/6/ITP1_6_B">https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/6/ITP1_6_B</a>
 
 
-## Verified with
+## Depends on
 
-* :heavy_check_mark: <a href="../../verify/test/aoj_ITP1_6_B.test.cpp.html">test/aoj_ITP1_6_B.test.cpp</a>
+* :question: <a href="../../library/pre/macros.cpp.html">pre/macros.cpp</a>
+* :heavy_check_mark: <a href="../../library/structs/matrix.cpp.html">structs/matrix.cpp</a>
 
 
 ## Code
@@ -46,8 +48,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#ifndef lib_matrix
-#define lib_matrix
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/6/ITP1_6_B"
 
 #ifndef call_include
 #define call_include
@@ -55,47 +56,29 @@ layout: default
 using namespace std;
 #endif
 
-template<class T>
-class Matrix{
-	vector<vector<T>> mat;
-	int height, width;
+#include "pre/macros.cpp"
+#include "structs/matrix.cpp"
 
-public:
+int main() {
+	int N; cin>>N;
+	Matrix card(4,14,true);
+	map<char,int> ch2i;
+	ch2i['S']=0, ch2i['H']=1, ch2i['C']=2, ch2i['D']=3;
+	map<int,char> i2ch;
+	i2ch[0]='S', i2ch[1]='H', i2ch[2]='C', i2ch[3]='D';
 
-	Matrix(int h=1, int w=1) : height(h), width(w), mat(h,vector<T>(w)) {}
-	Matrix(int h, int w, T n) : height(h), width(w), mat(h,vector<T>(w,n)) {}
-
-	void resize(int h, int w) {
-		height=h, width=w;
-		mat.resize(h,vector<T>(w));
+	for(int i=0; i<N; i++) {
+		char ch; int num;
+		cin>>ch>>num;
+		card[ch2i[ch]][num]=false;
 	}
 
-	inline vector<T> operator[](size_t idx) const {
-		return mat[idx];
-	}
-
-	inline vector<T>& operator[](size_t idx) {
-		return mat[idx];
-	}
-
-	friend istream& operator>>(istream& is, Matrix<T>& mt) {
-		for(int i=0; i<mt.height; i++) for(int j=0; j<mt.width; j++) {
-			is>>mt[i][j];
+	for(int i=0; i<4; i++)for(int j=1; j<=13; j++) {
+		if(card[i][j]) {
+			cout<<i2ch[i]<<" "<<j<<endl;
 		}
-		return is;
 	}
-	friend ostream& operator<<(ostream& os, const Matrix<T>& mt) {
-		for(int i=0; i<mt.height; i++) {
-			for(int j=0; j<mt.width; j++) {
-				os<<mt[i][j]<<" ";
-			}
-			os<<endl;
-		}
-		return os;
-	};
-};
-
-#endif // lib_matrix
+}
 
 ```
 {% endraw %}
@@ -103,6 +86,25 @@ public:
 <a id="bundled"></a>
 {% raw %}
 ```cpp
+#line 1 "test/aoj_ITP1_6_B.test.cpp"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/6/ITP1_6_B"
+
+#ifndef call_include
+#define call_include
+#include <bits/stdc++.h>
+using namespace std;
+#endif
+
+#line 1 "pre/macros.cpp"
+
+
+
+using ll = long long;
+
+#define MPRIME (ll)1e9+7
+#define MMPRIME (1LL<<61)-1
+
+
 #line 1 "structs/matrix.cpp"
 
 
@@ -154,6 +156,28 @@ public:
 };
 
 
+#line 11 "test/aoj_ITP1_6_B.test.cpp"
+
+int main() {
+	int N; cin>>N;
+	Matrix card(4,14,true);
+	map<char,int> ch2i;
+	ch2i['S']=0, ch2i['H']=1, ch2i['C']=2, ch2i['D']=3;
+	map<int,char> i2ch;
+	i2ch[0]='S', i2ch[1]='H', i2ch[2]='C', i2ch[3]='D';
+
+	for(int i=0; i<N; i++) {
+		char ch; int num;
+		cin>>ch>>num;
+		card[ch2i[ch]][num]=false;
+	}
+
+	for(int i=0; i<4; i++)for(int j=1; j<=13; j++) {
+		if(card[i][j]) {
+			cout<<i2ch[i]<<" "<<j<<endl;
+		}
+	}
+}
 
 ```
 {% endraw %}

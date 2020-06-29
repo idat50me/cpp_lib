@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj_ALDS1_1_C_2.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-29 22:12:44+09:00
+    - Last commit date: 2020-06-29 22:36:32+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C">https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C</a>
@@ -84,16 +84,16 @@ int main() {
 using namespace std;
 #endif
 
-#line 2 "pre/macros.cpp"
-//#ifndef lib_macros
-//#define lib_macros
+#line 1 "pre/macros.cpp"
+
+
 
 using ll = long long;
 
 #define MPRIME (ll)1e9+7
 #define MMPRIME (1LL<<61)-1
 
-//#endif // lib_macros
+
 #line 1 "math/isprime.cpp"
 
 
