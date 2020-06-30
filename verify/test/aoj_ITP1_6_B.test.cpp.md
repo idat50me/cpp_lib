@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../library/pre/macros.cpp.html">pre/macros.cpp</a>
+* :heavy_check_mark: <a href="../../library/pre/macros.cpp.html">pre/macros.cpp</a>
 * :heavy_check_mark: <a href="../../library/structs/matrix.cpp.html">structs/matrix.cpp</a>
 
 

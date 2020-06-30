@@ -39,11 +39,11 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../library/combinatorics/mod_ncr.cpp.html">combinatorics/mod_ncr.cpp</a>
-* :question: <a href="../../library/combinatorics/ncr.cpp.html">combinatorics/ncr.cpp</a>
-* :question: <a href="../../library/combinatorics/nhr.cpp.html">combinatorics/nhr.cpp</a>
-* :question: <a href="../../library/combinatorics/pre_mod_comb.cpp.html">combinatorics/pre_mod_comb.cpp</a>
-* :question: <a href="../../library/pre/macros.cpp.html">pre/macros.cpp</a>
+* :heavy_check_mark: <a href="../../library/combinatorics/mod_ncr.cpp.html">combinatorics/mod_ncr.cpp</a>
+* :heavy_check_mark: <a href="../../library/combinatorics/ncr.cpp.html">combinatorics/ncr.cpp</a>
+* :heavy_check_mark: <a href="../../library/combinatorics/nhr.cpp.html">combinatorics/nhr.cpp</a>
+* :heavy_check_mark: <a href="../../library/combinatorics/pre_mod_comb.cpp.html">combinatorics/pre_mod_comb.cpp</a>
+* :heavy_check_mark: <a href="../../library/pre/macros.cpp.html">pre/macros.cpp</a>
 
 
 ## Code
