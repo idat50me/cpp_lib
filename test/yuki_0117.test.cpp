@@ -35,7 +35,6 @@ int main() {
 					break;
 				case ',':
 					fn=true;
-					break;
 				case '(':
 				case ')':
 					break;
