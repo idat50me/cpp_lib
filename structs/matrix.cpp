@@ -21,6 +21,10 @@ public:
 		height=h, width=w;
 		mat.resize(h,vector<T>(w));
 	}
+	void resize(int h, int w, T n) {
+		height=h, width=w;
+		mat.resize(h,vector<T>(w,n));
+	}
 
 	inline vector<T>& operator[](size_t idx) {
 		return mat[idx];
