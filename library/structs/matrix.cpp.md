@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#5a8d55c70c1f3dcbee2f791cd477d649">structs</a>
 * <a href="{{ site.github.repository_url }}/blob/master/structs/matrix.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-04 14:18:35+09:00
+    - Last commit date: 2020-07-04 18:06:24+09:00
 
 
 
@@ -63,8 +63,11 @@ public:
 
 	Matrix(int h, int w, T n=0) { make(h,w,n); }
 
-	void make(int h, int w, T n=0) {
-		mat=vector<vector<T>>(h,vector<T>(w,n));
+	void make(int h, int w) {
+		mat=vector<vector<T>>(h,vector<T>(w));
+	}
+	void make(int h, int w, T init) {
+		mat=vector<vector<T>>(h,vector<T>(w,init));
 	};
 
 	void in() {
@@ -77,7 +80,7 @@ public:
 		for(int i=0; i<mat.size(); i++) {
 			int wm=mat[i].size();
 			for(int j=0; j<wm; j++) {
-				cout<<mat[i][j]<<(wm==j+1 ? "\n" : " ");
+				cout<<mat[i][j]<<(wm==j+1 ? '\n' : ' ');
 			}
 		}
 		cout<<flush;
@@ -115,8 +118,11 @@ public:
 
 	Matrix(int h, int w, T n=0) { make(h,w,n); }
 
-	void make(int h, int w, T n=0) {
-		mat=vector<vector<T>>(h,vector<T>(w,n));
+	void make(int h, int w) {
+		mat=vector<vector<T>>(h,vector<T>(w));
+	}
+	void make(int h, int w, T init) {
+		mat=vector<vector<T>>(h,vector<T>(w,init));
 	};
 
 	void in() {
@@ -129,7 +135,7 @@ public:
 		for(int i=0; i<mat.size(); i++) {
 			int wm=mat[i].size();
 			for(int j=0; j<wm; j++) {
-				cout<<mat[i][j]<<(wm==j+1 ? "\n" : " ");
+				cout<<mat[i][j]<<(wm==j+1 ? '\n' : ' ');
 			}
 		}
 		cout<<flush;

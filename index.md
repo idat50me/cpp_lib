@@ -53,6 +53,7 @@ layout: default
 
 * :heavy_check_mark: <a href="library/math/binpow.cpp.html">math/binpow.cpp</a>
 * :warning: <a href="library/math/factorial.cpp.html">math/factorial.cpp</a>
+* :warning: <a href="library/math/factorlist.cpp.html">math/factorlist.cpp</a>
 * :heavy_check_mark: <a href="library/math/isprime.cpp.html">math/isprime.cpp</a>
 * :heavy_check_mark: <a href="library/math/sieve_of_eratosthenes.cpp.html">math/sieve_of_eratosthenes.cpp</a>
 
