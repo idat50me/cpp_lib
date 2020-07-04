@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#5a8d55c70c1f3dcbee2f791cd477d649">structs</a>
 * <a href="{{ site.github.repository_url }}/blob/master/structs/matrix.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-30 00:44:56+09:00
+    - Last commit date: 2020-07-04 11:20:36+09:00
 
 
 
@@ -69,26 +69,29 @@ public:
 		height=h, width=w;
 		mat.resize(h,vector<T>(w));
 	}
+	void resize(int h, int w, T n) {
+		height=h, width=w;
+		mat.resize(h,vector<T>(w,n));
+	}
+
+	void in() {
+		for(int i=0; i<mat.height; i++) for(int j=0; j<mat.width; j++) {
+			cin>>mat[i][j];
+		}
+	}
+
+	void out() {
+		for(int i=0; i<mat.height; i++) {
+			for(int j=0; j<mat.width; j++) {
+				cout<<mat[i][j]<<" ";
+			}
+			cout<<endl;
+		}
+	}
 
 	inline vector<T>& operator[](size_t idx) {
 		return mat[idx];
 	}
-
-	friend istream& operator>>(istream& is, Matrix<T>& mt) {
-		for(int i=0; i<mt.height; i++) for(int j=0; j<mt.width; j++) {
-			is>>mt[i][j];
-		}
-		return is;
-	}
-	friend ostream& operator<<(ostream& os, const Matrix<T>& mt) {
-		for(int i=0; i<mt.height; i++) {
-			for(int j=0; j<mt.width; j++) {
-				os<<mt[i][j]<<" ";
-			}
-			os<<endl;
-		}
-		return os;
-	};
 };
 
 #endif // lib_matrix
@@ -123,26 +126,29 @@ public:
 		height=h, width=w;
 		mat.resize(h,vector<T>(w));
 	}
+	void resize(int h, int w, T n) {
+		height=h, width=w;
+		mat.resize(h,vector<T>(w,n));
+	}
+
+	void in() {
+		for(int i=0; i<mat.height; i++) for(int j=0; j<mat.width; j++) {
+			cin>>mat[i][j];
+		}
+	}
+
+	void out() {
+		for(int i=0; i<mat.height; i++) {
+			for(int j=0; j<mat.width; j++) {
+				cout<<mat[i][j]<<" ";
+			}
+			cout<<endl;
+		}
+	}
 
 	inline vector<T>& operator[](size_t idx) {
 		return mat[idx];
 	}
-
-	friend istream& operator>>(istream& is, Matrix<T>& mt) {
-		for(int i=0; i<mt.height; i++) for(int j=0; j<mt.width; j++) {
-			is>>mt[i][j];
-		}
-		return is;
-	}
-	friend ostream& operator<<(ostream& os, const Matrix<T>& mt) {
-		for(int i=0; i<mt.height; i++) {
-			for(int j=0; j<mt.width; j++) {
-				os<<mt[i][j]<<" ";
-			}
-			os<<endl;
-		}
-		return os;
-	};
 };
 
 
