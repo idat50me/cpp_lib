@@ -15,8 +15,11 @@ public:
 
 	Matrix(int h, int w, T n=0) { make(h,w,n); }
 
-	void make(int h, int w, T n=0) {
-		mat=vector<vector<T>>(h,vector<T>(w,n));
+	void make(int h, int w) {
+		mat=vector<vector<T>>(h,vector<T>(w));
+	}
+	void make(int h, int w, T init) {
+		mat=vector<vector<T>>(h,vector<T>(w,init));
 	};
 
 	void in() {
@@ -29,7 +32,7 @@ public:
 		for(int i=0; i<mat.size(); i++) {
 			int wm=mat[i].size();
 			for(int j=0; j<wm; j++) {
-				cout<<mat[i][j]<<(wm==j+1 ? "\n" : " ");
+				cout<<mat[i][j]<<(wm==j+1 ? '\n' : ' ');
 			}
 		}
 		cout<<flush;
