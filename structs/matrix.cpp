@@ -26,25 +26,24 @@ public:
 		mat.resize(h,vector<T>(w,n));
 	}
 
+	void in() {
+		for(int i=0; i<mat.height; i++) for(int j=0; j<mat.width; j++) {
+			cin>>mat[i][j];
+		}
+	}
+
+	void out() {
+		for(int i=0; i<mat.height; i++) {
+			for(int j=0; j<mat.width; j++) {
+				cout<<mat[i][j]<<" ";
+			}
+			cout<<endl;
+		}
+	}
+
 	inline vector<T>& operator[](size_t idx) {
 		return mat[idx];
 	}
-
-	friend istream& operator>>(istream& is, Matrix<T>& mt) {
-		for(int i=0; i<mt.height; i++) for(int j=0; j<mt.width; j++) {
-			is>>mt[i][j];
-		}
-		return is;
-	}
-	friend ostream& operator<<(ostream& os, const Matrix<T>& mt) {
-		for(int i=0; i<mt.height; i++) {
-			for(int j=0; j<mt.width; j++) {
-				os<<mt[i][j]<<" ";
-			}
-			os<<endl;
-		}
-		return os;
-	};
 };
 
 #endif // lib_matrix
