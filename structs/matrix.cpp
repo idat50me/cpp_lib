@@ -13,6 +13,8 @@ class Matrix{
 
 public:
 
+	Matrix(int h, int w, T n=0) { make(h,w,n); }
+
 	void make(int h, int w, T n=0) {
 		mat=vector<vector<T>>(h,vector<T>(w,n));
 	};
