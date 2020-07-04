@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#5a8d55c70c1f3dcbee2f791cd477d649">structs</a>
 * <a href="{{ site.github.repository_url }}/blob/master/structs/matrix.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-04 14:03:02+09:00
+    - Last commit date: 2020-07-04 14:18:35+09:00
 
 
 
@@ -75,11 +75,12 @@ public:
 
 	void out() {
 		for(int i=0; i<mat.size(); i++) {
-			for(int j=0; j<mat[i].size(); j++) {
-				cout<<mat[i][j]<<" ";
+			int wm=mat[i].size();
+			for(int j=0; j<wm; j++) {
+				cout<<mat[i][j]<<(wm==j+1 ? "\n" : " ");
 			}
-			cout<<endl;
 		}
+		cout<<flush;
 	}
 
 	inline vector<T> &operator[](int idx) {
@@ -126,11 +127,12 @@ public:
 
 	void out() {
 		for(int i=0; i<mat.size(); i++) {
-			for(int j=0; j<mat[i].size(); j++) {
-				cout<<mat[i][j]<<" ";
+			int wm=mat[i].size();
+			for(int j=0; j<wm; j++) {
+				cout<<mat[i][j]<<(wm==j+1 ? "\n" : " ");
 			}
-			cout<<endl;
 		}
+		cout<<flush;
 	}
 
 	inline vector<T> &operator[](int idx) {

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj_ITP1_6_B.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-04 14:03:02+09:00
+    - Last commit date: 2020-07-04 14:18:35+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/6/ITP1_6_B">https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/6/ITP1_6_B</a>
@@ -135,11 +135,12 @@ public:
 
 	void out() {
 		for(int i=0; i<mat.size(); i++) {
-			for(int j=0; j<mat[i].size(); j++) {
-				cout<<mat[i][j]<<" ";
+			int wm=mat[i].size();
+			for(int j=0; j<wm; j++) {
+				cout<<mat[i][j]<<(wm==j+1 ? "\n" : " ");
 			}
-			cout<<endl;
 		}
+		cout<<flush;
 	}
 
 	inline vector<T> &operator[](int idx) {
