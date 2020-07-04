@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#5a8d55c70c1f3dcbee2f791cd477d649">structs</a>
 * <a href="{{ site.github.repository_url }}/blob/master/structs/matrix.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-04 11:20:36+09:00
+    - Last commit date: 2020-07-04 14:03:02+09:00
 
 
 
@@ -58,38 +58,32 @@ using namespace std;
 template<class T>
 class Matrix{
 	vector<vector<T>> mat;
-	int height, width;
 
 public:
 
-	Matrix(int h=1, int w=1) : height(h), width(w), mat(h,vector<T>(w)) {}
-	Matrix(int h, int w, T n) : height(h), width(w), mat(h,vector<T>(w,n)) {}
+	Matrix(int h, int w, T n=0) { make(h,w,n); }
 
-	void resize(int h, int w) {
-		height=h, width=w;
-		mat.resize(h,vector<T>(w));
-	}
-	void resize(int h, int w, T n) {
-		height=h, width=w;
-		mat.resize(h,vector<T>(w,n));
-	}
+	void make(int h, int w, T n=0) {
+		mat=vector<vector<T>>(h,vector<T>(w,n));
+	};
 
 	void in() {
-		for(int i=0; i<mat.height; i++) for(int j=0; j<mat.width; j++) {
+		for(int i=0; i<mat.size(); i++) for(int j=0; j<mat[i].size(); j++) {
 			cin>>mat[i][j];
 		}
 	}
 
 	void out() {
-		for(int i=0; i<mat.height; i++) {
-			for(int j=0; j<mat.width; j++) {
+		for(int i=0; i<mat.size(); i++) {
+			for(int j=0; j<mat[i].size(); j++) {
 				cout<<mat[i][j]<<" ";
 			}
 			cout<<endl;
 		}
 	}
 
-	inline vector<T>& operator[](size_t idx) {
+	inline vector<T> &operator[](int idx) {
+		assert(0<=idx && idx<mat.size());
 		return mat[idx];
 	}
 };
@@ -115,38 +109,32 @@ using namespace std;
 template<class T>
 class Matrix{
 	vector<vector<T>> mat;
-	int height, width;
 
 public:
 
-	Matrix(int h=1, int w=1) : height(h), width(w), mat(h,vector<T>(w)) {}
-	Matrix(int h, int w, T n) : height(h), width(w), mat(h,vector<T>(w,n)) {}
+	Matrix(int h, int w, T n=0) { make(h,w,n); }
 
-	void resize(int h, int w) {
-		height=h, width=w;
-		mat.resize(h,vector<T>(w));
-	}
-	void resize(int h, int w, T n) {
-		height=h, width=w;
-		mat.resize(h,vector<T>(w,n));
-	}
+	void make(int h, int w, T n=0) {
+		mat=vector<vector<T>>(h,vector<T>(w,n));
+	};
 
 	void in() {
-		for(int i=0; i<mat.height; i++) for(int j=0; j<mat.width; j++) {
+		for(int i=0; i<mat.size(); i++) for(int j=0; j<mat[i].size(); j++) {
 			cin>>mat[i][j];
 		}
 	}
 
 	void out() {
-		for(int i=0; i<mat.height; i++) {
-			for(int j=0; j<mat.width; j++) {
+		for(int i=0; i<mat.size(); i++) {
+			for(int j=0; j<mat[i].size(); j++) {
 				cout<<mat[i][j]<<" ";
 			}
 			cout<<endl;
 		}
 	}
 
-	inline vector<T>& operator[](size_t idx) {
+	inline vector<T> &operator[](int idx) {
+		assert(0<=idx && idx<mat.size());
 		return mat[idx];
 	}
 };
