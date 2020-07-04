@@ -27,11 +27,12 @@ public:
 
 	void out() {
 		for(int i=0; i<mat.size(); i++) {
-			for(int j=0; j<mat[i].size(); j++) {
-				cout<<mat[i][j]<<" ";
+			int wm=mat[i].size();
+			for(int j=0; j<wm; j++) {
+				cout<<mat[i][j]<<(wm==j+1 ? "\n" : " ");
 			}
-			cout<<endl;
 		}
+		cout<<flush;
 	}
 
 	inline vector<T> &operator[](int idx) {
