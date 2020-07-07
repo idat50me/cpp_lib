@@ -70,6 +70,7 @@ layout: default
 ### structs
 
 * :heavy_check_mark: <a href="library/structs/matrix.cpp.html">structs/matrix.cpp</a>
+* :warning: <a href="library/structs/vertex.cpp.html">structs/vertex.cpp</a>
 
 
 ## Verify Files
