@@ -31,9 +31,13 @@ layout: default
 
 * category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
 * <a href="{{ site.github.repository_url }}/blob/master/combinatorics/combinatorics.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-12 14:35:39+09:00
+    - Last commit date: 2020-07-12 15:20:26+09:00
 
 
+
+
+# 概要
+そのうち...
 
 
 ## Depends on
@@ -51,6 +55,8 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+// @docs ./docs/combinatorics.md
+
 #ifndef lib_combinatorics
 #define lib_combinatorics
 
@@ -113,72 +119,14 @@ public:
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "combinatorics/combinatorics.cpp"
-
-
-
-#ifndef call_include
-#define call_include
-#include <bits/stdc++.h>
-using namespace std;
-#endif
-
-#line 1 "pre/macros.cpp"
-
-
-
-using ll = long long;
-
-#define MPRIME (ll)1e9+7
-#define MMPRIME (1LL<<61)-1
-
-
-#line 11 "combinatorics/combinatorics.cpp"
-
-struct Combinatorics {
-private:
-	vector<ll> fact_, inv_, finv_;
-	ll P;
-
-	void pre_mod_comb(ll mx) {
-		fact_.resize(mx+1);
-		inv_.resize(mx+1);
-		finv_.resize(mx+1);
-		fact_[0] = fact_[1] = inv_[1] = finv_[0] = finv_[1] = 1LL;
-		for(ll i=2LL; i<=mx; i++) {
-			fact_[i] = fact_[i-1]*i%P;
-			inv_[i] = P-inv_[P%i]*(P/i)%P;
-			finv_[i] = finv_[i-1]*inv_[i]%P;
-		}
-	}
-
-public:
-	Combinatorics(ll mx, ll p) {
-		P=p;
-		pre_mod_comb(mx);
-	}
-
-	ll nPr(ll n, ll r) {
-		assert(n>=0 && r>=0);
-		if (r > n) return 0;
-		return fact_[n]*finv_[n-r]%P;
-	}
-
-	ll nCr(ll n, ll r) {
-		assert(n>=0 && r>=0);
-		if (r > n) return 0;
-		return fact_[n]*finv_[r]%P*finv_[n-r]%P;
-	}
-
-	ll nHr(ll n, ll r) {
-		assert(n>=0 && r>=0);
-		if(r == 0) return 1;
-		if(n == 0) return 0;
-		return nCr(n+r-1,n-1);
-	}
-};
-
-
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 349, in write_contents
+    bundled_code = language.bundle(self.file_class.file_path, basedir=pathlib.Path.cwd())
+  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 185, in bundle
+    bundler.update(path)
+  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 306, in update
+    raise BundleErrorAt(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
+onlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: combinatorics/combinatorics.cpp: line 12: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}
