@@ -1,5 +1,5 @@
-#ifndef lib_factorlist
-#define lib_factorlist
+#ifndef lib_divisor
+#define lib_divisor
 
 #ifndef call_include
 #define call_include
@@ -9,7 +9,7 @@ using namespace std;
 
 #include "pre/macros.cpp"
 
-vector<ll> divisorlist(ll x) {
+vector<ll> divisor(ll x) {
 	vector<ll> result;
 	ll i=1;
 	for( ; i*i<x; i++) {
@@ -24,4 +24,4 @@ vector<ll> divisorlist(ll x) {
 	return result;
 }
 
-#endif // lib_factorlist
+#endif // lib_divisor
