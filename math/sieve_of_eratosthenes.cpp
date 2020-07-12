@@ -26,16 +26,20 @@ struct Sieve {
 		}
 	}
 
-	bool isprime(int x) { return f[x]==x; }
+	bool isprime(int x) {
+		return f[x]==x;
+	}
 
 	vector<pair<int,int>> primefact(int n) {
 		vector<pair<int,int>> res;
 		for(int i=0; i<primes.size() && n>1; i++) {
+			if((ll)primes[i]*primes[i]>n) break;
 			int cnt=0;
 			while(n%primes[i]==0) {
 				n/=primes[i];
 				cnt++;
 			}
+			if(n>1) res.push_back({n,1});
 			if(cnt) res.push_back({primes[i],cnt});
 		}
 		return res;
