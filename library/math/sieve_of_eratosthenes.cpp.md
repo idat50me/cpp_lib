@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/sieve_of_eratosthenes.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-13 02:29:15+09:00
+    - Last commit date: 2020-07-13 02:44:46+09:00
 
 
 
@@ -48,6 +48,7 @@ layout: default
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj_ALDS1_1_C.test.cpp.html">test/aoj_ALDS1_1_C.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj_NTL_1_A.test.cpp.html">test/aoj_NTL_1_A.test.cpp</a>
 
 
 ## Code
@@ -85,12 +86,12 @@ struct Sieve {
 
 	bool isprime(int x) { return f[x]==x; }
 
-	vector<pair<int,int>> primefact(int x) {
+	vector<pair<int,int>> primefact(int n) {
 		vector<pair<int,int>> res;
-		for(int i=0; i<primes.size() && x>1; i++) {
+		for(int i=0; i<primes.size() && n>1; i++) {
 			int cnt=0;
-			while(x%primes[i]==0) {
-				x/=primes[i];
+			while(n%primes[i]==0) {
+				n/=primes[i];
 				cnt++;
 			}
 			if(cnt) res.push_back({primes[i],cnt});
@@ -98,9 +99,9 @@ struct Sieve {
 		return res;
 	}
 
-	int divisorcount(int x) {
+	int divisorcount(int n) {
 		int res=1;
-		vector<pair<int,int>> fl=primefact(x);
+		vector<pair<int,int>> fl=primefact(n);
 		for(int i=0; i<fl.size(); i++) {
 			res*=fl[i].second;
 		}

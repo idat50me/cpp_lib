@@ -81,6 +81,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj_ALDS1_1_C_2.test.cpp.html">test/aoj_ALDS1_1_C_2.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_DPC_5_D.test.cpp.html">test/aoj_DPC_5_D.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_ITP1_6_B.test.cpp.html">test/aoj_ITP1_6_B.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj_NTL_1_A.test.cpp.html">test/aoj_NTL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_NTL_1_B.test.cpp.html">test/aoj_NTL_1_B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yuki_0117_2.test.cpp.html">test/yuki_0117_2.test.cpp</a>

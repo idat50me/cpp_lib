@@ -25,16 +25,16 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj_ALDS1_1_C.test.cpp
+# :heavy_check_mark: test/aoj_NTL_1_A.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/aoj_ALDS1_1_C.test.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/aoj_NTL_1_A.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-07-13 02:44:46+09:00
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C">https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C</a>
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A">https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A</a>
 
 
 ## Depends on
@@ -48,7 +48,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A"
 
 #ifndef call_include
 #define call_include
@@ -56,18 +56,20 @@ layout: default
 using namespace std;
 #endif
 
-#include "pre/macros.cpp"
 #include "math/sieve_of_eratosthenes.cpp"
 
 int main() {
-	Sieve sv(100000010);
 	int n; cin>>n;
-	int res=0;
-	for(int i=0; i<n; i++) {
-		int a; cin>>a;
-		if(sv.isprime(a)) res++;
+	Sieve sv(n);
+	vector<pair<int,int>> flist=sv.primefact(n);
+
+	cout<<n<<':';
+	for(int i=0; i<flist.size(); i++) {
+		for(int j=0; j<flist[i].second; j++) {
+			cout<<" "<<flist[i].first;
+		}
 	}
-	cout<<res<<endl;
+	cout<<endl;
 }
 
 ```
