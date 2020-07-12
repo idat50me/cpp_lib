@@ -3,13 +3,12 @@
 [![GitHub Pages](https://img.shields.io/static/v1?label=GitHub+Pages&message=+&color=brightgreen&logo=github)](https://idat50me.github.io/cpp_lib/)
 
 ## あとまわし
-- [エラトステネスの篩のdocs](math/docs/sieve_of_eratosthenes.md)
 - combinatoricsをすべてまとめる
 	- [まとめた](combinatorics/combinatorics.cpp)ので[r依存のnCr](combinatorics/mod_ncr2.cpp)をいい感じに整理できるとよし
-	- [docs](combinatorics/docs/combinatorics.md)をかく
 
 ## そのうちつくりたいもの
 - セグ木（RMQ，区間和）
 - modint
 - 木構造struct（vertex,edgeを内包する）
 - 最大フロー・最小カット（Ford Fulkersonのアルゴリズム）
+- 約数列挙（すぐ書ける）
