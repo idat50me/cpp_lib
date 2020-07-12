@@ -39,9 +39,9 @@ struct Sieve {
 				n/=primes[i];
 				cnt++;
 			}
-			if(n>1) res.push_back({n,1});
 			if(cnt) res.push_back({primes[i],cnt});
 		}
+		if(n>1) res.push_back({n,1});
 		return res;
 	}
 
