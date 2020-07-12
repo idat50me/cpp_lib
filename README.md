@@ -6,6 +6,8 @@ C++の競プロライブラリを突っ込まないかもしれない
 
 ## あとまわし
 - [エラトステネスの篩のdocs](math/docs/sieve_of_eratosthenes.md)
+- combinatoricsをすべてまとめる
+	- max(n) と法 p を引数とするstructを作ればいける？（r依存のnCrを作るのが難しそう）
 
 ## そのうちつくりたいもの
 - セグ木（RMQ，区間和）
