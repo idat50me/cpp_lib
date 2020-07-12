@@ -16,7 +16,8 @@
 	- 素因数分解
 	- $\\{素因数,個数\\}$のpairのvectorを返す
 	- 計算量は最悪 $O(\pi(\sqrt{n})) \approx O(\sqrt{n})$ ※未証明
-		$n < 10^5$ で $\frac{n}{10} < \pi(n) < n$ らしいのでたぶんそんなもん（[素数計数関数 - Wikipedia](https://ja.wikipedia.org/wiki/%E7%B4%A0%E6%95%B0%E8%A8%88%E6%95%B0%E9%96%A2%E6%95%B0)）
+		- $n < 10^5$ で $\frac{n}{10} < \pi(n) < n$ らしいのでたぶんそんなもん
+		- [素数計数関数 - Wikipedia](https://ja.wikipedia.org/wiki/%E7%B4%A0%E6%95%B0%E8%A8%88%E6%95%B0%E9%96%A2%E6%95%B0)
 
 - `divisorcount(n)`
 	- $n$ の約数の個数
