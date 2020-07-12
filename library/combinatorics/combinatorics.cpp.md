@@ -31,14 +31,29 @@ layout: default
 
 * category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
 * <a href="{{ site.github.repository_url }}/blob/master/combinatorics/combinatorics.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-12 15:20:26+09:00
+    - Last commit date: 2020-07-13 00:53:33+09:00
 
 
 
 
-# 概要
-そのうち...
+## なにこれ
+${}_nP_r, \:{}_nC_r, \:{}_nH_r \:(\mathrm{mod}\ p)\:$を求める．
 
+## コンストラクタ
+- `Combinatorics(mx, p)`
+	- `mx`：$n\:$の最大値．ただし$\:{}_nH_r\:$を求める場合は$\:(n+r-1)\:$の最大値．
+	- `p`：値の法．素数に限る．
+	- 計算量は$\:O(n)$
+
+## メンバ関数
+- `nPr(n, r)`
+	- 計算量は$\:O(1)$
+
+- `nCr(n, r)`
+	- 計算量は$\:O(1)$
+
+- `nHr(n, r)`
+	- 計算量は$\:O(1)$
 
 ## Depends on
 
@@ -70,18 +85,18 @@ using namespace std;
 
 struct Combinatorics {
 private:
-	vector<ll> fact_, inv_, finv_;
+	vector<ll> fact, inv, finv;
 	ll P;
 
 	void pre_mod_comb(ll mx) {
-		fact_.resize(mx+1);
-		inv_.resize(mx+1);
-		finv_.resize(mx+1);
-		fact_[0] = fact_[1] = inv_[1] = finv_[0] = finv_[1] = 1LL;
+		fact.resize(mx+1);
+		inv.resize(mx+1);
+		finv.resize(mx+1);
+		fact[0] = fact[1] = inv[1] = finv[0] = finv[1] = 1LL;
 		for(ll i=2LL; i<=mx; i++) {
-			fact_[i] = fact_[i-1]*i%P;
-			inv_[i] = P-inv_[P%i]*(P/i)%P;
-			finv_[i] = finv_[i-1]*inv_[i]%P;
+			fact[i] = fact[i-1]*i%P;
+			inv[i] = P-inv[P%i]*(P/i)%P;
+			finv[i] = finv[i-1]*inv[i]%P;
 		}
 	}
 
@@ -94,13 +109,13 @@ public:
 	ll nPr(ll n, ll r) {
 		assert(n>=0 && r>=0);
 		if (r > n) return 0;
-		return fact_[n]*finv_[n-r]%P;
+		return fact[n]*finv[n-r]%P;
 	}
 
 	ll nCr(ll n, ll r) {
 		assert(n>=0 && r>=0);
 		if (r > n) return 0;
-		return fact_[n]*finv_[r]%P*finv_[n-r]%P;
+		return fact[n]*finv[r]%P*finv[n-r]%P;
 	}
 
 	ll nHr(ll n, ll r) {
