@@ -38,6 +38,7 @@ layout: default
 
 ## Required by
 
+* :heavy_check_mark: <a href="../combinatorics/combinatorics.cpp.html">combinatorics/combinatorics.cpp</a>
 * :heavy_check_mark: <a href="../combinatorics/mod_ncr.cpp.html">combinatorics/mod_ncr.cpp</a>
 * :warning: <a href="../combinatorics/mod_ncr2.cpp.html">combinatorics/mod_ncr2.cpp</a>
 * :heavy_check_mark: <a href="../combinatorics/mod_npr.cpp.html">combinatorics/mod_npr.cpp</a>
@@ -60,6 +61,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj_ITP1_6_B.test.cpp.html">test/aoj_ITP1_6_B.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj_NTL_1_B.test.cpp.html">test/aoj_NTL_1_B.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yuki_0117_2.test.cpp.html">test/yuki_0117_2.test.cpp</a>
 
 
 ## Code
