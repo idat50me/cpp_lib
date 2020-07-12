@@ -47,8 +47,8 @@ layout: default
 * :warning: <a href="../combinatorics/npr.cpp.html">combinatorics/npr.cpp</a>
 * :heavy_check_mark: <a href="../combinatorics/pre_mod_comb.cpp.html">combinatorics/pre_mod_comb.cpp</a>
 * :heavy_check_mark: <a href="../math/binpow.cpp.html">math/binpow.cpp</a>
+* :heavy_check_mark: <a href="../math/divisor.cpp.html">math/divisor.cpp</a>
 * :warning: <a href="../math/factorial.cpp.html">math/factorial.cpp</a>
-* :warning: <a href="../math/factorlist.cpp.html">math/factorlist.cpp</a>
 * :heavy_check_mark: <a href="../math/isprime.cpp.html">math/isprime.cpp</a>
 * :heavy_check_mark: <a href="../math/sieve_of_eratosthenes.cpp.html">math/sieve_of_eratosthenes.cpp</a>
 
@@ -63,6 +63,7 @@ layout: default
 * :heavy_check_mark: <a href="../../verify/test/aoj_NTL_1_B.test.cpp.html">test/aoj_NTL_1_B.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yuki_0117_2.test.cpp.html">test/yuki_0117_2.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yuki_0888.test.cpp.html">test/yuki_0888.test.cpp</a>
 
 
 ## Code

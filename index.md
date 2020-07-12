@@ -53,8 +53,8 @@ layout: default
 ### math
 
 * :heavy_check_mark: <a href="library/math/binpow.cpp.html">math/binpow.cpp</a>
+* :heavy_check_mark: <a href="library/math/divisor.cpp.html">math/divisor.cpp</a>
 * :warning: <a href="library/math/factorial.cpp.html">math/factorial.cpp</a>
-* :warning: <a href="library/math/factorlist.cpp.html">math/factorlist.cpp</a>
 * :heavy_check_mark: <a href="library/math/isprime.cpp.html">math/isprime.cpp</a>
 * :heavy_check_mark: <a href="library/math/sieve_of_eratosthenes.cpp.html">math/sieve_of_eratosthenes.cpp</a>
 
@@ -85,5 +85,6 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj_NTL_1_B.test.cpp.html">test/aoj_NTL_1_B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yuki_0117_2.test.cpp.html">test/yuki_0117_2.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yuki_0888.test.cpp.html">test/yuki_0888.test.cpp</a>
 
 
