@@ -13,18 +13,18 @@ using namespace std;
 
 struct Combinatorics {
 private:
-	vector<ll> fact_, inv_, finv_;
+	vector<ll> fact, inv, finv;
 	ll P;
 
 	void pre_mod_comb(ll mx) {
-		fact_.resize(mx+1);
-		inv_.resize(mx+1);
-		finv_.resize(mx+1);
-		fact_[0] = fact_[1] = inv_[1] = finv_[0] = finv_[1] = 1LL;
+		fact.resize(mx+1);
+		inv.resize(mx+1);
+		finv.resize(mx+1);
+		fact[0] = fact[1] = inv[1] = finv[0] = finv[1] = 1LL;
 		for(ll i=2LL; i<=mx; i++) {
-			fact_[i] = fact_[i-1]*i%P;
-			inv_[i] = P-inv_[P%i]*(P/i)%P;
-			finv_[i] = finv_[i-1]*inv_[i]%P;
+			fact[i] = fact[i-1]*i%P;
+			inv[i] = P-inv[P%i]*(P/i)%P;
+			finv[i] = finv[i-1]*inv[i]%P;
 		}
 	}
 
@@ -37,13 +37,13 @@ public:
 	ll nPr(ll n, ll r) {
 		assert(n>=0 && r>=0);
 		if (r > n) return 0;
-		return fact_[n]*finv_[n-r]%P;
+		return fact[n]*finv[n-r]%P;
 	}
 
 	ll nCr(ll n, ll r) {
 		assert(n>=0 && r>=0);
 		if (r > n) return 0;
-		return fact_[n]*finv_[r]%P*finv_[n-r]%P;
+		return fact[n]*finv[r]%P*finv[n-r]%P;
 	}
 
 	ll nHr(ll n, ll r) {
