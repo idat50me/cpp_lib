@@ -31,17 +31,17 @@ layout: default
 
 * category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
 * <a href="{{ site.github.repository_url }}/blob/master/combinatorics/combinatorics.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-13 00:53:33+09:00
+    - Last commit date: 2020-07-13 02:29:15+09:00
 
 
 
 
 ## なにこれ
-$_nP_r, _nC_r, _nH_r\ (\mathrm{mod}\ p)$ を求める．
+${}_nP_r, {}_nC_r, {}_nH_r\ (\mathrm{mod}\ p)$ を求める．
 
 ## コンストラクタ
 - `Combinatorics(mx, p)`
-	- `mx`：$n$ の最大値．ただし $_nH_r$ を求める場合は $(n+r-1)$ の最大値．
+	- `mx`：$n$ の最大値．ただし ${}_nH_r$ を求める場合は $(n+r-1)$ の最大値．
 	- `p`：値の法．素数に限る．
 	- 計算量は $O(n)$
 
@@ -104,7 +104,15 @@ private:
 public:
 	Combinatorics(ll mx, ll p) {
 		P=p;
-		pre_mod_comb(mx);
+		fact.resize(mx+1);
+		inv.resize(mx+1);
+		finv.resize(mx+1);
+		fact[0] = fact[1] = inv[1] = finv[0] = finv[1] = 1LL;
+		for(ll i=2LL; i<=mx; i++) {
+			fact[i] = fact[i-1]*i%P;
+			inv[i] = P-inv[P%i]*(P/i)%P;
+			finv[i] = finv[i-1]*inv[i]%P;
+		}
 	}
 
 	ll nPr(ll n, ll r) {
