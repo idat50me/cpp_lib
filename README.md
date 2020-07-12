@@ -2,12 +2,11 @@
 [![Actions Status](https://github.com/idat50me/cpp_lib/workflows/verify/badge.svg)](https://github.com/idat50me/cpp_lib/actions)
 [![GitHub Pages](https://img.shields.io/static/v1?label=GitHub+Pages&message=+&color=brightgreen&logo=github)](https://idat50me.github.io/cpp_lib/)
 
-C++の競プロライブラリを突っ込まないかもしれない
-
 ## あとまわし
 - [エラトステネスの篩のdocs](math/docs/sieve_of_eratosthenes.md)
 - combinatoricsをすべてまとめる
-	- max(n) と法 p を引数とするstructを作ればいける？（r依存のnCrを作るのが難しそう）
+	- [まとめた](combinatorics/combinatorics.cpp)ので[r依存のnCr](combinatorics/mod_ncr2.cpp)をいい感じに整理できるとよし
+	- [docs](combinatorics/docs/combinatorics.md)をかく
 
 ## そのうちつくりたいもの
 - セグ木（RMQ，区間和）

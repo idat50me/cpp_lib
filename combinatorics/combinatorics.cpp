@@ -1,3 +1,5 @@
+// @docs ./docs/combinatorics.md
+
 #ifndef lib_combinatorics
 #define lib_combinatorics
 
