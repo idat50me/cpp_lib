@@ -31,7 +31,15 @@ private:
 public:
 	Combinatorics(ll mx, ll p) {
 		P=p;
-		pre_mod_comb(mx);
+		fact.resize(mx+1);
+		inv.resize(mx+1);
+		finv.resize(mx+1);
+		fact[0] = fact[1] = inv[1] = finv[0] = finv[1] = 1LL;
+		for(ll i=2LL; i<=mx; i++) {
+			fact[i] = fact[i-1]*i%P;
+			inv[i] = P-inv[P%i]*(P/i)%P;
+			finv[i] = finv[i-1]*inv[i]%P;
+		}
 	}
 
 	ll nPr(ll n, ll r) {
