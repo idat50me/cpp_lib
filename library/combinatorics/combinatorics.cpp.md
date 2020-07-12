@@ -37,7 +37,7 @@ layout: default
 
 
 ## なにこれ
-${}_nP_r, \:{}_nC_r, \:{}_nH_r \:(\mathrm{mod}\ p)\:$を求める．
+${}_nP_r, {}_nC_r, {}_nH_r (\mathrm{mod}\ p)$を求める．
 
 ## コンストラクタ
 - `Combinatorics(mx, p)`
