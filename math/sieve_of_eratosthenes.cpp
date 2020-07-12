@@ -28,12 +28,12 @@ struct Sieve {
 
 	bool isprime(int x) { return f[x]==x; }
 
-	vector<pair<int,int>> primefact(int x) {
+	vector<pair<int,int>> primefact(int n) {
 		vector<pair<int,int>> res;
-		for(int i=0; i<primes.size() && x>1; i++) {
+		for(int i=0; i<primes.size() && n>1; i++) {
 			int cnt=0;
-			while(x%primes[i]==0) {
-				x/=primes[i];
+			while(n%primes[i]==0) {
+				n/=primes[i];
 				cnt++;
 			}
 			if(cnt) res.push_back({primes[i],cnt});
@@ -41,9 +41,9 @@ struct Sieve {
 		return res;
 	}
 
-	int divisorcount(int x) {
+	int divisorcount(int n) {
 		int res=1;
-		vector<pair<int,int>> fl=primefact(x);
+		vector<pair<int,int>> fl=primefact(n);
 		for(int i=0; i<fl.size(); i++) {
 			res*=fl[i].second;
 		}
