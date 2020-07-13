@@ -43,6 +43,7 @@ layout: default
 * :warning: <a href="library/combinatorics/mod_ncr2.cpp.html">combinatorics/mod_ncr2.cpp</a>
 * :heavy_check_mark: <a href="library/combinatorics/mod_npr.cpp.html">combinatorics/mod_npr.cpp</a>
 * :heavy_check_mark: <a href="library/combinatorics/ncr.cpp.html">combinatorics/ncr.cpp</a>
+* :warning: <a href="library/combinatorics/ncr2.cpp.html">${}_nC_r$ ( $n \geq 10^7$ ) <small>(combinatorics/ncr2.cpp)</small></a>
 * :heavy_check_mark: <a href="library/combinatorics/nhr.cpp.html">combinatorics/nhr.cpp</a>
 * :warning: <a href="library/combinatorics/npr.cpp.html">combinatorics/npr.cpp</a>
 * :heavy_check_mark: <a href="library/combinatorics/pre_mod_comb.cpp.html">combinatorics/pre_mod_comb.cpp</a>
