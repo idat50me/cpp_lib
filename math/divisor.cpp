@@ -1,6 +1,5 @@
 /*
  * @title Divisor(約数列挙)
- * @docs 
  */
 
 #ifndef lib_divisor

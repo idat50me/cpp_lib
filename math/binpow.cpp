@@ -1,6 +1,5 @@
 /*
  * @title Binary-Power(繰り返し二乗法)
- * @docs 
  */
 
 #ifndef lib_binpow

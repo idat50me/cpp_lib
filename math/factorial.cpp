@@ -1,6 +1,5 @@
 /*
  * @title Factorial(階乗)
- * @docs 
  */
 
 #ifndef lib_factorial

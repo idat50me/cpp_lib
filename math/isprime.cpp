@@ -1,6 +1,5 @@
 /*
  * @brief Isprime(素数判定)
- * @docs 
  */
 
 #ifndef lib_isprime
