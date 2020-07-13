@@ -38,7 +38,7 @@ layout: default
 
 ## Required by
 
-* :heavy_check_mark: <a href="../combinatorics/combinatorics.cpp.html">combinatorics/combinatorics.cpp</a>
+* :heavy_check_mark: <a href="../combinatorics/combinatorics.cpp.html">Combinatorics(組合せ数学) <small>(combinatorics/combinatorics.cpp)</small></a>
 * :heavy_check_mark: <a href="../combinatorics/mod_ncr.cpp.html">combinatorics/mod_ncr.cpp</a>
 * :warning: <a href="../combinatorics/mod_ncr2.cpp.html">combinatorics/mod_ncr2.cpp</a>
 * :heavy_check_mark: <a href="../combinatorics/mod_npr.cpp.html">combinatorics/mod_npr.cpp</a>
@@ -46,11 +46,11 @@ layout: default
 * :heavy_check_mark: <a href="../combinatorics/nhr.cpp.html">combinatorics/nhr.cpp</a>
 * :warning: <a href="../combinatorics/npr.cpp.html">combinatorics/npr.cpp</a>
 * :heavy_check_mark: <a href="../combinatorics/pre_mod_comb.cpp.html">combinatorics/pre_mod_comb.cpp</a>
-* :heavy_check_mark: <a href="../math/binpow.cpp.html">math/binpow.cpp</a>
-* :heavy_check_mark: <a href="../math/divisor.cpp.html">math/divisor.cpp</a>
-* :warning: <a href="../math/factorial.cpp.html">math/factorial.cpp</a>
-* :heavy_check_mark: <a href="../math/isprime.cpp.html">math/isprime.cpp</a>
-* :heavy_check_mark: <a href="../math/sieve_of_eratosthenes.cpp.html">math/sieve_of_eratosthenes.cpp</a>
+* :heavy_check_mark: <a href="../math/binpow.cpp.html">Binary-Power(繰り返し二乗法)</a>
+* :heavy_check_mark: <a href="../math/divisor.cpp.html">Divisor(約数列挙)</a>
+* :warning: <a href="../math/factorial.cpp.html">Factorial(階乗)</a>
+* :heavy_check_mark: <a href="../math/isprime.cpp.html">Isprime(素数判定) <small>(math/isprime.cpp)</small></a>
+* :heavy_check_mark: <a href="../math/sieve_of_eratosthenes.cpp.html">Sieve-of-Eratosthenes(エラトステネスの篩) <small>(math/sieve_of_eratosthenes.cpp)</small></a>
 
 
 ## Verified with

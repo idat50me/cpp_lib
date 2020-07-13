@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: combinatorics/combinatorics.cpp
+# :heavy_check_mark: Combinatorics(組合せ数学) <small>(combinatorics/combinatorics.cpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
 * <a href="{{ site.github.repository_url }}/blob/master/combinatorics/combinatorics.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-13 02:29:15+09:00
+    - Last commit date: 2020-07-14 02:10:50+09:00
 
 
 
@@ -71,7 +71,10 @@ ${}_nP_r, {}_nC_r, {}_nH_r\ (\mathrm{mod}\ p)$ を求める．
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-// @docs ./docs/combinatorics.md
+/*
+ * @brief Combinatorics(組合せ数学)
+ * @docs ./docs/combinatorics.md
+ */
 
 #ifndef lib_combinatorics
 #define lib_combinatorics
@@ -150,7 +153,7 @@ Traceback (most recent call last):
     bundler.update(path)
   File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 306, in update
     raise BundleErrorAt(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: combinatorics/combinatorics.cpp: line 12: unable to process #include in #if / #ifdef / #ifndef other than include guards
+onlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: combinatorics/combinatorics.cpp: line 15: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}

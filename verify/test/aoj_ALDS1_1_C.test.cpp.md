@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj_ALDS1_1_C.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-13 02:54:28+09:00
+    - Last commit date: 2020-07-14 02:10:50+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C">https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/math/sieve_of_eratosthenes.cpp.html">math/sieve_of_eratosthenes.cpp</a>
+* :heavy_check_mark: <a href="../../library/math/sieve_of_eratosthenes.cpp.html">Sieve-of-Eratosthenes(エラトステネスの篩) <small>(math/sieve_of_eratosthenes.cpp)</small></a>
 * :heavy_check_mark: <a href="../../library/pre/macros.cpp.html">pre/macros.cpp</a>
 
 
@@ -85,7 +85,7 @@ Traceback (most recent call last):
     self.update(self._resolve(pathlib.Path(included), included_from=path))
   File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 306, in update
     raise BundleErrorAt(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: math/sieve_of_eratosthenes.cpp: line 12: unable to process #include in #if / #ifdef / #ifndef other than include guards
+onlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: math/sieve_of_eratosthenes.cpp: line 15: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}

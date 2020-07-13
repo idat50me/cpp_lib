@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: structs/matrix.cpp
+# :heavy_check_mark: Matrix($2$ 次元行列) <small>(structs/matrix.cpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#5a8d55c70c1f3dcbee2f791cd477d649">structs</a>
 * <a href="{{ site.github.repository_url }}/blob/master/structs/matrix.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-04 18:06:24+09:00
+    - Last commit date: 2020-07-14 02:40:26+09:00
 
 
 
@@ -46,6 +46,10 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+/*
+ * @brief Matrix($2$ 次元行列)
+ */
+
 #ifndef lib_matrix
 #define lib_matrix
 
@@ -101,8 +105,12 @@ public:
 {% raw %}
 ```cpp
 #line 1 "structs/matrix.cpp"
+/*
+ * @brief Matrix($2$ 次元行列)
+ */
 
-
+#ifndef lib_matrix
+#define lib_matrix
 
 #ifndef call_include
 #define call_include
@@ -147,7 +155,7 @@ public:
 	}
 };
 
-
+#endif // lib_matrix
 
 ```
 {% endraw %}

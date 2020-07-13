@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: math/divisor.cpp
+# :heavy_check_mark: Divisor(約数列挙)
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/divisor.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-13 07:30:35+09:00
+    - Last commit date: 2020-07-14 02:40:26+09:00
 
 
 
@@ -51,6 +51,10 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+/*
+ * @title Divisor(約数列挙)
+ */
+
 #ifndef lib_divisor
 #define lib_divisor
 
@@ -63,18 +67,18 @@ using namespace std;
 #include "pre/macros.cpp"
 
 vector<ll> divisor(ll x) {
-	vector<ll> result;
-	ll i=1;
-	for( ; i*i<x; i++) {
+	vector<ll> res;
+	ll i = 1;
+	for( ; i*i < x; i++) {
 		if(x%i) continue;
-		result.push_back(i);
-		result.push_back(x/i);
+		res.push_back(i);
+		res.push_back(x/i);
 	}
-	if(i*i==x&&x%i==0)
-		result.push_back(i);
+	if(i*i==x && x%i==0)
+		res.push_back(i);
 	
-	sort(result.begin(),result.end());
-	return result;
+	sort(res.begin(),res.end());
+	return res;
 }
 
 #endif // lib_divisor
@@ -85,44 +89,14 @@ vector<ll> divisor(ll x) {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "math/divisor.cpp"
-
-
-
-#ifndef call_include
-#define call_include
-#include <bits/stdc++.h>
-using namespace std;
-#endif
-
-#line 1 "pre/macros.cpp"
-
-
-
-using ll = long long;
-
-#define MPRIME (ll)1e9+7
-#define MMPRIME (1LL<<61)-1
-
-
-#line 11 "math/divisor.cpp"
-
-vector<ll> divisor(ll x) {
-	vector<ll> result;
-	ll i=1;
-	for( ; i*i<x; i++) {
-		if(x%i) continue;
-		result.push_back(i);
-		result.push_back(x/i);
-	}
-	if(i*i==x&&x%i==0)
-		result.push_back(i);
-	
-	sort(result.begin(),result.end());
-	return result;
-}
-
-
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 349, in write_contents
+    bundled_code = language.bundle(self.file_class.file_path, basedir=pathlib.Path.cwd())
+  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 185, in bundle
+    bundler.update(path)
+  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 306, in update
+    raise BundleErrorAt(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
+onlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: math/divisor.cpp: line 14: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}

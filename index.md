@@ -38,7 +38,7 @@ layout: default
 
 ### combinatorics
 
-* :heavy_check_mark: <a href="library/combinatorics/combinatorics.cpp.html">combinatorics/combinatorics.cpp</a>
+* :heavy_check_mark: <a href="library/combinatorics/combinatorics.cpp.html">Combinatorics(組合せ数学) <small>(combinatorics/combinatorics.cpp)</small></a>
 * :heavy_check_mark: <a href="library/combinatorics/mod_ncr.cpp.html">combinatorics/mod_ncr.cpp</a>
 * :warning: <a href="library/combinatorics/mod_ncr2.cpp.html">combinatorics/mod_ncr2.cpp</a>
 * :heavy_check_mark: <a href="library/combinatorics/mod_npr.cpp.html">combinatorics/mod_npr.cpp</a>
@@ -52,11 +52,11 @@ layout: default
 
 ### math
 
-* :heavy_check_mark: <a href="library/math/binpow.cpp.html">math/binpow.cpp</a>
-* :heavy_check_mark: <a href="library/math/divisor.cpp.html">math/divisor.cpp</a>
-* :warning: <a href="library/math/factorial.cpp.html">math/factorial.cpp</a>
-* :heavy_check_mark: <a href="library/math/isprime.cpp.html">math/isprime.cpp</a>
-* :heavy_check_mark: <a href="library/math/sieve_of_eratosthenes.cpp.html">math/sieve_of_eratosthenes.cpp</a>
+* :heavy_check_mark: <a href="library/math/binpow.cpp.html">Binary-Power(繰り返し二乗法)</a>
+* :heavy_check_mark: <a href="library/math/divisor.cpp.html">Divisor(約数列挙)</a>
+* :warning: <a href="library/math/factorial.cpp.html">Factorial(階乗)</a>
+* :heavy_check_mark: <a href="library/math/isprime.cpp.html">Isprime(素数判定) <small>(math/isprime.cpp)</small></a>
+* :heavy_check_mark: <a href="library/math/sieve_of_eratosthenes.cpp.html">Sieve-of-Eratosthenes(エラトステネスの篩) <small>(math/sieve_of_eratosthenes.cpp)</small></a>
 
 
 <div id="6bf9e70a1f928aba143ef1eebe2720b5"></div>
@@ -70,7 +70,7 @@ layout: default
 
 ### structs
 
-* :heavy_check_mark: <a href="library/structs/matrix.cpp.html">structs/matrix.cpp</a>
+* :heavy_check_mark: <a href="library/structs/matrix.cpp.html">Matrix($2$ 次元行列) <small>(structs/matrix.cpp)</small></a>
 * :warning: <a href="library/structs/vertex.cpp.html">structs/vertex.cpp</a>
 
 
