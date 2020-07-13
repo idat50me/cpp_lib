@@ -1,5 +1,5 @@
 /*
- * @title Combinatorics(組合せ数学)
+ * @brief Combinatorics(組合せ数学)
  * @docs ./docs/combinatorics.md
  */
 

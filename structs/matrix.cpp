@@ -1,5 +1,5 @@
 /*
- * @title Matrix($2$ 次元行列)
+ * @brief Matrix($2$ 次元行列)
  * @docs 
  */
 

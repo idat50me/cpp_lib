@@ -1,5 +1,5 @@
 /*
- * @title Sieve-of-Eratosthenes(エラトステネスの篩)
+ * @brief Sieve-of-Eratosthenes(エラトステネスの篩)
  * @docs ./docs/sieve_of_eratosthenes.md
  */
 

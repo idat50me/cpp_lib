@@ -1,5 +1,5 @@
 /*
- * @title Isprime(素数判定)
+ * @brief Isprime(素数判定)
  * @docs 
  */
 
