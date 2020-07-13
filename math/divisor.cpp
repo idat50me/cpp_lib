@@ -1,5 +1,5 @@
 /*
- * @title Divisor(約数列挙)
+ * @brief Divisor(約数列挙)
  */
 
 #ifndef lib_divisor

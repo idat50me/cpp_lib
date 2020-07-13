@@ -1,5 +1,5 @@
 /*
- * @title Binary-Power(繰り返し二乗法)
+ * @brief Binary-Power(繰り返し二乗法)
  */
 
 #ifndef lib_binpow
