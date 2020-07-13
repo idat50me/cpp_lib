@@ -46,9 +46,9 @@ layout: default
 * :heavy_check_mark: <a href="../combinatorics/nhr.cpp.html">combinatorics/nhr.cpp</a>
 * :warning: <a href="../combinatorics/npr.cpp.html">combinatorics/npr.cpp</a>
 * :heavy_check_mark: <a href="../combinatorics/pre_mod_comb.cpp.html">combinatorics/pre_mod_comb.cpp</a>
-* :heavy_check_mark: <a href="../math/binpow.cpp.html">Binary-Power(繰り返し二乗法)</a>
-* :heavy_check_mark: <a href="../math/divisor.cpp.html">Divisor(約数列挙)</a>
-* :warning: <a href="../math/factorial.cpp.html">Factorial(階乗)</a>
+* :heavy_check_mark: <a href="../math/binpow.cpp.html">Binary-Power(繰り返し二乗法) <small>(math/binpow.cpp)</small></a>
+* :heavy_check_mark: <a href="../math/divisor.cpp.html">Divisor(約数列挙) <small>(math/divisor.cpp)</small></a>
+* :warning: <a href="../math/factorial.cpp.html">Factorial(階乗) <small>(math/factorial.cpp)</small></a>
 * :heavy_check_mark: <a href="../math/isprime.cpp.html">Isprime(素数判定) <small>(math/isprime.cpp)</small></a>
 * :heavy_check_mark: <a href="../math/sieve_of_eratosthenes.cpp.html">Sieve-of-Eratosthenes(エラトステネスの篩) <small>(math/sieve_of_eratosthenes.cpp)</small></a>
 

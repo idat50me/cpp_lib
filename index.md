@@ -52,9 +52,9 @@ layout: default
 
 ### math
 
-* :heavy_check_mark: <a href="library/math/binpow.cpp.html">Binary-Power(繰り返し二乗法)</a>
-* :heavy_check_mark: <a href="library/math/divisor.cpp.html">Divisor(約数列挙)</a>
-* :warning: <a href="library/math/factorial.cpp.html">Factorial(階乗)</a>
+* :heavy_check_mark: <a href="library/math/binpow.cpp.html">Binary-Power(繰り返し二乗法) <small>(math/binpow.cpp)</small></a>
+* :heavy_check_mark: <a href="library/math/divisor.cpp.html">Divisor(約数列挙) <small>(math/divisor.cpp)</small></a>
+* :warning: <a href="library/math/factorial.cpp.html">Factorial(階乗) <small>(math/factorial.cpp)</small></a>
 * :heavy_check_mark: <a href="library/math/isprime.cpp.html">Isprime(素数判定) <small>(math/isprime.cpp)</small></a>
 * :heavy_check_mark: <a href="library/math/sieve_of_eratosthenes.cpp.html">Sieve-of-Eratosthenes(エラトステネスの篩) <small>(math/sieve_of_eratosthenes.cpp)</small></a>
 
@@ -70,7 +70,7 @@ layout: default
 
 ### structs
 
-* :heavy_check_mark: <a href="library/structs/matrix.cpp.html">Matrix($2$ 次元行列) <small>(structs/matrix.cpp)</small></a>
+* :heavy_check_mark: <a href="library/structs/matrix.cpp.html">Matrix( $2$ 次元行列) <small>(structs/matrix.cpp)</small></a>
 * :warning: <a href="library/structs/vertex.cpp.html">structs/vertex.cpp</a>
 
 
