@@ -1,3 +1,8 @@
+/*
+ * @title Divisor(約数列挙)
+ * @docs 
+ */
+
 #ifndef lib_divisor
 #define lib_divisor
 
@@ -10,18 +15,18 @@ using namespace std;
 #include "pre/macros.cpp"
 
 vector<ll> divisor(ll x) {
-	vector<ll> result;
-	ll i=1;
-	for( ; i*i<x; i++) {
+	vector<ll> res;
+	ll i = 1;
+	for( ; i*i < x; i++) {
 		if(x%i) continue;
-		result.push_back(i);
-		result.push_back(x/i);
+		res.push_back(i);
+		res.push_back(x/i);
 	}
-	if(i*i==x&&x%i==0)
-		result.push_back(i);
+	if(i*i==x && x%i==0)
+		res.push_back(i);
 	
-	sort(result.begin(),result.end());
-	return result;
+	sort(res.begin(),res.end());
+	return res;
 }
 
 #endif // lib_divisor

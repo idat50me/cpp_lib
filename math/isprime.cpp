@@ -1,3 +1,8 @@
+/*
+ * @title Isprime(素数判定)
+ * @docs 
+ */
+
 #ifndef lib_isprime
 #define lib_isprime
 

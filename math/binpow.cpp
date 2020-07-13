@@ -1,3 +1,8 @@
+/*
+ * @title Binary-Power(繰り返し二乗法)
+ * @docs 
+ */
+
 #ifndef lib_binpow
 #define lib_binpow
 
@@ -10,13 +15,13 @@ using namespace std;
 #include "pre/macros.cpp"
 
 ll binpow(ll a, ll ex, ll p=(1LL<<60)) {
-	ll result=1;
-	while(ex>0) {
-		if(ex&1) result=result*a%p;
+	ll res = 1;
+	while(ex > 0) {
+		if(ex & 1) res = res*a%p;
 		ex>>=1;
-		a=a*a%p;
+		a = a*a%p;
 	}
-	return result;
+	return res;
 }
 
 #endif /* lib_binpow */

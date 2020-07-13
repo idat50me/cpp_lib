@@ -1,4 +1,7 @@
-// @docs ./docs/combinatorics.md
+/*
+ * @title Combinatorics(組合せ数学)
+ * @docs ./docs/combinatorics.md
+ */
 
 #ifndef lib_combinatorics
 #define lib_combinatorics
