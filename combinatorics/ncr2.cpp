@@ -24,7 +24,7 @@ private:
 		finv.resize(r+1);
 		inv[1] = finv[0] = finv[1]=1LL;
 		for(int i=2; i<=r; i++) {
-			inv[i] = inv[P%i]*(P/i)%P;
+			inv[i] = P-inv[P%i]*(P/i)%P;
 			finv[i] = finv[i-1]*inv[i]%P;
 		}
 	}
