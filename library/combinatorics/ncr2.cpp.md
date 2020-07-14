@@ -25,13 +25,15 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: ${}_nC_r$ ( $n \geq 10^7$ ) <small>(combinatorics/ncr2.cpp)</small>
+# :warning: nCr mod p ($r \leq 10^7$) <small>(combinatorics/ncr2.cpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
 * <a href="{{ site.github.repository_url }}/blob/master/combinatorics/ncr2.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-14 03:51:05+09:00
+    - Last commit date: 2020-07-14 16:59:20+09:00
+
+
 
 
 
@@ -47,7 +49,8 @@ layout: default
 {% raw %}
 ```cpp
 /*
- * @brief ${}_nC_r$ ( $n \geq 10^7$ )
+ * @brief nCr mod p ($r \leq 10^7$)
+ * @docs ./docs/ncr2.md
  */
 
 #ifndef lib_ncr2
@@ -101,7 +104,7 @@ Traceback (most recent call last):
     bundler.update(path)
   File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 306, in update
     raise BundleErrorAt(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: combinatorics/ncr2.cpp: line 14: unable to process #include in #if / #ifdef / #ifndef other than include guards
+onlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: combinatorics/ncr2.cpp: line 15: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}
