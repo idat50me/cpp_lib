@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: nCr mod p ($r \leq 10^7$) <small>(combinatorics/ncr2.cpp)</small>
+# :heavy_check_mark: nCr mod p ($r \leq 10^7$) <small>(combinatorics/ncr2.cpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
@@ -66,13 +66,13 @@ ${}_nC_r\ (\mathrm{mod}\ p)$ を求める．
 
 ## Depends on
 
-* :question: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
+* :heavy_check_mark: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
 
 
 ## Verified with
 
-* :x: <a href="../../verify/test/aoj_DPL_5_E.test.cpp.html">test/aoj_DPL_5_E.test.cpp</a>
-* :x: <a href="../../verify/test/aoj_DPL_5_E_2.test.cpp.html">test/aoj_DPL_5_E_2.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj_DPL_5_E.test.cpp.html">test/aoj_DPL_5_E.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj_DPL_5_E_2.test.cpp.html">test/aoj_DPL_5_E_2.test.cpp</a>
 
 
 ## Code

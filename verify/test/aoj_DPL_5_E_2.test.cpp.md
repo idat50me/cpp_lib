@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: test/aoj_DPL_5_E_2.test.cpp
+# :heavy_check_mark: test/aoj_DPL_5_E_2.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj_DPL_5_E_2.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-14 18:36:28+09:00
+    - Last commit date: 2020-07-14 18:42:18+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/problems/DPL_5_E">https://onlinejudge.u-aizu.ac.jp/problems/DPL_5_E</a>
@@ -39,8 +39,8 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../library/combinatorics/ncr2.cpp.html">nCr mod p ($r \leq 10^7$) <small>(combinatorics/ncr2.cpp)</small></a>
-* :question: <a href="../../library/pre/macros.cpp.html">pre/macros.cpp</a>
+* :heavy_check_mark: <a href="../../library/combinatorics/ncr2.cpp.html">nCr mod p ($r \leq 10^7$) <small>(combinatorics/ncr2.cpp)</small></a>
+* :heavy_check_mark: <a href="../../library/pre/macros.cpp.html">pre/macros.cpp</a>
 
 
 ## Code
@@ -62,7 +62,7 @@ using namespace std;
 int main() {
 	int n,k; cin>>n>>k;
 	nCr2 table(1000,MPRIME);
-	cout<<table.calc(n,k)<<endl;
+	cout<<table.calc(k,n)<<endl;
 }
 
 ```
