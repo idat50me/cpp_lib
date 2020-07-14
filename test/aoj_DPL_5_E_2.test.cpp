@@ -12,5 +12,5 @@ using namespace std;
 int main() {
 	int n,k; cin>>n>>k;
 	nCr2 table(1000,MPRIME);
-	cout<<table.calc(n,k)<<endl;
+	cout<<table.calc(k,n)<<endl;
 }
