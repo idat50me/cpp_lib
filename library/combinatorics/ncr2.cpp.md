@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: nCr mod p ($r \leq 10^7$) <small>(combinatorics/ncr2.cpp)</small>
+# :x: nCr mod p ($r \leq 10^7$) <small>(combinatorics/ncr2.cpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
 * <a href="{{ site.github.repository_url }}/blob/master/combinatorics/ncr2.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-14 17:46:32+09:00
+    - Last commit date: 2020-07-14 18:31:12+09:00
 
 
 
@@ -58,9 +58,21 @@ ${}_nC_r\ (\mathrm{mod}\ p)$ を求める．
 	- `p`：値の法．
 
 
+## メンバ関数
+- `calc(n, r)`：計算量 $O(1)$ or $O(r)$  
+	${}_nC_r$ を求める．  
+	$n$ が固定値のときは $O(1)$，不定値のときは $O(r)$
+
+
 ## Depends on
 
-* :heavy_check_mark: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
+* :question: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
+
+
+## Verified with
+
+* :x: <a href="../../verify/test/aoj_DPL_5_E.test.cpp.html">test/aoj_DPL_5_E.test.cpp</a>
+* :x: <a href="../../verify/test/aoj_DPL_5_E_2.test.cpp.html">test/aoj_DPL_5_E_2.test.cpp</a>
 
 
 ## Code
@@ -125,7 +137,7 @@ public:
 			return comb[r];
 		else {
 			ll f=1;
-			for(ll i=n; i>n-r; i++) {
+			for(ll i=n; i>n-r; i--) {
 				f = f*i%P;
 			}
 			return f*finv[r]%P;

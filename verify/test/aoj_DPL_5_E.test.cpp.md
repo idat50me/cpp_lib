@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj_NTL_1_A.test.cpp
+# :x: test/aoj_DPL_5_E.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/aoj_NTL_1_A.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-14 02:10:50+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/aoj_DPL_5_E.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-07-14 18:31:12+09:00
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A">https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A</a>
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/problems/DPL_5_E">https://onlinejudge.u-aizu.ac.jp/problems/DPL_5_E</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/math/sieve_of_eratosthenes.cpp.html">Sieve-of-Eratosthenes(エラトステネスの篩) <small>(math/sieve_of_eratosthenes.cpp)</small></a>
+* :x: <a href="../../library/combinatorics/ncr2.cpp.html">nCr mod p ($r \leq 10^7$) <small>(combinatorics/ncr2.cpp)</small></a>
 * :question: <a href="../../library/pre/macros.cpp.html">pre/macros.cpp</a>
 
 
@@ -48,7 +48,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/DPL_5_E"
 
 #ifndef call_include
 #define call_include
@@ -56,20 +56,13 @@ layout: default
 using namespace std;
 #endif
 
-#include "math/sieve_of_eratosthenes.cpp"
+#include "pre/macros.cpp"
+#include "combinatorics/ncr2.cpp"
 
 int main() {
-	int n; cin>>n;
-	Sieve sv(n);
-	vector<pair<int,int>> flist=sv.primefact(n);
-
-	cout<<n<<':';
-	for(int i=0; i<flist.size(); i++) {
-		for(int j=0; j<flist[i].second; j++) {
-			cout<<" "<<flist[i].first;
-		}
-	}
-	cout<<endl;
+	int n,k; cin>>n>>k;
+	nCr2 table(n,1000,MPRIME);
+	cout<<table.calc(n,k)<<endl;
 }
 
 ```
@@ -87,7 +80,7 @@ Traceback (most recent call last):
     self.update(self._resolve(pathlib.Path(included), included_from=path))
   File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 306, in update
     raise BundleErrorAt(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: math/sieve_of_eratosthenes.cpp: line 15: unable to process #include in #if / #ifdef / #ifndef other than include guards
+onlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: combinatorics/ncr2.cpp: line 15: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}
