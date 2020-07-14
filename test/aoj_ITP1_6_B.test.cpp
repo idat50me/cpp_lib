@@ -12,10 +12,8 @@ using namespace std;
 int main() {
 	int N; cin>>N;
 	Matrix card(4,14,true);
-	map<char,int> ch2i;
-	ch2i['S']=0, ch2i['H']=1, ch2i['C']=2, ch2i['D']=3;
-	map<int,char> i2ch;
-	i2ch[0]='S', i2ch[1]='H', i2ch[2]='C', i2ch[3]='D';
+	map<char,int> ch2i={{'S',0}, {'H',1}, {'C',2}, {'D',3}};
+	map<int,char> i2ch={{0,'S'}, {1,'H'}, {2,'C'}, {3,'D'}};
 
 	for(int i=0; i<N; i++) {
 		char ch; int num;
