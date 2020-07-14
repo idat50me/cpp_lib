@@ -1,5 +1,6 @@
 /*
  * @brief Matrix( $2$ 次元行列)
+ * @docs ./docs/matrix.md
  */
 
 #ifndef lib_matrix
@@ -17,7 +18,9 @@ class Matrix{
 
 public:
 
-	Matrix(int h, int w, T n=0) { make(h,w,n); }
+	Matrix() : Matrix(0,0) {}
+	Matrix(int h, int w) { make(h,w); }
+	Matrix(int h, int w, T init) { make(h,w,init); }
 
 	void make(int h, int w) {
 		mat=vector<vector<T>>(h,vector<T>(w));
