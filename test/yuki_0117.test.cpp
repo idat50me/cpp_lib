@@ -7,14 +7,10 @@ using namespace std;
 #endif
 
 #include "pre/macros.cpp"
-#include "combinatorics/pre_mod_comb.cpp"
-#include "combinatorics/mod_npr.cpp"
-#include "combinatorics/mod_ncr.cpp"
-#include "combinatorics/nhr.cpp"
+#include "combinatorics/combinatorics.cpp"
 
 int main() {
-	vector<ll> fact,inv,finv;
-	pre_mod_comb(2100000,MPRIME,fact,inv,finv);
+	Combinatorics comb(2100000,MPRIME);
 
 	int T; cin>>T;
 	for(int i=0; i<T; i++) {
@@ -48,13 +44,13 @@ int main() {
 		}
 		switch(mode) {
 			case 0:
-				cout<<mod_nCr(n,r,MPRIME,fact,inv,finv)<<endl;
+				cout<<comb.nCr(n,r)<<endl;
 				break;
 			case 1:
-				cout<<mod_nPr(n,r,MPRIME,fact,inv,finv)<<endl;
+				cout<<comb.nPr(n,r)<<endl;
 				break;
 			case 2:
-				cout<<nHr(n,r,MPRIME,fact,inv,finv)<<endl;
+				cout<<comb.nHr(n,r)<<endl;
 				break;
 			default:
 				return 0;

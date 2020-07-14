@@ -7,12 +7,10 @@ using namespace std;
 #endif
 
 #include "pre/macros.cpp"
-#include "combinatorics/pre_mod_comb.cpp"
-#include "combinatorics/nhr.cpp"
+#include "combinatorics/combinatorics.cpp"
 
 int main() {
-	vector<ll> fact,inv,finv;
-	pre_mod_comb(2100,MPRIME,fact,inv,finv);
 	int n,k; cin>>n>>k;
-	cout<<nHr(k,n,MPRIME,fact,inv,finv)<<endl;
+	Combinatorics cb(k,MPRIME);
+	cout<<cb.nCr(k,n)<<endl;
 }
