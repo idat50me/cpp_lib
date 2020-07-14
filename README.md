@@ -3,8 +3,6 @@
 [![GitHub Pages](https://img.shields.io/static/v1?label=GitHub+Pages&message=+&color=brightgreen&logo=github)](https://idat50me.github.io/cpp_lib/)
 
 ## あとまわし
-- combinatoricsをすべてまとめる
-	- [まとめた](combinatorics/combinatorics.cpp)ので[r依存のnCr](combinatorics/mod_ncr2.cpp)をいい感じに整理できるとよし
 
 ## そのうちつくりたいもの
 - セグ木（RMQ，区間和）
