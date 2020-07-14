@@ -11,4 +11,3 @@
 - modint
 - 木構造struct（vertex,edgeを内包する）
 - 最大フロー・最小カット（Ford Fulkersonのアルゴリズム）
-- 約数列挙（すぐ書ける）

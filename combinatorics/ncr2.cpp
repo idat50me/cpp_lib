@@ -1,5 +1,6 @@
 /*
- * @brief ${}_nC_r$ ( $n \geq 10^7$ )
+ * @brief nCr mod p ($r \leq 10^7$)
+ * @docs ./docs/ncr2.md
  */
 
 #ifndef lib_ncr2
