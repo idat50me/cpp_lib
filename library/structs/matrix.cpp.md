@@ -31,9 +31,14 @@ layout: default
 
 * category: <a href="../../index.html#5a8d55c70c1f3dcbee2f791cd477d649">structs</a>
 * <a href="{{ site.github.repository_url }}/blob/master/structs/matrix.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-14 02:44:03+09:00
+    - Last commit date: 2020-07-14 23:07:26+09:00
 
 
+
+
+## なにこれ
+
+## コンストラクタ
 
 
 ## Verified with
@@ -48,6 +53,7 @@ layout: default
 ```cpp
 /*
  * @brief Matrix( $2$ 次元行列)
+ * @docs ./docs/matrix.md
  */
 
 #ifndef lib_matrix
@@ -65,7 +71,9 @@ class Matrix{
 
 public:
 
-	Matrix(int h, int w, T n=0) { make(h,w,n); }
+	Matrix() : Matrix(0,0) {}
+	Matrix(int h, int w) { make(h,w); }
+	Matrix(int h, int w, T init) { make(h,w,init); }
 
 	void make(int h, int w) {
 		mat=vector<vector<T>>(h,vector<T>(w));
@@ -107,6 +115,7 @@ public:
 #line 1 "structs/matrix.cpp"
 /*
  * @brief Matrix( $2$ 次元行列)
+ * @docs ./docs/matrix.md
  */
 
 #ifndef lib_matrix
@@ -124,7 +133,9 @@ class Matrix{
 
 public:
 
-	Matrix(int h, int w, T n=0) { make(h,w,n); }
+	Matrix() : Matrix(0,0) {}
+	Matrix(int h, int w) { make(h,w); }
+	Matrix(int h, int w, T init) { make(h,w,init); }
 
 	void make(int h, int w) {
 		mat=vector<vector<T>>(h,vector<T>(w));

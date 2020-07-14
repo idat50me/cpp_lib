@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj_ITP1_6_B.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-14 02:44:03+09:00
+    - Last commit date: 2020-07-14 23:11:42+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/6/ITP1_6_B">https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/6/ITP1_6_B</a>
@@ -62,10 +62,8 @@ using namespace std;
 int main() {
 	int N; cin>>N;
 	Matrix card(4,14,true);
-	map<char,int> ch2i;
-	ch2i['S']=0, ch2i['H']=1, ch2i['C']=2, ch2i['D']=3;
-	map<int,char> i2ch;
-	i2ch[0]='S', i2ch[1]='H', i2ch[2]='C', i2ch[3]='D';
+	map<char,int> ch2i={{'S',0}, {'H',1}, {'C',2}, {'D',3}};
+	map<int,char> i2ch={{0,'S'}, {1,'H'}, {2,'C'}, {3,'D'}};
 
 	for(int i=0; i<N; i++) {
 		char ch; int num;
@@ -108,6 +106,7 @@ using ll = long long;
 #line 1 "structs/matrix.cpp"
 /*
  * @brief Matrix( $2$ 次元行列)
+ * @docs ./docs/matrix.md
  */
 
 #ifndef lib_matrix
@@ -125,7 +124,9 @@ class Matrix{
 
 public:
 
-	Matrix(int h, int w, T n=0) { make(h,w,n); }
+	Matrix() : Matrix(0,0) {}
+	Matrix(int h, int w) { make(h,w); }
+	Matrix(int h, int w, T init) { make(h,w,init); }
 
 	void make(int h, int w) {
 		mat=vector<vector<T>>(h,vector<T>(w));
@@ -162,10 +163,8 @@ public:
 int main() {
 	int N; cin>>N;
 	Matrix card(4,14,true);
-	map<char,int> ch2i;
-	ch2i['S']=0, ch2i['H']=1, ch2i['C']=2, ch2i['D']=3;
-	map<int,char> i2ch;
-	i2ch[0]='S', i2ch[1]='H', i2ch[2]='C', i2ch[3]='D';
+	map<char,int> ch2i={{'S',0}, {'H',1}, {'C',2}, {'D',3}};
+	map<int,char> i2ch={{0,'S'}, {1,'H'}, {2,'C'}, {3,'D'}};
 
 	for(int i=0; i<N; i++) {
 		char ch; int num;
