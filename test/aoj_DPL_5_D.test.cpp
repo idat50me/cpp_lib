@@ -11,6 +11,6 @@ using namespace std;
 
 int main() {
 	int n,k; cin>>n>>k;
-	Combinatorics cb(k,MPRIME);
-	cout<<cb.nCr(k,n)<<endl;
+	Combinatorics cb(2000,MPRIME);
+	cout<<cb.nHr(k,n)<<endl;
 }
