@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj_ITP1_6_B.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-14 23:11:42+09:00
+    - Last commit date: 2020-07-15 00:30:21+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/6/ITP1_6_B">https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/6/ITP1_6_B</a>
@@ -39,7 +39,6 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/pre/macros.cpp.html">pre/macros.cpp</a>
 * :heavy_check_mark: <a href="../../library/structs/matrix.cpp.html">Matrix( $2$ 次元行列) <small>(structs/matrix.cpp)</small></a>
 
 
@@ -56,7 +55,6 @@ layout: default
 using namespace std;
 #endif
 
-#include "pre/macros.cpp"
 #include "structs/matrix.cpp"
 
 int main() {
@@ -92,16 +90,6 @@ int main() {
 #include <bits/stdc++.h>
 using namespace std;
 #endif
-
-#line 1 "pre/macros.cpp"
-
-
-
-using ll = long long;
-
-#define MPRIME (ll)1e9+7
-#define MMPRIME (1LL<<61)-1
-
 
 #line 1 "structs/matrix.cpp"
 /*
@@ -158,7 +146,7 @@ public:
 };
 
 #endif // lib_matrix
-#line 11 "test/aoj_ITP1_6_B.test.cpp"
+#line 10 "test/aoj_ITP1_6_B.test.cpp"
 
 int main() {
 	int N; cin>>N;
