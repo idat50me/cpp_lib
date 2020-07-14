@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :question: Combinatorics(組合せ数学) <small>(combinatorics/combinatorics.cpp)</small>
+# :heavy_check_mark: Combinatorics(組合せ数学) <small>(combinatorics/combinatorics.cpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
@@ -58,12 +58,12 @@ ${}_nP_r, {}_nC_r, {}_nH_r\ (\mathrm{mod}\ p)$ を求める．
 
 ## Depends on
 
-* :question: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
+* :heavy_check_mark: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
 
 
 ## Verified with
 
-* :x: <a href="../../verify/test/aoj_DPL_5_D.test.cpp.html">test/aoj_DPL_5_D.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj_DPL_5_D.test.cpp.html">test/aoj_DPL_5_D.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
 
 

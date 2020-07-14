@@ -38,7 +38,7 @@ layout: default
 
 ### combinatorics
 
-* :question: <a href="library/combinatorics/combinatorics.cpp.html">Combinatorics(組合せ数学) <small>(combinatorics/combinatorics.cpp)</small></a>
+* :heavy_check_mark: <a href="library/combinatorics/combinatorics.cpp.html">Combinatorics(組合せ数学) <small>(combinatorics/combinatorics.cpp)</small></a>
 * :warning: <a href="library/combinatorics/mod_ncr.cpp.html">combinatorics/mod_ncr.cpp</a>
 * :warning: <a href="library/combinatorics/mod_ncr2.cpp.html">combinatorics/mod_ncr2.cpp</a>
 * :warning: <a href="library/combinatorics/mod_npr.cpp.html">combinatorics/mod_npr.cpp</a>
@@ -64,7 +64,7 @@ layout: default
 
 ### pre
 
-* :question: <a href="library/pre/macros.cpp.html">pre/macros.cpp</a>
+* :heavy_check_mark: <a href="library/pre/macros.cpp.html">pre/macros.cpp</a>
 
 
 <div id="5a8d55c70c1f3dcbee2f791cd477d649"></div>
@@ -80,7 +80,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/a_example.test.cpp.html">test/a_example.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_ALDS1_1_C.test.cpp.html">test/aoj_ALDS1_1_C.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_ALDS1_1_C_2.test.cpp.html">test/aoj_ALDS1_1_C_2.test.cpp</a>
-* :x: <a href="verify/test/aoj_DPL_5_D.test.cpp.html">test/aoj_DPL_5_D.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj_DPL_5_D.test.cpp.html">test/aoj_DPL_5_D.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_DPL_5_E.test.cpp.html">test/aoj_DPL_5_E.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_DPL_5_E_2.test.cpp.html">test/aoj_DPL_5_E_2.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_ITP1_6_B.test.cpp.html">test/aoj_ITP1_6_B.test.cpp</a>

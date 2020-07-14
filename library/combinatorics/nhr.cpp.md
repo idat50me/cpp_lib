@@ -40,7 +40,7 @@ layout: default
 
 * :warning: <a href="mod_ncr.cpp.html">combinatorics/mod_ncr.cpp</a>
 * :warning: <a href="ncr.cpp.html">combinatorics/ncr.cpp</a>
-* :question: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
+* :heavy_check_mark: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
 
 
 ## Code
