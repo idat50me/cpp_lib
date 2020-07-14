@@ -6,7 +6,6 @@
 using namespace std;
 #endif
 
-#include "pre/macros.cpp"
 #include "structs/matrix.cpp"
 
 int main() {
