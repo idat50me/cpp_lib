@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
 * <a href="{{ site.github.repository_url }}/blob/master/combinatorics/ncr2.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-14 18:31:12+09:00
+    - Last commit date: 2020-07-14 18:36:28+09:00
 
 
 
@@ -106,7 +106,7 @@ private:
 		finv.resize(r+1);
 		inv[1] = finv[0] = finv[1]=1LL;
 		for(int i=2; i<=r; i++) {
-			inv[i] = inv[P%i]*(P/i)%P;
+			inv[i] = P-inv[P%i]*(P/i)%P;
 			finv[i] = finv[i-1]*inv[i]%P;
 		}
 	}
