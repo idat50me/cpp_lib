@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: combinatorics/nhr.cpp
+# :warning: combinatorics/nhr.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,15 +38,9 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="mod_ncr.cpp.html">combinatorics/mod_ncr.cpp</a>
-* :heavy_check_mark: <a href="ncr.cpp.html">combinatorics/ncr.cpp</a>
-* :heavy_check_mark: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
-
-
-## Verified with
-
-* :heavy_check_mark: <a href="../../verify/test/aoj_DPC_5_D.test.cpp.html">test/aoj_DPC_5_D.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
+* :warning: <a href="mod_ncr.cpp.html">combinatorics/mod_ncr.cpp</a>
+* :warning: <a href="ncr.cpp.html">combinatorics/ncr.cpp</a>
+* :question: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
 
 
 ## Code

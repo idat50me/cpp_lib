@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: pre/macros.cpp
+# :question: pre/macros.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,15 +38,15 @@ layout: default
 
 ## Required by
 
-* :heavy_check_mark: <a href="../combinatorics/combinatorics.cpp.html">Combinatorics(組合せ数学) <small>(combinatorics/combinatorics.cpp)</small></a>
-* :heavy_check_mark: <a href="../combinatorics/mod_ncr.cpp.html">combinatorics/mod_ncr.cpp</a>
+* :question: <a href="../combinatorics/combinatorics.cpp.html">Combinatorics(組合せ数学) <small>(combinatorics/combinatorics.cpp)</small></a>
+* :warning: <a href="../combinatorics/mod_ncr.cpp.html">combinatorics/mod_ncr.cpp</a>
 * :warning: <a href="../combinatorics/mod_ncr2.cpp.html">combinatorics/mod_ncr2.cpp</a>
-* :heavy_check_mark: <a href="../combinatorics/mod_npr.cpp.html">combinatorics/mod_npr.cpp</a>
-* :heavy_check_mark: <a href="../combinatorics/ncr.cpp.html">combinatorics/ncr.cpp</a>
+* :warning: <a href="../combinatorics/mod_npr.cpp.html">combinatorics/mod_npr.cpp</a>
+* :warning: <a href="../combinatorics/ncr.cpp.html">combinatorics/ncr.cpp</a>
 * :heavy_check_mark: <a href="../combinatorics/ncr2.cpp.html">nCr mod p ($r \leq 10^7$) <small>(combinatorics/ncr2.cpp)</small></a>
-* :heavy_check_mark: <a href="../combinatorics/nhr.cpp.html">combinatorics/nhr.cpp</a>
+* :warning: <a href="../combinatorics/nhr.cpp.html">combinatorics/nhr.cpp</a>
 * :warning: <a href="../combinatorics/npr.cpp.html">combinatorics/npr.cpp</a>
-* :heavy_check_mark: <a href="../combinatorics/pre_mod_comb.cpp.html">combinatorics/pre_mod_comb.cpp</a>
+* :warning: <a href="../combinatorics/pre_mod_comb.cpp.html">combinatorics/pre_mod_comb.cpp</a>
 * :heavy_check_mark: <a href="../math/binpow.cpp.html">Binary-Power(繰り返し二乗法) <small>(math/binpow.cpp)</small></a>
 * :heavy_check_mark: <a href="../math/divisor.cpp.html">Divisor(約数列挙) <small>(math/divisor.cpp)</small></a>
 * :warning: <a href="../math/factorial.cpp.html">Factorial(階乗) <small>(math/factorial.cpp)</small></a>
@@ -58,14 +58,13 @@ layout: default
 
 * :heavy_check_mark: <a href="../../verify/test/aoj_ALDS1_1_C.test.cpp.html">test/aoj_ALDS1_1_C.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj_ALDS1_1_C_2.test.cpp.html">test/aoj_ALDS1_1_C_2.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/aoj_DPC_5_D.test.cpp.html">test/aoj_DPC_5_D.test.cpp</a>
+* :x: <a href="../../verify/test/aoj_DPL_5_D.test.cpp.html">test/aoj_DPL_5_D.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj_DPL_5_E.test.cpp.html">test/aoj_DPL_5_E.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj_DPL_5_E_2.test.cpp.html">test/aoj_DPL_5_E_2.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj_ITP1_6_B.test.cpp.html">test/aoj_ITP1_6_B.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj_NTL_1_A.test.cpp.html">test/aoj_NTL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj_NTL_1_B.test.cpp.html">test/aoj_NTL_1_B.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yuki_0117_2.test.cpp.html">test/yuki_0117_2.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yuki_0888.test.cpp.html">test/yuki_0888.test.cpp</a>
 
 

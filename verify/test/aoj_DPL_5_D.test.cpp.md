@@ -25,22 +25,22 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/yuki_0117_2.test.cpp
+# :x: test/aoj_DPL_5_D.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/yuki_0117_2.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-14 02:10:50+09:00
+* <a href="{{ site.github.repository_url }}/blob/master/test/aoj_DPL_5_D.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-07-14 18:52:48+09:00
 
 
-* see: <a href="https://yukicoder.me/problems/no/117">https://yukicoder.me/problems/no/117</a>
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_D">https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_D</a>
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/combinatorics/combinatorics.cpp.html">Combinatorics(組合せ数学) <small>(combinatorics/combinatorics.cpp)</small></a>
-* :heavy_check_mark: <a href="../../library/pre/macros.cpp.html">pre/macros.cpp</a>
+* :question: <a href="../../library/combinatorics/combinatorics.cpp.html">Combinatorics(組合せ数学) <small>(combinatorics/combinatorics.cpp)</small></a>
+* :question: <a href="../../library/pre/macros.cpp.html">pre/macros.cpp</a>
 
 
 ## Code
@@ -48,7 +48,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://yukicoder.me/problems/no/117"
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_D"
 
 #ifndef call_include
 #define call_include
@@ -60,52 +60,9 @@ using namespace std;
 #include "combinatorics/combinatorics.cpp"
 
 int main() {
-	Combinatorics comb(2100000,MPRIME);
-
-	int T; cin>>T;
-	for(int i=0; i<T; i++) {
-		int n=0, r=0, mode=-1;
-		string S; cin>>S;
-		bool fn=false;
-		for(int j=0; j<S.length(); j++) {
-			char ch=S[j];
-			switch(ch) {
-				case 'C':
-					mode=0;
-					break;
-				case 'P':
-					mode=1;
-					break;
-				case 'H':
-					mode=2;
-					break;
-				case ',':
-					fn=true;
-					break;
-				case '(':
-				case ')':
-					break;
-				default:
-					int d=(int)(ch-'0');
-					if(fn) r=r*10+d;
-					else   n=n*10+d;
-					break;
-			}
-		}
-		switch(mode) {
-			case 0:
-				cout<<comb.nCr(n,r)<<endl;
-				break;
-			case 1:
-				cout<<comb.nPr(n,r)<<endl;
-				break;
-			case 2:
-				cout<<comb.nHr(n,r)<<endl;
-				break;
-			default:
-				return 0;
-		}
-	}
+	int n,k; cin>>n>>k;
+	Combinatorics cb(k,MPRIME);
+	cout<<cb.nCr(k,n)<<endl;
 }
 
 ```
