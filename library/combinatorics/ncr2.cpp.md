@@ -31,11 +31,31 @@ layout: default
 
 * category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
 * <a href="{{ site.github.repository_url }}/blob/master/combinatorics/ncr2.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-14 16:59:20+09:00
+    - Last commit date: 2020-07-14 17:46:32+09:00
 
 
 
 
+## なにこれ
+${}_nC_r\ (\mathrm{mod}\ p)$ を求める．
+計算量が $r$ 依存．
+
+## 制約
+- $n \leq 10^9$ 程度
+- $r \leq 10^7$ 程度
+- $p$ は素数
+
+## コンストラクタ
+- `nCr2(n, r, p)`：計算量 $O(r)$  
+	$n$ が固定値のとき使う．
+	- `n`：固定値 $n$
+	- `r`：$r$ の最大値．
+	- `p`：値の法．
+
+- `nCr2(r, p)`：計算量 $O(r)$  
+	$n$ が不定値のとき使う．
+	- `r`：$r$ の最大値．
+	- `p`：値の法．
 
 
 ## Depends on
@@ -66,26 +86,50 @@ using namespace std;
 
 struct nCr2 {
 private:
-	vector<ll> fact, inv, finv;
+	vector<ll> comb, inv, finv;
 	ll P;
 
-public:
-	nCr2(ll n, ll r, ll p) {
-		P=p;
-		fact.resize(r+1);
+	void calc_inv(ll r) {
 		inv.resize(r+1);
 		finv.resize(r+1);
-		fact[0] = n%P; fact[1] = n%P*(n-1)%P;
 		inv[1] = finv[0] = finv[1]=1LL;
-		for(ll i=2LL; i<=r; i++) {
-			fact[i] = fact[i-1]*(n-i)%P;
+		for(int i=2; i<=r; i++) {
 			inv[i] = inv[P%i]*(P/i)%P;
 			finv[i] = finv[i-1]*inv[i]%P;
 		}
 	}
 
+public:
+	nCr2(ll n, ll r, ll p) {
+		if(n/2 < r) r = n/2;
+		P=p;
+		calc_inv(r);
+
+		comb.resize(r+1);
+		comb[0]=1;
+		for(int i=1; i<=r; i++) {
+			comb[i] = comb[i-1]*(n-i+1)%P*inv[i]%P;
+		}
+	}
+
+	nCr2(ll r, ll p) {
+		P=p;
+		calc_inv(r);
+	}
+
 	ll calc(ll n, ll r) {
-		return fact[r-1]*finv[r]%P;
+		assert(r >= 0);
+		if(r > n) return 0;
+		if(r > n/2) r = n-r;
+		if(comb.size() > 0)
+			return comb[r];
+		else {
+			ll f=1;
+			for(ll i=n; i>n-r; i++) {
+				f = f*i%P;
+			}
+			return f*finv[r]%P;
+		}
 	}
 };
 
