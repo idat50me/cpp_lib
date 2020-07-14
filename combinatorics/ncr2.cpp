@@ -55,7 +55,7 @@ public:
 			return comb[r];
 		else {
 			ll f=1;
-			for(ll i=n; i>n-r; i++) {
+			for(ll i=n; i>n-r; i--) {
 				f = f*i%P;
 			}
 			return f*finv[r]%P;
