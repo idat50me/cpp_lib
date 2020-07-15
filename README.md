@@ -2,7 +2,7 @@
 [![GitHub Pages](https://img.shields.io/static/v1?label=GitHub+Pages&message=+&color=brightgreen&logo=github)](https://idat50me.github.io/cpp_lib/)
 
 ## やること
-* [ ] 旧verのcombinatoricsライブラリの処理
+* [x] ~~旧verのcombinatoricsライブラリの処理~~ [2020-07-16 00:21]
 
 ## つくる予定
 - [ ] セグ木（RMQ，区間和）
