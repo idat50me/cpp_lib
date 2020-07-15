@@ -73,7 +73,6 @@ layout: default
 
 ## Verify Files
 
-* :heavy_check_mark: <a href="verify/test/a_example.test.cpp.html">test/a_example.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_ALDS1_1_C.test.cpp.html">test/aoj_ALDS1_1_C.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_ALDS1_1_C_2.test.cpp.html">test/aoj_ALDS1_1_C_2.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_DPL_5_D.test.cpp.html">test/aoj_DPL_5_D.test.cpp</a>

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
 * <a href="{{ site.github.repository_url }}/blob/master/combinatorics/npr.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-15 16:59:17+09:00
+    - Last commit date: 2020-07-15 18:10:42+09:00
 
 
 

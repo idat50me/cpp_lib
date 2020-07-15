@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#6bf9e70a1f928aba143ef1eebe2720b5">pre</a>
 * <a href="{{ site.github.repository_url }}/blob/master/pre/macros.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-29 22:36:32+09:00
+    - Last commit date: 2020-07-15 18:10:42+09:00
 
 
 
@@ -73,8 +73,8 @@ layout: default
 
 using ll = long long;
 
-#define MPRIME (ll)1e9+7
-#define MMPRIME (1LL<<61)-1
+#define MPRIME (ll)(1e9+7)
+#define MMPRIME ((1LL<<61)-1)
 
 #endif // lib_macros
 
@@ -90,8 +90,8 @@ using ll = long long;
 
 using ll = long long;
 
-#define MPRIME (ll)1e9+7
-#define MMPRIME (1LL<<61)-1
+#define MPRIME (ll)(1e9+7)
+#define MMPRIME ((1LL<<61)-1)
 
 
 
