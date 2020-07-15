@@ -1,5 +1,5 @@
 /*
- * @brief nCr mod p ($r \leq 10^7$)
+ * @brief nCr mod p ($r \leq 10^7$, クエリ $O(r)$)
  * @docs ./docs/ncr2.md
  */
 

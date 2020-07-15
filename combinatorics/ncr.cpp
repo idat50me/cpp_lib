@@ -1,3 +1,8 @@
+/*
+ * @brief nCr
+ * 
+ */
+
 #ifndef lib_ncr
 #define lib_ncr
 
