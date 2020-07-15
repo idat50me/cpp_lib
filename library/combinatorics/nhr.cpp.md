@@ -25,21 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: combinatorics/nhr.cpp
+# :warning: nHr <small>(combinatorics/nhr.cpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
 * <a href="{{ site.github.repository_url }}/blob/master/combinatorics/nhr.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-29 22:36:32+09:00
+    - Last commit date: 2020-07-15 16:59:17+09:00
 
 
 
 
 ## Depends on
 
-* :warning: <a href="mod_ncr.cpp.html">combinatorics/mod_ncr.cpp</a>
-* :warning: <a href="ncr.cpp.html">combinatorics/ncr.cpp</a>
+* :warning: <a href="ncr.cpp.html">nCr <small>(combinatorics/ncr.cpp)</small></a>
 * :heavy_check_mark: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
 
 
@@ -48,6 +47,11 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+/*
+ * @brief nHr
+ * 
+ */
+
 #ifndef lib_nhr
 #define lib_nhr
 
@@ -59,18 +63,11 @@ using namespace std;
 
 #include "pre/macros.cpp"
 #include "combinatorics/ncr.cpp"
-#include "combinatorics/mod_ncr.cpp"
 
 ll nHr(ll n, ll r) {
-	if(r==0) return 1;
-	if(n==0) return 0;
+	if(r == 0) return 1;
+	if(n == 0) return 0;
 	return nCr(n+r-1,n-1);
-}
-
-ll nHr(ll n, ll r, ll p, vector<ll> &fact, vector<ll> &inv, vector<ll> &finv) {
-	if(r==0) return 1;
-	if(n==0) return 0;
-	return mod_nCr(n+r-1,n-1,p,fact,inv,finv);
 }
 
 #endif // lib_nhr
@@ -81,88 +78,14 @@ ll nHr(ll n, ll r, ll p, vector<ll> &fact, vector<ll> &inv, vector<ll> &finv) {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "combinatorics/nhr.cpp"
-
-
-
-#ifndef call_include
-#define call_include
-#include <bits/stdc++.h>
-using namespace std;
-#endif
-
-#line 1 "pre/macros.cpp"
-
-
-
-using ll = long long;
-
-#define MPRIME (ll)1e9+7
-#define MMPRIME (1LL<<61)-1
-
-
-#line 1 "combinatorics/ncr.cpp"
-
-
-
-#ifndef call_include
-#define call_include
-#include <bits/stdc++.h>
-using namespace std;
-#endif
-
-#line 11 "combinatorics/ncr.cpp"
-
-ll nCr(ll n, ll r) {
-	if(n == r) return 1;
-	if(r > n) return 0;
-	if(n == 0) return 0;
-
-	if(r > n / 2) r = n-r;
-	if(r == 0) return 1;
-
-	ll res = 1;
-	for(ll i = 1; i <= r; i++) {
-		res *= (n - i + 1) / i;
-	}
-
-	return res;
-}
-
-
-#line 1 "combinatorics/mod_ncr.cpp"
-
-
-
-#ifndef call_include
-#define call_include
-#include <bits/stdc++.h>
-using namespace std;
-#endif
-
-#line 11 "combinatorics/mod_ncr.cpp"
-
-ll mod_nCr(ll n, ll r, ll p, vector<ll> &fact, vector<ll> &inv, vector<ll> &finv) {
-	if (r > n) return 0;
-	return fact[n]*finv[r]%p*finv[n-r]%p;
-}
-
-
-#line 13 "combinatorics/nhr.cpp"
-
-ll nHr(ll n, ll r) {
-	if(r==0) return 1;
-	if(n==0) return 0;
-	return nCr(n+r-1,n-1);
-}
-
-ll nHr(ll n, ll r, ll p, vector<ll> &fact, vector<ll> &inv, vector<ll> &finv) {
-	if(r==0) return 1;
-	if(n==0) return 0;
-	return mod_nCr(n+r-1,n-1,p,fact,inv,finv);
-}
-
-
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 349, in write_contents
+    bundled_code = language.bundle(self.file_class.file_path, basedir=pathlib.Path.cwd())
+  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 185, in bundle
+    bundler.update(path)
+  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 306, in update
+    raise BundleErrorAt(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
+onlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: combinatorics/nhr.cpp: line 15: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}

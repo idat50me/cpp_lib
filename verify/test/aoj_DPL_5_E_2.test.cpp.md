@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj_DPL_5_E_2.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-14 18:42:18+09:00
+    - Last commit date: 2020-07-15 16:59:17+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/problems/DPL_5_E">https://onlinejudge.u-aizu.ac.jp/problems/DPL_5_E</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/combinatorics/ncr2.cpp.html">nCr mod p ($r \leq 10^7$) <small>(combinatorics/ncr2.cpp)</small></a>
+* :heavy_check_mark: <a href="../../library/combinatorics/ncr2.cpp.html">nCr mod p ($r \leq 10^7$, クエリ $O(r)$) <small>(combinatorics/ncr2.cpp)</small></a>
 * :heavy_check_mark: <a href="../../library/pre/macros.cpp.html">pre/macros.cpp</a>
 
 

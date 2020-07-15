@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: combinatorics/ncr.cpp
+# :warning: nCr <small>(combinatorics/ncr.cpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
 * <a href="{{ site.github.repository_url }}/blob/master/combinatorics/ncr.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-29 22:36:32+09:00
+    - Last commit date: 2020-07-15 16:59:17+09:00
 
 
 
@@ -43,7 +43,7 @@ layout: default
 
 ## Required by
 
-* :warning: <a href="nhr.cpp.html">combinatorics/nhr.cpp</a>
+* :warning: <a href="nhr.cpp.html">nHr <small>(combinatorics/nhr.cpp)</small></a>
 
 
 ## Code
@@ -51,6 +51,11 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+/*
+ * @brief nCr
+ * 
+ */
+
 #ifndef lib_ncr
 #define lib_ncr
 
@@ -86,45 +91,14 @@ ll nCr(ll n, ll r) {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "combinatorics/ncr.cpp"
-
-
-
-#ifndef call_include
-#define call_include
-#include <bits/stdc++.h>
-using namespace std;
-#endif
-
-#line 1 "pre/macros.cpp"
-
-
-
-using ll = long long;
-
-#define MPRIME (ll)1e9+7
-#define MMPRIME (1LL<<61)-1
-
-
-#line 11 "combinatorics/ncr.cpp"
-
-ll nCr(ll n, ll r) {
-	if(n == r) return 1;
-	if(r > n) return 0;
-	if(n == 0) return 0;
-
-	if(r > n / 2) r = n-r;
-	if(r == 0) return 1;
-
-	ll res = 1;
-	for(ll i = 1; i <= r; i++) {
-		res *= (n - i + 1) / i;
-	}
-
-	return res;
-}
-
-
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 349, in write_contents
+    bundled_code = language.bundle(self.file_class.file_path, basedir=pathlib.Path.cwd())
+  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 185, in bundle
+    bundler.update(path)
+  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 306, in update
+    raise BundleErrorAt(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
+onlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: combinatorics/ncr.cpp: line 15: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}

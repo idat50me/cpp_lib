@@ -39,14 +39,10 @@ layout: default
 ### combinatorics
 
 * :heavy_check_mark: <a href="library/combinatorics/combinatorics.cpp.html">Combinatorics(組合せ数学) <small>(combinatorics/combinatorics.cpp)</small></a>
-* :warning: <a href="library/combinatorics/mod_ncr.cpp.html">combinatorics/mod_ncr.cpp</a>
-* :warning: <a href="library/combinatorics/mod_ncr2.cpp.html">combinatorics/mod_ncr2.cpp</a>
-* :warning: <a href="library/combinatorics/mod_npr.cpp.html">combinatorics/mod_npr.cpp</a>
-* :warning: <a href="library/combinatorics/ncr.cpp.html">combinatorics/ncr.cpp</a>
-* :heavy_check_mark: <a href="library/combinatorics/ncr2.cpp.html">nCr mod p ($r \leq 10^7$) <small>(combinatorics/ncr2.cpp)</small></a>
-* :warning: <a href="library/combinatorics/nhr.cpp.html">combinatorics/nhr.cpp</a>
-* :warning: <a href="library/combinatorics/npr.cpp.html">combinatorics/npr.cpp</a>
-* :warning: <a href="library/combinatorics/pre_mod_comb.cpp.html">combinatorics/pre_mod_comb.cpp</a>
+* :warning: <a href="library/combinatorics/ncr.cpp.html">nCr <small>(combinatorics/ncr.cpp)</small></a>
+* :heavy_check_mark: <a href="library/combinatorics/ncr2.cpp.html">nCr mod p ($r \leq 10^7$, クエリ $O(r)$) <small>(combinatorics/ncr2.cpp)</small></a>
+* :warning: <a href="library/combinatorics/nhr.cpp.html">nHr <small>(combinatorics/nhr.cpp)</small></a>
+* :warning: <a href="library/combinatorics/npr.cpp.html">nPr mod p <small>(combinatorics/npr.cpp)</small></a>
 
 
 <div id="7e676e9e663beb40fd133f5ee24487c2"></div>

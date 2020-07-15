@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: nCr mod p ($r \leq 10^7$) <small>(combinatorics/ncr2.cpp)</small>
+# :heavy_check_mark: nCr mod p ($r \leq 10^7$, クエリ $O(r)$) <small>(combinatorics/ncr2.cpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
 * <a href="{{ site.github.repository_url }}/blob/master/combinatorics/ncr2.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-14 18:36:28+09:00
+    - Last commit date: 2020-07-15 16:59:17+09:00
 
 
 
@@ -81,7 +81,7 @@ ${}_nC_r\ (\mathrm{mod}\ p)$ を求める．
 {% raw %}
 ```cpp
 /*
- * @brief nCr mod p ($r \leq 10^7$)
+ * @brief nCr mod p ($r \leq 10^7$, クエリ $O(r)$)
  * @docs ./docs/ncr2.md
  */
 

@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: combinatorics/npr.cpp
+# :warning: nPr mod p <small>(combinatorics/npr.cpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
 * <a href="{{ site.github.repository_url }}/blob/master/combinatorics/npr.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-06-29 22:36:32+09:00
+    - Last commit date: 2020-07-15 16:59:17+09:00
 
 
 
@@ -46,6 +46,11 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
+/*
+ * @brief nPr mod p
+ * 
+ */
+
 #ifndef lib_npr
 #define lib_npr
 
@@ -57,9 +62,9 @@ using namespace std;
 #include "pre/macros.cpp"
 
 ll nPr(ll n, ll r, ll p=MMPRIME) {
-	if(n<r) return 0LL;
+	if(n < r) return 0LL;
 
-	ll res=1LL;
+	ll res = 1LL;
 	for(int i=0; i<r; i++) res = res*(n-i)%p;
 	return res;
 }
@@ -72,36 +77,14 @@ ll nPr(ll n, ll r, ll p=MMPRIME) {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "combinatorics/npr.cpp"
-
-
-
-#ifndef call_include
-#define call_include
-#include <bits/stdc++.h>
-using namespace std;
-#endif
-#line 1 "pre/macros.cpp"
-
-
-
-using ll = long long;
-
-#define MPRIME (ll)1e9+7
-#define MMPRIME (1LL<<61)-1
-
-
-#line 10 "combinatorics/npr.cpp"
-
-ll nPr(ll n, ll r, ll p=MMPRIME) {
-	if(n<r) return 0LL;
-
-	ll res=1LL;
-	for(int i=0; i<r; i++) res = res*(n-i)%p;
-	return res;
-}
-
-
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 349, in write_contents
+    bundled_code = language.bundle(self.file_class.file_path, basedir=pathlib.Path.cwd())
+  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 185, in bundle
+    bundler.update(path)
+  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 306, in update
+    raise BundleErrorAt(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
+onlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: combinatorics/npr.cpp: line 14: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}
