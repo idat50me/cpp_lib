@@ -6,8 +6,8 @@
 using namespace std;
 #endif
 
+#include "pre/macros.cpp"
 #include "math/binpow.cpp"
-#define MPRIME 1e9+7
 
 int main() {
 	int m,n; cin>>m>>n;
