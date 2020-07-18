@@ -1,5 +1,5 @@
 /*
- * @brief ミラー・ルビン素数判定法
+ * @brief Millor-Rabin(ミラー・ルビン素数判定法)
  */
 
 #ifndef lib_millor_rabin
@@ -15,23 +15,26 @@ using namespace std;
 
 bool isprime(int n) {
 	if(n == 2) return true;
-	if(n < 0 || n%2 == 0) return false;
+	if(n < 2 || n%2 == 0) return false;
 
-	int d=n, s=0;
-	while(d^1) {
+	int d=n-1, s=0;
+	while(d%2 == 0) {
 		s++;
 		d >>= 1;
 	}
 
 	int a[]={2,7,61};
 	for(int i = 0; i < 3; i++) {
+		if(a[i] >= n) continue;
+
 		ll r = binpow(a[i], d, n);
-		if(r == 1) continue;
+		if(r == 1 || r == n-1) continue;
+		
 		for(int j = 1; j < s; j++) {
 			r = r * r % n;
 			if(r == n-1) break;
-			if(j == s-1) return false;
 		}
+		if(r != n-1) return false;
 	}
 
 	return true;
