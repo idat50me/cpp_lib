@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
 * <a href="{{ site.github.repository_url }}/blob/master/combinatorics/nhr.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-15 18:10:42+09:00
+    - Last commit date: 2020-07-18 18:00:45+09:00
 
 
 
@@ -61,8 +61,8 @@ layout: default
 using namespace std;
 #endif
 
-#include "pre/macros.cpp"
-#include "combinatorics/ncr.cpp"
+#include "../pre/macros.cpp"
+#include "../combinatorics/ncr.cpp"
 
 ll nHr(ll n, ll r) {
 	if(r == 0) return 1;

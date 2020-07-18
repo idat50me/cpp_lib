@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/factorial.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-15 18:10:42+09:00
+    - Last commit date: 2020-07-18 18:00:45+09:00
 
 
 
@@ -59,7 +59,7 @@ layout: default
 using namespace std;
 #endif
 
-#include "pre/macros.cpp"
+#include "../pre/macros.cpp"
 
 ll factorial(ll x, ll p=(1LL<<60)) {
 	ll res = 1;
