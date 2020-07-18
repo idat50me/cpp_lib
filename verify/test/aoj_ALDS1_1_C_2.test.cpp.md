@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../library/math/isprime.cpp.html">Isprime(素数判定) <small>(math/isprime.cpp)</small></a>
-* :heavy_check_mark: <a href="../../library/pre/macros.cpp.html">pre/macros.cpp</a>
+* :question: <a href="../../library/pre/macros.cpp.html">pre/macros.cpp</a>
 
 
 ## Code

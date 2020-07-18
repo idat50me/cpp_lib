@@ -25,21 +25,23 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: nHr <small>(combinatorics/nhr.cpp)</small>
+# :x: test/aoj_ALDS1_1_C_3.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
-* category: <a href="../../index.html#ac1ed416572b96a9f5d69740d174ef3d">combinatorics</a>
-* <a href="{{ site.github.repository_url }}/blob/master/combinatorics/nhr.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-15 18:10:42+09:00
+* category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/aoj_ALDS1_1_C_3.test.cpp">View this file on GitHub</a>
+    - Last commit date: 2020-07-18 12:32:28+09:00
 
 
+* see: <a href="https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C">https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C</a>
 
 
 ## Depends on
 
-* :warning: <a href="ncr.cpp.html">nCr <small>(combinatorics/ncr.cpp)</small></a>
-* :question: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
+* :question: <a href="../../library/math/binpow.cpp.html">Binary-Power(繰り返し二乗法) <small>(math/binpow.cpp)</small></a>
+* :x: <a href="../../library/math/millor_rabin.cpp.html">ミラー・ルビン素数判定法 <small>(math/millor_rabin.cpp)</small></a>
+* :question: <a href="../../library/pre/macros.cpp.html">pre/macros.cpp</a>
 
 
 ## Code
@@ -47,13 +49,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-/*
- * @brief nHr
- * 
- */
-
-#ifndef lib_nhr
-#define lib_nhr
+#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C"
 
 #ifndef call_include
 #define call_include
@@ -62,15 +58,17 @@ using namespace std;
 #endif
 
 #include "pre/macros.cpp"
-#include "combinatorics/ncr.cpp"
+#include "math/millor_rabin.cpp"
 
-ll nHr(ll n, ll r) {
-	if(r == 0) return 1;
-	if(n == 0) return 0;
-	return nCr(n+r-1,n-1);
+int main() {
+	int n; cin>>n;
+	int res=0;
+	for(int i=0; i<n; i++) {
+		int a; cin>>a;
+		if(isprime(a)) res++;
+	}
+	cout<<res<<endl;
 }
-
-#endif // lib_nhr
 
 ```
 {% endraw %}
@@ -83,9 +81,11 @@ Traceback (most recent call last):
     bundled_code = language.bundle(self.file_class.file_path, basedir=pathlib.Path.cwd())
   File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 185, in bundle
     bundler.update(path)
+  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 307, in update
+    self.update(self._resolve(pathlib.Path(included), included_from=path))
   File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 306, in update
     raise BundleErrorAt(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: combinatorics/nhr.cpp: line 15: unable to process #include in #if / #ifdef / #ifndef other than include guards
+onlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: math/millor_rabin.cpp: line 14: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}

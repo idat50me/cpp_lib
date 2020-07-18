@@ -66,7 +66,7 @@ ${}_nC_r\ (\mathrm{mod}\ p)$ を求める．
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
+* :question: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
 
 
 ## Verified with

@@ -25,24 +25,30 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: Binary-Power(繰り返し二乗法) <small>(math/binpow.cpp)</small>
+# :question: Binary-Power(繰り返し二乗法) <small>(math/binpow.cpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/binpow.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-15 18:10:42+09:00
+    - Last commit date: 2020-07-18 12:32:28+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
+* :question: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
+
+
+## Required by
+
+* :x: <a href="millor_rabin.cpp.html">ミラー・ルビン素数判定法 <small>(math/millor_rabin.cpp)</small></a>
 
 
 ## Verified with
 
+* :x: <a href="../../verify/test/aoj_ALDS1_1_C_3.test.cpp.html">test/aoj_ALDS1_1_C_3.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj_NTL_1_B.test.cpp.html">test/aoj_NTL_1_B.test.cpp</a>
 
 
@@ -64,7 +70,7 @@ layout: default
 using namespace std;
 #endif
 
-#include "pre/macros.cpp"
+#include "../pre/macros.cpp"
 
 ll binpow(ll a, ll ex, ll p=(1LL<<60)) {
 	ll res = 1;
