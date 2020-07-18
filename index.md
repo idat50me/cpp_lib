@@ -53,7 +53,7 @@ layout: default
 * :heavy_check_mark: <a href="library/math/divisor.cpp.html">Divisor(約数列挙) <small>(math/divisor.cpp)</small></a>
 * :warning: <a href="library/math/factorial.cpp.html">Factorial(階乗) <small>(math/factorial.cpp)</small></a>
 * :heavy_check_mark: <a href="library/math/isprime.cpp.html">Isprime(素数判定) <small>(math/isprime.cpp)</small></a>
-* :heavy_check_mark: <a href="library/math/millor_rabin.cpp.html">Millor-Rabin(ミラー・ルビン素数判定法) <small>(math/millor_rabin.cpp)</small></a>
+* :heavy_check_mark: <a href="library/math/millor_rabin.cpp.html">Millor-Rabin(ミラー・ラビン素数判定法) <small>(math/millor_rabin.cpp)</small></a>
 * :heavy_check_mark: <a href="library/math/sieve_of_eratosthenes.cpp.html">Sieve-of-Eratosthenes(エラトステネスの篩) <small>(math/sieve_of_eratosthenes.cpp)</small></a>
 
 

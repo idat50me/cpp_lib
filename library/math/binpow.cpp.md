@@ -43,7 +43,7 @@ layout: default
 
 ## Required by
 
-* :heavy_check_mark: <a href="millor_rabin.cpp.html">Millor-Rabin(ミラー・ルビン素数判定法) <small>(math/millor_rabin.cpp)</small></a>
+* :heavy_check_mark: <a href="millor_rabin.cpp.html">Millor-Rabin(ミラー・ラビン素数判定法) <small>(math/millor_rabin.cpp)</small></a>
 
 
 ## Verified with

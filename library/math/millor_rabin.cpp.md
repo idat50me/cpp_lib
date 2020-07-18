@@ -25,16 +25,29 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: Millor-Rabin(ミラー・ルビン素数判定法) <small>(math/millor_rabin.cpp)</small>
+# :heavy_check_mark: Millor-Rabin(ミラー・ラビン素数判定法) <small>(math/millor_rabin.cpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/millor_rabin.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-18 12:54:39+09:00
+    - Last commit date: 2020-07-18 16:39:07+09:00
 
 
 
+
+## なにこれ
+ミラー・ラビン素数判定法を用いた素数判定．
+
+## 制約
+- $n \leq $ `INT_MAX` (そのうち上限緩和したい)
+
+## 関数
+- `isprime(n)`：計算量 $O(\log^3 n)\ \leftarrow$ なんで？  
+	$n$ の素数判定．
+	実際は定数倍が重いけど実用上は問題ないはず．
+	- [Miller–Rabin primality test - Wikipedia](https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test#Testing_against_small_sets_of_bases)
+	
 
 ## Depends on
 
@@ -53,7 +66,8 @@ layout: default
 {% raw %}
 ```cpp
 /*
- * @brief Millor-Rabin(ミラー・ルビン素数判定法)
+ * @brief Millor-Rabin(ミラー・ラビン素数判定法)
+ * @docs ./docs/millor_rabin.md
  */
 
 #ifndef lib_millor_rabin
@@ -78,13 +92,13 @@ bool isprime(int n) {
 	}
 
 	int a[]={2,7,61};
-	for(int i = 0; i < 3; i++) {
-		if(a[i] >= n) continue;
-
-		ll r = binpow(a[i], d, n);
+	for(int k = 0; k < 3; k++) {
+		if(a[k] >= n) break;
+		
+		ll r = binpow(a[k], d, n);
 		if(r == 1 || r == n-1) continue;
 		
-		for(int j = 1; j < s; j++) {
+		for(int i = 1; i < s; i++) {
 			r = r * r % n;
 			if(r == n-1) break;
 		}
@@ -109,7 +123,7 @@ Traceback (most recent call last):
     bundler.update(path)
   File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 306, in update
     raise BundleErrorAt(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: math/millor_rabin.cpp: line 14: unable to process #include in #if / #ifdef / #ifndef other than include guards
+onlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: math/millor_rabin.cpp: line 15: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}
