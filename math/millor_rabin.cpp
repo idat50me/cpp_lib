@@ -1,5 +1,6 @@
 /*
- * @brief Millor-Rabin(ミラー・ルビン素数判定法)
+ * @brief Millor-Rabin(ミラー・ラビン素数判定法)
+ * @docs ./docs/millor_rabin.md
  */
 
 #ifndef lib_millor_rabin
@@ -24,13 +25,13 @@ bool isprime(int n) {
 	}
 
 	int a[]={2,7,61};
-	for(int i = 0; i < 3; i++) {
-		if(a[i] >= n) continue;
-
-		ll r = binpow(a[i], d, n);
+	for(int k = 0; k < 3; k++) {
+		if(a[k] >= n) break;
+		
+		ll r = binpow(a[k], d, n);
 		if(r == 1 || r == n-1) continue;
 		
-		for(int j = 1; j < s; j++) {
+		for(int i = 1; i < s; i++) {
 			r = r * r % n;
 			if(r == n-1) break;
 		}
