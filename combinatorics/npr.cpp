@@ -11,7 +11,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 #endif
-#include "pre/macros.cpp"
+#include "../pre/macros.cpp"
 
 ll nPr(ll n, ll r, ll p=MMPRIME) {
 	if(n < r) return 0LL;

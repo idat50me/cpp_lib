@@ -11,7 +11,7 @@
 using namespace std;
 #endif
 
-#include "pre/macros.cpp"
+#include "../pre/macros.cpp"
 
 ll factorial(ll x, ll p=(1LL<<60)) {
 	ll res = 1;

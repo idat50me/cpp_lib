@@ -12,7 +12,7 @@
 using namespace std;
 #endif
 
-#include "pre/macros.cpp"
+#include "../pre/macros.cpp"
 
 struct Combinatorics {
 private:

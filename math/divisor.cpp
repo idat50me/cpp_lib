@@ -11,7 +11,7 @@
 using namespace std;
 #endif
 
-#include "pre/macros.cpp"
+#include "../pre/macros.cpp"
 
 vector<ll> divisor(ll x) {
 	vector<ll> res;

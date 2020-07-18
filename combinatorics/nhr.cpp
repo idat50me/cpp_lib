@@ -12,8 +12,8 @@
 using namespace std;
 #endif
 
-#include "pre/macros.cpp"
-#include "combinatorics/ncr.cpp"
+#include "../pre/macros.cpp"
+#include "../combinatorics/ncr.cpp"
 
 ll nHr(ll n, ll r) {
 	if(r == 0) return 1;

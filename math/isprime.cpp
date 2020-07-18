@@ -11,7 +11,7 @@
 using namespace std;
 #endif
 
-#include "pre/macros.cpp"
+#include "../pre/macros.cpp"
 
 bool isprime(ll n) {
 	if (n<2) return false;
