@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: test/aoj_ALDS1_1_C_3.test.cpp
+# :heavy_check_mark: test/aoj_ALDS1_1_C_3.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj_ALDS1_1_C_3.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-18 12:32:28+09:00
+    - Last commit date: 2020-07-18 12:54:39+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C">https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C</a>
@@ -39,9 +39,9 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../library/math/binpow.cpp.html">Binary-Power(繰り返し二乗法) <small>(math/binpow.cpp)</small></a>
-* :x: <a href="../../library/math/millor_rabin.cpp.html">ミラー・ルビン素数判定法 <small>(math/millor_rabin.cpp)</small></a>
-* :question: <a href="../../library/pre/macros.cpp.html">pre/macros.cpp</a>
+* :heavy_check_mark: <a href="../../library/math/binpow.cpp.html">Binary-Power(繰り返し二乗法) <small>(math/binpow.cpp)</small></a>
+* :heavy_check_mark: <a href="../../library/math/millor_rabin.cpp.html">Millor-Rabin(ミラー・ルビン素数判定法) <small>(math/millor_rabin.cpp)</small></a>
+* :heavy_check_mark: <a href="../../library/pre/macros.cpp.html">pre/macros.cpp</a>
 
 
 ## Code

@@ -25,26 +25,26 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: ミラー・ルビン素数判定法 <small>(math/millor_rabin.cpp)</small>
+# :heavy_check_mark: Millor-Rabin(ミラー・ルビン素数判定法) <small>(math/millor_rabin.cpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/millor_rabin.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-18 12:32:28+09:00
+    - Last commit date: 2020-07-18 12:54:39+09:00
 
 
 
 
 ## Depends on
 
-* :question: <a href="binpow.cpp.html">Binary-Power(繰り返し二乗法) <small>(math/binpow.cpp)</small></a>
-* :question: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
+* :heavy_check_mark: <a href="binpow.cpp.html">Binary-Power(繰り返し二乗法) <small>(math/binpow.cpp)</small></a>
+* :heavy_check_mark: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
 
 
 ## Verified with
 
-* :x: <a href="../../verify/test/aoj_ALDS1_1_C_3.test.cpp.html">test/aoj_ALDS1_1_C_3.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj_ALDS1_1_C_3.test.cpp.html">test/aoj_ALDS1_1_C_3.test.cpp</a>
 
 
 ## Code
@@ -53,7 +53,7 @@ layout: default
 {% raw %}
 ```cpp
 /*
- * @brief ミラー・ルビン素数判定法
+ * @brief Millor-Rabin(ミラー・ルビン素数判定法)
  */
 
 #ifndef lib_millor_rabin
@@ -69,23 +69,26 @@ using namespace std;
 
 bool isprime(int n) {
 	if(n == 2) return true;
-	if(n < 0 || n%2 == 0) return false;
+	if(n < 2 || n%2 == 0) return false;
 
-	int d=n, s=0;
-	while(d^1) {
+	int d=n-1, s=0;
+	while(d%2 == 0) {
 		s++;
 		d >>= 1;
 	}
 
 	int a[]={2,7,61};
 	for(int i = 0; i < 3; i++) {
+		if(a[i] >= n) continue;
+
 		ll r = binpow(a[i], d, n);
-		if(r == 1) continue;
+		if(r == 1 || r == n-1) continue;
+		
 		for(int j = 1; j < s; j++) {
 			r = r * r % n;
 			if(r == n-1) break;
-			if(j == s-1) return false;
 		}
+		if(r != n-1) return false;
 	}
 
 	return true;
