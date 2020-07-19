@@ -6,8 +6,8 @@
 using namespace std;
 #endif
 
-#include "pre/macros.cpp"
-#include "combinatorics/ncr2.cpp"
+#include "../pre/macros.cpp"
+#include "../combinatorics/ncr2.cpp"
 
 int main() {
 	int n,k; cin>>n>>k;

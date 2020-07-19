@@ -6,8 +6,8 @@
 using namespace std;
 #endif
 
-#include "pre/macros.cpp"
-#include "combinatorics/combinatorics.cpp"
+#include "../pre/macros.cpp"
+#include "../combinatorics/combinatorics.cpp"
 
 int main() {
 	Combinatorics comb(2100000,MPRIME);

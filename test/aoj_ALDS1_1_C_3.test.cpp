@@ -6,8 +6,8 @@
 using namespace std;
 #endif
 
-#include "pre/macros.cpp"
-#include "math/millor_rabin.cpp"
+#include "../pre/macros.cpp"
+#include "../math/millor_rabin.cpp"
 
 int main() {
 	int n; cin>>n;

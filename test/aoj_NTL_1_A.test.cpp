@@ -6,7 +6,7 @@
 using namespace std;
 #endif
 
-#include "math/sieve_of_eratosthenes.cpp"
+#include "../math/sieve_of_eratosthenes.cpp"
 
 int main() {
 	int n; cin>>n;

@@ -6,8 +6,8 @@
 using namespace std;
 #endif
 
-#include "pre/macros.cpp"
-#include "math/binpow.cpp"
+#include "../pre/macros.cpp"
+#include "../math/binpow.cpp"
 
 int main() {
 	int m,n; cin>>m>>n;

@@ -6,8 +6,8 @@
 using namespace std;
 #endif
 
-#include "pre/macros.cpp"
-#include "math/sieve_of_eratosthenes.cpp"
+#include "../pre/macros.cpp"
+#include "../math/sieve_of_eratosthenes.cpp"
 
 int main() {
 	Sieve sv(100000010);
