@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj_ITP1_6_B.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-15 00:30:21+09:00
+    - Last commit date: 2020-07-19 09:59:33+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/6/ITP1_6_B">https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/6/ITP1_6_B</a>
@@ -55,7 +55,7 @@ layout: default
 using namespace std;
 #endif
 
-#include "structs/matrix.cpp"
+#include "../structs/matrix.cpp"
 
 int main() {
 	int N; cin>>N;
