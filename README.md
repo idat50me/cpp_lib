@@ -11,3 +11,4 @@
 - [ ] modint
 - [ ] 木構造struct（vertex,edgeを内包する）
 - [ ] 最大フロー・最小カット（Ford Fulkersonのアルゴリズム）
+- [ ] 素因数分解 $O(n^{\frac 1 4})$
