@@ -72,6 +72,13 @@ layout: default
 * :warning: <a href="library/structs/vertex.cpp.html">structs/vertex.cpp</a>
 
 
+<div id="c0af77cf8294ff93a5cdb2963ca9f038"></div>
+
+### tree
+
+* :x: <a href="library/tree/segtree_RMQ.cpp.html">RMQ(セグメント木) <small>(tree/segtree_RMQ.cpp)</small></a>
+
+
 ## Verify Files
 
 * :heavy_check_mark: <a href="verify/test/aoj_ALDS1_1_C.test.cpp.html">test/aoj_ALDS1_1_C.test.cpp</a>
@@ -83,6 +90,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj_ITP1_6_B.test.cpp.html">test/aoj_ITP1_6_B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_NTL_1_A.test.cpp.html">test/aoj_NTL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_NTL_1_B.test.cpp.html">test/aoj_NTL_1_B.test.cpp</a>
+* :x: <a href="verify/test/yosupo_staticrmq.test.cpp.html">test/yosupo_staticrmq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yuki_0888.test.cpp.html">test/yuki_0888.test.cpp</a>
 
