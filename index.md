@@ -72,6 +72,13 @@ layout: default
 * :warning: <a href="library/structs/vertex.cpp.html">structs/vertex.cpp</a>
 
 
+<div id="c0af77cf8294ff93a5cdb2963ca9f038"></div>
+
+### tree
+
+* :warning: <a href="library/tree/segtree_RmQ.cpp.html">RmQ(セグメント木) <small>(tree/segtree_RmQ.cpp)</small></a>
+
+
 ## Verify Files
 
 * :heavy_check_mark: <a href="verify/test/aoj_ALDS1_1_C.test.cpp.html">test/aoj_ALDS1_1_C.test.cpp</a>
