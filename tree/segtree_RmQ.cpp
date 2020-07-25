@@ -37,9 +37,6 @@ public:
 		}
 	}
 
-	// 区間[L,R)の最小値
-	// now: 今見てるindex
-	// 区間[l,r)の最小値はnowの要素
 	T getmin(int L, int R) { return getmin__(L, R, 0, 0, n); }
 private:
 	T getmin__(int L, int R, int now, int l, int r) {
