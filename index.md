@@ -76,7 +76,6 @@ layout: default
 
 ### tree
 
-* :x: <a href="library/tree/segtree_RMQ.cpp.html">RmQ(セグメント木) <small>(tree/segtree_RMQ.cpp)</small></a>
 * :warning: <a href="library/tree/segtree_RmQ.cpp.html">RmQ(セグメント木) <small>(tree/segtree_RmQ.cpp)</small></a>
 
 

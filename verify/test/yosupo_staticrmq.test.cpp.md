@@ -31,15 +31,9 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo_staticrmq.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-26 02:58:19+09:00
+    - Last commit date: 1970-01-01 00:00:00+00:00
 
 
-* see: <a href="https://judge.yosupo.jp/problem/staticrmq">https://judge.yosupo.jp/problem/staticrmq</a>
-
-
-## Depends on
-
-* :x: <a href="../../library/tree/segtree_RMQ.cpp.html">RmQ(セグメント木) <small>(tree/segtree_RMQ.cpp)</small></a>
 
 
 ## Code
@@ -79,88 +73,16 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/yosupo_staticrmq.test.cpp"
-#define PROBLEM "https://judge.yosupo.jp/problem/staticrmq"
-
-#ifndef call_include
-#define call_include
-#include <bits/stdc++.h>
-using namespace std;
-#endif
-
-#line 1 "tree/segtree_RMQ.cpp"
-/*
- * @brief RmQ(セグメント木)
- */
-
-#ifndef lib_segtree_RmQ
-#define lib_segtree_RmQ
-
-#ifndef call_include
-#define call_include
-#include <bits/stdc++.h>
-using namespace std;
-#endif
-
-template<typename T>
-struct RmQ {
-private:
-	int n=1;
-	vector<T> node;
-	T inf=numeric_limits<T>::max();
-
-public:
-	RmQ(vector<T> v) {
-		while(n<v.size()) n*=2;
-		node.resize(2*n-1,inf);
-		for(int i=0; i<v.size(); i++) node[n-1+i]=v[i];
-		for(int i=n-2; i>=0; i--) node[i]=min(node[2*i+1],node[2*i+2]);
-	}
-
-	void update(int idx, T val) {
-		idx+=n-1;
-		node[idx]=val;
-
-		while(idx>0) {
-			idx=(idx-1)/2;
-			node[idx]=min(node[2*idx+1],node[2*idx+2]);
-		}
-	}
-
-	// 区間[L,R)の最小値
-	// now: 今見てるindex
-	// 区間[l,r)の最小値はnowの要素
-	T getmin(int L, int R) { return getmin__(L, R, 0, 0, n); }
-private:
-	T getmin__(int L, int R, int now, int l, int r) {
-		if(r<=L || R<=l) return inf;
-		if(L<=l && r<=R) return node[now];
-
-		T vl=getmin__(L,R,2*now+1,l,(l+r)/2);
-		T vr=getmin__(L,R,2*now+2,(l+r)/2,r);
-		return min(vl,vr);
-	}
-public:
-};
-
-#endif // lib_segtree_RmQ
-#line 10 "test/yosupo_staticrmq.test.cpp"
-
-int main() {
-	int N,Q;
-	vector<int> v;
-
-	cin>>N>>Q;
-	v.resize(N);
-	for(int i=0; i<N; i++) cin>>v[i];
-	RMQ rmq_tree(v);
-
-	for(int i=0; i<Q; i++) {
-		int l,r; cin>>l>>r;
-		cout<<rmq_tree.getmin(l,r)<<'\n';
-	}
-	cout<<flush;
-}
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 349, in write_contents
+    bundled_code = language.bundle(self.file_class.file_path, basedir=pathlib.Path.cwd())
+  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 185, in bundle
+    bundler.update(path)
+  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 307, in update
+    self.update(self._resolve(pathlib.Path(included), included_from=path))
+  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 187, in _resolve
+    raise BundleErrorAt(path, -1, "no such header")
+onlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: ../tree/segtree_RMQ.cpp: line -1: no such header
 
 ```
 {% endraw %}
