@@ -7,8 +7,8 @@
 * [x] ~~include のパスを相対パスに変える（ローカル実行に対応するため）~~ [2020-07-18 18:00]
 
 ## つくる予定
-- [ ] セグ木（RMQ，区間和）
+- [ ] セグ木（~~RMQ，~~区間和）
 - [ ] modint
 - [ ] 木構造struct（vertex,edgeを内包する）
 - [ ] 最大フロー・最小カット（Ford Fulkersonのアルゴリズム）
-- [ ] 素因数分解 O(n^(1/4))
+- [ ] 素因数分解 O(n^(1/4)) https://qiita.com/Kiri8128/items/eca965fe86ea5f4cbb98
