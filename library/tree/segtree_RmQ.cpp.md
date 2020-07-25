@@ -25,15 +25,42 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: RmQ(セグメント木) <small>(tree/segtree_RmQ.cpp)</small>
+# :heavy_check_mark: RmQ(区間最小値) <small>(tree/segtree_RmQ.cpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/segtree_RmQ.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-26 03:05:23+09:00
+    - Last commit date: 2020-07-26 03:14:53+09:00
 
 
+
+
+## なにこれ
+$n$ 個の要素を持つ配列の区間最小値を求めるセグメント木．
+
+## 制約
+- $n \leq 10^8$ 程度
+
+## コンストラクタ
+- `RmQ(v)`：計算量 $O(n)$
+	- `v`：初期要素を格納している配列．
+
+## メンバ関数
+- `update(idx, val)`：計算量 $O(\log n)$
+	要素を更新する．
+	- `idx`：更新する要素の index
+	- `val`：更新後の要素の値．
+
+- `getmin(L, R)`：計算量 $O(\log n)$
+	区間最小値を求める．
+	- `L,R`：`[L,R)`を探索区間とする．
+
+
+## Verified with
+
+* :heavy_check_mark: <a href="../../verify/test/aoj_DSL_2_A.test.cpp.html">test/aoj_DSL_2_A.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo_staticrmq.test.cpp.html">test/yosupo_staticrmq.test.cpp</a>
 
 
 ## Code
@@ -42,7 +69,8 @@ layout: default
 {% raw %}
 ```cpp
 /*
- * @brief RmQ(セグメント木)
+ * @brief RmQ(区間最小値)
+ * @docs ./docs/segtree_RmQ.md
  */
 
 #ifndef lib_segtree_RmQ
@@ -105,7 +133,8 @@ public:
 ```cpp
 #line 1 "tree/segtree_RmQ.cpp"
 /*
- * @brief RmQ(セグメント木)
+ * @brief RmQ(区間最小値)
+ * @docs ./docs/segtree_RmQ.md
  */
 
 #ifndef lib_segtree_RmQ
