@@ -6,7 +6,7 @@
 using namespace std;
 #endif
 
-#include "../tree/segtree_RMQ.cpp"
+#include "../tree/segtree_RmQ.cpp"
 
 int main() {
 	int N,Q;
@@ -15,7 +15,7 @@ int main() {
 	cin>>N>>Q;
 	v.resize(N);
 	for(int i=0; i<N; i++) cin>>v[i];
-	RMQ rmq_tree(v);
+	RmQ rmq_tree(v);
 
 	for(int i=0; i<Q; i++) {
 		int l,r; cin>>l>>r;
