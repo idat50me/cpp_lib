@@ -13,9 +13,9 @@ using namespace std;
 
 #include "../pre/macros.cpp"
 
-ll factorial(ll x, ll p=(1LL<<60)) {
+ll factorial(ll x, ll p=(1LL<<62)-1) {
 	ll res = 1;
-	while(x > 1) res = res*x%p;
+	for(int i=2; i<=x; i++) res = res*i%p;
 	return res;
 }
 
