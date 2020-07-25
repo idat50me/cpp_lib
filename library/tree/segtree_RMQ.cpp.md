@@ -25,20 +25,20 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: RMQ(セグメント木) <small>(tree/segtree_RMQ.cpp)</small>
+# :heavy_check_mark: RMQ(セグメント木) <small>(tree/segtree_RMQ.cpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/segtree_RMQ.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-26 01:35:19+09:00
+    - Last commit date: 2020-07-26 01:38:40+09:00
 
 
 
 
 ## Verified with
 
-* :x: <a href="../../verify/test/yosupo_staticrmq.test.cpp.html">test/yosupo_staticrmq.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo_staticrmq.test.cpp.html">test/yosupo_staticrmq.test.cpp</a>
 
 
 ## Code
@@ -93,8 +93,8 @@ private:
 		if(r<=L || R<=l) return inf;
 		if(L<=l && r<=R) return node[now];
 
-		T vl=getmin(L,R,2*now+1,l,(l+r)/2);
-		T vr=getmin(L,R,2*now+2,(l+r)/2,r);
+		T vl=getmin__(L,R,2*now+1,l,(l+r)/2);
+		T vr=getmin__(L,R,2*now+2,(l+r)/2,r);
 		return min(vl,vr);
 	}
 public:
@@ -156,8 +156,8 @@ private:
 		if(r<=L || R<=l) return inf;
 		if(L<=l && r<=R) return node[now];
 
-		T vl=getmin(L,R,2*now+1,l,(l+r)/2);
-		T vr=getmin(L,R,2*now+2,(l+r)/2,r);
+		T vl=getmin__(L,R,2*now+1,l,(l+r)/2);
+		T vr=getmin__(L,R,2*now+2,(l+r)/2,r);
 		return min(vl,vr);
 	}
 public:
