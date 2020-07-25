@@ -25,21 +25,21 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: RMQ(セグメント木) <small>(tree/segtree_RMQ.cpp)</small>
+# :x: RmQ(セグメント木) <small>(tree/segtree_RMQ.cpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/segtree_RMQ.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-26 01:38:40+09:00
+    - Last commit date: 2020-07-26 02:58:19+09:00
 
 
 
 
 ## Verified with
 
-* :heavy_check_mark: <a href="../../verify/test/aoj_DSL_2_A.test.cpp.html">test/aoj_DSL_2_A.test.cpp</a>
-* :heavy_check_mark: <a href="../../verify/test/yosupo_staticrmq.test.cpp.html">test/yosupo_staticrmq.test.cpp</a>
+* :x: <a href="../../verify/test/aoj_DSL_2_A.test.cpp.html">test/aoj_DSL_2_A.test.cpp</a>
+* :x: <a href="../../verify/test/yosupo_staticrmq.test.cpp.html">test/yosupo_staticrmq.test.cpp</a>
 
 
 ## Code
@@ -48,11 +48,11 @@ layout: default
 {% raw %}
 ```cpp
 /*
- * @brief RMQ(セグメント木)
+ * @brief RmQ(セグメント木)
  */
 
-#ifndef lib_segtree_RMQ
-#define lib_segtree_RMQ
+#ifndef lib_segtree_RmQ
+#define lib_segtree_RmQ
 
 #ifndef call_include
 #define call_include
@@ -61,14 +61,14 @@ using namespace std;
 #endif
 
 template<typename T>
-struct RMQ {
+struct RmQ {
 private:
 	int n=1;
 	vector<T> node;
 	T inf=numeric_limits<T>::max();
 
 public:
-	RMQ(vector<T> v) {
+	RmQ(vector<T> v) {
 		while(n<v.size()) n*=2;
 		node.resize(2*n-1,inf);
 		for(int i=0; i<v.size(); i++) node[n-1+i]=v[i];
@@ -101,7 +101,7 @@ private:
 public:
 };
 
-#endif // lib_segtree_RMQ
+#endif // lib_segtree_RmQ
 
 ```
 {% endraw %}
@@ -111,11 +111,11 @@ public:
 ```cpp
 #line 1 "tree/segtree_RMQ.cpp"
 /*
- * @brief RMQ(セグメント木)
+ * @brief RmQ(セグメント木)
  */
 
-#ifndef lib_segtree_RMQ
-#define lib_segtree_RMQ
+#ifndef lib_segtree_RmQ
+#define lib_segtree_RmQ
 
 #ifndef call_include
 #define call_include
@@ -124,14 +124,14 @@ using namespace std;
 #endif
 
 template<typename T>
-struct RMQ {
+struct RmQ {
 private:
 	int n=1;
 	vector<T> node;
 	T inf=numeric_limits<T>::max();
 
 public:
-	RMQ(vector<T> v) {
+	RmQ(vector<T> v) {
 		while(n<v.size()) n*=2;
 		node.resize(2*n-1,inf);
 		for(int i=0; i<v.size(); i++) node[n-1+i]=v[i];
@@ -164,7 +164,7 @@ private:
 public:
 };
 
-#endif // lib_segtree_RMQ
+#endif // lib_segtree_RmQ
 
 ```
 {% endraw %}

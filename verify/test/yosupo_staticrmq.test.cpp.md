@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/yosupo_staticrmq.test.cpp
+# :x: test/yosupo_staticrmq.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/yosupo_staticrmq.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-26 01:38:40+09:00
+    - Last commit date: 2020-07-26 02:58:19+09:00
 
 
 * see: <a href="https://judge.yosupo.jp/problem/staticrmq">https://judge.yosupo.jp/problem/staticrmq</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../../library/tree/segtree_RMQ.cpp.html">RMQ(セグメント木) <small>(tree/segtree_RMQ.cpp)</small></a>
+* :x: <a href="../../library/tree/segtree_RMQ.cpp.html">RmQ(セグメント木) <small>(tree/segtree_RMQ.cpp)</small></a>
 
 
 ## Code
@@ -90,11 +90,11 @@ using namespace std;
 
 #line 1 "tree/segtree_RMQ.cpp"
 /*
- * @brief RMQ(セグメント木)
+ * @brief RmQ(セグメント木)
  */
 
-#ifndef lib_segtree_RMQ
-#define lib_segtree_RMQ
+#ifndef lib_segtree_RmQ
+#define lib_segtree_RmQ
 
 #ifndef call_include
 #define call_include
@@ -103,14 +103,14 @@ using namespace std;
 #endif
 
 template<typename T>
-struct RMQ {
+struct RmQ {
 private:
 	int n=1;
 	vector<T> node;
 	T inf=numeric_limits<T>::max();
 
 public:
-	RMQ(vector<T> v) {
+	RmQ(vector<T> v) {
 		while(n<v.size()) n*=2;
 		node.resize(2*n-1,inf);
 		for(int i=0; i<v.size(); i++) node[n-1+i]=v[i];
@@ -143,7 +143,7 @@ private:
 public:
 };
 
-#endif // lib_segtree_RMQ
+#endif // lib_segtree_RmQ
 #line 10 "test/yosupo_staticrmq.test.cpp"
 
 int main() {

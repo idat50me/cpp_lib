@@ -76,7 +76,8 @@ layout: default
 
 ### tree
 
-* :heavy_check_mark: <a href="library/tree/segtree_RMQ.cpp.html">RMQ(セグメント木) <small>(tree/segtree_RMQ.cpp)</small></a>
+* :x: <a href="library/tree/segtree_RMQ.cpp.html">RmQ(セグメント木) <small>(tree/segtree_RMQ.cpp)</small></a>
+* :warning: <a href="library/tree/segtree_RmQ.cpp.html">RmQ(セグメント木) <small>(tree/segtree_RmQ.cpp)</small></a>
 
 
 ## Verify Files
@@ -87,11 +88,11 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj_DPL_5_D.test.cpp.html">test/aoj_DPL_5_D.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_DPL_5_E.test.cpp.html">test/aoj_DPL_5_E.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_DPL_5_E_2.test.cpp.html">test/aoj_DPL_5_E_2.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj_DSL_2_A.test.cpp.html">test/aoj_DSL_2_A.test.cpp</a>
+* :x: <a href="verify/test/aoj_DSL_2_A.test.cpp.html">test/aoj_DSL_2_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_ITP1_6_B.test.cpp.html">test/aoj_ITP1_6_B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_NTL_1_A.test.cpp.html">test/aoj_NTL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_NTL_1_B.test.cpp.html">test/aoj_NTL_1_B.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/yosupo_staticrmq.test.cpp.html">test/yosupo_staticrmq.test.cpp</a>
+* :x: <a href="verify/test/yosupo_staticrmq.test.cpp.html">test/yosupo_staticrmq.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yuki_0888.test.cpp.html">test/yuki_0888.test.cpp</a>
 
