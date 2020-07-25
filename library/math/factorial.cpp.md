@@ -25,20 +25,25 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :warning: Factorial(階乗) <small>(math/factorial.cpp)</small>
+# :x: Factorial(階乗) <small>(math/factorial.cpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/factorial.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-18 18:00:45+09:00
+    - Last commit date: 2020-07-26 03:34:44+09:00
 
 
 
 
 ## Depends on
 
-* :heavy_check_mark: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
+* :question: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
+
+
+## Verified with
+
+* :x: <a href="../../verify/test/aoj_0019.test.cpp.html">test/aoj_0019.test.cpp</a>
 
 
 ## Code
@@ -61,9 +66,9 @@ using namespace std;
 
 #include "../pre/macros.cpp"
 
-ll factorial(ll x, ll p=(1LL<<60)) {
+ll factorial(ll x, ll p=(1LL<<62)-1) {
 	ll res = 1;
-	while(x > 1) res = res*x%p;
+	for(int i=2; i<=x; i++) res = res*i%p;
 	return res;
 }
 

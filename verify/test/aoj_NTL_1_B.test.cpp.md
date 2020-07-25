@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../library/math/binpow.cpp.html">Binary-Power(繰り返し二乗法) <small>(math/binpow.cpp)</small></a>
-* :heavy_check_mark: <a href="../../library/pre/macros.cpp.html">pre/macros.cpp</a>
+* :question: <a href="../../library/pre/macros.cpp.html">pre/macros.cpp</a>
 
 
 ## Code

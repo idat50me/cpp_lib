@@ -40,7 +40,7 @@ layout: default
 ## Depends on
 
 * :heavy_check_mark: <a href="../../library/combinatorics/ncr2.cpp.html">nCr mod p ($r \leq 10^7$, クエリ $O(r)$) <small>(combinatorics/ncr2.cpp)</small></a>
-* :heavy_check_mark: <a href="../../library/pre/macros.cpp.html">pre/macros.cpp</a>
+* :question: <a href="../../library/pre/macros.cpp.html">pre/macros.cpp</a>
 
 
 ## Code
