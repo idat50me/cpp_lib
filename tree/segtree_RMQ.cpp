@@ -45,8 +45,8 @@ private:
 		if(r<=L || R<=l) return inf;
 		if(L<=l && r<=R) return node[now];
 
-		T vl=getmin(L,R,2*now+1,l,(l+r)/2);
-		T vr=getmin(L,R,2*now+2,(l+r)/2,r);
+		T vl=getmin__(L,R,2*now+1,l,(l+r)/2);
+		T vr=getmin__(L,R,2*now+2,(l+r)/2,r);
 		return min(vl,vr);
 	}
 public:
