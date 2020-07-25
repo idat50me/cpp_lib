@@ -39,7 +39,9 @@ public:
 	// 区間[L,R)の最小値
 	// now: 今見てるindex
 	// 区間[l,r)の最小値はnowの要素
-	T getmin(int L, int R, int now=0, int l=0, int r=n) {
+	T getmin(int L, int R) { return getmin__(L, R, 0, 0, n); }
+private:
+	T getmin__(int L, int R, int now, int l, int r) {
 		if(r<=L || R<=l) return inf;
 		if(L<=l && r<=R) return node[now];
 
@@ -47,6 +49,7 @@ public:
 		T vr=getmin(L,R,2*now+2,(l+r)/2,r);
 		return min(vl,vr);
 	}
+public:
 };
 
 #endif // lib_segtree_RMQ
