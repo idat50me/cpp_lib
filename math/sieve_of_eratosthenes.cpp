@@ -34,17 +34,14 @@ struct Sieve {
 	}
 
 	vector<pair<int,int>> primefact(int n) {
-		vector<pair<int,int>> res;
-		for(int i=0; i<primes.size() && n>1; i++) {
-			if((ll)primes[i]*primes[i]>n) break;
-			int cnt=0;
-			while(n%primes[i]==0) {
-				n/=primes[i];
-				cnt++;
-			}
-			if(cnt) res.push_back({primes[i],cnt});
+		vector<pair<int,int>> res={{f[n],1}};
+		n /= f[n];
+		while(n>1) {
+			int dv=f[n];
+			if(res.back().first==dv) res.back().second++;
+			else res.push_back({dv,1});
+			n /= dv;
 		}
-		if(n>1) res.push_back({n,1});
 		return res;
 	}
 
@@ -52,7 +49,7 @@ struct Sieve {
 		int res=1;
 		vector<pair<int,int>> fl=primefact(n);
 		for(int i=0; i<fl.size(); i++) {
-			res*=fl[i].second;
+			res *= fl[i].second;
 		}
 		return res;
 	}
