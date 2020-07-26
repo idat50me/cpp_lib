@@ -2,8 +2,6 @@
 [![GitHub Pages](https://img.shields.io/static/v1?label=GitHub+Pages&message=+&color=brightgreen&logo=github)](https://idat50me.github.io/cpp_lib/)
 
 ## やること
-* [x] ~~旧verのcombinatoricsライブラリの処理~~ [2020-07-16 00:21]
-* [x] ~~include のパスを相対パスに変える（ローカル実行に対応するため）~~ [2020-07-18 18:00]
 
 ## つくる予定
 - [ ] セグ木（~~RMQ，~~ 区間和）
