@@ -21,7 +21,7 @@ vector<ll> divisor(ll x) {
 		res.push_back(i);
 		res.push_back(x/i);
 	}
-	if(i*i==x && x%i==0)
+	if(i*i==x)
 		res.push_back(i);
 	
 	sort(res.begin(),res.end());

@@ -15,7 +15,7 @@ using namespace std;
 
 ll factorial(ll x, ll p=(1LL<<62)-1) {
 	ll res = 1;
-	for(int i=2; i<=x; i++) res = res*i%p;
+	for(int i=2; i<=x; i++) res = i%p*res%p;
 	return res;
 }
 
