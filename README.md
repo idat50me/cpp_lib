@@ -10,4 +10,6 @@
 - [ ] modint
 - [ ] 木構造struct（vertex,edgeを内包する）
 - [ ] 最大フロー・最小カット（Ford Fulkersonのアルゴリズム）
+
+## つくるか不明
 - [ ] 素因数分解 O(n^(1/4)) https://qiita.com/Kiri8128/items/eca965fe86ea5f4cbb98
