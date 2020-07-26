@@ -27,7 +27,7 @@ public:
 	}
 
 	int root(int x) {
-		assert(x < n);
+		assert(x < parent.size());
 		if(parent[x]==x) return x;
 		return parent[x]=root(parent[x]);
 	}
