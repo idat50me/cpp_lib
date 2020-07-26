@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: Union-Find木 <small>(tree/union_find.cpp)</small>
+# :heavy_check_mark: Union-Find木 <small>(tree/union_find.cpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/union_find.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-27 01:48:27+09:00
+    - Last commit date: 2020-07-27 01:51:32+09:00
 
 
 
@@ -69,7 +69,7 @@ $n$ 頂点を持つ Union-Find 木です．
 
 ## Verified with
 
-* :x: <a href="../../verify/test/aoj_DSL_1_A.test.cpp.html">test/aoj_DSL_1_A.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/aoj_DSL_1_A.test.cpp.html">test/aoj_DSL_1_A.test.cpp</a>
 
 
 ## Code
@@ -106,7 +106,7 @@ public:
 	}
 
 	int root(int x) {
-		assert(x < n);
+		assert(x < parent.size());
 		if(parent[x]==x) return x;
 		return parent[x]=root(parent[x]);
 	}
@@ -172,7 +172,7 @@ public:
 	}
 
 	int root(int x) {
-		assert(x < n);
+		assert(x < parent.size());
 		if(parent[x]==x) return x;
 		return parent[x]=root(parent[x]);
 	}

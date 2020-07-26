@@ -77,7 +77,7 @@ layout: default
 ### tree
 
 * :heavy_check_mark: <a href="library/tree/segtree_RmQ.cpp.html">RmQ(区間最小値) <small>(tree/segtree_RmQ.cpp)</small></a>
-* :x: <a href="library/tree/union_find.cpp.html">Union-Find木 <small>(tree/union_find.cpp)</small></a>
+* :heavy_check_mark: <a href="library/tree/union_find.cpp.html">Union-Find木 <small>(tree/union_find.cpp)</small></a>
 
 
 ## Verify Files
@@ -89,7 +89,7 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj_DPL_5_D.test.cpp.html">test/aoj_DPL_5_D.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_DPL_5_E.test.cpp.html">test/aoj_DPL_5_E.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_DPL_5_E_2.test.cpp.html">test/aoj_DPL_5_E_2.test.cpp</a>
-* :x: <a href="verify/test/aoj_DSL_1_A.test.cpp.html">test/aoj_DSL_1_A.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/aoj_DSL_1_A.test.cpp.html">test/aoj_DSL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_DSL_2_A.test.cpp.html">test/aoj_DSL_2_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_ITP1_6_B.test.cpp.html">test/aoj_ITP1_6_B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_NTL_1_A.test.cpp.html">test/aoj_NTL_1_A.test.cpp</a>

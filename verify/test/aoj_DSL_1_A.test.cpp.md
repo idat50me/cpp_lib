@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: test/aoj_DSL_1_A.test.cpp
+# :heavy_check_mark: test/aoj_DSL_1_A.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj_DSL_1_A.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-27 01:48:27+09:00
+    - Last commit date: 2020-07-27 01:51:32+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/problems/DSL_1_A">https://onlinejudge.u-aizu.ac.jp/problems/DSL_1_A</a>
@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :x: <a href="../../library/tree/union_find.cpp.html">Union-Find木 <small>(tree/union_find.cpp)</small></a>
+* :heavy_check_mark: <a href="../../library/tree/union_find.cpp.html">Union-Find木 <small>(tree/union_find.cpp)</small></a>
 
 
 ## Code
@@ -116,7 +116,7 @@ public:
 	}
 
 	int root(int x) {
-		assert(x < n);
+		assert(x < parent.size());
 		if(parent[x]==x) return x;
 		return parent[x]=root(parent[x]);
 	}
