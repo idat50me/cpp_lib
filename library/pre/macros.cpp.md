@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :question: pre/macros.cpp
+# :heavy_check_mark: pre/macros.cpp
 
 <a href="../../index.html">Back to top page</a>
 
@@ -45,15 +45,15 @@ layout: default
 * :warning: <a href="../combinatorics/npr.cpp.html">nPr mod p <small>(combinatorics/npr.cpp)</small></a>
 * :heavy_check_mark: <a href="../math/binpow.cpp.html">Binary-Power(繰り返し二乗法) <small>(math/binpow.cpp)</small></a>
 * :heavy_check_mark: <a href="../math/divisor.cpp.html">Divisor(約数列挙) <small>(math/divisor.cpp)</small></a>
-* :x: <a href="../math/factorial.cpp.html">Factorial(階乗) <small>(math/factorial.cpp)</small></a>
+* :warning: <a href="../math/factorial.cpp.html">Factorial(階乗) <small>(math/factorial.cpp)</small></a>
 * :heavy_check_mark: <a href="../math/isprime.cpp.html">Isprime(素数判定) <small>(math/isprime.cpp)</small></a>
 * :heavy_check_mark: <a href="../math/millor_rabin.cpp.html">Millor-Rabin(ミラー・ラビン素数判定法) <small>(math/millor_rabin.cpp)</small></a>
 * :heavy_check_mark: <a href="../math/sieve_of_eratosthenes.cpp.html">Sieve-of-Eratosthenes(エラトステネスの篩) <small>(math/sieve_of_eratosthenes.cpp)</small></a>
+* :warning: <a href="../test/aoj_0019.cpp.html">test/aoj_0019.cpp</a>
 
 
 ## Verified with
 
-* :x: <a href="../../verify/test/aoj_0019.test.cpp.html">test/aoj_0019.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj_ALDS1_1_C.test.cpp.html">test/aoj_ALDS1_1_C.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj_ALDS1_1_C_2.test.cpp.html">test/aoj_ALDS1_1_C_2.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj_ALDS1_1_C_3.test.cpp.html">test/aoj_ALDS1_1_C_3.test.cpp</a>

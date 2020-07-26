@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :x: Factorial(階乗) <small>(math/factorial.cpp)</small>
+# :warning: Factorial(階乗) <small>(math/factorial.cpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
@@ -38,12 +38,12 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
+* :heavy_check_mark: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
 
 
-## Verified with
+## Required by
 
-* :x: <a href="../../verify/test/aoj_0019.test.cpp.html">test/aoj_0019.test.cpp</a>
+* :warning: <a href="../test/aoj_0019.cpp.html">test/aoj_0019.cpp</a>
 
 
 ## Code

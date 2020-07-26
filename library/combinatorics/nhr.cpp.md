@@ -39,7 +39,7 @@ layout: default
 ## Depends on
 
 * :warning: <a href="ncr.cpp.html">nCr <small>(combinatorics/ncr.cpp)</small></a>
-* :question: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
+* :heavy_check_mark: <a href="../pre/macros.cpp.html">pre/macros.cpp</a>
 
 
 ## Code

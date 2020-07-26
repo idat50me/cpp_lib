@@ -51,7 +51,7 @@ layout: default
 
 * :heavy_check_mark: <a href="library/math/binpow.cpp.html">Binary-Power(繰り返し二乗法) <small>(math/binpow.cpp)</small></a>
 * :heavy_check_mark: <a href="library/math/divisor.cpp.html">Divisor(約数列挙) <small>(math/divisor.cpp)</small></a>
-* :x: <a href="library/math/factorial.cpp.html">Factorial(階乗) <small>(math/factorial.cpp)</small></a>
+* :warning: <a href="library/math/factorial.cpp.html">Factorial(階乗) <small>(math/factorial.cpp)</small></a>
 * :heavy_check_mark: <a href="library/math/isprime.cpp.html">Isprime(素数判定) <small>(math/isprime.cpp)</small></a>
 * :heavy_check_mark: <a href="library/math/millor_rabin.cpp.html">Millor-Rabin(ミラー・ラビン素数判定法) <small>(math/millor_rabin.cpp)</small></a>
 * :heavy_check_mark: <a href="library/math/sieve_of_eratosthenes.cpp.html">Sieve-of-Eratosthenes(エラトステネスの篩) <small>(math/sieve_of_eratosthenes.cpp)</small></a>
@@ -61,7 +61,7 @@ layout: default
 
 ### pre
 
-* :question: <a href="library/pre/macros.cpp.html">pre/macros.cpp</a>
+* :heavy_check_mark: <a href="library/pre/macros.cpp.html">pre/macros.cpp</a>
 
 
 <div id="5a8d55c70c1f3dcbee2f791cd477d649"></div>
@@ -70,6 +70,13 @@ layout: default
 
 * :heavy_check_mark: <a href="library/structs/matrix.cpp.html">Matrix( $2$ 次元行列) <small>(structs/matrix.cpp)</small></a>
 * :warning: <a href="library/structs/vertex.cpp.html">structs/vertex.cpp</a>
+
+
+<div id="098f6bcd4621d373cade4e832627b4f6"></div>
+
+### test
+
+* :warning: <a href="library/test/aoj_0019.cpp.html">test/aoj_0019.cpp</a>
 
 
 <div id="c0af77cf8294ff93a5cdb2963ca9f038"></div>
@@ -82,7 +89,6 @@ layout: default
 
 ## Verify Files
 
-* :x: <a href="verify/test/aoj_0019.test.cpp.html">test/aoj_0019.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_ALDS1_1_C.test.cpp.html">test/aoj_ALDS1_1_C.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_ALDS1_1_C_2.test.cpp.html">test/aoj_ALDS1_1_C_2.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_ALDS1_1_C_3.test.cpp.html">test/aoj_ALDS1_1_C_3.test.cpp</a>
