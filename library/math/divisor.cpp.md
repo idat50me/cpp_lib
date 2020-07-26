@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/divisor.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-18 18:00:45+09:00
+    - Last commit date: 2020-07-26 17:49:09+09:00
 
 
 
@@ -74,7 +74,7 @@ vector<ll> divisor(ll x) {
 		res.push_back(i);
 		res.push_back(x/i);
 	}
-	if(i*i==x && x%i==0)
+	if(i*i==x)
 		res.push_back(i);
 	
 	sort(res.begin(),res.end());
