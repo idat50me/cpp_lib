@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/sieve_of_eratosthenes.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-18 18:00:45+09:00
+    - Last commit date: 2020-07-27 00:41:15+09:00
 
 
 
@@ -51,13 +51,10 @@ layout: default
 - `isprime(x)`：計算量 $O(1)$  
 	$x$ の素数判定
 
-- `primefact(n)`：計算量 $O(\sqrt{n})$？  
+- `primefact(n)`：計算量 $O(\log n)$  
 	$n$ の素因数分解．$\\{素因数,個数\\}$ の pair の vector を返す．
-	計算量は最悪 $O(\pi(\sqrt{n})) \approx O(\sqrt{n})$ ※未証明
-	- $n < 10^5$ で $\frac{n}{10} < \pi(n) < n$ らしいのでたぶんそんなもん
-	- [素数計数関数 - Wikipedia](https://ja.wikipedia.org/wiki/%E7%B4%A0%E6%95%B0%E8%A8%88%E6%95%B0%E9%96%A2%E6%95%B0)
 
-- `divisorcount(n)`：計算量 $O(\sqrt{n})$？  
+- `divisorcount(n)`：計算量 $O(\log n)$  
 	$n$ の約数の個数  
 	計算量は`primefact(n)`依存
 
@@ -114,17 +111,14 @@ struct Sieve {
 	}
 
 	vector<pair<int,int>> primefact(int n) {
-		vector<pair<int,int>> res;
-		for(int i=0; i<primes.size() && n>1; i++) {
-			if((ll)primes[i]*primes[i]>n) break;
-			int cnt=0;
-			while(n%primes[i]==0) {
-				n/=primes[i];
-				cnt++;
-			}
-			if(cnt) res.push_back({primes[i],cnt});
+		vector<pair<int,int>> res={{f[n],1}};
+		n /= f[n];
+		while(n>1) {
+			int dv=f[n];
+			if(res.back().first==dv) res.back().second++;
+			else res.push_back({dv,1});
+			n /= dv;
 		}
-		if(n>1) res.push_back({n,1});
 		return res;
 	}
 
@@ -132,7 +126,7 @@ struct Sieve {
 		int res=1;
 		vector<pair<int,int>> fl=primefact(n);
 		for(int i=0; i<fl.size(); i++) {
-			res*=fl[i].second;
+			res *= fl[i].second;
 		}
 		return res;
 	}
