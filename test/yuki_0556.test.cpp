@@ -19,7 +19,7 @@ int main() {
 		else uf.merge(B,A);
 	}
 
-	for(int i=1; i<N; i++) {
+	for(int i=1; i<=N; i++) {
 		cout<<uf.root(i)<<'\n';
 	}
 	cout<<flush;
