@@ -12,14 +12,14 @@
 using namespace std;
 #endif
 
-struct Union_Find {
+struct UnionFind {
 private:
 	vector<int> parent;
 	vector<int> num;
 	int treenum;
 
 public:
-	Union_Find(int n) : parent(n),num(n,1) {
+	UnionFind(int n) : parent(n),num(n,1) {
 		treenum=n;
 		for(int i=0; i<n; i++) {
 			parent[i]=i;

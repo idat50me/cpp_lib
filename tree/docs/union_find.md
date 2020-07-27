@@ -5,7 +5,7 @@ $n$ 頂点を持つ Union-Find 木です．
 - $n \leq 10^8$ 程度
 
 ## コンストラクタ
-- `Union_Find(n)`：計算量 $O(n)$  
+- `UnionFind(n)`：計算量 $O(n)$  
 	- `n`：頂点数
 
 ## メンバ関数

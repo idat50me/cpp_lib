@@ -10,7 +10,7 @@ using namespace std;
 
 int main() {
 	int N,Q; cin>>N>>Q;
-	Union_Find uf(N);
+	UnionFind uf(N);
 
 	for(int i=0; i<Q; i++) {
 		int t,u,v; cin>>t>>u>>v;
