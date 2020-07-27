@@ -25,7 +25,7 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :question: Union-Find木 <small>(tree/union_find.cpp)</small>
+# :heavy_check_mark: Union-Find木 <small>(tree/union_find.cpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
@@ -72,7 +72,7 @@ $n$ 頂点を持つ Union-Find 木です．
 
 * :heavy_check_mark: <a href="../../verify/test/aoj_DSL_1_A.test.cpp.html">test/aoj_DSL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/yosupo_unionfind.test.cpp.html">test/yosupo_unionfind.test.cpp</a>
-* :x: <a href="../../verify/test/yuki_0556.test.cpp.html">test/yuki_0556.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yuki_0556.test.cpp.html">test/yuki_0556.test.cpp</a>
 
 
 ## Code

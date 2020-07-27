@@ -39,7 +39,7 @@ layout: default
 
 ## Depends on
 
-* :question: <a href="../../library/tree/union_find.cpp.html">Union-Find木 <small>(tree/union_find.cpp)</small></a>
+* :heavy_check_mark: <a href="../../library/tree/union_find.cpp.html">Union-Find木 <small>(tree/union_find.cpp)</small></a>
 
 
 ## Code
