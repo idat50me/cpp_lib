@@ -25,16 +25,16 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: test/aoj_DSL_1_A.test.cpp
+# :heavy_check_mark: test/yosupo_unionfind.test.cpp
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
-* <a href="{{ site.github.repository_url }}/blob/master/test/aoj_DSL_1_A.test.cpp">View this file on GitHub</a>
+* <a href="{{ site.github.repository_url }}/blob/master/test/yosupo_unionfind.test.cpp">View this file on GitHub</a>
     - Last commit date: 2020-07-27 15:49:04+09:00
 
 
-* see: <a href="https://onlinejudge.u-aizu.ac.jp/problems/DSL_1_A">https://onlinejudge.u-aizu.ac.jp/problems/DSL_1_A</a>
+* see: <a href="https://judge.yosupo.jp/problem/unionfind">https://judge.yosupo.jp/problem/unionfind</a>
 
 
 ## Depends on
@@ -47,7 +47,7 @@ layout: default
 <a id="unbundled"></a>
 {% raw %}
 ```cpp
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/DSL_1_A"
+#define PROBLEM "https://judge.yosupo.jp/problem/unionfind"
 
 #ifndef call_include
 #define call_include
@@ -62,10 +62,10 @@ int main() {
 	Union_Find uf(N);
 
 	for(int i=0; i<Q; i++) {
-		int com,x,y; cin>>com>>x>>y;
+		int t,u,v; cin>>t>>u>>v;
 
-		if(com==0) uf.merge(x,y);
-		else cout<<(uf.same(x,y) ? 1 : 0)<<'\n';
+		if(t==0) uf.merge(u,v);
+		else cout<<(uf.same(u,v) ? 1 : 0)<<'\n';
 	}
 
 	cout<<flush;
@@ -77,8 +77,8 @@ int main() {
 <a id="bundled"></a>
 {% raw %}
 ```cpp
-#line 1 "test/aoj_DSL_1_A.test.cpp"
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/DSL_1_A"
+#line 1 "test/yosupo_unionfind.test.cpp"
+#define PROBLEM "https://judge.yosupo.jp/problem/unionfind"
 
 #ifndef call_include
 #define call_include
@@ -145,17 +145,17 @@ public:
 
 
 #endif // lib_union_find
-#line 10 "test/aoj_DSL_1_A.test.cpp"
+#line 10 "test/yosupo_unionfind.test.cpp"
 
 int main() {
 	int N,Q; cin>>N>>Q;
 	Union_Find uf(N);
 
 	for(int i=0; i<Q; i++) {
-		int com,x,y; cin>>com>>x>>y;
+		int t,u,v; cin>>t>>u>>v;
 
-		if(com==0) uf.merge(x,y);
-		else cout<<(uf.same(x,y) ? 1 : 0)<<'\n';
+		if(t==0) uf.merge(u,v);
+		else cout<<(uf.same(u,v) ? 1 : 0)<<'\n';
 	}
 
 	cout<<flush;

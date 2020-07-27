@@ -25,13 +25,13 @@ layout: default
 <link rel="stylesheet" href="../../assets/css/copy-button.css" />
 
 
-# :heavy_check_mark: Union-Find木 <small>(tree/union_find.cpp)</small>
+# :question: Union-Find木 <small>(tree/union_find.cpp)</small>
 
 <a href="../../index.html">Back to top page</a>
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/union_find.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-27 01:51:32+09:00
+    - Last commit date: 2020-07-27 15:49:04+09:00
 
 
 
@@ -56,7 +56,8 @@ $n$ 頂点を持つ Union-Find 木です．
 	- `x`：頂点の番号．
 
 - `merge(x, y)`：償却計算量 $O(1)$  
-	`x` と `y` を結合する．
+	`x` と `y` を結合する．  
+	グラフ上では `y` が `x` の下につく．
 	- `x,y`：結合する頂点の番号．
 
 - `same(x, y)`：償却計算量 $O(1)$  
@@ -70,6 +71,8 @@ $n$ 頂点を持つ Union-Find 木です．
 ## Verified with
 
 * :heavy_check_mark: <a href="../../verify/test/aoj_DSL_1_A.test.cpp.html">test/aoj_DSL_1_A.test.cpp</a>
+* :heavy_check_mark: <a href="../../verify/test/yosupo_unionfind.test.cpp.html">test/yosupo_unionfind.test.cpp</a>
+* :x: <a href="../../verify/test/yuki_0556.test.cpp.html">test/yuki_0556.test.cpp</a>
 
 
 ## Code
@@ -119,8 +122,8 @@ public:
 		int xrt=root(x);
 		int yrt=root(y);
 		if(xrt==yrt) return;
-		parent[xrt]=yrt;
-		num[yrt]+=num[xrt];
+		parent[yrt]=xrt;
+		num[xrt]+=num[yrt];
 		treenum--;
 	}
 
@@ -185,8 +188,8 @@ public:
 		int xrt=root(x);
 		int yrt=root(y);
 		if(xrt==yrt) return;
-		parent[xrt]=yrt;
-		num[yrt]+=num[xrt];
+		parent[yrt]=xrt;
+		num[xrt]+=num[yrt];
 		treenum--;
 	}
 

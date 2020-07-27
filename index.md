@@ -84,7 +84,7 @@ layout: default
 ### tree
 
 * :heavy_check_mark: <a href="library/tree/segtree_RmQ.cpp.html">RmQ(区間最小値) <small>(tree/segtree_RmQ.cpp)</small></a>
-* :heavy_check_mark: <a href="library/tree/union_find.cpp.html">Union-Find木 <small>(tree/union_find.cpp)</small></a>
+* :question: <a href="library/tree/union_find.cpp.html">Union-Find木 <small>(tree/union_find.cpp)</small></a>
 
 
 ## Verify Files
@@ -101,7 +101,9 @@ layout: default
 * :heavy_check_mark: <a href="verify/test/aoj_NTL_1_A.test.cpp.html">test/aoj_NTL_1_A.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/aoj_NTL_1_B.test.cpp.html">test/aoj_NTL_1_B.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yosupo_staticrmq.test.cpp.html">test/yosupo_staticrmq.test.cpp</a>
+* :heavy_check_mark: <a href="verify/test/yosupo_unionfind.test.cpp.html">test/yosupo_unionfind.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
+* :x: <a href="verify/test/yuki_0556.test.cpp.html">test/yuki_0556.test.cpp</a>
 * :heavy_check_mark: <a href="verify/test/yuki_0888.test.cpp.html">test/yuki_0888.test.cpp</a>
 
 
