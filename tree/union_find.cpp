@@ -40,8 +40,8 @@ public:
 		int xrt=root(x);
 		int yrt=root(y);
 		if(xrt==yrt) return;
-		parent[xrt]=yrt;
-		num[yrt]+=num[xrt];
+		parent[yrt]=xrt;
+		num[xrt]+=num[yrt];
 		treenum--;
 	}
 
