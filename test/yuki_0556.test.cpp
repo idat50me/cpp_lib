@@ -15,7 +15,7 @@ int main() {
 	for(int i=0; i<M; i++) {
 		int A,B; cin>>A>>B;
 		int Asize=uf.size(A), Bsize=uf.size(B);
-		if(Asize>Bsize || (Asize==Bsize && A<B)) uf.merge(A,B);
+		if(Asize>Bsize || (Asize==Bsize && uf.root(A)<uf.root(B))) uf.merge(A,B);
 		else uf.merge(B,A);
 	}
 
