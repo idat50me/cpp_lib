@@ -10,17 +10,17 @@ using namespace std;
 
 int main() {
 	int N,M; cin>>N>>M;
-	Union_Find uf(N);
+	Union_Find uf(N+1);
 
 	for(int i=0; i<M; i++) {
-		int A,B; cin>>A>>B; A--,B--;
+		int A,B; cin>>A>>B;
 		int Asize=uf.size(A), Bsize=uf.size(B);
 		if(Asize>Bsize || (Asize==Bsize && A<B)) uf.merge(A,B);
 		else uf.merge(B,A);
 	}
 
-	for(int i=0; i<N; i++) {
-		cout<<root(i)<<'\n';
+	for(int i=1; i<N; i++) {
+		cout<<uf.root(i)<<'\n';
 	}
 	cout<<flush;
 }
