@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#098f6bcd4621d373cade4e832627b4f6">test</a>
 * <a href="{{ site.github.repository_url }}/blob/master/test/aoj_DSL_1_A.test.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-27 15:49:04+09:00
+    - Last commit date: 2020-07-27 16:51:21+09:00
 
 
 * see: <a href="https://onlinejudge.u-aizu.ac.jp/problems/DSL_1_A">https://onlinejudge.u-aizu.ac.jp/problems/DSL_1_A</a>
@@ -59,7 +59,7 @@ using namespace std;
 
 int main() {
 	int N,Q; cin>>N>>Q;
-	Union_Find uf(N);
+	UnionFind uf(N);
 
 	for(int i=0; i<Q; i++) {
 		int com,x,y; cin>>com>>x>>y;
@@ -101,14 +101,14 @@ using namespace std;
 using namespace std;
 #endif
 
-struct Union_Find {
+struct UnionFind {
 private:
 	vector<int> parent;
 	vector<int> num;
 	int treenum;
 
 public:
-	Union_Find(int n) : parent(n),num(n,1) {
+	UnionFind(int n) : parent(n),num(n,1) {
 		treenum=n;
 		for(int i=0; i<n; i++) {
 			parent[i]=i;
@@ -149,7 +149,7 @@ public:
 
 int main() {
 	int N,Q; cin>>N>>Q;
-	Union_Find uf(N);
+	UnionFind uf(N);
 
 	for(int i=0; i<Q; i++) {
 		int com,x,y; cin>>com>>x>>y;

@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#c0af77cf8294ff93a5cdb2963ca9f038">tree</a>
 * <a href="{{ site.github.repository_url }}/blob/master/tree/union_find.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-27 15:49:04+09:00
+    - Last commit date: 2020-07-27 16:51:21+09:00
 
 
 
@@ -43,24 +43,24 @@ $n$ 頂点を持つ Union-Find 木です．
 - $n \leq 10^8$ 程度
 
 ## コンストラクタ
-- `Union_Find(n)`：計算量 $O(n)$  
+- `UnionFind(n)`：計算量 $O(n)$  
 	- `n`：頂点数
 
 ## メンバ関数
-- `root(x)`：償却計算量 $O(1)$  
+- `root(x)`：ならし 計算量 $O(\log n)$  
 	`x` が属する木の根を返す．
 	- `x`：頂点の番号．
 
-- `size(x)`：償却計算量 $O(1)$  
+- `size(x)`：ならし 計算量 $O(1)$  
 	`x` が属する木のサイズを返す．
 	- `x`：頂点の番号．
 
-- `merge(x, y)`：償却計算量 $O(1)$  
+- `merge(x, y)`：ならし 計算量 $O(1)$  
 	`x` と `y` を結合する．  
 	グラフ上では `y` が `x` の下につく．
 	- `x,y`：結合する頂点の番号．
 
-- `same(x, y)`：償却計算量 $O(1)$  
+- `same(x, y)`：ならし 計算量 $O(1)$  
 	`x` と `y` が同じ木に属するか判定する．
 	- `x,y`：判定する頂点の番号．
 
@@ -94,14 +94,14 @@ $n$ 頂点を持つ Union-Find 木です．
 using namespace std;
 #endif
 
-struct Union_Find {
+struct UnionFind {
 private:
 	vector<int> parent;
 	vector<int> num;
 	int treenum;
 
 public:
-	Union_Find(int n) : parent(n),num(n,1) {
+	UnionFind(int n) : parent(n),num(n,1) {
 		treenum=n;
 		for(int i=0; i<n; i++) {
 			parent[i]=i;
@@ -160,14 +160,14 @@ public:
 using namespace std;
 #endif
 
-struct Union_Find {
+struct UnionFind {
 private:
 	vector<int> parent;
 	vector<int> num;
 	int treenum;
 
 public:
-	Union_Find(int n) : parent(n),num(n,1) {
+	UnionFind(int n) : parent(n),num(n,1) {
 		treenum=n;
 		for(int i=0; i<n; i++) {
 			parent[i]=i;
