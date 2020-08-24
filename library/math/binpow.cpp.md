@@ -44,10 +44,12 @@ layout: default
 ## Required by
 
 * :heavy_check_mark: <a href="millor_rabin.cpp.html">Millor-Rabin(ミラー・ラビン素数判定法) <small>(math/millor_rabin.cpp)</small></a>
+* :heavy_check_mark: <a href="../mod/modint.cpp.html">ModInt <small>(mod/modint.cpp)</small></a>
 
 
 ## Verified with
 
+* :heavy_check_mark: <a href="../../verify/test/aoj_0341.test.cpp.html">test/aoj_0341.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj_ALDS1_1_C_3.test.cpp.html">test/aoj_ALDS1_1_C_3.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj_NTL_1_B.test.cpp.html">test/aoj_NTL_1_B.test.cpp</a>
 
@@ -90,11 +92,11 @@ ll binpow(ll a, ll ex, ll p=(1LL<<60)) {
 {% raw %}
 ```cpp
 Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 349, in write_contents
+  File "/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/docs.py", line 349, in write_contents
     bundled_code = language.bundle(self.file_class.file_path, basedir=pathlib.Path.cwd())
-  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 185, in bundle
+  File "/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py", line 185, in bundle
     bundler.update(path)
-  File "/opt/hostedtoolcache/Python/3.8.3/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 306, in update
+  File "/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 398, in update
     raise BundleErrorAt(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
 onlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: math/binpow.cpp: line 14: unable to process #include in #if / #ifdef / #ifndef other than include guards
 

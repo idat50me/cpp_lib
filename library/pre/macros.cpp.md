@@ -49,11 +49,13 @@ layout: default
 * :heavy_check_mark: <a href="../math/isprime.cpp.html">Isprime(素数判定) <small>(math/isprime.cpp)</small></a>
 * :heavy_check_mark: <a href="../math/millor_rabin.cpp.html">Millor-Rabin(ミラー・ラビン素数判定法) <small>(math/millor_rabin.cpp)</small></a>
 * :heavy_check_mark: <a href="../math/sieve_of_eratosthenes.cpp.html">Sieve-of-Eratosthenes(エラトステネスの篩) <small>(math/sieve_of_eratosthenes.cpp)</small></a>
+* :heavy_check_mark: <a href="../mod/modint.cpp.html">ModInt <small>(mod/modint.cpp)</small></a>
 * :warning: <a href="../test/aoj_0019.cpp.html">test/aoj_0019.cpp</a>
 
 
 ## Verified with
 
+* :heavy_check_mark: <a href="../../verify/test/aoj_0341.test.cpp.html">test/aoj_0341.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj_ALDS1_1_C.test.cpp.html">test/aoj_ALDS1_1_C.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj_ALDS1_1_C_2.test.cpp.html">test/aoj_ALDS1_1_C_2.test.cpp</a>
 * :heavy_check_mark: <a href="../../verify/test/aoj_ALDS1_1_C_3.test.cpp.html">test/aoj_ALDS1_1_C_3.test.cpp</a>
