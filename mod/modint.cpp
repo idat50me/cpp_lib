@@ -1,5 +1,6 @@
 /*
  * @brief ModInt
+ * @!docs ./docs/modint.md
  */
 
 #ifndef lib_mint
@@ -17,20 +18,22 @@ template<int mod>
 struct mint {
 private:
 
-	//int mod;
 	long long val;
 
 public:
 
 	mint(long long x=0) : val((mod+x%mod)%mod) {}
 
+private:
+
 	mint pow(long long ex) const {
 		return mint(binpow(val, ex, mod));
 	}
-
 	mint inv() const {
 		return pow(mod-2);
 	}
+
+public:
 
 	mint operator-() const {
 		return mint(-val);
