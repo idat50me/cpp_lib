@@ -34,6 +34,7 @@ struct Sieve {
 	}
 
 	vector<pair<int,int>> primefact(int n) {
+		if(n==1) return vector<pair<int,int>>({});
 		vector<pair<int,int>> res={{f[n],1}};
 		n /= f[n];
 		while(n>1) {
