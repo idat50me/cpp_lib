@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#ad148a3ca8bd0ef3b48c52454c493ec5">mod</a>
 * <a href="{{ site.github.repository_url }}/blob/master/mod/modint.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-08-24 23:39:45+09:00
+    - Last commit date: 2020-08-29 23:04:02+09:00
 
 
 
@@ -54,6 +54,7 @@ layout: default
 ```cpp
 /*
  * @brief ModInt
+ * @!docs ./docs/modint.md
  */
 
 #ifndef lib_mint
@@ -71,20 +72,22 @@ template<int mod>
 struct mint {
 private:
 
-	//int mod;
 	long long val;
 
 public:
 
 	mint(long long x=0) : val((mod+x%mod)%mod) {}
 
+private:
+
 	mint pow(long long ex) const {
 		return mint(binpow(val, ex, mod));
 	}
-
 	mint inv() const {
 		return pow(mod-2);
 	}
+
+public:
 
 	mint operator-() const {
 		return mint(-val);
@@ -192,7 +195,7 @@ Traceback (most recent call last):
     bundler.update(path)
   File "/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py", line 398, in update
     raise BundleErrorAt(path, i + 1, "unable to process #include in #if / #ifdef / #ifndef other than include guards")
-onlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: mod/modint.cpp: line 14: unable to process #include in #if / #ifdef / #ifndef other than include guards
+onlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: mod/modint.cpp: line 15: unable to process #include in #if / #ifdef / #ifndef other than include guards
 
 ```
 {% endraw %}
