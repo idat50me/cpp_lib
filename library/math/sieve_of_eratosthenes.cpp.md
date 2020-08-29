@@ -31,7 +31,7 @@ layout: default
 
 * category: <a href="../../index.html#7e676e9e663beb40fd133f5ee24487c2">math</a>
 * <a href="{{ site.github.repository_url }}/blob/master/math/sieve_of_eratosthenes.cpp">View this file on GitHub</a>
-    - Last commit date: 2020-07-27 00:41:15+09:00
+    - Last commit date: 2020-08-29 23:06:39+09:00
 
 
 
@@ -111,6 +111,7 @@ struct Sieve {
 	}
 
 	vector<pair<int,int>> primefact(int n) {
+		if(n==1) return vector<pair<int,int>>({});
 		vector<pair<int,int>> res={{f[n],1}};
 		n /= f[n];
 		while(n>1) {
