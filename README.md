@@ -5,7 +5,6 @@
 
 ## つくる予定
 - [ ] セグ木（~~RMQ，~~ 区間和）
-- [x] ~~modint~~
 - [ ] 木構造struct（vertex,edgeを内包する）
 - [ ] 最大フロー・最小カット（Ford Fulkersonのアルゴリズム）
 
