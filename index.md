@@ -1,117 +1,129 @@
 ---
-layout: default
+data:
+  libraryCategories:
+  - name: combinatorics
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: combinatorics/combinatorics.cpp
+      title: "Combinatorics(\u7D44\u5408\u305B\u6570\u5B66)"
+    - icon: ':warning:'
+      path: combinatorics/ncr.cpp
+      title: nCr
+    - icon: ':heavy_check_mark:'
+      path: combinatorics/ncr2.cpp
+      title: "nCr mod p ($r \\leq 10^7$, \u30AF\u30A8\u30EA $O(r)$)"
+    - icon: ':warning:'
+      path: combinatorics/nhr.cpp
+      title: nHr
+    - icon: ':warning:'
+      path: combinatorics/npr.cpp
+      title: nPr mod p
+  - name: math
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: math/binpow.cpp
+      title: "Binary-Power(\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5)"
+    - icon: ':heavy_check_mark:'
+      path: math/divisor.cpp
+      title: "Divisor(\u7D04\u6570\u5217\u6319)"
+    - icon: ':warning:'
+      path: math/factorial.cpp
+      title: "Factorial(\u968E\u4E57)"
+    - icon: ':heavy_check_mark:'
+      path: math/isprime.cpp
+      title: "Isprime(\u7D20\u6570\u5224\u5B9A)"
+    - icon: ':heavy_check_mark:'
+      path: math/millor_rabin.cpp
+      title: "Millor-Rabin(\u30DF\u30E9\u30FC\u30FB\u30E9\u30D3\u30F3\u7D20\u6570\u5224\
+        \u5B9A\u6CD5)"
+    - icon: ':heavy_check_mark:'
+      path: math/sieve_of_eratosthenes.cpp
+      title: "Sieve-of-Eratosthenes(\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\
+        \u7BE9)"
+  - name: mod
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: mod/modint.cpp
+      title: ModInt
+  - name: pre
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: pre/macros.cpp
+      title: pre/macros.cpp
+  - name: structs
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: structs/matrix.cpp
+      title: "Matrix( $2$ \u6B21\u5143\u884C\u5217)"
+    - icon: ':warning:'
+      path: structs/vertex.cpp
+      title: structs/vertex.cpp
+  - name: test
+    pages:
+    - icon: ':warning:'
+      path: test/aoj_0019.cpp
+      title: test/aoj_0019.cpp
+  - name: tree
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: tree/segtree_RmQ.cpp
+      title: "RmQ(\u533A\u9593\u6700\u5C0F\u5024)"
+    - icon: ':heavy_check_mark:'
+      path: tree/union_find.cpp
+      title: "Union-Find\u6728"
+  verificationCategories:
+  - name: test
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: test/aoj_0341.test.cpp
+      title: test/aoj_0341.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj_ALDS1_1_C.test.cpp
+      title: test/aoj_ALDS1_1_C.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj_ALDS1_1_C_2.test.cpp
+      title: test/aoj_ALDS1_1_C_2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj_ALDS1_1_C_3.test.cpp
+      title: test/aoj_ALDS1_1_C_3.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj_DPL_5_D.test.cpp
+      title: test/aoj_DPL_5_D.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj_DPL_5_E.test.cpp
+      title: test/aoj_DPL_5_E.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj_DPL_5_E_2.test.cpp
+      title: test/aoj_DPL_5_E_2.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj_DSL_1_A.test.cpp
+      title: test/aoj_DSL_1_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj_DSL_2_A.test.cpp
+      title: test/aoj_DSL_2_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj_ITP1_6_B.test.cpp
+      title: test/aoj_ITP1_6_B.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj_NTL_1_A.test.cpp
+      title: test/aoj_NTL_1_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj_NTL_1_B.test.cpp
+      title: test/aoj_NTL_1_B.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo_staticrmq.test.cpp
+      title: test/yosupo_staticrmq.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo_unionfind.test.cpp
+      title: test/yosupo_unionfind.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yuki_0117.test.cpp
+      title: test/yuki_0117.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yuki_0556.test.cpp
+      title: test/yuki_0556.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yuki_0888.test.cpp
+      title: test/yuki_0888.test.cpp
+layout: toppage
 ---
-
-<!-- mathjax config similar to math.stackexchange -->
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    TeX: { equationNumbers: { autoNumber: "AMS" }},
-    tex2jax: {
-      inlineMath: [ ['$','$'] ],
-      processEscapes: true
-    },
-    "HTML-CSS": { matchFontHeight: false },
-    displayAlign: "left",
-    displayIndent: "2em"
-  });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery-balloon-js@1.1.2/jquery.balloon.min.js" integrity="sha256-ZEYs9VrgAeNuPvs15E39OsyOJaIkXEEt10fzxJ20+2I=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="assets/js/copy-button.js"></script>
-<link rel="stylesheet" href="assets/css/copy-button.css" />
-
-
-# {{ site.title }}
-
-[![Actions Status]({{ site.github.repository_url }}/workflows/verify/badge.svg)]({{ site.github.repository_url }}/actions)
-<a href="{{ site.github.repository_url }}"><img src="https://img.shields.io/github/last-commit/{{ site.github.owner_name }}/{{ site.github.repository_name }}" /></a>
-
-{% if site.github.project_tagline %}{{ site.github.project_tagline }}{% else %}This documentation is automatically generated by <a href="https://github.com/online-judge-tools/verification-helper">online-judge-tools/verification-helper</a>.{% endif %}
-
-## Library Files
-
-<div id="ac1ed416572b96a9f5d69740d174ef3d"></div>
-
-### combinatorics
-
-* :heavy_check_mark: <a href="library/combinatorics/combinatorics.cpp.html">Combinatorics(組合せ数学) <small>(combinatorics/combinatorics.cpp)</small></a>
-* :warning: <a href="library/combinatorics/ncr.cpp.html">nCr <small>(combinatorics/ncr.cpp)</small></a>
-* :heavy_check_mark: <a href="library/combinatorics/ncr2.cpp.html">nCr mod p ($r \leq 10^7$, クエリ $O(r)$) <small>(combinatorics/ncr2.cpp)</small></a>
-* :warning: <a href="library/combinatorics/nhr.cpp.html">nHr <small>(combinatorics/nhr.cpp)</small></a>
-* :warning: <a href="library/combinatorics/npr.cpp.html">nPr mod p <small>(combinatorics/npr.cpp)</small></a>
-
-
-<div id="7e676e9e663beb40fd133f5ee24487c2"></div>
-
-### math
-
-* :heavy_check_mark: <a href="library/math/binpow.cpp.html">Binary-Power(繰り返し二乗法) <small>(math/binpow.cpp)</small></a>
-* :heavy_check_mark: <a href="library/math/divisor.cpp.html">Divisor(約数列挙) <small>(math/divisor.cpp)</small></a>
-* :warning: <a href="library/math/factorial.cpp.html">Factorial(階乗) <small>(math/factorial.cpp)</small></a>
-* :heavy_check_mark: <a href="library/math/isprime.cpp.html">Isprime(素数判定) <small>(math/isprime.cpp)</small></a>
-* :heavy_check_mark: <a href="library/math/millor_rabin.cpp.html">Millor-Rabin(ミラー・ラビン素数判定法) <small>(math/millor_rabin.cpp)</small></a>
-* :heavy_check_mark: <a href="library/math/sieve_of_eratosthenes.cpp.html">Sieve-of-Eratosthenes(エラトステネスの篩) <small>(math/sieve_of_eratosthenes.cpp)</small></a>
-
-
-<div id="ad148a3ca8bd0ef3b48c52454c493ec5"></div>
-
-### mod
-
-* :heavy_check_mark: <a href="library/mod/modint.cpp.html">ModInt <small>(mod/modint.cpp)</small></a>
-
-
-<div id="6bf9e70a1f928aba143ef1eebe2720b5"></div>
-
-### pre
-
-* :heavy_check_mark: <a href="library/pre/macros.cpp.html">pre/macros.cpp</a>
-
-
-<div id="5a8d55c70c1f3dcbee2f791cd477d649"></div>
-
-### structs
-
-* :heavy_check_mark: <a href="library/structs/matrix.cpp.html">Matrix( $2$ 次元行列) <small>(structs/matrix.cpp)</small></a>
-* :warning: <a href="library/structs/vertex.cpp.html">structs/vertex.cpp</a>
-
-
-<div id="098f6bcd4621d373cade4e832627b4f6"></div>
-
-### test
-
-* :warning: <a href="library/test/aoj_0019.cpp.html">test/aoj_0019.cpp</a>
-
-
-<div id="c0af77cf8294ff93a5cdb2963ca9f038"></div>
-
-### tree
-
-* :heavy_check_mark: <a href="library/tree/segtree_RmQ.cpp.html">RmQ(区間最小値) <small>(tree/segtree_RmQ.cpp)</small></a>
-* :heavy_check_mark: <a href="library/tree/union_find.cpp.html">Union-Find木 <small>(tree/union_find.cpp)</small></a>
-
-
-## Verify Files
-
-* :heavy_check_mark: <a href="verify/test/aoj_0341.test.cpp.html">test/aoj_0341.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj_ALDS1_1_C.test.cpp.html">test/aoj_ALDS1_1_C.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj_ALDS1_1_C_2.test.cpp.html">test/aoj_ALDS1_1_C_2.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj_ALDS1_1_C_3.test.cpp.html">test/aoj_ALDS1_1_C_3.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj_DPL_5_D.test.cpp.html">test/aoj_DPL_5_D.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj_DPL_5_E.test.cpp.html">test/aoj_DPL_5_E.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj_DPL_5_E_2.test.cpp.html">test/aoj_DPL_5_E_2.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj_DSL_1_A.test.cpp.html">test/aoj_DSL_1_A.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj_DSL_2_A.test.cpp.html">test/aoj_DSL_2_A.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj_ITP1_6_B.test.cpp.html">test/aoj_ITP1_6_B.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj_NTL_1_A.test.cpp.html">test/aoj_NTL_1_A.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/aoj_NTL_1_B.test.cpp.html">test/aoj_NTL_1_B.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/yosupo_staticrmq.test.cpp.html">test/yosupo_staticrmq.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/yosupo_unionfind.test.cpp.html">test/yosupo_unionfind.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/yuki_0117.test.cpp.html">test/yuki_0117.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/yuki_0556.test.cpp.html">test/yuki_0556.test.cpp</a>
-* :heavy_check_mark: <a href="verify/test/yuki_0888.test.cpp.html">test/yuki_0888.test.cpp</a>
-
-
