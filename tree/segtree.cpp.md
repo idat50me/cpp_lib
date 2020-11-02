@@ -3,11 +3,11 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo_staticrmq_2.test.cpp
     title: test/yosupo_staticrmq_2.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: "segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u30C4\u30EA\u30FC) \u672A\
       \u5B8C"
@@ -18,7 +18,7 @@ data:
     #include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\ntemplate<typename\
     \ T, T (*op)(T,T), T (*e)()>\r\nstruct segtree {\r\nprivate:\r\n\tint n=1;\r\n\
     \tvector<T> node;\r\n\tT e_ = e();\r\n\r\npublic:\r\n\tsegtree(T siz) {\r\n\t\t\
-    whlie(n < siz) n*=2;\r\n\t\tnode.resize(2*n-1, e_);\r\n\t}\r\n\r\n\tsegtree(vector<T>\
+    while(n < siz) n*=2;\r\n\t\tnode.resize(2*n-1, e_);\r\n\t}\r\n\r\n\tsegtree(vector<T>\
     \ v) {\r\n\t\twhile(n < v.size()) n*=2;\r\n\t\tnode.resize(2*n-1, e_);\r\n\t\t\
     for(int i=0; i<v.size(); i++) node[n-1+i]=v[i];\r\n\t\tfor(int i=n-2; i>=0; i--)\
     \ node[i]=op(node[2*i+1],node[2*i+2]);\r\n\t}\r\n\r\n\tvoid update(int idx, T\
@@ -34,7 +34,7 @@ data:
     #ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\nusing\
     \ namespace std;\r\n#endif\r\n\r\ntemplate<typename T, T (*op)(T,T), T (*e)()>\r\
     \nstruct segtree {\r\nprivate:\r\n\tint n=1;\r\n\tvector<T> node;\r\n\tT e_ =\
-    \ e();\r\n\r\npublic:\r\n\tsegtree(T siz) {\r\n\t\twhlie(n < siz) n*=2;\r\n\t\t\
+    \ e();\r\n\r\npublic:\r\n\tsegtree(T siz) {\r\n\t\twhile(n < siz) n*=2;\r\n\t\t\
     node.resize(2*n-1, e_);\r\n\t}\r\n\r\n\tsegtree(vector<T> v) {\r\n\t\twhile(n\
     \ < v.size()) n*=2;\r\n\t\tnode.resize(2*n-1, e_);\r\n\t\tfor(int i=0; i<v.size();\
     \ i++) node[n-1+i]=v[i];\r\n\t\tfor(int i=n-2; i>=0; i--) node[i]=op(node[2*i+1],node[2*i+2]);\r\
@@ -49,8 +49,8 @@ data:
   isVerificationFile: false
   path: tree/segtree.cpp
   requiredBy: []
-  timestamp: '2020-11-02 12:55:39+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2020-11-02 13:01:43+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo_staticrmq_2.test.cpp
 documentation_of: tree/segtree.cpp
