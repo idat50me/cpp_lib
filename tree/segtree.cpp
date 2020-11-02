@@ -20,7 +20,7 @@ private:
 
 public:
 	segtree(T siz) {
-		whlie(n < siz) n*=2;
+		while(n < siz) n*=2;
 		node.resize(2*n-1, e_);
 	}
 
