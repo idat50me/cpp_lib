@@ -17,31 +17,31 @@ data:
     path: test/aoj_0341.test.cpp
     title: test/aoj_0341.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj_NTL_1_B.test.cpp
-    title: test/aoj_NTL_1_B.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj_ALDS1_1_C_3.test.cpp
     title: test/aoj_ALDS1_1_C_3.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj_NTL_1_B.test.cpp
+    title: test/aoj_NTL_1_B.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    '*NOT_SPECIAL_COMMENTS*': ''
     document_title: "Binary-Power(\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5)"
     links: []
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 70, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.8.5/x64/lib/python3.8/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
+    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
+    , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
     , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ math/binpow.cpp: line 14: unable to process #include in #if / #ifdef / #ifndef\
     \ other than include guards\n"
-  code: "/*\n * @brief Binary-Power(\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5)\n\
-    \ */\n\n#ifndef lib_binpow\n#define lib_binpow\n\n#ifndef call_include\n#define\
-    \ call_include\n#include <bits/stdc++.h>\nusing namespace std;\n#endif\n\n#include\
-    \ \"../pre/macros.cpp\"\n\nll binpow(ll a, ll ex, ll p=(1LL<<60)) {\n\tll res\
-    \ = 1;\n\twhile(ex > 0) {\n\t\tif(ex & 1) res = res*a%p;\n\t\tex>>=1;\n\t\ta =\
-    \ a*a%p;\n\t}\n\treturn res;\n}\n\n#endif /* lib_binpow */"
+  code: "/*\r\n * @brief Binary-Power(\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5)\r\
+    \n */\r\n\r\n#ifndef lib_binpow\r\n#define lib_binpow\r\n\r\n#ifndef call_include\r\
+    \n#define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n\
+    #endif\r\n\r\n#include \"../pre/macros.cpp\"\r\n\r\nll binpow(ll a, ll ex, ll\
+    \ p=(1LL<<60)) {\r\n\tll res = 1;\r\n\twhile(ex > 0) {\r\n\t\tif(ex & 1) res =\
+    \ res*a%p;\r\n\t\tex>>=1;\r\n\t\ta = a*a%p;\r\n\t}\r\n\treturn res;\r\n}\r\n\r\
+    \n#endif /* lib_binpow */"
   dependsOn:
   - pre/macros.cpp
   isVerificationFile: false
@@ -49,12 +49,12 @@ data:
   requiredBy:
   - math/millor_rabin.cpp
   - mod/modint.cpp
-  timestamp: '2020-07-18 12:32:28+09:00'
+  timestamp: '2020-11-02 12:20:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj_ALDS1_1_C_3.test.cpp
   - test/aoj_0341.test.cpp
   - test/aoj_NTL_1_B.test.cpp
-  - test/aoj_ALDS1_1_C_3.test.cpp
 documentation_of: math/binpow.cpp
 layout: document
 redirect_from:
