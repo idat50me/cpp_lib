@@ -65,6 +65,9 @@ data:
       title: test/aoj_0019.cpp
   - name: tree
     pages:
+    - icon: ':x:'
+      path: tree/segtree.cpp
+      title: "segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u30C4\u30EA\u30FC) \u672A\u5B8C"
     - icon: ':heavy_check_mark:'
       path: tree/segtree_RmQ.cpp
       title: "RmQ(\u533A\u9593\u6700\u5C0F\u5024)"
@@ -113,6 +116,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo_staticrmq.test.cpp
       title: test/yosupo_staticrmq.test.cpp
+    - icon: ':x:'
+      path: test/yosupo_staticrmq_2.test.cpp
+      title: test/yosupo_staticrmq_2.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo_unionfind.test.cpp
       title: test/yosupo_unionfind.test.cpp
