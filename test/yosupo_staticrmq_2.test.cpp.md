@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: tree/segtree.cpp
-    title: "segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u30C4\u30EA\u30FC) \u672A\u5B8C"
+    title: "segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u30C4\u30EA\u30FC)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/staticrmq
@@ -16,12 +16,12 @@ data:
   bundledCode: "#line 1 \"test/yosupo_staticrmq_2.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\
     \r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
     \nusing namespace std;\r\n#endif\r\n\r\n#line 1 \"tree/segtree.cpp\"\n/*\r\n *\
-    \ @brief segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u30C4\u30EA\u30FC) \u672A\u5B8C\
-    \r\n */\r\n\r\n#ifndef lib_segtree\r\n#define lib_segtree\r\n\r\n#ifndef call_include\r\
-    \n#define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n\
-    #endif\r\n\r\ntemplate<typename T, T (*op)(T,T), T (*e)()>\r\nstruct segtree {\r\
-    \nprivate:\r\n\tint n=1;\r\n\tvector<T> node;\r\n\tT e_ = e();\r\n\r\npublic:\r\
-    \n\tsegtree(T siz) {\r\n\t\twhile(n < siz) n*=2;\r\n\t\tnode.resize(2*n-1, e_);\r\
+    \ @brief segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u30C4\u30EA\u30FC)\r\n */\r\n\r\
+    \n#ifndef lib_segtree\r\n#define lib_segtree\r\n\r\n#ifndef call_include\r\n#define\
+    \ call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\
+    \n\r\ntemplate<typename T, T (*op)(T,T), T (*e)()>\r\nstruct segtree {\r\nprivate:\r\
+    \n\tint n=1;\r\n\tvector<T> node;\r\n\tT e_ = e();\r\n\r\npublic:\r\n\tsegtree(T\
+    \ siz, T init=e_) {\r\n\t\twhile(n < siz) n*=2;\r\n\t\tnode.resize(2*n-1, init);\r\
     \n\t}\r\n\r\n\tsegtree(vector<T> v) {\r\n\t\twhile(n < v.size()) n*=2;\r\n\t\t\
     node.resize(2*n-1, e_);\r\n\t\tfor(int i=0; i<v.size(); i++) node[n-1+i]=v[i];\r\
     \n\t\tfor(int i=n-2; i>=0; i--) node[i]=op(node[2*i+1],node[2*i+2]);\r\n\t}\r\n\
@@ -51,8 +51,8 @@ data:
   isVerificationFile: true
   path: test/yosupo_staticrmq_2.test.cpp
   requiredBy: []
-  timestamp: '2020-11-02 13:01:43+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-11-03 14:11:09+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo_staticrmq_2.test.cpp
 layout: document
