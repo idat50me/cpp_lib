@@ -19,13 +19,15 @@ private:
 	const T e_ = e();
 
 public:
-	segtree(T siz) {
+	segtree(int siz) {
 		while(n < siz) n*=2;
 		node.resize(2*n-1, e_);
 	}
-	segtree(T siz, T init) {
+	segtree(int siz, T init) {
 		while(n < siz) n*=2;
-		node.resize(2*n-1, init);
+		node.resize(2*n-1, e_);
+		for(int i=0; i<siz; i++) node[n-1+i]=init;
+		for(int i=n-2; i>=0; i--) node[i]=op(node[2*i+1],node[2*i+2]);
 	}
 	segtree(vector<T> v) {
 		while(n < v.size()) n*=2;
