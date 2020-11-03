@@ -16,14 +16,17 @@ struct segtree {
 private:
 	int n=1;
 	vector<T> node;
-	T e_ = e();
+	const T e_ = e();
 
 public:
-	segtree(T siz, T init=e_) {
+	segtree(T siz) {
+		while(n < siz) n*=2;
+		node.resize(2*n-1, e_);
+	}
+	segtree(T siz, T init) {
 		while(n < siz) n*=2;
 		node.resize(2*n-1, init);
 	}
-
 	segtree(vector<T> v) {
 		while(n < v.size()) n*=2;
 		node.resize(2*n-1, e_);
