@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: tree/segtree.cpp
     title: "segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u30C4\u30EA\u30FC)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/staticrmq
@@ -20,10 +20,11 @@ data:
     \n#ifndef lib_segtree\r\n#define lib_segtree\r\n\r\n#ifndef call_include\r\n#define\
     \ call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\
     \n\r\ntemplate<typename T, T (*op)(T,T), T (*e)()>\r\nstruct segtree {\r\nprivate:\r\
-    \n\tint n=1;\r\n\tvector<T> node;\r\n\tT e_ = e();\r\n\r\npublic:\r\n\tsegtree(T\
-    \ siz, T init=e_) {\r\n\t\twhile(n < siz) n*=2;\r\n\t\tnode.resize(2*n-1, init);\r\
-    \n\t}\r\n\r\n\tsegtree(vector<T> v) {\r\n\t\twhile(n < v.size()) n*=2;\r\n\t\t\
-    node.resize(2*n-1, e_);\r\n\t\tfor(int i=0; i<v.size(); i++) node[n-1+i]=v[i];\r\
+    \n\tint n=1;\r\n\tvector<T> node;\r\n\tconst T e_ = e();\r\n\r\npublic:\r\n\t\
+    segtree(T siz) {\r\n\t\twhile(n < siz) n*=2;\r\n\t\tnode.resize(2*n-1, e_);\r\n\
+    \t}\r\n\tsegtree(T siz, T init) {\r\n\t\twhile(n < siz) n*=2;\r\n\t\tnode.resize(2*n-1,\
+    \ init);\r\n\t}\r\n\tsegtree(vector<T> v) {\r\n\t\twhile(n < v.size()) n*=2;\r\
+    \n\t\tnode.resize(2*n-1, e_);\r\n\t\tfor(int i=0; i<v.size(); i++) node[n-1+i]=v[i];\r\
     \n\t\tfor(int i=n-2; i>=0; i--) node[i]=op(node[2*i+1],node[2*i+2]);\r\n\t}\r\n\
     \r\n\tvoid update(int idx, T val) {\r\n\t\tidx+=n-1;\r\n\t\tnode[idx]=val;\r\n\
     \r\n\t\twhile(idx>0) {\r\n\t\t\tidx=(idx-1)/2;\r\n\t\t\tnode[idx]=op(node[2*idx+1],node[2*idx+2]);\r\
@@ -51,8 +52,8 @@ data:
   isVerificationFile: true
   path: test/yosupo_staticrmq_2.test.cpp
   requiredBy: []
-  timestamp: '2020-11-03 14:11:09+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-11-03 14:19:33+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo_staticrmq_2.test.cpp
 layout: document
