@@ -1,5 +1,5 @@
 /*
- * @brief segtree(セグメントツリー) 未完
+ * @brief segtree(セグメントツリー)
  */
 
 #ifndef lib_segtree
@@ -19,9 +19,9 @@ private:
 	T e_ = e();
 
 public:
-	segtree(T siz) {
+	segtree(T siz, T init=e_) {
 		while(n < siz) n*=2;
-		node.resize(2*n-1, e_);
+		node.resize(2*n-1, init);
 	}
 
 	segtree(vector<T> v) {
