@@ -1,5 +1,5 @@
 /*
- * @brief nCr mod p ($r \leq 10^7$, クエリ $O(r)$)
+ * @brief nCr mod p ($r \leq 10^7$, クエリ $O(r)$ or $O(r)$)
  * @docs docs/ncr2.md
  */
 
@@ -12,14 +12,12 @@
 using namespace std;
 #endif
 
-#include "../pre/macros.cpp"
-
-struct nCr2 {
+struct NCR {
 private:
-	vector<ll> comb, inv, finv;
-	ll P;
+	vector<long long> comb, inv, finv;
+	long long P;
 
-	void calc_inv(ll r) {
+	void calc_inv(long long r) {
 		inv.resize(r+1);
 		finv.resize(r+1);
 		inv[1] = finv[0] = finv[1]=1LL;
@@ -30,7 +28,7 @@ private:
 	}
 
 public:
-	nCr2(ll n, ll r, ll p) {
+	NCR(long long n, long long r, long long p) {
 		if(n/2 < r) r = n/2;
 		P=p;
 		calc_inv(r);
@@ -42,20 +40,20 @@ public:
 		}
 	}
 
-	nCr2(ll r, ll p) {
+	NCR(long long r, long long p) {
 		P=p;
 		calc_inv(r);
 	}
 
-	ll calc(ll n, ll r) {
+	long long calc(long long n, long long r) {
 		assert(r >= 0);
 		if(r > n) return 0;
 		if(r > n/2) r = n-r;
 		if(comb.size() > 0)
 			return comb[r];
 		else {
-			ll f=1;
-			for(ll i=n; i>n-r; i--) {
+			long long f=1;
+			for(long long i=n; i>n-r; i--) {
 				f = f*i%P;
 			}
 			return f*finv[r]%P;

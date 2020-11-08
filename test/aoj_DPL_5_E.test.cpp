@@ -6,11 +6,11 @@
 using namespace std;
 #endif
 
-#include "../pre/macros.cpp"
-#include "../combinatorics/ncr2.cpp"
+#include "combinatorics/ncr2.cpp"
+#define MPRIME 1000000007LL
 
 int main() {
 	int n,k; cin>>n>>k;
-	nCr2 table(k,1000,MPRIME);
-	cout<<table.calc(k,n)<<endl;
+	NCR ncr(k,1000,MPRIME);
+	cout<<ncr.calc(k,n)<<endl;
 }
