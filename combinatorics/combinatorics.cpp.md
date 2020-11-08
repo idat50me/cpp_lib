@@ -15,7 +15,7 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: docs/combinatorics.md
+    _deprecated_at_docs: ./docs/combinatorics.md
     document_title: "Combinatorics(\u7D44\u5408\u305B\u6570\u5B66)"
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -27,7 +27,7 @@ data:
     \ combinatorics/combinatorics.cpp: line 15: unable to process #include in #if\
     \ / #ifdef / #ifndef other than include guards\n"
   code: "/*\r\n * @brief Combinatorics(\u7D44\u5408\u305B\u6570\u5B66)\r\n * @docs\
-    \ docs/combinatorics.md\r\n */\r\n\r\n#ifndef lib_combinatorics\r\n#define lib_combinatorics\r\
+    \ ./docs/combinatorics.md\r\n */\r\n\r\n#ifndef lib_combinatorics\r\n#define lib_combinatorics\r\
     \n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
     \nusing namespace std;\r\n#endif\r\n\r\n#include \"../pre/macros.cpp\"\r\n\r\n\
     struct Combinatorics {\r\nprivate:\r\n\tvector<ll> fact, inv, finv;\r\n\tll P;\r\
@@ -51,7 +51,7 @@ data:
   isVerificationFile: false
   path: combinatorics/combinatorics.cpp
   requiredBy: []
-  timestamp: '2020-11-08 11:20:04+09:00'
+  timestamp: '2020-11-08 14:26:02+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_DPL_5_D.test.cpp

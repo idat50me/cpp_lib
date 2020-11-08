@@ -15,7 +15,7 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: docs/millor_rabin.md
+    _deprecated_at_docs: ./docs/millor_rabin.md
     document_title: "Millor-Rabin(\u30DF\u30E9\u30FC\u30FB\u30E9\u30D3\u30F3\u7D20\
       \u6570\u5224\u5B9A\u6CD5)"
     links: []
@@ -28,7 +28,7 @@ data:
     \ math/millor_rabin.cpp: line 15: unable to process #include in #if / #ifdef /\
     \ #ifndef other than include guards\n"
   code: "/*\r\n * @brief Millor-Rabin(\u30DF\u30E9\u30FC\u30FB\u30E9\u30D3\u30F3\u7D20\
-    \u6570\u5224\u5B9A\u6CD5)\r\n * @docs docs/millor_rabin.md\r\n */\r\n\r\n#ifndef\
+    \u6570\u5224\u5B9A\u6CD5)\r\n * @docs ./docs/millor_rabin.md\r\n */\r\n\r\n#ifndef\
     \ lib_millor_rabin\r\n#define lib_millor_rabin\r\n\r\n#ifndef call_include\r\n\
     #define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\
     \n\r\n#include \"../math/binpow.cpp\"\r\n\r\nbool isprime(int n) {\r\n\tif(n ==\
@@ -45,7 +45,7 @@ data:
   isVerificationFile: false
   path: math/millor_rabin.cpp
   requiredBy: []
-  timestamp: '2020-11-08 11:20:04+09:00'
+  timestamp: '2020-11-08 14:26:02+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_ALDS1_1_C_3.test.cpp

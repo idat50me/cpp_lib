@@ -15,11 +15,11 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: docs/union_find.md
+    _deprecated_at_docs: ./docs/union_find.md
     document_title: "Union-Find\u6728"
     links: []
   bundledCode: "#line 1 \"tree/union_find.cpp\"\n/*\r\n * @brief Union-Find\u6728\r\
-    \n * @docs docs/union_find.md\r\n */\r\n\r\n#ifndef lib_union_find\r\n#define\
+    \n * @docs ./docs/union_find.md\r\n */\r\n\r\n#ifndef lib_union_find\r\n#define\
     \ lib_union_find\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
     \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\nstruct UnionFind {\r\
     \nprivate:\r\n\tvector<int> parent;\r\n\tvector<int> num;\r\n\tint treenum;\r\n\
@@ -33,8 +33,8 @@ data:
     \tbool same(int x, int y) {\r\n\t\treturn root(x)==root(y);\r\n\t}\r\n\r\n\tint\
     \ tnum() {\r\n\t\treturn treenum;\r\n\t}\r\n};\r\n\r\n\r\n#endif // lib_union_find\r\
     \n"
-  code: "/*\r\n * @brief Union-Find\u6728\r\n * @docs docs/union_find.md\r\n */\r\n\
-    \r\n#ifndef lib_union_find\r\n#define lib_union_find\r\n\r\n#ifndef call_include\r\
+  code: "/*\r\n * @brief Union-Find\u6728\r\n * @docs ./docs/union_find.md\r\n */\r\
+    \n\r\n#ifndef lib_union_find\r\n#define lib_union_find\r\n\r\n#ifndef call_include\r\
     \n#define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n\
     #endif\r\n\r\nstruct UnionFind {\r\nprivate:\r\n\tvector<int> parent;\r\n\tvector<int>\
     \ num;\r\n\tint treenum;\r\n\r\npublic:\r\n\tUnionFind(int n) : parent(n),num(n,1)\
@@ -51,7 +51,7 @@ data:
   isVerificationFile: false
   path: tree/union_find.cpp
   requiredBy: []
-  timestamp: '2020-11-08 11:20:04+09:00'
+  timestamp: '2020-11-08 14:26:02+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo_unionfind.test.cpp
