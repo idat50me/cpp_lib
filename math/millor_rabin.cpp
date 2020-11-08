@@ -12,7 +12,7 @@
 using namespace std;
 #endif
 
-#include "../math/binpow.cpp"
+#include "math/binpow.cpp"
 
 bool isprime(int n) {
 	if(n == 2) return true;
@@ -28,7 +28,7 @@ bool isprime(int n) {
 	for(int k = 0; k < 3; k++) {
 		if(a[k] >= n) break;
 		
-		ll r = binpow(a[k], d, n);
+		long long r = binpow(a[k], d, n);
 		if(r == 1 || r == n-1) continue;
 		
 		for(int i = 1; i < s; i++) {

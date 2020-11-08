@@ -11,10 +11,8 @@
 using namespace std;
 #endif
 
-#include "../pre/macros.cpp"
-
-ll factorial(int x, ll p=(1LL<<62)-1) {
-	ll res = 1;
+long long factorial(int x, long long p=(1LL<<62)-1) {
+	long long res = 1;
 	for(int i=2; i<=x; i++) res = res * i % p;
 	return res;
 }

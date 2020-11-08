@@ -12,8 +12,6 @@
 using namespace std;
 #endif
 
-#include "pre/macros.cpp"
-
 struct Sieve {
 	int N;
 	vector<int> f,primes;

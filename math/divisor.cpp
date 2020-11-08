@@ -11,11 +11,10 @@
 using namespace std;
 #endif
 
-#include "../pre/macros.cpp"
 
-vector<ll> divisor(ll x) {
-	vector<ll> res;
-	ll i = 1;
+vector<long long> divisor(long long x) {
+	vector<long long> res;
+	long long i = 1;
 	for( ; i*i < x; i++) {
 		if(x%i) continue;
 		res.push_back(i);

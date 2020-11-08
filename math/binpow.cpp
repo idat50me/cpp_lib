@@ -11,10 +11,8 @@
 using namespace std;
 #endif
 
-#include "../pre/macros.cpp"
-
-ll binpow(ll a, ll ex, ll p=(1LL<<60)) {
-	ll res = 1;
+long long binpow(long long a, long long ex, long long p=(1LL<<60)) {
+	long long res = 1;
 	while(ex > 0) {
 		if(ex & 1) res = res*a%p;
 		ex>>=1;
