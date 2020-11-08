@@ -16,8 +16,8 @@ data:
   bundledCode: "#line 1 \"test/aoj_ITP1_6_B.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/6/ITP1_6_B\"\
     \r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
     \nusing namespace std;\r\n#endif\r\n\r\n#line 1 \"structs/matrix.cpp\"\n/*\r\n\
-    \ * @brief Matrix( $2$ \u6B21\u5143\u884C\u5217)\r\n * @docs ./docs/matrix.md\r\
-    \n */\r\n\r\n#ifndef lib_matrix\r\n#define lib_matrix\r\n\r\n#ifndef call_include\r\
+    \ * @brief Matrix( $2$ \u6B21\u5143\u884C\u5217)\r\n * @docs docs/matrix.md\r\n\
+    \ */\r\n\r\n#ifndef lib_matrix\r\n#define lib_matrix\r\n\r\n#ifndef call_include\r\
     \n#define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n\
     #endif\r\n\r\ntemplate<class T>\r\nclass Matrix{\r\n\tvector<vector<T>> mat;\r\
     \n\r\npublic:\r\n\r\n\tMatrix() : Matrix(0,0) {}\r\n\tMatrix(int h, int w) { make(h,w);\
@@ -51,7 +51,7 @@ data:
   isVerificationFile: true
   path: test/aoj_ITP1_6_B.test.cpp
   requiredBy: []
-  timestamp: '2020-11-02 12:20:09+09:00'
+  timestamp: '2020-11-08 11:20:04+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_ITP1_6_B.test.cpp

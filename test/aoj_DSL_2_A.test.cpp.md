@@ -16,7 +16,7 @@ data:
   bundledCode: "#line 1 \"test/aoj_DSL_2_A.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_A\"\
     \r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
     \nusing namespace std;\r\n#endif\r\n\r\n#line 1 \"tree/segtree_RmQ.cpp\"\n/*\r\
-    \n * @brief RmQ(\u533A\u9593\u6700\u5C0F\u5024)\r\n * @docs ./docs/segtree_RmQ.md\r\
+    \n * @brief RmQ(\u533A\u9593\u6700\u5C0F\u5024)\r\n * @docs docs/segtree_RmQ.md\r\
     \n */\r\n\r\n#ifndef lib_segtree_RmQ\r\n#define lib_segtree_RmQ\r\n\r\n#ifndef\
     \ call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace\
     \ std;\r\n#endif\r\n\r\ntemplate<typename T>\r\nstruct RmQ {\r\nprivate:\r\n\t\
@@ -48,7 +48,7 @@ data:
   isVerificationFile: true
   path: test/aoj_DSL_2_A.test.cpp
   requiredBy: []
-  timestamp: '2020-11-02 12:20:09+09:00'
+  timestamp: '2020-11-08 11:20:04+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_DSL_2_A.test.cpp

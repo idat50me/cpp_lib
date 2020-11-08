@@ -41,7 +41,7 @@ data:
   isVerificationFile: true
   path: test/aoj_DPL_5_E_2.test.cpp
   requiredBy: []
-  timestamp: '2020-11-02 12:20:09+09:00'
+  timestamp: '2020-11-08 11:20:04+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_DPL_5_E_2.test.cpp
