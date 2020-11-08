@@ -6,8 +6,8 @@
 using namespace std;
 #endif
 
-#include "../pre/macros.cpp"
-#include "../math/divisor.cpp"
+#include "math/divisor.cpp"
+using ll = long long;
 
 int main() {
 	ll N; cin>>N;

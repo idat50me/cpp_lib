@@ -6,7 +6,7 @@
 using namespace std;
 #endif
 
-#include "../tree/segtree.cpp"
+#include "tree/segtree.cpp"
 
 int op(int l, int r) {
 	return min(l,r);

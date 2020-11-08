@@ -6,8 +6,7 @@
 using namespace std;
 #endif
 
-#include "../pre/macros.cpp"
-#include "../math/isprime.cpp"
+#include "math/isprime.cpp"
 
 int main() {
 	int n; cin>>n;

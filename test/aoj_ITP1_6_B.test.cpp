@@ -6,7 +6,7 @@
 using namespace std;
 #endif
 
-#include "../structs/matrix.cpp"
+#include "structs/matrix.cpp"
 
 int main() {
 	int N; cin>>N;

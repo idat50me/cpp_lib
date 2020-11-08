@@ -7,7 +7,7 @@
 using namespace std;
 #endif
 
-#include "../math/factorial.cpp"
+#include "math/factorial.cpp"
 
 int main() {
 	int N; cin>>N;

@@ -6,7 +6,7 @@
 using namespace std;
 #endif
 
-#include "../combinatorics/combinatorics.cpp"
+#include "combinatorics/combinatorics.cpp"
 #define MPRIME 1000000007LL
 
 int main() {

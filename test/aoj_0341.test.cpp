@@ -6,9 +6,9 @@
 using namespace std;
 #endif
 
-#include "../pre/macros.cpp"
-#include "../mod/modint.cpp"
-#include "../structs/matrix.cpp"
+#include "mod/modint.cpp"
+#include "structs/matrix.cpp"
+#define MPRIME 1000000007LL
 
 int main() {
 	string T,B; cin>>T>>B;
