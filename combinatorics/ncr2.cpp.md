@@ -6,11 +6,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj_DPL_5_E.test.cpp
     title: test/aoj_DPL_5_E.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj_DPL_5_E_2.test.cpp
     title: test/aoj_DPL_5_E_2.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: docs/ncr2.md
     document_title: "nCr mod p ($r \\leq 10^7$, \u30AF\u30A8\u30EA $O(1)$ or $O(r)$)"
@@ -30,8 +30,8 @@ data:
     \n\t}\r\n\r\n\tlong long calc(long long n, long long r) {\r\n\t\tassert(r >= 0);\r\
     \n\t\tif(r > n) return 0;\r\n\t\tif(r > n/2) r = n-r;\r\n\t\tif(comb.size() >\
     \ 0)\r\n\t\t\treturn comb[r];\r\n\t\telse {\r\n\t\t\tlong long f=1;\r\n\t\t\t\
-    for(long long i=n; i>n-r; i--) {\r\n\t\t\t\t(f*=i)%P;\r\n\t\t\t}\r\n\t\t\treturn\
-    \ f*finv[r]%P;\r\n\t\t}\r\n\t}\r\n};\r\n\r\n#endif // lib_ncr2\r\n"
+    for(long long i=n; i>n-r; i--) (f*=i) %= P;\r\n\t\t\treturn f*finv[r]%P;\r\n\t\
+    \t}\r\n\t}\r\n};\r\n\r\n#endif // lib_ncr2\r\n"
   code: "/*\r\n * @brief nCr mod p ($r \\leq 10^7$, \u30AF\u30A8\u30EA $O(1)$ or $O(r)$)\r\
     \n * @docs docs/ncr2.md\r\n */\r\n\r\n#ifndef lib_ncr2\r\n#define lib_ncr2\r\n\
     \r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
@@ -47,14 +47,14 @@ data:
     \n\t}\r\n\r\n\tlong long calc(long long n, long long r) {\r\n\t\tassert(r >= 0);\r\
     \n\t\tif(r > n) return 0;\r\n\t\tif(r > n/2) r = n-r;\r\n\t\tif(comb.size() >\
     \ 0)\r\n\t\t\treturn comb[r];\r\n\t\telse {\r\n\t\t\tlong long f=1;\r\n\t\t\t\
-    for(long long i=n; i>n-r; i--) {\r\n\t\t\t\t(f*=i)%P;\r\n\t\t\t}\r\n\t\t\treturn\
-    \ f*finv[r]%P;\r\n\t\t}\r\n\t}\r\n};\r\n\r\n#endif // lib_ncr2\r\n"
+    for(long long i=n; i>n-r; i--) (f*=i) %= P;\r\n\t\t\treturn f*finv[r]%P;\r\n\t\
+    \t}\r\n\t}\r\n};\r\n\r\n#endif // lib_ncr2\r\n"
   dependsOn: []
   isVerificationFile: false
   path: combinatorics/ncr2.cpp
   requiredBy: []
-  timestamp: '2020-11-08 17:18:27+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2020-11-09 00:40:50+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_DPL_5_E.test.cpp
   - test/aoj_DPL_5_E_2.test.cpp

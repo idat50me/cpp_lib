@@ -15,20 +15,19 @@ data:
     )\r\n */\r\n\r\n#ifndef lib_factorial\r\n#define lib_factorial\r\n\r\n#ifndef\
     \ call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace\
     \ std;\r\n#endif\r\n\r\nlong long factorial(int x, long long p=(1LL<<62)-1) {\r\
-    \n\tlong long res = 1;\r\n\tfor(int i=2; i<=x; i++) res = res * i % p;\r\n\treturn\
+    \n\tlong long res = 1;\r\n\tfor(int i=2; i<=x; i++) (res*=i) %= p;\r\n\treturn\
     \ res;\r\n}\r\n\r\n#endif // lib_factorial\r\n"
   code: "/*\r\n * @brief Factorial(\u968E\u4E57)\r\n */\r\n\r\n#ifndef lib_factorial\r\
     \n#define lib_factorial\r\n\r\n#ifndef call_include\r\n#define call_include\r\n\
     #include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\nlong long factorial(int\
     \ x, long long p=(1LL<<62)-1) {\r\n\tlong long res = 1;\r\n\tfor(int i=2; i<=x;\
-    \ i++) res = res * i % p;\r\n\treturn res;\r\n}\r\n\r\n#endif // lib_factorial\r\
-    \n"
+    \ i++) (res*=i) %= p;\r\n\treturn res;\r\n}\r\n\r\n#endif // lib_factorial\r\n"
   dependsOn: []
   isVerificationFile: false
   path: math/factorial.cpp
   requiredBy:
   - test/aoj_0019.cpp
-  timestamp: '2020-11-08 20:39:46+09:00'
+  timestamp: '2020-11-09 00:40:50+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: math/factorial.cpp

@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: combinatorics/ncr2.cpp
     title: "nCr mod p ($r \\leq 10^7$, \u30AF\u30A8\u30EA $O(1)$ or $O(r)$)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/DPL_5_E
@@ -31,11 +31,10 @@ data:
     \n\t}\r\n\r\n\tlong long calc(long long n, long long r) {\r\n\t\tassert(r >= 0);\r\
     \n\t\tif(r > n) return 0;\r\n\t\tif(r > n/2) r = n-r;\r\n\t\tif(comb.size() >\
     \ 0)\r\n\t\t\treturn comb[r];\r\n\t\telse {\r\n\t\t\tlong long f=1;\r\n\t\t\t\
-    for(long long i=n; i>n-r; i--) {\r\n\t\t\t\t(f*=i)%P;\r\n\t\t\t}\r\n\t\t\treturn\
-    \ f*finv[r]%P;\r\n\t\t}\r\n\t}\r\n};\r\n\r\n#endif // lib_ncr2\r\n#line 10 \"\
-    test/aoj_DPL_5_E_2.test.cpp\"\n#define MPRIME 1000000007LL\r\n\r\nint main() {\r\
-    \n\tint n,k; cin>>n>>k;\r\n\tNCR ncr(1000,MPRIME);\r\n\tcout<<ncr.calc(k,n)<<endl;\r\
-    \n}\r\n"
+    for(long long i=n; i>n-r; i--) (f*=i) %= P;\r\n\t\t\treturn f*finv[r]%P;\r\n\t\
+    \t}\r\n\t}\r\n};\r\n\r\n#endif // lib_ncr2\r\n#line 10 \"test/aoj_DPL_5_E_2.test.cpp\"\
+    \n#define MPRIME 1000000007LL\r\n\r\nint main() {\r\n\tint n,k; cin>>n>>k;\r\n\
+    \tNCR ncr(1000,MPRIME);\r\n\tcout<<ncr.calc(k,n)<<endl;\r\n}\r\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/DPL_5_E\"\r\n\
     \r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
     \nusing namespace std;\r\n#endif\r\n\r\n#include \"combinatorics/ncr2.cpp\"\r\n\
@@ -46,8 +45,8 @@ data:
   isVerificationFile: true
   path: test/aoj_DPL_5_E_2.test.cpp
   requiredBy: []
-  timestamp: '2020-11-08 17:18:27+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-11-09 00:40:50+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_DPL_5_E_2.test.cpp
 layout: document

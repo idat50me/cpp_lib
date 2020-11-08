@@ -25,8 +25,8 @@ data:
     \n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
     \nusing namespace std;\r\n#endif\r\n\r\nlong long binpow(long long a, long long\
     \ ex, long long p=(1LL<<60)) {\r\n\tlong long res = 1;\r\n\twhile(ex > 0) {\r\n\
-    \t\tif(ex & 1) res = res*a%p;\r\n\t\tex>>=1;\r\n\t\ta = a*a%p;\r\n\t}\r\n\treturn\
-    \ res;\r\n}\r\n\r\n#endif /* lib_binpow */\n#line 11 \"test/aoj_NTL_1_B.test.cpp\"\
+    \t\tif(ex & 1) (res*=a) %= p;\r\n\t\tex>>=1;\r\n\t\t(a*=a) %= p;\r\n\t}\r\n\t\
+    return res;\r\n}\r\n\r\n#endif /* lib_binpow */\n#line 11 \"test/aoj_NTL_1_B.test.cpp\"\
     \n\r\nint main() {\r\n\tint m,n; cin>>m>>n;\r\n\tcout<<binpow(m,n,MPRIME)<<endl;\r\
     \n}\r\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_B\"\
@@ -40,7 +40,7 @@ data:
   isVerificationFile: true
   path: test/aoj_NTL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2020-11-08 20:39:46+09:00'
+  timestamp: '2020-11-09 00:40:50+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_NTL_1_B.test.cpp
