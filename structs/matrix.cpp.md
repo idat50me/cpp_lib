@@ -61,6 +61,4 @@ redirect_from:
 - /library/structs/matrix.cpp.html
 title: "Matrix( $2$ \u6B21\u5143\u884C\u5217)"
 ---
-## なにこれ
-
-## コンストラクタ
+これから書く
