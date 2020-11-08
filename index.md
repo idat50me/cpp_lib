@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: combinatorics
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: combinatorics/combinatorics.cpp
       title: "Combinatorics(\u7D44\u5408\u305B\u6570\u5B66)"
     - icon: ':warning:'
@@ -89,7 +89,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj_ALDS1_1_C_3.test.cpp
       title: test/aoj_ALDS1_1_C_3.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj_DPL_5_D.test.cpp
       title: test/aoj_DPL_5_D.test.cpp
     - icon: ':heavy_check_mark:'
@@ -122,7 +122,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo_unionfind.test.cpp
       title: test/yosupo_unionfind.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yuki_0117.test.cpp
       title: test/yuki_0117.test.cpp
     - icon: ':heavy_check_mark:'

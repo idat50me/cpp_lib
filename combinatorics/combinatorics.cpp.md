@@ -3,14 +3,14 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj_DPL_5_D.test.cpp
     title: test/aoj_DPL_5_D.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yuki_0117.test.cpp
     title: test/yuki_0117.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     _deprecated_at_docs: docs/combinatorics.md
     document_title: "Combinatorics(\u7D44\u5408\u305B\u6570\u5B66)"
@@ -30,7 +30,7 @@ data:
     \ n, long long r) {\r\n\t\tassert(n>=0 && r>=0);\r\n\t\tif (r > n) return 0;\r\
     \n\t\treturn fact[n]*finv[r]%P*finv[n-r]%P;\r\n\t}\r\n\r\n\tlong long nhr(long\
     \ long n, long long r) {\r\n\t\tassert(n>=0 && r>=0);\r\n\t\tif(r == 0) return\
-    \ 1;\r\n\t\tif(n == 0) return 0;\r\n\t\treturn nCr(n+r-1,n-1);\r\n\t}\r\n};\r\n\
+    \ 1;\r\n\t\tif(n == 0) return 0;\r\n\t\treturn ncr(n+r-1,n-1);\r\n\t}\r\n};\r\n\
     \r\n#endif // lib_combinatorics\r\n"
   code: "/*\r\n * @brief Combinatorics(\u7D44\u5408\u305B\u6570\u5B66)\r\n * @docs\
     \ docs/combinatorics.md\r\n */\r\n\r\n#ifndef lib_combinatorics\r\n#define lib_combinatorics\r\
@@ -46,14 +46,14 @@ data:
     \t}\r\n\r\n\tlong long ncr(long long n, long long r) {\r\n\t\tassert(n>=0 && r>=0);\r\
     \n\t\tif (r > n) return 0;\r\n\t\treturn fact[n]*finv[r]%P*finv[n-r]%P;\r\n\t\
     }\r\n\r\n\tlong long nhr(long long n, long long r) {\r\n\t\tassert(n>=0 && r>=0);\r\
-    \n\t\tif(r == 0) return 1;\r\n\t\tif(n == 0) return 0;\r\n\t\treturn nCr(n+r-1,n-1);\r\
+    \n\t\tif(r == 0) return 1;\r\n\t\tif(n == 0) return 0;\r\n\t\treturn ncr(n+r-1,n-1);\r\
     \n\t}\r\n};\r\n\r\n#endif // lib_combinatorics\r\n"
   dependsOn: []
   isVerificationFile: false
   path: combinatorics/combinatorics.cpp
   requiredBy: []
-  timestamp: '2020-11-08 16:43:51+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2020-11-08 16:56:00+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_DPL_5_D.test.cpp
   - test/yuki_0117.test.cpp
