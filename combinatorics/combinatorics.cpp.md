@@ -15,7 +15,7 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: ./docs/combinatorics.md
+    _deprecated_at_docs: docs/combinatorics.md
     document_title: "Combinatorics(\u7D44\u5408\u305B\u6570\u5B66)"
     links: []
   bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
@@ -27,7 +27,7 @@ data:
     \ combinatorics/combinatorics.cpp: line 15: unable to process #include in #if\
     \ / #ifdef / #ifndef other than include guards\n"
   code: "/*\r\n * @brief Combinatorics(\u7D44\u5408\u305B\u6570\u5B66)\r\n * @docs\
-    \ ./docs/combinatorics.md\r\n */\r\n\r\n#ifndef lib_combinatorics\r\n#define lib_combinatorics\r\
+    \ docs/combinatorics.md\r\n */\r\n\r\n#ifndef lib_combinatorics\r\n#define lib_combinatorics\r\
     \n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
     \nusing namespace std;\r\n#endif\r\n\r\n#include \"../pre/macros.cpp\"\r\n\r\n\
     struct Combinatorics {\r\nprivate:\r\n\tvector<ll> fact, inv, finv;\r\n\tll P;\r\
@@ -51,7 +51,7 @@ data:
   isVerificationFile: false
   path: combinatorics/combinatorics.cpp
   requiredBy: []
-  timestamp: '2020-11-08 14:26:02+09:00'
+  timestamp: '2020-11-08 14:38:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_DPL_5_D.test.cpp
@@ -63,3 +63,21 @@ redirect_from:
 - /library/combinatorics/combinatorics.cpp.html
 title: "Combinatorics(\u7D44\u5408\u305B\u6570\u5B66)"
 ---
+## なにこれ
+${}_nP_r, {}_nC_r, {}_nH_r\ (\mathrm{mod}\ p)$ を求める．
+
+## 制約
+- $n \leq 10^7$ 程度
+- $p$ は素数
+
+## コンストラクタ
+- `Combinatorics(mx, p)`：計算量 $O(n)$
+	- `mx`：$n$ の最大値．ただし ${}_nH_r$ を求める場合は $(n+r-1)$ の最大値．
+	- `p`：値の法．
+
+## メンバ関数
+- `nPr(n, r)`：計算量 $O(1)$
+
+- `nCr(n, r)`：計算量 $O(1)$
+
+- `nHr(n, r)`：計算量 $O(1)$

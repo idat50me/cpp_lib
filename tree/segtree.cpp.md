@@ -9,13 +9,13 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: ./docs/segtree.md
+    _deprecated_at_docs: docs/segtree.md
     document_title: "segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u30C4\u30EA\u30FC)"
     links: []
   bundledCode: "#line 1 \"tree/segtree.cpp\"\n/*\r\n * @brief segtree(\u30BB\u30B0\
-    \u30E1\u30F3\u30C8\u30C4\u30EA\u30FC)\r\n * @docs ./docs/segtree.md\r\n */\r\n\
-    \r\n#ifndef lib_segtree\r\n#define lib_segtree\r\n\r\n#ifndef call_include\r\n\
-    #define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\
+    \u30E1\u30F3\u30C8\u30C4\u30EA\u30FC)\r\n * @docs docs/segtree.md\r\n */\r\n\r\
+    \n#ifndef lib_segtree\r\n#define lib_segtree\r\n\r\n#ifndef call_include\r\n#define\
+    \ call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\
     \n\r\ntemplate<typename T, T (*op)(T,T), T (*e)()>\r\nstruct segtree {\r\nprivate:\r\
     \n\tint n=1, siz;\r\n\tvector<T> node;\r\n\tconst T e_ = e();\r\n\r\npublic:\r\
     \n\tsegtree(int s) {\r\n\t\tsiz = s;\r\n\t\twhile(n < siz) n*=2;\r\n\t\tnode.resize(2*n-1,\
@@ -36,7 +36,7 @@ data:
     \ r);\r\n\t\treturn op(vl, vr);\r\n\t}\r\npublic:\r\n};\r\n\r\n#endif // lib_segtree\r\
     \n"
   code: "/*\r\n * @brief segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u30C4\u30EA\u30FC\
-    )\r\n * @docs ./docs/segtree.md\r\n */\r\n\r\n#ifndef lib_segtree\r\n#define lib_segtree\r\
+    )\r\n * @docs docs/segtree.md\r\n */\r\n\r\n#ifndef lib_segtree\r\n#define lib_segtree\r\
     \n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
     \nusing namespace std;\r\n#endif\r\n\r\ntemplate<typename T, T (*op)(T,T), T (*e)()>\r\
     \nstruct segtree {\r\nprivate:\r\n\tint n=1, siz;\r\n\tvector<T> node;\r\n\tconst\
@@ -61,7 +61,7 @@ data:
   isVerificationFile: false
   path: tree/segtree.cpp
   requiredBy: []
-  timestamp: '2020-11-08 12:02:20+09:00'
+  timestamp: '2020-11-08 14:38:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo_staticrmq_2.test.cpp
@@ -72,3 +72,4 @@ redirect_from:
 - /library/tree/segtree.cpp.html
 title: "segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u30C4\u30EA\u30FC)"
 ---
+これから書く

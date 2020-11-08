@@ -16,7 +16,7 @@ data:
   bundledCode: "#line 1 \"test/yosupo_unionfind.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\
     \r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
     \nusing namespace std;\r\n#endif\r\n\r\n#line 1 \"tree/union_find.cpp\"\n/*\r\n\
-    \ * @brief Union-Find\u6728\r\n * @docs ./docs/union_find.md\r\n */\r\n\r\n#ifndef\
+    \ * @brief Union-Find\u6728\r\n * @docs docs/union_find.md\r\n */\r\n\r\n#ifndef\
     \ lib_union_find\r\n#define lib_union_find\r\n\r\n#ifndef call_include\r\n#define\
     \ call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\
     \n\r\nstruct UnionFind {\r\nprivate:\r\n\tvector<int> parent;\r\n\tvector<int>\
@@ -46,7 +46,7 @@ data:
   isVerificationFile: true
   path: test/yosupo_unionfind.test.cpp
   requiredBy: []
-  timestamp: '2020-11-08 14:26:02+09:00'
+  timestamp: '2020-11-08 14:38:28+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo_unionfind.test.cpp

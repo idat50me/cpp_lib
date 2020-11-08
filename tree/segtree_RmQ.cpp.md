@@ -12,11 +12,11 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
-    _deprecated_at_docs: ./docs/segtree_RmQ.md
+    _deprecated_at_docs: docs/segtree_RmQ.md
     document_title: "RmQ(\u533A\u9593\u6700\u5C0F\u5024)"
     links: []
   bundledCode: "#line 1 \"tree/segtree_RmQ.cpp\"\n/*\r\n * @brief RmQ(\u533A\u9593\
-    \u6700\u5C0F\u5024)\r\n * @docs ./docs/segtree_RmQ.md\r\n */\r\n\r\n#ifndef lib_segtree_RmQ\r\
+    \u6700\u5C0F\u5024)\r\n * @docs docs/segtree_RmQ.md\r\n */\r\n\r\n#ifndef lib_segtree_RmQ\r\
     \n#define lib_segtree_RmQ\r\n\r\n#ifndef call_include\r\n#define call_include\r\
     \n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\ntemplate<typename\
     \ T>\r\nstruct RmQ {\r\nprivate:\r\n\tint n=1;\r\n\tvector<T> node;\r\n\tT inf=numeric_limits<T>::max();\r\
@@ -31,7 +31,7 @@ data:
     \ vl=getmin__(L,R,2*now+1,l,(l+r)/2);\r\n\t\tT vr=getmin__(L,R,2*now+2,(l+r)/2,r);\r\
     \n\t\treturn min(vl,vr);\r\n\t}\r\npublic:\r\n};\r\n\r\n#endif // lib_segtree_RmQ\r\
     \n"
-  code: "/*\r\n * @brief RmQ(\u533A\u9593\u6700\u5C0F\u5024)\r\n * @docs ./docs/segtree_RmQ.md\r\
+  code: "/*\r\n * @brief RmQ(\u533A\u9593\u6700\u5C0F\u5024)\r\n * @docs docs/segtree_RmQ.md\r\
     \n */\r\n\r\n#ifndef lib_segtree_RmQ\r\n#define lib_segtree_RmQ\r\n\r\n#ifndef\
     \ call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace\
     \ std;\r\n#endif\r\n\r\ntemplate<typename T>\r\nstruct RmQ {\r\nprivate:\r\n\t\
@@ -51,7 +51,7 @@ data:
   isVerificationFile: false
   path: tree/segtree_RmQ.cpp
   requiredBy: []
-  timestamp: '2020-11-08 12:43:45+09:00'
+  timestamp: '2020-11-08 14:38:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo_staticrmq.test.cpp
@@ -63,3 +63,22 @@ redirect_from:
 - /library/tree/segtree_RmQ.cpp.html
 title: "RmQ(\u533A\u9593\u6700\u5C0F\u5024)"
 ---
+## なにこれ
+$n$ 個の要素を持つ配列の区間最小値を求めるセグメント木．
+
+## 制約
+- $n \leq 10^8$ 程度
+
+## コンストラクタ
+- `RmQ(v)`：計算量 $O(n)$
+	- `v`：初期要素を格納している配列．
+
+## メンバ関数
+- `update(idx, val)`：計算量 $O(\log n)$  
+	要素を更新する．
+	- `idx`：更新する要素の index
+	- `val`：更新後の要素の値．
+
+- `getmin(L, R)`：計算量 $O(\log n)$  
+	区間最小値を求める．
+	- `L,R`：`[L,R)`を探索区間とする．

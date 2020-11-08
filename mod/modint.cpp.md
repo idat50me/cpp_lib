@@ -25,7 +25,7 @@ data:
     \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
     \ mod/modint.cpp: line 15: unable to process #include in #if / #ifdef / #ifndef\
     \ other than include guards\n"
-  code: "/*\r\n * @brief ModInt\r\n * @!docs ./docs/modint.md\r\n */\r\n\r\n#ifndef\
+  code: "/*\r\n * @brief ModInt\r\n * @!docs docs/modint.md\r\n */\r\n\r\n#ifndef\
     \ lib_mint\r\n#define lib_mint\r\n\r\n#ifndef call_include\r\n#define call_include\r\
     \n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\n#include \"\
     ../math/binpow.cpp\"\r\n\r\ntemplate<int mod>\r\nstruct mint {\r\nprivate:\r\n\
@@ -64,7 +64,7 @@ data:
   isVerificationFile: false
   path: mod/modint.cpp
   requiredBy: []
-  timestamp: '2020-11-08 14:26:02+09:00'
+  timestamp: '2020-11-08 14:38:28+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_0341.test.cpp
