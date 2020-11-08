@@ -3,18 +3,6 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':warning:'
-    path: combinatorics/ncr.cpp
-    title: nCr
-  - icon: ':heavy_check_mark:'
-    path: combinatorics/ncr2.cpp
-    title: "nCr mod p ($r \\leq 10^7$, \u30AF\u30A8\u30EA $O(r)$)"
-  - icon: ':warning:'
-    path: combinatorics/nhr.cpp
-    title: nHr
-  - icon: ':warning:'
-    path: combinatorics/nhr.cpp
-    title: nHr
-  - icon: ':warning:'
     path: combinatorics/npr.cpp
     title: nPr mod p
   - icon: ':heavy_check_mark:'
@@ -69,18 +57,6 @@ data:
     path: test/aoj_ALDS1_1_C_3.test.cpp
     title: test/aoj_ALDS1_1_C_3.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj_DPL_5_E.test.cpp
-    title: test/aoj_DPL_5_E.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj_DPL_5_E.test.cpp
-    title: test/aoj_DPL_5_E.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj_DPL_5_E_2.test.cpp
-    title: test/aoj_DPL_5_E_2.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj_DPL_5_E_2.test.cpp
-    title: test/aoj_DPL_5_E_2.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj_NTL_1_A.test.cpp
     title: test/aoj_NTL_1_A.test.cpp
   - icon: ':heavy_check_mark:'
@@ -109,11 +85,7 @@ data:
   path: pre/macros.cpp
   requiredBy:
   - test/aoj_0019.cpp
-  - combinatorics/ncr2.cpp
   - combinatorics/npr.cpp
-  - combinatorics/nhr.cpp
-  - combinatorics/nhr.cpp
-  - combinatorics/ncr.cpp
   - math/binpow.cpp
   - math/sieve_of_eratosthenes.cpp
   - math/isprime.cpp
@@ -128,8 +100,6 @@ data:
   - test/aoj_ALDS1_1_C.test.cpp
   - test/aoj_ALDS1_1_C_3.test.cpp
   - test/aoj_ALDS1_1_C_3.test.cpp
-  - test/aoj_DPL_5_E.test.cpp
-  - test/aoj_DPL_5_E.test.cpp
   - test/aoj_ALDS1_1_C_2.test.cpp
   - test/aoj_ALDS1_1_C_2.test.cpp
   - test/aoj_NTL_1_A.test.cpp
@@ -139,8 +109,6 @@ data:
   - test/aoj_0341.test.cpp
   - test/aoj_NTL_1_B.test.cpp
   - test/aoj_NTL_1_B.test.cpp
-  - test/aoj_DPL_5_E_2.test.cpp
-  - test/aoj_DPL_5_E_2.test.cpp
 documentation_of: pre/macros.cpp
 layout: document
 redirect_from:

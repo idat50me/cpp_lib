@@ -3,13 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: combinatorics/ncr2.cpp
-    title: "nCr mod p ($r \\leq 10^7$, \u30AF\u30A8\u30EA $O(r)$)"
-  - icon: ':heavy_check_mark:'
-    path: pre/macros.cpp
-    title: pre/macros.cpp
-  - icon: ':heavy_check_mark:'
-    path: pre/macros.cpp
-    title: pre/macros.cpp
+    title: "nCr mod p ($r \\leq 10^7$, \u30AF\u30A8\u30EA $O(r)$ or $O(r)$)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -19,29 +13,40 @@ data:
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/DPL_5_E
     links:
     - https://onlinejudge.u-aizu.ac.jp/problems/DPL_5_E
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 399, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
-    \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ combinatorics/ncr2.cpp: line 15: unable to process #include in #if / #ifdef\
-    \ / #ifndef other than include guards\n"
+  bundledCode: "#line 1 \"test/aoj_DPL_5_E.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/DPL_5_E\"\
+    \r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
+    \nusing namespace std;\r\n#endif\r\n\r\n#line 1 \"combinatorics/ncr2.cpp\"\n/*\r\
+    \n * @brief nCr mod p ($r \\leq 10^7$, \u30AF\u30A8\u30EA $O(r)$ or $O(r)$)\r\n\
+    \ * @docs docs/ncr2.md\r\n */\r\n\r\n#ifndef lib_ncr2\r\n#define lib_ncr2\r\n\r\
+    \n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\n\
+    using namespace std;\r\n#endif\r\n\r\nstruct NCR {\r\nprivate:\r\n\tvector<long\
+    \ long> comb, inv, finv;\r\n\tlong long P;\r\n\r\n\tvoid calc_inv(long long r)\
+    \ {\r\n\t\tinv.resize(r+1);\r\n\t\tfinv.resize(r+1);\r\n\t\tinv[1] = finv[0] =\
+    \ finv[1]=1LL;\r\n\t\tfor(int i=2; i<=r; i++) {\r\n\t\t\tinv[i] = P-inv[P%i]*(P/i)%P;\r\
+    \n\t\t\tfinv[i] = finv[i-1]*inv[i]%P;\r\n\t\t}\r\n\t}\r\n\r\npublic:\r\n\tNCR(long\
+    \ long n, long long r, long long p) {\r\n\t\tif(n/2 < r) r = n/2;\r\n\t\tP=p;\r\
+    \n\t\tcalc_inv(r);\r\n\r\n\t\tcomb.resize(r+1);\r\n\t\tcomb[0]=1;\r\n\t\tfor(int\
+    \ i=1; i<=r; i++) {\r\n\t\t\tcomb[i] = comb[i-1]*(n-i+1)%P*inv[i]%P;\r\n\t\t}\r\
+    \n\t}\r\n\r\n\tNCR(long long r, long long p) {\r\n\t\tP=p;\r\n\t\tcalc_inv(r);\r\
+    \n\t}\r\n\r\n\tlong long calc(long long n, long long r) {\r\n\t\tassert(r >= 0);\r\
+    \n\t\tif(r > n) return 0;\r\n\t\tif(r > n/2) r = n-r;\r\n\t\tif(comb.size() >\
+    \ 0)\r\n\t\t\treturn comb[r];\r\n\t\telse {\r\n\t\t\tlong long f=1;\r\n\t\t\t\
+    for(long long i=n; i>n-r; i--) {\r\n\t\t\t\tf = f*i%P;\r\n\t\t\t}\r\n\t\t\treturn\
+    \ f*finv[r]%P;\r\n\t\t}\r\n\t}\r\n};\r\n\r\n#endif // lib_ncr2\r\n#line 10 \"\
+    test/aoj_DPL_5_E.test.cpp\"\n#define MPRIME 1000000007LL\r\n\r\nint main() {\r\
+    \n\tint n,k; cin>>n>>k;\r\n\tNCR ncr(k,1000,MPRIME);\r\n\tcout<<ncr.calc(k,n)<<endl;\r\
+    \n}\r\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/DPL_5_E\"\r\n\
     \r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
-    \nusing namespace std;\r\n#endif\r\n\r\n#include \"../pre/macros.cpp\"\r\n#include\
-    \ \"../combinatorics/ncr2.cpp\"\r\n\r\nint main() {\r\n\tint n,k; cin>>n>>k;\r\
-    \n\tnCr2 table(k,1000,MPRIME);\r\n\tcout<<table.calc(k,n)<<endl;\r\n}\r\n"
+    \nusing namespace std;\r\n#endif\r\n\r\n#include \"combinatorics/ncr2.cpp\"\r\n\
+    #define MPRIME 1000000007LL\r\n\r\nint main() {\r\n\tint n,k; cin>>n>>k;\r\n\t\
+    NCR ncr(k,1000,MPRIME);\r\n\tcout<<ncr.calc(k,n)<<endl;\r\n}\r\n"
   dependsOn:
-  - pre/macros.cpp
   - combinatorics/ncr2.cpp
-  - pre/macros.cpp
   isVerificationFile: true
   path: test/aoj_DPL_5_E.test.cpp
   requiredBy: []
-  timestamp: '2020-11-08 14:38:28+09:00'
+  timestamp: '2020-11-08 17:12:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_DPL_5_E.test.cpp

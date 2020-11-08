@@ -6,15 +6,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: combinatorics/combinatorics.cpp
       title: "Combinatorics(\u7D44\u5408\u305B\u6570\u5B66)"
-    - icon: ':warning:'
-      path: combinatorics/ncr.cpp
-      title: nCr
     - icon: ':heavy_check_mark:'
       path: combinatorics/ncr2.cpp
-      title: "nCr mod p ($r \\leq 10^7$, \u30AF\u30A8\u30EA $O(r)$)"
-    - icon: ':warning:'
-      path: combinatorics/nhr.cpp
-      title: nHr
+      title: "nCr mod p ($r \\leq 10^7$, \u30AF\u30A8\u30EA $O(r)$ or $O(r)$)"
     - icon: ':warning:'
       path: combinatorics/npr.cpp
       title: nPr mod p
