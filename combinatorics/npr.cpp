@@ -11,13 +11,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 #endif
-#include "../pre/macros.cpp"
 
-ll nPr(ll n, ll r, ll p=MMPRIME) {
+long long nPr(long long n, long long r, long long p=MMPRIME) {
 	if(n < r) return 0LL;
 
-	ll res = 1LL;
-	for(int i=0; i<r; i++) res = res*(n-i)%p;
+	long long res = 1LL;
+	for(int i=0; i<r; i++) (res*=(n-i))%p;
 	return res;
 }
 

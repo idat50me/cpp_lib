@@ -1,5 +1,5 @@
 /*
- * @brief nCr mod p ($r \leq 10^7$, クエリ $O(r)$ or $O(r)$)
+ * @brief nCr mod p ($r \leq 10^7$, クエリ $O(1)$ or $O(r)$)
  * @docs docs/ncr2.md
  */
 
@@ -54,7 +54,7 @@ public:
 		else {
 			long long f=1;
 			for(long long i=n; i>n-r; i--) {
-				f = f*i%P;
+				(f*=i)%P;
 			}
 			return f*finv[r]%P;
 		}
