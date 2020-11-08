@@ -47,7 +47,7 @@ public:
 		assert(n>=0 && r>=0);
 		if(r == 0) return 1;
 		if(n == 0) return 0;
-		return nhr(n+r-1,n-1);
+		return ncr(n+r-1,n-1);
 	}
 };
 
