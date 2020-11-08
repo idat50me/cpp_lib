@@ -6,11 +6,11 @@
 using namespace std;
 #endif
 
-#include "../pre/macros.cpp"
 #include "../combinatorics/combinatorics.cpp"
+#define MPRIME 1000000007LL
 
 int main() {
-	Combinatorics comb(2100000,MPRIME);
+	COMB comb(2100000,MPRIME);
 
 	int T; cin>>T;
 	for(int i=0; i<T; i++) {
@@ -44,13 +44,13 @@ int main() {
 		}
 		switch(mode) {
 			case 0:
-				cout<<comb.nCr(n,r)<<endl;
+				cout<<comb.ncr(n,r)<<endl;
 				break;
 			case 1:
-				cout<<comb.nPr(n,r)<<endl;
+				cout<<comb.npr(n,r)<<endl;
 				break;
 			case 2:
-				cout<<comb.nHr(n,r)<<endl;
+				cout<<comb.nhr(n,r)<<endl;
 				break;
 			default:
 				return 0;

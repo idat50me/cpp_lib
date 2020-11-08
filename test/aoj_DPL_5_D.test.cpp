@@ -6,11 +6,11 @@
 using namespace std;
 #endif
 
-#include "../pre/macros.cpp"
 #include "../combinatorics/combinatorics.cpp"
+#define MPRIME 1000000007LL
 
 int main() {
 	int n,k; cin>>n>>k;
-	Combinatorics cb(2000,MPRIME);
-	cout<<cb.nHr(k,n)<<endl;
+	COMB cb(2000,MPRIME);
+	cout<<cb.nhr(k,n)<<endl;
 }
