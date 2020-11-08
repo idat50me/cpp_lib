@@ -31,9 +31,9 @@ data:
     \u30B9\u306E\u7BE9)\r\n * @docs docs/sieve_of_eratosthenes.md\r\n */\r\n\r\n#ifndef\
     \ lib_sieve_of_eratosthenes\r\n#define lib_sieve_of_eratosthenes\r\n\r\n#ifndef\
     \ call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace\
-    \ std;\r\n#endif\r\n\r\n#include \"../pre/macros.cpp\"\r\n\r\nstruct Sieve {\r\
-    \n\tint N;\r\n\tvector<int> f,primes;\r\n\r\n\tSieve(int n=1) : N(n), f(n+1,0)\
-    \ {\r\n\t\tf[0]=f[1]=-1;\r\n\t\tfor(int i=2; i<=N; i++) {\r\n\t\t\tif(f[i]) continue;\r\
+    \ std;\r\n#endif\r\n\r\n#include \"pre/macros.cpp\"\r\n\r\nstruct Sieve {\r\n\t\
+    int N;\r\n\tvector<int> f,primes;\r\n\r\n\tSieve(int n=1) : N(n), f(n+1,0) {\r\
+    \n\t\tf[0]=f[1]=-1;\r\n\t\tfor(int i=2; i<=N; i++) {\r\n\t\t\tif(f[i]) continue;\r\
     \n\t\t\tprimes.push_back(i);\r\n\t\t\tf[i]=i;\r\n\t\t\tif(i>(1<<15)) continue;\r\
     \n\t\t\tfor(int j=i*i; j<=N; j+=i) if(!f[j]) f[j]=i;\r\n\t\t}\r\n\t}\r\n\r\n\t\
     bool isprime(int x) {\r\n\t\treturn f[x]==x;\r\n\t}\r\n\r\n\tvector<pair<int,int>>\
@@ -50,7 +50,7 @@ data:
   isVerificationFile: false
   path: math/sieve_of_eratosthenes.cpp
   requiredBy: []
-  timestamp: '2020-11-08 14:38:28+09:00'
+  timestamp: '2020-11-08 15:04:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_ALDS1_1_C.test.cpp
