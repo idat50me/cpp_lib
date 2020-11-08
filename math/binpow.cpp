@@ -14,9 +14,9 @@ using namespace std;
 long long binpow(long long a, long long ex, long long p=(1LL<<60)) {
 	long long res = 1;
 	while(ex > 0) {
-		if(ex & 1) res = res*a%p;
+		if(ex & 1) (res*=a) %= p;
 		ex>>=1;
-		a = a*a%p;
+		(a*=a) %= p;
 	}
 	return res;
 }

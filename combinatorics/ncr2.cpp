@@ -53,9 +53,7 @@ public:
 			return comb[r];
 		else {
 			long long f=1;
-			for(long long i=n; i>n-r; i--) {
-				(f*=i)%P;
-			}
+			for(long long i=n; i>n-r; i--) (f*=i) %= P;
 			return f*finv[r]%P;
 		}
 	}

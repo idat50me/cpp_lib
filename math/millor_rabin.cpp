@@ -32,7 +32,7 @@ bool isprime(int n) {
 		if(r == 1 || r == n-1) continue;
 		
 		for(int i = 1; i < s; i++) {
-			r = r * r % n;
+			(r*=r) %= n;
 			if(r == n-1) break;
 		}
 		if(r != n-1) return false;

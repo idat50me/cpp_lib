@@ -16,7 +16,7 @@ long long nPr(long long n, long long r, long long p=MMPRIME) {
 	if(n < r) return 0LL;
 
 	long long res = 1LL;
-	for(int i=0; i<r; i++) (res*=(n-i))%p;
+	for(int i=0; i<r; i++) (res*=(n-i)) %= p;
 	return res;
 }
 
