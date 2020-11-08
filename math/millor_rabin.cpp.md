@@ -4,9 +4,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/binpow.cpp
     title: "Binary-Power(\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5)"
-  - icon: ':heavy_check_mark:'
-    path: pre/macros.cpp
-    title: pre/macros.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -31,21 +28,20 @@ data:
     \u6570\u5224\u5B9A\u6CD5)\r\n * @docs docs/millor_rabin.md\r\n */\r\n\r\n#ifndef\
     \ lib_millor_rabin\r\n#define lib_millor_rabin\r\n\r\n#ifndef call_include\r\n\
     #define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\
-    \n\r\n#include \"../math/binpow.cpp\"\r\n\r\nbool isprime(int n) {\r\n\tif(n ==\
-    \ 2) return true;\r\n\tif(n < 2 || n%2 == 0) return false;\r\n\r\n\tint d=n-1,\
-    \ s=0;\r\n\twhile(d%2 == 0) {\r\n\t\ts++;\r\n\t\td >>= 1;\r\n\t}\r\n\r\n\tint\
-    \ a[]={2,7,61};\r\n\tfor(int k = 0; k < 3; k++) {\r\n\t\tif(a[k] >= n) break;\r\
-    \n\t\t\r\n\t\tll r = binpow(a[k], d, n);\r\n\t\tif(r == 1 || r == n-1) continue;\r\
-    \n\t\t\r\n\t\tfor(int i = 1; i < s; i++) {\r\n\t\t\tr = r * r % n;\r\n\t\t\tif(r\
-    \ == n-1) break;\r\n\t\t}\r\n\t\tif(r != n-1) return false;\r\n\t}\r\n\r\n\treturn\
+    \n\r\n#include \"math/binpow.cpp\"\r\n\r\nbool isprime(int n) {\r\n\tif(n == 2)\
+    \ return true;\r\n\tif(n < 2 || n%2 == 0) return false;\r\n\r\n\tint d=n-1, s=0;\r\
+    \n\twhile(d%2 == 0) {\r\n\t\ts++;\r\n\t\td >>= 1;\r\n\t}\r\n\r\n\tint a[]={2,7,61};\r\
+    \n\tfor(int k = 0; k < 3; k++) {\r\n\t\tif(a[k] >= n) break;\r\n\t\t\r\n\t\tlong\
+    \ long r = binpow(a[k], d, n);\r\n\t\tif(r == 1 || r == n-1) continue;\r\n\t\t\
+    \r\n\t\tfor(int i = 1; i < s; i++) {\r\n\t\t\tr = r * r % n;\r\n\t\t\tif(r ==\
+    \ n-1) break;\r\n\t\t}\r\n\t\tif(r != n-1) return false;\r\n\t}\r\n\r\n\treturn\
     \ true;\r\n}\r\n\r\n#endif // lib_millor_rabin\r\n"
   dependsOn:
   - math/binpow.cpp
-  - pre/macros.cpp
   isVerificationFile: false
   path: math/millor_rabin.cpp
   requiredBy: []
-  timestamp: '2020-11-08 14:38:28+09:00'
+  timestamp: '2020-11-08 20:39:46+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_ALDS1_1_C_3.test.cpp

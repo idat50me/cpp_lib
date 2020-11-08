@@ -4,9 +4,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/binpow.cpp
     title: "Binary-Power(\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5)"
-  - icon: ':heavy_check_mark:'
-    path: pre/macros.cpp
-    title: pre/macros.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -60,11 +57,10 @@ data:
     \ta = mint(n);\r\n\t\treturn is;\r\n\t}\r\n};\r\n\r\n#endif // lib_mint\r\n"
   dependsOn:
   - math/binpow.cpp
-  - pre/macros.cpp
   isVerificationFile: false
   path: mod/modint.cpp
   requiredBy: []
-  timestamp: '2020-11-08 14:38:28+09:00'
+  timestamp: '2020-11-08 20:39:46+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_0341.test.cpp

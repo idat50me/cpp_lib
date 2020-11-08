@@ -6,9 +6,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: combinatorics/combinatorics.cpp
       title: "Combinatorics(\u7D44\u5408\u305B\u6570\u5B66)"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: combinatorics/ncr2.cpp
-      title: "nCr mod p ($r \\leq 10^7$, \u30AF\u30A8\u30EA $O(r)$ or $O(r)$)"
+      title: "nCr mod p ($r \\leq 10^7$, \u30AF\u30A8\u30EA $O(1)$ or $O(r)$)"
     - icon: ':warning:'
       path: combinatorics/npr.cpp
       title: nPr mod p
@@ -89,7 +89,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj_DPL_5_E.test.cpp
       title: test/aoj_DPL_5_E.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj_DPL_5_E_2.test.cpp
       title: test/aoj_DPL_5_E_2.test.cpp
     - icon: ':heavy_check_mark:'

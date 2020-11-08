@@ -11,9 +11,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: pre/macros.cpp
     title: pre/macros.cpp
-  - icon: ':heavy_check_mark:'
-    path: pre/macros.cpp
-    title: pre/macros.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -43,11 +40,10 @@ data:
   - pre/macros.cpp
   - math/millor_rabin.cpp
   - math/binpow.cpp
-  - pre/macros.cpp
   isVerificationFile: true
   path: test/aoj_ALDS1_1_C_3.test.cpp
   requiredBy: []
-  timestamp: '2020-11-08 14:38:28+09:00'
+  timestamp: '2020-11-08 20:39:46+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_ALDS1_1_C_3.test.cpp

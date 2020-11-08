@@ -7,9 +7,6 @@ data:
   - icon: ':heavy_check_mark:'
     path: pre/macros.cpp
     title: pre/macros.cpp
-  - icon: ':heavy_check_mark:'
-    path: pre/macros.cpp
-    title: pre/macros.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -19,16 +16,20 @@ data:
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C
     links:
     - https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir).decode()\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 191, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 399, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 398, in update\n    raise BundleErrorAt(path, i + 1, \"unable to process\
-    \ #include in #if / #ifdef / #ifndef other than include guards\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ math/isprime.cpp: line 14: unable to process #include in #if / #ifdef / #ifndef\
-    \ other than include guards\n"
+  bundledCode: "#line 1 \"test/aoj_ALDS1_1_C_2.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C\"\
+    \r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
+    \nusing namespace std;\r\n#endif\r\n\r\n#line 1 \"pre/macros.cpp\"\n\n\n\r\nusing\
+    \ ll = long long;\r\n\r\n#define MPRIME (ll)(1e9+7)\r\n#define MMPRIME ((1LL<<61)-1)\r\
+    \n\r\n\n#line 1 \"math/isprime.cpp\"\n/*\r\n * @brief Isprime(\u7D20\u6570\u5224\
+    \u5B9A)\r\n */\r\n\r\n#ifndef lib_isprime\r\n#define lib_isprime\r\n\r\n#ifndef\
+    \ call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace\
+    \ std;\r\n#endif\r\n\r\nbool isprime(long long n) {\r\n\tif (n<2) return false;\r\
+    \n\tif (n==2) return true;\r\n\tif (n%2==0) return false;\r\n\r\n\tfor (long long\
+    \ i=3; i*i<=n; i+=2) if (n%i==0) return false;\r\n\r\n\treturn true;\r\n}\r\n\r\
+    \n#endif // lib_isprime\r\n#line 11 \"test/aoj_ALDS1_1_C_2.test.cpp\"\n\r\nint\
+    \ main() {\r\n\tint n; cin>>n;\r\n\tint res=0;\r\n\tfor(int i=0; i<n; i++) {\r\
+    \n\t\tint a; cin>>a;\r\n\t\tif(isprime(a)) res++;\r\n\t}\r\n\tcout<<res<<endl;\r\
+    \n}\r\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C\"\r\
     \n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
     \nusing namespace std;\r\n#endif\r\n\r\n#include \"../pre/macros.cpp\"\r\n#include\
@@ -38,11 +39,10 @@ data:
   dependsOn:
   - pre/macros.cpp
   - math/isprime.cpp
-  - pre/macros.cpp
   isVerificationFile: true
   path: test/aoj_ALDS1_1_C_2.test.cpp
   requiredBy: []
-  timestamp: '2020-11-02 12:20:09+09:00'
+  timestamp: '2020-11-08 20:39:46+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_ALDS1_1_C_2.test.cpp
