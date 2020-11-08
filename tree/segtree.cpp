@@ -1,5 +1,6 @@
 /*
  * @brief segtree(セグメントツリー)
+ * @docs docs/segtree.md
  */
 
 #ifndef lib_segtree

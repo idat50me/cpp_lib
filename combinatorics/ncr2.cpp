@@ -1,6 +1,6 @@
 /*
  * @brief nCr mod p ($r \leq 10^7$, クエリ $O(r)$)
- * @docs ./docs/ncr2.md
+ * @docs docs/ncr2.md
  */
 
 #ifndef lib_ncr2
