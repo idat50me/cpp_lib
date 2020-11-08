@@ -1,6 +1,6 @@
 /*
  * @brief ModInt
- * @!docs docs/modint.md
+ * @!docs ./docs/modint.md
  */
 
 #ifndef lib_mint

@@ -1,6 +1,6 @@
 /*
  * @brief Matrix( $2$ 次元行列)
- * @docs docs/matrix.md
+ * @docs ./docs/matrix.md
  */
 
 #ifndef lib_matrix
