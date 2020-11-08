@@ -17,7 +17,7 @@ data:
     \r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
     \nusing namespace std;\r\n#endif\r\n\r\n#line 1 \"tree/segtree.cpp\"\n/*\r\n *\
     \ @brief segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u30C4\u30EA\u30FC)\r\n * @docs\
-    \ ../docs/segtree.md\r\n */\r\n\r\n#ifndef lib_segtree\r\n#define lib_segtree\r\
+    \ ./docs/segtree.md\r\n */\r\n\r\n#ifndef lib_segtree\r\n#define lib_segtree\r\
     \n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
     \nusing namespace std;\r\n#endif\r\n\r\ntemplate<typename T, T (*op)(T,T), T (*e)()>\r\
     \nstruct segtree {\r\nprivate:\r\n\tint n=1, siz;\r\n\tvector<T> node;\r\n\tconst\
@@ -57,7 +57,7 @@ data:
   isVerificationFile: true
   path: test/yosupo_staticrmq_2.test.cpp
   requiredBy: []
-  timestamp: '2020-11-08 11:29:43+09:00'
+  timestamp: '2020-11-08 12:02:20+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo_staticrmq_2.test.cpp
