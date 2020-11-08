@@ -2,9 +2,6 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':heavy_check_mark:'
-    path: combinatorics/combinatorics.cpp
-    title: "Combinatorics(\u7D44\u5408\u305B\u6570\u5B66)"
   - icon: ':warning:'
     path: combinatorics/ncr.cpp
     title: nCr
@@ -72,12 +69,6 @@ data:
     path: test/aoj_ALDS1_1_C_3.test.cpp
     title: test/aoj_ALDS1_1_C_3.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/aoj_DPL_5_D.test.cpp
-    title: test/aoj_DPL_5_D.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj_DPL_5_D.test.cpp
-    title: test/aoj_DPL_5_D.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj_DPL_5_E.test.cpp
     title: test/aoj_DPL_5_E.test.cpp
   - icon: ':heavy_check_mark:'
@@ -99,12 +90,6 @@ data:
     path: test/aoj_NTL_1_B.test.cpp
     title: test/aoj_NTL_1_B.test.cpp
   - icon: ':heavy_check_mark:'
-    path: test/yuki_0117.test.cpp
-    title: test/yuki_0117.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yuki_0117.test.cpp
-    title: test/yuki_0117.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/yuki_0888.test.cpp
     title: test/yuki_0888.test.cpp
   - icon: ':heavy_check_mark:'
@@ -124,7 +109,6 @@ data:
   path: pre/macros.cpp
   requiredBy:
   - test/aoj_0019.cpp
-  - combinatorics/combinatorics.cpp
   - combinatorics/ncr2.cpp
   - combinatorics/npr.cpp
   - combinatorics/nhr.cpp
@@ -146,13 +130,9 @@ data:
   - test/aoj_ALDS1_1_C_3.test.cpp
   - test/aoj_DPL_5_E.test.cpp
   - test/aoj_DPL_5_E.test.cpp
-  - test/aoj_DPL_5_D.test.cpp
-  - test/aoj_DPL_5_D.test.cpp
   - test/aoj_ALDS1_1_C_2.test.cpp
   - test/aoj_ALDS1_1_C_2.test.cpp
   - test/aoj_NTL_1_A.test.cpp
-  - test/yuki_0117.test.cpp
-  - test/yuki_0117.test.cpp
   - test/yuki_0888.test.cpp
   - test/yuki_0888.test.cpp
   - test/aoj_0341.test.cpp
