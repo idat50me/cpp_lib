@@ -38,9 +38,9 @@ data:
     \n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_A\"\r\n\
     \r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
-    \nusing namespace std;\r\n#endif\r\n\r\n#include \"../tree/segtree_RmQ.cpp\"\r\
-    \n\r\nint main() {\r\n\tint N,Q; cin>>N>>Q;\r\n\tvector<int> v(N,(1<<31)-1);\r\
-    \n\tRmQ rmq_tree(v);\r\n\r\n\tfor(int i=0; i<Q; i++) {\r\n\t\tint com,x,y; cin>>com>>x>>y;\r\
+    \nusing namespace std;\r\n#endif\r\n\r\n#include \"tree/segtree_RmQ.cpp\"\r\n\r\
+    \nint main() {\r\n\tint N,Q; cin>>N>>Q;\r\n\tvector<int> v(N,(1<<31)-1);\r\n\t\
+    RmQ rmq_tree(v);\r\n\r\n\tfor(int i=0; i<Q; i++) {\r\n\t\tint com,x,y; cin>>com>>x>>y;\r\
     \n\r\n\t\tif(com==0) rmq_tree.update(x,y);\r\n\t\telse cout<<rmq_tree.getmin(x,y+1)<<'\\\
     n';\r\n\t}\r\n\tcout<<flush;\r\n}\r\n"
   dependsOn:
@@ -48,7 +48,7 @@ data:
   isVerificationFile: true
   path: test/aoj_DSL_2_A.test.cpp
   requiredBy: []
-  timestamp: '2020-11-08 14:38:28+09:00'
+  timestamp: '2020-11-09 00:51:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_DSL_2_A.test.cpp

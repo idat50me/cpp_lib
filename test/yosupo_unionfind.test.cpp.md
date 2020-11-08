@@ -36,17 +36,16 @@ data:
     }\r\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\r\n\r\n#ifndef\
     \ call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace\
-    \ std;\r\n#endif\r\n\r\n#include \"../tree/union_find.cpp\"\r\n\r\nint main()\
-    \ {\r\n\tint N,Q; cin>>N>>Q;\r\n\tUnionFind uf(N);\r\n\r\n\tfor(int i=0; i<Q;\
-    \ i++) {\r\n\t\tint t,u,v; cin>>t>>u>>v;\r\n\r\n\t\tif(t==0) uf.merge(u,v);\r\n\
-    \t\telse cout<<(uf.same(u,v) ? 1 : 0)<<'\\n';\r\n\t}\r\n\r\n\tcout<<flush;\r\n\
-    }\r\n"
+    \ std;\r\n#endif\r\n\r\n#include \"tree/union_find.cpp\"\r\n\r\nint main() {\r\
+    \n\tint N,Q; cin>>N>>Q;\r\n\tUnionFind uf(N);\r\n\r\n\tfor(int i=0; i<Q; i++)\
+    \ {\r\n\t\tint t,u,v; cin>>t>>u>>v;\r\n\r\n\t\tif(t==0) uf.merge(u,v);\r\n\t\t\
+    else cout<<(uf.same(u,v) ? 1 : 0)<<'\\n';\r\n\t}\r\n\r\n\tcout<<flush;\r\n}\r\n"
   dependsOn:
   - tree/union_find.cpp
   isVerificationFile: true
   path: test/yosupo_unionfind.test.cpp
   requiredBy: []
-  timestamp: '2020-11-08 14:38:28+09:00'
+  timestamp: '2020-11-09 00:51:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo_unionfind.test.cpp

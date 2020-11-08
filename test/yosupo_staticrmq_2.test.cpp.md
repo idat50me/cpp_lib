@@ -46,8 +46,8 @@ data:
     cout<<flush;\r\n}\r\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\r\n\r\n#ifndef\
     \ call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace\
-    \ std;\r\n#endif\r\n\r\n#include \"../tree/segtree.cpp\"\r\n\r\nint op(int l,\
-    \ int r) {\r\n\treturn min(l,r);\r\n}\r\n\r\nint e() {\r\n\treturn numeric_limits<int>::max();\r\
+    \ std;\r\n#endif\r\n\r\n#include \"tree/segtree.cpp\"\r\n\r\nint op(int l, int\
+    \ r) {\r\n\treturn min(l,r);\r\n}\r\n\r\nint e() {\r\n\treturn numeric_limits<int>::max();\r\
     \n}\r\n\r\nint main() {\r\n\tint N,Q;\r\n\tvector<int> v;\r\n\r\n\tcin>>N>>Q;\r\
     \n\tv.resize(N);\r\n\tfor(int i=0; i<N; i++) cin>>v[i];\r\n\tsegtree<int, op,\
     \ e> tree(v);\r\n\r\n\tfor(int i=0; i<Q; i++) {\r\n\t\tint l,r; cin>>l>>r;\r\n\
@@ -57,7 +57,7 @@ data:
   isVerificationFile: true
   path: test/yosupo_staticrmq_2.test.cpp
   requiredBy: []
-  timestamp: '2020-11-08 14:38:28+09:00'
+  timestamp: '2020-11-09 00:51:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo_staticrmq_2.test.cpp

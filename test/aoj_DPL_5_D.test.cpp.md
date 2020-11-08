@@ -36,7 +36,7 @@ data:
     \tCOMB cb(2000,MPRIME);\r\n\tcout<<cb.nhr(k,n)<<endl;\r\n}\r\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/7/DPL/5/DPL_5_D\"\
     \r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
-    \nusing namespace std;\r\n#endif\r\n\r\n#include \"../combinatorics/combinatorics.cpp\"\
+    \nusing namespace std;\r\n#endif\r\n\r\n#include \"combinatorics/combinatorics.cpp\"\
     \r\n#define MPRIME 1000000007LL\r\n\r\nint main() {\r\n\tint n,k; cin>>n>>k;\r\
     \n\tCOMB cb(2000,MPRIME);\r\n\tcout<<cb.nhr(k,n)<<endl;\r\n}\r\n"
   dependsOn:
@@ -44,7 +44,7 @@ data:
   isVerificationFile: true
   path: test/aoj_DPL_5_D.test.cpp
   requiredBy: []
-  timestamp: '2020-11-08 16:56:00+09:00'
+  timestamp: '2020-11-09 00:51:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_DPL_5_D.test.cpp

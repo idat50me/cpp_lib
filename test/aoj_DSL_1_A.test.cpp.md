@@ -36,8 +36,8 @@ data:
     \n}\r\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/DSL_1_A\"\r\n\
     \r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
-    \nusing namespace std;\r\n#endif\r\n\r\n#include \"../tree/union_find.cpp\"\r\n\
-    \r\nint main() {\r\n\tint N,Q; cin>>N>>Q;\r\n\tUnionFind uf(N);\r\n\r\n\tfor(int\
+    \nusing namespace std;\r\n#endif\r\n\r\n#include \"tree/union_find.cpp\"\r\n\r\
+    \nint main() {\r\n\tint N,Q; cin>>N>>Q;\r\n\tUnionFind uf(N);\r\n\r\n\tfor(int\
     \ i=0; i<Q; i++) {\r\n\t\tint com,x,y; cin>>com>>x>>y;\r\n\r\n\t\tif(com==0) uf.merge(x,y);\r\
     \n\t\telse cout<<(uf.same(x,y) ? 1 : 0)<<'\\n';\r\n\t}\r\n\r\n\tcout<<flush;\r\
     \n}\r\n"
@@ -46,7 +46,7 @@ data:
   isVerificationFile: true
   path: test/aoj_DSL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2020-11-08 14:38:28+09:00'
+  timestamp: '2020-11-09 00:51:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_DSL_1_A.test.cpp

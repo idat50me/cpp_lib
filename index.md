@@ -41,7 +41,7 @@ data:
       title: ModInt
   - name: pre
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: pre/macros.cpp
       title: pre/macros.cpp
   - name: structs

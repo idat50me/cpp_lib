@@ -40,7 +40,7 @@ data:
     \n\t\t}\r\n\t}\r\n\tcout<<endl;\r\n}\r\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A\"\
     \r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
-    \nusing namespace std;\r\n#endif\r\n\r\n#include \"../math/sieve_of_eratosthenes.cpp\"\
+    \nusing namespace std;\r\n#endif\r\n\r\n#include \"math/sieve_of_eratosthenes.cpp\"\
     \r\n\r\nint main() {\r\n\tint n; cin>>n;\r\n\tSieve sv(n);\r\n\tvector<pair<int,int>>\
     \ flist=sv.primefact(n);\r\n\r\n\tcout<<n<<':';\r\n\tfor(int i=0; i<flist.size();\
     \ i++) {\r\n\t\tfor(int j=0; j<flist[i].second; j++) {\r\n\t\t\tcout<<\" \"<<flist[i].first;\r\
@@ -50,7 +50,7 @@ data:
   isVerificationFile: true
   path: test/aoj_NTL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2020-11-08 20:39:46+09:00'
+  timestamp: '2020-11-09 00:51:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_NTL_1_A.test.cpp

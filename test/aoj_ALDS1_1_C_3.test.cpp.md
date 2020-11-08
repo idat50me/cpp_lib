@@ -8,9 +8,6 @@ data:
     path: math/millor_rabin.cpp
     title: "Millor-Rabin(\u30DF\u30E9\u30FC\u30FB\u30E9\u30D3\u30F3\u7D20\u6570\u5224\
       \u5B9A\u6CD5)"
-  - icon: ':heavy_check_mark:'
-    path: pre/macros.cpp
-    title: pre/macros.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -32,18 +29,17 @@ data:
     \ #ifndef other than include guards\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C\"\r\
     \n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
-    \nusing namespace std;\r\n#endif\r\n\r\n#include \"../pre/macros.cpp\"\r\n#include\
-    \ \"../math/millor_rabin.cpp\"\r\n\r\nint main() {\r\n\tint n; cin>>n;\r\n\tint\
-    \ res=0;\r\n\tfor(int i=0; i<n; i++) {\r\n\t\tint a; cin>>a;\r\n\t\tif(isprime(a))\
-    \ res++;\r\n\t}\r\n\tcout<<res<<endl;\r\n}\r\n"
+    \nusing namespace std;\r\n#endif\r\n\r\n#include \"math/millor_rabin.cpp\"\r\n\
+    \r\nint main() {\r\n\tint n; cin>>n;\r\n\tint res=0;\r\n\tfor(int i=0; i<n; i++)\
+    \ {\r\n\t\tint a; cin>>a;\r\n\t\tif(isprime(a)) res++;\r\n\t}\r\n\tcout<<res<<endl;\r\
+    \n}\r\n"
   dependsOn:
-  - pre/macros.cpp
   - math/millor_rabin.cpp
   - math/binpow.cpp
   isVerificationFile: true
   path: test/aoj_ALDS1_1_C_3.test.cpp
   requiredBy: []
-  timestamp: '2020-11-09 00:40:50+09:00'
+  timestamp: '2020-11-09 00:51:53+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_ALDS1_1_C_3.test.cpp
