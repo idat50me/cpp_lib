@@ -108,6 +108,9 @@ data:
       path: test/aoj_NTL_1_B.test.cpp
       title: test/aoj_NTL_1_B.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/yosupo_static_range_sum.test.cpp
+      title: test/yosupo_static_range_sum.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/yosupo_staticrmq.test.cpp
       title: test/yosupo_staticrmq.test.cpp
     - icon: ':heavy_check_mark:'
