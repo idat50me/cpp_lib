@@ -1,8 +1,3 @@
-/*
- * @brief Millor-Rabin(ミラー・ラビン素数判定法)
- * @docs docs/millor_rabin.md
- */
-
 #ifndef lib_millor_rabin
 #define lib_millor_rabin
 

@@ -1,3 +1,8 @@
+---
+title: Union-Find木
+documentation_of: ../union_find.cpp
+---
+
 ## なにこれ
 $n$ 頂点を持つ Union-Find 木です．
 

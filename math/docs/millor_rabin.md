@@ -1,3 +1,8 @@
+---
+title: Millor-Rabin(ミラー・ラビン素数判定法)
+documentation_of: ../millor_rabin.cpp
+---
+
 ## なにこれ
 ミラー・ラビン素数判定法を用いた素数判定．
 

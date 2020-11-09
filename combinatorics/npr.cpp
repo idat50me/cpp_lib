@@ -1,8 +1,3 @@
-/*
- * @brief nPr mod p
- * 
- */
-
 #ifndef lib_npr
 #define lib_npr
 

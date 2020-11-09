@@ -1,8 +1,3 @@
-/*
- * @brief RmQ(区間最小値)
- * @docs docs/segtree_RmQ.md
- */
-
 #ifndef lib_segtree_RmQ
 #define lib_segtree_RmQ
 

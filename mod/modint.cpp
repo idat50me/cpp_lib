@@ -1,8 +1,3 @@
-/*
- * @brief ModInt
- * @!docs docs/modint.md
- */
-
 #ifndef lib_mint
 #define lib_mint
 
@@ -12,7 +7,7 @@
 using namespace std;
 #endif
 
-#include "../math/binpow.cpp"
+#include "math/binpow.cpp"
 
 template<int mod>
 struct mint {

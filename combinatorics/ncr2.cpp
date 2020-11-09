@@ -1,8 +1,3 @@
-/*
- * @brief nCr mod p ($r \leq 10^7$, クエリ $O(1)$ or $O(r)$)
- * @docs docs/ncr2.md
- */
-
 #ifndef lib_ncr2
 #define lib_ncr2
 

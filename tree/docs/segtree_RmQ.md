@@ -1,3 +1,8 @@
+---
+title: RmQ(区間最小値)
+documentation_of: ../segtree_RmQ.cpp
+---
+
 ## なにこれ
 $n$ 個の要素を持つ配列の区間最小値を求めるセグメント木．
 

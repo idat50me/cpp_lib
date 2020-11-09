@@ -1,3 +1,8 @@
+---
+title: Sieve-of-Eratosthenes(エラトステネスの篩)
+documentation_of: ../sieve_of_eratosthenes.cpp
+---
+
 ## なにこれ
 エラトステネスの篩というやつ．
 前処理して素数判定を高速にやるなど．
@@ -19,3 +24,4 @@
 - `divisorcount(n)`：計算量 $O(\log n)$  
 	$n$ の約数の個数  
 	計算量は`primefact(n)`依存
+	

@@ -1,3 +1,8 @@
+---
+title: nCr mod p ($r \leq 10^7$, クエリ $O(1)$ or $O(r)$)
+documentation_of: ../ncr2.cpp
+---
+
 ## なにこれ
 ${}_nC_r\ (\mathrm{mod}\ p)$ を求める．
 計算量が $r$ 依存．

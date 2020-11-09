@@ -1,8 +1,3 @@
-/*
- * @brief Union-Find木
- * @docs docs/union_find.md
- */
-
 #ifndef lib_union_find
 #define lib_union_find
 
