@@ -11,7 +11,7 @@
 using namespace std;
 #endif
 
-long long binpow(long long a, long long ex, long long p=(1LL<<60)) {
+long long binpow(long long a, long long ex, long long p=(1LL<<61)-1) {
 	long long res = 1;
 	while(ex > 0) {
 		if(ex & 1) (res*=a) %= p;

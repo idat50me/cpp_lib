@@ -12,7 +12,7 @@
 using namespace std;
 #endif
 
-long long nPr(long long n, long long r, long long p=MMPRIME) {
+long long nPr(long long n, long long r, long long p=(1LL<<61)-1) {
 	if(n < r) return 0LL;
 
 	long long res = 1LL;
