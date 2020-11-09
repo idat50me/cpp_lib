@@ -1,3 +1,8 @@
+---
+title: Combinatorics(組合せ数学)
+documentation_of: ../combinatorics.cpp
+---
+
 ## なにこれ
 ${}_nP_r, {}_nC_r, {}_nH_r\ (\mathrm{mod}\ p)$ を求める．
 
