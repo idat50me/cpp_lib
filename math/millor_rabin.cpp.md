@@ -41,7 +41,7 @@ data:
   isVerificationFile: false
   path: math/millor_rabin.cpp
   requiredBy: []
-  timestamp: '2020-11-09 00:40:50+09:00'
+  timestamp: '2020-11-09 14:32:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_ALDS1_1_C_3.test.cpp

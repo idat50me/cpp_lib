@@ -60,7 +60,7 @@ data:
   isVerificationFile: false
   path: mod/modint.cpp
   requiredBy: []
-  timestamp: '2020-11-09 00:40:50+09:00'
+  timestamp: '2020-11-09 14:32:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_0341.test.cpp
