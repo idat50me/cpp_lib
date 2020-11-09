@@ -39,11 +39,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: mod/modint.cpp
       title: ModInt
-  - name: pre
-    pages:
-    - icon: ':warning:'
-      path: pre/macros.cpp
-      title: pre/macros.cpp
   - name: structs
     pages:
     - icon: ':heavy_check_mark:'
