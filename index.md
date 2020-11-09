@@ -11,7 +11,7 @@ data:
       title: "nCr mod p ($r \\leq 10^7$, \u30AF\u30A8\u30EA $O(1)$ or $O(r)$)"
     - icon: ':warning:'
       path: combinatorics/npr.cpp
-      title: nPr mod p
+      title: combinatorics/npr.cpp
   - name: math
     pages:
     - icon: ':heavy_check_mark:'
@@ -61,7 +61,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: tree/segtree.cpp
-      title: "segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u30C4\u30EA\u30FC)"
+      title: "segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
     - icon: ':heavy_check_mark:'
       path: tree/segtree_RmQ.cpp
       title: "RmQ(\u533A\u9593\u6700\u5C0F\u5024)"
