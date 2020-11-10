@@ -6,11 +6,11 @@ data:
     path: math/millor_rabin.cpp
     title: "Millor-Rabin(\u30DF\u30E9\u30FC\u30FB\u30E9\u30D3\u30F3\u7D20\u6570\u5224\
       \u5B9A\u6CD5)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: mod/modint.cpp
     title: ModInt
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj_0341.test.cpp
     title: test/aoj_0341.test.cpp
   - icon: ':heavy_check_mark:'
@@ -20,7 +20,7 @@ data:
     path: test/aoj_NTL_1_B.test.cpp
     title: test/aoj_NTL_1_B.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: "Binary-Power(\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5)"
     links: []
@@ -45,7 +45,7 @@ data:
   - math/millor_rabin.cpp
   - mod/modint.cpp
   timestamp: '2020-11-09 14:32:41+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_ALDS1_1_C_3.test.cpp
   - test/aoj_0341.test.cpp

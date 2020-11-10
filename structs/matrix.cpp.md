@@ -3,14 +3,14 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj_0341.test.cpp
     title: test/aoj_0341.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj_ITP1_6_B.test.cpp
     title: test/aoj_ITP1_6_B.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 1 \"structs/matrix.cpp\"\n\n\n\r\n#ifndef call_include\r\n#define\
@@ -46,7 +46,7 @@ data:
   path: structs/matrix.cpp
   requiredBy: []
   timestamp: '2020-11-10 12:36:06+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_ITP1_6_B.test.cpp
   - test/aoj_0341.test.cpp

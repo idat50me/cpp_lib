@@ -14,7 +14,7 @@ data:
       title: combinatorics/npr.cpp
   - name: math
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/binpow.cpp
       title: "Binary-Power(\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5)"
     - icon: ':heavy_check_mark:'
@@ -36,12 +36,12 @@ data:
         \u7BE9)"
   - name: mod
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: mod/modint.cpp
       title: ModInt
   - name: structs
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: structs/matrix.cpp
       title: "Matrix( $2$ \u6B21\u5143\u884C\u5217)"
     - icon: ':warning:'
@@ -66,7 +66,7 @@ data:
   verificationCategories:
   - name: test
     pages:
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj_0341.test.cpp
       title: test/aoj_0341.test.cpp
     - icon: ':heavy_check_mark:'
@@ -93,7 +93,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj_DSL_2_A.test.cpp
       title: test/aoj_DSL_2_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj_ITP1_6_B.test.cpp
       title: test/aoj_ITP1_6_B.test.cpp
     - icon: ':heavy_check_mark:'
