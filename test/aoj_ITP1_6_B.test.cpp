@@ -10,7 +10,7 @@ using namespace std;
 
 int main() {
 	int N; cin>>N;
-	Matrix card(4,14,true);
+	matrix card(4,14,true);
 	map<char,int> ch2i={{'S',0}, {'H',1}, {'C',2}, {'D',3}};
 	map<int,char> i2ch={{0,'S'}, {1,'H'}, {2,'C'}, {3,'D'}};
 
