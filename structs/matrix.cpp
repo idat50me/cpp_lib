@@ -7,15 +7,16 @@
 using namespace std;
 #endif
 
-template<class T>
-class Matrix{
+template<typename T>
+struct matrix{
+private:
 	vector<vector<T>> mat;
 
 public:
 
-	Matrix() : Matrix(0,0) {}
-	Matrix(int h, int w) { make(h,w); }
-	Matrix(int h, int w, T init) { make(h,w,init); }
+	matrix() : matrix(0,0) {}
+	matrix(int h, int w) { make(h,w); }
+	matrix(int h, int w, T init) { make(h,w,init); }
 
 	void make(int h, int w) {
 		mat=vector<vector<T>>(h,vector<T>(w));
