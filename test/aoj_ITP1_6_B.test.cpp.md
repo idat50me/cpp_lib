@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: structs/matrix.cpp
     title: "Matrix( $2$ \u6B21\u5143\u884C\u5217)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/6/ITP1_6_B
@@ -17,10 +17,10 @@ data:
     \r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
     \nusing namespace std;\r\n#endif\r\n\r\n#line 1 \"structs/matrix.cpp\"\n\n\n\r\
     \n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\n\
-    using namespace std;\r\n#endif\r\n\r\ntemplate<class T>\r\nclass Matrix{\r\n\t\
-    vector<vector<T>> mat;\r\n\r\npublic:\r\n\r\n\tMatrix() : Matrix(0,0) {}\r\n\t\
-    Matrix(int h, int w) { make(h,w); }\r\n\tMatrix(int h, int w, T init) { make(h,w,init);\
-    \ }\r\n\r\n\tvoid make(int h, int w) {\r\n\t\tmat=vector<vector<T>>(h,vector<T>(w));\r\
+    using namespace std;\r\n#endif\r\n\r\ntemplate<typename T>\r\nstruct matrix{\r\
+    \nprivate:\r\n\tvector<vector<T>> mat;\r\n\r\npublic:\r\n\r\n\tmatrix() : matrix(0,0)\
+    \ {}\r\n\tmatrix(int h, int w) { make(h,w); }\r\n\tmatrix(int h, int w, T init)\
+    \ { make(h,w,init); }\r\n\r\n\tvoid make(int h, int w) {\r\n\t\tmat=vector<vector<T>>(h,vector<T>(w));\r\
     \n\t}\r\n\tvoid make(int h, int w, T init) {\r\n\t\tmat=vector<vector<T>>(h,vector<T>(w,init));\r\
     \n\t};\r\n\r\n\tvoid in() {\r\n\t\tfor(int i=0; i<mat.size(); i++) for(int j=0;\
     \ j<mat[i].size(); j++) {\r\n\t\t\tcin>>mat[i][j];\r\n\t\t}\r\n\t}\r\n\r\n\tvoid\
@@ -49,8 +49,8 @@ data:
   isVerificationFile: true
   path: test/aoj_ITP1_6_B.test.cpp
   requiredBy: []
-  timestamp: '2020-11-09 16:10:15+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-11-10 12:36:06+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj_ITP1_6_B.test.cpp
 layout: document
