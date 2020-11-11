@@ -13,15 +13,14 @@ private:
 	vector<vector<T>> mat;
 
 public:
-
 	matrix() : matrix(0,0) {}
-	matrix(int h, int w) { make(h,w); }
-	matrix(int h, int w, T init) { make(h,w,init); }
+	matrix(int h, int w) { resize(h,w); }
+	matrix(int h, int w, T init) { resize(h,w,init); }
 
-	void make(int h, int w) {
+	void resize(int h, int w) {
 		mat=vector<vector<T>>(h,vector<T>(w));
 	}
-	void make(int h, int w, T init) {
+	void resize(int h, int w, T init) {
 		mat=vector<vector<T>>(h,vector<T>(w,init));
 	};
 

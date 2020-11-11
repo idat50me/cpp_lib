@@ -10,13 +10,13 @@ documentation_of: ../matrix.cpp
 - `matrix()`
 - `matrix(h, w)`
 - `matrix(h, w, init)`  
-	`make()` を呼びます
+	`resize()` を呼ぶ．
 
 ## メンバ関数
-- `make(h, w)`
-- `make(h, w, init)`  
+- `resize(h, w)`
+- `resize(h, w, init)`  
 	要素数を変更する．  
-	`vector::resize()` を呼んでるので既に確保されている要素は初期化されない．
+	内部では `vector` のコンストラクタを呼んでるので初期化と同じ．
 	- `h`, `w`：各次元の要素数
 	- `init`：初期値
 
