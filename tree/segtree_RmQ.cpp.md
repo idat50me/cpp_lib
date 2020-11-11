@@ -52,7 +52,7 @@ data:
   - test/aoj_DSL_2_A.test.cpp
 documentation_of: tree/segtree_RmQ.cpp
 layout: document
-title: "RmQ(\u533A\u9593\u6700\u5C0F\u5024)"
+title: "(\u524A\u9664\u4E88\u5B9A) RmQ(\u533A\u9593\u6700\u5C0F\u5024)"
 ---
 
 ## なにこれ

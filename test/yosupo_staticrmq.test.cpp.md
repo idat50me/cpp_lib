@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: tree/segtree_RmQ.cpp
-    title: "RmQ(\u533A\u9593\u6700\u5C0F\u5024)"
+    title: "(\u524A\u9664\u4E88\u5B9A) RmQ(\u533A\u9593\u6700\u5C0F\u5024)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
