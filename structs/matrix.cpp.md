@@ -62,7 +62,7 @@ title: "Matrix( $2$ \u6B21\u5143\u884C\u5217)"
 - `matrix()`
 - `matrix(h, w)`
 - `matrix(h, w, init)`  
-	`resize()` を呼ぶ．
+	`matrix::resize()` を呼ぶ．
 
 ## メンバ関数
 - `resize(h, w)`
