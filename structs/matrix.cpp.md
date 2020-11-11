@@ -16,10 +16,10 @@ data:
   bundledCode: "#line 1 \"structs/matrix.cpp\"\n\n\n\r\n#ifndef call_include\r\n#define\
     \ call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\
     \n\r\ntemplate<typename T>\r\nstruct matrix{\r\nprivate:\r\n\tvector<vector<T>>\
-    \ mat;\r\n\r\npublic:\r\n\r\n\tmatrix() : matrix(0,0) {}\r\n\tmatrix(int h, int\
-    \ w) { make(h,w); }\r\n\tmatrix(int h, int w, T init) { make(h,w,init); }\r\n\r\
-    \n\tvoid make(int h, int w) {\r\n\t\tmat=vector<vector<T>>(h,vector<T>(w));\r\n\
-    \t}\r\n\tvoid make(int h, int w, T init) {\r\n\t\tmat=vector<vector<T>>(h,vector<T>(w,init));\r\
+    \ mat;\r\n\r\npublic:\r\n\tmatrix() : matrix(0,0) {}\r\n\tmatrix(int h, int w)\
+    \ { resize(h,w); }\r\n\tmatrix(int h, int w, T init) { resize(h,w,init); }\r\n\
+    \r\n\tvoid resize(int h, int w) {\r\n\t\tmat=vector<vector<T>>(h,vector<T>(w));\r\
+    \n\t}\r\n\tvoid resize(int h, int w, T init) {\r\n\t\tmat=vector<vector<T>>(h,vector<T>(w,init));\r\
     \n\t};\r\n\r\n\tvoid in() {\r\n\t\tfor(int i=0; i<mat.size(); i++) for(int j=0;\
     \ j<mat[i].size(); j++) {\r\n\t\t\tcin>>mat[i][j];\r\n\t\t}\r\n\t}\r\n\r\n\tvoid\
     \ out() {\r\n\t\tfor(int i=0; i<mat.size(); i++) {\r\n\t\t\tint wm=mat[i].size();\r\
@@ -30,10 +30,10 @@ data:
   code: "#ifndef lib_matrix\r\n#define lib_matrix\r\n\r\n#ifndef call_include\r\n\
     #define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\
     \n\r\ntemplate<typename T>\r\nstruct matrix{\r\nprivate:\r\n\tvector<vector<T>>\
-    \ mat;\r\n\r\npublic:\r\n\r\n\tmatrix() : matrix(0,0) {}\r\n\tmatrix(int h, int\
-    \ w) { make(h,w); }\r\n\tmatrix(int h, int w, T init) { make(h,w,init); }\r\n\r\
-    \n\tvoid make(int h, int w) {\r\n\t\tmat=vector<vector<T>>(h,vector<T>(w));\r\n\
-    \t}\r\n\tvoid make(int h, int w, T init) {\r\n\t\tmat=vector<vector<T>>(h,vector<T>(w,init));\r\
+    \ mat;\r\n\r\npublic:\r\n\tmatrix() : matrix(0,0) {}\r\n\tmatrix(int h, int w)\
+    \ { resize(h,w); }\r\n\tmatrix(int h, int w, T init) { resize(h,w,init); }\r\n\
+    \r\n\tvoid resize(int h, int w) {\r\n\t\tmat=vector<vector<T>>(h,vector<T>(w));\r\
+    \n\t}\r\n\tvoid resize(int h, int w, T init) {\r\n\t\tmat=vector<vector<T>>(h,vector<T>(w,init));\r\
     \n\t};\r\n\r\n\tvoid in() {\r\n\t\tfor(int i=0; i<mat.size(); i++) for(int j=0;\
     \ j<mat[i].size(); j++) {\r\n\t\t\tcin>>mat[i][j];\r\n\t\t}\r\n\t}\r\n\r\n\tvoid\
     \ out() {\r\n\t\tfor(int i=0; i<mat.size(); i++) {\r\n\t\t\tint wm=mat[i].size();\r\
@@ -45,7 +45,7 @@ data:
   isVerificationFile: false
   path: structs/matrix.cpp
   requiredBy: []
-  timestamp: '2020-11-10 12:36:06+09:00'
+  timestamp: '2020-11-11 17:25:12+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_ITP1_6_B.test.cpp
@@ -62,13 +62,13 @@ title: "Matrix( $2$ \u6B21\u5143\u884C\u5217)"
 - `matrix()`
 - `matrix(h, w)`
 - `matrix(h, w, init)`  
-	`make()` を呼びます
+	`resize()` を呼ぶ．
 
 ## メンバ関数
-- `make(h, w)`
-- `make(h, w, init)`  
+- `resize(h, w)`
+- `resize(h, w, init)`  
 	要素数を変更する．  
-	`vector::resize()` を呼んでるので既に確保されている要素は初期化されない．
+	内部では `vector` のコンストラクタを呼んでるので初期化と同じ．
 	- `h`, `w`：各次元の要素数
 	- `init`：初期値
 
