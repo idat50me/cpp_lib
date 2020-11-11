@@ -10,7 +10,7 @@ documentation_of: ../matrix.cpp
 - `matrix()`
 - `matrix(h, w)`
 - `matrix(h, w, init)`  
-	`resize()` を呼ぶ．
+	`matrix::resize()` を呼ぶ．
 
 ## メンバ関数
 - `resize(h, w)`
