@@ -1,5 +1,5 @@
 ---
-title: **削除予定** RmQ(区間最小値)
+title: (削除予定) RmQ(区間最小値)
 documentation_of: ../segtree_RmQ.cpp
 ---
 
