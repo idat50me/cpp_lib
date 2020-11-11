@@ -10,33 +10,28 @@ using namespace std;
 template<typename T, T (*op)(T,T), T (*e)()>
 struct segtree {
 private:
-	int n=1, siz;
+	int siz=1, N;
 	vector<T> node;
 	const T e_ = e();
 
 public:
-	segtree(int s) {
-		siz = s;
-		while(n < siz) n*=2;
-		node.resize(2*n-1, e_);
-	}
-	segtree(int s, T init) {
-		siz = s;
-		while(n < siz) n *= 2;
-		node.resize(2*n-1, e_);
-		for(int i=0; i<siz; i++) node[n-1+i] = init;
-		for(int i=n-2; i>=0; i--) node[i] = op(node[2*i+1], node[2*i+2]);
+	segtree(int n, T init) {
+		N = n;
+		while(siz < N) siz *= 2;
+		node.resize(2*siz-1, e_);
+		for(int i=0; i<N; i++) node[siz-1+i] = init;
+		for(int i=siz-2; i>=0; i--) node[i] = op(node[2*i+1], node[2*i+2]);
 	}
 	segtree(vector<T> v) {
-		siz = v.size();
-		while(n < siz) n *= 2;
-		node.resize(2*n-1, e_);
-		for(int i=0; i<siz; i++) node[n-1+i] = v[i];
-		for(int i=n-2; i>=0; i--) node[i] = op(node[2*i+1], node[2*i+2]);
+		N = v.size();
+		while(siz < N) siz *= 2;
+		node.resize(2*siz-1, e_);
+		for(int i=0; i<N; i++) node[siz-1+i] = v[i];
+		for(int i=siz-2; i>=0; i--) node[i] = op(node[2*i+1], node[2*i+2]);
 	}
 
 	void update(int idx, T val) {
-		idx += n-1;
+		idx += siz-1;
 		node[idx] = val;
 
 		while(idx > 0) {
@@ -50,15 +45,15 @@ public:
 	}
 	T get(int L, int R) {
 		if(L < 0) L = 0;
-		if(R > siz) R = siz;
-		return get__(L, R, 0, 0, n);
+		if(R > N) R = N;
+		return get__(L, R, 0, 0, siz);
 	}
 private:
-	T get__(int L, int R, int now, int l, int r) {
+	T get__(int L, int R, int id, int l, int r) {
 		if(r<=L || R<=l) return e_;
-		if(L<=l && r<=R) return node[now];
-		T vl = get__(L, R, 2*now+1, l, (l+r)/2);
-		T vr = get__(L, R, 2*now+2, (l+r)/2, r);
+		if(L<=l && r<=R) return node[id];
+		T vl = get__(L, R, 2*id+1, l, (l+r)/2);
+		T vr = get__(L, R, 2*id+2, (l+r)/2, r);
 		return op(vl, vr);
 	}
 public:
