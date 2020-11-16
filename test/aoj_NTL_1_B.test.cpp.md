@@ -13,15 +13,17 @@ data:
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_B
     links:
     - https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_B
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 193, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 399, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \  File \"/opt/hostedtoolcache/Python/3.9.0/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 310, in update\n    raise BundleErrorAt(path, i + 1, \"#pragma once found\
-    \ in a non-first line\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ math/binpow.cpp: line 5: #pragma once found in a non-first line\n"
+  bundledCode: "#line 1 \"test/aoj_NTL_1_B.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_B\"\
+    \r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
+    \nusing namespace std;\r\n#endif\r\n\r\n#line 2 \"math/binpow.cpp\"\n/*\r\n *\
+    \ @brief Binary-Power(\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5)\r\n */\r\n\r\
+    \n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\n\
+    using namespace std;\r\n#endif\r\n\r\nlong long binpow(long long a, long long\
+    \ ex, long long p=(1LL<<61)-1) {\r\n\tlong long res = 1;\r\n\twhile(ex > 0) {\r\
+    \n\t\tif(ex & 1) (res*=a) %= p;\r\n\t\tex>>=1;\r\n\t\t(a*=a) %= p;\r\n\t}\r\n\t\
+    return res;\r\n}\r\n#line 10 \"test/aoj_NTL_1_B.test.cpp\"\n#define MPRIME 1000000007LL\r\
+    \n\r\nint main() {\r\n\tint m,n; cin>>m>>n;\r\n\tcout<<binpow(m,n,MPRIME)<<endl;\r\
+    \n}\r\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/all/NTL_1_B\"\
     \r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
     \nusing namespace std;\r\n#endif\r\n\r\n#include \"math/binpow.cpp\"\r\n#define\
@@ -32,7 +34,7 @@ data:
   isVerificationFile: true
   path: test/aoj_NTL_1_B.test.cpp
   requiredBy: []
-  timestamp: '2020-11-16 10:39:05+09:00'
+  timestamp: '2020-11-16 10:44:07+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_NTL_1_B.test.cpp
