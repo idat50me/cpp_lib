@@ -7,7 +7,7 @@
 using namespace std;
 #endif
 
-#include "math/binpow.cpp"
+#include "../math/binpow.cpp"
 
 template<int mod>
 struct mint {
@@ -66,6 +66,22 @@ public:
 		mint res(*this);
 		return res/=a;
 	}
+	mint operator+(const long long& a) const {
+		mint res(*this);
+		return res+=mint(a);
+	}
+	mint operator-(const long long& a) const {
+		mint res(*this);
+		return res-=mint(a);
+	}
+	mint operator*(const long long& a) const {
+		mint res(*this);
+		return res*=mint(a);
+	}
+	mint operator/(const long long& a) const {
+		mint res(*this);
+		return res/=mint(a);
+	}
 
 	mint& operator++() {
 		(++val) %= mod;
@@ -104,9 +120,31 @@ public:
 	bool operator>=(const mint& a) const {
 		return val >= a.val;
 	}
+	bool operator==(const long long& a) const {
+		return val == a;
+	}
+	bool operator!=(const long long& a) const {
+		return val != a;
+	}
+	bool operator<(const long long& a) const {
+		return val < a;
+	}
+	bool operator>(const long long& a) const {
+		return val > a;
+	}
+	bool operator<=(const long long& a) const {
+		return val <= a;
+	}
+	bool operator>=(const long long& a) const {
+		return val >= a;
+	}
 
 	mint& operator=(const mint& a) {
 		val = a.val;
+		return *this;
+	}
+	mint& operator=(const long long& a) {
+		val = (mod+a%mod)%mod;
 		return *this;
 	}
 
