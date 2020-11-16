@@ -1,3 +1,4 @@
+#define IGNORE // UF木にマージテク導入すると壊れる（どっちが親になるか重要なので）
 #define PROBLEM "https://yukicoder.me/problems/no/556"
 
 #ifndef call_include
