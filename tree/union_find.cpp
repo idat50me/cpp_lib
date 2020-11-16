@@ -34,6 +34,7 @@ public:
 		int xrt=root(x);
 		int yrt=root(y);
 		if(xrt==yrt) return;
+		if(xrt < yrt) swap(xrt,yrt);
 		parent[yrt]=xrt;
 		num[xrt]+=num[yrt];
 		treenum--;
