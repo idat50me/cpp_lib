@@ -23,7 +23,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/segtree_RmQ.cpp
       title: "(\u524A\u9664\u4E88\u5B9A) RmQ(\u533A\u9593\u6700\u5C0F\u5024)"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/union_find.cpp
       title: "Union-Find\u6728"
   - name: math
@@ -66,6 +66,9 @@ data:
     - icon: ':warning:'
       path: test/aoj_0019.cpp
       title: test/aoj_0019.cpp
+    - icon: ':warning:'
+      path: test/yuki_0556.cpp
+      title: test/yuki_0556.cpp
   verificationCategories:
   - name: test
     pages:
@@ -123,9 +126,6 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yuki_0117.test.cpp
       title: test/yuki_0117.test.cpp
-    - icon: ':x:'
-      path: test/yuki_0556.test.cpp
-      title: test/yuki_0556.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yuki_0888.test.cpp
       title: test/yuki_0888.test.cpp
