@@ -1,5 +1,4 @@
-#ifndef lib_segtree
-#define lib_segtree
+#pragma once
 
 #ifndef call_include
 #define call_include
@@ -58,5 +57,3 @@ private:
 	}
 public:
 };
-
-#endif // lib_segtree

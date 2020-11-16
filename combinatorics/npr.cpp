@@ -1,5 +1,4 @@
-#ifndef lib_npr
-#define lib_npr
+#pragma once
 
 #ifndef call_include
 #define call_include
@@ -14,5 +13,3 @@ long long nPr(long long n, long long r, long long p=(1LL<<61)-1) {
 	for(int i=0; i<r; i++) (res*=(n-i)) %= p;
 	return res;
 }
-
-#endif // lib_npr

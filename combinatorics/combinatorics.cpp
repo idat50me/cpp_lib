@@ -1,5 +1,4 @@
-#ifndef lib_combinatorics
-#define lib_combinatorics
+#pragma once
 
 #ifndef call_include
 #define call_include
@@ -45,5 +44,3 @@ public:
 		return ncr(n+r-1,n-1);
 	}
 };
-
-#endif // lib_combinatorics

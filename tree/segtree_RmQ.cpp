@@ -1,5 +1,4 @@
-#ifndef lib_segtree_RmQ
-#define lib_segtree_RmQ
+#pragma once
 
 #ifndef call_include
 #define call_include
@@ -44,5 +43,3 @@ private:
 	}
 public:
 };
-
-#endif // lib_segtree_RmQ

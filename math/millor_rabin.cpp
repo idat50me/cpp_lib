@@ -1,5 +1,4 @@
-#ifndef lib_millor_rabin
-#define lib_millor_rabin
+#pragma once
 
 #ifndef call_include
 #define call_include
@@ -35,5 +34,3 @@ bool isprime(int n) {
 
 	return true;
 }
-
-#endif // lib_millor_rabin

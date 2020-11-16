@@ -1,5 +1,4 @@
-#ifndef lib_sieve_of_eratosthenes
-#define lib_sieve_of_eratosthenes
+#pragma once
 
 #ifndef call_include
 #define call_include
@@ -48,5 +47,3 @@ struct Sieve {
 		return res;
 	}
 };
-
-#endif // lib_sieve_of_eratosthenes

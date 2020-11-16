@@ -1,5 +1,4 @@
-#ifndef lib_union_find
-#define lib_union_find
+#pragma once
 
 #ifndef call_include
 #define call_include
@@ -48,6 +47,3 @@ public:
 		return treenum;
 	}
 };
-
-
-#endif // lib_union_find

@@ -1,9 +1,7 @@
+#pragma once
 /*
  * @brief Isprime(素数判定)
  */
-
-#ifndef lib_isprime
-#define lib_isprime
 
 #ifndef call_include
 #define call_include
@@ -20,5 +18,3 @@ bool isprime(long long n) {
 
 	return true;
 }
-
-#endif // lib_isprime

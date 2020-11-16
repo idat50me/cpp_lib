@@ -1,9 +1,7 @@
+#pragma once
 /*
  * @brief Divisor(約数列挙)
  */
-
-#ifndef lib_divisor
-#define lib_divisor
 
 #ifndef call_include
 #define call_include
@@ -26,5 +24,3 @@ vector<long long> divisor(long long x) {
 	sort(res.begin(),res.end());
 	return res;
 }
-
-#endif // lib_divisor

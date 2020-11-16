@@ -1,5 +1,4 @@
-#ifndef lib_vertex
-#define lib_vertex
+#pragma once
 
 #ifndef call_include
 #define call_include
@@ -12,5 +11,3 @@ struct Vertex{
 	vector<int> cost;
 	bool rch=false;
 };
-
-#endif // lib_vertex

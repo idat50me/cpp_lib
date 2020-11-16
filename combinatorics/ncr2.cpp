@@ -1,5 +1,4 @@
-#ifndef lib_ncr2
-#define lib_ncr2
+#pragma once
 
 #ifndef call_include
 #define call_include
@@ -53,5 +52,3 @@ public:
 		}
 	}
 };
-
-#endif // lib_ncr2

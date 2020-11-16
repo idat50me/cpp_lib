@@ -1,5 +1,4 @@
-#ifndef lib_mint
-#define lib_mint
+#pragma once
 
 #ifndef call_include
 #define call_include
@@ -158,5 +157,3 @@ public:
 		return is;
 	}
 };
-
-#endif // lib_mint

@@ -1,5 +1,4 @@
-#ifndef lib_matrix
-#define lib_matrix
+#pragma once
 
 #ifndef call_include
 #define call_include
@@ -45,5 +44,3 @@ public:
 		return mat[idx];
 	}
 };
-
-#endif // lib_matrix
