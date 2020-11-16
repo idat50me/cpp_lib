@@ -7,19 +7,18 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"structs/vertex.cpp\"\n\n\n\r\n#ifndef call_include\r\n#define\
+  bundledCode: "#line 2 \"structs/vertex.cpp\"\n\r\n#ifndef call_include\r\n#define\
     \ call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\
     \n\r\nstruct Vertex{\r\n\tvector<int> nxt;\r\n\tvector<int> cost;\r\n\tbool rch=false;\r\
-    \n};\r\n\r\n\n"
-  code: "#ifndef lib_vertex\r\n#define lib_vertex\r\n\r\n#ifndef call_include\r\n\
-    #define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\
-    \n\r\nstruct Vertex{\r\n\tvector<int> nxt;\r\n\tvector<int> cost;\r\n\tbool rch=false;\r\
-    \n};\r\n\r\n#endif // lib_vertex\r\n"
+    \n};\r\n"
+  code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
+    \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\nstruct Vertex{\r\n\t\
+    vector<int> nxt;\r\n\tvector<int> cost;\r\n\tbool rch=false;\r\n};\r\n"
   dependsOn: []
   isVerificationFile: false
   path: structs/vertex.cpp
   requiredBy: []
-  timestamp: '2020-11-02 12:20:09+09:00'
+  timestamp: '2020-11-16 10:57:59+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
 documentation_of: structs/vertex.cpp

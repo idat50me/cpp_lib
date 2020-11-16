@@ -16,8 +16,8 @@ data:
     - https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C
   bundledCode: "#line 1 \"test/aoj_ALDS1_1_C.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C\"\
     \r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
-    \nusing namespace std;\r\n#endif\r\n\r\n#line 1 \"math/sieve_of_eratosthenes.cpp\"\
-    \n\n\n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
+    \nusing namespace std;\r\n#endif\r\n\r\n#line 2 \"math/sieve_of_eratosthenes.cpp\"\
+    \n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
     \nusing namespace std;\r\n#endif\r\n\r\nstruct Sieve {\r\n\tint N;\r\n\tvector<int>\
     \ f,primes;\r\n\r\n\tSieve(int n=1) : N(n), f(n+1,0) {\r\n\t\tf[0]=f[1]=-1;\r\n\
     \t\tfor(int i=2; i<=N; i++) {\r\n\t\t\tif(f[i]) continue;\r\n\t\t\tprimes.push_back(i);\r\
@@ -30,10 +30,9 @@ data:
     \n\t\t}\r\n\t\treturn res;\r\n\t}\r\n\r\n\tint divisorcount(int n) {\r\n\t\tint\
     \ res=1;\r\n\t\tvector<pair<int,int>> fl=primefact(n);\r\n\t\tfor(int i=0; i<fl.size();\
     \ i++) {\r\n\t\t\tres *= fl[i].second;\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\n\
-    };\r\n\r\n\n#line 10 \"test/aoj_ALDS1_1_C.test.cpp\"\n\r\nint main() {\r\n\tSieve\
-    \ sv(100000010);\r\n\tint n; cin>>n;\r\n\tint res=0;\r\n\tfor(int i=0; i<n; i++)\
-    \ {\r\n\t\tint a; cin>>a;\r\n\t\tif(sv.isprime(a)) res++;\r\n\t}\r\n\tcout<<res<<endl;\r\
-    \n}\r\n"
+    };\r\n#line 10 \"test/aoj_ALDS1_1_C.test.cpp\"\n\r\nint main() {\r\n\tSieve sv(100000010);\r\
+    \n\tint n; cin>>n;\r\n\tint res=0;\r\n\tfor(int i=0; i<n; i++) {\r\n\t\tint a;\
+    \ cin>>a;\r\n\t\tif(sv.isprime(a)) res++;\r\n\t}\r\n\tcout<<res<<endl;\r\n}\r\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_1_C\"\r\
     \n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
     \nusing namespace std;\r\n#endif\r\n\r\n#include \"math/sieve_of_eratosthenes.cpp\"\
@@ -45,7 +44,7 @@ data:
   isVerificationFile: true
   path: test/aoj_ALDS1_1_C.test.cpp
   requiredBy: []
-  timestamp: '2020-11-09 16:10:15+09:00'
+  timestamp: '2020-11-16 10:57:59+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_ALDS1_1_C.test.cpp

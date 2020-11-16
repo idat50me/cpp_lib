@@ -16,7 +16,7 @@ data:
   bundledCode: "#line 1 \"test/yosupo_static_range_sum.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/static_range_sum\"\r\n\r\n#ifndef call_include\r\
     \n#define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n\
-    #endif\r\n\r\n#line 1 \"tree/segtree.cpp\"\n\n\n\r\n#ifndef call_include\r\n#define\
+    #endif\r\n\r\n#line 2 \"tree/segtree.cpp\"\n\r\n#ifndef call_include\r\n#define\
     \ call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\
     \n\r\ntemplate<typename T, T (*op)(T,T), T (*e)()>\r\nstruct segtree {\r\nprivate:\r\
     \n\tint siz=1, N;\r\n\tvector<T> node;\r\n\tconst T e_ = e();\r\n\r\npublic:\r\
@@ -34,7 +34,7 @@ data:
     \t}\r\nprivate:\r\n\tT get__(int L, int R, int id, int l, int r) {\r\n\t\tif(r<=L\
     \ || R<=l) return e_;\r\n\t\tif(L<=l && r<=R) return node[id];\r\n\t\tT vl = get__(L,\
     \ R, 2*id+1, l, (l+r)/2);\r\n\t\tT vr = get__(L, R, 2*id+2, (l+r)/2, r);\r\n\t\
-    \treturn op(vl, vr);\r\n\t}\r\npublic:\r\n};\r\n\r\n\n#line 10 \"test/yosupo_static_range_sum.test.cpp\"\
+    \treturn op(vl, vr);\r\n\t}\r\npublic:\r\n};\r\n#line 10 \"test/yosupo_static_range_sum.test.cpp\"\
     \nusing ll = long long;\r\n\r\nll sum_op(ll a, ll b) {\r\n\treturn a+b;\r\n}\r\
     \n\r\nll e() {\r\n\treturn 0LL;\r\n}\r\n\r\nint main() {\r\n\tint N,Q; cin>>N>>Q;\r\
     \n\tvector<ll> v(N);\r\n\tfor(int i=0; i<N; i++) cin>>v[i];\r\n\tsegtree<ll,sum_op,e>\
@@ -53,7 +53,7 @@ data:
   isVerificationFile: true
   path: test/yosupo_static_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2020-11-11 17:54:49+09:00'
+  timestamp: '2020-11-16 10:57:59+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo_static_range_sum.test.cpp

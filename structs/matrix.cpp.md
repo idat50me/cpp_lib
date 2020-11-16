@@ -13,7 +13,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"structs/matrix.cpp\"\n\n\n\r\n#ifndef call_include\r\n#define\
+  bundledCode: "#line 2 \"structs/matrix.cpp\"\n\r\n#ifndef call_include\r\n#define\
     \ call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\
     \n\r\ntemplate<typename T>\r\nstruct matrix{\r\nprivate:\r\n\tvector<vector<T>>\
     \ mat;\r\n\r\npublic:\r\n\tmatrix() : matrix(0,0) {}\r\n\tmatrix(int h, int w)\
@@ -26,26 +26,26 @@ data:
     \n\t\t\tfor(int j=0; j<wm; j++) {\r\n\t\t\t\tcout<<mat[i][j]<<(wm==j+1 ? '\\n'\
     \ : ' ');\r\n\t\t\t}\r\n\t\t}\r\n\t\tcout<<flush;\r\n\t}\r\n\r\n\tinline vector<T>\
     \ &operator[](int idx) {\r\n\t\tassert(0<=idx && idx<mat.size());\r\n\t\treturn\
-    \ mat[idx];\r\n\t}\r\n};\r\n\r\n\n"
-  code: "#ifndef lib_matrix\r\n#define lib_matrix\r\n\r\n#ifndef call_include\r\n\
-    #define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\
-    \n\r\ntemplate<typename T>\r\nstruct matrix{\r\nprivate:\r\n\tvector<vector<T>>\
-    \ mat;\r\n\r\npublic:\r\n\tmatrix() : matrix(0,0) {}\r\n\tmatrix(int h, int w)\
-    \ { resize(h,w); }\r\n\tmatrix(int h, int w, T init) { resize(h,w,init); }\r\n\
-    \r\n\tvoid resize(int h, int w) {\r\n\t\tmat=vector<vector<T>>(h,vector<T>(w));\r\
-    \n\t}\r\n\tvoid resize(int h, int w, T init) {\r\n\t\tmat=vector<vector<T>>(h,vector<T>(w,init));\r\
-    \n\t};\r\n\r\n\tvoid in() {\r\n\t\tfor(int i=0; i<mat.size(); i++) for(int j=0;\
-    \ j<mat[i].size(); j++) {\r\n\t\t\tcin>>mat[i][j];\r\n\t\t}\r\n\t}\r\n\r\n\tvoid\
-    \ out() {\r\n\t\tfor(int i=0; i<mat.size(); i++) {\r\n\t\t\tint wm=mat[i].size();\r\
-    \n\t\t\tfor(int j=0; j<wm; j++) {\r\n\t\t\t\tcout<<mat[i][j]<<(wm==j+1 ? '\\n'\
-    \ : ' ');\r\n\t\t\t}\r\n\t\t}\r\n\t\tcout<<flush;\r\n\t}\r\n\r\n\tinline vector<T>\
-    \ &operator[](int idx) {\r\n\t\tassert(0<=idx && idx<mat.size());\r\n\t\treturn\
-    \ mat[idx];\r\n\t}\r\n};\r\n\r\n#endif // lib_matrix\r\n"
+    \ mat[idx];\r\n\t}\r\n};\r\n"
+  code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
+    \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\ntemplate<typename T>\r\
+    \nstruct matrix{\r\nprivate:\r\n\tvector<vector<T>> mat;\r\n\r\npublic:\r\n\t\
+    matrix() : matrix(0,0) {}\r\n\tmatrix(int h, int w) { resize(h,w); }\r\n\tmatrix(int\
+    \ h, int w, T init) { resize(h,w,init); }\r\n\r\n\tvoid resize(int h, int w) {\r\
+    \n\t\tmat=vector<vector<T>>(h,vector<T>(w));\r\n\t}\r\n\tvoid resize(int h, int\
+    \ w, T init) {\r\n\t\tmat=vector<vector<T>>(h,vector<T>(w,init));\r\n\t};\r\n\r\
+    \n\tvoid in() {\r\n\t\tfor(int i=0; i<mat.size(); i++) for(int j=0; j<mat[i].size();\
+    \ j++) {\r\n\t\t\tcin>>mat[i][j];\r\n\t\t}\r\n\t}\r\n\r\n\tvoid out() {\r\n\t\t\
+    for(int i=0; i<mat.size(); i++) {\r\n\t\t\tint wm=mat[i].size();\r\n\t\t\tfor(int\
+    \ j=0; j<wm; j++) {\r\n\t\t\t\tcout<<mat[i][j]<<(wm==j+1 ? '\\n' : ' ');\r\n\t\
+    \t\t}\r\n\t\t}\r\n\t\tcout<<flush;\r\n\t}\r\n\r\n\tinline vector<T> &operator[](int\
+    \ idx) {\r\n\t\tassert(0<=idx && idx<mat.size());\r\n\t\treturn mat[idx];\r\n\t\
+    }\r\n};\r\n"
   dependsOn: []
   isVerificationFile: false
   path: structs/matrix.cpp
   requiredBy: []
-  timestamp: '2020-11-11 17:25:12+09:00'
+  timestamp: '2020-11-16 10:57:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_ITP1_6_B.test.cpp

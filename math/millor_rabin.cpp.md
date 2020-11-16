@@ -13,37 +13,36 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 1 \"math/millor_rabin.cpp\"\n\n\n\r\n#ifndef call_include\r\n\
-    #define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\
+  bundledCode: "#line 2 \"math/millor_rabin.cpp\"\n\r\n#ifndef call_include\r\n#define\
+    \ call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\
     \n\r\n#line 2 \"math/binpow.cpp\"\n/*\r\n * @brief Binary-Power(\u7E70\u308A\u8FD4\
     \u3057\u4E8C\u4E57\u6CD5)\r\n */\r\n\r\n#ifndef call_include\r\n#define call_include\r\
     \n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\nlong long\
     \ binpow(long long a, long long ex, long long p=(1LL<<61)-1) {\r\n\tlong long\
     \ res = 1;\r\n\twhile(ex > 0) {\r\n\t\tif(ex & 1) (res*=a) %= p;\r\n\t\tex>>=1;\r\
-    \n\t\t(a*=a) %= p;\r\n\t}\r\n\treturn res;\r\n}\r\n#line 11 \"math/millor_rabin.cpp\"\
+    \n\t\t(a*=a) %= p;\r\n\t}\r\n\treturn res;\r\n}\r\n#line 10 \"math/millor_rabin.cpp\"\
     \n\r\nbool isprime(int n) {\r\n\tif(n == 2) return true;\r\n\tif(n < 2 || n%2\
     \ == 0) return false;\r\n\r\n\tint d=n-1, s=0;\r\n\twhile(d%2 == 0) {\r\n\t\t\
     s++;\r\n\t\td >>= 1;\r\n\t}\r\n\r\n\tint a[]={2,7,61};\r\n\tfor(int k = 0; k <\
     \ 3; k++) {\r\n\t\tif(a[k] >= n) break;\r\n\t\t\r\n\t\tlong long r = binpow(a[k],\
     \ d, n);\r\n\t\tif(r == 1 || r == n-1) continue;\r\n\t\t\r\n\t\tfor(int i = 1;\
     \ i < s; i++) {\r\n\t\t\t(r*=r) %= n;\r\n\t\t\tif(r == n-1) break;\r\n\t\t}\r\n\
-    \t\tif(r != n-1) return false;\r\n\t}\r\n\r\n\treturn true;\r\n}\r\n\r\n\n"
-  code: "#ifndef lib_millor_rabin\r\n#define lib_millor_rabin\r\n\r\n#ifndef call_include\r\
-    \n#define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n\
-    #endif\r\n\r\n#include \"math/binpow.cpp\"\r\n\r\nbool isprime(int n) {\r\n\t\
-    if(n == 2) return true;\r\n\tif(n < 2 || n%2 == 0) return false;\r\n\r\n\tint\
-    \ d=n-1, s=0;\r\n\twhile(d%2 == 0) {\r\n\t\ts++;\r\n\t\td >>= 1;\r\n\t}\r\n\r\n\
-    \tint a[]={2,7,61};\r\n\tfor(int k = 0; k < 3; k++) {\r\n\t\tif(a[k] >= n) break;\r\
-    \n\t\t\r\n\t\tlong long r = binpow(a[k], d, n);\r\n\t\tif(r == 1 || r == n-1)\
-    \ continue;\r\n\t\t\r\n\t\tfor(int i = 1; i < s; i++) {\r\n\t\t\t(r*=r) %= n;\r\
-    \n\t\t\tif(r == n-1) break;\r\n\t\t}\r\n\t\tif(r != n-1) return false;\r\n\t}\r\
-    \n\r\n\treturn true;\r\n}\r\n\r\n#endif // lib_millor_rabin\r\n"
+    \t\tif(r != n-1) return false;\r\n\t}\r\n\r\n\treturn true;\r\n}\r\n"
+  code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
+    \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\n#include \"math/binpow.cpp\"\
+    \r\n\r\nbool isprime(int n) {\r\n\tif(n == 2) return true;\r\n\tif(n < 2 || n%2\
+    \ == 0) return false;\r\n\r\n\tint d=n-1, s=0;\r\n\twhile(d%2 == 0) {\r\n\t\t\
+    s++;\r\n\t\td >>= 1;\r\n\t}\r\n\r\n\tint a[]={2,7,61};\r\n\tfor(int k = 0; k <\
+    \ 3; k++) {\r\n\t\tif(a[k] >= n) break;\r\n\t\t\r\n\t\tlong long r = binpow(a[k],\
+    \ d, n);\r\n\t\tif(r == 1 || r == n-1) continue;\r\n\t\t\r\n\t\tfor(int i = 1;\
+    \ i < s; i++) {\r\n\t\t\t(r*=r) %= n;\r\n\t\t\tif(r == n-1) break;\r\n\t\t}\r\n\
+    \t\tif(r != n-1) return false;\r\n\t}\r\n\r\n\treturn true;\r\n}\r\n"
   dependsOn:
   - math/binpow.cpp
   isVerificationFile: false
   path: math/millor_rabin.cpp
   requiredBy: []
-  timestamp: '2020-11-16 10:44:07+09:00'
+  timestamp: '2020-11-16 10:57:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_ALDS1_1_C_3.test.cpp

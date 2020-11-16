@@ -15,9 +15,9 @@ data:
     - https://judge.yosupo.jp/problem/unionfind
   bundledCode: "#line 1 \"test/yosupo_unionfind.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\
     \r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
-    \nusing namespace std;\r\n#endif\r\n\r\n#line 1 \"tree/union_find.cpp\"\n\n\n\r\
-    \n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\n\
-    using namespace std;\r\n#endif\r\n\r\nstruct UnionFind {\r\nprivate:\r\n\tvector<int>\
+    \nusing namespace std;\r\n#endif\r\n\r\n#line 2 \"tree/union_find.cpp\"\n\r\n\
+    #ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\nusing\
+    \ namespace std;\r\n#endif\r\n\r\nstruct UnionFind {\r\nprivate:\r\n\tvector<int>\
     \ parent;\r\n\tvector<int> num;\r\n\tint treenum;\r\n\r\npublic:\r\n\tUnionFind(int\
     \ n) : parent(n),num(n,1) {\r\n\t\ttreenum=n;\r\n\t\tfor(int i=0; i<n; i++) {\r\
     \n\t\t\tparent[i]=i;\r\n\t\t}\r\n\t}\r\n\r\n\tint root(int x) {\r\n\t\tassert(x\
@@ -26,9 +26,9 @@ data:
     void merge(int x, int y) {\r\n\t\tint xrt=root(x);\r\n\t\tint yrt=root(y);\r\n\
     \t\tif(xrt==yrt) return;\r\n\t\tparent[yrt]=xrt;\r\n\t\tnum[xrt]+=num[yrt];\r\n\
     \t\ttreenum--;\r\n\t}\r\n\r\n\tbool same(int x, int y) {\r\n\t\treturn root(x)==root(y);\r\
-    \n\t}\r\n\r\n\tint tnum() {\r\n\t\treturn treenum;\r\n\t}\r\n};\r\n\r\n\r\n\n\
-    #line 10 \"test/yosupo_unionfind.test.cpp\"\n\r\nint main() {\r\n\tint N,Q; cin>>N>>Q;\r\
-    \n\tUnionFind uf(N);\r\n\r\n\tfor(int i=0; i<Q; i++) {\r\n\t\tint t,u,v; cin>>t>>u>>v;\r\
+    \n\t}\r\n\r\n\tint tnum() {\r\n\t\treturn treenum;\r\n\t}\r\n};\r\n#line 10 \"\
+    test/yosupo_unionfind.test.cpp\"\n\r\nint main() {\r\n\tint N,Q; cin>>N>>Q;\r\n\
+    \tUnionFind uf(N);\r\n\r\n\tfor(int i=0; i<Q; i++) {\r\n\t\tint t,u,v; cin>>t>>u>>v;\r\
     \n\r\n\t\tif(t==0) uf.merge(u,v);\r\n\t\telse cout<<(uf.same(u,v) ? 1 : 0)<<'\\\
     n';\r\n\t}\r\n\r\n\tcout<<flush;\r\n}\r\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\r\n\r\n#ifndef\
@@ -42,7 +42,7 @@ data:
   isVerificationFile: true
   path: test/yosupo_unionfind.test.cpp
   requiredBy: []
-  timestamp: '2020-11-09 16:10:15+09:00'
+  timestamp: '2020-11-16 10:57:59+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo_unionfind.test.cpp
