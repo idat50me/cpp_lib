@@ -15,6 +15,9 @@ data:
   - name: graph
     pages:
     - icon: ':heavy_check_mark:'
+      path: graph/ford_fulkerson.cpp
+      title: graph/ford_fulkerson.cpp
+    - icon: ':heavy_check_mark:'
       path: graph/segtree.cpp
       title: "segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
     - icon: ':heavy_check_mark:'
@@ -93,6 +96,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj_DSL_2_A.test.cpp
       title: test/aoj_DSL_2_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj_GRL_6_A.test.cpp
+      title: test/aoj_GRL_6_A.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj_ITP1_6_B.test.cpp
       title: test/aoj_ITP1_6_B.test.cpp
