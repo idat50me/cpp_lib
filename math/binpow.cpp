@@ -2,8 +2,9 @@
  * @brief Binary-Power(繰り返し二乗法)
  */
 
-#ifndef lib_binpow
-#define lib_binpow
+#pragma once
+//#ifndef lib_binpow
+//#define lib_binpow
 
 #ifndef call_include
 #define call_include
@@ -21,4 +22,4 @@ long long binpow(long long a, long long ex, long long p=(1LL<<61)-1) {
 	return res;
 }
 
-#endif /* lib_binpow */
+//#endif /* lib_binpow */
