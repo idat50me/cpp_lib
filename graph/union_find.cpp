@@ -20,7 +20,7 @@ private:
 	const function<void(T&,T&)> merge_val = [&](T& val_l, const T& val_r){};
 
 public:
-	UnionFind(int n) : parent(n), num(n,1), treenum(n) {
+	UnionFind(int n) : N(n), parent(n), num(n,1), treenum(n) {
 		for(int i=0; i<n; i++) parent[i] = i;
 	}
 	UnionFind(int n, function<bool(int,int,T&,T&)> f1) : parent(n), num(n,1), val(n), treenum(n), swap_flg(f1) {
@@ -30,7 +30,7 @@ public:
 		for(int i=0; i<n; i++) parent[i] = i;
 	}
 	UnionFind(vector<T> v, function<bool(int,int,T&,T&)> f1, const function<void(T&,T&)> f2) : parent(v.size()), num(v.size(),1), val(v), treenum(v.size()), swap_flg(f1), merge_val(f2) {
-		for(int i=0; i<n; i++) parent[i] = i;
+		for(int i=0; i<v.size(); i++) parent[i] = i;
 	}
 
 	int root(int x) {
