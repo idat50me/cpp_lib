@@ -6,7 +6,7 @@
 using namespace std;
 #endif
 
-#include "tree/segtree.cpp"
+#include "graph/segtree.cpp"
 using ll = long long;
 
 ll sum_op(ll a, ll b) {

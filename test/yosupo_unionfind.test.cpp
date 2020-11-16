@@ -6,7 +6,7 @@
 using namespace std;
 #endif
 
-#include "tree/union_find.cpp"
+#include "graph/union_find.cpp"
 
 int main() {
 	int N,Q; cin>>N>>Q;
