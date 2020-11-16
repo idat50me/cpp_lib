@@ -9,14 +9,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo_unionfind.test.cpp
     title: test/yosupo_unionfind.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yuki_0556.test.cpp
     title: test/yuki_0556.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"tree/union_find.cpp\"\n\r\n#ifndef call_include\r\n#define\
+  bundledCode: "#line 2 \"graph/union_find.cpp\"\n\r\n#ifndef call_include\r\n#define\
     \ call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\
     \n\r\nstruct UnionFind {\r\nprivate:\r\n\tvector<int> parent;\r\n\tvector<int>\
     \ num;\r\n\tint treenum;\r\n\r\npublic:\r\n\tUnionFind(int n) : parent(n),num(n,1)\
@@ -25,9 +25,10 @@ data:
     \tif(parent[x]==x) return x;\r\n\t\treturn parent[x]=root(parent[x]);\r\n\t}\r\
     \n\r\n\tint size(int x) {\r\n\t\treturn num[root(x)];\r\n\t}\r\n\r\n\tvoid merge(int\
     \ x, int y) {\r\n\t\tint xrt=root(x);\r\n\t\tint yrt=root(y);\r\n\t\tif(xrt==yrt)\
-    \ return;\r\n\t\tparent[yrt]=xrt;\r\n\t\tnum[xrt]+=num[yrt];\r\n\t\ttreenum--;\r\
-    \n\t}\r\n\r\n\tbool same(int x, int y) {\r\n\t\treturn root(x)==root(y);\r\n\t\
-    }\r\n\r\n\tint tnum() {\r\n\t\treturn treenum;\r\n\t}\r\n};\r\n"
+    \ return;\r\n\t\tif(xrt < yrt) swap(xrt,yrt);\r\n\t\tparent[yrt]=xrt;\r\n\t\t\
+    num[xrt]+=num[yrt];\r\n\t\ttreenum--;\r\n\t}\r\n\r\n\tbool same(int x, int y)\
+    \ {\r\n\t\treturn root(x)==root(y);\r\n\t}\r\n\r\n\tint tnum() {\r\n\t\treturn\
+    \ treenum;\r\n\t}\r\n};\r\n"
   code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
     \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\nstruct UnionFind {\r\
     \nprivate:\r\n\tvector<int> parent;\r\n\tvector<int> num;\r\n\tint treenum;\r\n\
@@ -37,20 +38,20 @@ data:
     \ x;\r\n\t\treturn parent[x]=root(parent[x]);\r\n\t}\r\n\r\n\tint size(int x)\
     \ {\r\n\t\treturn num[root(x)];\r\n\t}\r\n\r\n\tvoid merge(int x, int y) {\r\n\
     \t\tint xrt=root(x);\r\n\t\tint yrt=root(y);\r\n\t\tif(xrt==yrt) return;\r\n\t\
-    \tparent[yrt]=xrt;\r\n\t\tnum[xrt]+=num[yrt];\r\n\t\ttreenum--;\r\n\t}\r\n\r\n\
-    \tbool same(int x, int y) {\r\n\t\treturn root(x)==root(y);\r\n\t}\r\n\r\n\tint\
-    \ tnum() {\r\n\t\treturn treenum;\r\n\t}\r\n};\r\n"
+    \tif(xrt < yrt) swap(xrt,yrt);\r\n\t\tparent[yrt]=xrt;\r\n\t\tnum[xrt]+=num[yrt];\r\
+    \n\t\ttreenum--;\r\n\t}\r\n\r\n\tbool same(int x, int y) {\r\n\t\treturn root(x)==root(y);\r\
+    \n\t}\r\n\r\n\tint tnum() {\r\n\t\treturn treenum;\r\n\t}\r\n};\r\n"
   dependsOn: []
   isVerificationFile: false
-  path: tree/union_find.cpp
+  path: graph/union_find.cpp
   requiredBy: []
-  timestamp: '2020-11-16 10:57:59+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-11-16 11:31:19+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yosupo_unionfind.test.cpp
   - test/yuki_0556.test.cpp
   - test/aoj_DSL_1_A.test.cpp
-documentation_of: tree/union_find.cpp
+documentation_of: graph/union_find.cpp
 layout: document
 title: "Union-Find\u6728"
 ---

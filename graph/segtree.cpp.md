@@ -13,7 +13,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"tree/segtree.cpp\"\n\r\n#ifndef call_include\r\n#define\
+  bundledCode: "#line 2 \"graph/segtree.cpp\"\n\r\n#ifndef call_include\r\n#define\
     \ call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\
     \n\r\ntemplate<typename T, T (*op)(T,T), T (*e)()>\r\nstruct segtree {\r\nprivate:\r\
     \n\tint siz=1, N;\r\n\tvector<T> node;\r\n\tconst T e_ = e();\r\n\r\npublic:\r\
@@ -53,14 +53,14 @@ data:
     \npublic:\r\n};\r\n"
   dependsOn: []
   isVerificationFile: false
-  path: tree/segtree.cpp
+  path: graph/segtree.cpp
   requiredBy: []
-  timestamp: '2020-11-16 10:57:59+09:00'
+  timestamp: '2020-11-16 11:31:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo_static_range_sum.test.cpp
   - test/yosupo_staticrmq_2.test.cpp
-documentation_of: tree/segtree.cpp
+documentation_of: graph/segtree.cpp
 layout: document
 title: "segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
 ---

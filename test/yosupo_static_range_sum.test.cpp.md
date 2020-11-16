@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: tree/segtree.cpp
+    path: graph/segtree.cpp
     title: "segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -16,7 +16,7 @@ data:
   bundledCode: "#line 1 \"test/yosupo_static_range_sum.test.cpp\"\n#define PROBLEM\
     \ \"https://judge.yosupo.jp/problem/static_range_sum\"\r\n\r\n#ifndef call_include\r\
     \n#define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n\
-    #endif\r\n\r\n#line 2 \"tree/segtree.cpp\"\n\r\n#ifndef call_include\r\n#define\
+    #endif\r\n\r\n#line 2 \"graph/segtree.cpp\"\n\r\n#ifndef call_include\r\n#define\
     \ call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\
     \n\r\ntemplate<typename T, T (*op)(T,T), T (*e)()>\r\nstruct segtree {\r\nprivate:\r\
     \n\tint siz=1, N;\r\n\tvector<T> node;\r\n\tconst T e_ = e();\r\n\r\npublic:\r\
@@ -42,18 +42,18 @@ data:
     cout<<tree.get(l,r)<<'\\n';\r\n\t}\r\n\tcout<<flush;\r\n}\r\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\r\n\r\
     \n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\n\
-    using namespace std;\r\n#endif\r\n\r\n#include \"tree/segtree.cpp\"\r\nusing ll\
-    \ = long long;\r\n\r\nll sum_op(ll a, ll b) {\r\n\treturn a+b;\r\n}\r\n\r\nll\
-    \ e() {\r\n\treturn 0LL;\r\n}\r\n\r\nint main() {\r\n\tint N,Q; cin>>N>>Q;\r\n\
+    using namespace std;\r\n#endif\r\n\r\n#include \"graph/segtree.cpp\"\r\nusing\
+    \ ll = long long;\r\n\r\nll sum_op(ll a, ll b) {\r\n\treturn a+b;\r\n}\r\n\r\n\
+    ll e() {\r\n\treturn 0LL;\r\n}\r\n\r\nint main() {\r\n\tint N,Q; cin>>N>>Q;\r\n\
     \tvector<ll> v(N);\r\n\tfor(int i=0; i<N; i++) cin>>v[i];\r\n\tsegtree<ll,sum_op,e>\
     \ tree(v);\r\n\r\n\tfor(int i=0; i<Q; i++) {\r\n\t\tint l,r; cin>>l>>r;\r\n\t\t\
     cout<<tree.get(l,r)<<'\\n';\r\n\t}\r\n\tcout<<flush;\r\n}\r\n"
   dependsOn:
-  - tree/segtree.cpp
+  - graph/segtree.cpp
   isVerificationFile: true
   path: test/yosupo_static_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2020-11-16 10:57:59+09:00'
+  timestamp: '2020-11-16 11:31:19+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo_static_range_sum.test.cpp

@@ -13,7 +13,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"tree/segtree_RmQ.cpp\"\n\r\n#ifndef call_include\r\n#define\
+  bundledCode: "#line 2 \"graph/segtree_RmQ.cpp\"\n\r\n#ifndef call_include\r\n#define\
     \ call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\
     \n\r\ntemplate<typename T>\r\nstruct RmQ {\r\nprivate:\r\n\tint n=1;\r\n\tvector<T>\
     \ node;\r\n\tT inf=numeric_limits<T>::max();\r\n\r\npublic:\r\n\tRmQ(vector<T>\
@@ -41,14 +41,14 @@ data:
     \n\t\treturn min(vl,vr);\r\n\t}\r\npublic:\r\n};\r\n"
   dependsOn: []
   isVerificationFile: false
-  path: tree/segtree_RmQ.cpp
+  path: graph/segtree_RmQ.cpp
   requiredBy: []
-  timestamp: '2020-11-16 10:57:59+09:00'
+  timestamp: '2020-11-16 11:31:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo_staticrmq.test.cpp
   - test/aoj_DSL_2_A.test.cpp
-documentation_of: tree/segtree_RmQ.cpp
+documentation_of: graph/segtree_RmQ.cpp
 layout: document
 title: "(\u524A\u9664\u4E88\u5B9A) RmQ(\u533A\u9593\u6700\u5C0F\u5024)"
 ---

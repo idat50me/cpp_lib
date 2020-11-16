@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: tree/segtree_RmQ.cpp
+    path: graph/segtree_RmQ.cpp
     title: "(\u524A\u9664\u4E88\u5B9A) RmQ(\u533A\u9593\u6700\u5C0F\u5024)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -15,7 +15,7 @@ data:
     - https://judge.yosupo.jp/problem/staticrmq
   bundledCode: "#line 1 \"test/yosupo_staticrmq.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\
     \r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
-    \nusing namespace std;\r\n#endif\r\n\r\n#line 2 \"tree/segtree_RmQ.cpp\"\n\r\n\
+    \nusing namespace std;\r\n#endif\r\n\r\n#line 2 \"graph/segtree_RmQ.cpp\"\n\r\n\
     #ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\nusing\
     \ namespace std;\r\n#endif\r\n\r\ntemplate<typename T>\r\nstruct RmQ {\r\nprivate:\r\
     \n\tint n=1;\r\n\tvector<T> node;\r\n\tT inf=numeric_limits<T>::max();\r\n\r\n\
@@ -35,17 +35,17 @@ data:
     n';\r\n\t}\r\n\tcout<<flush;\r\n}\r\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\r\n\r\n#ifndef\
     \ call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace\
-    \ std;\r\n#endif\r\n\r\n#include \"tree/segtree_RmQ.cpp\"\r\n\r\nint main() {\r\
+    \ std;\r\n#endif\r\n\r\n#include \"graph/segtree_RmQ.cpp\"\r\n\r\nint main() {\r\
     \n\tint N,Q;\r\n\tvector<int> v;\r\n\r\n\tcin>>N>>Q;\r\n\tv.resize(N);\r\n\tfor(int\
     \ i=0; i<N; i++) cin>>v[i];\r\n\tRmQ rmq_tree(v);\r\n\r\n\tfor(int i=0; i<Q; i++)\
     \ {\r\n\t\tint l,r; cin>>l>>r;\r\n\t\tcout<<rmq_tree.getmin(l,r)<<'\\n';\r\n\t\
     }\r\n\tcout<<flush;\r\n}\r\n"
   dependsOn:
-  - tree/segtree_RmQ.cpp
+  - graph/segtree_RmQ.cpp
   isVerificationFile: true
   path: test/yosupo_staticrmq.test.cpp
   requiredBy: []
-  timestamp: '2020-11-16 10:57:59+09:00'
+  timestamp: '2020-11-16 11:31:19+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo_staticrmq.test.cpp

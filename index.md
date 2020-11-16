@@ -12,6 +12,17 @@ data:
     - icon: ':warning:'
       path: combinatorics/npr.cpp
       title: combinatorics/npr.cpp
+  - name: graph
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: graph/segtree.cpp
+      title: "segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
+    - icon: ':heavy_check_mark:'
+      path: graph/segtree_RmQ.cpp
+      title: "(\u524A\u9664\u4E88\u5B9A) RmQ(\u533A\u9593\u6700\u5C0F\u5024)"
+    - icon: ':question:'
+      path: graph/union_find.cpp
+      title: "Union-Find\u6728"
   - name: math
     pages:
     - icon: ':heavy_check_mark:'
@@ -52,17 +63,6 @@ data:
     - icon: ':warning:'
       path: test/aoj_0019.cpp
       title: test/aoj_0019.cpp
-  - name: tree
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: tree/segtree.cpp
-      title: "segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
-    - icon: ':heavy_check_mark:'
-      path: tree/segtree_RmQ.cpp
-      title: "(\u524A\u9664\u4E88\u5B9A) RmQ(\u533A\u9593\u6700\u5C0F\u5024)"
-    - icon: ':heavy_check_mark:'
-      path: tree/union_find.cpp
-      title: "Union-Find\u6728"
   verificationCategories:
   - name: test
     pages:
@@ -117,7 +117,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yuki_0117.test.cpp
       title: test/yuki_0117.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yuki_0556.test.cpp
       title: test/yuki_0556.test.cpp
     - icon: ':heavy_check_mark:'
