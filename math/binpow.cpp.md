@@ -19,6 +19,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj_NTL_1_B.test.cpp
     title: test/aoj_NTL_1_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yuki_1035.test.cpp
+    title: test/yuki_1035.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yuki_1035.test.cpp
+    title: test/yuki_1035.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -50,6 +56,8 @@ data:
   - test/aoj_ALDS1_1_C_3.test.cpp
   - test/aoj_0341.test.cpp
   - test/aoj_NTL_1_B.test.cpp
+  - test/yuki_1035.test.cpp
+  - test/yuki_1035.test.cpp
 documentation_of: math/binpow.cpp
 layout: document
 redirect_from:

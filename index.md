@@ -123,5 +123,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yuki_0888.test.cpp
       title: test/yuki_0888.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yuki_1035.test.cpp
+      title: test/yuki_1035.test.cpp
 layout: toppage
 ---

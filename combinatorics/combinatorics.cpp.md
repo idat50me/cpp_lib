@@ -9,6 +9,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yuki_0117.test.cpp
     title: test/yuki_0117.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yuki_1035.test.cpp
+    title: test/yuki_1035.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -52,6 +55,7 @@ data:
   verifiedWith:
   - test/aoj_DPL_5_D.test.cpp
   - test/yuki_0117.test.cpp
+  - test/yuki_1035.test.cpp
 documentation_of: combinatorics/combinatorics.cpp
 layout: document
 title: "Combinatorics(\u7D44\u5408\u305B\u6570\u5B66)"
