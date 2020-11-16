@@ -6,18 +6,31 @@
 using namespace std;
 #endif
 
+template <class T = int>
 struct UnionFind {
 private:
 	vector<int> parent;
 	vector<int> num;
+	vector<T> val;
 	int treenum;
 
+	const function<bool(int,int,T&,T&)> swap_flg = [&](const int l, const int r, const T& val_l, const T& val_r) {
+		return num[l] < num[r];
+	};
+	const function<void(T&,T&)> merge_val = [&](T& val_l, const T& val_r){};
+
 public:
-	UnionFind(int n) : parent(n),num(n,1) {
-		treenum = n;
-		for(int i=0; i<n; i++) {
-			parent[i] = i;
-		}
+	UnionFind(int n) : parent(n), num(n,1), treenum(n) {
+		for(int i=0; i<n; i++) parent[i] = i;
+	}
+	UnionFind(int n, function<bool(int,int,T&,T&)> f1) : parent(n), num(n,1), val(n), treenum(n), swap_flg(f1) {
+		for(int i=0; i<n; i++) parent[i] = i;
+	}
+	UnionFind(int n, function<bool(int,int,T&,T&)> f1, const function<void(T&,T&)> f2) : parent(n), num(n,1), val(n), treenum(n), swap_flg(f1), merge_val(f2) {
+		for(int i=0; i<n; i++) parent[i] = i;
+	}
+	UnionFind(vector<T> v, function<bool(int,int,T&,T&)> f1, const function<void(T&,T&)> f2) : parent(v.size()), num(v.size(),1), val(v), treenum(v.size()), swap_flg(f1), merge_val(f2) {
+		for(int i=0; i<n; i++) parent[i] = i;
 	}
 
 	int root(int x) {
@@ -27,21 +40,30 @@ public:
 	}
 
 	int size(int x) {
+		assert(x < parent.size());
 		return num[root(x)];
 	}
 
 	void merge(int x, int y) {
+		assert(x < parent.size() && y < parent.size());
 		int xrt = root(x);
 		int yrt = root(y);
 		if(xrt == yrt) return;
-		if(size(xrt) < size(yrt)) swap(xrt,yrt);
+		if(swap_flg(xrt,yrt,val[xrt],val[yrt])) swap(xrt,yrt);
 		parent[yrt] = xrt;
 		num[xrt] += num[yrt];
+		merge_val(val[xrt],val[yrt]);
 		treenum--;
 	}
 
 	bool same(int x, int y) {
+		assert(x < parent.size() && y < parent.size());
 		return root(x) == root(y);
+	}
+
+	T get(int x) {
+		assert(x < parent.size());
+		return val[x];
 	}
 
 	int tnum() {
