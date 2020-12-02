@@ -8,28 +8,35 @@ using namespace std;
 
 struct Ford_Fulkerson {
 private:
-	struct edge_ {
-		// 逆辺のedge_がG[next][rev]に存在する
+	struct edge {
 		int next;
 		int rev;
 		long long cap;
+		long long cost;
+		
+		edge(int next, int rev, long long cap) : next(next), rev(rev), cap(cap), cost(0) {}
+		edge(int next, int rev, long long cap, long long cost) : next(next), rev(rev), cap(cap), cost(cost) {}
 	};
 
-	vector<vector<edge_>> G;
+	vector<vector<edge>> G;
 	vector<bool> used;
 
 public:
 	Ford_Fulkerson(int N) : G(N),used(N) {}
 
 	void add(int from, int to, long long cap) {
-		G[from].push_back((edge_){to, (int)G[to].size(), cap});
-		G[to].push_back((edge_){from, (int)G[from].size()-1, 0});
+		G[from].push_back(edge(to, G[to].size(), cap));
+		G[to].push_back(edge(from, G[from].size()-1, 0));
+	}
+	void add(int from, int to, long long cap, long long cost) {
+		G[from].push_back(edge(to, G[to].size(), cap, cost));
+		G[to].push_back(edge(from, G[from].size()-1, 0, -cost));
 	}
 
 	long long f_dfs(int s, int t, long long flow) {
 		if(s == t) return flow;
 		used[s] = true;
-		for(edge_ &ed : G[s]) {
+		for(edge &ed : G[s]) {
 			if(!used[ed.next] && ed.cap>0) {
 				long long captmp = f_dfs(ed.next, t, min(flow,ed.cap));
 				if(captmp > 0) {
@@ -52,7 +59,4 @@ public:
 			res += restmp;
 		}
 	}
-
-	// 最大二部マッチング問題の準備（StartNodeをN+1, GoalNodeをN+2に設定）
-	// これからつくる
 };
