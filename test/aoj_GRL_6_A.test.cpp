@@ -6,15 +6,15 @@
 using namespace std;
 #endif
 
-#include "graph/ford_fulkerson.cpp"
+#include "graph/maxflow.cpp"
 
 int main() {
 	int V,E; cin>>V>>E;
-	Ford_Fulkerson ff(V);
+	maxflow mf(V);
 	for(int i=0; i<E; i++) {
 		int u,v,c; cin>>u>>v>>c;
-		ff.add(u,v,c);
+		mf.add(u,v,c);
 	}
 
-	cout<<ff.max_flow(0,V-1)<<endl;
+	cout<<mf.solve(0,V-1)<<endl;
 }
