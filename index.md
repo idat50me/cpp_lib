@@ -14,9 +14,6 @@ data:
       title: combinatorics/npr.cpp
   - name: graph
     pages:
-    - icon: ':warning:'
-      path: graph/ford_fulkerson.cpp
-      title: graph/ford_fulkerson.cpp
     - icon: ':heavy_check_mark:'
       path: graph/maxflow.cpp
       title: graph/maxflow.cpp
