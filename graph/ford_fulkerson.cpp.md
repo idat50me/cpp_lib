@@ -2,12 +2,9 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj_GRL_6_A.test.cpp
-    title: test/aoj_GRL_6_A.test.cpp
+  _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 2 \"graph/ford_fulkerson.cpp\"\n\r\n#ifndef call_include\r\n\
@@ -61,9 +58,8 @@ data:
   path: graph/ford_fulkerson.cpp
   requiredBy: []
   timestamp: '2020-12-02 17:10:53+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/aoj_GRL_6_A.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: graph/ford_fulkerson.cpp
 layout: document
 redirect_from:

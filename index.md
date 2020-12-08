@@ -14,9 +14,15 @@ data:
       title: combinatorics/npr.cpp
   - name: graph
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':warning:'
       path: graph/ford_fulkerson.cpp
       title: graph/ford_fulkerson.cpp
+    - icon: ':heavy_check_mark:'
+      path: graph/maxflow.cpp
+      title: graph/maxflow.cpp
+    - icon: ':x:'
+      path: graph/mincostflow.cpp
+      title: graph/mincostflow.cpp
     - icon: ':heavy_check_mark:'
       path: graph/segtree.cpp
       title: "segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
@@ -99,6 +105,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj_GRL_6_A.test.cpp
       title: test/aoj_GRL_6_A.test.cpp
+    - icon: ':x:'
+      path: test/aoj_GRL_6_B.test.cpp
+      title: test/aoj_GRL_6_B.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj_ITP1_6_B.test.cpp
       title: test/aoj_ITP1_6_B.test.cpp

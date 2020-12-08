@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: graph/ford_fulkerson.cpp
-    title: graph/ford_fulkerson.cpp
+    path: graph/maxflow.cpp
+    title: graph/maxflow.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -15,44 +15,39 @@ data:
     - https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/6/GRL_6_A
   bundledCode: "#line 1 \"test/aoj_GRL_6_A.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/6/GRL_6_A\"\
     \r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
-    \nusing namespace std;\r\n#endif\r\n\r\n#line 2 \"graph/ford_fulkerson.cpp\"\n\
-    \r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
-    \nusing namespace std;\r\n#endif\r\n\r\nstruct Ford_Fulkerson {\r\nprivate:\r\n\
-    \tstruct edge {\r\n\t\tint next;\r\n\t\tint rev;\r\n\t\tlong long cap;\r\n\t\t\
-    long long cost;\r\n\t\t\r\n\t\tedge(int next, int rev, long long cap) : next(next),\
-    \ rev(rev), cap(cap), cost(0) {}\r\n\t\tedge(int next, int rev, long long cap,\
-    \ long long cost) : next(next), rev(rev), cap(cap), cost(cost) {}\r\n\t};\r\n\r\
-    \n\tvector<vector<edge>> G;\r\n\tvector<bool> used;\r\n\r\npublic:\r\n\tFord_Fulkerson(int\
-    \ N) : G(N),used(N) {}\r\n\r\n\tvoid add(int from, int to, long long cap) {\r\n\
-    \t\tG[from].push_back(edge(to, G[to].size(), cap));\r\n\t\tG[to].push_back(edge(from,\
-    \ G[from].size()-1, 0));\r\n\t}\r\n\tvoid add(int from, int to, long long cap,\
-    \ long long cost) {\r\n\t\tG[from].push_back(edge(to, G[to].size(), cap, cost));\r\
-    \n\t\tG[to].push_back(edge(from, G[from].size()-1, 0, -cost));\r\n\t}\r\n\r\n\t\
-    long long f_dfs(int s, int t, long long flow) {\r\n\t\tif(s == t) return flow;\r\
+    \nusing namespace std;\r\n#endif\r\n\r\n#line 2 \"graph/maxflow.cpp\"\n\r\n#ifndef\
+    \ call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace\
+    \ std;\r\n#endif\r\n\r\nstruct maxflow {\r\nprivate:\r\n\tstruct edge {\r\n\t\t\
+    int next;\r\n\t\tint rev;\r\n\t\tlong long cap;\r\n\t\t\r\n\t\tedge(int next,\
+    \ int rev, long long cap) : next(next), rev(rev), cap(cap) {}\r\n\t};\r\n\r\n\t\
+    const int vnum;\r\n\tvector<vector<edge>> G;\r\n\tvector<bool> used;\r\n\r\npublic:\r\
+    \n\tmaxflow(int N) : vnum(N), G(N), used(N) {}\r\n\r\n\tvoid add(int from, int\
+    \ to, long long cap) {\r\n\t\tG[from].push_back(edge(to, G[to].size(), cap));\r\
+    \n\t\tG[to].push_back(edge(from, G[from].size()-1, 0));\r\n\t}\r\n\r\nprivate:\r\
+    \n\tlong long dfs(int s, int t, long long flow) {\r\n\t\tif(s == t) return flow;\r\
     \n\t\tused[s] = true;\r\n\t\tfor(edge &ed : G[s]) {\r\n\t\t\tif(!used[ed.next]\
-    \ && ed.cap>0) {\r\n\t\t\t\tlong long captmp = f_dfs(ed.next, t, min(flow,ed.cap));\r\
+    \ && ed.cap>0) {\r\n\t\t\t\tlong long captmp = dfs(ed.next, t, min(flow,ed.cap));\r\
     \n\t\t\t\tif(captmp > 0) {\r\n\t\t\t\t\ted.cap -= captmp;\r\n\t\t\t\t\tG[ed.next][ed.rev].cap\
     \ += captmp;\r\n\t\t\t\t\treturn captmp;\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t\
-    \treturn 0LL;\r\n\t}\r\n\r\n\t// \u6700\u5927\u6D41\u554F\u984C\r\n\tlong long\
-    \ max_flow(int s, int t) {\r\n\t\tlong long res = 0;\r\n\t\twhile(1) { // \u6700\
-    \u5927\u306B\u306A\u308B\u307E\u3067\u7E70\u308A\u8FD4\u3057\r\n\t\t\tused.assign(used.size(),\
-    \ false);\r\n\t\t\tlong long restmp = f_dfs(s, t, (1LL<<62)-1);\r\n\t\t\tif(restmp\
-    \ == 0) return res;\r\n\t\t\tres += restmp;\r\n\t\t}\r\n\t}\r\n};\r\n#line 10\
-    \ \"test/aoj_GRL_6_A.test.cpp\"\n\r\nint main() {\r\n\tint V,E; cin>>V>>E;\r\n\
-    \tFord_Fulkerson ff(V);\r\n\tfor(int i=0; i<E; i++) {\r\n\t\tint u,v,c; cin>>u>>v>>c;\r\
-    \n\t\tff.add(u,v,c);\r\n\t}\r\n\r\n\tcout<<ff.max_flow(0,V-1)<<endl;\r\n}\r\n"
+    \treturn 0LL;\r\n\t}\r\n\r\npublic:\r\n\tlong long solve(int s, int t) {\r\n\t\
+    \tlong long res = 0;\r\n\t\twhile(1) {\r\n\t\t\tused.assign(vnum, false);\r\n\t\
+    \t\tlong long restmp = dfs(s, t, (1LL<<62)-1);\r\n\t\t\tif(restmp == 0) return\
+    \ res;\r\n\t\t\tres += restmp;\r\n\t\t}\r\n\t}\r\n};\r\n#line 10 \"test/aoj_GRL_6_A.test.cpp\"\
+    \n\r\nint main() {\r\n\tint V,E; cin>>V>>E;\r\n\tmaxflow mf(V);\r\n\tfor(int i=0;\
+    \ i<E; i++) {\r\n\t\tint u,v,c; cin>>u>>v>>c;\r\n\t\tmf.add(u,v,c);\r\n\t}\r\n\
+    \r\n\tcout<<mf.solve(0,V-1)<<endl;\r\n}\r\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/6/GRL_6_A\"\
     \r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
-    \nusing namespace std;\r\n#endif\r\n\r\n#include \"graph/ford_fulkerson.cpp\"\r\
-    \n\r\nint main() {\r\n\tint V,E; cin>>V>>E;\r\n\tFord_Fulkerson ff(V);\r\n\tfor(int\
-    \ i=0; i<E; i++) {\r\n\t\tint u,v,c; cin>>u>>v>>c;\r\n\t\tff.add(u,v,c);\r\n\t\
-    }\r\n\r\n\tcout<<ff.max_flow(0,V-1)<<endl;\r\n}\r\n"
+    \nusing namespace std;\r\n#endif\r\n\r\n#include \"graph/maxflow.cpp\"\r\n\r\n\
+    int main() {\r\n\tint V,E; cin>>V>>E;\r\n\tmaxflow mf(V);\r\n\tfor(int i=0; i<E;\
+    \ i++) {\r\n\t\tint u,v,c; cin>>u>>v>>c;\r\n\t\tmf.add(u,v,c);\r\n\t}\r\n\r\n\t\
+    cout<<mf.solve(0,V-1)<<endl;\r\n}\r\n"
   dependsOn:
-  - graph/ford_fulkerson.cpp
+  - graph/maxflow.cpp
   isVerificationFile: true
   path: test/aoj_GRL_6_A.test.cpp
   requiredBy: []
-  timestamp: '2020-12-02 17:10:53+09:00'
+  timestamp: '2020-12-09 02:14:06+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_GRL_6_A.test.cpp
