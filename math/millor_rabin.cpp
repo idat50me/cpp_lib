@@ -12,13 +12,13 @@ bool isprime(int n) {
 	if(n == 2) return true;
 	if(n < 2 || n%2 == 0) return false;
 
-	int d=n-1, s=0;
-	while(d%2 == 0) {
+	int d = n-1, s = 0;
+	while(!(d&1)) {
 		s++;
 		d >>= 1;
 	}
 
-	int a[]={2,7,61};
+	constexpr int a[] = {2,7,61};
 	for(int k = 0; k < 3; k++) {
 		if(a[k] >= n) break;
 		
