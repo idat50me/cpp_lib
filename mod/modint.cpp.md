@@ -119,8 +119,8 @@ data:
   timestamp: '2020-11-16 10:57:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj_0341.test.cpp
   - test/yuki_1035.test.cpp
+  - test/aoj_0341.test.cpp
 documentation_of: mod/modint.cpp
 layout: document
 title: ModInt

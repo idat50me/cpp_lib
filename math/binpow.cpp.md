@@ -43,15 +43,15 @@ data:
   isVerificationFile: false
   path: math/binpow.cpp
   requiredBy:
-  - math/millor_rabin.cpp
   - mod/modint.cpp
+  - math/millor_rabin.cpp
   timestamp: '2020-11-16 10:44:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_ALDS1_1_C_3.test.cpp
-  - test/aoj_0341.test.cpp
   - test/aoj_NTL_1_B.test.cpp
   - test/yuki_1035.test.cpp
+  - test/aoj_0341.test.cpp
 documentation_of: math/binpow.cpp
 layout: document
 redirect_from:
