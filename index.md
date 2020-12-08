@@ -20,7 +20,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/maxflow.cpp
       title: graph/maxflow.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: graph/mincostflow.cpp
       title: graph/mincostflow.cpp
     - icon: ':heavy_check_mark:'
@@ -105,7 +105,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj_GRL_6_A.test.cpp
       title: test/aoj_GRL_6_A.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj_GRL_6_B.test.cpp
       title: test/aoj_GRL_6_B.test.cpp
     - icon: ':heavy_check_mark:'

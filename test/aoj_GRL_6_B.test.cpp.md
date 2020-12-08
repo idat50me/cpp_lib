@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/mincostflow.cpp
     title: graph/mincostflow.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/6/GRL_6_B
@@ -26,20 +26,23 @@ data:
     \ cap, long long cost) {\r\n\t\tG[from].push_back(edge(to, G[to].size(), cap,\
     \ cost));\r\n\t\tG[to].push_back(edge(from, G[from].size()-1, 0, -cost));\r\n\t\
     }\r\n\r\nprivate:\r\n\tlong long Bellman_Ford(int s, int t) {\r\n\t\tconst long\
-    \ long inf = (1LL<<62)-1;\r\n\t\tvector<long long> dist(vnum, inf);\r\n\t\tdist[s]\
-    \ = 0;\r\n\t\tfor(int i=0; i<vnum; i++) {\r\n\t\t\tbool upd = false;\r\n\t\t\t\
-    for(int j=0; j<vnum; j++) {\r\n\t\t\t\tfor(edge &ed: G[j]) {\r\n\t\t\t\t\tif(ed.cap>0\
-    \ && dist[ed.next]>dist[j]+ed.cost) {\r\n\t\t\t\t\t\tif(i == vnum-1) return -1;\r\
-    \n\t\t\t\t\t\tupd = true;\r\n\t\t\t\t\t\tdist[ed.next] = dist[j]+ed.cost;\r\n\t\
-    \t\t\t\t\ted.cap--;\r\n\t\t\t\t\t\tG[ed.next][ed.rev].cap++;\r\n\t\t\t\t\t}\r\n\
-    \t\t\t\t}\r\n\t\t\t}\r\n\t\t\tif(!upd) break;\r\n\t\t}\r\n\t\tif(dist[t] == inf)\
-    \ return -1;\r\n\t\treturn dist[t];\r\n\t}\r\n\r\npublic:\r\n\tlong long solve(int\
-    \ s, int t, int f) {\r\n\t\tlong long res = 0;\r\n\t\tfor(int i=0; i<f; i++) {\r\
-    \n\t\t\tused.assign(vnum, false);\r\n\t\t\tlong long restmp = Bellman_Ford(s,\
-    \ t);\r\n\t\t\tif(restmp < 0) return -1;\r\n\t\t\tres += restmp;\r\n\t\t}\r\n\t\
-    \treturn res;\r\n\t}\r\n};\r\n#line 10 \"test/aoj_GRL_6_B.test.cpp\"\n\r\nint\
-    \ main() {\r\n\tint V,E,F; cin>>V>>E>>F;\r\n\tmincostflow mcf(V);\r\n\tfor(int\
-    \ i=0; i<E; i++) {\r\n\t\tint u,v,c,d; cin>>u>>v>>c>>d;\r\n\t\tmcf.add(u,v,c,d);\r\
+    \ long inf = (1LL<<62)-1;\r\n\t\tvector<long long> dist(vnum, inf);\r\n\t\tvector<int>\
+    \ pv(vnum), pe(vnum);\r\n\t\tdist[s] = 0;\r\n\t\tfor(int i=0; i<vnum; i++) {\r\
+    \n\t\t\tbool upd = false;\r\n\t\t\tfor(int j=0; j<vnum; j++) {\r\n\t\t\t\tif(dist[j]\
+    \ == inf) continue;\r\n\t\t\t\tfor(int k=0; k<G[j].size(); k++) {\r\n\t\t\t\t\t\
+    edge &ed = G[j][k];\r\n\t\t\t\t\tif(ed.cap>0 && dist[ed.next]>dist[j]+ed.cost)\
+    \ {\r\n\t\t\t\t\t\tif(i == vnum-1) return -1;\r\n\t\t\t\t\t\tupd = true;\r\n\t\
+    \t\t\t\t\tdist[ed.next] = dist[j]+ed.cost;\r\n\t\t\t\t\t\tpv[ed.next] = j;\r\n\
+    \t\t\t\t\t\tpe[ed.next] = k;\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t\t\
+    if(!upd) break;\r\n\t\t}\r\n\t\tfor(int v=t; v!=s; v=pv[v]) {\r\n\t\t\tedge &ed\
+    \ = G[pv[v]][pe[v]];\r\n\t\t\ted.cap--;\r\n\t\t\tG[ed.next][ed.rev].cap++;\r\n\
+    \t\t}\r\n\t\tif(dist[t] == inf) return -1;\r\n\t\treturn dist[t];\r\n\t}\r\n\r\
+    \npublic:\r\n\tlong long solve(int s, int t, int f) {\r\n\t\tlong long res = 0;\r\
+    \n\t\tfor(int i=0; i<f; i++) {\r\n\t\t\tused.assign(vnum, false);\r\n\t\t\tlong\
+    \ long restmp = Bellman_Ford(s, t);\r\n\t\t\tif(restmp < 0) return -1;\r\n\t\t\
+    \tres += restmp;\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\n};\r\n#line 10 \"test/aoj_GRL_6_B.test.cpp\"\
+    \n\r\nint main() {\r\n\tint V,E,F; cin>>V>>E>>F;\r\n\tmincostflow mcf(V);\r\n\t\
+    for(int i=0; i<E; i++) {\r\n\t\tint u,v,c,d; cin>>u>>v>>c>>d;\r\n\t\tmcf.add(u,v,c,d);\r\
     \n\t}\r\n\r\n\tcout<<mcf.solve(0,V-1,F)<<endl;\r\n}\r\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/6/GRL_6_B\"\
     \r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
@@ -52,8 +55,8 @@ data:
   isVerificationFile: true
   path: test/aoj_GRL_6_B.test.cpp
   requiredBy: []
-  timestamp: '2020-12-09 02:14:06+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-12-09 03:15:25+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_GRL_6_B.test.cpp
 layout: document
