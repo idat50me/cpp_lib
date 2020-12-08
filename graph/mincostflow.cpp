@@ -33,21 +33,29 @@ private:
 	long long Bellman_Ford(int s, int t) {
 		const long long inf = (1LL<<62)-1;
 		vector<long long> dist(vnum, inf);
+		vector<int> pv(vnum), pe(vnum);
 		dist[s] = 0;
 		for(int i=0; i<vnum; i++) {
 			bool upd = false;
 			for(int j=0; j<vnum; j++) {
-				for(edge &ed: G[j]) {
+				if(dist[j] == inf) continue;
+				for(int k=0; k<G[j].size(); k++) {
+					edge &ed = G[j][k];
 					if(ed.cap>0 && dist[ed.next]>dist[j]+ed.cost) {
 						if(i == vnum-1) return -1;
 						upd = true;
 						dist[ed.next] = dist[j]+ed.cost;
-						ed.cap--;
-						G[ed.next][ed.rev].cap++;
+						pv[ed.next] = j;
+						pe[ed.next] = k;
 					}
 				}
 			}
 			if(!upd) break;
+		}
+		for(int v=t; v!=s; v=pv[v]) {
+			edge &ed = G[pv[v]][pe[v]];
+			ed.cap--;
+			G[ed.next][ed.rev].cap++;
 		}
 		if(dist[t] == inf) return -1;
 		return dist[t];
