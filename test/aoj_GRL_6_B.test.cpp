@@ -16,5 +16,7 @@ int main() {
 		mcf.add(u,v,c,d);
 	}
 
-	cout<<mcf.solve(0,V-1,F)<<endl;
+	long long ans = mcf.solve(0,V-1,F);
+	assert(ans!=-mcf.inf);
+	cout<<(ans==mcf.inf?-1:ans)<<endl;
 }
