@@ -37,14 +37,19 @@ public:
 //private:
 	long long bellman_ford(int s, int t, int &f) {
 		pot.assign(vnum, inf);
+		pv.assign(vnum, -1);
+		pe.assign(vnum, -1);
 		pot[s] = 0;
 		for(int i=0; i<vnum; i++) {
 			for(int j=0; j<vnum; j++) {
 				if(pot[j] == inf) continue;
-				for(const edge &ed: G[j]) {
+				for(int k=0; k<G[j].size(); k++) {
+					const edge &ed = G[j][k];
 					if(ed.cap>0 && pot[ed.next]>pot[j]+ed.cost) {
 						if(i == vnum-1) return -inf;
 						pot[ed.next] = pot[j]+ed.cost;
+						pv[ed.next] = j;
+						pe[ed.next] = k;
 					}
 				}
 			}
@@ -77,7 +82,6 @@ public:
 			for(int i=0; i<G[v].size(); i++) {
 				edge &ed = G[v][i];
 				long long nd = d+ed.cost+pot[v]-pot[ed.next];
-				cout<<v<<" "<<ed.next<<" "<<nd<<endl;
 				if(ed.cap>0 && dist[ed.next]>nd) {
 					dist[ed.next] = nd;
 					pv[ed.next] = v;
@@ -87,12 +91,14 @@ public:
 			}
 		}
 
-		for(int v=0; v<vnum; v++) {
-			if(dist[v] == inf) pot[v] = inf;
-			else pot[v] += dist[v];
-		}
+		if(dist[t] == inf) return inf;
 
-		return dist[t];
+		ans = dist[t]+pot[t];
+		for(int v=0; v<vnum; v++) {
+			if(dist[v] == inf) continue;
+			pot[v] += dist[v];
+		}
+		return ans;
 	}
 
 public:
