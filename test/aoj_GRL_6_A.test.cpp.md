@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: graph/maxflow.cpp
-    title: graph/maxflow.cpp
+    title: "maxflow(\u6700\u5927\u6D41)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp

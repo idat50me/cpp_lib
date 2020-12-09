@@ -56,8 +56,17 @@ data:
   - test/aoj_GRL_6_A.test.cpp
 documentation_of: graph/maxflow.cpp
 layout: document
-redirect_from:
-- /library/graph/maxflow.cpp
-- /library/graph/maxflow.cpp.html
-title: graph/maxflow.cpp
+title: "maxflow(\u6700\u5927\u6D41)"
 ---
+
+## なにこれ
+これからかきます
+
+## 制約
+
+
+## コンストラクタ
+
+
+## メンバ関数
+

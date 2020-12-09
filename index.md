@@ -16,10 +16,13 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: graph/maxflow.cpp
-      title: graph/maxflow.cpp
+      title: "maxflow(\u6700\u5927\u6D41)"
     - icon: ':heavy_check_mark:'
       path: graph/mincostflow.cpp
       title: graph/mincostflow.cpp
+    - icon: ':heavy_check_mark:'
+      path: graph/mincostflow_nega.cpp
+      title: graph/mincostflow_nega.cpp
     - icon: ':heavy_check_mark:'
       path: graph/segtree.cpp
       title: "segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
@@ -105,6 +108,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj_GRL_6_B.test.cpp
       title: test/aoj_GRL_6_B.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj_GRL_6_B_2.test.cpp
+      title: test/aoj_GRL_6_B_2.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj_ITP1_6_B.test.cpp
       title: test/aoj_ITP1_6_B.test.cpp
