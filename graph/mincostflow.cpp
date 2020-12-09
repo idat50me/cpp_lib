@@ -34,7 +34,7 @@ public:
 		G[to].push_back(edge(from, G[from].size()-1, 0, -cost));
 	}
 
-//private:
+private:
 	long long bellman_ford(int s, int t, int &f) {
 		pot.assign(vnum, inf);
 		pv.assign(vnum, -1);
