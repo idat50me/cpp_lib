@@ -27,15 +27,45 @@ private:
 	vector<int> pv, pe;
 
 public:
-	mincostflow(int N) : vnum(N), G(N), pot(N,0), pv(N), pe(N) {}
+	mincostflow(int N) : vnum(N), G(N), pot(N), pv(N), pe(N) {}
 
 	void add(int from, int to, long long cap, long long cost) {
-		assert(cost >= 0);
 		G[from].push_back(edge(to, G[to].size(), cap, cost));
 		G[to].push_back(edge(from, G[from].size()-1, 0, -cost));
 	}
 
 private:
+	long long bellman_ford(int s, int t, int &f) {
+		pot.assign(vnum, inf);
+		pv.assign(vnum, -1);
+		pe.assign(vnum, -1);
+		pot[s] = 0;
+		for(int i=0; i<vnum; i++) {
+			for(int j=0; j<vnum; j++) {
+				if(pot[j] == inf) continue;
+				for(int k=0; k<G[j].size(); k++) {
+					const edge &ed = G[j][k];
+					if(ed.cap>0 && pot[ed.next]>pot[j]+ed.cost) {
+						if(i == vnum-1) return -inf;
+						pot[ed.next] = pot[j]+ed.cost;
+						pv[ed.next] = j;
+						pe[ed.next] = k;
+					}
+				}
+			}
+		}
+
+		int add_f = f;
+		for(int v=t; v!=s; v=pv[v]) add_f = min((long long)add_f, G[pv[v]][pe[v]].cap);
+		f -= add_f;
+		for(int v=t; v!=s; v=pv[v]) {
+			edge &ed = G[pv[v]][pe[v]];
+			ed.cap -= add_f;
+			G[v][ed.rev].cap += add_f;
+		}
+		return pot[t]*add_f;
+	}
+
 	long long dijkstra(int s, int t) {
 		long long ans = 0;
 		priority_queue<pair<long long,int>, vector<pair<long long,int>>, greater<pair<long long,int>>> q;
@@ -72,9 +102,10 @@ private:
 	}
 
 public:
-	// inf: 未到達
+	// -inf: 負閉路検出  inf: 未到達
 	long long solve(int s, int t, int f) {
-		long long res = 0;
+		long long res = bellman_ford(s, t, f);
+		if(abs(res) == inf) return res;
 
 		while(f > 0) {
 			long long restmp = dijkstra(s, t);
