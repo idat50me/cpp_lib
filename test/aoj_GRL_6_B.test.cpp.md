@@ -26,11 +26,11 @@ data:
     \n\r\npublic:\r\n\tmincostflow(int N) : vnum(N), G(N), pot(N), pv(N), pe(N) {}\r\
     \n\r\n\tvoid add(int from, int to, long long cap, long long cost) {\r\n\t\tG[from].push_back(edge(to,\
     \ G[to].size(), cap, cost));\r\n\t\tG[to].push_back(edge(from, G[from].size()-1,\
-    \ 0, -cost));\r\n\t}\r\n\r\n//private:\r\n\tlong long bellman_ford(int s, int\
-    \ t, int &f) {\r\n\t\tpot.assign(vnum, inf);\r\n\t\tpv.assign(vnum, -1);\r\n\t\
-    \tpe.assign(vnum, -1);\r\n\t\tpot[s] = 0;\r\n\t\tfor(int i=0; i<vnum; i++) {\r\
-    \n\t\t\tfor(int j=0; j<vnum; j++) {\r\n\t\t\t\tif(pot[j] == inf) continue;\r\n\
-    \t\t\t\tfor(int k=0; k<G[j].size(); k++) {\r\n\t\t\t\t\tconst edge &ed = G[j][k];\r\
+    \ 0, -cost));\r\n\t}\r\n\r\nprivate:\r\n\tlong long bellman_ford(int s, int t,\
+    \ int &f) {\r\n\t\tpot.assign(vnum, inf);\r\n\t\tpv.assign(vnum, -1);\r\n\t\t\
+    pe.assign(vnum, -1);\r\n\t\tpot[s] = 0;\r\n\t\tfor(int i=0; i<vnum; i++) {\r\n\
+    \t\t\tfor(int j=0; j<vnum; j++) {\r\n\t\t\t\tif(pot[j] == inf) continue;\r\n\t\
+    \t\t\tfor(int k=0; k<G[j].size(); k++) {\r\n\t\t\t\t\tconst edge &ed = G[j][k];\r\
     \n\t\t\t\t\tif(ed.cap>0 && pot[ed.next]>pot[j]+ed.cost) {\r\n\t\t\t\t\t\tif(i\
     \ == vnum-1) return -inf;\r\n\t\t\t\t\t\tpot[ed.next] = pot[j]+ed.cost;\r\n\t\t\
     \t\t\t\tpv[ed.next] = j;\r\n\t\t\t\t\t\tpe[ed.next] = k;\r\n\t\t\t\t\t}\r\n\t\t\
@@ -76,7 +76,7 @@ data:
   isVerificationFile: true
   path: test/aoj_GRL_6_B.test.cpp
   requiredBy: []
-  timestamp: '2020-12-10 00:54:37+09:00'
+  timestamp: '2020-12-10 01:05:18+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_GRL_6_B.test.cpp
