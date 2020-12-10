@@ -65,8 +65,8 @@ private:
 
 		ans = dist[t]+pot[t];
 		for(int v=0; v<vnum; v++) {
-			if(dist[v] == inf) continue;
-			pot[v] += dist[v];
+			if(dist[v] == inf) pot[v] = inf;
+			else pot[v] += dist[v];
 		}
 		return ans;
 	}
