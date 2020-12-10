@@ -8,6 +8,7 @@ documentation_of: ../maxflow.cpp
 
 
 ## コンストラクタ
+
 ```cpp
 maxflow(int V);
 ```
@@ -21,7 +22,7 @@ maxflow(int V);
 
 
 ## メンバ関数
-### add
+
 ```cpp
 void add(int from, int to, long long cap);
 ```
@@ -33,7 +34,7 @@ void add(int from, int to, long long cap);
 #### 計算量
 - ならし $O(1)$
 
-### solve
+
 ```cpp
 long long solve(int s, int t);
 ```
