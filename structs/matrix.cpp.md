@@ -9,6 +9,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj_ITP1_6_B.test.cpp
     title: test/aoj_ITP1_6_B.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yuki_0177.test.cpp
+    title: test/yuki_0177.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -48,6 +51,7 @@ data:
   timestamp: '2020-11-16 10:57:59+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/yuki_0177.test.cpp
   - test/aoj_ITP1_6_B.test.cpp
   - test/aoj_0341.test.cpp
 documentation_of: structs/matrix.cpp

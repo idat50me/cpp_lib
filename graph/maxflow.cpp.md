@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj_GRL_6_A.test.cpp
     title: test/aoj_GRL_6_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yuki_0177.test.cpp
+    title: test/yuki_0177.test.cpp
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -54,6 +57,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_GRL_6_A.test.cpp
+  - test/yuki_0177.test.cpp
 documentation_of: graph/maxflow.cpp
 layout: document
 title: "maxflow(\u6700\u5927\u6D41)"
