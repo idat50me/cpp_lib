@@ -48,11 +48,11 @@ private:
 
 public:
 	long long solve(int s, int t) {
-		long long res = 0;
-		while(1) {
-			long long restmp = dfs(s, t, (1LL<<62)-1);
-			if(restmp == 0) return res;
+		long long res = 0, restmp;
+		while((restmp = dfs(s, t, (1LL<<62)-1)) > 0) {
 			res += restmp;
+			ts++;
 		}
+		return res;
 	}
 };
