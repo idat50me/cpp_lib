@@ -21,7 +21,7 @@ private:
 	vector<bool> used;
 
 public:
-	maxflow(int N) : vnum(N), G(N), used(N) {}
+	maxflow(int V) : vnum(V), G(V), used(V) {}
 
 	void add(int from, int to, long long cap) {
 		G[from].push_back(edge(to, G[to].size(), cap));
