@@ -19,7 +19,7 @@ data:
     int rev;\r\n\t\tlong long cap;\r\n\t\t\r\n\t\tedge(int next, int rev, long long\
     \ cap) : next(next), rev(rev), cap(cap) {}\r\n\t};\r\n\r\n\tconst int vnum;\r\n\
     \tvector<vector<edge>> G;\r\n\tvector<bool> used;\r\n\r\npublic:\r\n\tmaxflow(int\
-    \ N) : vnum(N), G(N), used(N) {}\r\n\r\n\tvoid add(int from, int to, long long\
+    \ V) : vnum(V), G(V), used(V) {}\r\n\r\n\tvoid add(int from, int to, long long\
     \ cap) {\r\n\t\tG[from].push_back(edge(to, G[to].size(), cap));\r\n\t\tG[to].push_back(edge(from,\
     \ G[from].size()-1, 0));\r\n\t}\r\n\r\nprivate:\r\n\tlong long dfs(int s, int\
     \ t, long long flow) {\r\n\t\tif(s == t) return flow;\r\n\t\tused[s] = true;\r\
@@ -36,7 +36,7 @@ data:
     private:\r\n\tstruct edge {\r\n\t\tint next;\r\n\t\tint rev;\r\n\t\tlong long\
     \ cap;\r\n\t\t\r\n\t\tedge(int next, int rev, long long cap) : next(next), rev(rev),\
     \ cap(cap) {}\r\n\t};\r\n\r\n\tconst int vnum;\r\n\tvector<vector<edge>> G;\r\n\
-    \tvector<bool> used;\r\n\r\npublic:\r\n\tmaxflow(int N) : vnum(N), G(N), used(N)\
+    \tvector<bool> used;\r\n\r\npublic:\r\n\tmaxflow(int V) : vnum(V), G(V), used(V)\
     \ {}\r\n\r\n\tvoid add(int from, int to, long long cap) {\r\n\t\tG[from].push_back(edge(to,\
     \ G[to].size(), cap));\r\n\t\tG[to].push_back(edge(from, G[from].size()-1, 0));\r\
     \n\t}\r\n\r\nprivate:\r\n\tlong long dfs(int s, int t, long long flow) {\r\n\t\
@@ -53,7 +53,7 @@ data:
   isVerificationFile: false
   path: graph/maxflow.cpp
   requiredBy: []
-  timestamp: '2020-12-09 02:14:06+09:00'
+  timestamp: '2020-12-10 17:55:53+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_GRL_6_A.test.cpp
@@ -64,13 +64,17 @@ title: "maxflow(\u6700\u5927\u6D41)"
 ---
 
 ## なにこれ
-これからかきます
+各辺に容量が設定される有向グラフ $G=(V,E)$ 中で，始点から終点まで流せる最大量を求める．
 
 ## 制約
-
+- $V \leq 10^8$ 程度
 
 ## コンストラクタ
-
+- `maxflow(int V)`：計算量 $O(V)$  
+	- `V`：頂点数
 
 ## メンバ関数
-
+- add
+```cpp
+void add(int from, int to, long long cap);
+```
