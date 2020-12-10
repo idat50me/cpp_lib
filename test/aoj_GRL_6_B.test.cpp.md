@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/mincostflow.cpp
     title: graph/mincostflow.cpp
   _extendedRequiredBy: []
