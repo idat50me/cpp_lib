@@ -6,8 +6,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj_GRL_6_B.test.cpp
     title: test/aoj_GRL_6_B.test.cpp
+  - icon: ':x:'
+    path: test/yuki_1301.test.cpp
+    title: test/yuki_1301.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"graph/mincostflow.cpp\"\n\r\n#ifndef call_include\r\n#define\
@@ -32,10 +35,10 @@ data:
     \ {\r\n\t\t\t\t\tdist[ed.next] = nd;\r\n\t\t\t\t\tpv[ed.next] = v;\r\n\t\t\t\t\
     \tpe[ed.next] = i;\r\n\t\t\t\t\tq.push(make_pair(nd,ed.next));\r\n\t\t\t\t}\r\n\
     \t\t\t}\r\n\t\t}\r\n\r\n\t\tif(dist[t] == inf) return inf;\r\n\r\n\t\tans = dist[t]+pot[t];\r\
-    \n\t\tfor(int v=0; v<vnum; v++) {\r\n\t\t\tif(dist[v] == inf) continue;\r\n\t\t\
-    \tpot[v] += dist[v];\r\n\t\t}\r\n\t\treturn ans;\r\n\t}\r\n\r\npublic:\r\n\t//\
-    \ inf: \u672A\u5230\u9054\r\n\tlong long solve(int s, int t, int f) {\r\n\t\t\
-    long long res = 0;\r\n\r\n\t\twhile(f > 0) {\r\n\t\t\tlong long restmp = dijkstra(s,\
+    \n\t\tfor(int v=0; v<vnum; v++) {\r\n\t\t\tif(dist[v] == inf) pot[v] = inf;\r\n\
+    \t\t\telse pot[v] += dist[v];\r\n\t\t}\r\n\t\treturn ans;\r\n\t}\r\n\r\npublic:\r\
+    \n\t// inf: \u672A\u5230\u9054\r\n\tlong long solve(int s, int t, int f) {\r\n\
+    \t\tlong long res = 0;\r\n\r\n\t\twhile(f > 0) {\r\n\t\t\tlong long restmp = dijkstra(s,\
     \ t);\r\n\t\t\tint add_f = f;\r\n\t\t\tif(restmp == inf) return inf;\r\n\t\t\t\
     for(int v=t; v!=s; v=pv[v]) add_f = min((long long)add_f, G[pv[v]][pe[v]].cap);\r\
     \n\t\t\tf -= add_f;\r\n\t\t\tres += restmp*add_f;\r\n\t\t\tfor(int v=t; v!=s;\
@@ -64,10 +67,10 @@ data:
     \ {\r\n\t\t\t\t\tdist[ed.next] = nd;\r\n\t\t\t\t\tpv[ed.next] = v;\r\n\t\t\t\t\
     \tpe[ed.next] = i;\r\n\t\t\t\t\tq.push(make_pair(nd,ed.next));\r\n\t\t\t\t}\r\n\
     \t\t\t}\r\n\t\t}\r\n\r\n\t\tif(dist[t] == inf) return inf;\r\n\r\n\t\tans = dist[t]+pot[t];\r\
-    \n\t\tfor(int v=0; v<vnum; v++) {\r\n\t\t\tif(dist[v] == inf) continue;\r\n\t\t\
-    \tpot[v] += dist[v];\r\n\t\t}\r\n\t\treturn ans;\r\n\t}\r\n\r\npublic:\r\n\t//\
-    \ inf: \u672A\u5230\u9054\r\n\tlong long solve(int s, int t, int f) {\r\n\t\t\
-    long long res = 0;\r\n\r\n\t\twhile(f > 0) {\r\n\t\t\tlong long restmp = dijkstra(s,\
+    \n\t\tfor(int v=0; v<vnum; v++) {\r\n\t\t\tif(dist[v] == inf) pot[v] = inf;\r\n\
+    \t\t\telse pot[v] += dist[v];\r\n\t\t}\r\n\t\treturn ans;\r\n\t}\r\n\r\npublic:\r\
+    \n\t// inf: \u672A\u5230\u9054\r\n\tlong long solve(int s, int t, int f) {\r\n\
+    \t\tlong long res = 0;\r\n\r\n\t\twhile(f > 0) {\r\n\t\t\tlong long restmp = dijkstra(s,\
     \ t);\r\n\t\t\tint add_f = f;\r\n\t\t\tif(restmp == inf) return inf;\r\n\t\t\t\
     for(int v=t; v!=s; v=pv[v]) add_f = min((long long)add_f, G[pv[v]][pe[v]].cap);\r\
     \n\t\t\tf -= add_f;\r\n\t\t\tres += restmp*add_f;\r\n\t\t\tfor(int v=t; v!=s;\
@@ -78,10 +81,11 @@ data:
   isVerificationFile: false
   path: graph/mincostflow.cpp
   requiredBy: []
-  timestamp: '2020-12-10 01:29:20+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-12-10 10:38:50+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj_GRL_6_B.test.cpp
+  - test/yuki_1301.test.cpp
 documentation_of: graph/mincostflow.cpp
 layout: document
 redirect_from:
