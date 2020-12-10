@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: graph/maxflow.cpp
     title: "maxflow(\u6700\u5927\u6D41)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/6/GRL_6_A
@@ -30,10 +30,10 @@ data:
     \ t, min(flow,ed.cap));\r\n\t\t\t\tif(captmp > 0) {\r\n\t\t\t\t\ted.cap -= captmp;\r\
     \n\t\t\t\t\tG[ed.next][ed.rev].cap += captmp;\r\n\t\t\t\t\treturn captmp;\r\n\t\
     \t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn 0LL;\r\n\t}\r\n\r\npublic:\r\n\tlong\
-    \ long solve(int s, int t) {\r\n\t\tlong long res = 0;\r\n\t\twhile(1) {\r\n\t\
-    \t\tlong long restmp = dfs(s, t, (1LL<<62)-1);\r\n\t\t\tif(restmp == 0) return\
-    \ res;\r\n\t\t\tres += restmp;\r\n\t\t}\r\n\t}\r\n};\r\n#line 10 \"test/aoj_GRL_6_A.test.cpp\"\
-    \n\r\nint main() {\r\n\tint V,E; cin>>V>>E;\r\n\tmaxflow mf(V);\r\n\tfor(int i=0;\
+    \ long solve(int s, int t) {\r\n\t\tlong long res = 0, restmp;\r\n\t\twhile((restmp\
+    \ = dfs(s, t, (1LL<<62)-1)) > 0) {\r\n\t\t\tres += restmp;\r\n\t\t\tts++;\r\n\t\
+    \t}\r\n\t\treturn res;\r\n\t}\r\n};\r\n#line 10 \"test/aoj_GRL_6_A.test.cpp\"\n\
+    \r\nint main() {\r\n\tint V,E; cin>>V>>E;\r\n\tmaxflow mf(V);\r\n\tfor(int i=0;\
     \ i<E; i++) {\r\n\t\tint u,v,c; cin>>u>>v>>c;\r\n\t\tmf.add(u,v,c);\r\n\t}\r\n\
     \r\n\tcout<<mf.solve(0,V-1)<<endl;\r\n}\r\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/6/GRL_6_A\"\
@@ -47,8 +47,8 @@ data:
   isVerificationFile: true
   path: test/aoj_GRL_6_A.test.cpp
   requiredBy: []
-  timestamp: '2020-12-11 02:16:40+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-12-11 02:19:58+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_GRL_6_A.test.cpp
 layout: document

@@ -3,14 +3,14 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj_GRL_6_A.test.cpp
     title: test/aoj_GRL_6_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yuki_0177.test.cpp
     title: test/yuki_0177.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"graph/maxflow.cpp\"\n\r\n#ifndef call_include\r\n#define\
@@ -28,9 +28,9 @@ data:
     \n\t\t\t\tif(captmp > 0) {\r\n\t\t\t\t\ted.cap -= captmp;\r\n\t\t\t\t\tG[ed.next][ed.rev].cap\
     \ += captmp;\r\n\t\t\t\t\treturn captmp;\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t\
     \treturn 0LL;\r\n\t}\r\n\r\npublic:\r\n\tlong long solve(int s, int t) {\r\n\t\
-    \tlong long res = 0;\r\n\t\twhile(1) {\r\n\t\t\tlong long restmp = dfs(s, t, (1LL<<62)-1);\r\
-    \n\t\t\tif(restmp == 0) return res;\r\n\t\t\tres += restmp;\r\n\t\t}\r\n\t}\r\n\
-    };\r\n"
+    \tlong long res = 0, restmp;\r\n\t\twhile((restmp = dfs(s, t, (1LL<<62)-1)) >\
+    \ 0) {\r\n\t\t\tres += restmp;\r\n\t\t\tts++;\r\n\t\t}\r\n\t\treturn res;\r\n\t\
+    }\r\n};\r\n"
   code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
     \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\nstruct maxflow {\r\n\
     private:\r\n\tstruct edge {\r\n\t\tint next;\r\n\t\tint rev;\r\n\t\tlong long\
@@ -46,15 +46,15 @@ data:
     \ > 0) {\r\n\t\t\t\t\ted.cap -= captmp;\r\n\t\t\t\t\tG[ed.next][ed.rev].cap +=\
     \ captmp;\r\n\t\t\t\t\treturn captmp;\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t\t\
     return 0LL;\r\n\t}\r\n\r\npublic:\r\n\tlong long solve(int s, int t) {\r\n\t\t\
-    long long res = 0;\r\n\t\twhile(1) {\r\n\t\t\tlong long restmp = dfs(s, t, (1LL<<62)-1);\r\
-    \n\t\t\tif(restmp == 0) return res;\r\n\t\t\tres += restmp;\r\n\t\t}\r\n\t}\r\n\
-    };\r\n"
+    long long res = 0, restmp;\r\n\t\twhile((restmp = dfs(s, t, (1LL<<62)-1)) > 0)\
+    \ {\r\n\t\t\tres += restmp;\r\n\t\t\tts++;\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\
+    \n};\r\n"
   dependsOn: []
   isVerificationFile: false
   path: graph/maxflow.cpp
   requiredBy: []
-  timestamp: '2020-12-11 02:16:40+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2020-12-11 02:19:58+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_GRL_6_A.test.cpp
   - test/yuki_0177.test.cpp
