@@ -10,7 +10,7 @@ using namespace std;
 
 int main() {
 	int N,M; cin>>N>>M;
-	mincostflow mcf(N);
+	mincostflow mcf(N+1);
 	for(int i=0; i<M; i++) {
 		int u,v,c,d; cin>>u>>v>>c>>d;
 		mcf.add(u,v,1,c);
