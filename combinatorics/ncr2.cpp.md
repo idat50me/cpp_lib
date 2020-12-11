@@ -16,38 +16,38 @@ data:
   bundledCode: "#line 2 \"combinatorics/ncr2.cpp\"\n\r\n#ifndef call_include\r\n#define\
     \ call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\
     \n\r\nstruct NCR {\r\nprivate:\r\n\tvector<long long> comb, inv, finv;\r\n\tlong\
-    \ long P;\r\n\r\n\tvoid calc_inv(long long r) {\r\n\t\tinv.resize(r+1);\r\n\t\t\
-    finv.resize(r+1);\r\n\t\tinv[1] = finv[0] = finv[1]=1LL;\r\n\t\tfor(int i=2; i<=r;\
-    \ i++) {\r\n\t\t\tinv[i] = P-inv[P%i]*(P/i)%P;\r\n\t\t\tfinv[i] = finv[i-1]*inv[i]%P;\r\
-    \n\t\t}\r\n\t}\r\n\r\npublic:\r\n\tNCR(long long n, long long r, long long p)\
-    \ {\r\n\t\tif(n/2 < r) r = n/2;\r\n\t\tP=p;\r\n\t\tcalc_inv(r);\r\n\r\n\t\tcomb.resize(r+1);\r\
-    \n\t\tcomb[0]=1;\r\n\t\tfor(int i=1; i<=r; i++) {\r\n\t\t\tcomb[i] = comb[i-1]*(n-i+1)%P*inv[i]%P;\r\
-    \n\t\t}\r\n\t}\r\n\r\n\tNCR(long long r, long long p) {\r\n\t\tP=p;\r\n\t\tcalc_inv(r);\r\
-    \n\t}\r\n\r\n\tlong long calc(long long n, long long r) {\r\n\t\tassert(r >= 0);\r\
-    \n\t\tif(r > n) return 0;\r\n\t\tif(r > n/2) r = n-r;\r\n\t\tif(comb.size() >\
-    \ 0)\r\n\t\t\treturn comb[r];\r\n\t\telse {\r\n\t\t\tlong long f=1;\r\n\t\t\t\
-    for(long long i=n; i>n-r; i--) (f*=i) %= P;\r\n\t\t\treturn f*finv[r]%P;\r\n\t\
-    \t}\r\n\t}\r\n};\r\n"
+    \ long P;\r\n\r\n\tvoid calc_inv(long long r) {\r\n\t\tinv[1] = finv[0] = finv[1]\
+    \ = 1LL;\r\n\t\tfor(int i=2; i<=r; i++) {\r\n\t\t\tinv[i] = P-inv[P%i]*(P/i)%P;\r\
+    \n\t\t\tfinv[i] = finv[i-1]*inv[i]%P;\r\n\t\t}\r\n\t}\r\n\r\npublic:\r\n\tNCR(long\
+    \ long n, long long r, long long p) : comb(n+1), inv(r+1), finv(r+1), P(p) {\r\
+    \n\t\tif(n/2 < r) r = n/2;\r\n\t\tcalc_inv(r);\r\n\r\n\t\tcomb[0] = 1;\r\n\t\t\
+    for(int i=1; i<=r; i++) {\r\n\t\t\tcomb[i] = comb[i-1]*(n-i+1)%P*inv[i]%P;\r\n\
+    \t\t}\r\n\t}\r\n\r\n\tNCR(long long r, long long p) : inv(r+1), finv(r+1), P(p)\
+    \ {\r\n\t\tcalc_inv(r);\r\n\t}\r\n\r\n\tlong long calc(long long n, long long\
+    \ r) {\r\n\t\tassert(r >= 0);\r\n\t\tif(r > n) return 0;\r\n\t\tif(r > n/2) r\
+    \ = n-r;\r\n\t\tif(comb.size() > 0)\r\n\t\t\treturn comb[r];\r\n\t\telse {\r\n\
+    \t\t\tlong long f=1;\r\n\t\t\tfor(long long i=n; i>n-r; i--) (f*=i) %= P;\r\n\t\
+    \t\treturn f*finv[r]%P;\r\n\t\t}\r\n\t}\r\n};\r\n"
   code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
     \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\nstruct NCR {\r\nprivate:\r\
     \n\tvector<long long> comb, inv, finv;\r\n\tlong long P;\r\n\r\n\tvoid calc_inv(long\
-    \ long r) {\r\n\t\tinv.resize(r+1);\r\n\t\tfinv.resize(r+1);\r\n\t\tinv[1] = finv[0]\
-    \ = finv[1]=1LL;\r\n\t\tfor(int i=2; i<=r; i++) {\r\n\t\t\tinv[i] = P-inv[P%i]*(P/i)%P;\r\
-    \n\t\t\tfinv[i] = finv[i-1]*inv[i]%P;\r\n\t\t}\r\n\t}\r\n\r\npublic:\r\n\tNCR(long\
-    \ long n, long long r, long long p) {\r\n\t\tif(n/2 < r) r = n/2;\r\n\t\tP=p;\r\
-    \n\t\tcalc_inv(r);\r\n\r\n\t\tcomb.resize(r+1);\r\n\t\tcomb[0]=1;\r\n\t\tfor(int\
-    \ i=1; i<=r; i++) {\r\n\t\t\tcomb[i] = comb[i-1]*(n-i+1)%P*inv[i]%P;\r\n\t\t}\r\
-    \n\t}\r\n\r\n\tNCR(long long r, long long p) {\r\n\t\tP=p;\r\n\t\tcalc_inv(r);\r\
-    \n\t}\r\n\r\n\tlong long calc(long long n, long long r) {\r\n\t\tassert(r >= 0);\r\
-    \n\t\tif(r > n) return 0;\r\n\t\tif(r > n/2) r = n-r;\r\n\t\tif(comb.size() >\
-    \ 0)\r\n\t\t\treturn comb[r];\r\n\t\telse {\r\n\t\t\tlong long f=1;\r\n\t\t\t\
-    for(long long i=n; i>n-r; i--) (f*=i) %= P;\r\n\t\t\treturn f*finv[r]%P;\r\n\t\
-    \t}\r\n\t}\r\n};\r\n"
+    \ long r) {\r\n\t\tinv[1] = finv[0] = finv[1] = 1LL;\r\n\t\tfor(int i=2; i<=r;\
+    \ i++) {\r\n\t\t\tinv[i] = P-inv[P%i]*(P/i)%P;\r\n\t\t\tfinv[i] = finv[i-1]*inv[i]%P;\r\
+    \n\t\t}\r\n\t}\r\n\r\npublic:\r\n\tNCR(long long n, long long r, long long p)\
+    \ : comb(n+1), inv(r+1), finv(r+1), P(p) {\r\n\t\tif(n/2 < r) r = n/2;\r\n\t\t\
+    calc_inv(r);\r\n\r\n\t\tcomb[0] = 1;\r\n\t\tfor(int i=1; i<=r; i++) {\r\n\t\t\t\
+    comb[i] = comb[i-1]*(n-i+1)%P*inv[i]%P;\r\n\t\t}\r\n\t}\r\n\r\n\tNCR(long long\
+    \ r, long long p) : inv(r+1), finv(r+1), P(p) {\r\n\t\tcalc_inv(r);\r\n\t}\r\n\
+    \r\n\tlong long calc(long long n, long long r) {\r\n\t\tassert(r >= 0);\r\n\t\t\
+    if(r > n) return 0;\r\n\t\tif(r > n/2) r = n-r;\r\n\t\tif(comb.size() > 0)\r\n\
+    \t\t\treturn comb[r];\r\n\t\telse {\r\n\t\t\tlong long f=1;\r\n\t\t\tfor(long\
+    \ long i=n; i>n-r; i--) (f*=i) %= P;\r\n\t\t\treturn f*finv[r]%P;\r\n\t\t}\r\n\
+    \t}\r\n};\r\n"
   dependsOn: []
   isVerificationFile: false
   path: combinatorics/ncr2.cpp
   requiredBy: []
-  timestamp: '2020-11-16 10:57:59+09:00'
+  timestamp: '2020-12-11 23:39:25+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_DPL_5_E_2.test.cpp
@@ -61,25 +61,18 @@ title: "nCr mod p ($r \\leq 10^7$, \u30AF\u30A8\u30EA $O(1)$ or $O(r)$)"
 ${}_nC_r\ (\mathrm{mod}\ p)$ を求める．
 計算量が $r$ 依存．
 
-## 制約
-- $n \leq 10^9$ 程度
-- $r \leq 10^7$ 程度
-- $p$ は素数
-
 ## コンストラクタ
-- `NCR(n, r, p)`：計算量 $O(r)$  
-	$n$ が固定値のとき使う．
-	- `n`：固定値 $n$
-	- `r`：$r$ の最大値．
-	- `p`：値の法．
+- `NCR(n, r, p)`：$n$ の最大値を `n`，$r$ の最大値を `r`，法を `p` とする．
+- `NCR(r, p)`：$r$ の最大値を `r`，法を `p` とする．
 
-- `NCR(r, p)`：計算量 $O(r)$  
-	$n$ が不定値のとき使う．
-	- `r`：$r$ の最大値．
-	- `p`：値の法．
-
+$n \leq 10^9$，$r \leq 10^7$ 程度．$p$ は素数．
 
 ## メンバ関数
 - `calc(n, r)`：計算量 $O(1)$ or $O(r)$  
 	${}_nC_r$ を求める．  
 	$n$ が固定値のときは $O(1)$，不定値のときは $O(r)$
+
+## 計算量
+- `NCR(n, r, p)`：$O(r)$
+- `NCR(r, p)`：$O(r)$
+- `calc(n, r)`：$n$ の最大値が既知の場合 $O(1)$，未知の場合 $O(r)$
