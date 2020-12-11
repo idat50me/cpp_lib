@@ -8,14 +8,6 @@ using namespace std;
 
 #include "graph/segtree.cpp"
 
-int op(int l, int r) {
-	return min(l,r);
-}
-
-int e() {
-	return numeric_limits<int>::max();
-}
-
 int main() {
 	int N,Q;
 	vector<int> v;
@@ -23,7 +15,7 @@ int main() {
 	cin>>N>>Q;
 	v.resize(N);
 	for(int i=0; i<N; i++) cin>>v[i];
-	segtree<int, op, e> tree(v);
+	segtree tree(v, [](int l, int r){return min(l,r);}, numeric_limits<int>::max());
 
 	for(int i=0; i<Q; i++) {
 		int l,r; cin>>l>>r;

@@ -6,23 +6,20 @@
 using namespace std;
 #endif
 
-template<typename T, T (*op)(T,T), T (*e)()>
+template<typename T, typename F>
 struct segtree {
 private:
 	int siz=1, N;
 	vector<T> node;
-	const T e_ = e();
+	const F op;
+	const T e_;
 
 public:
-	segtree(int n, T init) {
-		N = n;
+	segtree(int n, const F func, const T e) : N(n), op(func), e_(e) {
 		while(siz < N) siz *= 2;
 		node.resize(2*siz-1, e_);
-		for(int i=0; i<N; i++) node[siz-1+i] = init;
-		for(int i=siz-2; i>=0; i--) node[i] = op(node[2*i+1], node[2*i+2]);
 	}
-	segtree(vector<T> v) {
-		N = v.size();
+	segtree(vector<T> v, const F func, const T e) : N(v.size()), op(func), e_(e) {
 		while(siz < N) siz *= 2;
 		node.resize(2*siz-1, e_);
 		for(int i=0; i<N; i++) node[siz-1+i] = v[i];
@@ -40,11 +37,13 @@ public:
 	}
 
 	T get(int idx) {
+		assert(0<=idx && idx<N);
 		return get(idx, idx+1);
 	}
 	T get(int L, int R) {
 		if(L < 0) L = 0;
 		if(R > N) R = N;
+		assert(L < R);
 		return get__(L, R, 0, 0, siz);
 	}
 private:

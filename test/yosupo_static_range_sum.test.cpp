@@ -9,19 +9,11 @@ using namespace std;
 #include "graph/segtree.cpp"
 using ll = long long;
 
-ll sum_op(ll a, ll b) {
-	return a+b;
-}
-
-ll e() {
-	return 0LL;
-}
-
 int main() {
 	int N,Q; cin>>N>>Q;
 	vector<ll> v(N);
 	for(int i=0; i<N; i++) cin>>v[i];
-	segtree<ll,sum_op,e> tree(v);
+	segtree tree(v, [](ll a, ll b) { return a+b; }, 0LL);
 
 	for(int i=0; i<Q; i++) {
 		int l,r; cin>>l>>r;
