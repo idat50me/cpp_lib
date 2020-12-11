@@ -6,31 +6,22 @@ documentation_of: ../segtree.cpp
 ## なにこれ
 区間取得・一点更新可能な要素数 $n$ のセグメント木．
 
-## 制約
-- $n \leq 10^8$ 程度
-
-## テンプレート引数
-- `op`：二項演算の結果を返す関数．
-- `e`：単位元を返す関数．
-
 ## コンストラクタ
-- `segtree(n, init)`：計算量 $O(n)$
-	- `n`：要素数．
-	- `init`：初期値．
+- `segtree(n, func, e)`：要素数 `n` のセグメント木を構築する．
+- `segtree(v, func, e)`：配列 `v` の要素を持つセグメント木を構築する．
 
-- `segtree(v)`
-	- `v`：初期要素を格納している配列．
+`func` は二項演算の関数，`e` は単位元．$n \leq 10^8$ 程度．
 
 ## メンバ関数
-- `update(idx, val)`：計算量 $O(\log n)$  
-	要素を更新する．
-	- `idx`：更新する要素の index
-	- `val`：更新後の要素の値．
+- `update(idx, val)`：`idx` 番目の要素を値 `val` に更新する．
+- `get(idx)`：`idx` 番目の要素を返す．
+- `get(L, R)`：区間 `[L, R)` の二項演算の結果を返す．
 
-- `get(idx)`：計算量 $O(\log n)$  
-	指定した index の要素を返す．
-	- `idx`：取得する要素の index
+`idx`, `L`, `R` は 0-indexed である．
 
-- `get(L, R)`：計算量 $O(\log n)$  
-	指定区間の二項演算の結果を返す．
-	- `L,R`：`[L,R)`を探索区間とする．
+## 計算量
+- `segtree(n, func, e)`：$O(n)$
+- `segtree(v, func, e)`：$O(n)$
+- `update(idx, val)`：$O(\log n)$
+- `get(idx)`：$O(\log n)$
+- `get(L, R)`：$O(\log n)$

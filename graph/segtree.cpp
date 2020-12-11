@@ -19,7 +19,7 @@ public:
 		while(siz < N) siz *= 2;
 		node.resize(2*siz-1, e_);
 	}
-	segtree(vector<T> v, const F func, const T e) : N(v.size()), op(func), e_(e) {
+	segtree(const vector<T> &v, const F func, const T e) : N(v.size()), op(func), e_(e) {
 		while(siz < N) siz *= 2;
 		node.resize(2*siz-1, e_);
 		for(int i=0; i<N; i++) node[siz-1+i] = v[i];
