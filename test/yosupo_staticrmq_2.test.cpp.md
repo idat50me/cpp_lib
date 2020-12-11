@@ -21,7 +21,7 @@ data:
     \nprivate:\r\n\tint siz=1, N;\r\n\tvector<T> node;\r\n\tconst F op;\r\n\tconst\
     \ T e_;\r\n\r\npublic:\r\n\tsegtree(int n, const F func, const T e) : N(n), op(func),\
     \ e_(e) {\r\n\t\twhile(siz < N) siz *= 2;\r\n\t\tnode.resize(2*siz-1, e_);\r\n\
-    \t}\r\n\tsegtree(vector<T> v, const F func, const T e) : N(v.size()), op(func),\
+    \t}\r\n\tsegtree(const vector<T> &v, const F func, const T e) : N(v.size()), op(func),\
     \ e_(e) {\r\n\t\twhile(siz < N) siz *= 2;\r\n\t\tnode.resize(2*siz-1, e_);\r\n\
     \t\tfor(int i=0; i<N; i++) node[siz-1+i] = v[i];\r\n\t\tfor(int i=siz-2; i>=0;\
     \ i--) node[i] = op(node[2*i+1], node[2*i+2]);\r\n\t}\r\n\r\n\tvoid update(int\
@@ -52,7 +52,7 @@ data:
   isVerificationFile: true
   path: test/yosupo_staticrmq_2.test.cpp
   requiredBy: []
-  timestamp: '2020-12-12 00:05:45+09:00'
+  timestamp: '2020-12-12 00:27:38+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo_staticrmq_2.test.cpp

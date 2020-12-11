@@ -18,29 +18,29 @@ data:
     \n\r\ntemplate<typename T, typename F>\r\nstruct segtree {\r\nprivate:\r\n\tint\
     \ siz=1, N;\r\n\tvector<T> node;\r\n\tconst F op;\r\n\tconst T e_;\r\n\r\npublic:\r\
     \n\tsegtree(int n, const F func, const T e) : N(n), op(func), e_(e) {\r\n\t\t\
-    while(siz < N) siz *= 2;\r\n\t\tnode.resize(2*siz-1, e_);\r\n\t}\r\n\tsegtree(vector<T>\
-    \ v, const F func, const T e) : N(v.size()), op(func), e_(e) {\r\n\t\twhile(siz\
-    \ < N) siz *= 2;\r\n\t\tnode.resize(2*siz-1, e_);\r\n\t\tfor(int i=0; i<N; i++)\
-    \ node[siz-1+i] = v[i];\r\n\t\tfor(int i=siz-2; i>=0; i--) node[i] = op(node[2*i+1],\
-    \ node[2*i+2]);\r\n\t}\r\n\r\n\tvoid update(int idx, T val) {\r\n\t\tidx += siz-1;\r\
-    \n\t\tnode[idx] = val;\r\n\r\n\t\twhile(idx > 0) {\r\n\t\t\tidx = (idx-1)/2;\r\
-    \n\t\t\tnode[idx] = op(node[2*idx+1], node[2*idx+2]);\r\n\t\t}\r\n\t}\r\n\r\n\t\
-    T get(int idx) {\r\n\t\tassert(0<=idx && idx<N);\r\n\t\treturn get(idx, idx+1);\r\
-    \n\t}\r\n\tT get(int L, int R) {\r\n\t\tif(L < 0) L = 0;\r\n\t\tif(R > N) R =\
-    \ N;\r\n\t\tassert(L < R);\r\n\t\treturn get__(L, R, 0, 0, siz);\r\n\t}\r\nprivate:\r\
-    \n\tT get__(int L, int R, int id, int l, int r) {\r\n\t\tif(r<=L || R<=l) return\
-    \ e_;\r\n\t\tif(L<=l && r<=R) return node[id];\r\n\t\tT vl = get__(L, R, 2*id+1,\
-    \ l, (l+r)/2);\r\n\t\tT vr = get__(L, R, 2*id+2, (l+r)/2, r);\r\n\t\treturn op(vl,\
-    \ vr);\r\n\t}\r\npublic:\r\n};\r\n"
+    while(siz < N) siz *= 2;\r\n\t\tnode.resize(2*siz-1, e_);\r\n\t}\r\n\tsegtree(const\
+    \ vector<T> &v, const F func, const T e) : N(v.size()), op(func), e_(e) {\r\n\t\
+    \twhile(siz < N) siz *= 2;\r\n\t\tnode.resize(2*siz-1, e_);\r\n\t\tfor(int i=0;\
+    \ i<N; i++) node[siz-1+i] = v[i];\r\n\t\tfor(int i=siz-2; i>=0; i--) node[i] =\
+    \ op(node[2*i+1], node[2*i+2]);\r\n\t}\r\n\r\n\tvoid update(int idx, T val) {\r\
+    \n\t\tidx += siz-1;\r\n\t\tnode[idx] = val;\r\n\r\n\t\twhile(idx > 0) {\r\n\t\t\
+    \tidx = (idx-1)/2;\r\n\t\t\tnode[idx] = op(node[2*idx+1], node[2*idx+2]);\r\n\t\
+    \t}\r\n\t}\r\n\r\n\tT get(int idx) {\r\n\t\tassert(0<=idx && idx<N);\r\n\t\treturn\
+    \ get(idx, idx+1);\r\n\t}\r\n\tT get(int L, int R) {\r\n\t\tif(L < 0) L = 0;\r\
+    \n\t\tif(R > N) R = N;\r\n\t\tassert(L < R);\r\n\t\treturn get__(L, R, 0, 0, siz);\r\
+    \n\t}\r\nprivate:\r\n\tT get__(int L, int R, int id, int l, int r) {\r\n\t\tif(r<=L\
+    \ || R<=l) return e_;\r\n\t\tif(L<=l && r<=R) return node[id];\r\n\t\tT vl = get__(L,\
+    \ R, 2*id+1, l, (l+r)/2);\r\n\t\tT vr = get__(L, R, 2*id+2, (l+r)/2, r);\r\n\t\
+    \treturn op(vl, vr);\r\n\t}\r\npublic:\r\n};\r\n"
   code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
     \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\ntemplate<typename T,\
     \ typename F>\r\nstruct segtree {\r\nprivate:\r\n\tint siz=1, N;\r\n\tvector<T>\
     \ node;\r\n\tconst F op;\r\n\tconst T e_;\r\n\r\npublic:\r\n\tsegtree(int n, const\
     \ F func, const T e) : N(n), op(func), e_(e) {\r\n\t\twhile(siz < N) siz *= 2;\r\
-    \n\t\tnode.resize(2*siz-1, e_);\r\n\t}\r\n\tsegtree(vector<T> v, const F func,\
-    \ const T e) : N(v.size()), op(func), e_(e) {\r\n\t\twhile(siz < N) siz *= 2;\r\
-    \n\t\tnode.resize(2*siz-1, e_);\r\n\t\tfor(int i=0; i<N; i++) node[siz-1+i] =\
-    \ v[i];\r\n\t\tfor(int i=siz-2; i>=0; i--) node[i] = op(node[2*i+1], node[2*i+2]);\r\
+    \n\t\tnode.resize(2*siz-1, e_);\r\n\t}\r\n\tsegtree(const vector<T> &v, const\
+    \ F func, const T e) : N(v.size()), op(func), e_(e) {\r\n\t\twhile(siz < N) siz\
+    \ *= 2;\r\n\t\tnode.resize(2*siz-1, e_);\r\n\t\tfor(int i=0; i<N; i++) node[siz-1+i]\
+    \ = v[i];\r\n\t\tfor(int i=siz-2; i>=0; i--) node[i] = op(node[2*i+1], node[2*i+2]);\r\
     \n\t}\r\n\r\n\tvoid update(int idx, T val) {\r\n\t\tidx += siz-1;\r\n\t\tnode[idx]\
     \ = val;\r\n\r\n\t\twhile(idx > 0) {\r\n\t\t\tidx = (idx-1)/2;\r\n\t\t\tnode[idx]\
     \ = op(node[2*idx+1], node[2*idx+2]);\r\n\t\t}\r\n\t}\r\n\r\n\tT get(int idx)\
@@ -55,7 +55,7 @@ data:
   isVerificationFile: false
   path: graph/segtree.cpp
   requiredBy: []
-  timestamp: '2020-12-12 00:05:45+09:00'
+  timestamp: '2020-12-12 00:27:38+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo_static_range_sum.test.cpp
@@ -68,31 +68,22 @@ title: "segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
 ## なにこれ
 区間取得・一点更新可能な要素数 $n$ のセグメント木．
 
-## 制約
-- $n \leq 10^8$ 程度
-
-## テンプレート引数
-- `op`：二項演算の結果を返す関数．
-- `e`：単位元を返す関数．
-
 ## コンストラクタ
-- `segtree(n, init)`：計算量 $O(n)$
-	- `n`：要素数．
-	- `init`：初期値．
+- `segtree(n, func, e)`：要素数 `n` のセグメント木を構築する．
+- `segtree(v, func, e)`：配列 `v` の要素を持つセグメント木を構築する．
 
-- `segtree(v)`
-	- `v`：初期要素を格納している配列．
+`func` は二項演算の関数，`e` は単位元．$n \leq 10^8$ 程度．
 
 ## メンバ関数
-- `update(idx, val)`：計算量 $O(\log n)$  
-	要素を更新する．
-	- `idx`：更新する要素の index
-	- `val`：更新後の要素の値．
+- `update(idx, val)`：`idx` 番目の要素を値 `val` に更新する．
+- `get(idx)`：`idx` 番目の要素を返す．
+- `get(L, R)`：区間 `[L, R)` の二項演算の結果を返す．
 
-- `get(idx)`：計算量 $O(\log n)$  
-	指定した index の要素を返す．
-	- `idx`：取得する要素の index
+`idx`, `L`, `R` は 0-indexed である．
 
-- `get(L, R)`：計算量 $O(\log n)$  
-	指定区間の二項演算の結果を返す．
-	- `L,R`：`[L,R)`を探索区間とする．
+## 計算量
+- `segtree(n, func, e)`：$O(n)$
+- `segtree(v, func, e)`：$O(n)$
+- `update(idx, val)`：$O(\log n)$
+- `get(idx)`：$O(\log n)$
+- `get(L, R)`：$O(\log n)$
