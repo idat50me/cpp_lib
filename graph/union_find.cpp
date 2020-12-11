@@ -14,10 +14,10 @@ private:
 	vector<T> val;
 	int treenum;
 
-	const function<bool(int,int,T&,T&)> swap_flg = [](const int l, const int r, const T& val_l, const T& val_r) {
+	const function<bool(int,int,T&,T&)> swap_flg = [this](const int l, const int r, const T& val_l, const T& val_r) {
 		return num[l] < num[r];
 	};
-	const function<void(T&,T&)> merge_val = [](T& val_l, const T& val_r){};
+	const function<void(T&,T&)> merge_val = [this](T& val_l, const T& val_r){};
 
 public:
 	UnionFind(int n) : parent(n), num(n,1), treenum(n) {
