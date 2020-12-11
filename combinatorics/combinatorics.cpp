@@ -12,13 +12,9 @@ private:
 	long long P;
 
 public:
-	COMB(long long mx, long long p) {
-		P=p;
-		fact.resize(mx+1);
-		inv.resize(mx+1);
-		finv.resize(mx+1);
+	COMB(long long n, long long p) : fact(n+1), inv(n+1), finv(n+1), P(p) {
 		fact[0] = fact[1] = inv[1] = finv[0] = finv[1] = 1LL;
-		for(long long i=2LL; i<=mx; i++) {
+		for(long long i=2LL; i<=n; i++) {
 			fact[i] = fact[i-1]*i%P;
 			inv[i] = P-inv[P%i]*(P/i)%P;
 			finv[i] = finv[i-1]*inv[i]%P;
