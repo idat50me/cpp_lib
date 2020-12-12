@@ -50,7 +50,7 @@ int main() {
 	while(!er.empty()) {
 		int from=er.front().first, to=er.front().second;
 		er.pop();
-		cout<<from<<" "<<to<<" write"<<endl;
+		cout<<from<<" "<<to<<" erase"<<endl;
 	}
 	while(!wr.empty()) {
 		int from=wr.front().first, to=wr.front().second;
