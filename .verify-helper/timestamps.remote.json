@@ -1,6 +1,6 @@
 {
 "test/aoj_0341.test.cpp": "2020-11-16 10:57:59 +0900",
-"test/aoj_ALDS1_1_C.test.cpp": "2020-11-16 10:57:59 +0900",
+"test/aoj_ALDS1_1_C.test.cpp": "2020-12-12 17:30:18 +0900",
 "test/aoj_ALDS1_1_C_2.test.cpp": "2020-11-16 10:57:59 +0900",
 "test/aoj_ALDS1_1_C_3.test.cpp": "2020-12-12 15:21:33 +0900",
 "test/aoj_DPL_5_D.test.cpp": "2020-12-11 23:24:55 +0900",
@@ -12,7 +12,7 @@
 "test/aoj_GRL_6_B.test.cpp": "2020-12-10 10:38:50 +0900",
 "test/aoj_GRL_6_B_2.test.cpp": "2020-12-10 01:29:20 +0900",
 "test/aoj_ITP1_6_B.test.cpp": "2020-11-16 10:57:59 +0900",
-"test/aoj_NTL_1_A.test.cpp": "2020-11-16 10:57:59 +0900",
+"test/aoj_NTL_1_A.test.cpp": "2020-12-12 17:30:18 +0900",
 "test/aoj_NTL_1_B.test.cpp": "2020-11-16 10:44:07 +0900",
 "test/yosupo_static_range_sum.test.cpp": "2020-12-12 00:27:38 +0900",
 "test/yosupo_staticrmq.test.cpp": "2020-11-16 11:31:19 +0900",
