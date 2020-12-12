@@ -9,38 +9,29 @@ using namespace std;
 template<typename T>
 struct matrix{
 private:
-	vector<vector<T>> mat;
+	vector<vector<T>> m;
 
 public:
-	matrix() : matrix(0,0) {}
-	matrix(int h, int w) { resize(h,w); }
-	matrix(int h, int w, T init) { resize(h,w,init); }
-
-	void resize(int h, int w) {
-		mat=vector<vector<T>>(h,vector<T>(w));
-	}
-	void resize(int h, int w, T init) {
-		mat=vector<vector<T>>(h,vector<T>(w,init));
-	};
+	matrix() : m(0, vector<T>(0)) {}
+	matrix(int h, int w) : m(h, vector<T>(w)) {}
+	matrix(int h, int w, const T &init) : m(h, vector<T>(w, init)) {}
 
 	void in() {
-		for(int i=0; i<mat.size(); i++) for(int j=0; j<mat[i].size(); j++) {
-			cin>>mat[i][j];
-		}
+		for(int i=0; i<m.size(); i++) for(int j=0; j<m[i].size(); j++) cin>>m[i][j];
 	}
 
 	void out() {
-		for(int i=0; i<mat.size(); i++) {
-			int wm=mat[i].size();
-			for(int j=0; j<wm; j++) {
-				cout<<mat[i][j]<<(wm==j+1 ? '\n' : ' ');
+		for(int i=0; i<m.size(); i++) {
+			int sz = m[i].size();
+			for(int j=0; j<sz; j++) {
+				cout<<m[i][j]<<(j==sz-1 ? '\n' : ' ');
 			}
 		}
 		cout<<flush;
 	}
 
 	inline vector<T> &operator[](int idx) {
-		assert(0<=idx && idx<mat.size());
-		return mat[idx];
+		assert(0<=idx && idx<m.size());
+		return m[idx];
 	}
 };
