@@ -34,28 +34,25 @@ int main() {
 	cout<<ans+mcf.solve(s,t,N)<<endl;
 
 	auto stat = mcf.stat();
-	queue<int> F,T;
-	queue<string> qstr;
+	queue<pair<int,int>> wr,er;
 	for(int i=0; i<stat.size(); i++) {
 		if(stat[i].from==s || stat[i].to==t) continue;
 		int from=stat[i].from, to=stat[i].to-N;
-		if(stat[i].used_cap==1) {
-			if(mp[from][to]=='.') {
-				F.push(from+1), T.push(to+1);
-				qstr.push("write");
-			}
-		}
-		else if(mp[from][to]=='o') {
-			F.push(from+1), T.push(to+1);
-			qstr.push("erase");
-		}
+		if(stat[i].used_cap==1)
+			if(mp[from][to]=='.') wr.push({from+1,to+1});
+		else
+			if(mp[from][to]=='o') er.push({from+1,to+1});
 	}
 
-	cout<<F.size()<<endl;
-	while(!F.empty()) {
-		int from=F.front(), to=T.front();
-		string str=qstr.front();
-		F.pop(); T.pop(); qstr.pop();
-		cout<<from<<" "<<to<<" "<<str<<endl;
+	cout<<wr.size()+er.size()<<endl;
+	while(!er.empty()) {
+		int from=er.front().first, to=er.front().second;
+		er.pop();
+		cout<<from<<" "<<to<<" write"<<endl;
+	}
+	while(!wr.empty()) {
+		int from=wr.front().first, to=wr.front().second;
+		wr.pop();
+		cout<<from<<" "<<to<<" write"<<endl;
 	}
 }
