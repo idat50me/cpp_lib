@@ -14,7 +14,7 @@ data:
       title: combinatorics/npr.cpp
   - name: graph
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: graph/maxflow.cpp
       title: "maxflow(\u6700\u5927\u6D41)"
     - icon: ':heavy_check_mark:'
@@ -61,7 +61,7 @@ data:
       title: ModInt
   - name: structs
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: structs/matrix.cpp
       title: "Matrix( $2$ \u6B21\u5143\u884C\u5217)"
     - icon: ':warning:'
@@ -135,7 +135,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yuki_0117.test.cpp
       title: test/yuki_0117.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yuki_0177.test.cpp
       title: test/yuki_0177.test.cpp
     - icon: ':heavy_check_mark:'
