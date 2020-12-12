@@ -13,8 +13,16 @@ private:
 		int rev;
 		long long cap;
 		long long cost;
+		bool isrev;
 		
-		edge(int next, int rev, long long cap, long long cost) : next(next), rev(rev), cap(cap), cost(cost) {}
+		edge(int next, int rev, long long cap, long long cost, bool isrev) : next(next), rev(rev), cap(cap), cost(cost), isrev(isrev) {}
+	};
+
+	struct stat_e {
+		int from, to;
+		long long used_cap;
+
+		stat_e(int from, int to, long long cap) : from(from), to(to), used_cap(cap) {}
 	};
 
 public:
@@ -30,8 +38,8 @@ public:
 	mincostflow(int V) : vnum(V), G(V), pot(V), pv(V), pe(V) {}
 
 	void add(int from, int to, long long cap, long long cost) {
-		G[from].push_back(edge(to, G[to].size(), cap, cost));
-		G[to].push_back(edge(from, G[from].size()-1, 0, -cost));
+		G[from].push_back(edge(to, G[to].size(), cap, cost, false));
+		G[to].push_back(edge(from, G[from].size()-1, 0, -cost, true));
 	}
 
 private:
@@ -121,6 +129,14 @@ public:
 				ed.cap -= add_f;
 				G[v][ed.rev].cap += add_f;
 			}
+		}
+		return res;
+	}
+
+	vector<stat_e> stat() {
+		vector<stat_e> res;
+		for(int i=0; i<vnum; i++) for(const edge &ed: G[i]) {
+			if(!ed.isrev) res.push_back(stat_e(i, ed.next, G[ed.next][ed.rev].cap));
 		}
 		return res;
 	}
