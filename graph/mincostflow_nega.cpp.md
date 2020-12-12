@@ -3,29 +3,35 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/aoj_2429.test.cpp
+    title: test/aoj_2429.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj_GRL_6_B_2.test.cpp
     title: test/aoj_GRL_6_B_2.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"graph/mincostflow_nega.cpp\"\n\r\n#ifndef call_include\r\
     \n#define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n\
     #endif\r\n\r\nstruct mincostflow {\r\nprivate:\r\n\tstruct edge {\r\n\t\tint next;\r\
-    \n\t\tint rev;\r\n\t\tlong long cap;\r\n\t\tlong long cost;\r\n\t\t\r\n\t\tedge(int\
-    \ next, int rev, long long cap, long long cost) : next(next), rev(rev), cap(cap),\
-    \ cost(cost) {}\r\n\t};\r\n\r\npublic:\r\n\tconst long long inf = (1LL<<62)-1;\r\
-    \n\r\nprivate:\r\n\tconst int vnum;\r\n\tvector<vector<edge>> G;\r\n\tvector<long\
-    \ long> pot;\r\n\tvector<int> pv, pe;\r\n\r\npublic:\r\n\tmincostflow(int V) :\
-    \ vnum(V), G(V), pot(V), pv(V), pe(V) {}\r\n\r\n\tvoid add(int from, int to, long\
-    \ long cap, long long cost) {\r\n\t\tG[from].push_back(edge(to, G[to].size(),\
-    \ cap, cost));\r\n\t\tG[to].push_back(edge(from, G[from].size()-1, 0, -cost));\r\
-    \n\t}\r\n\r\nprivate:\r\n\tlong long bellman_ford(int s, int t, int &f) {\r\n\t\
-    \tpot.assign(vnum, inf);\r\n\t\tpv.assign(vnum, -1);\r\n\t\tpe.assign(vnum, -1);\r\
-    \n\t\tpot[s] = 0;\r\n\t\tfor(int i=0; i<vnum; i++) {\r\n\t\t\tfor(int j=0; j<vnum;\
-    \ j++) {\r\n\t\t\t\tif(pot[j] == inf) continue;\r\n\t\t\t\tfor(int k=0; k<G[j].size();\
-    \ k++) {\r\n\t\t\t\t\tconst edge &ed = G[j][k];\r\n\t\t\t\t\tif(ed.cap>0 && pot[ed.next]>pot[j]+ed.cost)\
+    \n\t\tint rev;\r\n\t\tlong long cap;\r\n\t\tlong long cost;\r\n\t\tbool isrev;\r\
+    \n\t\t\r\n\t\tedge(int next, int rev, long long cap, long long cost, bool isrev)\
+    \ : next(next), rev(rev), cap(cap), cost(cost), isrev(isrev) {}\r\n\t};\r\n\r\n\
+    \tstruct stat_e {\r\n\t\tint from, to;\r\n\t\tlong long used_cap;\r\n\r\n\t\t\
+    stat_e(int from, int to, long long cap) : from(from), to(to), used_cap(cap) {}\r\
+    \n\t};\r\n\r\npublic:\r\n\tconst long long inf = (1LL<<62)-1;\r\n\r\nprivate:\r\
+    \n\tconst int vnum;\r\n\tvector<vector<edge>> G;\r\n\tvector<long long> pot;\r\
+    \n\tvector<int> pv, pe;\r\n\r\npublic:\r\n\tmincostflow(int V) : vnum(V), G(V),\
+    \ pot(V), pv(V), pe(V) {}\r\n\r\n\tvoid add(int from, int to, long long cap, long\
+    \ long cost) {\r\n\t\tG[from].push_back(edge(to, G[to].size(), cap, cost, false));\r\
+    \n\t\tG[to].push_back(edge(from, G[from].size()-1, 0, -cost, true));\r\n\t}\r\n\
+    \r\nprivate:\r\n\tlong long bellman_ford(int s, int t, int &f) {\r\n\t\tpot.assign(vnum,\
+    \ inf);\r\n\t\tpv.assign(vnum, -1);\r\n\t\tpe.assign(vnum, -1);\r\n\t\tpot[s]\
+    \ = 0;\r\n\t\tfor(int i=0; i<vnum; i++) {\r\n\t\t\tfor(int j=0; j<vnum; j++) {\r\
+    \n\t\t\t\tif(pot[j] == inf) continue;\r\n\t\t\t\tfor(int k=0; k<G[j].size(); k++)\
+    \ {\r\n\t\t\t\t\tconst edge &ed = G[j][k];\r\n\t\t\t\t\tif(ed.cap>0 && pot[ed.next]>pot[j]+ed.cost)\
     \ {\r\n\t\t\t\t\t\tif(i == vnum-1) return -inf;\r\n\t\t\t\t\t\tpot[ed.next] =\
     \ pot[j]+ed.cost;\r\n\t\t\t\t\t\tpv[ed.next] = j;\r\n\t\t\t\t\t\tpe[ed.next] =\
     \ k;\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\tif(pot[t] == inf)\
@@ -54,60 +60,69 @@ data:
     \ G[pv[v]][pe[v]].cap);\r\n\t\t\tf -= add_f;\r\n\t\t\tres += restmp*add_f;\r\n\
     \t\t\tfor(int v=t; v!=s; v=pv[v]) {\r\n\t\t\t\tedge &ed = G[pv[v]][pe[v]];\r\n\
     \t\t\t\ted.cap -= add_f;\r\n\t\t\t\tG[v][ed.rev].cap += add_f;\r\n\t\t\t}\r\n\t\
+    \t}\r\n\t\treturn res;\r\n\t}\r\n\r\n\tvector<stat_e> stat() {\r\n\t\tvector<stat_e>\
+    \ res;\r\n\t\tfor(int i=0; i<vnum; i++) for(const edge &ed: G[i]) {\r\n\t\t\t\
+    if(!ed.isrev) res.push_back(stat_e(i, ed.next, G[ed.next][ed.rev].cap));\r\n\t\
     \t}\r\n\t\treturn res;\r\n\t}\r\n};\r\n"
   code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
     \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\nstruct mincostflow\
     \ {\r\nprivate:\r\n\tstruct edge {\r\n\t\tint next;\r\n\t\tint rev;\r\n\t\tlong\
-    \ long cap;\r\n\t\tlong long cost;\r\n\t\t\r\n\t\tedge(int next, int rev, long\
-    \ long cap, long long cost) : next(next), rev(rev), cap(cap), cost(cost) {}\r\n\
-    \t};\r\n\r\npublic:\r\n\tconst long long inf = (1LL<<62)-1;\r\n\r\nprivate:\r\n\
-    \tconst int vnum;\r\n\tvector<vector<edge>> G;\r\n\tvector<long long> pot;\r\n\
-    \tvector<int> pv, pe;\r\n\r\npublic:\r\n\tmincostflow(int V) : vnum(V), G(V),\
-    \ pot(V), pv(V), pe(V) {}\r\n\r\n\tvoid add(int from, int to, long long cap, long\
-    \ long cost) {\r\n\t\tG[from].push_back(edge(to, G[to].size(), cap, cost));\r\n\
-    \t\tG[to].push_back(edge(from, G[from].size()-1, 0, -cost));\r\n\t}\r\n\r\nprivate:\r\
-    \n\tlong long bellman_ford(int s, int t, int &f) {\r\n\t\tpot.assign(vnum, inf);\r\
-    \n\t\tpv.assign(vnum, -1);\r\n\t\tpe.assign(vnum, -1);\r\n\t\tpot[s] = 0;\r\n\t\
-    \tfor(int i=0; i<vnum; i++) {\r\n\t\t\tfor(int j=0; j<vnum; j++) {\r\n\t\t\t\t\
-    if(pot[j] == inf) continue;\r\n\t\t\t\tfor(int k=0; k<G[j].size(); k++) {\r\n\t\
-    \t\t\t\tconst edge &ed = G[j][k];\r\n\t\t\t\t\tif(ed.cap>0 && pot[ed.next]>pot[j]+ed.cost)\
-    \ {\r\n\t\t\t\t\t\tif(i == vnum-1) return -inf;\r\n\t\t\t\t\t\tpot[ed.next] =\
-    \ pot[j]+ed.cost;\r\n\t\t\t\t\t\tpv[ed.next] = j;\r\n\t\t\t\t\t\tpe[ed.next] =\
-    \ k;\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\tif(pot[t] == inf)\
-    \ return inf;\r\n\r\n\t\tint add_f = f;\r\n\t\tfor(int v=t; v!=s; v=pv[v]) add_f\
-    \ = min((long long)add_f, G[pv[v]][pe[v]].cap);\r\n\t\tf -= add_f;\r\n\t\tfor(int\
-    \ v=t; v!=s; v=pv[v]) {\r\n\t\t\tedge &ed = G[pv[v]][pe[v]];\r\n\t\t\ted.cap -=\
-    \ add_f;\r\n\t\t\tG[v][ed.rev].cap += add_f;\r\n\t\t}\r\n\t\treturn pot[t]*add_f;\r\
-    \n\t}\r\n\r\n\tlong long dijkstra(int s, int t) {\r\n\t\tlong long ans = 0;\r\n\
-    \t\tpriority_queue<pair<long long,int>, vector<pair<long long,int>>, greater<pair<long\
-    \ long,int>>> q;\r\n\t\tvector<long long> dist(vnum, inf);\r\n\t\tpv.assign(vnum,\
-    \ -1);\r\n\t\tpe.assign(vnum, -1);\r\n\t\tq.push(make_pair(0LL,s));\r\n\t\tdist[s]\
-    \ = 0;\r\n\r\n\t\twhile(!q.empty()) {\r\n\t\t\tlong long d = q.top().first, v\
-    \ = q.top().second;\r\n\t\t\tq.pop();\r\n\t\t\tif(dist[v] < d) continue;\r\n\t\
-    \t\tfor(int i=0; i<G[v].size(); i++) {\r\n\t\t\t\tedge &ed = G[v][i];\r\n\t\t\t\
-    \tlong long nd = d+ed.cost+pot[v]-pot[ed.next];\r\n\t\t\t\tif(ed.cap>0 && dist[ed.next]>nd)\
-    \ {\r\n\t\t\t\t\tdist[ed.next] = nd;\r\n\t\t\t\t\tpv[ed.next] = v;\r\n\t\t\t\t\
-    \tpe[ed.next] = i;\r\n\t\t\t\t\tq.push(make_pair(nd,ed.next));\r\n\t\t\t\t}\r\n\
-    \t\t\t}\r\n\t\t}\r\n\r\n\t\tif(dist[t] == inf) return inf;\r\n\r\n\t\tans = dist[t]+pot[t];\r\
-    \n\t\tfor(int v=0; v<vnum; v++) {\r\n\t\t\tif(dist[v] == inf) continue;\r\n\t\t\
-    \tpot[v] += dist[v];\r\n\t\t}\r\n\t\treturn ans;\r\n\t}\r\n\r\npublic:\r\n\t//\
-    \ -inf: \u8CA0\u9589\u8DEF\u691C\u51FA  inf: \u672A\u5230\u9054\r\n\tlong long\
-    \ solve(int s, int t, int f) {\r\n\t\tlong long res = bellman_ford(s, t, f);\r\
-    \n\t\tif(abs(res) == inf) return res;\r\n\r\n\t\twhile(f > 0) {\r\n\t\t\tlong\
-    \ long restmp = dijkstra(s, t);\r\n\t\t\tint add_f = f;\r\n\t\t\tif(restmp ==\
-    \ inf) return inf;\r\n\t\t\tfor(int v=t; v!=s; v=pv[v]) add_f = min((long long)add_f,\
+    \ long cap;\r\n\t\tlong long cost;\r\n\t\tbool isrev;\r\n\t\t\r\n\t\tedge(int\
+    \ next, int rev, long long cap, long long cost, bool isrev) : next(next), rev(rev),\
+    \ cap(cap), cost(cost), isrev(isrev) {}\r\n\t};\r\n\r\n\tstruct stat_e {\r\n\t\
+    \tint from, to;\r\n\t\tlong long used_cap;\r\n\r\n\t\tstat_e(int from, int to,\
+    \ long long cap) : from(from), to(to), used_cap(cap) {}\r\n\t};\r\n\r\npublic:\r\
+    \n\tconst long long inf = (1LL<<62)-1;\r\n\r\nprivate:\r\n\tconst int vnum;\r\n\
+    \tvector<vector<edge>> G;\r\n\tvector<long long> pot;\r\n\tvector<int> pv, pe;\r\
+    \n\r\npublic:\r\n\tmincostflow(int V) : vnum(V), G(V), pot(V), pv(V), pe(V) {}\r\
+    \n\r\n\tvoid add(int from, int to, long long cap, long long cost) {\r\n\t\tG[from].push_back(edge(to,\
+    \ G[to].size(), cap, cost, false));\r\n\t\tG[to].push_back(edge(from, G[from].size()-1,\
+    \ 0, -cost, true));\r\n\t}\r\n\r\nprivate:\r\n\tlong long bellman_ford(int s,\
+    \ int t, int &f) {\r\n\t\tpot.assign(vnum, inf);\r\n\t\tpv.assign(vnum, -1);\r\
+    \n\t\tpe.assign(vnum, -1);\r\n\t\tpot[s] = 0;\r\n\t\tfor(int i=0; i<vnum; i++)\
+    \ {\r\n\t\t\tfor(int j=0; j<vnum; j++) {\r\n\t\t\t\tif(pot[j] == inf) continue;\r\
+    \n\t\t\t\tfor(int k=0; k<G[j].size(); k++) {\r\n\t\t\t\t\tconst edge &ed = G[j][k];\r\
+    \n\t\t\t\t\tif(ed.cap>0 && pot[ed.next]>pot[j]+ed.cost) {\r\n\t\t\t\t\t\tif(i\
+    \ == vnum-1) return -inf;\r\n\t\t\t\t\t\tpot[ed.next] = pot[j]+ed.cost;\r\n\t\t\
+    \t\t\t\tpv[ed.next] = j;\r\n\t\t\t\t\t\tpe[ed.next] = k;\r\n\t\t\t\t\t}\r\n\t\t\
+    \t\t}\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\tif(pot[t] == inf) return inf;\r\n\r\n\t\t\
+    int add_f = f;\r\n\t\tfor(int v=t; v!=s; v=pv[v]) add_f = min((long long)add_f,\
+    \ G[pv[v]][pe[v]].cap);\r\n\t\tf -= add_f;\r\n\t\tfor(int v=t; v!=s; v=pv[v])\
+    \ {\r\n\t\t\tedge &ed = G[pv[v]][pe[v]];\r\n\t\t\ted.cap -= add_f;\r\n\t\t\tG[v][ed.rev].cap\
+    \ += add_f;\r\n\t\t}\r\n\t\treturn pot[t]*add_f;\r\n\t}\r\n\r\n\tlong long dijkstra(int\
+    \ s, int t) {\r\n\t\tlong long ans = 0;\r\n\t\tpriority_queue<pair<long long,int>,\
+    \ vector<pair<long long,int>>, greater<pair<long long,int>>> q;\r\n\t\tvector<long\
+    \ long> dist(vnum, inf);\r\n\t\tpv.assign(vnum, -1);\r\n\t\tpe.assign(vnum, -1);\r\
+    \n\t\tq.push(make_pair(0LL,s));\r\n\t\tdist[s] = 0;\r\n\r\n\t\twhile(!q.empty())\
+    \ {\r\n\t\t\tlong long d = q.top().first, v = q.top().second;\r\n\t\t\tq.pop();\r\
+    \n\t\t\tif(dist[v] < d) continue;\r\n\t\t\tfor(int i=0; i<G[v].size(); i++) {\r\
+    \n\t\t\t\tedge &ed = G[v][i];\r\n\t\t\t\tlong long nd = d+ed.cost+pot[v]-pot[ed.next];\r\
+    \n\t\t\t\tif(ed.cap>0 && dist[ed.next]>nd) {\r\n\t\t\t\t\tdist[ed.next] = nd;\r\
+    \n\t\t\t\t\tpv[ed.next] = v;\r\n\t\t\t\t\tpe[ed.next] = i;\r\n\t\t\t\t\tq.push(make_pair(nd,ed.next));\r\
+    \n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\tif(dist[t] == inf) return inf;\r\n\r\
+    \n\t\tans = dist[t]+pot[t];\r\n\t\tfor(int v=0; v<vnum; v++) {\r\n\t\t\tif(dist[v]\
+    \ == inf) continue;\r\n\t\t\tpot[v] += dist[v];\r\n\t\t}\r\n\t\treturn ans;\r\n\
+    \t}\r\n\r\npublic:\r\n\t// -inf: \u8CA0\u9589\u8DEF\u691C\u51FA  inf: \u672A\u5230\
+    \u9054\r\n\tlong long solve(int s, int t, int f) {\r\n\t\tlong long res = bellman_ford(s,\
+    \ t, f);\r\n\t\tif(abs(res) == inf) return res;\r\n\r\n\t\twhile(f > 0) {\r\n\t\
+    \t\tlong long restmp = dijkstra(s, t);\r\n\t\t\tint add_f = f;\r\n\t\t\tif(restmp\
+    \ == inf) return inf;\r\n\t\t\tfor(int v=t; v!=s; v=pv[v]) add_f = min((long long)add_f,\
     \ G[pv[v]][pe[v]].cap);\r\n\t\t\tf -= add_f;\r\n\t\t\tres += restmp*add_f;\r\n\
     \t\t\tfor(int v=t; v!=s; v=pv[v]) {\r\n\t\t\t\tedge &ed = G[pv[v]][pe[v]];\r\n\
     \t\t\t\ted.cap -= add_f;\r\n\t\t\t\tG[v][ed.rev].cap += add_f;\r\n\t\t\t}\r\n\t\
+    \t}\r\n\t\treturn res;\r\n\t}\r\n\r\n\tvector<stat_e> stat() {\r\n\t\tvector<stat_e>\
+    \ res;\r\n\t\tfor(int i=0; i<vnum; i++) for(const edge &ed: G[i]) {\r\n\t\t\t\
+    if(!ed.isrev) res.push_back(stat_e(i, ed.next, G[ed.next][ed.rev].cap));\r\n\t\
     \t}\r\n\t\treturn res;\r\n\t}\r\n};\r\n"
   dependsOn: []
   isVerificationFile: false
   path: graph/mincostflow_nega.cpp
   requiredBy: []
-  timestamp: '2020-12-13 00:02:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  timestamp: '2020-12-13 01:39:45+09:00'
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj_GRL_6_B_2.test.cpp
+  - test/aoj_2429.test.cpp
 documentation_of: graph/mincostflow_nega.cpp
 layout: document
 title: "mincostflow_nega(\u6700\u5C0F\u8CBB\u7528\u6D41)"
