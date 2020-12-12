@@ -3,14 +3,14 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj_2429.test.cpp
     title: test/aoj_2429.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj_GRL_6_B_2.test.cpp
     title: test/aoj_GRL_6_B_2.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"graph/mincostflow_nega.cpp\"\n\r\n#ifndef call_include\r\
@@ -119,7 +119,7 @@ data:
   path: graph/mincostflow_nega.cpp
   requiredBy: []
   timestamp: '2020-12-13 01:39:45+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_GRL_6_B_2.test.cpp
   - test/aoj_2429.test.cpp

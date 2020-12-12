@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: structs/matrix.cpp
     title: "Matrix( $2$ \u6B21\u5143\u884C\u5217)"
   _extendedRequiredBy: []

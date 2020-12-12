@@ -20,7 +20,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/mincostflow.cpp
       title: "mincostflow(\u6700\u5C0F\u8CBB\u7528\u6D41)"
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/mincostflow_nega.cpp
       title: "mincostflow_nega(\u6700\u5C0F\u8CBB\u7528\u6D41)"
     - icon: ':heavy_check_mark:'
@@ -61,7 +61,7 @@ data:
       title: ModInt
   - name: structs
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: structs/matrix.cpp
       title: "Matrix( $2$ \u6B21\u5143\u884C\u5217)"
     - icon: ':warning:'
@@ -78,7 +78,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj_0341.test.cpp
       title: test/aoj_0341.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj_2429.test.cpp
       title: test/aoj_2429.test.cpp
     - icon: ':heavy_check_mark:'
