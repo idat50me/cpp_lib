@@ -2,9 +2,6 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: math/binpow.cpp
-    title: "Binary-Power(\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5)"
-  - icon: ':heavy_check_mark:'
     path: math/millor_rabin.cpp
     title: "Millor-Rabin(\u30DF\u30E9\u30FC\u30FB\u30E9\u30D3\u30F3\u7D20\u6570\u5224\
       \u5B9A\u6CD5)"
@@ -21,16 +18,10 @@ data:
     \r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
     \nusing namespace std;\r\n#endif\r\n\r\n#line 2 \"math/millor_rabin.cpp\"\n\r\n\
     #ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\nusing\
-    \ namespace std;\r\n#endif\r\n\r\n#line 2 \"math/binpow.cpp\"\n/*\r\n * @brief\
-    \ Binary-Power(\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5)\r\n */\r\n\r\n#ifndef\
-    \ call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace\
-    \ std;\r\n#endif\r\n\r\nlong long binpow(long long a, long long ex, long long\
-    \ p=(1LL<<61)-1) {\r\n\tlong long res = 1;\r\n\twhile(ex > 0) {\r\n\t\tif(ex &\
-    \ 1) (res*=a) %= p;\r\n\t\tex>>=1;\r\n\t\t(a*=a) %= p;\r\n\t}\r\n\treturn res;\r\
-    \n}\r\n#line 10 \"math/millor_rabin.cpp\"\n\r\nbool isprime(long long n) {\r\n\
-    \tif(n == 2) return true;\r\n\tif(n < 2 || n%2 == 0) return false;\r\n\r\n\tif(n\
-    \ < 200000) {\r\n\t\tfor(long long i=2; i*i<=n; i++) if(n%i == 0) return false;\r\
-    \n\t\treturn true;\r\n\t}\r\n\r\n\tlong long d = n>>1;\r\n\tint s = 1;\r\n\twhile(!(d&1))\
+    \ namespace std;\r\n#endif\r\n\r\nbool isprime(long long n) {\r\n\tif(n == 2)\
+    \ return true;\r\n\tif(n < 2 || n%2 == 0) return false;\r\n\r\n\tif(n < 200000)\
+    \ {\r\n\t\tfor(long long i=2; i*i<=n; i++) if(n%i == 0) return false;\r\n\t\t\
+    return true;\r\n\t}\r\n\r\n\tlong long d = n>>1;\r\n\tint s = 1;\r\n\twhile(!(d&1))\
     \ {\r\n\t\ts++;\r\n\t\td >>= 1;\r\n\t}\r\n\r\n\tconstexpr int a[12] = {2,3,5,7,11,13,17,19,23,29,31,37};\r\
     \n\tfor(int k = 0; k < 12; k++) {\r\n\t\tif(a[k] >= n) break;\r\n\t\t\r\n\t\t\
     __int128_t r = 1, q = a[k];\r\n\t\twhile(d > 0) {\r\n\t\t\tif(d & 1) (r*=q) %=\
@@ -49,11 +40,10 @@ data:
     \n}\r\n"
   dependsOn:
   - math/millor_rabin.cpp
-  - math/binpow.cpp
   isVerificationFile: true
   path: test/aoj_ALDS1_1_C_3.test.cpp
   requiredBy: []
-  timestamp: '2020-12-12 15:15:13+09:00'
+  timestamp: '2020-12-12 15:21:33+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_ALDS1_1_C_3.test.cpp

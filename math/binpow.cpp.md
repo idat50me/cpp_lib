@@ -3,19 +3,12 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
-    path: math/millor_rabin.cpp
-    title: "Millor-Rabin(\u30DF\u30E9\u30FC\u30FB\u30E9\u30D3\u30F3\u7D20\u6570\u5224\
-      \u5B9A\u6CD5)"
-  - icon: ':heavy_check_mark:'
     path: mod/modint.cpp
     title: ModInt
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj_0341.test.cpp
     title: test/aoj_0341.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj_ALDS1_1_C_3.test.cpp
-    title: test/aoj_ALDS1_1_C_3.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj_NTL_1_B.test.cpp
     title: test/aoj_NTL_1_B.test.cpp
@@ -44,11 +37,9 @@ data:
   path: math/binpow.cpp
   requiredBy:
   - mod/modint.cpp
-  - math/millor_rabin.cpp
   timestamp: '2020-11-16 10:44:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj_ALDS1_1_C_3.test.cpp
   - test/aoj_NTL_1_B.test.cpp
   - test/yuki_1035.test.cpp
   - test/aoj_0341.test.cpp
