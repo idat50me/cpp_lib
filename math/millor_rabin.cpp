@@ -6,8 +6,6 @@
 using namespace std;
 #endif
 
-#include "math/binpow.cpp"
-
 bool isprime(long long n) {
 	if(n == 2) return true;
 	if(n < 2 || n%2 == 0) return false;
