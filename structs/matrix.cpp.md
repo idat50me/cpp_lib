@@ -9,11 +9,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj_ITP1_6_B.test.cpp
     title: test/aoj_ITP1_6_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yuki_0177.test.cpp
     title: test/yuki_0177.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"structs/matrix.cpp\"\n\r\n#ifndef call_include\r\n#define\
@@ -44,7 +44,7 @@ data:
   path: structs/matrix.cpp
   requiredBy: []
   timestamp: '2020-12-12 18:08:49+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yuki_0177.test.cpp
   - test/aoj_ITP1_6_B.test.cpp
