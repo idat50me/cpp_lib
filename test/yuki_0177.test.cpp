@@ -19,7 +19,7 @@ int main() {
 	cin>>M;
 	C.resize(M);
 	for(int &c: C) cin>>c;
-	X.resize(N,M,true);
+	X=matrix(N,M,true);
 	for(int i=0; i<M; i++) {
 		int Q; cin>>Q;
 		for(int j=0; j<Q; j++) {
