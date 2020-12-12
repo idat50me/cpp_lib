@@ -7,21 +7,16 @@ documentation_of: ../sieve_of_eratosthenes.cpp
 エラトステネスの篩というやつ．
 前処理して素数判定を高速にやるなど．
 
-## 制約
-- $n \leq 10^7$ 程度．
-
 ## コンストラクタ
-- `Sieve(n)`：計算量 $O(n \log\log n)$  
-	- `n`：処理する最大値．
+- `Sieve(n)`：$n$ までの篩を前計算する．$n \leq 10^7$ 程度．
 
 ## メンバ関数
-- `isprime(x)`：計算量 $O(1)$  
-	$x$ の素数判定
-
-- `primefact(n)`：計算量 $O(\log n)$  
-	$n$ の素因数分解．$\\{素因数,個数\\}$ の pair の vector を返す．
-
-- `divisorcount(n)`：計算量 $O(\log n)$  
-	$n$ の約数の個数  
-	計算量は`primefact(n)`依存
+- `isprime(x)`：`x` が素数であれば `true`を，そうでなければ `false` を返す．
+- `primefact(n)`：`n` を素因数分解し，$\\{素因数,個数\\}$ の `pair` の配列を返す．
+- `divisorcount(n)`：`n` の約数の個数を返す．
 	
+## 計算量
+- `Sieve(n)`：$O(n\log\log n)$
+- `isprime(x)`：$O(1)$
+- `primefact(n)`：$O(\log n)$
+- `divisorcount(n)`：$O(\log n)$

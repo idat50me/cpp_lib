@@ -7,42 +7,44 @@ using namespace std;
 #endif
 
 struct Sieve {
+private:
 	int N;
-	vector<int> f,primes;
+	vector<int> dv,primes;
 
-	Sieve(int n=1) : N(n), f(n+1,0) {
-		f[0]=f[1]=-1;
+public:
+	Sieve(int n=2) : N(n), dv(n+1,0) {
+		dv[0] = dv[1] = -1;
 		for(int i=2; i<=N; i++) {
-			if(f[i]) continue;
+			if(dv[i]) continue;
 			primes.push_back(i);
-			f[i]=i;
-			if(i>(1<<15)) continue;
-			for(int j=i*i; j<=N; j+=i) if(!f[j]) f[j]=i;
+			dv[i] = i;
+			if(i > (1<<15)) continue;
+			for(int j=i*i; j<=N; j+=i) if(!dv[j]) dv[j] = i;
 		}
 	}
 
 	bool isprime(int x) {
-		return f[x]==x;
+		return dv[x] == x;
 	}
 
 	vector<pair<int,int>> primefact(int n) {
-		if(n==1) return vector<pair<int,int>>({});
-		vector<pair<int,int>> res={{f[n],1}};
-		n /= f[n];
-		while(n>1) {
-			int dv=f[n];
-			if(res.back().first==dv) res.back().second++;
-			else res.push_back({dv,1});
-			n /= dv;
+		if(n == 1) return vector<pair<int,int>>({});
+		vector<pair<int,int>> res = {pair<int,int>(dv[n],1)};
+		n /= dv[n];
+		while(n > 1) {
+			int d = dv[n];
+			if(res.back().first == d) res.back().second++;
+			else res.push_back(make_pair(d,1));
+			n /= d;
 		}
 		return res;
 	}
 
 	int divisorcount(int n) {
-		int res=1;
-		vector<pair<int,int>> fl=primefact(n);
-		for(int i=0; i<fl.size(); i++) {
-			res *= fl[i].second;
+		int res = 1;
+		vector<pair<int,int>> flist = primefact(n);
+		for(int i=0; i<flist.size(); i++) {
+			res *= flist[i].second+1;
 		}
 		return res;
 	}
