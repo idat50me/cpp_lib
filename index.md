@@ -19,10 +19,10 @@ data:
       title: "maxflow(\u6700\u5927\u6D41)"
     - icon: ':heavy_check_mark:'
       path: graph/mincostflow.cpp
-      title: graph/mincostflow.cpp
+      title: "mincostflow(\u6700\u5C0F\u8CBB\u7528\u6D41)"
     - icon: ':heavy_check_mark:'
       path: graph/mincostflow_nega.cpp
-      title: graph/mincostflow_nega.cpp
+      title: "mincostflow_nega(\u6700\u5C0F\u8CBB\u7528\u6D41)"
     - icon: ':heavy_check_mark:'
       path: graph/segtree.cpp
       title: "segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"

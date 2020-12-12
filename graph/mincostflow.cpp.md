@@ -20,8 +20,8 @@ data:
     \ next, int rev, long long cap, long long cost) : next(next), rev(rev), cap(cap),\
     \ cost(cost) {}\r\n\t};\r\n\r\npublic:\r\n\tconst long long inf = (1LL<<62)-1;\r\
     \n\r\nprivate:\r\n\tconst int vnum;\r\n\tvector<vector<edge>> G;\r\n\tvector<long\
-    \ long> pot;\r\n\tvector<int> pv, pe;\r\n\r\npublic:\r\n\tmincostflow(int N) :\
-    \ vnum(N), G(N), pot(N,0), pv(N), pe(N) {}\r\n\r\n\tvoid add(int from, int to,\
+    \ long> pot;\r\n\tvector<int> pv, pe;\r\n\r\npublic:\r\n\tmincostflow(int V) :\
+    \ vnum(V), G(V), pot(V,0), pv(V), pe(V) {}\r\n\r\n\tvoid add(int from, int to,\
     \ long long cap, long long cost) {\r\n\t\tassert(cost >= 0);\r\n\t\tG[from].push_back(edge(to,\
     \ G[to].size(), cap, cost));\r\n\t\tG[to].push_back(edge(from, G[from].size()-1,\
     \ 0, -cost));\r\n\t}\r\n\r\nprivate:\r\n\tlong long dijkstra(int s, int t) {\r\
@@ -52,8 +52,8 @@ data:
     \ long cap, long long cost) : next(next), rev(rev), cap(cap), cost(cost) {}\r\n\
     \t};\r\n\r\npublic:\r\n\tconst long long inf = (1LL<<62)-1;\r\n\r\nprivate:\r\n\
     \tconst int vnum;\r\n\tvector<vector<edge>> G;\r\n\tvector<long long> pot;\r\n\
-    \tvector<int> pv, pe;\r\n\r\npublic:\r\n\tmincostflow(int N) : vnum(N), G(N),\
-    \ pot(N,0), pv(N), pe(N) {}\r\n\r\n\tvoid add(int from, int to, long long cap,\
+    \tvector<int> pv, pe;\r\n\r\npublic:\r\n\tmincostflow(int V) : vnum(V), G(V),\
+    \ pot(V,0), pv(V), pe(V) {}\r\n\r\n\tvoid add(int from, int to, long long cap,\
     \ long long cost) {\r\n\t\tassert(cost >= 0);\r\n\t\tG[from].push_back(edge(to,\
     \ G[to].size(), cap, cost));\r\n\t\tG[to].push_back(edge(from, G[from].size()-1,\
     \ 0, -cost));\r\n\t}\r\n\r\nprivate:\r\n\tlong long dijkstra(int s, int t) {\r\
@@ -81,15 +81,28 @@ data:
   isVerificationFile: false
   path: graph/mincostflow.cpp
   requiredBy: []
-  timestamp: '2020-12-10 10:38:50+09:00'
+  timestamp: '2020-12-13 00:02:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_GRL_6_B.test.cpp
   - test/yuki_1301.test.cpp
 documentation_of: graph/mincostflow.cpp
 layout: document
-redirect_from:
-- /library/graph/mincostflow.cpp
-- /library/graph/mincostflow.cpp.html
-title: graph/mincostflow.cpp
+title: "mincostflow(\u6700\u5C0F\u8CBB\u7528\u6D41)"
 ---
+
+## なにこれ
+各辺に容量と非負のコストが設定される有向グラフ $G=(V,E)$ 中で，
+始点から終点まで流量 $F$ を流すのに必要な最小費用を求める．
+
+## コンストラクタ
+- `mincostflow(V)`：`V` 頂点 $0$ 辺のグラフを構築する．$V \leq 10^8$ 程度．
+
+## メンバ関数
+- `add(from, to, cap, cost)`：頂点 `from` から頂点 `to` へ容量 `cap`，コスト `cost` の有向辺を追加する．$0 \leq cap, cost$
+- `solve(s, t, f)`：頂点 `s` から頂点 `t` へ流量 `f` を流すのに必要な最小費用を返す．流量 `f` を流せない場合は `mincostflow::inf` を返す．
+
+## 計算量
+- `mincostflow(V)`：$O(V)$
+- `add(from, to, cap, cost)`：ならし $O(1)$
+- `solve(s, t, f)`：$O(F(E+V)\log V)$

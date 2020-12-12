@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: graph/mincostflow.cpp
-    title: graph/mincostflow.cpp
+    title: "mincostflow(\u6700\u5C0F\u8CBB\u7528\u6D41)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -23,7 +23,7 @@ data:
     \ : next(next), rev(rev), cap(cap), cost(cost) {}\r\n\t};\r\n\r\npublic:\r\n\t\
     const long long inf = (1LL<<62)-1;\r\n\r\nprivate:\r\n\tconst int vnum;\r\n\t\
     vector<vector<edge>> G;\r\n\tvector<long long> pot;\r\n\tvector<int> pv, pe;\r\
-    \n\r\npublic:\r\n\tmincostflow(int N) : vnum(N), G(N), pot(N,0), pv(N), pe(N)\
+    \n\r\npublic:\r\n\tmincostflow(int V) : vnum(V), G(V), pot(V,0), pv(V), pe(V)\
     \ {}\r\n\r\n\tvoid add(int from, int to, long long cap, long long cost) {\r\n\t\
     \tassert(cost >= 0);\r\n\t\tG[from].push_back(edge(to, G[to].size(), cap, cost));\r\
     \n\t\tG[to].push_back(edge(from, G[from].size()-1, 0, -cost));\r\n\t}\r\n\r\n\
@@ -64,7 +64,7 @@ data:
   isVerificationFile: true
   path: test/aoj_GRL_6_B.test.cpp
   requiredBy: []
-  timestamp: '2020-12-10 10:38:50+09:00'
+  timestamp: '2020-12-13 00:02:13+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_GRL_6_B.test.cpp
