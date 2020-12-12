@@ -15,12 +15,13 @@ documentation_of: ../millor_rabin.cpp
 ## 補足
 実際は重めの定数倍 $(k=12)$ がついている．
 
-以下，ループさせたときの実験結果 (単位: sec)
-
-| Loop | $n \leq 2 \times 10^9$ | $n \leq 9 \times 10^{18}$ |
-| ---: | ---: | ---: |
-| $10^5$ | $0.053$ | $0.124$ |
-| $10^6$ | $0.529$ | $1.235$ |
+以下，ループさせたときの実行時間
+- $n \leq 2 \times 10^9$ で乱数
+	- ループ $10^5$ 回で $0.053 \sec$
+	- ループ $10^6$ 回で $0.529 \sec$
+- $n \leq 9 \times 10^{18}$ で乱数
+	- ループ $10^5$ 回で $0.529 \sec$
+	- ループ $10^6$ 回で $1.235 \sec$
 
 ## 参考
 - [Miller–Rabin primality test - Wikipedia](https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test#Testing_against_small_sets_of_bases)
