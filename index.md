@@ -112,6 +112,9 @@ data:
       path: test/aoj_GRL_6_B_2.test.cpp
       title: test/aoj_GRL_6_B_2.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/aoj_GRL_7_A.test.cpp
+      title: test/aoj_GRL_7_A.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/aoj_ITP1_6_B.test.cpp
       title: test/aoj_ITP1_6_B.test.cpp
     - icon: ':heavy_check_mark:'
