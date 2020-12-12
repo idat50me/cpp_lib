@@ -38,10 +38,12 @@ int main() {
 	for(int i=0; i<stat.size(); i++) {
 		if(stat[i].from==s || stat[i].to==t) continue;
 		int from=stat[i].from, to=stat[i].to-N;
-		if(stat[i].used_cap==1)
+		if(stat[i].used_cap==1) {
 			if(mp[from][to]=='.') wr.push({from+1,to+1});
-		else
+		}
+		else {
 			if(mp[from][to]=='o') er.push({from+1,to+1});
+		}
 	}
 
 	cout<<wr.size()+er.size()<<endl;
