@@ -34,11 +34,28 @@ int main() {
 	cout<<ans+mcf.solve(s,t,N)<<endl;
 
 	auto stat = mcf.stat();
+	queue<int> F,T;
+	queue<string> qstr;
 	for(int i=0; i<stat.size(); i++) {
-		if(stat[i].used_cap == 1) {
-			int from=stat[i].from, to=stat[i].to;
-			if(mp[from][to]=='o') cout<<from+1<<" "<<to-N+1<<" erase"<<endl;
-			else cout<<from+1<<" "<<to-N+1<<" write"<<endl;
+		if(stat[i].from==s || stat[i].to==t) continue;
+		int from=stat[i].from, to=stat[i].to-N;
+		if(stat[i].used_cap==1) {
+			if(mp[from][to]=='.') {
+				F.push(from+1), T.push(to+1);
+				qstr.push("write");
+			}
 		}
+		else if(mp[from][to]=='o') {
+			F.push(from+1), T.push(to+1);
+			qstr.push("erase");
+		}
+	}
+
+	cout<<F.size()<<endl;
+	while(!F.empty()) {
+		int from=F.front(), to=T.front();
+		string str=qstr.front();
+		F.pop(); T.pop(); qstr.pop();
+		cout<<from<<" "<<to<<" "<<str<<endl;
 	}
 }
