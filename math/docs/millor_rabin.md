@@ -17,10 +17,10 @@ documentation_of: ../millor_rabin.cpp
 
 以下，ループさせたときの実験結果 (単位: sec)
 
-Loop | $n \leq 2 \times 10^9$ | $n \leq 9 \times 10^{18}$
----: | ---: | ---:
-$10^5$ | $0.053$ | $0.124$
-$10^6$ | $0.529$ | $1.235$
+| Loop | $n \leq 2 \times 10^9$ | $n \leq 9 \times 10^{18}$ |
+| ---: | ---: | ---: |
+| $10^5$ | $0.053$ | $0.124$ |
+| $10^6$ | $0.529$ | $1.235$ |
 
 ## 参考
 - [Miller–Rabin primality test - Wikipedia](https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test#Testing_against_small_sets_of_bases)
