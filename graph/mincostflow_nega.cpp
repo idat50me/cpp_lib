@@ -27,7 +27,7 @@ private:
 	vector<int> pv, pe;
 
 public:
-	mincostflow(int N) : vnum(N), G(N), pot(N), pv(N), pe(N) {}
+	mincostflow(int V) : vnum(V), G(V), pot(V), pv(V), pe(V) {}
 
 	void add(int from, int to, long long cap, long long cost) {
 		G[from].push_back(edge(to, G[to].size(), cap, cost));
@@ -54,6 +54,8 @@ private:
 				}
 			}
 		}
+
+		if(pot[t] == inf) return inf;
 
 		int add_f = f;
 		for(int v=t; v!=s; v=pv[v]) add_f = min((long long)add_f, G[pv[v]][pe[v]].cap);

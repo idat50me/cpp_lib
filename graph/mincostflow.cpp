@@ -27,7 +27,7 @@ private:
 	vector<int> pv, pe;
 
 public:
-	mincostflow(int N) : vnum(N), G(N), pot(N,0), pv(N), pe(N) {}
+	mincostflow(int V) : vnum(V), G(V), pot(V,0), pv(V), pe(V) {}
 
 	void add(int from, int to, long long cap, long long cost) {
 		assert(cost >= 0);
