@@ -38,7 +38,7 @@ public:
 
 	T get(int idx) {
 		assert(0<=idx && idx<N);
-		return get(idx, idx+1);
+		return node[siz-1+i];
 	}
 	T get(int L, int R) {
 		if(L < 0) L = 0;
