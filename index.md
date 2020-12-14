@@ -23,7 +23,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/mincostflow_nega.cpp
       title: "mincostflow_nega(\u6700\u5C0F\u8CBB\u7528\u6D41)"
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: graph/segtree.cpp
       title: "segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
     - icon: ':heavy_check_mark:'
@@ -126,13 +126,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj_NTL_1_B.test.cpp
       title: test/aoj_NTL_1_B.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo_static_range_sum.test.cpp
       title: test/yosupo_static_range_sum.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo_staticrmq.test.cpp
       title: test/yosupo_staticrmq.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo_staticrmq_2.test.cpp
       title: test/yosupo_staticrmq_2.test.cpp
     - icon: ':heavy_check_mark:'

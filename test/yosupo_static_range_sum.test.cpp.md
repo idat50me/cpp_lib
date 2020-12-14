@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: graph/segtree.cpp
     title: "segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/static_range_sum
@@ -29,8 +29,8 @@ data:
     \n\t\tidx += siz-1;\r\n\t\tnode[idx] = val;\r\n\r\n\t\twhile(idx > 0) {\r\n\t\t\
     \tidx = (idx-1)/2;\r\n\t\t\tnode[idx] = op(node[2*idx+1], node[2*idx+2]);\r\n\t\
     \t}\r\n\t}\r\n\r\n\tT get(int idx) {\r\n\t\tassert(0<=idx && idx<N);\r\n\t\treturn\
-    \ get(idx, idx+1);\r\n\t}\r\n\tT get(int L, int R) {\r\n\t\tif(L < 0) L = 0;\r\
-    \n\t\tif(R > N) R = N;\r\n\t\tassert(L < R);\r\n\t\treturn get__(L, R, 0, 0, siz);\r\
+    \ node[siz-1+i];\r\n\t}\r\n\tT get(int L, int R) {\r\n\t\tif(L < 0) L = 0;\r\n\
+    \t\tif(R > N) R = N;\r\n\t\tassert(L < R);\r\n\t\treturn get__(L, R, 0, 0, siz);\r\
     \n\t}\r\nprivate:\r\n\tT get__(int L, int R, int id, int l, int r) {\r\n\t\tif(r<=L\
     \ || R<=l) return e_;\r\n\t\tif(L<=l && r<=R) return node[id];\r\n\t\tT vl = get__(L,\
     \ R, 2*id+1, l, (l+r)/2);\r\n\t\tT vr = get__(L, R, 2*id+2, (l+r)/2, r);\r\n\t\
@@ -53,8 +53,8 @@ data:
   isVerificationFile: true
   path: test/yosupo_static_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2020-12-12 00:27:38+09:00'
-  verificationStatus: TEST_ACCEPTED
+  timestamp: '2020-12-14 10:33:51+09:00'
+  verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo_static_range_sum.test.cpp
 layout: document
