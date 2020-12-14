@@ -3,14 +3,14 @@ data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo_static_range_sum.test.cpp
     title: test/yosupo_static_range_sum.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo_staticrmq_2.test.cpp
     title: test/yosupo_staticrmq_2.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"graph/segtree.cpp\"\n\r\n#ifndef call_include\r\n#define\
@@ -26,8 +26,8 @@ data:
     \n\t\tidx += siz-1;\r\n\t\tnode[idx] = val;\r\n\r\n\t\twhile(idx > 0) {\r\n\t\t\
     \tidx = (idx-1)/2;\r\n\t\t\tnode[idx] = op(node[2*idx+1], node[2*idx+2]);\r\n\t\
     \t}\r\n\t}\r\n\r\n\tT get(int idx) {\r\n\t\tassert(0<=idx && idx<N);\r\n\t\treturn\
-    \ node[siz-1+i];\r\n\t}\r\n\tT get(int L, int R) {\r\n\t\tif(L < 0) L = 0;\r\n\
-    \t\tif(R > N) R = N;\r\n\t\tassert(L < R);\r\n\t\treturn get__(L, R, 0, 0, siz);\r\
+    \ node[siz-1+idx];\r\n\t}\r\n\tT get(int L, int R) {\r\n\t\tif(L < 0) L = 0;\r\
+    \n\t\tif(R > N) R = N;\r\n\t\tassert(L < R);\r\n\t\treturn get__(L, R, 0, 0, siz);\r\
     \n\t}\r\nprivate:\r\n\tT get__(int L, int R, int id, int l, int r) {\r\n\t\tif(r<=L\
     \ || R<=l) return e_;\r\n\t\tif(L<=l && r<=R) return node[id];\r\n\t\tT vl = get__(L,\
     \ R, 2*id+1, l, (l+r)/2);\r\n\t\tT vr = get__(L, R, 2*id+2, (l+r)/2, r);\r\n\t\
@@ -44,7 +44,7 @@ data:
     \n\t}\r\n\r\n\tvoid update(int idx, T val) {\r\n\t\tidx += siz-1;\r\n\t\tnode[idx]\
     \ = val;\r\n\r\n\t\twhile(idx > 0) {\r\n\t\t\tidx = (idx-1)/2;\r\n\t\t\tnode[idx]\
     \ = op(node[2*idx+1], node[2*idx+2]);\r\n\t\t}\r\n\t}\r\n\r\n\tT get(int idx)\
-    \ {\r\n\t\tassert(0<=idx && idx<N);\r\n\t\treturn node[siz-1+i];\r\n\t}\r\n\t\
+    \ {\r\n\t\tassert(0<=idx && idx<N);\r\n\t\treturn node[siz-1+idx];\r\n\t}\r\n\t\
     T get(int L, int R) {\r\n\t\tif(L < 0) L = 0;\r\n\t\tif(R > N) R = N;\r\n\t\t\
     assert(L < R);\r\n\t\treturn get__(L, R, 0, 0, siz);\r\n\t}\r\nprivate:\r\n\t\
     T get__(int L, int R, int id, int l, int r) {\r\n\t\tif(r<=L || R<=l) return e_;\r\
@@ -55,8 +55,8 @@ data:
   isVerificationFile: false
   path: graph/segtree.cpp
   requiredBy: []
-  timestamp: '2020-12-14 10:33:51+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2020-12-14 17:13:42+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo_static_range_sum.test.cpp
   - test/yosupo_staticrmq_2.test.cpp
