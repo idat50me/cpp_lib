@@ -16,11 +16,11 @@ private:
 
 public:
 	segtree(int n, const F func, const T e) : N(n), op(func), e_(e) {
-		while(siz < N) siz *= 2;
+		while(siz < N) siz <<= 1;
 		node.resize(2*siz-1, e_);
 	}
 	segtree(const vector<T> &v, const F func, const T e) : N(v.size()), op(func), e_(e) {
-		while(siz < N) siz *= 2;
+		while(siz < N) siz <<= 1;
 		node.resize(2*siz-1, e_);
 		for(int i=0; i<N; i++) node[siz-1+i] = v[i];
 		for(int i=siz-2; i>=0; i--) node[i] = op(node[2*i+1], node[2*i+2]);
@@ -29,6 +29,16 @@ public:
 	void update(int idx, T val) {
 		idx += siz-1;
 		node[idx] = val;
+
+		while(idx > 0) {
+			idx = (idx-1)/2;
+			node[idx] = op(node[2*idx+1], node[2*idx+2]);
+		}
+	}
+
+	void add(int idx, T val) {
+		idx += siz-1;
+		node[idx] = op(node[idx], val);
 
 		while(idx > 0) {
 			idx = (idx-1)/2;
@@ -54,5 +64,4 @@ private:
 		T vr = get__(L, R, 2*id+2, (l+r)/2, r);
 		return op(vl, vr);
 	}
-public:
 };
