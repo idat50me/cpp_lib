@@ -6,12 +6,12 @@
 using namespace std;
 #endif
 
-#include "graph/lazy_segtree.cpp"
+#include "graph/segtree_lazy.cpp"
 
 int main() {
 	int N,Q; cin>>N>>Q;
 	const int in = 2147483647;
-	lazy_segtree<int,int> lsg(
+	segtree_lazy<int,int> lsg(
 		N,
 		[](int l, int r){return min(l,r);},
 		[](int x, int m){return m;},

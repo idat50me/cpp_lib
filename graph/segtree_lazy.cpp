@@ -7,7 +7,7 @@ using namespace std;
 #endif
 
 template<typename T, typename M>
-struct lazy_segtree {
+struct segtree_lazy {
 	using F = function<T(T,T)>;
 	using FU = function<M(T,M)>;
 	using FM = function<M(M,M)>;
@@ -23,13 +23,13 @@ private:
 	const M em;
 
 public:
-	lazy_segtree(int n, const F op, const FU f_upd, const FM f_lz, const T ex, const M em)
+	segtree_lazy(int n, const F op, const FU f_upd, const FM f_lz, const T ex, const M em)
 	: N(n), op(op), f_upd(f_upd), f_lz(f_lz), ex(ex), em(em) {
 		while(siz < N) siz <<= 1;
 		node.resize(2*siz-1, ex);
 		lazy.resize(2*siz-1, em);
 	}
-	lazy_segtree(vector<T> &v, const F op, const FU f_upd, const FM f_lz, const T ex, const T em)
+	segtree_lazy(vector<T> &v, const F op, const FU f_upd, const FM f_lz, const T ex, const T em)
 	: N(v.size()), op(op), f_upd(f_upd), f_lz(f_lz), ex(ex), em(em) {
 		while(siz < N) siz <<= 1;
 		node.resize(2*siz-1, ex);
