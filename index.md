@@ -15,9 +15,6 @@ data:
   - name: graph
     pages:
     - icon: ':heavy_check_mark:'
-      path: graph/lazy_segtree.cpp
-      title: graph/lazy_segtree.cpp
-    - icon: ':heavy_check_mark:'
       path: graph/maxflow.cpp
       title: "maxflow(\u6700\u5927\u6D41)"
     - icon: ':heavy_check_mark:'
@@ -32,6 +29,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/segtree_RmQ.cpp
       title: "(\u524A\u9664\u4E88\u5B9A) RmQ(\u533A\u9593\u6700\u5C0F\u5024)"
+    - icon: ':heavy_check_mark:'
+      path: graph/segtree_lazy.cpp
+      title: graph/segtree_lazy.cpp
     - icon: ':heavy_check_mark:'
       path: graph/union_find.cpp
       title: "Union-Find\u6728"

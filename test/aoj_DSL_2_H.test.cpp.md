@@ -2,8 +2,8 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: graph/lazy_segtree.cpp
-    title: graph/lazy_segtree.cpp
+    path: graph/segtree_lazy.cpp
+    title: graph/segtree_lazy.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
@@ -15,17 +15,17 @@ data:
     - https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_H
   bundledCode: "#line 1 \"test/aoj_DSL_2_H.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_H\"\
     \r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
-    \nusing namespace std;\r\n#endif\r\n\r\n#line 2 \"graph/lazy_segtree.cpp\"\n\r\
+    \nusing namespace std;\r\n#endif\r\n\r\n#line 2 \"graph/segtree_lazy.cpp\"\n\r\
     \n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\n\
     using namespace std;\r\n#endif\r\n\r\ntemplate<typename T, typename M>\r\nstruct\
-    \ lazy_segtree {\r\n\tusing F = function<T(T,T)>;\r\n\tusing FU = function<M(T,M)>;\r\
+    \ segtree_lazy {\r\n\tusing F = function<T(T,T)>;\r\n\tusing FU = function<M(T,M)>;\r\
     \n\tusing FM = function<M(M,M)>;\r\n\r\nprivate:\r\n\tint siz=1, N;\r\n\tvector<T>\
     \ node;\r\n\tvector<M> lazy;\r\n\tconst F op;\r\n\tconst FU f_upd;\r\n\tconst\
-    \ FM f_lz;\r\n\tconst T ex;\r\n\tconst M em;\r\n\r\npublic:\r\n\tlazy_segtree(int\
+    \ FM f_lz;\r\n\tconst T ex;\r\n\tconst M em;\r\n\r\npublic:\r\n\tsegtree_lazy(int\
     \ n, const F op, const FU f_upd, const FM f_lz, const T ex, const M em)\r\n\t\
     : N(n), op(op), f_upd(f_upd), f_lz(f_lz), ex(ex), em(em) {\r\n\t\twhile(siz <\
     \ N) siz <<= 1;\r\n\t\tnode.resize(2*siz-1, ex);\r\n\t\tlazy.resize(2*siz-1, em);\r\
-    \n\t}\r\n\tlazy_segtree(vector<T> &v, const F op, const FU f_upd, const FM f_lz,\
+    \n\t}\r\n\tsegtree_lazy(vector<T> &v, const F op, const FU f_upd, const FM f_lz,\
     \ const T ex, const T em)\r\n\t: N(v.size()), op(op), f_upd(f_upd), f_lz(f_lz),\
     \ ex(ex), em(em) {\r\n\t\twhile(siz < N) siz <<= 1;\r\n\t\tnode.resize(2*siz-1,\
     \ ex);\r\n\t\tlazy.resize(2*siz-1, em);\r\n\t\tfor(int i=0; i<N; i++) node[siz-1+i]\
@@ -50,7 +50,7 @@ data:
     \n\t\tT vl = get__(L, R, 2*idx+1, l, (l+r)/2);\r\n\t\tT vr = get__(L, R, 2*idx+2,\
     \ (l+r)/2, r);\r\n\t\treturn op(vl, vr);\r\n\t}\r\n};\r\n#line 10 \"test/aoj_DSL_2_H.test.cpp\"\
     \n\r\nint main() {\r\n\tint N,Q; cin>>N>>Q;\r\n\tconst int in = 2147483647;\r\n\
-    \tvector<int> v(N,0);\r\n\tlazy_segtree<int,int> lsg(\r\n\t\tv,\r\n\t\t[](int\
+    \tvector<int> v(N,0);\r\n\tsegtree_lazy<int,int> lsg(\r\n\t\tv,\r\n\t\t[](int\
     \ l, int r){return min(l,r);},\r\n\t\t[](int x, int m){return x+m;},\r\n\t\t[](int\
     \ l, int r){return l+r;},\r\n\t\t1000000000, 0\r\n\t);\r\n\r\n\twhile(Q--) {\r\
     \n\t\tint mode; cin>>mode;\r\n\t\tif(mode==0) {\r\n\t\t\tint S,T,X; cin>>S>>T>>X;\r\
@@ -58,20 +58,20 @@ data:
     \n\t\t\tcout<<lsg.get(S,T+1)<<endl;\r\n\t\t}\r\n\t}\r\n}\r\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_H\"\r\n\
     \r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
-    \nusing namespace std;\r\n#endif\r\n\r\n#include \"graph/lazy_segtree.cpp\"\r\n\
+    \nusing namespace std;\r\n#endif\r\n\r\n#include \"graph/segtree_lazy.cpp\"\r\n\
     \r\nint main() {\r\n\tint N,Q; cin>>N>>Q;\r\n\tconst int in = 2147483647;\r\n\t\
-    vector<int> v(N,0);\r\n\tlazy_segtree<int,int> lsg(\r\n\t\tv,\r\n\t\t[](int l,\
+    vector<int> v(N,0);\r\n\tsegtree_lazy<int,int> lsg(\r\n\t\tv,\r\n\t\t[](int l,\
     \ int r){return min(l,r);},\r\n\t\t[](int x, int m){return x+m;},\r\n\t\t[](int\
     \ l, int r){return l+r;},\r\n\t\t1000000000, 0\r\n\t);\r\n\r\n\twhile(Q--) {\r\
     \n\t\tint mode; cin>>mode;\r\n\t\tif(mode==0) {\r\n\t\t\tint S,T,X; cin>>S>>T>>X;\r\
     \n\t\t\tlsg.update(S,T+1,X);\r\n\t\t}\r\n\t\telse {\r\n\t\t\tint S,T; cin>>S>>T;\r\
     \n\t\t\tcout<<lsg.get(S,T+1)<<endl;\r\n\t\t}\r\n\t}\r\n}\r\n"
   dependsOn:
-  - graph/lazy_segtree.cpp
+  - graph/segtree_lazy.cpp
   isVerificationFile: true
   path: test/aoj_DSL_2_H.test.cpp
   requiredBy: []
-  timestamp: '2020-12-15 16:24:50+09:00'
+  timestamp: '2020-12-15 16:44:16+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_DSL_2_H.test.cpp

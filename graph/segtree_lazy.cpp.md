@@ -13,16 +13,16 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"graph/lazy_segtree.cpp\"\n\r\n#ifndef call_include\r\n#define\
+  bundledCode: "#line 2 \"graph/segtree_lazy.cpp\"\n\r\n#ifndef call_include\r\n#define\
     \ call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\
-    \n\r\ntemplate<typename T, typename M>\r\nstruct lazy_segtree {\r\n\tusing F =\
+    \n\r\ntemplate<typename T, typename M>\r\nstruct segtree_lazy {\r\n\tusing F =\
     \ function<T(T,T)>;\r\n\tusing FU = function<M(T,M)>;\r\n\tusing FM = function<M(M,M)>;\r\
     \n\r\nprivate:\r\n\tint siz=1, N;\r\n\tvector<T> node;\r\n\tvector<M> lazy;\r\n\
     \tconst F op;\r\n\tconst FU f_upd;\r\n\tconst FM f_lz;\r\n\tconst T ex;\r\n\t\
-    const M em;\r\n\r\npublic:\r\n\tlazy_segtree(int n, const F op, const FU f_upd,\
+    const M em;\r\n\r\npublic:\r\n\tsegtree_lazy(int n, const F op, const FU f_upd,\
     \ const FM f_lz, const T ex, const M em)\r\n\t: N(n), op(op), f_upd(f_upd), f_lz(f_lz),\
     \ ex(ex), em(em) {\r\n\t\twhile(siz < N) siz <<= 1;\r\n\t\tnode.resize(2*siz-1,\
-    \ ex);\r\n\t\tlazy.resize(2*siz-1, em);\r\n\t}\r\n\tlazy_segtree(vector<T> &v,\
+    \ ex);\r\n\t\tlazy.resize(2*siz-1, em);\r\n\t}\r\n\tsegtree_lazy(vector<T> &v,\
     \ const F op, const FU f_upd, const FM f_lz, const T ex, const T em)\r\n\t: N(v.size()),\
     \ op(op), f_upd(f_upd), f_lz(f_lz), ex(ex), em(em) {\r\n\t\twhile(siz < N) siz\
     \ <<= 1;\r\n\t\tnode.resize(2*siz-1, ex);\r\n\t\tlazy.resize(2*siz-1, em);\r\n\
@@ -49,14 +49,14 @@ data:
     \ (l+r)/2, r);\r\n\t\treturn op(vl, vr);\r\n\t}\r\n};\r\n"
   code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
     \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\ntemplate<typename T,\
-    \ typename M>\r\nstruct lazy_segtree {\r\n\tusing F = function<T(T,T)>;\r\n\t\
+    \ typename M>\r\nstruct segtree_lazy {\r\n\tusing F = function<T(T,T)>;\r\n\t\
     using FU = function<M(T,M)>;\r\n\tusing FM = function<M(M,M)>;\r\n\r\nprivate:\r\
     \n\tint siz=1, N;\r\n\tvector<T> node;\r\n\tvector<M> lazy;\r\n\tconst F op;\r\
     \n\tconst FU f_upd;\r\n\tconst FM f_lz;\r\n\tconst T ex;\r\n\tconst M em;\r\n\r\
-    \npublic:\r\n\tlazy_segtree(int n, const F op, const FU f_upd, const FM f_lz,\
+    \npublic:\r\n\tsegtree_lazy(int n, const F op, const FU f_upd, const FM f_lz,\
     \ const T ex, const M em)\r\n\t: N(n), op(op), f_upd(f_upd), f_lz(f_lz), ex(ex),\
     \ em(em) {\r\n\t\twhile(siz < N) siz <<= 1;\r\n\t\tnode.resize(2*siz-1, ex);\r\
-    \n\t\tlazy.resize(2*siz-1, em);\r\n\t}\r\n\tlazy_segtree(vector<T> &v, const F\
+    \n\t\tlazy.resize(2*siz-1, em);\r\n\t}\r\n\tsegtree_lazy(vector<T> &v, const F\
     \ op, const FU f_upd, const FM f_lz, const T ex, const T em)\r\n\t: N(v.size()),\
     \ op(op), f_upd(f_upd), f_lz(f_lz), ex(ex), em(em) {\r\n\t\twhile(siz < N) siz\
     \ <<= 1;\r\n\t\tnode.resize(2*siz-1, ex);\r\n\t\tlazy.resize(2*siz-1, em);\r\n\
@@ -83,17 +83,17 @@ data:
     \ (l+r)/2, r);\r\n\t\treturn op(vl, vr);\r\n\t}\r\n};\r\n"
   dependsOn: []
   isVerificationFile: false
-  path: graph/lazy_segtree.cpp
+  path: graph/segtree_lazy.cpp
   requiredBy: []
-  timestamp: '2020-12-15 15:45:27+09:00'
+  timestamp: '2020-12-15 16:44:16+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_DSL_2_H.test.cpp
   - test/aoj_DSL_2_F.test.cpp
-documentation_of: graph/lazy_segtree.cpp
+documentation_of: graph/segtree_lazy.cpp
 layout: document
 redirect_from:
-- /library/graph/lazy_segtree.cpp
-- /library/graph/lazy_segtree.cpp.html
-title: graph/lazy_segtree.cpp
+- /library/graph/segtree_lazy.cpp
+- /library/graph/segtree_lazy.cpp.html
+title: graph/segtree_lazy.cpp
 ---
