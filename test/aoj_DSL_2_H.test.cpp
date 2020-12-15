@@ -17,7 +17,7 @@ int main() {
 		[](int l, int r){return min(l,r);},
 		[](int x, int m){return x+m;},
 		[](int l, int r){return l+r;},
-		100010, 0
+		1000000000, 0
 	);
 
 	while(Q--) {
