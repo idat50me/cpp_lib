@@ -14,6 +14,9 @@ data:
       title: combinatorics/npr.cpp
   - name: graph
     pages:
+    - icon: ':question:'
+      path: graph/lazy_segtree.cpp
+      title: graph/lazy_segtree.cpp
     - icon: ':heavy_check_mark:'
       path: graph/maxflow.cpp
       title: "maxflow(\u6700\u5927\u6D41)"
@@ -105,6 +108,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj_DSL_2_A.test.cpp
       title: test/aoj_DSL_2_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj_DSL_2_F.test.cpp
+      title: test/aoj_DSL_2_F.test.cpp
+    - icon: ':x:'
+      path: test/aoj_DSL_2_H.test.cpp
+      title: test/aoj_DSL_2_H.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj_GRL_6_A.test.cpp
       title: test/aoj_GRL_6_A.test.cpp
