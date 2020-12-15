@@ -31,7 +31,8 @@ data:
       title: "(\u524A\u9664\u4E88\u5B9A) RmQ(\u533A\u9593\u6700\u5C0F\u5024)"
     - icon: ':heavy_check_mark:'
       path: graph/segtree_lazy.cpp
-      title: graph/segtree_lazy.cpp
+      title: "segtree_lazy(\u9045\u5EF6\u8A55\u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728\
+        )"
     - icon: ':heavy_check_mark:'
       path: graph/union_find.cpp
       title: "Union-Find\u6728"
