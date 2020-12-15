@@ -1,13 +1,13 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/lazy_segtree.cpp
     title: graph/lazy_segtree.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_H
@@ -52,8 +52,8 @@ data:
     \n\r\nint main() {\r\n\tint N,Q; cin>>N>>Q;\r\n\tconst int in = 2147483647;\r\n\
     \tvector<int> v(N,0);\r\n\tlazy_segtree<int,int> lsg(\r\n\t\tv,\r\n\t\t[](int\
     \ l, int r){return min(l,r);},\r\n\t\t[](int x, int m){return x+m;},\r\n\t\t[](int\
-    \ l, int r){return l+r;},\r\n\t\t100010, 0\r\n\t);\r\n\r\n\twhile(Q--) {\r\n\t\
-    \tint mode; cin>>mode;\r\n\t\tif(mode==0) {\r\n\t\t\tint S,T,X; cin>>S>>T>>X;\r\
+    \ l, int r){return l+r;},\r\n\t\t1000000000, 0\r\n\t);\r\n\r\n\twhile(Q--) {\r\
+    \n\t\tint mode; cin>>mode;\r\n\t\tif(mode==0) {\r\n\t\t\tint S,T,X; cin>>S>>T>>X;\r\
     \n\t\t\tlsg.update(S,T+1,X);\r\n\t\t}\r\n\t\telse {\r\n\t\t\tint S,T; cin>>S>>T;\r\
     \n\t\t\tcout<<lsg.get(S,T+1)<<endl;\r\n\t\t}\r\n\t}\r\n}\r\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/DSL_2_H\"\r\n\
@@ -62,8 +62,8 @@ data:
     \r\nint main() {\r\n\tint N,Q; cin>>N>>Q;\r\n\tconst int in = 2147483647;\r\n\t\
     vector<int> v(N,0);\r\n\tlazy_segtree<int,int> lsg(\r\n\t\tv,\r\n\t\t[](int l,\
     \ int r){return min(l,r);},\r\n\t\t[](int x, int m){return x+m;},\r\n\t\t[](int\
-    \ l, int r){return l+r;},\r\n\t\t100010, 0\r\n\t);\r\n\r\n\twhile(Q--) {\r\n\t\
-    \tint mode; cin>>mode;\r\n\t\tif(mode==0) {\r\n\t\t\tint S,T,X; cin>>S>>T>>X;\r\
+    \ l, int r){return l+r;},\r\n\t\t1000000000, 0\r\n\t);\r\n\r\n\twhile(Q--) {\r\
+    \n\t\tint mode; cin>>mode;\r\n\t\tif(mode==0) {\r\n\t\t\tint S,T,X; cin>>S>>T>>X;\r\
     \n\t\t\tlsg.update(S,T+1,X);\r\n\t\t}\r\n\t\telse {\r\n\t\t\tint S,T; cin>>S>>T;\r\
     \n\t\t\tcout<<lsg.get(S,T+1)<<endl;\r\n\t\t}\r\n\t}\r\n}\r\n"
   dependsOn:
@@ -71,8 +71,8 @@ data:
   isVerificationFile: true
   path: test/aoj_DSL_2_H.test.cpp
   requiredBy: []
-  timestamp: '2020-12-15 15:45:27+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2020-12-15 16:24:50+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_DSL_2_H.test.cpp
 layout: document

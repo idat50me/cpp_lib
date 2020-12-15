@@ -14,7 +14,7 @@ data:
       title: combinatorics/npr.cpp
   - name: graph
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/lazy_segtree.cpp
       title: graph/lazy_segtree.cpp
     - icon: ':heavy_check_mark:'
@@ -111,7 +111,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj_DSL_2_F.test.cpp
       title: test/aoj_DSL_2_F.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj_DSL_2_H.test.cpp
       title: test/aoj_DSL_2_H.test.cpp
     - icon: ':heavy_check_mark:'

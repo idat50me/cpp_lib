@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/lazy_segtree.cpp
     title: graph/lazy_segtree.cpp
   _extendedRequiredBy: []

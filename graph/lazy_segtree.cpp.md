@@ -6,11 +6,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj_DSL_2_F.test.cpp
     title: test/aoj_DSL_2_F.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj_DSL_2_H.test.cpp
     title: test/aoj_DSL_2_H.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"graph/lazy_segtree.cpp\"\n\r\n#ifndef call_include\r\n#define\
@@ -86,7 +86,7 @@ data:
   path: graph/lazy_segtree.cpp
   requiredBy: []
   timestamp: '2020-12-15 15:45:27+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_DSL_2_H.test.cpp
   - test/aoj_DSL_2_F.test.cpp
