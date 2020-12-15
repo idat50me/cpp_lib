@@ -31,3 +31,24 @@ $n \leq 10^8$ 程度．
 - `get(idx)`：$O(\log n)$
 - `get(L, R)`：$O(\log n)$
 
+## 具体例
+- RmQ
+	```cpp
+	auto op = [](T l, T r) { return min(l, r); };
+	T ex = MAX;
+	```
+
+- RUQ
+	```cpp
+	auto f_upd = [](T x, M m) { return m; };
+	auto f_lz = [](M l, M r) { return r; };
+	/* 入力されないことが保証される値，または pair<integer, bool> で保持している状態で bool = true としておく等 */
+	M em = -1;
+	```
+
+- RAQ
+	```cpp
+	auto f_upd = [](T x, M m) { return x+m; };
+	auto f_lz = [](M l, M r) { return l+r; };
+	M em = 0;
+	```
