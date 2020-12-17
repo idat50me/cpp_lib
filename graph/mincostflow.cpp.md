@@ -96,8 +96,8 @@ data:
   timestamp: '2020-12-13 01:39:45+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj_GRL_6_B.test.cpp
   - test/yuki_1301.test.cpp
+  - test/aoj_GRL_6_B.test.cpp
 documentation_of: graph/mincostflow.cpp
 layout: document
 title: "mincostflow(\u6700\u5C0F\u8CBB\u7528\u6D41)"

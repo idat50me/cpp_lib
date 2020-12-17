@@ -50,8 +50,8 @@ data:
   timestamp: '2020-12-11 23:39:25+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj_DPL_5_E_2.test.cpp
   - test/aoj_DPL_5_E.test.cpp
+  - test/aoj_DPL_5_E_2.test.cpp
 documentation_of: combinatorics/ncr2.cpp
 layout: document
 title: "nCr mod p ($r \\leq 10^7$, \u30AF\u30A8\u30EA $O(1)$ or $O(r)$)"

@@ -50,9 +50,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yuki_0177.test.cpp
+  - test/aoj_0341.test.cpp
   - test/aoj_ITP1_6_B.test.cpp
   - test/aoj_2429.test.cpp
-  - test/aoj_0341.test.cpp
 documentation_of: structs/matrix.cpp
 layout: document
 title: "Matrix( $2$ \u6B21\u5143\u884C\u5217)"

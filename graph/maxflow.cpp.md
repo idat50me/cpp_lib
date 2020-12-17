@@ -59,9 +59,9 @@ data:
   timestamp: '2020-12-11 02:19:58+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj_GRL_6_A.test.cpp
   - test/yuki_0177.test.cpp
   - test/aoj_GRL_7_A.test.cpp
+  - test/aoj_GRL_6_A.test.cpp
 documentation_of: graph/maxflow.cpp
 layout: document
 title: "maxflow(\u6700\u5927\u6D41)"

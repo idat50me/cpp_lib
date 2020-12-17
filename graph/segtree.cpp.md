@@ -63,8 +63,8 @@ data:
   timestamp: '2020-12-15 15:45:27+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo_static_range_sum.test.cpp
   - test/yosupo_staticrmq_2.test.cpp
+  - test/yosupo_static_range_sum.test.cpp
 documentation_of: graph/segtree.cpp
 layout: document
 title: "segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
