@@ -16,10 +16,10 @@ documentation_of: ../segtree_lazy.cpp
 $n \leq 10^8$ 程度．
 
 ## メンバ関数
-- `update(idx, val)`：`idx` 番目の要素を `val` との `f_upd` の結果に更新する．
-- `update(L, R, val)`：`[L, R)` 番目の要素を `val` との `f_upd` の結果に更新する．
+- `update(idx, val)`：`idx` 番目の要素を `val` との二項演算 `f_upd` の結果に更新する．
+- `update(L, R, val)`：`[L, R)` 番目の要素を `val` との二項演算 `f_upd` の結果に更新する．
 - `get(idx)`：`idx` 番目の要素を返す．
-- `get(L, R)`：区間 `[L, R)` の二項演算の結果を返す．
+- `get(L, R)`：区間 `[L, R)` の二項演算 `op` の結果を返す．
 
 `idx`, `L`, `R` は 0-indexed である．
 
