@@ -7,7 +7,7 @@ using namespace std;
 #endif
 
 #include "graph/maxflow.cpp"
-#include "structs/matrix.cpp"
+#include "structure/matrix.cpp"
 
 int main() {
 	int W,N,M;

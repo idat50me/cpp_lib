@@ -7,7 +7,7 @@ using namespace std;
 #endif
 
 #include "graph/mincostflow_nega.cpp"
-#include "structs/matrix.cpp"
+#include "structure/matrix.cpp"
 
 int main() {
 	int N; cin>>N;

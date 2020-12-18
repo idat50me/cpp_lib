@@ -7,7 +7,7 @@ using namespace std;
 #endif
 
 #include "mod/modint.cpp"
-#include "structs/matrix.cpp"
+#include "structure/matrix.cpp"
 #define MPRIME 1000000007LL
 
 int main() {
