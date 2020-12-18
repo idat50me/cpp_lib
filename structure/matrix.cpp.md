@@ -19,7 +19,7 @@ data:
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"structs/matrix.cpp\"\n\r\n#ifndef call_include\r\n#define\
+  bundledCode: "#line 2 \"structure/matrix.cpp\"\n\r\n#ifndef call_include\r\n#define\
     \ call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\
     \n\r\ntemplate<typename T>\r\nstruct matrix{\r\nprivate:\r\n\tvector<vector<T>>\
     \ m;\r\n\r\npublic:\r\n\tmatrix() : m(0, vector<T>(0)) {}\r\n\tmatrix(int h, int\
@@ -44,16 +44,16 @@ data:
     \ idx<m.size());\r\n\t\treturn m[idx];\r\n\t}\r\n};\r\n"
   dependsOn: []
   isVerificationFile: false
-  path: structs/matrix.cpp
+  path: structure/matrix.cpp
   requiredBy: []
-  timestamp: '2020-12-12 18:08:49+09:00'
+  timestamp: '2020-12-18 18:45:35+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yuki_0177.test.cpp
   - test/aoj_0341.test.cpp
   - test/aoj_ITP1_6_B.test.cpp
   - test/aoj_2429.test.cpp
-documentation_of: structs/matrix.cpp
+documentation_of: structure/matrix.cpp
 layout: document
 title: "Matrix( $2$ \u6B21\u5143\u884C\u5217)"
 ---

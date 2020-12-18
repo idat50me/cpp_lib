@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
-    path: structs/matrix.cpp
+    path: structure/matrix.cpp
     title: "Matrix( $2$ \u6B21\u5143\u884C\u5217)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
@@ -15,11 +15,11 @@ data:
     - https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/6/ITP1_6_B
   bundledCode: "#line 1 \"test/aoj_ITP1_6_B.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/6/ITP1_6_B\"\
     \r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
-    \nusing namespace std;\r\n#endif\r\n\r\n#line 2 \"structs/matrix.cpp\"\n\r\n#ifndef\
-    \ call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace\
-    \ std;\r\n#endif\r\n\r\ntemplate<typename T>\r\nstruct matrix{\r\nprivate:\r\n\
-    \tvector<vector<T>> m;\r\n\r\npublic:\r\n\tmatrix() : m(0, vector<T>(0)) {}\r\n\
-    \tmatrix(int h, int w) : m(h, vector<T>(w)) {}\r\n\tmatrix(int h, int w, const\
+    \nusing namespace std;\r\n#endif\r\n\r\n#line 2 \"structure/matrix.cpp\"\n\r\n\
+    #ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\nusing\
+    \ namespace std;\r\n#endif\r\n\r\ntemplate<typename T>\r\nstruct matrix{\r\nprivate:\r\
+    \n\tvector<vector<T>> m;\r\n\r\npublic:\r\n\tmatrix() : m(0, vector<T>(0)) {}\r\
+    \n\tmatrix(int h, int w) : m(h, vector<T>(w)) {}\r\n\tmatrix(int h, int w, const\
     \ T &init) : m(h, vector<T>(w, init)) {}\r\n\r\n\tvoid in() {\r\n\t\tfor(int i=0;\
     \ i<m.size(); i++) for(int j=0; j<m[i].size(); j++) cin>>m[i][j];\r\n\t}\r\n\r\
     \n\tvoid out() {\r\n\t\tfor(int i=0; i<m.size(); i++) {\r\n\t\t\tint sz = m[i].size();\r\
@@ -35,19 +35,19 @@ data:
     \ \"<<j<<endl;\r\n\t\t}\r\n\t}\r\n}\r\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/lesson/2/ITP1/6/ITP1_6_B\"\
     \r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
-    \nusing namespace std;\r\n#endif\r\n\r\n#include \"structs/matrix.cpp\"\r\n\r\n\
-    int main() {\r\n\tint N; cin>>N;\r\n\tmatrix card(4,14,true);\r\n\tmap<char,int>\
+    \nusing namespace std;\r\n#endif\r\n\r\n#include \"structure/matrix.cpp\"\r\n\r\
+    \nint main() {\r\n\tint N; cin>>N;\r\n\tmatrix card(4,14,true);\r\n\tmap<char,int>\
     \ ch2i={{'S',0}, {'H',1}, {'C',2}, {'D',3}};\r\n\tmap<int,char> i2ch={{0,'S'},\
     \ {1,'H'}, {2,'C'}, {3,'D'}};\r\n\r\n\tfor(int i=0; i<N; i++) {\r\n\t\tchar ch;\
     \ int num;\r\n\t\tcin>>ch>>num;\r\n\t\tcard[ch2i[ch]][num]=false;\r\n\t}\r\n\r\
     \n\tfor(int i=0; i<4; i++)for(int j=1; j<=13; j++) {\r\n\t\tif(card[i][j]) {\r\
     \n\t\t\tcout<<i2ch[i]<<\" \"<<j<<endl;\r\n\t\t}\r\n\t}\r\n}\r\n"
   dependsOn:
-  - structs/matrix.cpp
+  - structure/matrix.cpp
   isVerificationFile: true
   path: test/aoj_ITP1_6_B.test.cpp
   requiredBy: []
-  timestamp: '2020-12-12 18:08:49+09:00'
+  timestamp: '2020-12-18 18:45:55+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_ITP1_6_B.test.cpp

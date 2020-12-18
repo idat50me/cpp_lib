@@ -7,7 +7,7 @@ data:
   _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"structs/vertex.cpp\"\n\r\n#ifndef call_include\r\n#define\
+  bundledCode: "#line 2 \"structure/vertex.cpp\"\n\r\n#ifndef call_include\r\n#define\
     \ call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\
     \n\r\nstruct Vertex{\r\n\tvector<int> nxt;\r\n\tvector<int> cost;\r\n\tbool rch=false;\r\
     \n};\r\n"
@@ -16,15 +16,15 @@ data:
     vector<int> nxt;\r\n\tvector<int> cost;\r\n\tbool rch=false;\r\n};\r\n"
   dependsOn: []
   isVerificationFile: false
-  path: structs/vertex.cpp
+  path: structure/vertex.cpp
   requiredBy: []
-  timestamp: '2020-11-16 10:57:59+09:00'
+  timestamp: '2020-12-18 18:45:35+09:00'
   verificationStatus: LIBRARY_NO_TESTS
   verifiedWith: []
-documentation_of: structs/vertex.cpp
+documentation_of: structure/vertex.cpp
 layout: document
 redirect_from:
-- /library/structs/vertex.cpp
-- /library/structs/vertex.cpp.html
-title: structs/vertex.cpp
+- /library/structure/vertex.cpp
+- /library/structure/vertex.cpp.html
+title: structure/vertex.cpp
 ---
