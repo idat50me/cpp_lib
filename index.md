@@ -44,6 +44,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/divisor.cpp
       title: "Divisor(\u7D04\u6570\u5217\u6319)"
+    - icon: ':heavy_check_mark:'
+      path: math/extgcd.cpp
+      title: math/extgcd.cpp
     - icon: ':warning:'
       path: math/factorial.cpp
       title: "Factorial(\u968E\u4E57)"
@@ -136,6 +139,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj_NTL_1_B.test.cpp
       title: test/aoj_NTL_1_B.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj_NTL_1_E.test.cpp
+      title: test/aoj_NTL_1_E.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo_static_range_sum.test.cpp
       title: test/yosupo_static_range_sum.test.cpp
