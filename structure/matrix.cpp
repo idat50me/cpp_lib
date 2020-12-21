@@ -16,6 +16,9 @@ public:
 	matrix(int h, int w) : m(h, vector<T>(w)) {}
 	matrix(int h, int w, const T &init) : m(h, vector<T>(w, init)) {}
 
+	void assign(int h, int w) { m = matrix<T>(h, w); }
+	void assign(int h, int w, const T init) { m = matrix<T>(h, w, init); }
+
 	void in() {
 		for(int i=0; i<m.size(); i++) for(int j=0; j<m[i].size(); j++) cin>>m[i][j];
 	}
