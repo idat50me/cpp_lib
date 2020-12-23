@@ -8,8 +8,8 @@ using namespace std;
 
 long long extgcd(long long a, long long b, long long &x, long long &y) {
 	long long x_ = a, xd = 1, xdd = 0,
-			  y_ = b, yd = 0, ydd = 1,
-			  div;
+	          y_ = b, yd = 0, ydd = 1,
+	          div;
 	while(true) {
 		if(!y_) {
 			x = xd; y = xdd;

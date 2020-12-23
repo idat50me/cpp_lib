@@ -21,8 +21,8 @@ public:
 private:
 	mint inv() const {
 		long long x_ = val, xd = 1, xdd = 0,
-				  y_ = mod, yd = 0, ydd = 1,
-				  div;
+		          y_ = mod, yd = 0, ydd = 1,
+		          div;
 		
 		while(true) {
 			if(!y_) return mint(xd);
