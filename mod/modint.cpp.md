@@ -33,22 +33,27 @@ data:
     \n\t\t\tdiv = y_/x_;\r\n\t\t\ty_  -= div*x_;\r\n\t\t\tyd  -= div*xd;\r\n\t\t\t\
     ydd -= div*xdd;\r\n\t\t}\r\n\t}\r\n\r\npublic:\r\n\r\n\tmint operator-() const\
     \ {\r\n\t\treturn mint(-val);\r\n\t}\r\n\r\n\tmint& operator+=(const mint& a)\
-    \ {\r\n\t\t(val+=a.val) %= mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmint& operator-=(const\
-    \ mint& a) {\r\n\t\t(val+=mod-a.val) %= mod;\r\n\t\treturn *this;\r\n\t}\r\n\t\
-    mint& operator*=(const mint& a) {\r\n\t\t(val*=a.val) %= mod;\r\n\t\treturn *this;\r\
-    \n\t}\r\n\tmint& operator/=(const mint& a) {\r\n\t\treturn (*this) *= a.inv();\r\
-    \n\t}\r\n\r\n\tmint operator+(const mint& a) const {\r\n\t\tmint res(*this);\r\
-    \n\t\treturn res+=a;\r\n\t}\r\n\tmint operator-(const mint& a) const {\r\n\t\t\
-    mint res(*this);\r\n\t\treturn res-=a;\r\n\t}\r\n\tmint operator*(const mint&\
-    \ a) const {\r\n\t\tmint res(*this);\r\n\t\treturn res*=a;\r\n\t}\r\n\tmint operator/(const\
-    \ mint& a) const {\r\n\t\tmint res(*this);\r\n\t\treturn res/=a;\r\n\t}\r\n\t\
-    mint operator+(const long long& a) const {\r\n\t\tmint res(*this);\r\n\t\treturn\
-    \ res+=mint(a);\r\n\t}\r\n\tmint operator-(const long long& a) const {\r\n\t\t\
-    mint res(*this);\r\n\t\treturn res-=mint(a);\r\n\t}\r\n\tmint operator*(const\
-    \ long long& a) const {\r\n\t\tmint res(*this);\r\n\t\treturn res*=mint(a);\r\n\
-    \t}\r\n\tmint operator/(const long long& a) const {\r\n\t\tmint res(*this);\r\n\
-    \t\treturn res/=mint(a);\r\n\t}\r\n\r\n\tmint& operator++() {\r\n\t\t(++val) %=\
-    \ mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmint operator++(int) {\r\n\t\tmint res(*this);\r\
+    \ {\r\n\t\tval += a.val;\r\n\t\tif(val >= mod) val -= mod;\r\n\t\treturn *this;\r\
+    \n\t}\r\n\tmint& operator-=(const mint& a) {\r\n\t\tval -= a.val;\r\n\t\tif(val\
+    \ < 0) val += mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmint& operator*=(const mint&\
+    \ a) {\r\n\t\t(val*=a.val) %= mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmint& operator/=(const\
+    \ mint& a) {\r\n\t\treturn (*this) *= a.inv();\r\n\t}\r\n\tmint& operator+=(const\
+    \ long long& a) {\r\n\t\t(val+=mod+a%mod) %= mod;\r\n\t\treturn *this;\r\n\t}\r\
+    \n\tmint& operator-=(const long long& a) {\r\n\t\t(val+=mod-a%mod) %= mod;\r\n\
+    \t\treturn *this;\r\n\t}\r\n\tmint& operator*=(const long long& a) {\r\n\t\t(val*=mod+a%mod)\
+    \ %= mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmint& operator/=(const long long& a)\
+    \ {\r\n\t\treturn (*this)/=mint(a);\r\n\t}\r\n\r\n\tmint operator+(const mint&\
+    \ a) const {\r\n\t\tmint res(*this);\r\n\t\treturn res+=a;\r\n\t}\r\n\tmint operator-(const\
+    \ mint& a) const {\r\n\t\tmint res(*this);\r\n\t\treturn res-=a;\r\n\t}\r\n\t\
+    mint operator*(const mint& a) const {\r\n\t\tmint res(*this);\r\n\t\treturn res*=a;\r\
+    \n\t}\r\n\tmint operator/(const mint& a) const {\r\n\t\tmint res(*this);\r\n\t\
+    \treturn res/=a;\r\n\t}\r\n\tmint operator+(const long long& a) const {\r\n\t\t\
+    mint res(*this);\r\n\t\treturn res+=a;\r\n\t}\r\n\tmint operator-(const long long&\
+    \ a) const {\r\n\t\tmint res(*this);\r\n\t\treturn res-=a;\r\n\t}\r\n\tmint operator*(const\
+    \ long long& a) const {\r\n\t\tmint res(*this);\r\n\t\treturn res*=a;\r\n\t}\r\
+    \n\tmint operator/(const long long& a) const {\r\n\t\tmint res(*this);\r\n\t\t\
+    return res/=mint(a);\r\n\t}\r\n\r\n\tmint& operator++() {\r\n\t\t(++val) %= mod;\r\
+    \n\t\treturn *this;\r\n\t}\r\n\tmint operator++(int) {\r\n\t\tmint res(*this);\r\
     \n\t\t(++val) %= mod;\r\n\t\treturn res;\r\n\t}\r\n\tmint& operator--() {\r\n\t\
     \t(val+=mod-1) %= mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmint operator--(int) {\r\
     \n\t\tmint res(*this);\r\n\t\t(val+=mod-1) %= mod;\r\n\t\treturn res;\r\n\t}\r\
@@ -81,22 +86,27 @@ data:
     \n\t\t\tdiv = y_/x_;\r\n\t\t\ty_  -= div*x_;\r\n\t\t\tyd  -= div*xd;\r\n\t\t\t\
     ydd -= div*xdd;\r\n\t\t}\r\n\t}\r\n\r\npublic:\r\n\r\n\tmint operator-() const\
     \ {\r\n\t\treturn mint(-val);\r\n\t}\r\n\r\n\tmint& operator+=(const mint& a)\
-    \ {\r\n\t\t(val+=a.val) %= mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmint& operator-=(const\
-    \ mint& a) {\r\n\t\t(val+=mod-a.val) %= mod;\r\n\t\treturn *this;\r\n\t}\r\n\t\
-    mint& operator*=(const mint& a) {\r\n\t\t(val*=a.val) %= mod;\r\n\t\treturn *this;\r\
-    \n\t}\r\n\tmint& operator/=(const mint& a) {\r\n\t\treturn (*this) *= a.inv();\r\
-    \n\t}\r\n\r\n\tmint operator+(const mint& a) const {\r\n\t\tmint res(*this);\r\
-    \n\t\treturn res+=a;\r\n\t}\r\n\tmint operator-(const mint& a) const {\r\n\t\t\
-    mint res(*this);\r\n\t\treturn res-=a;\r\n\t}\r\n\tmint operator*(const mint&\
-    \ a) const {\r\n\t\tmint res(*this);\r\n\t\treturn res*=a;\r\n\t}\r\n\tmint operator/(const\
-    \ mint& a) const {\r\n\t\tmint res(*this);\r\n\t\treturn res/=a;\r\n\t}\r\n\t\
-    mint operator+(const long long& a) const {\r\n\t\tmint res(*this);\r\n\t\treturn\
-    \ res+=mint(a);\r\n\t}\r\n\tmint operator-(const long long& a) const {\r\n\t\t\
-    mint res(*this);\r\n\t\treturn res-=mint(a);\r\n\t}\r\n\tmint operator*(const\
-    \ long long& a) const {\r\n\t\tmint res(*this);\r\n\t\treturn res*=mint(a);\r\n\
-    \t}\r\n\tmint operator/(const long long& a) const {\r\n\t\tmint res(*this);\r\n\
-    \t\treturn res/=mint(a);\r\n\t}\r\n\r\n\tmint& operator++() {\r\n\t\t(++val) %=\
-    \ mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmint operator++(int) {\r\n\t\tmint res(*this);\r\
+    \ {\r\n\t\tval += a.val;\r\n\t\tif(val >= mod) val -= mod;\r\n\t\treturn *this;\r\
+    \n\t}\r\n\tmint& operator-=(const mint& a) {\r\n\t\tval -= a.val;\r\n\t\tif(val\
+    \ < 0) val += mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmint& operator*=(const mint&\
+    \ a) {\r\n\t\t(val*=a.val) %= mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmint& operator/=(const\
+    \ mint& a) {\r\n\t\treturn (*this) *= a.inv();\r\n\t}\r\n\tmint& operator+=(const\
+    \ long long& a) {\r\n\t\t(val+=mod+a%mod) %= mod;\r\n\t\treturn *this;\r\n\t}\r\
+    \n\tmint& operator-=(const long long& a) {\r\n\t\t(val+=mod-a%mod) %= mod;\r\n\
+    \t\treturn *this;\r\n\t}\r\n\tmint& operator*=(const long long& a) {\r\n\t\t(val*=mod+a%mod)\
+    \ %= mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmint& operator/=(const long long& a)\
+    \ {\r\n\t\treturn (*this)/=mint(a);\r\n\t}\r\n\r\n\tmint operator+(const mint&\
+    \ a) const {\r\n\t\tmint res(*this);\r\n\t\treturn res+=a;\r\n\t}\r\n\tmint operator-(const\
+    \ mint& a) const {\r\n\t\tmint res(*this);\r\n\t\treturn res-=a;\r\n\t}\r\n\t\
+    mint operator*(const mint& a) const {\r\n\t\tmint res(*this);\r\n\t\treturn res*=a;\r\
+    \n\t}\r\n\tmint operator/(const mint& a) const {\r\n\t\tmint res(*this);\r\n\t\
+    \treturn res/=a;\r\n\t}\r\n\tmint operator+(const long long& a) const {\r\n\t\t\
+    mint res(*this);\r\n\t\treturn res+=a;\r\n\t}\r\n\tmint operator-(const long long&\
+    \ a) const {\r\n\t\tmint res(*this);\r\n\t\treturn res-=a;\r\n\t}\r\n\tmint operator*(const\
+    \ long long& a) const {\r\n\t\tmint res(*this);\r\n\t\treturn res*=a;\r\n\t}\r\
+    \n\tmint operator/(const long long& a) const {\r\n\t\tmint res(*this);\r\n\t\t\
+    return res/=mint(a);\r\n\t}\r\n\r\n\tmint& operator++() {\r\n\t\t(++val) %= mod;\r\
+    \n\t\treturn *this;\r\n\t}\r\n\tmint operator++(int) {\r\n\t\tmint res(*this);\r\
     \n\t\t(++val) %= mod;\r\n\t\treturn res;\r\n\t}\r\n\tmint& operator--() {\r\n\t\
     \t(val+=mod-1) %= mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmint operator--(int) {\r\
     \n\t\tmint res(*this);\r\n\t\t(val+=mod-1) %= mod;\r\n\t\treturn res;\r\n\t}\r\
@@ -123,7 +133,7 @@ data:
   isVerificationFile: false
   path: mod/modint.cpp
   requiredBy: []
-  timestamp: '2020-12-23 15:21:02+09:00'
+  timestamp: '2020-12-23 17:57:13+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_0341.test.cpp
@@ -152,3 +162,5 @@ ModInt と Integer の演算もできる（下記参照）．
 - 比較演算 `==`, `!=`, `<`, `>`, `<=`, `>=`
 - 単純代入 `=`
 - 入出力 `>>`, `<<`
+
+除算 `/`, `/=` は計算量 $O(\log x)$ かかることに注意．
