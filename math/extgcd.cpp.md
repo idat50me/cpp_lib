@@ -44,8 +44,23 @@ data:
   - test/aoj_NTL_1_E.test.cpp
 documentation_of: math/extgcd.cpp
 layout: document
-redirect_from:
-- /library/math/extgcd.cpp
-- /library/math/extgcd.cpp.html
-title: math/extgcd.cpp
+title: "extgcd(\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\u6CD5\
+  )"
 ---
+
+## なにこれ
+一次不定方程式 $ax+by=c$ の1つの整数解 $(x,y)$ を求める．
+
+## 関数
+- `extgcd(a, b, x, y)`：$ax+by=\gcd(a,b)$ の1つの解を `x`, `y` に格納し，$\gcd(a,b)$ を返す．
+- `extgcd(a, b, c, x, y)`：$ax+by=c$ の1つの解を `x`, `y` に格納し，$\gcd(a,b)$ を返す．整数解が存在しない場合は $-1$ を返す．
+
+## 計算量
+- $O(\log a)$
+
+## 補足
+### 一般解の導出
+- 求めた特殊解 $(x_0,y_0)$
+- $d = \gcd(a,b)$ とし，$a' = \dfrac a d,\ b' = \dfrac b d$ とおく
+
+このとき，一般解は $(x,y) = (x_0+b't,\ y_0+a't)$
