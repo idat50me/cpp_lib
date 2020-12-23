@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/aoj_ALDS1_1_B.test.cpp
+    title: test/aoj_ALDS1_1_B.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj_NTL_1_E.test.cpp
     title: test/aoj_NTL_1_E.test.cpp
   _pathExtension: cpp
@@ -41,6 +44,7 @@ data:
   timestamp: '2020-12-23 15:21:02+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/aoj_ALDS1_1_B.test.cpp
   - test/aoj_NTL_1_E.test.cpp
 documentation_of: math/extgcd.cpp
 layout: document

@@ -90,6 +90,9 @@ data:
       path: test/aoj_2429.test.cpp
       title: test/aoj_2429.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/aoj_ALDS1_1_B.test.cpp
+      title: test/aoj_ALDS1_1_B.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/aoj_ALDS1_1_C.test.cpp
       title: test/aoj_ALDS1_1_C.test.cpp
     - icon: ':heavy_check_mark:'
