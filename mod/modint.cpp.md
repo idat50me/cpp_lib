@@ -26,10 +26,10 @@ data:
     \ %= p;\r\n\t}\r\n\treturn res;\r\n}\r\n#line 10 \"mod/modint.cpp\"\n\r\ntemplate<int\
     \ mod>\r\nstruct mint {\r\nprivate:\r\n\r\n\tlong long val;\r\n\r\npublic:\r\n\
     \r\n\tmint(long long x=0) : val((mod+x%mod)%mod) {}\r\n\r\nprivate:\r\n\tmint\
-    \ inv() const {\r\n\t\tlong long x_ = val, xd = 1, xdd = 0,\r\n\t\t\t\t  y_ =\
-    \ mod, yd = 0, ydd = 1,\r\n\t\t\t\t  div;\r\n\t\t\r\n\t\twhile(true) {\r\n\t\t\
-    \tif(!y_) return mint(xd);\r\n\t\t\tdiv = x_/y_;\r\n\t\t\tx_  -= div*y_;\r\n\t\
-    \t\txd  -= div*yd;\r\n\t\t\txdd -= div*ydd;\r\n\r\n\t\t\tif(!x_) return mint(yd);\r\
+    \ inv() const {\r\n\t\tlong long x_ = val, xd = 1, xdd = 0,\r\n\t\t          y_\
+    \ = mod, yd = 0, ydd = 1,\r\n\t\t          div;\r\n\t\t\r\n\t\twhile(true) {\r\
+    \n\t\t\tif(!y_) return mint(xd);\r\n\t\t\tdiv = x_/y_;\r\n\t\t\tx_  -= div*y_;\r\
+    \n\t\t\txd  -= div*yd;\r\n\t\t\txdd -= div*ydd;\r\n\r\n\t\t\tif(!x_) return mint(yd);\r\
     \n\t\t\tdiv = y_/x_;\r\n\t\t\ty_  -= div*x_;\r\n\t\t\tyd  -= div*xd;\r\n\t\t\t\
     ydd -= div*xdd;\r\n\t\t}\r\n\t}\r\n\r\npublic:\r\n\r\n\tmint operator-() const\
     \ {\r\n\t\treturn mint(-val);\r\n\t}\r\n\r\n\tmint& operator+=(const mint& a)\
@@ -74,9 +74,9 @@ data:
     \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\n#include \"../math/binpow.cpp\"\
     \r\n\r\ntemplate<int mod>\r\nstruct mint {\r\nprivate:\r\n\r\n\tlong long val;\r\
     \n\r\npublic:\r\n\r\n\tmint(long long x=0) : val((mod+x%mod)%mod) {}\r\n\r\nprivate:\r\
-    \n\tmint inv() const {\r\n\t\tlong long x_ = val, xd = 1, xdd = 0,\r\n\t\t\t\t\
-    \  y_ = mod, yd = 0, ydd = 1,\r\n\t\t\t\t  div;\r\n\t\t\r\n\t\twhile(true) {\r\
-    \n\t\t\tif(!y_) return mint(xd);\r\n\t\t\tdiv = x_/y_;\r\n\t\t\tx_  -= div*y_;\r\
+    \n\tmint inv() const {\r\n\t\tlong long x_ = val, xd = 1, xdd = 0,\r\n\t\t   \
+    \       y_ = mod, yd = 0, ydd = 1,\r\n\t\t          div;\r\n\t\t\r\n\t\twhile(true)\
+    \ {\r\n\t\t\tif(!y_) return mint(xd);\r\n\t\t\tdiv = x_/y_;\r\n\t\t\tx_  -= div*y_;\r\
     \n\t\t\txd  -= div*yd;\r\n\t\t\txdd -= div*ydd;\r\n\r\n\t\t\tif(!x_) return mint(yd);\r\
     \n\t\t\tdiv = y_/x_;\r\n\t\t\ty_  -= div*x_;\r\n\t\t\tyd  -= div*xd;\r\n\t\t\t\
     ydd -= div*xdd;\r\n\t\t}\r\n\t}\r\n\r\npublic:\r\n\r\n\tmint operator-() const\
@@ -123,7 +123,7 @@ data:
   isVerificationFile: false
   path: mod/modint.cpp
   requiredBy: []
-  timestamp: '2020-12-23 14:53:48+09:00'
+  timestamp: '2020-12-23 15:21:02+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_0341.test.cpp
