@@ -4,11 +4,11 @@ documentation_of: ../extgcd.cpp
 ---
 
 ## なにこれ
-一次不定方程式 $ax+by=c$ の1つの整数解 $(x,y)$ を求める．
+一次不定方程式 $ax+by=c$ の 1 つの整数解 $(x,y)$ を求める．
 
 ## 関数
-- `extgcd(a, b, x, y)`：$ax+by=\gcd(a,b)$ の1つの解を `x`, `y` に格納し，$\gcd(a,b)$ を返す．
-- `extgcd(a, b, c, x, y)`：$ax+by=c$ の1つの解を `x`, `y` に格納し，$\gcd(a,b)$ を返す．整数解が存在しない場合は $-1$ を返す．
+- `extgcd(a, b, x, y)`：$ax+by=\gcd(a,b)$ の 1 つの解を `x`, `y` に格納し，$\gcd(a,b)$ を返す．
+- `extgcd(a, b, c, x, y)`：$ax+by=c$ の 1 つの解を `x`, `y` に格納し，$\gcd(a,b)$ を返す．整数解が存在しない場合は $-1$ を返す．
 
 ## 計算量
 - $O(\log a)$
