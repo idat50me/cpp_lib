@@ -46,11 +46,13 @@ public:
 	}
 
 	mint& operator+=(const mint& a) {
-		(val+=a.val) %= mod;
+		val += a.val;
+		if(val >= mod) val -= mod;
 		return *this;
 	}
 	mint& operator-=(const mint& a) {
-		(val+=mod-a.val) %= mod;
+		val -= a.val;
+		if(val < 0) val += mod;
 		return *this;
 	}
 	mint& operator*=(const mint& a) {
@@ -59,6 +61,21 @@ public:
 	}
 	mint& operator/=(const mint& a) {
 		return (*this) *= a.inv();
+	}
+	mint& operator+=(const long long& a) {
+		(val+=mod+a%mod) %= mod;
+		return *this;
+	}
+	mint& operator-=(const long long& a) {
+		(val+=mod-a%mod) %= mod;
+		return *this;
+	}
+	mint& operator*=(const long long& a) {
+		(val*=mod+a%mod) %= mod;
+		return *this;
+	}
+	mint& operator/=(const long long& a) {
+		return (*this)/=mint(a);
 	}
 
 	mint operator+(const mint& a) const {
@@ -79,15 +96,15 @@ public:
 	}
 	mint operator+(const long long& a) const {
 		mint res(*this);
-		return res+=mint(a);
+		return res+=a;
 	}
 	mint operator-(const long long& a) const {
 		mint res(*this);
-		return res-=mint(a);
+		return res-=a;
 	}
 	mint operator*(const long long& a) const {
 		mint res(*this);
-		return res*=mint(a);
+		return res*=a;
 	}
 	mint operator/(const long long& a) const {
 		mint res(*this);
