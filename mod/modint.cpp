@@ -19,12 +19,24 @@ public:
 	mint(long long x=0) : val((mod+x%mod)%mod) {}
 
 private:
-
-	mint pow(long long ex) const {
-		return mint(binpow(val, ex, mod));
-	}
 	mint inv() const {
-		return pow(mod-2);
+		long long x_ = val, xd = 1, xdd = 0,
+				  y_ = mod, yd = 0, ydd = 1,
+				  div;
+		
+		while(true) {
+			if(!y_) return mint(xd);
+			div = x_/y_;
+			x_  -= div*y_;
+			xd  -= div*yd;
+			xdd -= div*ydd;
+
+			if(!x_) return mint(yd);
+			div = y_/x_;
+			y_  -= div*x_;
+			yd  -= div*xd;
+			ydd -= div*xdd;
+		}
 	}
 
 public:
