@@ -27,28 +27,28 @@ data:
     \n\r\nprivate:\r\n\tconst int vnum;\r\n\tvector<vector<edge>> G;\r\n\tvector<long\
     \ long> pot;\r\n\tvector<int> pv, pe;\r\n\r\npublic:\r\n\tmincostflow(int V) :\
     \ vnum(V), G(V), pot(V), pv(V), pe(V) {}\r\n\r\n\tvoid add(int from, int to, long\
-    \ long cap, long long cost) {\r\n\t\tG[from].push_back(edge(to, G[to].size(),\
-    \ cap, cost, false));\r\n\t\tG[to].push_back(edge(from, G[from].size()-1, 0, -cost,\
-    \ true));\r\n\t}\r\n\r\nprivate:\r\n\tlong long bellman_ford(int s, int t, int\
-    \ &f) {\r\n\t\tpot.assign(vnum, inf);\r\n\t\tpv.assign(vnum, -1);\r\n\t\tpe.assign(vnum,\
-    \ -1);\r\n\t\tpot[s] = 0;\r\n\t\tfor(int i=0; i<vnum; i++) {\r\n\t\t\tfor(int\
-    \ j=0; j<vnum; j++) {\r\n\t\t\t\tif(pot[j] == inf) continue;\r\n\t\t\t\tfor(int\
-    \ k=0; k<G[j].size(); k++) {\r\n\t\t\t\t\tconst edge &ed = G[j][k];\r\n\t\t\t\t\
-    \tif(ed.cap>0 && pot[ed.next]>pot[j]+ed.cost) {\r\n\t\t\t\t\t\tif(i == vnum-1)\
-    \ return -inf;\r\n\t\t\t\t\t\tpot[ed.next] = pot[j]+ed.cost;\r\n\t\t\t\t\t\tpv[ed.next]\
-    \ = j;\r\n\t\t\t\t\t\tpe[ed.next] = k;\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t}\r\
-    \n\t\t}\r\n\r\n\t\tif(pot[t] == inf) return inf;\r\n\r\n\t\tint add_f = f;\r\n\
-    \t\tfor(int v=t; v!=s; v=pv[v]) add_f = min((long long)add_f, G[pv[v]][pe[v]].cap);\r\
-    \n\t\tf -= add_f;\r\n\t\tfor(int v=t; v!=s; v=pv[v]) {\r\n\t\t\tedge &ed = G[pv[v]][pe[v]];\r\
-    \n\t\t\ted.cap -= add_f;\r\n\t\t\tG[v][ed.rev].cap += add_f;\r\n\t\t}\r\n\t\t\
-    return pot[t]*add_f;\r\n\t}\r\n\r\n\tlong long dijkstra(int s, int t) {\r\n\t\t\
-    long long ans = 0;\r\n\t\tpriority_queue<pair<long long,int>, vector<pair<long\
-    \ long,int>>, greater<pair<long long,int>>> q;\r\n\t\tvector<long long> dist(vnum,\
-    \ inf);\r\n\t\tpv.assign(vnum, -1);\r\n\t\tpe.assign(vnum, -1);\r\n\t\tq.push(make_pair(0LL,s));\r\
-    \n\t\tdist[s] = 0;\r\n\r\n\t\twhile(!q.empty()) {\r\n\t\t\tlong long d = q.top().first,\
-    \ v = q.top().second;\r\n\t\t\tq.pop();\r\n\t\t\tif(dist[v] < d) continue;\r\n\
-    \t\t\tfor(int i=0; i<G[v].size(); i++) {\r\n\t\t\t\tedge &ed = G[v][i];\r\n\t\t\
-    \t\tlong long nd = d+ed.cost+pot[v]-pot[ed.next];\r\n\t\t\t\tif(ed.cap>0 && dist[ed.next]>nd)\
+    \ long cap, long long cost) {\r\n\t\tG[from].emplace_back(to, G[to].size(), cap,\
+    \ cost, false);\r\n\t\tG[to].emplace_back(from, G[from].size()-1, 0, -cost, true);\r\
+    \n\t}\r\n\r\nprivate:\r\n\tlong long bellman_ford(int s, int t, int &f) {\r\n\t\
+    \tpot.assign(vnum, inf);\r\n\t\tpv.assign(vnum, -1);\r\n\t\tpe.assign(vnum, -1);\r\
+    \n\t\tpot[s] = 0;\r\n\t\tfor(int i=0; i<vnum; i++) {\r\n\t\t\tfor(int j=0; j<vnum;\
+    \ j++) {\r\n\t\t\t\tif(pot[j] == inf) continue;\r\n\t\t\t\tfor(int k=0; k<G[j].size();\
+    \ k++) {\r\n\t\t\t\t\tconst edge &ed = G[j][k];\r\n\t\t\t\t\tif(ed.cap>0 && pot[ed.next]>pot[j]+ed.cost)\
+    \ {\r\n\t\t\t\t\t\tif(i == vnum-1) return -inf;\r\n\t\t\t\t\t\tpot[ed.next] =\
+    \ pot[j]+ed.cost;\r\n\t\t\t\t\t\tpv[ed.next] = j;\r\n\t\t\t\t\t\tpe[ed.next] =\
+    \ k;\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\tif(pot[t] == inf)\
+    \ return inf;\r\n\r\n\t\tint add_f = f;\r\n\t\tfor(int v=t; v!=s; v=pv[v]) add_f\
+    \ = min((long long)add_f, G[pv[v]][pe[v]].cap);\r\n\t\tf -= add_f;\r\n\t\tfor(int\
+    \ v=t; v!=s; v=pv[v]) {\r\n\t\t\tedge &ed = G[pv[v]][pe[v]];\r\n\t\t\ted.cap -=\
+    \ add_f;\r\n\t\t\tG[v][ed.rev].cap += add_f;\r\n\t\t}\r\n\t\treturn pot[t]*add_f;\r\
+    \n\t}\r\n\r\n\tlong long dijkstra(int s, int t) {\r\n\t\tlong long ans = 0;\r\n\
+    \t\tpriority_queue<pair<long long,int>, vector<pair<long long,int>>, greater<pair<long\
+    \ long,int>>> q;\r\n\t\tvector<long long> dist(vnum, inf);\r\n\t\tpv.assign(vnum,\
+    \ -1);\r\n\t\tpe.assign(vnum, -1);\r\n\t\tq.push(make_pair(0LL,s));\r\n\t\tdist[s]\
+    \ = 0;\r\n\r\n\t\twhile(!q.empty()) {\r\n\t\t\tlong long d = q.top().first, v\
+    \ = q.top().second;\r\n\t\t\tq.pop();\r\n\t\t\tif(dist[v] < d) continue;\r\n\t\
+    \t\tfor(int i=0; i<G[v].size(); i++) {\r\n\t\t\t\tedge &ed = G[v][i];\r\n\t\t\t\
+    \tlong long nd = d+ed.cost+pot[v]-pot[ed.next];\r\n\t\t\t\tif(ed.cap>0 && dist[ed.next]>nd)\
     \ {\r\n\t\t\t\t\tdist[ed.next] = nd;\r\n\t\t\t\t\tpv[ed.next] = v;\r\n\t\t\t\t\
     \tpe[ed.next] = i;\r\n\t\t\t\t\tq.push(make_pair(nd,ed.next));\r\n\t\t\t\t}\r\n\
     \t\t\t}\r\n\t\t}\r\n\r\n\t\tif(dist[t] == inf) return inf;\r\n\r\n\t\tans = dist[t]+pot[t];\r\
@@ -64,10 +64,10 @@ data:
     \t\t\t\ted.cap -= add_f;\r\n\t\t\t\tG[v][ed.rev].cap += add_f;\r\n\t\t\t}\r\n\t\
     \t}\r\n\t\treturn res;\r\n\t}\r\n\r\n\tvector<stat_e> stat() {\r\n\t\tvector<stat_e>\
     \ res;\r\n\t\tfor(int i=0; i<vnum; i++) for(const edge &ed: G[i]) {\r\n\t\t\t\
-    if(!ed.isrev) res.push_back(stat_e(i, ed.next, G[ed.next][ed.rev].cap));\r\n\t\
-    \t}\r\n\t\treturn res;\r\n\t}\r\n};\r\n#line 10 \"test/aoj_GRL_6_B_2.test.cpp\"\
-    \n\r\nint main() {\r\n\tint V,E,F; cin>>V>>E>>F;\r\n\tmincostflow mcf(V);\r\n\t\
-    for(int i=0; i<E; i++) {\r\n\t\tint u,v,c,d; cin>>u>>v>>c>>d;\r\n\t\tmcf.add(u,v,c,d);\r\
+    if(!ed.isrev) res.emplace_back(i, ed.next, G[ed.next][ed.rev].cap);\r\n\t\t}\r\
+    \n\t\treturn res;\r\n\t}\r\n};\r\n#line 10 \"test/aoj_GRL_6_B_2.test.cpp\"\n\r\
+    \nint main() {\r\n\tint V,E,F; cin>>V>>E>>F;\r\n\tmincostflow mcf(V);\r\n\tfor(int\
+    \ i=0; i<E; i++) {\r\n\t\tint u,v,c,d; cin>>u>>v>>c>>d;\r\n\t\tmcf.add(u,v,c,d);\r\
     \n\t}\r\n\r\n\tlong long ans = mcf.solve(0,V-1,F);\r\n\tassert(ans!=-mcf.inf);\r\
     \n\tcout<<(ans==mcf.inf?-1:ans)<<endl;\r\n}\r\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/5/GRL/6/GRL_6_B\"\
@@ -82,7 +82,7 @@ data:
   isVerificationFile: true
   path: test/aoj_GRL_6_B_2.test.cpp
   requiredBy: []
-  timestamp: '2020-12-13 01:39:45+09:00'
+  timestamp: '2020-12-26 00:16:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_GRL_6_B_2.test.cpp

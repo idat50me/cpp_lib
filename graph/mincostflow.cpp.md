@@ -25,10 +25,10 @@ data:
     \n\tconst int vnum;\r\n\tvector<vector<edge>> G;\r\n\tvector<long long> pot;\r\
     \n\tvector<int> pv, pe;\r\n\r\npublic:\r\n\tmincostflow(int V) : vnum(V), G(V),\
     \ pot(V,0), pv(V), pe(V) {}\r\n\r\n\tvoid add(int from, int to, long long cap,\
-    \ long long cost) {\r\n\t\tassert(cost >= 0);\r\n\t\tG[from].push_back(edge(to,\
-    \ G[to].size(), cap, cost, false));\r\n\t\tG[to].push_back(edge(from, G[from].size()-1,\
-    \ 0, -cost, true));\r\n\t}\r\n\r\nprivate:\r\n\tlong long dijkstra(int s, int\
-    \ t) {\r\n\t\tlong long ans = 0;\r\n\t\tpriority_queue<pair<long long,int>, vector<pair<long\
+    \ long long cost) {\r\n\t\tassert(cost >= 0);\r\n\t\tG[from].emplace_back(to,\
+    \ G[to].size(), cap, cost, false);\r\n\t\tG[to].emplace_back(from, G[from].size()-1,\
+    \ 0, -cost, true);\r\n\t}\r\n\r\nprivate:\r\n\tlong long dijkstra(int s, int t)\
+    \ {\r\n\t\tlong long ans = 0;\r\n\t\tpriority_queue<pair<long long,int>, vector<pair<long\
     \ long,int>>, greater<pair<long long,int>>> q;\r\n\t\tvector<long long> dist(vnum,\
     \ inf);\r\n\t\tpv.assign(vnum, -1);\r\n\t\tpe.assign(vnum, -1);\r\n\t\tq.push(make_pair(0LL,s));\r\
     \n\t\tdist[s] = 0;\r\n\r\n\t\twhile(!q.empty()) {\r\n\t\t\tlong long d = q.top().first,\
@@ -48,8 +48,8 @@ data:
     \ v=pv[v]) {\r\n\t\t\t\tedge &ed = G[pv[v]][pe[v]];\r\n\t\t\t\ted.cap -= add_f;\r\
     \n\t\t\t\tG[v][ed.rev].cap += add_f;\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn res;\r\n\
     \t}\r\n\r\n\tvector<stat_e> stat() {\r\n\t\tvector<stat_e> res;\r\n\t\tfor(int\
-    \ i=0; i<vnum; i++) for(const edge &ed: G[i]) {\r\n\t\t\tif(!ed.isrev) res.push_back(stat_e(i,\
-    \ ed.next, G[ed.next][ed.rev].cap));\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\n};\r\
+    \ i=0; i<vnum; i++) for(const edge &ed: G[i]) {\r\n\t\t\tif(!ed.isrev) res.emplace_back(i,\
+    \ ed.next, G[ed.next][ed.rev].cap);\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\n};\r\
     \n"
   code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
     \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\nstruct mincostflow\
@@ -63,8 +63,8 @@ data:
     \tvector<vector<edge>> G;\r\n\tvector<long long> pot;\r\n\tvector<int> pv, pe;\r\
     \n\r\npublic:\r\n\tmincostflow(int V) : vnum(V), G(V), pot(V,0), pv(V), pe(V)\
     \ {}\r\n\r\n\tvoid add(int from, int to, long long cap, long long cost) {\r\n\t\
-    \tassert(cost >= 0);\r\n\t\tG[from].push_back(edge(to, G[to].size(), cap, cost,\
-    \ false));\r\n\t\tG[to].push_back(edge(from, G[from].size()-1, 0, -cost, true));\r\
+    \tassert(cost >= 0);\r\n\t\tG[from].emplace_back(to, G[to].size(), cap, cost,\
+    \ false);\r\n\t\tG[to].emplace_back(from, G[from].size()-1, 0, -cost, true);\r\
     \n\t}\r\n\r\nprivate:\r\n\tlong long dijkstra(int s, int t) {\r\n\t\tlong long\
     \ ans = 0;\r\n\t\tpriority_queue<pair<long long,int>, vector<pair<long long,int>>,\
     \ greater<pair<long long,int>>> q;\r\n\t\tvector<long long> dist(vnum, inf);\r\
@@ -86,14 +86,14 @@ data:
     \ v=pv[v]) {\r\n\t\t\t\tedge &ed = G[pv[v]][pe[v]];\r\n\t\t\t\ted.cap -= add_f;\r\
     \n\t\t\t\tG[v][ed.rev].cap += add_f;\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn res;\r\n\
     \t}\r\n\r\n\tvector<stat_e> stat() {\r\n\t\tvector<stat_e> res;\r\n\t\tfor(int\
-    \ i=0; i<vnum; i++) for(const edge &ed: G[i]) {\r\n\t\t\tif(!ed.isrev) res.push_back(stat_e(i,\
-    \ ed.next, G[ed.next][ed.rev].cap));\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\n};\r\
+    \ i=0; i<vnum; i++) for(const edge &ed: G[i]) {\r\n\t\t\tif(!ed.isrev) res.emplace_back(i,\
+    \ ed.next, G[ed.next][ed.rev].cap);\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\n};\r\
     \n"
   dependsOn: []
   isVerificationFile: false
   path: graph/mincostflow.cpp
   requiredBy: []
-  timestamp: '2020-12-13 01:39:45+09:00'
+  timestamp: '2020-12-26 00:16:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yuki_1301.test.cpp

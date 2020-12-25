@@ -25,9 +25,9 @@ data:
     \n\tconst int vnum;\r\n\tvector<vector<edge>> G;\r\n\tvector<long long> pot;\r\
     \n\tvector<int> pv, pe;\r\n\r\npublic:\r\n\tmincostflow(int V) : vnum(V), G(V),\
     \ pot(V), pv(V), pe(V) {}\r\n\r\n\tvoid add(int from, int to, long long cap, long\
-    \ long cost) {\r\n\t\tG[from].push_back(edge(to, G[to].size(), cap, cost, false));\r\
-    \n\t\tG[to].push_back(edge(from, G[from].size()-1, 0, -cost, true));\r\n\t}\r\n\
-    \r\nprivate:\r\n\tlong long bellman_ford(int s, int t, int &f) {\r\n\t\tpot.assign(vnum,\
+    \ long cost) {\r\n\t\tG[from].emplace_back(to, G[to].size(), cap, cost, false);\r\
+    \n\t\tG[to].emplace_back(from, G[from].size()-1, 0, -cost, true);\r\n\t}\r\n\r\
+    \nprivate:\r\n\tlong long bellman_ford(int s, int t, int &f) {\r\n\t\tpot.assign(vnum,\
     \ inf);\r\n\t\tpv.assign(vnum, -1);\r\n\t\tpe.assign(vnum, -1);\r\n\t\tpot[s]\
     \ = 0;\r\n\t\tfor(int i=0; i<vnum; i++) {\r\n\t\t\tfor(int j=0; j<vnum; j++) {\r\
     \n\t\t\t\tif(pot[j] == inf) continue;\r\n\t\t\t\tfor(int k=0; k<G[j].size(); k++)\
@@ -62,8 +62,8 @@ data:
     \t\t\t\ted.cap -= add_f;\r\n\t\t\t\tG[v][ed.rev].cap += add_f;\r\n\t\t\t}\r\n\t\
     \t}\r\n\t\treturn res;\r\n\t}\r\n\r\n\tvector<stat_e> stat() {\r\n\t\tvector<stat_e>\
     \ res;\r\n\t\tfor(int i=0; i<vnum; i++) for(const edge &ed: G[i]) {\r\n\t\t\t\
-    if(!ed.isrev) res.push_back(stat_e(i, ed.next, G[ed.next][ed.rev].cap));\r\n\t\
-    \t}\r\n\t\treturn res;\r\n\t}\r\n};\r\n"
+    if(!ed.isrev) res.emplace_back(i, ed.next, G[ed.next][ed.rev].cap);\r\n\t\t}\r\
+    \n\t\treturn res;\r\n\t}\r\n};\r\n"
   code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
     \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\nstruct mincostflow\
     \ {\r\nprivate:\r\n\tstruct edge {\r\n\t\tint next;\r\n\t\tint rev;\r\n\t\tlong\
@@ -75,13 +75,13 @@ data:
     \n\tconst long long inf = (1LL<<62)-1;\r\n\r\nprivate:\r\n\tconst int vnum;\r\n\
     \tvector<vector<edge>> G;\r\n\tvector<long long> pot;\r\n\tvector<int> pv, pe;\r\
     \n\r\npublic:\r\n\tmincostflow(int V) : vnum(V), G(V), pot(V), pv(V), pe(V) {}\r\
-    \n\r\n\tvoid add(int from, int to, long long cap, long long cost) {\r\n\t\tG[from].push_back(edge(to,\
-    \ G[to].size(), cap, cost, false));\r\n\t\tG[to].push_back(edge(from, G[from].size()-1,\
-    \ 0, -cost, true));\r\n\t}\r\n\r\nprivate:\r\n\tlong long bellman_ford(int s,\
-    \ int t, int &f) {\r\n\t\tpot.assign(vnum, inf);\r\n\t\tpv.assign(vnum, -1);\r\
-    \n\t\tpe.assign(vnum, -1);\r\n\t\tpot[s] = 0;\r\n\t\tfor(int i=0; i<vnum; i++)\
-    \ {\r\n\t\t\tfor(int j=0; j<vnum; j++) {\r\n\t\t\t\tif(pot[j] == inf) continue;\r\
-    \n\t\t\t\tfor(int k=0; k<G[j].size(); k++) {\r\n\t\t\t\t\tconst edge &ed = G[j][k];\r\
+    \n\r\n\tvoid add(int from, int to, long long cap, long long cost) {\r\n\t\tG[from].emplace_back(to,\
+    \ G[to].size(), cap, cost, false);\r\n\t\tG[to].emplace_back(from, G[from].size()-1,\
+    \ 0, -cost, true);\r\n\t}\r\n\r\nprivate:\r\n\tlong long bellman_ford(int s, int\
+    \ t, int &f) {\r\n\t\tpot.assign(vnum, inf);\r\n\t\tpv.assign(vnum, -1);\r\n\t\
+    \tpe.assign(vnum, -1);\r\n\t\tpot[s] = 0;\r\n\t\tfor(int i=0; i<vnum; i++) {\r\
+    \n\t\t\tfor(int j=0; j<vnum; j++) {\r\n\t\t\t\tif(pot[j] == inf) continue;\r\n\
+    \t\t\t\tfor(int k=0; k<G[j].size(); k++) {\r\n\t\t\t\t\tconst edge &ed = G[j][k];\r\
     \n\t\t\t\t\tif(ed.cap>0 && pot[ed.next]>pot[j]+ed.cost) {\r\n\t\t\t\t\t\tif(i\
     \ == vnum-1) return -inf;\r\n\t\t\t\t\t\tpot[ed.next] = pot[j]+ed.cost;\r\n\t\t\
     \t\t\t\tpv[ed.next] = j;\r\n\t\t\t\t\t\tpe[ed.next] = k;\r\n\t\t\t\t\t}\r\n\t\t\
@@ -112,13 +112,13 @@ data:
     \t\t\t\ted.cap -= add_f;\r\n\t\t\t\tG[v][ed.rev].cap += add_f;\r\n\t\t\t}\r\n\t\
     \t}\r\n\t\treturn res;\r\n\t}\r\n\r\n\tvector<stat_e> stat() {\r\n\t\tvector<stat_e>\
     \ res;\r\n\t\tfor(int i=0; i<vnum; i++) for(const edge &ed: G[i]) {\r\n\t\t\t\
-    if(!ed.isrev) res.push_back(stat_e(i, ed.next, G[ed.next][ed.rev].cap));\r\n\t\
-    \t}\r\n\t\treturn res;\r\n\t}\r\n};\r\n"
+    if(!ed.isrev) res.emplace_back(i, ed.next, G[ed.next][ed.rev].cap);\r\n\t\t}\r\
+    \n\t\treturn res;\r\n\t}\r\n};\r\n"
   dependsOn: []
   isVerificationFile: false
   path: graph/mincostflow_nega.cpp
   requiredBy: []
-  timestamp: '2020-12-13 01:39:45+09:00'
+  timestamp: '2020-12-26 00:16:48+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_GRL_6_B_2.test.cpp
