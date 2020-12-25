@@ -38,8 +38,16 @@ data:
   - test/aoj_DPL_1_D.test.cpp
 documentation_of: dp/lis.cpp
 layout: document
-redirect_from:
-- /library/dp/lis.cpp
-- /library/dp/lis.cpp.html
-title: dp/lis.cpp
+title: "LIS(\u6700\u9577\u5897\u52A0\u90E8\u5206\u5217)"
 ---
+
+## なにこれ
+最長増加部分列(LIS)の長さを求める．
+
+
+## 関数
+- `LIS(v, strict)`：`v` の最長増加部分列の長さを返す．`strict` が `true` の場合は狭義単調，`false` の場合は広義単調の長さを返す．
+
+## 計算量
+`v` の要素数を $n$ とする．
+- $O(n \log n)$
