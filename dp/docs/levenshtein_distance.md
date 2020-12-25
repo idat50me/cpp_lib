@@ -1,5 +1,5 @@
 ---
-title: levenshtein_distance
+title: levenshtein_distance(編集距離)
 documentation_of: ../levenshtein_distance.cpp
 ---
 
