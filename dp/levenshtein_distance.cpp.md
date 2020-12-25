@@ -56,8 +56,16 @@ data:
   - test/aoj_DPL_1_E.test.cpp
 documentation_of: dp/levenshtein_distance.cpp
 layout: document
-redirect_from:
-- /library/dp/levenshtein_distance.cpp
-- /library/dp/levenshtein_distance.cpp.html
-title: dp/levenshtein_distance.cpp
+title: levenshtein_distance
 ---
+
+## なにこれ
+レーベンシュタイン距離（編集距離）を求める．
+
+## 関数
+- `levenshtein(s1, s2)`：文字列 `s1` と `s2` の編集距離を返す．
+- `levenshtein(v1, v2)`：配列 `v1` と `v2` の編集距離を返す．
+
+## 計算量
+`s1` の長さ（`v1` の要素数）を $n$ ，`s2` の長さ（`v2` の要素数）を $m$ とする．
+- $O(nm)$
