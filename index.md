@@ -15,6 +15,9 @@ data:
   - name: dp
     pages:
     - icon: ':heavy_check_mark:'
+      path: dp/levenshtein_distance.cpp
+      title: dp/levenshtein_distance.cpp
+    - icon: ':heavy_check_mark:'
       path: dp/lis.cpp
       title: "LIS(\u6700\u9577\u5897\u52A0\u90E8\u5206\u5217)"
   - name: graph
@@ -109,6 +112,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj_DPL_1_D.test.cpp
       title: test/aoj_DPL_1_D.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj_DPL_1_E.test.cpp
+      title: test/aoj_DPL_1_E.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj_DPL_5_D.test.cpp
       title: test/aoj_DPL_5_D.test.cpp
