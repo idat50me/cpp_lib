@@ -82,7 +82,7 @@ private:
 		vector<long long> dist(vnum, inf);
 		pv.assign(vnum, -1);
 		pe.assign(vnum, -1);
-		q.push(make_pair(0LL,s));
+		q.emplace(0LL,s);
 		dist[s] = 0;
 
 		while(!q.empty()) {
@@ -96,7 +96,7 @@ private:
 					dist[ed.next] = nd;
 					pv[ed.next] = v;
 					pe[ed.next] = i;
-					q.push(make_pair(nd,ed.next));
+					q.emplace(nd,ed.next);
 				}
 			}
 		}
