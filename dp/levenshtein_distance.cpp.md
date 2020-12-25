@@ -56,7 +56,7 @@ data:
   - test/aoj_DPL_1_E.test.cpp
 documentation_of: dp/levenshtein_distance.cpp
 layout: document
-title: levenshtein_distance
+title: "levenshtein_distance(\u7DE8\u96C6\u8DDD\u96E2)"
 ---
 
 ## なにこれ

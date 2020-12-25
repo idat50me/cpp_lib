@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: dp/levenshtein_distance.cpp
-    title: levenshtein_distance
+    title: "levenshtein_distance(\u7DE8\u96C6\u8DDD\u96E2)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
