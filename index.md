@@ -12,6 +12,11 @@ data:
     - icon: ':warning:'
       path: combinatorics/npr.cpp
       title: combinatorics/npr.cpp
+  - name: dp
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: dp/lis.cpp
+      title: dp/lis.cpp
   - name: graph
     pages:
     - icon: ':heavy_check_mark:'
@@ -101,6 +106,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj_ALDS1_1_C_3.test.cpp
       title: test/aoj_ALDS1_1_C_3.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj_DPL_1_D.test.cpp
+      title: test/aoj_DPL_1_D.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj_DPL_5_D.test.cpp
       title: test/aoj_DPL_5_D.test.cpp
