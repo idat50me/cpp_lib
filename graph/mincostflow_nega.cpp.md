@@ -42,21 +42,20 @@ data:
     \n\t}\r\n\r\n\tlong long dijkstra(int s, int t) {\r\n\t\tlong long ans = 0;\r\n\
     \t\tpriority_queue<pair<long long,int>, vector<pair<long long,int>>, greater<pair<long\
     \ long,int>>> q;\r\n\t\tvector<long long> dist(vnum, inf);\r\n\t\tpv.assign(vnum,\
-    \ -1);\r\n\t\tpe.assign(vnum, -1);\r\n\t\tq.push(make_pair(0LL,s));\r\n\t\tdist[s]\
-    \ = 0;\r\n\r\n\t\twhile(!q.empty()) {\r\n\t\t\tlong long d = q.top().first, v\
-    \ = q.top().second;\r\n\t\t\tq.pop();\r\n\t\t\tif(dist[v] < d) continue;\r\n\t\
-    \t\tfor(int i=0; i<G[v].size(); i++) {\r\n\t\t\t\tedge &ed = G[v][i];\r\n\t\t\t\
-    \tlong long nd = d+ed.cost+pot[v]-pot[ed.next];\r\n\t\t\t\tif(ed.cap>0 && dist[ed.next]>nd)\
-    \ {\r\n\t\t\t\t\tdist[ed.next] = nd;\r\n\t\t\t\t\tpv[ed.next] = v;\r\n\t\t\t\t\
-    \tpe[ed.next] = i;\r\n\t\t\t\t\tq.push(make_pair(nd,ed.next));\r\n\t\t\t\t}\r\n\
-    \t\t\t}\r\n\t\t}\r\n\r\n\t\tif(dist[t] == inf) return inf;\r\n\r\n\t\tans = dist[t]+pot[t];\r\
-    \n\t\tfor(int v=0; v<vnum; v++) {\r\n\t\t\tif(dist[v] == inf) continue;\r\n\t\t\
-    \tpot[v] += dist[v];\r\n\t\t}\r\n\t\treturn ans;\r\n\t}\r\n\r\npublic:\r\n\t//\
-    \ -inf: \u8CA0\u9589\u8DEF\u691C\u51FA  inf: \u672A\u5230\u9054\r\n\tlong long\
-    \ solve(int s, int t, int f) {\r\n\t\tlong long res = bellman_ford(s, t, f);\r\
-    \n\t\tif(abs(res) == inf) return res;\r\n\r\n\t\twhile(f > 0) {\r\n\t\t\tlong\
-    \ long restmp = dijkstra(s, t);\r\n\t\t\tint add_f = f;\r\n\t\t\tif(restmp ==\
-    \ inf) return inf;\r\n\t\t\tfor(int v=t; v!=s; v=pv[v]) add_f = min((long long)add_f,\
+    \ -1);\r\n\t\tpe.assign(vnum, -1);\r\n\t\tq.emplace(0LL,s);\r\n\t\tdist[s] = 0;\r\
+    \n\r\n\t\twhile(!q.empty()) {\r\n\t\t\tlong long d = q.top().first, v = q.top().second;\r\
+    \n\t\t\tq.pop();\r\n\t\t\tif(dist[v] < d) continue;\r\n\t\t\tfor(int i=0; i<G[v].size();\
+    \ i++) {\r\n\t\t\t\tedge &ed = G[v][i];\r\n\t\t\t\tlong long nd = d+ed.cost+pot[v]-pot[ed.next];\r\
+    \n\t\t\t\tif(ed.cap>0 && dist[ed.next]>nd) {\r\n\t\t\t\t\tdist[ed.next] = nd;\r\
+    \n\t\t\t\t\tpv[ed.next] = v;\r\n\t\t\t\t\tpe[ed.next] = i;\r\n\t\t\t\t\tq.emplace(nd,ed.next);\r\
+    \n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\tif(dist[t] == inf) return inf;\r\n\r\
+    \n\t\tans = dist[t]+pot[t];\r\n\t\tfor(int v=0; v<vnum; v++) {\r\n\t\t\tif(dist[v]\
+    \ == inf) continue;\r\n\t\t\tpot[v] += dist[v];\r\n\t\t}\r\n\t\treturn ans;\r\n\
+    \t}\r\n\r\npublic:\r\n\t// -inf: \u8CA0\u9589\u8DEF\u691C\u51FA  inf: \u672A\u5230\
+    \u9054\r\n\tlong long solve(int s, int t, int f) {\r\n\t\tlong long res = bellman_ford(s,\
+    \ t, f);\r\n\t\tif(abs(res) == inf) return res;\r\n\r\n\t\twhile(f > 0) {\r\n\t\
+    \t\tlong long restmp = dijkstra(s, t);\r\n\t\t\tint add_f = f;\r\n\t\t\tif(restmp\
+    \ == inf) return inf;\r\n\t\t\tfor(int v=t; v!=s; v=pv[v]) add_f = min((long long)add_f,\
     \ G[pv[v]][pe[v]].cap);\r\n\t\t\tf -= add_f;\r\n\t\t\tres += restmp*add_f;\r\n\
     \t\t\tfor(int v=t; v!=s; v=pv[v]) {\r\n\t\t\t\tedge &ed = G[pv[v]][pe[v]];\r\n\
     \t\t\t\ted.cap -= add_f;\r\n\t\t\t\tG[v][ed.rev].cap += add_f;\r\n\t\t\t}\r\n\t\
@@ -93,12 +92,12 @@ data:
     \ s, int t) {\r\n\t\tlong long ans = 0;\r\n\t\tpriority_queue<pair<long long,int>,\
     \ vector<pair<long long,int>>, greater<pair<long long,int>>> q;\r\n\t\tvector<long\
     \ long> dist(vnum, inf);\r\n\t\tpv.assign(vnum, -1);\r\n\t\tpe.assign(vnum, -1);\r\
-    \n\t\tq.push(make_pair(0LL,s));\r\n\t\tdist[s] = 0;\r\n\r\n\t\twhile(!q.empty())\
-    \ {\r\n\t\t\tlong long d = q.top().first, v = q.top().second;\r\n\t\t\tq.pop();\r\
-    \n\t\t\tif(dist[v] < d) continue;\r\n\t\t\tfor(int i=0; i<G[v].size(); i++) {\r\
-    \n\t\t\t\tedge &ed = G[v][i];\r\n\t\t\t\tlong long nd = d+ed.cost+pot[v]-pot[ed.next];\r\
+    \n\t\tq.emplace(0LL,s);\r\n\t\tdist[s] = 0;\r\n\r\n\t\twhile(!q.empty()) {\r\n\
+    \t\t\tlong long d = q.top().first, v = q.top().second;\r\n\t\t\tq.pop();\r\n\t\
+    \t\tif(dist[v] < d) continue;\r\n\t\t\tfor(int i=0; i<G[v].size(); i++) {\r\n\t\
+    \t\t\tedge &ed = G[v][i];\r\n\t\t\t\tlong long nd = d+ed.cost+pot[v]-pot[ed.next];\r\
     \n\t\t\t\tif(ed.cap>0 && dist[ed.next]>nd) {\r\n\t\t\t\t\tdist[ed.next] = nd;\r\
-    \n\t\t\t\t\tpv[ed.next] = v;\r\n\t\t\t\t\tpe[ed.next] = i;\r\n\t\t\t\t\tq.push(make_pair(nd,ed.next));\r\
+    \n\t\t\t\t\tpv[ed.next] = v;\r\n\t\t\t\t\tpe[ed.next] = i;\r\n\t\t\t\t\tq.emplace(nd,ed.next);\r\
     \n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\r\n\t\tif(dist[t] == inf) return inf;\r\n\r\
     \n\t\tans = dist[t]+pot[t];\r\n\t\tfor(int v=0; v<vnum; v++) {\r\n\t\t\tif(dist[v]\
     \ == inf) continue;\r\n\t\t\tpot[v] += dist[v];\r\n\t\t}\r\n\t\treturn ans;\r\n\
@@ -118,7 +117,7 @@ data:
   isVerificationFile: false
   path: graph/mincostflow_nega.cpp
   requiredBy: []
-  timestamp: '2020-12-26 00:16:48+09:00'
+  timestamp: '2020-12-26 00:26:25+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_GRL_6_B_2.test.cpp
