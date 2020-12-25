@@ -12,14 +12,14 @@ int LIS(const vector<T> &v, bool strict = true) {
 	if(strict) {
 		for(T a: v) {
 			auto itr = lower_bound(lis.begin(), lis.end(), a);
-			if(itr == lis.end()) lis.push_back(a);
+			if(itr == lis.end()) lis.emplace_back(a);
 			else *itr = a;
 		}
 	}
 	else {
 		for(T a: v) {
 			auto itr = upper_bound(lis.begin(), lis.end(), a);
-			if(itr == lis.end()) lis.push_back(a);
+			if(itr == lis.end()) lis.emplace_back(a);
 			else *itr = a;
 		}
 	}

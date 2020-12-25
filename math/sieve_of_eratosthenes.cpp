@@ -16,7 +16,7 @@ public:
 		dv[0] = dv[1] = -1;
 		for(int i=2; i<=N; i++) {
 			if(dv[i]) continue;
-			primes.push_back(i);
+			primes.emplace_back(i);
 			dv[i] = i;
 			if(i > (1<<15)) continue;
 			for(int j=i*i; j<=N; j+=i) if(!dv[j]) dv[j] = i;
@@ -34,7 +34,7 @@ public:
 		while(n > 1) {
 			int d = dv[n];
 			if(res.back().first == d) res.back().second++;
-			else res.push_back(make_pair(d,1));
+			else res.emplace_back(d,1);
 			n /= d;
 		}
 		return res;

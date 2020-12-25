@@ -15,11 +15,11 @@ vector<long long> divisor(long long x) {
 	long long i = 1;
 	for( ; i*i < x; i++) {
 		if(x%i) continue;
-		res.push_back(i);
-		res.push_back(x/i);
+		res.emplace_back(i);
+		res.emplace_back(x/i);
 	}
 	if(i*i==x)
-		res.push_back(i);
+		res.emplace_back(i);
 	
 	sort(res.begin(),res.end());
 	return res;

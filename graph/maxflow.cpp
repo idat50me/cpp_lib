@@ -25,8 +25,8 @@ public:
 	maxflow(int V) : vnum(V), G(V), used(V,-1), ts(0) {}
 
 	void add(int from, int to, long long cap) {
-		G[from].push_back(edge(to, G[to].size(), cap));
-		G[to].push_back(edge(from, G[from].size()-1, 0));
+		G[from].emplace_back(to, G[to].size(), cap);
+		G[to].emplace_back(from, G[from].size()-1, 0);
 	}
 
 private:

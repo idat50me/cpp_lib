@@ -39,8 +39,8 @@ public:
 
 	void add(int from, int to, long long cap, long long cost) {
 		assert(cost >= 0);
-		G[from].push_back(edge(to, G[to].size(), cap, cost, false));
-		G[to].push_back(edge(from, G[from].size()-1, 0, -cost, true));
+		G[from].emplace_back(to, G[to].size(), cap, cost, false);
+		G[to].emplace_back(from, G[from].size()-1, 0, -cost, true);
 	}
 
 private:
@@ -103,7 +103,7 @@ public:
 	vector<stat_e> stat() {
 		vector<stat_e> res;
 		for(int i=0; i<vnum; i++) for(const edge &ed: G[i]) {
-			if(!ed.isrev) res.push_back(stat_e(i, ed.next, G[ed.next][ed.rev].cap));
+			if(!ed.isrev) res.emplace_back(i, ed.next, G[ed.next][ed.rev].cap);
 		}
 		return res;
 	}
