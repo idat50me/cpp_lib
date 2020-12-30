@@ -21,7 +21,7 @@ int LCS(const string &s1, const string &s2) {
 }
 
 template<typename T>
-int levenshtein(const vector<T> &v1, const vector<T> &v2) {
+int LCS(const vector<T> &v1, const vector<T> &v2) {
 	vector<vector<int>> comlen(v1.length()+1, vector<int>(v2.length()+1, 0));
 
 	for(int i=1; i<=v1.length(); i++) for(int j=1; j<=v2.length(); j++) {
