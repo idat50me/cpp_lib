@@ -22,8 +22,8 @@ data:
     \ i<=s1.length(); i++) for(int j=1; j<=s2.length(); j++) {\r\n\t\tcomlen[i][j]\
     \ = max({\r\n\t\t\tcomlen[i-1][j],\r\n\t\t\tcomlen[i][j-1],\r\n\t\t\tcomlen[i-1][j-1]\
     \ + (s1[i-1]==s2[j-1] ? 1 : 0)\r\n\t\t});\r\n\t}\r\n\r\n\treturn comlen[s1.length()][s2.length()];\r\
-    \n}\r\n\r\ntemplate<typename T>\r\nint levenshtein(const vector<T> &v1, const\
-    \ vector<T> &v2) {\r\n\tvector<vector<int>> comlen(v1.length()+1, vector<int>(v2.length()+1,\
+    \n}\r\n\r\ntemplate<typename T>\r\nint LCS(const vector<T> &v1, const vector<T>\
+    \ &v2) {\r\n\tvector<vector<int>> comlen(v1.length()+1, vector<int>(v2.length()+1,\
     \ 0));\r\n\r\n\tfor(int i=1; i<=v1.length(); i++) for(int j=1; j<=v2.length();\
     \ j++) {\r\n\t\tcomlen[i][j] = max({\r\n\t\t\tcomlen[i-1][j],\r\n\t\t\tcomlen[i][j-1],\r\
     \n\t\t\tcomlen[i-1][j-1] + (v1[i-1]==v2[j-1] ? 1 : 0)\r\n\t\t});\r\n\t}\r\n\r\n\
@@ -40,7 +40,7 @@ data:
   isVerificationFile: true
   path: test/aoj_ALDS1_10_C.test.cpp
   requiredBy: []
-  timestamp: '2020-12-30 23:28:14+09:00'
+  timestamp: '2020-12-30 23:40:28+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_ALDS1_10_C.test.cpp
