@@ -15,6 +15,9 @@ data:
   - name: dp
     pages:
     - icon: ':heavy_check_mark:'
+      path: dp/lcs.cpp
+      title: dp/lcs.cpp
+    - icon: ':heavy_check_mark:'
       path: dp/levenshtein_distance.cpp
       title: "levenshtein_distance(\u7DE8\u96C6\u8DDD\u96E2)"
     - icon: ':heavy_check_mark:'
@@ -97,6 +100,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj_2429.test.cpp
       title: test/aoj_2429.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj_ALDS1_10_C.test.cpp
+      title: test/aoj_ALDS1_10_C.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj_ALDS1_1_B.test.cpp
       title: test/aoj_ALDS1_1_B.test.cpp
