@@ -83,6 +83,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/manacher.cpp
       title: string/manacher.cpp
+    - icon: ':heavy_check_mark:'
+      path: string/z_algorithm.cpp
+      title: string/z_algorithm.cpp
   - name: structure
     pages:
     - icon: ':heavy_check_mark:'
@@ -186,6 +189,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo_unionfind.test.cpp
       title: test/yosupo_unionfind.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo_zalgorithm.test.cpp
+      title: test/yosupo_zalgorithm.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yuki_0117.test.cpp
       title: test/yuki_0117.test.cpp
