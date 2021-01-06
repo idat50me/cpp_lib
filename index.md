@@ -78,6 +78,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: mod/modint.cpp
       title: ModInt
+  - name: string
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: string/manacher.cpp
+      title: string/manacher.cpp
   - name: structure
     pages:
     - icon: ':heavy_check_mark:'
@@ -166,6 +171,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj_NTL_1_E.test.cpp
       title: test/aoj_NTL_1_E.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo_enumerate_palindromes.test.cpp
+      title: test/yosupo_enumerate_palindromes.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo_static_range_sum.test.cpp
       title: test/yosupo_static_range_sum.test.cpp
