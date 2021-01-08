@@ -6,11 +6,11 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo_zalgorithm.test.cpp
     title: test/yosupo_zalgorithm.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yuki_0599.test.cpp
     title: test/yuki_0599.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"string/z_algorithm.cpp\"\n\r\n#ifndef call_include\r\n#define\
@@ -33,7 +33,7 @@ data:
   path: string/z_algorithm.cpp
   requiredBy: []
   timestamp: '2021-01-07 08:32:51+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yuki_0599.test.cpp
   - test/yosupo_zalgorithm.test.cpp

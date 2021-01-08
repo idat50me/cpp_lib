@@ -49,7 +49,7 @@ data:
       title: "Union-Find\u6728"
   - name: math
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: math/binpow.cpp
       title: "Binary-Power(\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5)"
     - icon: ':heavy_check_mark:'
@@ -75,7 +75,7 @@ data:
         \u7BE9)"
   - name: mod
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: mod/modint.cpp
       title: ModInt
   - name: string
@@ -83,7 +83,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/manacher.cpp
       title: string/manacher.cpp
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: string/z_algorithm.cpp
       title: string/z_algorithm.cpp
   - name: structure
@@ -201,7 +201,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yuki_0556.test.cpp
       title: test/yuki_0556.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yuki_0599.test.cpp
       title: test/yuki_0599.test.cpp
     - icon: ':heavy_check_mark:'

@@ -2,7 +2,7 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: mod/modint.cpp
     title: ModInt
   _extendedVerifiedWith:
@@ -12,14 +12,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj_NTL_1_B.test.cpp
     title: test/aoj_NTL_1_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yuki_0599.test.cpp
     title: test/yuki_0599.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yuki_1035.test.cpp
     title: test/yuki_1035.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     document_title: "Binary-Power(\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5)"
     links: []
@@ -41,7 +41,7 @@ data:
   requiredBy:
   - mod/modint.cpp
   timestamp: '2020-11-16 10:44:07+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_0341.test.cpp
   - test/yuki_0599.test.cpp
