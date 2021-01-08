@@ -6,8 +6,6 @@
 using namespace std;
 #endif
 
-#include "../math/binpow.cpp"
-
 template<int mod>
 struct mint {
 private:
