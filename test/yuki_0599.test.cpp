@@ -23,5 +23,5 @@ int main() {
 		}
 	}
 
-	cout<<accumulate(dp.begin(), dp.end(), mi(0))<<endl;
+	cout<<accumulate(dp.begin(), dp.end(), mi(0));
 }
