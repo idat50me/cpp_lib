@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: math/binpow.cpp
     title: "Binary-Power(\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5)"
   _extendedRequiredBy: []
@@ -9,11 +9,14 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj_0341.test.cpp
     title: test/aoj_0341.test.cpp
+  - icon: ':x:'
+    path: test/yuki_0599.test.cpp
+    title: test/yuki_0599.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yuki_1035.test.cpp
     title: test/yuki_1035.test.cpp
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"mod/modint.cpp\"\n\r\n#ifndef call_include\r\n#define call_include\r\
@@ -134,9 +137,10 @@ data:
   path: mod/modint.cpp
   requiredBy: []
   timestamp: '2020-12-23 17:57:13+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj_0341.test.cpp
+  - test/yuki_0599.test.cpp
   - test/yuki_1035.test.cpp
 documentation_of: mod/modint.cpp
 layout: document

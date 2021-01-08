@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: string/z_algorithm.cpp
     title: string/z_algorithm.cpp
   _extendedRequiredBy: []
