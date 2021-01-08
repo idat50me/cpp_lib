@@ -1,9 +1,6 @@
 ---
 data:
-  _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
-    path: math/binpow.cpp
-    title: "Binary-Power(\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5)"
+  _extendedDependsOn: []
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
@@ -20,13 +17,7 @@ data:
   attributes:
     links: []
   bundledCode: "#line 2 \"mod/modint.cpp\"\n\r\n#ifndef call_include\r\n#define call_include\r\
-    \n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\n#line 2 \"\
-    math/binpow.cpp\"\n/*\r\n * @brief Binary-Power(\u7E70\u308A\u8FD4\u3057\u4E8C\
-    \u4E57\u6CD5)\r\n */\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
-    \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\nlong long binpow(long\
-    \ long a, long long ex, long long p=(1LL<<61)-1) {\r\n\tlong long res = 1;\r\n\
-    \twhile(ex > 0) {\r\n\t\tif(ex & 1) (res*=a) %= p;\r\n\t\tex>>=1;\r\n\t\t(a*=a)\
-    \ %= p;\r\n\t}\r\n\treturn res;\r\n}\r\n#line 10 \"mod/modint.cpp\"\n\r\ntemplate<int\
+    \n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\ntemplate<int\
     \ mod>\r\nstruct mint {\r\nprivate:\r\n\r\n\tlong long val;\r\n\r\npublic:\r\n\
     \r\n\tmint(long long x=0) : val((mod+x%mod)%mod) {}\r\n\r\nprivate:\r\n\tmint\
     \ inv() const {\r\n\t\tlong long x_ = val, xd = 1, xdd = 0,\r\n\t\t          y_\
@@ -79,19 +70,19 @@ data:
     \ is, mint &a) {\r\n\t\tlong long n;\r\n\t\tis >> n;\r\n\t\ta = mint(n);\r\n\t\
     \treturn is;\r\n\t}\r\n};\r\n"
   code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
-    \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\n#include \"../math/binpow.cpp\"\
-    \r\n\r\ntemplate<int mod>\r\nstruct mint {\r\nprivate:\r\n\r\n\tlong long val;\r\
-    \n\r\npublic:\r\n\r\n\tmint(long long x=0) : val((mod+x%mod)%mod) {}\r\n\r\nprivate:\r\
-    \n\tmint inv() const {\r\n\t\tlong long x_ = val, xd = 1, xdd = 0,\r\n\t\t   \
-    \       y_ = mod, yd = 0, ydd = 1,\r\n\t\t          div;\r\n\t\t\r\n\t\twhile(true)\
-    \ {\r\n\t\t\tif(!y_) return mint(xd);\r\n\t\t\tdiv = x_/y_;\r\n\t\t\tx_  -= div*y_;\r\
-    \n\t\t\txd  -= div*yd;\r\n\t\t\txdd -= div*ydd;\r\n\r\n\t\t\tif(!x_) return mint(yd);\r\
-    \n\t\t\tdiv = y_/x_;\r\n\t\t\ty_  -= div*x_;\r\n\t\t\tyd  -= div*xd;\r\n\t\t\t\
-    ydd -= div*xdd;\r\n\t\t}\r\n\t}\r\n\r\npublic:\r\n\r\n\tmint operator-() const\
-    \ {\r\n\t\treturn mint(-val);\r\n\t}\r\n\r\n\tmint& operator+=(const mint& a)\
-    \ {\r\n\t\tval += a.val;\r\n\t\tif(val >= mod) val -= mod;\r\n\t\treturn *this;\r\
-    \n\t}\r\n\tmint& operator-=(const mint& a) {\r\n\t\tval -= a.val;\r\n\t\tif(val\
-    \ < 0) val += mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmint& operator*=(const mint&\
+    \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\ntemplate<int mod>\r\
+    \nstruct mint {\r\nprivate:\r\n\r\n\tlong long val;\r\n\r\npublic:\r\n\r\n\tmint(long\
+    \ long x=0) : val((mod+x%mod)%mod) {}\r\n\r\nprivate:\r\n\tmint inv() const {\r\
+    \n\t\tlong long x_ = val, xd = 1, xdd = 0,\r\n\t\t          y_ = mod, yd = 0,\
+    \ ydd = 1,\r\n\t\t          div;\r\n\t\t\r\n\t\twhile(true) {\r\n\t\t\tif(!y_)\
+    \ return mint(xd);\r\n\t\t\tdiv = x_/y_;\r\n\t\t\tx_  -= div*y_;\r\n\t\t\txd \
+    \ -= div*yd;\r\n\t\t\txdd -= div*ydd;\r\n\r\n\t\t\tif(!x_) return mint(yd);\r\n\
+    \t\t\tdiv = y_/x_;\r\n\t\t\ty_  -= div*x_;\r\n\t\t\tyd  -= div*xd;\r\n\t\t\tydd\
+    \ -= div*xdd;\r\n\t\t}\r\n\t}\r\n\r\npublic:\r\n\r\n\tmint operator-() const {\r\
+    \n\t\treturn mint(-val);\r\n\t}\r\n\r\n\tmint& operator+=(const mint& a) {\r\n\
+    \t\tval += a.val;\r\n\t\tif(val >= mod) val -= mod;\r\n\t\treturn *this;\r\n\t\
+    }\r\n\tmint& operator-=(const mint& a) {\r\n\t\tval -= a.val;\r\n\t\tif(val <\
+    \ 0) val += mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmint& operator*=(const mint&\
     \ a) {\r\n\t\t(val*=a.val) %= mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmint& operator/=(const\
     \ mint& a) {\r\n\t\treturn (*this) *= a.inv();\r\n\t}\r\n\tmint& operator+=(const\
     \ long long& a) {\r\n\t\t(val+=mod+a%mod) %= mod;\r\n\t\treturn *this;\r\n\t}\r\
@@ -131,12 +122,11 @@ data:
     \ mint& a) {\r\n\t\treturn os << a.val;\r\n\t}\r\n\tfriend istream& operator>>(istream&\
     \ is, mint &a) {\r\n\t\tlong long n;\r\n\t\tis >> n;\r\n\t\ta = mint(n);\r\n\t\
     \treturn is;\r\n\t}\r\n};\r\n"
-  dependsOn:
-  - math/binpow.cpp
+  dependsOn: []
   isVerificationFile: false
   path: mod/modint.cpp
   requiredBy: []
-  timestamp: '2020-12-23 17:57:13+09:00'
+  timestamp: '2021-01-08 23:39:55+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_0341.test.cpp
