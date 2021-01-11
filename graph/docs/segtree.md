@@ -17,6 +17,7 @@ documentation_of: ../segtree.cpp
 - `add(idx, val)`：`idx` 番目の要素を `val` との二項演算の結果に更新する．
 - `get(idx)`：`idx` 番目の要素を返す．
 - `get(L, R)`：区間 `[L, R)` の二項演算の結果を返す．
+- `get_all()`：全区間の二項演算の結果を返す．
 
 `idx`, `L`, `R` は 0-indexed である．
 
@@ -26,5 +27,6 @@ documentation_of: ../segtree.cpp
 - `segtree(v, func, e)`：$O(n)$
 - `update(idx, val)`：$O(\log n)$
 - `add(idx, val)`：$O(\log n)$
-- `get(idx)`：$O(\log n)$
+- `get(idx)`：$O(1)$
 - `get(L, R)`：$O(\log n)$
+- `get_all()`：$O(1)$
