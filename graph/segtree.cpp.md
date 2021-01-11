@@ -34,7 +34,8 @@ data:
     \n\tT get__(int L, int R, int id, int l, int r) {\r\n\t\tif(r<=L || R<=l) return\
     \ e_;\r\n\t\tif(L<=l && r<=R) return node[id];\r\n\t\tT vl = get__(L, R, 2*id+1,\
     \ l, (l+r)/2);\r\n\t\tT vr = get__(L, R, 2*id+2, (l+r)/2, r);\r\n\t\treturn op(vl,\
-    \ vr);\r\n\t}\r\n};\r\n"
+    \ vr);\r\n\t}\r\n\r\npublic:\r\n\tT get_all() {\r\n\t\treturn node[0];\r\n\t}\r\
+    \n};\r\n"
   code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
     \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\ntemplate<typename T,\
     \ typename F>\r\nstruct segtree {\r\nprivate:\r\n\tint siz=1, N;\r\n\tvector<T>\
@@ -55,12 +56,13 @@ data:
     \ get__(L, R, 0, 0, siz);\r\n\t}\r\nprivate:\r\n\tT get__(int L, int R, int id,\
     \ int l, int r) {\r\n\t\tif(r<=L || R<=l) return e_;\r\n\t\tif(L<=l && r<=R) return\
     \ node[id];\r\n\t\tT vl = get__(L, R, 2*id+1, l, (l+r)/2);\r\n\t\tT vr = get__(L,\
-    \ R, 2*id+2, (l+r)/2, r);\r\n\t\treturn op(vl, vr);\r\n\t}\r\n};\r\n"
+    \ R, 2*id+2, (l+r)/2, r);\r\n\t\treturn op(vl, vr);\r\n\t}\r\n\r\npublic:\r\n\t\
+    T get_all() {\r\n\t\treturn node[0];\r\n\t}\r\n};\r\n"
   dependsOn: []
   isVerificationFile: false
   path: graph/segtree.cpp
   requiredBy: []
-  timestamp: '2020-12-15 15:45:27+09:00'
+  timestamp: '2021-01-11 23:23:49+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo_staticrmq_2.test.cpp

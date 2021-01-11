@@ -37,12 +37,12 @@ data:
     \n\tT get__(int L, int R, int id, int l, int r) {\r\n\t\tif(r<=L || R<=l) return\
     \ e_;\r\n\t\tif(L<=l && r<=R) return node[id];\r\n\t\tT vl = get__(L, R, 2*id+1,\
     \ l, (l+r)/2);\r\n\t\tT vr = get__(L, R, 2*id+2, (l+r)/2, r);\r\n\t\treturn op(vl,\
-    \ vr);\r\n\t}\r\n};\r\n#line 10 \"test/yosupo_static_range_sum.test.cpp\"\nusing\
-    \ ll = long long;\r\n\r\nint main() {\r\n\tint N,Q; cin>>N>>Q;\r\n\tvector<ll>\
-    \ v(N);\r\n\tfor(int i=0; i<N; i++) cin>>v[i];\r\n\tsegtree tree(v, [](ll a, ll\
-    \ b) { return a+b; }, 0LL);\r\n\r\n\tfor(int i=0; i<Q; i++) {\r\n\t\tint l,r;\
-    \ cin>>l>>r;\r\n\t\tcout<<tree.get(l,r)<<'\\n';\r\n\t}\r\n\tcout<<flush;\r\n}\r\
-    \n"
+    \ vr);\r\n\t}\r\n\r\npublic:\r\n\tT get_all() {\r\n\t\treturn node[0];\r\n\t}\r\
+    \n};\r\n#line 10 \"test/yosupo_static_range_sum.test.cpp\"\nusing ll = long long;\r\
+    \n\r\nint main() {\r\n\tint N,Q; cin>>N>>Q;\r\n\tvector<ll> v(N);\r\n\tfor(int\
+    \ i=0; i<N; i++) cin>>v[i];\r\n\tsegtree tree(v, [](ll a, ll b) { return a+b;\
+    \ }, 0LL);\r\n\r\n\tfor(int i=0; i<Q; i++) {\r\n\t\tint l,r; cin>>l>>r;\r\n\t\t\
+    cout<<tree.get(l,r)<<'\\n';\r\n\t}\r\n\tcout<<flush;\r\n}\r\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/static_range_sum\"\r\n\r\
     \n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\n\
     using namespace std;\r\n#endif\r\n\r\n#include \"graph/segtree.cpp\"\r\nusing\
@@ -56,7 +56,7 @@ data:
   isVerificationFile: true
   path: test/yosupo_static_range_sum.test.cpp
   requiredBy: []
-  timestamp: '2020-12-15 15:45:27+09:00'
+  timestamp: '2021-01-11 23:23:49+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo_static_range_sum.test.cpp
