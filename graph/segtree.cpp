@@ -64,4 +64,9 @@ private:
 		T vr = get__(L, R, 2*id+2, (l+r)/2, r);
 		return op(vl, vr);
 	}
+
+public:
+	T get_all() {
+		return node[0];
+	}
 };
