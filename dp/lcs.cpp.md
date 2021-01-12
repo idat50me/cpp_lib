@@ -45,8 +45,16 @@ data:
   - test/aoj_ALDS1_10_C.test.cpp
 documentation_of: dp/lcs.cpp
 layout: document
-redirect_from:
-- /library/dp/lcs.cpp
-- /library/dp/lcs.cpp.html
-title: dp/lcs.cpp
+title: "LCS(\u6700\u9577\u5171\u901A\u90E8\u5206\u5217)"
 ---
+
+## なにこれ
+最長共通部分列(LCS)の長さを求める．
+
+## 関数
+- `LCS(s1, s2)`：文字列 `s1` と `s2` の最長共通部分列の長さを返す．
+- `LCS(v1, v2)`：配列 `v1` と `v2` の最長共通部分列の長さを返す．
+
+## 計算量
+`s1` の長さ（`v1` の要素数）を $n$ ，`s2` の長さ（`v2` の要素数）を $m$ とする．
+- $O(nm)$

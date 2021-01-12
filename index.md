@@ -16,7 +16,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: dp/lcs.cpp
-      title: dp/lcs.cpp
+      title: "LCS(\u6700\u9577\u5171\u901A\u90E8\u5206\u5217)"
     - icon: ':heavy_check_mark:'
       path: dp/levenshtein_distance.cpp
       title: "levenshtein_distance(\u7DE8\u96C6\u8DDD\u96E2)"
