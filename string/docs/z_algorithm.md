@@ -10,4 +10,4 @@ documentation_of: ../z_algorithm.cpp
 - `z_algorithm(S)`：`S` と `S[i, |S|)` の最長共通接頭辞の長さを `v[i]` とする配列 `v` を返す．
 
 ## 計算量
-- $O(|S|)$
+- $O(\|S\|)$
