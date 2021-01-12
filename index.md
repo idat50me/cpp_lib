@@ -82,10 +82,10 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: string/manacher.cpp
-      title: string/manacher.cpp
+      title: "Manacher's Algorithm(\u6700\u9577\u56DE\u6587)"
     - icon: ':heavy_check_mark:'
       path: string/z_algorithm.cpp
-      title: string/z_algorithm.cpp
+      title: "Z-Algorithm(\u6700\u9577\u5171\u901A\u63A5\u982D\u8F9E)"
   - name: structure
     pages:
     - icon: ':heavy_check_mark:'

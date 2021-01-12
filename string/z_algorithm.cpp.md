@@ -39,8 +39,14 @@ data:
   - test/yosupo_zalgorithm.test.cpp
 documentation_of: string/z_algorithm.cpp
 layout: document
-redirect_from:
-- /library/string/z_algorithm.cpp
-- /library/string/z_algorithm.cpp.html
-title: string/z_algorithm.cpp
+title: "Z-Algorithm(\u6700\u9577\u5171\u901A\u63A5\u982D\u8F9E)"
 ---
+
+## なにこれ
+文字列 $S$ とその連続部分文字列 $S[i, |S|)$ の最長共通接頭辞の長さを求める．
+
+## 関数
+- `z_algorithm(S)`：`S` と `S[i, |S|)` の最長共通接頭辞の長さを `v[i]` とする配列 `v` を返す．
+
+## 計算量
+- $O(|S|)$

@@ -43,8 +43,16 @@ data:
   - test/yosupo_enumerate_palindromes.test.cpp
 documentation_of: string/manacher.cpp
 layout: document
-redirect_from:
-- /library/string/manacher.cpp
-- /library/string/manacher.cpp.html
-title: string/manacher.cpp
+title: "Manacher's Algorithm(\u6700\u9577\u56DE\u6587)"
 ---
+
+## なにこれ
+連続部分文字列の最長回文の長さを求める．
+
+## 関数
+文字列 `S` の連続部分文字列のそれぞれの中心について，最長の回文の長さを格納する配列 `v` を返す．
+- `manacher(S)`：`i` 文字目を中心とする最長の回文の長さを `v[i]` に格納する．
+- `manacher_even(S)`：`i` 文字目を中心とする最長の回文の長さを `v[2*i]` に，`i` 文字目と `i+1` 文字目の境を中心とする最長の回文の長さを `v[2*i+1]` に格納する．
+
+## 計算量
+- $O(|S|)$

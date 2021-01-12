@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: string/manacher.cpp
-    title: string/manacher.cpp
+    title: "Manacher's Algorithm(\u6700\u9577\u56DE\u6587)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _pathExtension: cpp
