@@ -6,6 +6,7 @@ data:
     title: "Z-Algorithm(\u6700\u9577\u5171\u901A\u63A5\u982D\u8F9E)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

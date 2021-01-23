@@ -12,6 +12,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yuki_1035.test.cpp
     title: test/yuki_1035.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
@@ -37,38 +38,37 @@ data:
     \t\treturn *this;\r\n\t}\r\n\tmint& operator*=(const long long& a) {\r\n\t\t(val*=mod+a%mod)\
     \ %= mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmint& operator/=(const long long& a)\
     \ {\r\n\t\treturn (*this)/=mint(a);\r\n\t}\r\n\r\n\tmint operator+(const mint&\
-    \ a) const {\r\n\t\tmint res(*this);\r\n\t\treturn res+=a;\r\n\t}\r\n\tmint operator-(const\
-    \ mint& a) const {\r\n\t\tmint res(*this);\r\n\t\treturn res-=a;\r\n\t}\r\n\t\
-    mint operator*(const mint& a) const {\r\n\t\tmint res(*this);\r\n\t\treturn res*=a;\r\
-    \n\t}\r\n\tmint operator/(const mint& a) const {\r\n\t\tmint res(*this);\r\n\t\
-    \treturn res/=a;\r\n\t}\r\n\tmint operator+(const long long& a) const {\r\n\t\t\
-    mint res(*this);\r\n\t\treturn res+=a;\r\n\t}\r\n\tmint operator-(const long long&\
-    \ a) const {\r\n\t\tmint res(*this);\r\n\t\treturn res-=a;\r\n\t}\r\n\tmint operator*(const\
-    \ long long& a) const {\r\n\t\tmint res(*this);\r\n\t\treturn res*=a;\r\n\t}\r\
-    \n\tmint operator/(const long long& a) const {\r\n\t\tmint res(*this);\r\n\t\t\
-    return res/=mint(a);\r\n\t}\r\n\r\n\tmint& operator++() {\r\n\t\t(++val) %= mod;\r\
-    \n\t\treturn *this;\r\n\t}\r\n\tmint operator++(int) {\r\n\t\tmint res(*this);\r\
-    \n\t\t(++val) %= mod;\r\n\t\treturn res;\r\n\t}\r\n\tmint& operator--() {\r\n\t\
-    \t(val+=mod-1) %= mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmint operator--(int) {\r\
-    \n\t\tmint res(*this);\r\n\t\t(val+=mod-1) %= mod;\r\n\t\treturn res;\r\n\t}\r\
-    \n\r\n\tbool operator==(const mint& a) const {\r\n\t\treturn val == a.val;\r\n\
-    \t}\r\n\tbool operator!=(const mint& a) const {\r\n\t\treturn val != a.val;\r\n\
-    \t}\r\n\tbool operator<(const mint& a) const {\r\n\t\treturn val < a.val;\r\n\t\
-    }\r\n\tbool operator>(const mint& a) const {\r\n\t\treturn val > a.val;\r\n\t\
-    }\r\n\tbool operator<=(const mint& a) const {\r\n\t\treturn val <= a.val;\r\n\t\
-    }\r\n\tbool operator>=(const mint& a) const {\r\n\t\treturn val >= a.val;\r\n\t\
-    }\r\n\tbool operator==(const long long& a) const {\r\n\t\treturn val == a;\r\n\
-    \t}\r\n\tbool operator!=(const long long& a) const {\r\n\t\treturn val != a;\r\
-    \n\t}\r\n\tbool operator<(const long long& a) const {\r\n\t\treturn val < a;\r\
-    \n\t}\r\n\tbool operator>(const long long& a) const {\r\n\t\treturn val > a;\r\
-    \n\t}\r\n\tbool operator<=(const long long& a) const {\r\n\t\treturn val <= a;\r\
-    \n\t}\r\n\tbool operator>=(const long long& a) const {\r\n\t\treturn val >= a;\r\
-    \n\t}\r\n\r\n\tmint& operator=(const mint& a) {\r\n\t\tval = a.val;\r\n\t\treturn\
-    \ *this;\r\n\t}\r\n\tmint& operator=(const long long& a) {\r\n\t\tval = (mod+a%mod)%mod;\r\
-    \n\t\treturn *this;\r\n\t}\r\n\r\n\tfriend ostream& operator<<(ostream& os, const\
-    \ mint& a) {\r\n\t\treturn os << a.val;\r\n\t}\r\n\tfriend istream& operator>>(istream&\
-    \ is, mint &a) {\r\n\t\tlong long n;\r\n\t\tis >> n;\r\n\t\ta = mint(n);\r\n\t\
-    \treturn is;\r\n\t}\r\n};\r\n"
+    \ a) const {\r\n\t\treturn mint(*this)+=a;\r\n\t}\r\n\tmint operator-(const mint&\
+    \ a) const {\r\n\t\treturn mint(*this)-=a;\r\n\t}\r\n\tmint operator*(const mint&\
+    \ a) const {\r\n\t\treturn mint(*this)*=a;\r\n\t}\r\n\tmint operator/(const mint&\
+    \ a) const {\r\n\t\treturn mint(*this)/=a;\r\n\t}\r\n\tmint operator+(const long\
+    \ long& a) const {\r\n\t\treturn mint(*this)+=a;\r\n\t}\r\n\tmint operator-(const\
+    \ long long& a) const {\r\n\t\treturn mint(*this)-=a;\r\n\t}\r\n\tmint operator*(const\
+    \ long long& a) const {\r\n\t\treturn mint(*this)*=a;\r\n\t}\r\n\tmint operator/(const\
+    \ long long& a) const {\r\n\t\treturn mint(*this)/=mint(a);\r\n\t}\r\n\r\n\tmint&\
+    \ operator++() {\r\n\t\t(++val) %= mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmint\
+    \ operator++(int) {\r\n\t\tmint res(*this);\r\n\t\t(++val) %= mod;\r\n\t\treturn\
+    \ res;\r\n\t}\r\n\tmint& operator--() {\r\n\t\t(val+=mod-1) %= mod;\r\n\t\treturn\
+    \ *this;\r\n\t}\r\n\tmint operator--(int) {\r\n\t\tmint res(*this);\r\n\t\t(val+=mod-1)\
+    \ %= mod;\r\n\t\treturn res;\r\n\t}\r\n\r\n\tbool operator==(const mint& a) const\
+    \ {\r\n\t\treturn val == a.val;\r\n\t}\r\n\tbool operator!=(const mint& a) const\
+    \ {\r\n\t\treturn val != a.val;\r\n\t}\r\n\tbool operator<(const mint& a) const\
+    \ {\r\n\t\treturn val < a.val;\r\n\t}\r\n\tbool operator>(const mint& a) const\
+    \ {\r\n\t\treturn val > a.val;\r\n\t}\r\n\tbool operator<=(const mint& a) const\
+    \ {\r\n\t\treturn val <= a.val;\r\n\t}\r\n\tbool operator>=(const mint& a) const\
+    \ {\r\n\t\treturn val >= a.val;\r\n\t}\r\n\tbool operator==(const long long& a)\
+    \ const {\r\n\t\treturn val == a;\r\n\t}\r\n\tbool operator!=(const long long&\
+    \ a) const {\r\n\t\treturn val != a;\r\n\t}\r\n\tbool operator<(const long long&\
+    \ a) const {\r\n\t\treturn val < a;\r\n\t}\r\n\tbool operator>(const long long&\
+    \ a) const {\r\n\t\treturn val > a;\r\n\t}\r\n\tbool operator<=(const long long&\
+    \ a) const {\r\n\t\treturn val <= a;\r\n\t}\r\n\tbool operator>=(const long long&\
+    \ a) const {\r\n\t\treturn val >= a;\r\n\t}\r\n\r\n\tmint& operator=(const mint&\
+    \ a) {\r\n\t\tval = a.val;\r\n\t\treturn *this;\r\n\t}\r\n\tmint& operator=(const\
+    \ long long& a) {\r\n\t\tval = (mod+a%mod)%mod;\r\n\t\treturn *this;\r\n\t}\r\n\
+    \r\n\tfriend ostream& operator<<(ostream& os, const mint& a) {\r\n\t\treturn os\
+    \ << a.val;\r\n\t}\r\n\tfriend istream& operator>>(istream& is, mint &a) {\r\n\
+    \t\tlong long n;\r\n\t\tis >> n;\r\n\t\ta = mint(n);\r\n\t\treturn is;\r\n\t}\r\
+    \n};\r\n"
   code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
     \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\ntemplate<int mod>\r\
     \nstruct mint {\r\nprivate:\r\n\r\n\tlong long val;\r\n\r\npublic:\r\n\r\n\tmint(long\
@@ -90,43 +90,42 @@ data:
     \t\treturn *this;\r\n\t}\r\n\tmint& operator*=(const long long& a) {\r\n\t\t(val*=mod+a%mod)\
     \ %= mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmint& operator/=(const long long& a)\
     \ {\r\n\t\treturn (*this)/=mint(a);\r\n\t}\r\n\r\n\tmint operator+(const mint&\
-    \ a) const {\r\n\t\tmint res(*this);\r\n\t\treturn res+=a;\r\n\t}\r\n\tmint operator-(const\
-    \ mint& a) const {\r\n\t\tmint res(*this);\r\n\t\treturn res-=a;\r\n\t}\r\n\t\
-    mint operator*(const mint& a) const {\r\n\t\tmint res(*this);\r\n\t\treturn res*=a;\r\
-    \n\t}\r\n\tmint operator/(const mint& a) const {\r\n\t\tmint res(*this);\r\n\t\
-    \treturn res/=a;\r\n\t}\r\n\tmint operator+(const long long& a) const {\r\n\t\t\
-    mint res(*this);\r\n\t\treturn res+=a;\r\n\t}\r\n\tmint operator-(const long long&\
-    \ a) const {\r\n\t\tmint res(*this);\r\n\t\treturn res-=a;\r\n\t}\r\n\tmint operator*(const\
-    \ long long& a) const {\r\n\t\tmint res(*this);\r\n\t\treturn res*=a;\r\n\t}\r\
-    \n\tmint operator/(const long long& a) const {\r\n\t\tmint res(*this);\r\n\t\t\
-    return res/=mint(a);\r\n\t}\r\n\r\n\tmint& operator++() {\r\n\t\t(++val) %= mod;\r\
-    \n\t\treturn *this;\r\n\t}\r\n\tmint operator++(int) {\r\n\t\tmint res(*this);\r\
-    \n\t\t(++val) %= mod;\r\n\t\treturn res;\r\n\t}\r\n\tmint& operator--() {\r\n\t\
-    \t(val+=mod-1) %= mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmint operator--(int) {\r\
-    \n\t\tmint res(*this);\r\n\t\t(val+=mod-1) %= mod;\r\n\t\treturn res;\r\n\t}\r\
-    \n\r\n\tbool operator==(const mint& a) const {\r\n\t\treturn val == a.val;\r\n\
-    \t}\r\n\tbool operator!=(const mint& a) const {\r\n\t\treturn val != a.val;\r\n\
-    \t}\r\n\tbool operator<(const mint& a) const {\r\n\t\treturn val < a.val;\r\n\t\
-    }\r\n\tbool operator>(const mint& a) const {\r\n\t\treturn val > a.val;\r\n\t\
-    }\r\n\tbool operator<=(const mint& a) const {\r\n\t\treturn val <= a.val;\r\n\t\
-    }\r\n\tbool operator>=(const mint& a) const {\r\n\t\treturn val >= a.val;\r\n\t\
-    }\r\n\tbool operator==(const long long& a) const {\r\n\t\treturn val == a;\r\n\
-    \t}\r\n\tbool operator!=(const long long& a) const {\r\n\t\treturn val != a;\r\
-    \n\t}\r\n\tbool operator<(const long long& a) const {\r\n\t\treturn val < a;\r\
-    \n\t}\r\n\tbool operator>(const long long& a) const {\r\n\t\treturn val > a;\r\
-    \n\t}\r\n\tbool operator<=(const long long& a) const {\r\n\t\treturn val <= a;\r\
-    \n\t}\r\n\tbool operator>=(const long long& a) const {\r\n\t\treturn val >= a;\r\
-    \n\t}\r\n\r\n\tmint& operator=(const mint& a) {\r\n\t\tval = a.val;\r\n\t\treturn\
-    \ *this;\r\n\t}\r\n\tmint& operator=(const long long& a) {\r\n\t\tval = (mod+a%mod)%mod;\r\
-    \n\t\treturn *this;\r\n\t}\r\n\r\n\tfriend ostream& operator<<(ostream& os, const\
-    \ mint& a) {\r\n\t\treturn os << a.val;\r\n\t}\r\n\tfriend istream& operator>>(istream&\
-    \ is, mint &a) {\r\n\t\tlong long n;\r\n\t\tis >> n;\r\n\t\ta = mint(n);\r\n\t\
-    \treturn is;\r\n\t}\r\n};\r\n"
+    \ a) const {\r\n\t\treturn mint(*this)+=a;\r\n\t}\r\n\tmint operator-(const mint&\
+    \ a) const {\r\n\t\treturn mint(*this)-=a;\r\n\t}\r\n\tmint operator*(const mint&\
+    \ a) const {\r\n\t\treturn mint(*this)*=a;\r\n\t}\r\n\tmint operator/(const mint&\
+    \ a) const {\r\n\t\treturn mint(*this)/=a;\r\n\t}\r\n\tmint operator+(const long\
+    \ long& a) const {\r\n\t\treturn mint(*this)+=a;\r\n\t}\r\n\tmint operator-(const\
+    \ long long& a) const {\r\n\t\treturn mint(*this)-=a;\r\n\t}\r\n\tmint operator*(const\
+    \ long long& a) const {\r\n\t\treturn mint(*this)*=a;\r\n\t}\r\n\tmint operator/(const\
+    \ long long& a) const {\r\n\t\treturn mint(*this)/=mint(a);\r\n\t}\r\n\r\n\tmint&\
+    \ operator++() {\r\n\t\t(++val) %= mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmint\
+    \ operator++(int) {\r\n\t\tmint res(*this);\r\n\t\t(++val) %= mod;\r\n\t\treturn\
+    \ res;\r\n\t}\r\n\tmint& operator--() {\r\n\t\t(val+=mod-1) %= mod;\r\n\t\treturn\
+    \ *this;\r\n\t}\r\n\tmint operator--(int) {\r\n\t\tmint res(*this);\r\n\t\t(val+=mod-1)\
+    \ %= mod;\r\n\t\treturn res;\r\n\t}\r\n\r\n\tbool operator==(const mint& a) const\
+    \ {\r\n\t\treturn val == a.val;\r\n\t}\r\n\tbool operator!=(const mint& a) const\
+    \ {\r\n\t\treturn val != a.val;\r\n\t}\r\n\tbool operator<(const mint& a) const\
+    \ {\r\n\t\treturn val < a.val;\r\n\t}\r\n\tbool operator>(const mint& a) const\
+    \ {\r\n\t\treturn val > a.val;\r\n\t}\r\n\tbool operator<=(const mint& a) const\
+    \ {\r\n\t\treturn val <= a.val;\r\n\t}\r\n\tbool operator>=(const mint& a) const\
+    \ {\r\n\t\treturn val >= a.val;\r\n\t}\r\n\tbool operator==(const long long& a)\
+    \ const {\r\n\t\treturn val == a;\r\n\t}\r\n\tbool operator!=(const long long&\
+    \ a) const {\r\n\t\treturn val != a;\r\n\t}\r\n\tbool operator<(const long long&\
+    \ a) const {\r\n\t\treturn val < a;\r\n\t}\r\n\tbool operator>(const long long&\
+    \ a) const {\r\n\t\treturn val > a;\r\n\t}\r\n\tbool operator<=(const long long&\
+    \ a) const {\r\n\t\treturn val <= a;\r\n\t}\r\n\tbool operator>=(const long long&\
+    \ a) const {\r\n\t\treturn val >= a;\r\n\t}\r\n\r\n\tmint& operator=(const mint&\
+    \ a) {\r\n\t\tval = a.val;\r\n\t\treturn *this;\r\n\t}\r\n\tmint& operator=(const\
+    \ long long& a) {\r\n\t\tval = (mod+a%mod)%mod;\r\n\t\treturn *this;\r\n\t}\r\n\
+    \r\n\tfriend ostream& operator<<(ostream& os, const mint& a) {\r\n\t\treturn os\
+    \ << a.val;\r\n\t}\r\n\tfriend istream& operator>>(istream& is, mint &a) {\r\n\
+    \t\tlong long n;\r\n\t\tis >> n;\r\n\t\ta = mint(n);\r\n\t\treturn is;\r\n\t}\r\
+    \n};\r\n"
   dependsOn: []
   isVerificationFile: false
   path: mod/modint.cpp
   requiredBy: []
-  timestamp: '2021-01-08 23:39:55+09:00'
+  timestamp: '2021-01-24 00:53:03+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_0341.test.cpp

@@ -6,6 +6,7 @@ data:
     title: "Combinatorics(\u7D44\u5408\u305B\u6570\u5B66)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

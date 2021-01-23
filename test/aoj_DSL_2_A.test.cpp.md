@@ -6,6 +6,7 @@ data:
     title: "(\u524A\u9664\u4E88\u5B9A) RmQ(\u533A\u9593\u6700\u5C0F\u5024)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

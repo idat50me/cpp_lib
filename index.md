@@ -90,7 +90,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: structure/matrix.cpp
-      title: "Matrix( $2$ \u6B21\u5143\u884C\u5217)"
+      title: "Matrix(\u884C\u5217)"
     - icon: ':warning:'
       path: structure/vertex.cpp
       title: structure/vertex.cpp

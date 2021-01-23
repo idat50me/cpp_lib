@@ -6,6 +6,7 @@ data:
     title: "Isprime(\u7D20\u6570\u5224\u5B9A)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:

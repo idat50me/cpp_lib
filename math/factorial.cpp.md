@@ -6,6 +6,7 @@ data:
     path: test/aoj_0019.cpp
     title: test/aoj_0019.cpp
   _extendedVerifiedWith: []
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':warning:'
   attributes:

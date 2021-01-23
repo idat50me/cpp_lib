@@ -6,6 +6,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yuki_0888.test.cpp
     title: test/yuki_0888.test.cpp
+  _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
