@@ -25,13 +25,13 @@ data:
       title: "LIS(\u6700\u9577\u5897\u52A0\u90E8\u5206\u5217)"
   - name: graph
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: graph/maxflow.cpp
       title: "maxflow(\u6700\u5927\u6D41)"
     - icon: ':heavy_check_mark:'
       path: graph/mincostflow.cpp
       title: "mincostflow(\u6700\u5C0F\u8CBB\u7528\u6D41)"
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: graph/mincostflow_nega.cpp
       title: "mincostflow_nega(\u6700\u5C0F\u8CBB\u7528\u6D41)"
     - icon: ':heavy_check_mark:'
@@ -105,7 +105,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj_0341.test.cpp
       title: test/aoj_0341.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj_2429.test.cpp
       title: test/aoj_2429.test.cpp
     - icon: ':heavy_check_mark:'
@@ -198,7 +198,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yuki_0117.test.cpp
       title: test/yuki_0117.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yuki_0177.test.cpp
       title: test/yuki_0177.test.cpp
     - icon: ':heavy_check_mark:'

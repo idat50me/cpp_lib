@@ -9,12 +9,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj_GRL_7_A.test.cpp
     title: test/aoj_GRL_7_A.test.cpp
-  - icon: ':heavy_check_mark:'
+  - icon: ':x:'
     path: test/yuki_0177.test.cpp
     title: test/yuki_0177.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"graph/maxflow.cpp\"\n\r\n#ifndef call_include\r\n#define\
@@ -57,7 +57,7 @@ data:
   path: graph/maxflow.cpp
   requiredBy: []
   timestamp: '2020-12-26 00:16:48+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yuki_0177.test.cpp
   - test/aoj_GRL_7_A.test.cpp
