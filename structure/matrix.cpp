@@ -70,7 +70,7 @@ public:
 	matrix& operator*=(const matrix& a) {
 		int h = height(), w = a.width(), ah = a.height();
 		assert(width()==ah);
-		vector<vector<T>> tmp(h, vector(w, 0));
+		vector<vector<T>> tmp(h, vector(w, T(0)));
 		for(int i=0; i<h; i++) for(int j=0; j<w; j++) for(int k=0; k<ah; k++) tmp[i][j] += m[i][k]*a[k][j];
 		m.swap(tmp);
 		return *this;
