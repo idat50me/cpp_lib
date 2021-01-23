@@ -19,11 +19,11 @@ public:
 	void assign(int h, int w) { m = vector(h, vector<T>(w)); }
 	void assign(int h, int w, const T init) { m = vector(h, vector<T>(w, init)); }
 
-	int height() {
+	int height() const {
 		return m.size();
 	}
 
-	int width() {
+	int width() const {
 		if(height()==0) return 0;
 		return m[0].size();
 	}
@@ -42,6 +42,10 @@ public:
 		cout<<flush;
 	}
 
+	inline const vector<T> &operator[](int idx) const {
+		assert(0<=idx && idx<m.size());
+		return m[idx];
+	}
 	inline vector<T> &operator[](int idx) {
 		assert(0<=idx && idx<m.size());
 		return m[idx];
