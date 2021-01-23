@@ -77,36 +77,28 @@ public:
 	}
 
 	mint operator+(const mint& a) const {
-		mint res(*this);
-		return res+=a;
+		return mint(*this)+=a;
 	}
 	mint operator-(const mint& a) const {
-		mint res(*this);
-		return res-=a;
+		return mint(*this)-=a;
 	}
 	mint operator*(const mint& a) const {
-		mint res(*this);
-		return res*=a;
+		return mint(*this)*=a;
 	}
 	mint operator/(const mint& a) const {
-		mint res(*this);
-		return res/=a;
+		return mint(*this)/=a;
 	}
 	mint operator+(const long long& a) const {
-		mint res(*this);
-		return res+=a;
+		return mint(*this)+=a;
 	}
 	mint operator-(const long long& a) const {
-		mint res(*this);
-		return res-=a;
+		return mint(*this)-=a;
 	}
 	mint operator*(const long long& a) const {
-		mint res(*this);
-		return res*=a;
+		return mint(*this)*=a;
 	}
 	mint operator/(const long long& a) const {
-		mint res(*this);
-		return res/=mint(a);
+		return mint(*this)/=mint(a);
 	}
 
 	mint& operator++() {
