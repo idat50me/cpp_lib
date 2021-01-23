@@ -12,12 +12,12 @@ private:
 	vector<vector<T>> m;
 
 public:
-	matrix() : m(0, vector(0)) {}
-	matrix(int h, int w) : m(h, vector(w)) {}
-	matrix(int h, int w, const T &init) : m(h, vector(w, init)) {}
+	matrix() : m(0, vector<T>(0)) {}
+	matrix(int h, int w) : m(h, vector<T>(w)) {}
+	matrix(int h, int w, const T &init) : m(h, vector<T>(w, init)) {}
 
-	void assign(int h, int w) { m = vector(h, vector(w)); }
-	void assign(int h, int w, const T init) { m = vector(h, vector(w, init)); }
+	void assign(int h, int w) { m = vector(h, vector<T>(w)); }
+	void assign(int h, int w, const T init) { m = vector(h, vector<T>(w, init)); }
 
 	int height() const {
 		return m.size();
