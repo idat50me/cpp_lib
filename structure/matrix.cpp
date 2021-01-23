@@ -15,6 +15,7 @@ public:
 	matrix() : m(0, vector<T>(0)) {}
 	matrix(int h, int w) : m(h, vector<T>(w)) {}
 	matrix(int h, int w, const T &init) : m(h, vector<T>(w, init)) {}
+	matrix(vector<vector<T>> m) : m(m) {}
 
 	void assign(int h, int w) { m = vector(h, vector<T>(w)); }
 	void assign(int h, int w, const T init) { m = vector(h, vector<T>(w, init)); }
