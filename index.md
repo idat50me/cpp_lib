@@ -88,7 +88,7 @@ data:
       title: "Z-Algorithm(\u6700\u9577\u5171\u901A\u63A5\u982D\u8F9E)"
   - name: structure
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: structure/matrix.cpp
       title: "Matrix(\u884C\u5217)"
     - icon: ':warning:'
@@ -165,6 +165,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj_ITP1_6_B.test.cpp
       title: test/aoj_ITP1_6_B.test.cpp
+    - icon: ':x:'
+      path: test/aoj_ITP1_7_D.test.cpp
+      title: test/aoj_ITP1_7_D.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj_NTL_1_A.test.cpp
       title: test/aoj_NTL_1_A.test.cpp
