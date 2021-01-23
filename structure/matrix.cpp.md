@@ -48,12 +48,12 @@ data:
     \ i++) for(int j=0; j<m[i].size(); j++) m[i][j] -= a[i][j];\r\n\t\treturn *this;\r\
     \n\t}\r\n\tmatrix& operator*=(const matrix& a) {\r\n\t\tint h = height(), w =\
     \ a.width(), ah = a.height();\r\n\t\tassert(width()==ah);\r\n\t\tvector<vector<T>>\
-    \ tmp(h, vector(w, 0));\r\n\t\tfor(int i=0; i<h; i++) for(int j=0; j<w; j++) for(int\
-    \ k=0; k<ah; k++) tmp[i][j] += m[i][k]*a[k][j];\r\n\t\tm.swap(tmp);\r\n\t\treturn\
-    \ *this;\r\n\t}\r\n\r\n\tmatrix operator+(const matrix& a) const {\r\n\t\treturn\
-    \ matrix(*this)+=a;\r\n\t}\r\n\tmatrix operator-(const matrix& a) const {\r\n\t\
-    \treturn matrix(*this)-=a;\r\n\t}\r\n\tmatrix operator*(const matrix& a) const\
-    \ {\r\n\t\treturn matrix(*this)*=a;\r\n\t}\r\n};\r\n"
+    \ tmp(h, vector(w, T(0)));\r\n\t\tfor(int i=0; i<h; i++) for(int j=0; j<w; j++)\
+    \ for(int k=0; k<ah; k++) tmp[i][j] += m[i][k]*a[k][j];\r\n\t\tm.swap(tmp);\r\n\
+    \t\treturn *this;\r\n\t}\r\n\r\n\tmatrix operator+(const matrix& a) const {\r\n\
+    \t\treturn matrix(*this)+=a;\r\n\t}\r\n\tmatrix operator-(const matrix& a) const\
+    \ {\r\n\t\treturn matrix(*this)-=a;\r\n\t}\r\n\tmatrix operator*(const matrix&\
+    \ a) const {\r\n\t\treturn matrix(*this)*=a;\r\n\t}\r\n};\r\n"
   code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
     \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\ntemplate<typename T>\r\
     \nstruct matrix{\r\nprivate:\r\n\tvector<vector<T>> m;\r\n\r\npublic:\r\n\tmatrix()\
@@ -79,17 +79,17 @@ data:
     \ i++) for(int j=0; j<m[i].size(); j++) m[i][j] -= a[i][j];\r\n\t\treturn *this;\r\
     \n\t}\r\n\tmatrix& operator*=(const matrix& a) {\r\n\t\tint h = height(), w =\
     \ a.width(), ah = a.height();\r\n\t\tassert(width()==ah);\r\n\t\tvector<vector<T>>\
-    \ tmp(h, vector(w, 0));\r\n\t\tfor(int i=0; i<h; i++) for(int j=0; j<w; j++) for(int\
-    \ k=0; k<ah; k++) tmp[i][j] += m[i][k]*a[k][j];\r\n\t\tm.swap(tmp);\r\n\t\treturn\
-    \ *this;\r\n\t}\r\n\r\n\tmatrix operator+(const matrix& a) const {\r\n\t\treturn\
-    \ matrix(*this)+=a;\r\n\t}\r\n\tmatrix operator-(const matrix& a) const {\r\n\t\
-    \treturn matrix(*this)-=a;\r\n\t}\r\n\tmatrix operator*(const matrix& a) const\
-    \ {\r\n\t\treturn matrix(*this)*=a;\r\n\t}\r\n};\r\n"
+    \ tmp(h, vector(w, T(0)));\r\n\t\tfor(int i=0; i<h; i++) for(int j=0; j<w; j++)\
+    \ for(int k=0; k<ah; k++) tmp[i][j] += m[i][k]*a[k][j];\r\n\t\tm.swap(tmp);\r\n\
+    \t\treturn *this;\r\n\t}\r\n\r\n\tmatrix operator+(const matrix& a) const {\r\n\
+    \t\treturn matrix(*this)+=a;\r\n\t}\r\n\tmatrix operator-(const matrix& a) const\
+    \ {\r\n\t\treturn matrix(*this)-=a;\r\n\t}\r\n\tmatrix operator*(const matrix&\
+    \ a) const {\r\n\t\treturn matrix(*this)*=a;\r\n\t}\r\n};\r\n"
   dependsOn: []
   isVerificationFile: false
   path: structure/matrix.cpp
   requiredBy: []
-  timestamp: '2021-01-24 01:22:15+09:00'
+  timestamp: '2021-01-24 01:26:27+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yuki_0177.test.cpp

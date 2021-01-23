@@ -41,12 +41,12 @@ data:
     \ i++) for(int j=0; j<m[i].size(); j++) m[i][j] -= a[i][j];\r\n\t\treturn *this;\r\
     \n\t}\r\n\tmatrix& operator*=(const matrix& a) {\r\n\t\tint h = height(), w =\
     \ a.width(), ah = a.height();\r\n\t\tassert(width()==ah);\r\n\t\tvector<vector<T>>\
-    \ tmp(h, vector(w, 0));\r\n\t\tfor(int i=0; i<h; i++) for(int j=0; j<w; j++) for(int\
-    \ k=0; k<ah; k++) tmp[i][j] += m[i][k]*a[k][j];\r\n\t\tm.swap(tmp);\r\n\t\treturn\
-    \ *this;\r\n\t}\r\n\r\n\tmatrix operator+(const matrix& a) const {\r\n\t\treturn\
-    \ matrix(*this)+=a;\r\n\t}\r\n\tmatrix operator-(const matrix& a) const {\r\n\t\
-    \treturn matrix(*this)-=a;\r\n\t}\r\n\tmatrix operator*(const matrix& a) const\
-    \ {\r\n\t\treturn matrix(*this)*=a;\r\n\t}\r\n};\r\n#line 10 \"test/aoj_ITP1_7_D.test.cpp\"\
+    \ tmp(h, vector(w, T(0)));\r\n\t\tfor(int i=0; i<h; i++) for(int j=0; j<w; j++)\
+    \ for(int k=0; k<ah; k++) tmp[i][j] += m[i][k]*a[k][j];\r\n\t\tm.swap(tmp);\r\n\
+    \t\treturn *this;\r\n\t}\r\n\r\n\tmatrix operator+(const matrix& a) const {\r\n\
+    \t\treturn matrix(*this)+=a;\r\n\t}\r\n\tmatrix operator-(const matrix& a) const\
+    \ {\r\n\t\treturn matrix(*this)-=a;\r\n\t}\r\n\tmatrix operator*(const matrix&\
+    \ a) const {\r\n\t\treturn matrix(*this)*=a;\r\n\t}\r\n};\r\n#line 10 \"test/aoj_ITP1_7_D.test.cpp\"\
     \n\r\nint main() {\r\n\tint N,M,L; cin>>N>>M>>L;\r\n\tmatrix<long long> A(N,M),\
     \ B(M,L);\r\n\tA.in();\r\n\tB.in();\r\n\t(A*B).out();\r\n}\r\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/ITP1_7_D\"\r\n\
@@ -59,7 +59,7 @@ data:
   isVerificationFile: true
   path: test/aoj_ITP1_7_D.test.cpp
   requiredBy: []
-  timestamp: '2021-01-24 01:22:15+09:00'
+  timestamp: '2021-01-24 01:26:27+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj_ITP1_7_D.test.cpp

@@ -41,12 +41,12 @@ data:
     \ i++) for(int j=0; j<m[i].size(); j++) m[i][j] -= a[i][j];\r\n\t\treturn *this;\r\
     \n\t}\r\n\tmatrix& operator*=(const matrix& a) {\r\n\t\tint h = height(), w =\
     \ a.width(), ah = a.height();\r\n\t\tassert(width()==ah);\r\n\t\tvector<vector<T>>\
-    \ tmp(h, vector(w, 0));\r\n\t\tfor(int i=0; i<h; i++) for(int j=0; j<w; j++) for(int\
-    \ k=0; k<ah; k++) tmp[i][j] += m[i][k]*a[k][j];\r\n\t\tm.swap(tmp);\r\n\t\treturn\
-    \ *this;\r\n\t}\r\n\r\n\tmatrix operator+(const matrix& a) const {\r\n\t\treturn\
-    \ matrix(*this)+=a;\r\n\t}\r\n\tmatrix operator-(const matrix& a) const {\r\n\t\
-    \treturn matrix(*this)-=a;\r\n\t}\r\n\tmatrix operator*(const matrix& a) const\
-    \ {\r\n\t\treturn matrix(*this)*=a;\r\n\t}\r\n};\r\n#line 10 \"test/aoj_ITP1_6_B.test.cpp\"\
+    \ tmp(h, vector(w, T(0)));\r\n\t\tfor(int i=0; i<h; i++) for(int j=0; j<w; j++)\
+    \ for(int k=0; k<ah; k++) tmp[i][j] += m[i][k]*a[k][j];\r\n\t\tm.swap(tmp);\r\n\
+    \t\treturn *this;\r\n\t}\r\n\r\n\tmatrix operator+(const matrix& a) const {\r\n\
+    \t\treturn matrix(*this)+=a;\r\n\t}\r\n\tmatrix operator-(const matrix& a) const\
+    \ {\r\n\t\treturn matrix(*this)-=a;\r\n\t}\r\n\tmatrix operator*(const matrix&\
+    \ a) const {\r\n\t\treturn matrix(*this)*=a;\r\n\t}\r\n};\r\n#line 10 \"test/aoj_ITP1_6_B.test.cpp\"\
     \n\r\nint main() {\r\n\tint N; cin>>N;\r\n\tmatrix card(4,14,true);\r\n\tmap<char,int>\
     \ ch2i={{'S',0}, {'H',1}, {'C',2}, {'D',3}};\r\n\tmap<int,char> i2ch={{0,'S'},\
     \ {1,'H'}, {2,'C'}, {3,'D'}};\r\n\r\n\tfor(int i=0; i<N; i++) {\r\n\t\tchar ch;\
@@ -67,7 +67,7 @@ data:
   isVerificationFile: true
   path: test/aoj_ITP1_6_B.test.cpp
   requiredBy: []
-  timestamp: '2021-01-24 01:22:15+09:00'
+  timestamp: '2021-01-24 01:26:27+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_ITP1_6_B.test.cpp
