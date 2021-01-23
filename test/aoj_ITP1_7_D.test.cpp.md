@@ -48,19 +48,19 @@ data:
     \ matrix& a) const {\r\n\t\treturn matrix(*this)-=a;\r\n\t}\r\n\tmatrix operator*(const\
     \ matrix& a) const {\r\n\t\treturn matrix(*this)*=a;\r\n\t}\r\n};\r\n#line 10\
     \ \"test/aoj_ITP1_7_D.test.cpp\"\n\r\nint main() {\r\n\tint N,M,L; cin>>N>>M>>L;\r\
-    \n\tmatrix<int> A(N,M), B(M,L);\r\n\tA.in();\r\n\tB.in();\r\n\t(A*B).out();\r\n\
-    }\r\n"
+    \n\tmatrix<long long> A(N,M), B(M,L);\r\n\tA.in();\r\n\tB.in();\r\n\t(A*B).out();\r\
+    \n}\r\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/ITP1_7_D\"\r\n\
     \r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
     \nusing namespace std;\r\n#endif\r\n\r\n#include \"structure/matrix.cpp\"\r\n\r\
-    \nint main() {\r\n\tint N,M,L; cin>>N>>M>>L;\r\n\tmatrix<int> A(N,M), B(M,L);\r\
+    \nint main() {\r\n\tint N,M,L; cin>>N>>M>>L;\r\n\tmatrix<long long> A(N,M), B(M,L);\r\
     \n\tA.in();\r\n\tB.in();\r\n\t(A*B).out();\r\n}\r\n"
   dependsOn:
   - structure/matrix.cpp
   isVerificationFile: true
   path: test/aoj_ITP1_7_D.test.cpp
   requiredBy: []
-  timestamp: '2021-01-24 01:15:05+09:00'
+  timestamp: '2021-01-24 01:18:34+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj_ITP1_7_D.test.cpp
