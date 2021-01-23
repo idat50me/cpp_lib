@@ -1,5 +1,5 @@
 ---
-title: Matrix( $2$ 次元行列)
+title: Matrix(行列)
 documentation_of: ../matrix.cpp
 ---
 
