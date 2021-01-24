@@ -21,46 +21,48 @@ data:
     \ namespace std;\r\n#endif\r\n\r\ntemplate<typename T>\r\nstruct matrix{\r\nprivate:\r\
     \n\tvector<vector<T>> m;\r\n\r\npublic:\r\n\tmatrix() : m(0, vector<T>(0)) {}\r\
     \n\tmatrix(int h, int w) : m(h, vector<T>(w)) {}\r\n\tmatrix(int h, int w, const\
-    \ T &init) : m(h, vector<T>(w, init)) {}\r\n\tmatrix(vector<vector<T>> m) : m(m)\
-    \ {}\r\n\r\n\tvoid assign(int h, int w) { m = vector(h, vector<T>(w)); }\r\n\t\
-    void assign(int h, int w, const T init) { m = vector(h, vector<T>(w, init)); }\r\
-    \n\r\n\tint height() const {\r\n\t\treturn m.size();\r\n\t}\r\n\r\n\tint width()\
-    \ const {\r\n\t\tif(height()==0) return 0;\r\n\t\treturn m[0].size();\r\n\t}\r\
-    \n\r\n\tvoid in() {\r\n\t\tfor(int i=0; i<m.size(); i++) for(int j=0; j<m[i].size();\
-    \ j++) cin>>m[i][j];\r\n\t}\r\n\r\n\tvoid out() {\r\n\t\tfor(int i=0; i<m.size();\
-    \ i++) {\r\n\t\t\tint sz = m[i].size();\r\n\t\t\tfor(int j=0; j<sz; j++) {\r\n\
-    \t\t\t\tcout<<m[i][j]<<(j==sz-1 ? '\\n' : ' ');\r\n\t\t\t}\r\n\t\t}\r\n\t\tcout<<flush;\r\
-    \n\t}\r\n\r\n\tinline const vector<T> &operator[](int idx) const {\r\n\t\tassert(0<=idx\
-    \ && idx<m.size());\r\n\t\treturn m[idx];\r\n\t}\r\n\tinline vector<T> &operator[](int\
-    \ idx) {\r\n\t\tassert(0<=idx && idx<m.size());\r\n\t\treturn m[idx];\r\n\t}\r\
-    \n\r\n\tstatic matrix identity(int n) {\r\n\t\tmatrix res(n, n, 0);\r\n\t\tfor(int\
-    \ i=0; i<n; i++) res[i][i] = 1;\r\n\t\treturn res;\r\n\t}\r\n\r\n\tmatrix& operator+=(const\
+    \ T &init) : m(h, vector<T>(w, init)) {}\r\n\tmatrix(vector<vector<T>> m_init)\
+    \ { m.swap(m_init); }\r\n\r\n\tvoid assign(int h, int w) { m = vector(h, vector<T>(w));\
+    \ }\r\n\tvoid assign(int h, int w, const T init) { m = vector(h, vector<T>(w,\
+    \ init)); }\r\n\r\n\tint height() const {\r\n\t\treturn m.size();\r\n\t}\r\n\r\
+    \n\tint width() const {\r\n\t\tif(height()==0) return 0;\r\n\t\treturn m[0].size();\r\
+    \n\t}\r\n\r\n\tvoid in() {\r\n\t\tfor(int i=0; i<m.size(); i++) for(int j=0; j<m[i].size();\
+    \ j++) cin>>m[i][j];\r\n\t}\r\n\tvoid in(int h, int w) {\r\n\t\tm = vector(h,\
+    \ vector<T>(w));\r\n\t\tin();\r\n\t}\r\n\r\n\tvoid out() {\r\n\t\tfor(int i=0;\
+    \ i<m.size(); i++) {\r\n\t\t\tint sz = m[i].size();\r\n\t\t\tfor(int j=0; j<sz;\
+    \ j++) {\r\n\t\t\t\tcout<<m[i][j]<<(j==sz-1 ? '\\n' : ' ');\r\n\t\t\t}\r\n\t\t\
+    }\r\n\t\tcout<<flush;\r\n\t}\r\n\r\n\tinline const vector<T> &operator[](int idx)\
+    \ const {\r\n\t\tassert(0<=idx && idx<m.size());\r\n\t\treturn m[idx];\r\n\t}\r\
+    \n\tinline vector<T> &operator[](int idx) {\r\n\t\tassert(0<=idx && idx<m.size());\r\
+    \n\t\treturn m[idx];\r\n\t}\r\n\r\n\tstatic matrix identity(int n) {\r\n\t\tmatrix\
+    \ res(n, n, 0);\r\n\t\tfor(int i=0; i<n; i++) res[i][i] = 1;\r\n\t\treturn res;\r\
+    \n\t}\r\n\r\n\tmatrix& operator+=(const matrix& a) {\r\n\t\tassert(height()==a.height()\
+    \ && width()==a.width());\r\n\t\tfor(int i=0; i<m.size(); i++) for(int j=0; j<m[i].size();\
+    \ j++) m[i][j] += a[i][j];\r\n\t\treturn *this;\r\n\t}\r\n\tmatrix& operator-=(const\
     \ matrix& a) {\r\n\t\tassert(height()==a.height() && width()==a.width());\r\n\t\
-    \tfor(int i=0; i<m.size(); i++) for(int j=0; j<m[i].size(); j++) m[i][j] += a[i][j];\r\
-    \n\t\treturn *this;\r\n\t}\r\n\tmatrix& operator-=(const matrix& a) {\r\n\t\t\
-    assert(height()==a.height() && width()==a.width());\r\n\t\tfor(int i=0; i<m.size();\
-    \ i++) for(int j=0; j<m[i].size(); j++) m[i][j] -= a[i][j];\r\n\t\treturn *this;\r\
-    \n\t}\r\n\tmatrix& operator*=(const matrix& a) {\r\n\t\tint h = height(), w =\
-    \ a.width(), ah = a.height();\r\n\t\tassert(width()==ah);\r\n\t\tvector<vector<T>>\
-    \ tmp(h, vector(w, T(0)));\r\n\t\tfor(int i=0; i<h; i++) for(int j=0; j<w; j++)\
-    \ for(int k=0; k<ah; k++) tmp[i][j] += m[i][k]*a[k][j];\r\n\t\tm.swap(tmp);\r\n\
-    \t\treturn *this;\r\n\t}\r\n\r\n\tmatrix operator+(const matrix& a) const {\r\n\
-    \t\treturn matrix(*this)+=a;\r\n\t}\r\n\tmatrix operator-(const matrix& a) const\
-    \ {\r\n\t\treturn matrix(*this)-=a;\r\n\t}\r\n\tmatrix operator*(const matrix&\
-    \ a) const {\r\n\t\treturn matrix(*this)*=a;\r\n\t}\r\n};\r\n#line 10 \"test/aoj_ITP1_7_D.test.cpp\"\
-    \n\r\nint main() {\r\n\tint N,M,L; cin>>N>>M>>L;\r\n\tmatrix<long long> A(N,M),\
-    \ B(M,L);\r\n\tA.in();\r\n\tB.in();\r\n\t(A*B).out();\r\n}\r\n"
+    \tfor(int i=0; i<m.size(); i++) for(int j=0; j<m[i].size(); j++) m[i][j] -= a[i][j];\r\
+    \n\t\treturn *this;\r\n\t}\r\n\tmatrix& operator*=(const matrix& a) {\r\n\t\t\
+    int h = height(), w = a.width(), ah = a.height();\r\n\t\tassert(width()==ah);\r\
+    \n\t\tvector<vector<T>> tmp(h, vector(w, T(0)));\r\n\t\tfor(int i=0; i<h; i++)\
+    \ for(int j=0; j<w; j++) for(int k=0; k<ah; k++) tmp[i][j] += m[i][k]*a[k][j];\r\
+    \n\t\tm.swap(tmp);\r\n\t\treturn *this;\r\n\t}\r\n\r\n\tmatrix operator+(const\
+    \ matrix& a) const {\r\n\t\treturn matrix(*this)+=a;\r\n\t}\r\n\tmatrix operator-(const\
+    \ matrix& a) const {\r\n\t\treturn matrix(*this)-=a;\r\n\t}\r\n\tmatrix operator*(const\
+    \ matrix& a) const {\r\n\t\treturn matrix(*this)*=a;\r\n\t}\r\n};\r\n#line 10\
+    \ \"test/aoj_ITP1_7_D.test.cpp\"\n\r\nint main() {\r\n\tint N,M,L; cin>>N>>M>>L;\r\
+    \n\tmatrix<long long> A,B;\r\n\tA.in(N,M);\r\n\tB.in(M,L);\r\n\t(A*B).out();\r\
+    \n}\r\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/ITP1_7_D\"\r\n\
     \r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
     \nusing namespace std;\r\n#endif\r\n\r\n#include \"structure/matrix.cpp\"\r\n\r\
-    \nint main() {\r\n\tint N,M,L; cin>>N>>M>>L;\r\n\tmatrix<long long> A(N,M), B(M,L);\r\
-    \n\tA.in();\r\n\tB.in();\r\n\t(A*B).out();\r\n}\r\n"
+    \nint main() {\r\n\tint N,M,L; cin>>N>>M>>L;\r\n\tmatrix<long long> A,B;\r\n\t\
+    A.in(N,M);\r\n\tB.in(M,L);\r\n\t(A*B).out();\r\n}\r\n"
   dependsOn:
   - structure/matrix.cpp
   isVerificationFile: true
   path: test/aoj_ITP1_7_D.test.cpp
   requiredBy: []
-  timestamp: '2021-01-24 01:47:29+09:00'
+  timestamp: '2021-01-24 17:26:31+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_ITP1_7_D.test.cpp
