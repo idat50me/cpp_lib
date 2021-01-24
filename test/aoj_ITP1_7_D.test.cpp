@@ -10,8 +10,8 @@ using namespace std;
 
 int main() {
 	int N,M,L; cin>>N>>M>>L;
-	matrix<long long> A(N,M), B(M,L);
-	A.in();
-	B.in();
+	matrix<long long> A,B;
+	A.in(N,M);
+	B.in(M,L);
 	(A*B).out();
 }
