@@ -36,3 +36,6 @@ $H$ 行 $W$ 列の行列を扱うとする．
 
 $H_1$ 行 $W_1$ 列の行列と $H_2$ 行 $W_2$ 列の行列を扱うとする．
 - 行列積：$O(H_1W_1W_2)$
+
+## 参考
+- https://cpprefjp.github.io/lang/cpp11/initializer_lists.html
