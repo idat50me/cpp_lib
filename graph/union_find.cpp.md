@@ -78,9 +78,9 @@ data:
   timestamp: '2021-01-11 18:38:51+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/yosupo_unionfind.test.cpp
   - test/aoj_DSL_1_A.test.cpp
   - test/yuki_0556.test.cpp
-  - test/yosupo_unionfind.test.cpp
 documentation_of: graph/union_find.cpp
 layout: document
 title: "Union-Find\u6728"

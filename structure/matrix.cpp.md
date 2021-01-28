@@ -98,10 +98,10 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yuki_0177.test.cpp
+  - test/aoj_2429.test.cpp
+  - test/aoj_ITP1_6_B.test.cpp
   - test/aoj_0341.test.cpp
   - test/aoj_ITP1_7_D.test.cpp
-  - test/aoj_ITP1_6_B.test.cpp
-  - test/aoj_2429.test.cpp
 documentation_of: structure/matrix.cpp
 layout: document
 title: "Matrix(\u884C\u5217)"

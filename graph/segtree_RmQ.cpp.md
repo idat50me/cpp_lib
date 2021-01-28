@@ -47,8 +47,8 @@ data:
   timestamp: '2020-11-16 11:31:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo_staticrmq.test.cpp
   - test/aoj_DSL_2_A.test.cpp
+  - test/yosupo_staticrmq.test.cpp
 documentation_of: graph/segtree_RmQ.cpp
 layout: document
 title: "(\u524A\u9664\u4E88\u5B9A) RmQ(\u533A\u9593\u6700\u5C0F\u5024)"
