@@ -18,4 +18,4 @@ documentation_of: ../extgcd.cpp
 - 求めた特殊解 $(x_0,y_0)$
 - $d = \gcd(a,b)$ とし，$a' = \dfrac a d,\ b' = \dfrac b d$ とおく
 
-このとき，一般解は $(x,y) = (x_0+b't,\ y_0+a't)$
+このとき，一般解は $(x,y) = (x_0+b't,\ y_0-a't)$
