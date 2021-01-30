@@ -30,7 +30,7 @@ public:
 	}
 
 	void in() {
-		for(int i=0; i<m.size(); i++) for(T &val: m[i]) cin>>val;
+		for(vector<T> &v: m) for(T &val: v) cin>>val;
 	}
 	void in(int h, int w) {
 		m = vector(h, vector<T>(w));
@@ -39,10 +39,10 @@ public:
 
 	void out() {
 		int h = m.size();
-		for(int i=0; i<h; i++) {
-			int sz = m[i].size();
+		for(vector<T> &v: m) {
+			int sz = v.size();
 			for(int j=0; j<sz; j++) {
-				cout<<m[i][j]<<(j==sz-1 ? '\n' : ' ');
+				cout<<v[j]<<(j==sz-1 ? '\n' : ' ');
 			}
 		}
 		cout<<flush;
