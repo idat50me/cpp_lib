@@ -28,8 +28,8 @@ vector<int> manacher(const string &S) {
 
 vector<int> manacher_even(const string &S) {
 	string S2;
-	for(int i=0; i<S.length()-1; i++) (S2+=S[i]) += '$';
-	S2 += S.back();
+	for(const char &c: S) (S2+=c) += '$';
+	S2.pop_back();
 
 	vector<int> res = manacher(S2);
 	for(int i=0; i<S.length()-1; i++) {

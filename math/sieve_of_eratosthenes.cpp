@@ -43,8 +43,8 @@ public:
 	int divisorcount(int n) {
 		int res = 1;
 		vector<pair<int,int>> flist = primefact(n);
-		for(int i=0; i<flist.size(); i++) {
-			res *= flist[i].second+1;
+		for(pair<int,int> &p: flist) {
+			res *= p.second+1;
 		}
 		return res;
 	}

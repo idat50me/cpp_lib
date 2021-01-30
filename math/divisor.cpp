@@ -14,7 +14,7 @@ vector<long long> divisor(long long x) {
 	vector<long long> res = {1};
 	long long i = 2, id = 0, sz;
 	while(i*i<=x || i==x) {
-		if(x%i) { i++; id=0; continue; }
+		if(x % i) { i++; id=0; continue; }
 		sz = res.size();
 		for( ; id<sz; id++) res.emplace_back(res[id]*i);
 		x /= i;

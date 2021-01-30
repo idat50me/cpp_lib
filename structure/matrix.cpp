@@ -30,7 +30,7 @@ public:
 	}
 
 	void in() {
-		for(int i=0; i<m.size(); i++) for(int j=0; j<m[i].size(); j++) cin>>m[i][j];
+		for(int i=0; i<m.size(); i++) for(T &val: m[i]) cin>>val;
 	}
 	void in(int h, int w) {
 		m = vector(h, vector<T>(w));
@@ -38,7 +38,8 @@ public:
 	}
 
 	void out() {
-		for(int i=0; i<m.size(); i++) {
+		int h = m.size();
+		for(int i=0; i<h; i++) {
 			int sz = m[i].size();
 			for(int j=0; j<sz; j++) {
 				cout<<m[i][j]<<(j==sz-1 ? '\n' : ' ');
@@ -63,13 +64,15 @@ public:
 	}
 
 	matrix& operator+=(const matrix& a) {
-		assert(height()==a.height() && width()==a.width());
-		for(int i=0; i<m.size(); i++) for(int j=0; j<m[i].size(); j++) m[i][j] += a[i][j];
+		int h = height(), w = width();
+		assert(h==a.height() && w==a.width());
+		for(int i=0; i<h; i++) for(int j=0; j<w; j++) m[i][j] += a[i][j];
 		return *this;
 	}
 	matrix& operator-=(const matrix& a) {
-		assert(height()==a.height() && width()==a.width());
-		for(int i=0; i<m.size(); i++) for(int j=0; j<m[i].size(); j++) m[i][j] -= a[i][j];
+		int h = height(), w = width();
+		assert(h==a.height() && w==a.width());
+		for(int i=0; i<h; i++) for(int j=0; j<w; j++) m[i][j] -= a[i][j];
 		return *this;
 	}
 	matrix& operator*=(const matrix& a) {

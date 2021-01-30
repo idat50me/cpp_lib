@@ -22,11 +22,10 @@ bool isprime(long long n) {
 		d >>= 1;
 	}
 
-	constexpr int a[12] = {2,3,5,7,11,13,17,19,23,29,31,37};
-	for(int k = 0; k < 12; k++) {
-		if(a[k] >= n) break;
+	for(int k: {2,3,5,7,11,13,17,19,23,29,31,37}) {
+		if(k >= n) break;
 		
-		__int128_t r = 1, q = a[k];
+		__int128_t r = 1, q = k;
 		while(d > 0) {
 			if(d & 1) (r*=q) %= n;
 			d >>= 1;
