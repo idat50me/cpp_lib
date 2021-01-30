@@ -103,6 +103,11 @@ data:
       path: test/aoj_0019.cpp
       title: test/aoj_0019.cpp
   verificationCategories:
+  - name: .
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: aoj_2932.test.cpp
+      title: aoj_2932.test.cpp
   - name: test
     pages:
     - icon: ':heavy_check_mark:'

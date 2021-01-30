@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: aoj_2932.test.cpp
+    title: aoj_2932.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/aoj_NTL_1_A_2.test.cpp
     title: test/aoj_NTL_1_A_2.test.cpp
   _isVerificationFailed: false
@@ -32,6 +35,7 @@ data:
   timestamp: '2021-01-30 17:39:38+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - aoj_2932.test.cpp
   - test/aoj_NTL_1_A_2.test.cpp
 documentation_of: math/primefact.cpp
 layout: document
