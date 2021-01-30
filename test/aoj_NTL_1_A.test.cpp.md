@@ -30,13 +30,13 @@ data:
     \n\t\tn /= dv[n];\r\n\t\twhile(n > 1) {\r\n\t\t\tint d = dv[n];\r\n\t\t\tif(res.back().first\
     \ == d) res.back().second++;\r\n\t\t\telse res.emplace_back(d,1);\r\n\t\t\tn /=\
     \ d;\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\n\r\n\tint divisorcount(int n) {\r\n\
-    \t\tint res = 1;\r\n\t\tvector<pair<int,int>> flist = primefact(n);\r\n\t\tfor(int\
-    \ i=0; i<flist.size(); i++) {\r\n\t\t\tres *= flist[i].second+1;\r\n\t\t}\r\n\t\
-    \treturn res;\r\n\t}\r\n};\r\n#line 10 \"test/aoj_NTL_1_A.test.cpp\"\n\r\nint\
-    \ main() {\r\n\tint n; cin>>n;\r\n\tSieve sv(n);\r\n\tvector<pair<int,int>> flist=sv.primefact(n);\r\
-    \n\r\n\tcout<<n<<':';\r\n\tfor(int i=0; i<flist.size(); i++) {\r\n\t\tfor(int\
-    \ j=0; j<flist[i].second; j++) {\r\n\t\t\tcout<<\" \"<<flist[i].first;\r\n\t\t\
-    }\r\n\t}\r\n\tcout<<endl;\r\n}\r\n"
+    \t\tint res = 1;\r\n\t\tvector<pair<int,int>> flist = primefact(n);\r\n\t\tfor(pair<int,int>\
+    \ &p: flist) {\r\n\t\t\tres *= p.second+1;\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\
+    \n};\r\n#line 10 \"test/aoj_NTL_1_A.test.cpp\"\n\r\nint main() {\r\n\tint n; cin>>n;\r\
+    \n\tSieve sv(n);\r\n\tvector<pair<int,int>> flist=sv.primefact(n);\r\n\r\n\tcout<<n<<':';\r\
+    \n\tfor(int i=0; i<flist.size(); i++) {\r\n\t\tfor(int j=0; j<flist[i].second;\
+    \ j++) {\r\n\t\t\tcout<<\" \"<<flist[i].first;\r\n\t\t}\r\n\t}\r\n\tcout<<endl;\r\
+    \n}\r\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/6/NTL/1/NTL_1_A\"\
     \r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
     \nusing namespace std;\r\n#endif\r\n\r\n#include \"math/sieve_of_eratosthenes.cpp\"\
@@ -49,7 +49,7 @@ data:
   isVerificationFile: true
   path: test/aoj_NTL_1_A.test.cpp
   requiredBy: []
-  timestamp: '2020-12-26 00:16:48+09:00'
+  timestamp: '2021-01-30 16:48:29+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_NTL_1_A.test.cpp

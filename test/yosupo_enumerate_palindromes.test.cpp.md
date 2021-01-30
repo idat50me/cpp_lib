@@ -25,13 +25,13 @@ data:
     \n\t\t\tint r = c+res[c]-i;\r\n\t\t\twhile(i-r>=0 && i+r<N && S[i-r]==S[i+r])\
     \ r++;\r\n\t\t\tres[i] = r;\r\n\t\t\tc = i;\r\n\t\t}\r\n\t}\r\n\r\n\treturn res;\r\
     \n}\r\n\r\nvector<int> manacher_even(const string &S) {\r\n\tstring S2;\r\n\t\
-    for(int i=0; i<S.length()-1; i++) (S2+=S[i]) += '$';\r\n\tS2 += S.back();\r\n\r\
-    \n\tvector<int> res = manacher(S2);\r\n\tfor(int i=0; i<S.length()-1; i++) {\r\
-    \n\t\t++res[i+i]>>=1;\r\n\t\tres[i+i+1]>>=1;\r\n\t}\r\n\t++res[res.size()-1]>>=1;\r\
-    \n\r\n\treturn res;\r\n}\r\n#line 10 \"test/yosupo_enumerate_palindromes.test.cpp\"\
-    \n\r\nint main() {\r\n\tstring S; cin>>S;\r\n\tvector<int> R = manacher_even(S);\r\
-    \n\tfor(int i=0; i<R.size(); i++) {\r\n\t\tif(i%2==0) cout<<2*R[i]-1;\r\n\t\t\
-    else cout<<2*R[i];\r\n\t\tcout<<(i==R.size()-1?'\\n':' ');\r\n\t}\r\n}\r\n"
+    for(const char &c: S) (S2+=c) += '$';\r\n\tS2.pop_back();\r\n\r\n\tvector<int>\
+    \ res = manacher(S2);\r\n\tfor(int i=0; i<S.length()-1; i++) {\r\n\t\t++res[i+i]>>=1;\r\
+    \n\t\tres[i+i+1]>>=1;\r\n\t}\r\n\t++res[res.size()-1]>>=1;\r\n\r\n\treturn res;\r\
+    \n}\r\n#line 10 \"test/yosupo_enumerate_palindromes.test.cpp\"\n\r\nint main()\
+    \ {\r\n\tstring S; cin>>S;\r\n\tvector<int> R = manacher_even(S);\r\n\tfor(int\
+    \ i=0; i<R.size(); i++) {\r\n\t\tif(i%2==0) cout<<2*R[i]-1;\r\n\t\telse cout<<2*R[i];\r\
+    \n\t\tcout<<(i==R.size()-1?'\\n':' ');\r\n\t}\r\n}\r\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/enumerate_palindromes\"\
     \r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
     \nusing namespace std;\r\n#endif\r\n\r\n#include \"string/manacher.cpp\"\r\n\r\
@@ -43,7 +43,7 @@ data:
   isVerificationFile: true
   path: test/yosupo_enumerate_palindromes.test.cpp
   requiredBy: []
-  timestamp: '2021-01-07 01:05:55+09:00'
+  timestamp: '2021-01-30 16:48:29+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo_enumerate_palindromes.test.cpp

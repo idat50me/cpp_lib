@@ -18,20 +18,20 @@ data:
   bundledCode: "#line 2 \"math/binpow.cpp\"\n/*\r\n * @brief Binary-Power(\u7E70\u308A\
     \u8FD4\u3057\u4E8C\u4E57\u6CD5)\r\n */\r\n\r\n#ifndef call_include\r\n#define\
     \ call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\
-    \n\r\nlong long binpow(long long a, long long ex, long long p=(1LL<<61)-1) {\r\
+    \n\r\nlong long binpow(long long a, long long ex, long long p = (1LL<<61)-1) {\r\
     \n\tlong long res = 1;\r\n\twhile(ex > 0) {\r\n\t\tif(ex & 1) (res*=a) %= p;\r\
-    \n\t\tex>>=1;\r\n\t\t(a*=a) %= p;\r\n\t}\r\n\treturn res;\r\n}\r\n"
+    \n\t\tex >>= 1;\r\n\t\t(a*=a) %= p;\r\n\t}\r\n\treturn res;\r\n}\r\n"
   code: "#pragma once\r\n/*\r\n * @brief Binary-Power(\u7E70\u308A\u8FD4\u3057\u4E8C\
     \u4E57\u6CD5)\r\n */\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
     \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\nlong long binpow(long\
-    \ long a, long long ex, long long p=(1LL<<61)-1) {\r\n\tlong long res = 1;\r\n\
-    \twhile(ex > 0) {\r\n\t\tif(ex & 1) (res*=a) %= p;\r\n\t\tex>>=1;\r\n\t\t(a*=a)\
-    \ %= p;\r\n\t}\r\n\treturn res;\r\n}\r\n"
+    \ long a, long long ex, long long p = (1LL<<61)-1) {\r\n\tlong long res = 1;\r\
+    \n\twhile(ex > 0) {\r\n\t\tif(ex & 1) (res*=a) %= p;\r\n\t\tex >>= 1;\r\n\t\t\
+    (a*=a) %= p;\r\n\t}\r\n\treturn res;\r\n}\r\n"
   dependsOn: []
   isVerificationFile: false
   path: math/binpow.cpp
   requiredBy: []
-  timestamp: '2020-11-16 10:44:07+09:00'
+  timestamp: '2021-01-30 16:48:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_NTL_1_B.test.cpp

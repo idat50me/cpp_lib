@@ -27,8 +27,8 @@ data:
     \t\t\tint d = dv[n];\r\n\t\t\tif(res.back().first == d) res.back().second++;\r\
     \n\t\t\telse res.emplace_back(d,1);\r\n\t\t\tn /= d;\r\n\t\t}\r\n\t\treturn res;\r\
     \n\t}\r\n\r\n\tint divisorcount(int n) {\r\n\t\tint res = 1;\r\n\t\tvector<pair<int,int>>\
-    \ flist = primefact(n);\r\n\t\tfor(int i=0; i<flist.size(); i++) {\r\n\t\t\tres\
-    \ *= flist[i].second+1;\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\n};\r\n"
+    \ flist = primefact(n);\r\n\t\tfor(pair<int,int> &p: flist) {\r\n\t\t\tres *=\
+    \ p.second+1;\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\n};\r\n"
   code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
     \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\nstruct Sieve {\r\n\
     private:\r\n\tint N;\r\n\tvector<int> dv,primes;\r\n\r\npublic:\r\n\tSieve(int\
@@ -42,13 +42,13 @@ data:
     \t\t\tint d = dv[n];\r\n\t\t\tif(res.back().first == d) res.back().second++;\r\
     \n\t\t\telse res.emplace_back(d,1);\r\n\t\t\tn /= d;\r\n\t\t}\r\n\t\treturn res;\r\
     \n\t}\r\n\r\n\tint divisorcount(int n) {\r\n\t\tint res = 1;\r\n\t\tvector<pair<int,int>>\
-    \ flist = primefact(n);\r\n\t\tfor(int i=0; i<flist.size(); i++) {\r\n\t\t\tres\
-    \ *= flist[i].second+1;\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\n};\r\n"
+    \ flist = primefact(n);\r\n\t\tfor(pair<int,int> &p: flist) {\r\n\t\t\tres *=\
+    \ p.second+1;\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\n};\r\n"
   dependsOn: []
   isVerificationFile: false
   path: math/sieve_of_eratosthenes.cpp
   requiredBy: []
-  timestamp: '2020-12-26 00:16:48+09:00'
+  timestamp: '2021-01-30 16:48:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_ALDS1_1_C.test.cpp
