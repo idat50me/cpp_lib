@@ -70,6 +70,9 @@ data:
       title: "Millor-Rabin(\u30DF\u30E9\u30FC\u30FB\u30E9\u30D3\u30F3\u7D20\u6570\u5224\
         \u5B9A\u6CD5)"
     - icon: ':heavy_check_mark:'
+      path: math/primefact.cpp
+      title: math/primefact.cpp
+    - icon: ':heavy_check_mark:'
       path: math/sieve_of_eratosthenes.cpp
       title: "Sieve-of-Eratosthenes(\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\
         \u7BE9)"
@@ -171,6 +174,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj_NTL_1_A.test.cpp
       title: test/aoj_NTL_1_A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj_NTL_1_A_2.test.cpp
+      title: test/aoj_NTL_1_A_2.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj_NTL_1_B.test.cpp
       title: test/aoj_NTL_1_B.test.cpp
