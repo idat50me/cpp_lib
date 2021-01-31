@@ -92,6 +92,9 @@ data:
   - name: structure
     pages:
     - icon: ':heavy_check_mark:'
+      path: structure/2d_array.cpp
+      title: structure/2d_array.cpp
+    - icon: ':heavy_check_mark:'
       path: structure/matrix.cpp
       title: "Matrix(\u884C\u5217)"
     - icon: ':warning:'

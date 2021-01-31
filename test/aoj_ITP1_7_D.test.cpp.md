@@ -18,14 +18,12 @@ data:
     \r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
     \nusing namespace std;\r\n#endif\r\n\r\n#line 2 \"structure/matrix.cpp\"\n\r\n\
     #ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\nusing\
-    \ namespace std;\r\n#endif\r\n\r\ntemplate<typename T>\r\nstruct matrix{\r\nprivate:\r\
-    \n\tvector<vector<T>> m;\r\n\r\npublic:\r\n\tmatrix() : m(0, vector<T>(0)) {}\r\
-    \n\tmatrix(int h, int w) : m(h, vector<T>(w)) {}\r\n\tmatrix(int h, int w, const\
-    \ T &init) : m(h, vector<T>(w, init)) {}\r\n\tmatrix(const initializer_list<initializer_list<T>>\
+    \ namespace std;\r\n#endif\r\n\r\ntemplate<typename T>\r\nstruct matrix {\r\n\
+    private:\r\n\tvector<vector<T>> m;\r\n\r\npublic:\r\n\tmatrix() {}\r\n\tmatrix(int\
+    \ h, int w) : m(h, vector<T>(w)) {}\r\n\tmatrix(const initializer_list<initializer_list<T>>\
     \ m_init) : m(m_init.begin(), m_init.end()) {}\r\n\r\n\tvoid assign(int h, int\
-    \ w) { m = vector(h, vector<T>(w)); }\r\n\tvoid assign(int h, int w, const T init)\
-    \ { m = vector(h, vector<T>(w, init)); }\r\n\r\n\tint height() const {\r\n\t\t\
-    return m.size();\r\n\t}\r\n\r\n\tint width() const {\r\n\t\tif(height()==0) return\
+    \ w) { m = vector(h, vector<T>(w)); }\r\n\r\n\tint height() const {\r\n\t\treturn\
+    \ m.size();\r\n\t}\r\n\r\n\tint width() const {\r\n\t\tif(height()==0) return\
     \ 0;\r\n\t\treturn m[0].size();\r\n\t}\r\n\r\n\tvoid in() {\r\n\t\tfor(vector<T>\
     \ &v: m) for(T &val: v) cin>>val;\r\n\t}\r\n\tvoid in(int h, int w) {\r\n\t\t\
     m = vector(h, vector<T>(w));\r\n\t\tin();\r\n\t}\r\n\r\n\tvoid out() {\r\n\t\t\
@@ -62,7 +60,7 @@ data:
   isVerificationFile: true
   path: test/aoj_ITP1_7_D.test.cpp
   requiredBy: []
-  timestamp: '2021-01-30 16:58:16+09:00'
+  timestamp: '2021-01-31 14:43:41+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_ITP1_7_D.test.cpp

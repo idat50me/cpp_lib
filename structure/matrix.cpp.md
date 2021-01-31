@@ -4,20 +4,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/aoj_0341.test.cpp
-    title: test/aoj_0341.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj_2429.test.cpp
-    title: test/aoj_2429.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj_ITP1_6_B.test.cpp
-    title: test/aoj_ITP1_6_B.test.cpp
-  - icon: ':heavy_check_mark:'
     path: test/aoj_ITP1_7_D.test.cpp
     title: test/aoj_ITP1_7_D.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yuki_0177.test.cpp
-    title: test/yuki_0177.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -25,13 +13,41 @@ data:
     links: []
   bundledCode: "#line 2 \"structure/matrix.cpp\"\n\r\n#ifndef call_include\r\n#define\
     \ call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\
-    \n\r\ntemplate<typename T>\r\nstruct matrix{\r\nprivate:\r\n\tvector<vector<T>>\
-    \ m;\r\n\r\npublic:\r\n\tmatrix() : m(0, vector<T>(0)) {}\r\n\tmatrix(int h, int\
-    \ w) : m(h, vector<T>(w)) {}\r\n\tmatrix(int h, int w, const T &init) : m(h, vector<T>(w,\
-    \ init)) {}\r\n\tmatrix(const initializer_list<initializer_list<T>> m_init) :\
-    \ m(m_init.begin(), m_init.end()) {}\r\n\r\n\tvoid assign(int h, int w) { m =\
-    \ vector(h, vector<T>(w)); }\r\n\tvoid assign(int h, int w, const T init) { m\
-    \ = vector(h, vector<T>(w, init)); }\r\n\r\n\tint height() const {\r\n\t\treturn\
+    \n\r\ntemplate<typename T>\r\nstruct matrix {\r\nprivate:\r\n\tvector<vector<T>>\
+    \ m;\r\n\r\npublic:\r\n\tmatrix() {}\r\n\tmatrix(int h, int w) : m(h, vector<T>(w))\
+    \ {}\r\n\tmatrix(const initializer_list<initializer_list<T>> m_init) : m(m_init.begin(),\
+    \ m_init.end()) {}\r\n\r\n\tvoid assign(int h, int w) { m = vector(h, vector<T>(w));\
+    \ }\r\n\r\n\tint height() const {\r\n\t\treturn m.size();\r\n\t}\r\n\r\n\tint\
+    \ width() const {\r\n\t\tif(height()==0) return 0;\r\n\t\treturn m[0].size();\r\
+    \n\t}\r\n\r\n\tvoid in() {\r\n\t\tfor(vector<T> &v: m) for(T &val: v) cin>>val;\r\
+    \n\t}\r\n\tvoid in(int h, int w) {\r\n\t\tm = vector(h, vector<T>(w));\r\n\t\t\
+    in();\r\n\t}\r\n\r\n\tvoid out() {\r\n\t\tint h = m.size();\r\n\t\tfor(vector<T>\
+    \ &v: m) {\r\n\t\t\tint sz = v.size();\r\n\t\t\tfor(int j=0; j<sz; j++) {\r\n\t\
+    \t\t\tcout<<v[j]<<(j==sz-1 ? '\\n' : ' ');\r\n\t\t\t}\r\n\t\t}\r\n\t\tcout<<flush;\r\
+    \n\t}\r\n\r\n\tinline const vector<T> &operator[](int idx) const {\r\n\t\tassert(0<=idx\
+    \ && idx<m.size());\r\n\t\treturn m[idx];\r\n\t}\r\n\tinline vector<T> &operator[](int\
+    \ idx) {\r\n\t\tassert(0<=idx && idx<m.size());\r\n\t\treturn m[idx];\r\n\t}\r\
+    \n\r\n\tstatic matrix identity(int n) {\r\n\t\tmatrix res(n, n, 0);\r\n\t\tfor(int\
+    \ i=0; i<n; i++) res[i][i] = 1;\r\n\t\treturn res;\r\n\t}\r\n\r\n\tmatrix& operator+=(const\
+    \ matrix& a) {\r\n\t\tint h = height(), w = width();\r\n\t\tassert(h==a.height()\
+    \ && w==a.width());\r\n\t\tfor(int i=0; i<h; i++) for(int j=0; j<w; j++) m[i][j]\
+    \ += a[i][j];\r\n\t\treturn *this;\r\n\t}\r\n\tmatrix& operator-=(const matrix&\
+    \ a) {\r\n\t\tint h = height(), w = width();\r\n\t\tassert(h==a.height() && w==a.width());\r\
+    \n\t\tfor(int i=0; i<h; i++) for(int j=0; j<w; j++) m[i][j] -= a[i][j];\r\n\t\t\
+    return *this;\r\n\t}\r\n\tmatrix& operator*=(const matrix& a) {\r\n\t\tint h =\
+    \ height(), w = a.width(), ah = a.height();\r\n\t\tassert(width()==ah);\r\n\t\t\
+    vector<vector<T>> tmp(h, vector(w, T(0)));\r\n\t\tfor(int i=0; i<h; i++) for(int\
+    \ j=0; j<w; j++) for(int k=0; k<ah; k++) tmp[i][j] += m[i][k]*a[k][j];\r\n\t\t\
+    m.swap(tmp);\r\n\t\treturn *this;\r\n\t}\r\n\r\n\tmatrix operator+(const matrix&\
+    \ a) const {\r\n\t\treturn matrix(*this)+=a;\r\n\t}\r\n\tmatrix operator-(const\
+    \ matrix& a) const {\r\n\t\treturn matrix(*this)-=a;\r\n\t}\r\n\tmatrix operator*(const\
+    \ matrix& a) const {\r\n\t\treturn matrix(*this)*=a;\r\n\t}\r\n};\r\n"
+  code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
+    \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\ntemplate<typename T>\r\
+    \nstruct matrix {\r\nprivate:\r\n\tvector<vector<T>> m;\r\n\r\npublic:\r\n\tmatrix()\
+    \ {}\r\n\tmatrix(int h, int w) : m(h, vector<T>(w)) {}\r\n\tmatrix(const initializer_list<initializer_list<T>>\
+    \ m_init) : m(m_init.begin(), m_init.end()) {}\r\n\r\n\tvoid assign(int h, int\
+    \ w) { m = vector(h, vector<T>(w)); }\r\n\r\n\tint height() const {\r\n\t\treturn\
     \ m.size();\r\n\t}\r\n\r\n\tint width() const {\r\n\t\tif(height()==0) return\
     \ 0;\r\n\t\treturn m[0].size();\r\n\t}\r\n\r\n\tvoid in() {\r\n\t\tfor(vector<T>\
     \ &v: m) for(T &val: v) cin>>val;\r\n\t}\r\n\tvoid in(int h, int w) {\r\n\t\t\
@@ -57,50 +73,13 @@ data:
     \t\treturn matrix(*this)+=a;\r\n\t}\r\n\tmatrix operator-(const matrix& a) const\
     \ {\r\n\t\treturn matrix(*this)-=a;\r\n\t}\r\n\tmatrix operator*(const matrix&\
     \ a) const {\r\n\t\treturn matrix(*this)*=a;\r\n\t}\r\n};\r\n"
-  code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
-    \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\ntemplate<typename T>\r\
-    \nstruct matrix{\r\nprivate:\r\n\tvector<vector<T>> m;\r\n\r\npublic:\r\n\tmatrix()\
-    \ : m(0, vector<T>(0)) {}\r\n\tmatrix(int h, int w) : m(h, vector<T>(w)) {}\r\n\
-    \tmatrix(int h, int w, const T &init) : m(h, vector<T>(w, init)) {}\r\n\tmatrix(const\
-    \ initializer_list<initializer_list<T>> m_init) : m(m_init.begin(), m_init.end())\
-    \ {}\r\n\r\n\tvoid assign(int h, int w) { m = vector(h, vector<T>(w)); }\r\n\t\
-    void assign(int h, int w, const T init) { m = vector(h, vector<T>(w, init)); }\r\
-    \n\r\n\tint height() const {\r\n\t\treturn m.size();\r\n\t}\r\n\r\n\tint width()\
-    \ const {\r\n\t\tif(height()==0) return 0;\r\n\t\treturn m[0].size();\r\n\t}\r\
-    \n\r\n\tvoid in() {\r\n\t\tfor(vector<T> &v: m) for(T &val: v) cin>>val;\r\n\t\
-    }\r\n\tvoid in(int h, int w) {\r\n\t\tm = vector(h, vector<T>(w));\r\n\t\tin();\r\
-    \n\t}\r\n\r\n\tvoid out() {\r\n\t\tint h = m.size();\r\n\t\tfor(vector<T> &v:\
-    \ m) {\r\n\t\t\tint sz = v.size();\r\n\t\t\tfor(int j=0; j<sz; j++) {\r\n\t\t\t\
-    \tcout<<v[j]<<(j==sz-1 ? '\\n' : ' ');\r\n\t\t\t}\r\n\t\t}\r\n\t\tcout<<flush;\r\
-    \n\t}\r\n\r\n\tinline const vector<T> &operator[](int idx) const {\r\n\t\tassert(0<=idx\
-    \ && idx<m.size());\r\n\t\treturn m[idx];\r\n\t}\r\n\tinline vector<T> &operator[](int\
-    \ idx) {\r\n\t\tassert(0<=idx && idx<m.size());\r\n\t\treturn m[idx];\r\n\t}\r\
-    \n\r\n\tstatic matrix identity(int n) {\r\n\t\tmatrix res(n, n, 0);\r\n\t\tfor(int\
-    \ i=0; i<n; i++) res[i][i] = 1;\r\n\t\treturn res;\r\n\t}\r\n\r\n\tmatrix& operator+=(const\
-    \ matrix& a) {\r\n\t\tint h = height(), w = width();\r\n\t\tassert(h==a.height()\
-    \ && w==a.width());\r\n\t\tfor(int i=0; i<h; i++) for(int j=0; j<w; j++) m[i][j]\
-    \ += a[i][j];\r\n\t\treturn *this;\r\n\t}\r\n\tmatrix& operator-=(const matrix&\
-    \ a) {\r\n\t\tint h = height(), w = width();\r\n\t\tassert(h==a.height() && w==a.width());\r\
-    \n\t\tfor(int i=0; i<h; i++) for(int j=0; j<w; j++) m[i][j] -= a[i][j];\r\n\t\t\
-    return *this;\r\n\t}\r\n\tmatrix& operator*=(const matrix& a) {\r\n\t\tint h =\
-    \ height(), w = a.width(), ah = a.height();\r\n\t\tassert(width()==ah);\r\n\t\t\
-    vector<vector<T>> tmp(h, vector(w, T(0)));\r\n\t\tfor(int i=0; i<h; i++) for(int\
-    \ j=0; j<w; j++) for(int k=0; k<ah; k++) tmp[i][j] += m[i][k]*a[k][j];\r\n\t\t\
-    m.swap(tmp);\r\n\t\treturn *this;\r\n\t}\r\n\r\n\tmatrix operator+(const matrix&\
-    \ a) const {\r\n\t\treturn matrix(*this)+=a;\r\n\t}\r\n\tmatrix operator-(const\
-    \ matrix& a) const {\r\n\t\treturn matrix(*this)-=a;\r\n\t}\r\n\tmatrix operator*(const\
-    \ matrix& a) const {\r\n\t\treturn matrix(*this)*=a;\r\n\t}\r\n};\r\n"
   dependsOn: []
   isVerificationFile: false
   path: structure/matrix.cpp
   requiredBy: []
-  timestamp: '2021-01-30 16:58:16+09:00'
+  timestamp: '2021-01-31 14:43:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yuki_0177.test.cpp
-  - test/aoj_2429.test.cpp
-  - test/aoj_ITP1_6_B.test.cpp
-  - test/aoj_0341.test.cpp
   - test/aoj_ITP1_7_D.test.cpp
 documentation_of: structure/matrix.cpp
 layout: document
