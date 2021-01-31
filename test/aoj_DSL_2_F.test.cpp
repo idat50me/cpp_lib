@@ -6,7 +6,7 @@
 using namespace std;
 #endif
 
-#include "graph/segtree_lazy.cpp"
+#include "tree/segtree_lazy.cpp"
 
 int main() {
 	int N,Q; cin>>N>>Q;

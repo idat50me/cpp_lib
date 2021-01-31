@@ -6,7 +6,7 @@
 using namespace std;
 #endif
 
-#include "graph/segtree.cpp"
+#include "tree/segtree.cpp"
 using ll = long long;
 
 int main() {

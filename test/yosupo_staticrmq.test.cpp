@@ -6,7 +6,7 @@
 using namespace std;
 #endif
 
-#include "graph/segtree_RmQ.cpp"
+#include "tree/segtree_RmQ.cpp"
 
 int main() {
 	int N,Q;
