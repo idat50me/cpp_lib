@@ -17,8 +17,8 @@ public:
 	v2d(int h, int w, const T &init) : m(h, vector<T>(w, init)) {}
 	v2d(const initializer_list<initializer_list<T>> m_init) : m(m_init.begin(), m_init.end()) {}
 
-	void assign(int h, int w) { m = vector(h, vector<T>(w)); }
-	void assign(int h, int w, const T init) { m = vector(h, vector<T>(w, init)); }
+	void assign(int h, int w) { m.assign(h, vector<T>(w)); }
+	void assign(int h, int w, const T init) { m.assign(h, vector<T>(w, init)); }
 
 	inline int size() const {
 		return m.size();
