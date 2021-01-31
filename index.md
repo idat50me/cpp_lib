@@ -94,9 +94,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: structure/2d_array.cpp
       title: structure/2d_array.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: structure/matrix.cpp
-      title: "Matrix(\u884C\u5217)"
+      title: "2D-Array( $2$ \u6B21\u5143\u914D\u5217)"
     - icon: ':warning:'
       path: structure/vertex.cpp
       title: structure/vertex.cpp
@@ -174,7 +174,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj_ITP1_6_B.test.cpp
       title: test/aoj_ITP1_6_B.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj_ITP1_7_D.test.cpp
       title: test/aoj_ITP1_7_D.test.cpp
     - icon: ':heavy_check_mark:'
