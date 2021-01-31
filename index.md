@@ -98,6 +98,9 @@ data:
   - name: tree
     pages:
     - icon: ':heavy_check_mark:'
+      path: tree/binary_indexed_tree.cpp
+      title: tree/binary_indexed_tree.cpp
+    - icon: ':heavy_check_mark:'
       path: tree/segtree.cpp
       title: "segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
     - icon: ':heavy_check_mark:'
@@ -197,6 +200,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo_static_range_sum.test.cpp
       title: test/yosupo_static_range_sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo_static_range_sum_2.test.cpp
+      title: test/yosupo_static_range_sum_2.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo_staticrmq.test.cpp
       title: test/yosupo_staticrmq.test.cpp
