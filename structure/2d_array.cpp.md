@@ -26,13 +26,13 @@ data:
     \ m;\r\n\r\npublic:\r\n\tv2d() {}\r\n\tv2d(int h, int w) : m(h, vector<T>(w))\
     \ {}\r\n\tv2d(int h, int w, const T &init) : m(h, vector<T>(w, init)) {}\r\n\t\
     v2d(const initializer_list<initializer_list<T>> m_init) : m(m_init.begin(), m_init.end())\
-    \ {}\r\n\r\n\tvoid assign(int h, int w) { m = vector(h, vector<T>(w)); }\r\n\t\
-    void assign(int h, int w, const T init) { m = vector(h, vector<T>(w, init)); }\r\
-    \n\r\n\tinline int size() const {\r\n\t\treturn m.size();\r\n\t}\r\n\r\n\tvoid\
-    \ in() {\r\n\t\tfor(vector<T> &v: m) for(T &val: v) cin>>val;\r\n\t}\r\n\tvoid\
-    \ in(int h, int w) {\r\n\t\tm.resize(h, vector<T>(w));\r\n\t\tin();\r\n\t}\r\n\
-    \r\n\tvoid out() {\r\n\t\tint h = m.size();\r\n\t\tfor(vector<T> &v: m) {\r\n\t\
-    \t\tint sz = v.size();\r\n\t\t\tfor(int j=0; j<sz; j++) {\r\n\t\t\t\tcout<<v[j]<<(j==sz-1\
+    \ {}\r\n\r\n\tvoid assign(int h, int w) { m.assign(h, vector<T>(w)); }\r\n\tvoid\
+    \ assign(int h, int w, const T init) { m.assign(h, vector<T>(w, init)); }\r\n\r\
+    \n\tinline int size() const {\r\n\t\treturn m.size();\r\n\t}\r\n\r\n\tvoid in()\
+    \ {\r\n\t\tfor(vector<T> &v: m) for(T &val: v) cin>>val;\r\n\t}\r\n\tvoid in(int\
+    \ h, int w) {\r\n\t\tm.resize(h, vector<T>(w));\r\n\t\tin();\r\n\t}\r\n\r\n\t\
+    void out() {\r\n\t\tint h = m.size();\r\n\t\tfor(vector<T> &v: m) {\r\n\t\t\t\
+    int sz = v.size();\r\n\t\t\tfor(int j=0; j<sz; j++) {\r\n\t\t\t\tcout<<v[j]<<(j==sz-1\
     \ ? '\\n' : ' ');\r\n\t\t\t}\r\n\t\t}\r\n\t\tcout<<flush;\r\n\t}\r\n\r\n\tinline\
     \ vector<T> &operator[](int idx) {\r\n\t\tassert(0<=idx && idx<m.size());\r\n\t\
     \treturn m[idx];\r\n\t}\r\n};\r\n"
@@ -42,9 +42,9 @@ data:
     \ {}\r\n\tv2d(int h, int w) : m(h, vector<T>(w)) {}\r\n\tv2d(int h, int w, const\
     \ T &init) : m(h, vector<T>(w, init)) {}\r\n\tv2d(const initializer_list<initializer_list<T>>\
     \ m_init) : m(m_init.begin(), m_init.end()) {}\r\n\r\n\tvoid assign(int h, int\
-    \ w) { m = vector(h, vector<T>(w)); }\r\n\tvoid assign(int h, int w, const T init)\
-    \ { m = vector(h, vector<T>(w, init)); }\r\n\r\n\tinline int size() const {\r\n\
-    \t\treturn m.size();\r\n\t}\r\n\r\n\tvoid in() {\r\n\t\tfor(vector<T> &v: m) for(T\
+    \ w) { m.assign(h, vector<T>(w)); }\r\n\tvoid assign(int h, int w, const T init)\
+    \ { m.assign(h, vector<T>(w, init)); }\r\n\r\n\tinline int size() const {\r\n\t\
+    \treturn m.size();\r\n\t}\r\n\r\n\tvoid in() {\r\n\t\tfor(vector<T> &v: m) for(T\
     \ &val: v) cin>>val;\r\n\t}\r\n\tvoid in(int h, int w) {\r\n\t\tm.resize(h, vector<T>(w));\r\
     \n\t\tin();\r\n\t}\r\n\r\n\tvoid out() {\r\n\t\tint h = m.size();\r\n\t\tfor(vector<T>\
     \ &v: m) {\r\n\t\t\tint sz = v.size();\r\n\t\t\tfor(int j=0; j<sz; j++) {\r\n\t\
@@ -55,7 +55,7 @@ data:
   isVerificationFile: false
   path: structure/2d_array.cpp
   requiredBy: []
-  timestamp: '2021-01-31 15:05:40+09:00'
+  timestamp: '2021-01-31 15:36:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yuki_0177.test.cpp

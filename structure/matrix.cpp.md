@@ -16,7 +16,7 @@ data:
     \n\r\ntemplate<typename T>\r\nstruct matrix {\r\nprivate:\r\n\tvector<vector<T>>\
     \ m;\r\n\r\npublic:\r\n\tmatrix() {}\r\n\tmatrix(int h, int w) : m(h, vector<T>(w))\
     \ {}\r\n\tmatrix(const initializer_list<initializer_list<T>> m_init) : m(m_init.begin(),\
-    \ m_init.end()) {}\r\n\r\n\tvoid assign(int h, int w) { m = vector(h, vector<T>(w));\
+    \ m_init.end()) {}\r\n\r\n\tvoid assign(int h, int w) { m.assign(h, vector<T>(w));\
     \ }\r\n\r\n\tint height() const {\r\n\t\treturn m.size();\r\n\t}\r\n\r\n\tint\
     \ width() const {\r\n\t\tif(height()==0) return 0;\r\n\t\treturn m[0].size();\r\
     \n\t}\r\n\r\n\tvoid in() {\r\n\t\tfor(vector<T> &v: m) for(T &val: v) cin>>val;\r\
@@ -47,7 +47,7 @@ data:
     \nstruct matrix {\r\nprivate:\r\n\tvector<vector<T>> m;\r\n\r\npublic:\r\n\tmatrix()\
     \ {}\r\n\tmatrix(int h, int w) : m(h, vector<T>(w)) {}\r\n\tmatrix(const initializer_list<initializer_list<T>>\
     \ m_init) : m(m_init.begin(), m_init.end()) {}\r\n\r\n\tvoid assign(int h, int\
-    \ w) { m = vector(h, vector<T>(w)); }\r\n\r\n\tint height() const {\r\n\t\treturn\
+    \ w) { m.assign(h, vector<T>(w)); }\r\n\r\n\tint height() const {\r\n\t\treturn\
     \ m.size();\r\n\t}\r\n\r\n\tint width() const {\r\n\t\tif(height()==0) return\
     \ 0;\r\n\t\treturn m[0].size();\r\n\t}\r\n\r\n\tvoid in() {\r\n\t\tfor(vector<T>\
     \ &v: m) for(T &val: v) cin>>val;\r\n\t}\r\n\tvoid in(int h, int w) {\r\n\t\t\
@@ -76,7 +76,7 @@ data:
   isVerificationFile: false
   path: structure/matrix.cpp
   requiredBy: []
-  timestamp: '2021-01-31 15:11:06+09:00'
+  timestamp: '2021-01-31 15:36:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_ITP1_7_D.test.cpp
