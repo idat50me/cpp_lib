@@ -1,6 +1,6 @@
 ---
 title: 2D-Array( $2$ 次元配列)
-documentation_of: ../matrix.cpp
+documentation_of: ../2d_array.cpp
 ---
 
 ## なにこれ
