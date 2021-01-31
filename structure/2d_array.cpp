@@ -28,7 +28,7 @@ public:
 		for(vector<T> &v: m) for(T &val: v) cin>>val;
 	}
 	void in(int h, int w) {
-		m = vector(h, vector<T>(w));
+		m.resize(h, vector<T>(w));
 		in();
 	}
 

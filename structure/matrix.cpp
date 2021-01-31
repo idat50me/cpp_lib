@@ -31,17 +31,14 @@ public:
 		for(vector<T> &v: m) for(T &val: v) cin>>val;
 	}
 	void in(int h, int w) {
-		m = vector(h, vector<T>(w));
+		m.resize(h, vector<T>(w));
 		in();
 	}
 
 	void out() {
-		int h = m.size();
-		for(vector<T> &v: m) {
-			int sz = v.size();
-			for(int j=0; j<sz; j++) {
-				cout<<v[j]<<(j==sz-1 ? '\n' : ' ');
-			}
+		int w = width();
+		for(vector<T> &v: m) for(int j=0; j<w; j++) {
+			cout<<v[j]<<(j==sz-1 ? '\n' : ' ');
 		}
 		cout<<flush;
 	}
