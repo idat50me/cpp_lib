@@ -38,7 +38,7 @@ public:
 	void out() {
 		int w = width();
 		for(vector<T> &v: m) for(int j=0; j<w; j++) {
-			cout<<v[j]<<(j==sz-1 ? '\n' : ' ');
+			cout<<v[j]<<(j==w-1 ? '\n' : ' ');
 		}
 		cout<<flush;
 	}
