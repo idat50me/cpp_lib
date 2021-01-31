@@ -6,14 +6,6 @@
 using namespace std;
 #endif
 
-#pragma once
-
-#ifndef call_include
-#define call_include
-#include <bits/stdc++.h>
-using namespace std;
-#endif
-
 template<typename T>
 struct v2d {
 private:
