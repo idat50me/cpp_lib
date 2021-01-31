@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: tree/binary_indexed_tree.cpp
-    title: tree/binary_indexed_tree.cpp
+    title: "binary_indexed_tree( BIT \u6728)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -21,12 +21,15 @@ data:
     \n#define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n\
     #endif\r\n\r\ntemplate<typename T>\r\nstruct BIT {\r\nprivate:\r\n\tvector<T>\
     \ node;\r\n\tconst int N;\r\n\r\npublic:\r\n\tBIT(int n) : node(n+1, 0), N(n)\
-    \ {}\r\n\r\n\tT sum(int idx) {\r\n\t\tassert(0<=idx && idx<=N);\r\n\t\tT res =\
-    \ 0;\r\n\t\twhile(idx) {\r\n\t\t\tres += node[idx];\r\n\t\t\tidx -= idx&-idx;\r\
-    \n\t\t}\r\n\t\treturn res;\r\n\t}\r\n\r\n\tT sum(int l, int r) {\r\n\t\tassert(0<=l\
-    \ && l<=r && r<=N);\r\n\t\treturn sum(r) - sum(l-1);\r\n\t}\r\n\r\n\tvoid add(int\
-    \ idx, T& val) {\r\n\t\tassert(0<idx && idx<=N);\r\n\t\twhile(idx <= N) {\r\n\t\
-    \t\tnode[idx] += val;\r\n\t\t\tidx += idx&-idx;\r\n\t\t}\r\n\t}\r\n\tvoid add(int\
+    \ {}\r\n\tBIT(vector<T>& v) : node(v.size()+1, 0), N(v.size()) {\r\n\t\tfor(int\
+    \ i=0; i<N; i++) node[i+1] = v[i];\r\n\t\tfor(int i=1; i<N; i++) {\r\n\t\t\tint\
+    \ j = i+(i&-i);\r\n\t\t\tif(j <= N) node[j] += node[i];\r\n\t\t}\r\n\t}\r\n\r\n\
+    \tT sum(int idx) {\r\n\t\tassert(0<=idx && idx<=N);\r\n\t\tT res = 0;\r\n\t\t\
+    while(idx) {\r\n\t\t\tres += node[idx];\r\n\t\t\tidx -= idx&-idx;\r\n\t\t}\r\n\
+    \t\treturn res;\r\n\t}\r\n\r\n\tT sum(int l, int r) {\r\n\t\tassert(0<=l && l<=r\
+    \ && r<=N);\r\n\t\treturn sum(r) - sum(l-1);\r\n\t}\r\n\r\n\tvoid add(int idx,\
+    \ T& val) {\r\n\t\tassert(0<idx && idx<=N);\r\n\t\twhile(idx <= N) {\r\n\t\t\t\
+    node[idx] += val;\r\n\t\t\tidx += idx&-idx;\r\n\t\t}\r\n\t}\r\n\tvoid add(int\
     \ idx, T val) {\r\n\t\tassert(0<idx && idx<=N);\r\n\t\twhile(idx <= N) {\r\n\t\
     \t\tnode[idx] += val;\r\n\t\t\tidx += idx&-idx;\r\n\t\t}\r\n\t}\r\n};\r\n#line\
     \ 10 \"test/yosupo_static_range_sum_2.test.cpp\"\n\r\nint main() {\r\n\tint N,Q;\
@@ -45,7 +48,7 @@ data:
   isVerificationFile: true
   path: test/yosupo_static_range_sum_2.test.cpp
   requiredBy: []
-  timestamp: '2021-02-01 01:23:01+09:00'
+  timestamp: '2021-02-01 01:40:48+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo_static_range_sum_2.test.cpp
