@@ -2,19 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo_static_range_sum.test.cpp
-    title: test/yosupo_static_range_sum.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yosupo_staticrmq_2.test.cpp
-    title: test/yosupo_staticrmq_2.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"graph/segtree.cpp\"\n\r\n#ifndef call_include\r\n#define\
+  bundledCode: "#line 2 \"tree/segtree.cpp\"\n\r\n#ifndef call_include\r\n#define\
     \ call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\
     \n\r\ntemplate<typename T, typename F>\r\nstruct segtree {\r\nprivate:\r\n\tint\
     \ siz=1, N;\r\n\tvector<T> node;\r\n\tconst F op;\r\n\tconst T e_;\r\n\r\npublic:\r\
@@ -61,14 +55,12 @@ data:
     T get_all() {\r\n\t\treturn node[0];\r\n\t}\r\n};\r\n"
   dependsOn: []
   isVerificationFile: false
-  path: graph/segtree.cpp
+  path: tree/segtree.cpp
   requiredBy: []
-  timestamp: '2021-01-11 23:23:49+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/yosupo_staticrmq_2.test.cpp
-  - test/yosupo_static_range_sum.test.cpp
-documentation_of: graph/segtree.cpp
+  timestamp: '2021-02-01 00:48:25+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: tree/segtree.cpp
 layout: document
 title: "segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
 ---

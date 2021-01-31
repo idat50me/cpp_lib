@@ -2,19 +2,13 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj_DSL_2_F.test.cpp
-    title: test/aoj_DSL_2_F.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/aoj_DSL_2_H.test.cpp
-    title: test/aoj_DSL_2_H.test.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
-  bundledCode: "#line 2 \"graph/segtree_lazy.cpp\"\n\r\n#ifndef call_include\r\n#define\
+  bundledCode: "#line 2 \"tree/segtree_lazy.cpp\"\n\r\n#ifndef call_include\r\n#define\
     \ call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\
     \n\r\ntemplate<typename T, typename M>\r\nstruct segtree_lazy {\r\n\tusing F =\
     \ function<T(T,T)>;\r\n\tusing FU = function<M(T,M)>;\r\n\tusing FM = function<M(M,M)>;\r\
@@ -84,14 +78,12 @@ data:
     \ (l+r)/2, r);\r\n\t\treturn op(vl, vr);\r\n\t}\r\n};\r\n"
   dependsOn: []
   isVerificationFile: false
-  path: graph/segtree_lazy.cpp
+  path: tree/segtree_lazy.cpp
   requiredBy: []
-  timestamp: '2020-12-15 16:44:16+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/aoj_DSL_2_H.test.cpp
-  - test/aoj_DSL_2_F.test.cpp
-documentation_of: graph/segtree_lazy.cpp
+  timestamp: '2021-02-01 00:48:25+09:00'
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
+documentation_of: tree/segtree_lazy.cpp
 layout: document
 title: "segtree_lazy(\u9045\u5EF6\u8A55\u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
 ---

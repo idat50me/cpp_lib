@@ -35,16 +35,6 @@ data:
       path: graph/mincostflow_nega.cpp
       title: "mincostflow_nega(\u6700\u5C0F\u8CBB\u7528\u6D41)"
     - icon: ':heavy_check_mark:'
-      path: graph/segtree.cpp
-      title: "segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
-    - icon: ':heavy_check_mark:'
-      path: graph/segtree_RmQ.cpp
-      title: "(\u524A\u9664\u4E88\u5B9A) RmQ(\u533A\u9593\u6700\u5C0F\u5024)"
-    - icon: ':heavy_check_mark:'
-      path: graph/segtree_lazy.cpp
-      title: "segtree_lazy(\u9045\u5EF6\u8A55\u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728\
-        )"
-    - icon: ':heavy_check_mark:'
       path: graph/union_find.cpp
       title: "Union-Find\u6728"
   - name: math
@@ -105,6 +95,18 @@ data:
     - icon: ':warning:'
       path: test/aoj_0019.cpp
       title: test/aoj_0019.cpp
+  - name: tree
+    pages:
+    - icon: ':warning:'
+      path: tree/segtree.cpp
+      title: "segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"
+    - icon: ':warning:'
+      path: tree/segtree_RmQ.cpp
+      title: "(\u524A\u9664\u4E88\u5B9A) RmQ(\u533A\u9593\u6700\u5C0F\u5024)"
+    - icon: ':warning:'
+      path: tree/segtree_lazy.cpp
+      title: "segtree_lazy(\u9045\u5EF6\u8A55\u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728\
+        )"
   verificationCategories:
   - name: test
     pages:
@@ -150,13 +152,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj_DSL_1_A.test.cpp
       title: test/aoj_DSL_1_A.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj_DSL_2_A.test.cpp
       title: test/aoj_DSL_2_A.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj_DSL_2_F.test.cpp
       title: test/aoj_DSL_2_F.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj_DSL_2_H.test.cpp
       title: test/aoj_DSL_2_H.test.cpp
     - icon: ':heavy_check_mark:'
@@ -192,13 +194,13 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo_enumerate_palindromes.test.cpp
       title: test/yosupo_enumerate_palindromes.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo_static_range_sum.test.cpp
       title: test/yosupo_static_range_sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo_staticrmq.test.cpp
       title: test/yosupo_staticrmq.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo_staticrmq_2.test.cpp
       title: test/yosupo_staticrmq_2.test.cpp
     - icon: ':heavy_check_mark:'
