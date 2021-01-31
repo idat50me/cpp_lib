@@ -106,11 +106,6 @@ data:
       path: test/aoj_0019.cpp
       title: test/aoj_0019.cpp
   verificationCategories:
-  - name: .
-    pages:
-    - icon: ':heavy_check_mark:'
-      path: aoj_2932.test.cpp
-      title: aoj_2932.test.cpp
   - name: test
     pages:
     - icon: ':heavy_check_mark:'
@@ -119,6 +114,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj_2429.test.cpp
       title: test/aoj_2429.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj_2932.test.cpp
+      title: test/aoj_2932.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj_ALDS1_10_C.test.cpp
       title: test/aoj_ALDS1_10_C.test.cpp
