@@ -14,6 +14,13 @@ private:
 
 public:
 	BIT(int n) : node(n+1, 0), N(n) {}
+	BIT(vector<T>& v) : node(v.size()+1, 0), N(v.size()) {
+		for(int i=0; i<N; i++) node[i+1] = v[i];
+		for(int i=1; i<N; i++) {
+			int j = i+(i&-i);
+			if(j <= N) node[j] += node[i];
+		}
+	}
 
 	T sum(int idx) {
 		assert(0<=idx && idx<=N);
