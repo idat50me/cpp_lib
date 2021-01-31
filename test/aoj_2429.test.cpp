@@ -7,12 +7,12 @@ using namespace std;
 #endif
 
 #include "graph/mincostflow_nega.cpp"
-#include "structure/matrix.cpp"
+#include "structure/2d_array.cpp"
 
 int main() {
 	int N; cin>>N;
-	matrix<int> W(N,N),E(N,N);
-	matrix<char> mp(N,N);
+	v2d<int> W(N,N),E(N,N);
+	v2d<char> mp(N,N);
 	W.in(); E.in(); mp.in();
 	mincostflow mcf(N+N+2);
 	int s=N+N, t=s+1, ans=0;

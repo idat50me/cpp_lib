@@ -7,19 +7,19 @@ using namespace std;
 #endif
 
 #include "graph/maxflow.cpp"
-#include "structure/matrix.cpp"
+#include "structure/2d_array.cpp"
 
 int main() {
 	int W,N,M;
 	vector<int> J,C;
-	matrix<bool> X;
+	v2d<bool> X;
 	cin>>W>>N;
 	J.resize(N);
 	for(int &j: J) cin>>j;
 	cin>>M;
 	C.resize(M);
 	for(int &c: C) cin>>c;
-	X=matrix(N,M,true);
+	X.assign(N,M,true);
 	for(int i=0; i<M; i++) {
 		int Q; cin>>Q;
 		for(int j=0; j<Q; j++) {

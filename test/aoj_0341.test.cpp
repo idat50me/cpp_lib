@@ -7,12 +7,12 @@ using namespace std;
 #endif
 
 #include "mod/modint.cpp"
-#include "structure/matrix.cpp"
+#include "structure/2d_array.cpp"
 #define MPRIME 1000000007LL
 
 int main() {
 	string T,B; cin>>T>>B;
-	matrix<mint<MPRIME>> dp(T.length()+1,B.length()+1,0);
+	v2d<mint<MPRIME>> dp(T.length()+1,B.length()+1,0);
 	dp[0][0]=1;
 
 	for(int i=1; i<=T.length(); i++) for(int j=0; j<=B.length(); j++) {
