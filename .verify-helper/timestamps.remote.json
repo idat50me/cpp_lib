@@ -28,6 +28,7 @@
 "test/aoj_NTL_1_E.test.cpp": "2020-12-23 15:21:02 +0900",
 "test/yosupo_enumerate_palindromes.test.cpp": "2021-01-30 16:48:29 +0900",
 "test/yosupo_static_range_sum.test.cpp": "2021-02-01 00:51:23 +0900",
+"test/yosupo_static_range_sum_2.test.cpp": "2021-02-01 01:23:01 +0900",
 "test/yosupo_staticrmq.test.cpp": "2021-02-01 00:51:23 +0900",
 "test/yosupo_staticrmq_2.test.cpp": "2021-02-01 00:51:23 +0900",
 "test/yosupo_unionfind.test.cpp": "2021-01-11 18:38:51 +0900",
