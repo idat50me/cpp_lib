@@ -2,10 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj_DSL_2_A.test.cpp
+    title: test/aoj_DSL_2_A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo_staticrmq.test.cpp
+    title: test/yosupo_staticrmq.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"tree/segtree_RmQ.cpp\"\n\r\n#ifndef call_include\r\n#define\
@@ -39,8 +45,10 @@ data:
   path: tree/segtree_RmQ.cpp
   requiredBy: []
   timestamp: '2021-02-01 00:48:25+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/aoj_DSL_2_A.test.cpp
+  - test/yosupo_staticrmq.test.cpp
 documentation_of: tree/segtree_RmQ.cpp
 layout: document
 title: "(\u524A\u9664\u4E88\u5B9A) RmQ(\u533A\u9593\u6700\u5C0F\u5024)"

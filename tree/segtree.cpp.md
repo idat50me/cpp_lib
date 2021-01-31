@@ -2,10 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo_static_range_sum.test.cpp
+    title: test/yosupo_static_range_sum.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo_staticrmq_2.test.cpp
+    title: test/yosupo_staticrmq_2.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"tree/segtree.cpp\"\n\r\n#ifndef call_include\r\n#define\
@@ -58,8 +64,10 @@ data:
   path: tree/segtree.cpp
   requiredBy: []
   timestamp: '2021-02-01 00:48:25+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/yosupo_staticrmq_2.test.cpp
+  - test/yosupo_static_range_sum.test.cpp
 documentation_of: tree/segtree.cpp
 layout: document
 title: "segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"

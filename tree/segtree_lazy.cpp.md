@@ -2,10 +2,16 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy: []
-  _extendedVerifiedWith: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/aoj_DSL_2_F.test.cpp
+    title: test/aoj_DSL_2_F.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj_DSL_2_H.test.cpp
+    title: test/aoj_DSL_2_H.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"tree/segtree_lazy.cpp\"\n\r\n#ifndef call_include\r\n#define\
@@ -81,8 +87,10 @@ data:
   path: tree/segtree_lazy.cpp
   requiredBy: []
   timestamp: '2021-02-01 00:48:25+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/aoj_DSL_2_H.test.cpp
+  - test/aoj_DSL_2_F.test.cpp
 documentation_of: tree/segtree_lazy.cpp
 layout: document
 title: "segtree_lazy(\u9045\u5EF6\u8A55\u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"

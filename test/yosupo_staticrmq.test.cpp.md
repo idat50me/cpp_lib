@@ -1,34 +1,53 @@
 ---
 data:
-  _extendedDependsOn: []
+  _extendedDependsOn:
+  - icon: ':heavy_check_mark:'
+    path: tree/segtree_RmQ.cpp
+    title: "(\u524A\u9664\u4E88\u5B9A) RmQ(\u533A\u9593\u6700\u5C0F\u5024)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
-  attributes: {}
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.1/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.9.1/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 193, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.9.1/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \  File \"/opt/hostedtoolcache/Python/3.9.1/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 260, in _resolve\n    raise BundleErrorAt(path, -1, \"no such header\"\
-    )\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt: graph/segtree_RmQ.cpp:\
-    \ line -1: no such header\n"
+  _verificationStatusIcon: ':heavy_check_mark:'
+  attributes:
+    '*NOT_SPECIAL_COMMENTS*': ''
+    PROBLEM: https://judge.yosupo.jp/problem/staticrmq
+    links:
+    - https://judge.yosupo.jp/problem/staticrmq
+  bundledCode: "#line 1 \"test/yosupo_staticrmq.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\
+    \r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
+    \nusing namespace std;\r\n#endif\r\n\r\n#line 2 \"tree/segtree_RmQ.cpp\"\n\r\n\
+    #ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\nusing\
+    \ namespace std;\r\n#endif\r\n\r\ntemplate<typename T>\r\nstruct RmQ {\r\nprivate:\r\
+    \n\tint n=1;\r\n\tvector<T> node;\r\n\tT inf=numeric_limits<T>::max();\r\n\r\n\
+    public:\r\n\tRmQ(vector<T> v) {\r\n\t\twhile(n<v.size()) n*=2;\r\n\t\tnode.resize(2*n-1,inf);\r\
+    \n\t\tfor(int i=0; i<v.size(); i++) node[n-1+i]=v[i];\r\n\t\tfor(int i=n-2; i>=0;\
+    \ i--) node[i]=min(node[2*i+1],node[2*i+2]);\r\n\t}\r\n\r\n\tvoid update(int idx,\
+    \ T val) {\r\n\t\tidx+=n-1;\r\n\t\tnode[idx]=val;\r\n\r\n\t\twhile(idx>0) {\r\n\
+    \t\t\tidx=(idx-1)/2;\r\n\t\t\tnode[idx]=min(node[2*idx+1],node[2*idx+2]);\r\n\t\
+    \t}\r\n\t}\r\n\r\n\tT getmin(int L, int R) { return getmin__(L, R, 0, 0, n); }\r\
+    \nprivate:\r\n\tT getmin__(int L, int R, int now, int l, int r) {\r\n\t\tif(r<=L\
+    \ || R<=l) return inf;\r\n\t\tif(L<=l && r<=R) return node[now];\r\n\r\n\t\tT\
+    \ vl=getmin__(L,R,2*now+1,l,(l+r)/2);\r\n\t\tT vr=getmin__(L,R,2*now+2,(l+r)/2,r);\r\
+    \n\t\treturn min(vl,vr);\r\n\t}\r\npublic:\r\n};\r\n#line 10 \"test/yosupo_staticrmq.test.cpp\"\
+    \n\r\nint main() {\r\n\tint N,Q;\r\n\tvector<int> v;\r\n\r\n\tcin>>N>>Q;\r\n\t\
+    v.resize(N);\r\n\tfor(int i=0; i<N; i++) cin>>v[i];\r\n\tRmQ rmq_tree(v);\r\n\r\
+    \n\tfor(int i=0; i<Q; i++) {\r\n\t\tint l,r; cin>>l>>r;\r\n\t\tcout<<rmq_tree.getmin(l,r)<<'\\\
+    n';\r\n\t}\r\n\tcout<<flush;\r\n}\r\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/staticrmq\"\r\n\r\n#ifndef\
     \ call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace\
-    \ std;\r\n#endif\r\n\r\n#include \"graph/segtree_RmQ.cpp\"\r\n\r\nint main() {\r\
+    \ std;\r\n#endif\r\n\r\n#include \"tree/segtree_RmQ.cpp\"\r\n\r\nint main() {\r\
     \n\tint N,Q;\r\n\tvector<int> v;\r\n\r\n\tcin>>N>>Q;\r\n\tv.resize(N);\r\n\tfor(int\
     \ i=0; i<N; i++) cin>>v[i];\r\n\tRmQ rmq_tree(v);\r\n\r\n\tfor(int i=0; i<Q; i++)\
     \ {\r\n\t\tint l,r; cin>>l>>r;\r\n\t\tcout<<rmq_tree.getmin(l,r)<<'\\n';\r\n\t\
     }\r\n\tcout<<flush;\r\n}\r\n"
-  dependsOn: []
+  dependsOn:
+  - tree/segtree_RmQ.cpp
   isVerificationFile: true
   path: test/yosupo_staticrmq.test.cpp
   requiredBy: []
-  timestamp: '1970-01-01 00:00:00+00:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-02-01 00:51:23+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo_staticrmq.test.cpp
 layout: document
