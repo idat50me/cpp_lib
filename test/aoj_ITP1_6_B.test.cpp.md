@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: structure/2d_array.cpp
-    title: structure/2d_array.cpp
+    title: "2D-Array( $2$ \u6B21\u5143\u914D\u5217)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false

@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: structure/matrix.cpp
-    title: "2D-Array( $2$ \u6B21\u5143\u914D\u5217)"
+    title: "Matrix(\u884C\u5217)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/ITP1_7_D
@@ -28,8 +28,8 @@ data:
     \ &v: m) for(T &val: v) cin>>val;\r\n\t}\r\n\tvoid in(int h, int w) {\r\n\t\t\
     m.resize(h, vector<T>(w));\r\n\t\tin();\r\n\t}\r\n\r\n\tvoid out() {\r\n\t\tint\
     \ w = width();\r\n\t\tfor(vector<T> &v: m) for(int j=0; j<w; j++) {\r\n\t\t\t\
-    cout<<v[j]<<(j==sz-1 ? '\\n' : ' ');\r\n\t\t}\r\n\t\tcout<<flush;\r\n\t}\r\n\r\
-    \n\tinline const vector<T> &operator[](int idx) const {\r\n\t\tassert(0<=idx &&\
+    cout<<v[j]<<(j==w-1 ? '\\n' : ' ');\r\n\t\t}\r\n\t\tcout<<flush;\r\n\t}\r\n\r\n\
+    \tinline const vector<T> &operator[](int idx) const {\r\n\t\tassert(0<=idx &&\
     \ idx<m.size());\r\n\t\treturn m[idx];\r\n\t}\r\n\tinline vector<T> &operator[](int\
     \ idx) {\r\n\t\tassert(0<=idx && idx<m.size());\r\n\t\treturn m[idx];\r\n\t}\r\
     \n\r\n\tstatic matrix identity(int n) {\r\n\t\tmatrix res(n, n, 0);\r\n\t\tfor(int\
@@ -60,8 +60,8 @@ data:
   isVerificationFile: true
   path: test/aoj_ITP1_7_D.test.cpp
   requiredBy: []
-  timestamp: '2021-01-31 15:05:40+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-01-31 15:11:06+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_ITP1_7_D.test.cpp
 layout: document
