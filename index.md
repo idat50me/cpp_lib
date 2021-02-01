@@ -99,7 +99,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: tree/binary_indexed_tree.cpp
-      title: "binary_indexed_tree( BIT \u6728)"
+      title: binary_indexed_tree(BIT)
     - icon: ':heavy_check_mark:'
       path: tree/segtree.cpp
       title: "segtree(\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"

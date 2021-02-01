@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: tree/binary_indexed_tree.cpp
-    title: "binary_indexed_tree( BIT \u6728)"
+    title: binary_indexed_tree(BIT)
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
