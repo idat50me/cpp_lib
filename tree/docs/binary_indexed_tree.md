@@ -1,5 +1,5 @@
 ---
-title: binary_indexed_tree( BIT 木)
+title: binary_indexed_tree(BIT)
 documentation_of: ../binary_indexed_tree.cpp
 ---
 
@@ -7,8 +7,8 @@ documentation_of: ../binary_indexed_tree.cpp
 一点加算・区間和を対数時間で求めることができるデータ構造．
 
 ## コンストラクタ
-- `BIT(n)`：要素数 `n` の BIT 木を構築する．
-- `BIT(v)`：配列 `v` の要素で BIT 木を構築する．
+- `BIT(n)`：要素数 `n` の BIT を構築する．
+- `BIT(v)`：配列 `v` の要素で BIT を構築する．
 
 ## メンバ関数
 - `sum(idx)`：`idx` 番目までの要素の総和を返す．
