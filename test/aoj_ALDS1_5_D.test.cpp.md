@@ -37,7 +37,7 @@ data:
     \ idx, T val) {\r\n\t\tassert(0<idx && idx<=N);\r\n\t\twhile(idx <= N) {\r\n\t\
     \t\tnode[idx] += val;\r\n\t\t\tidx += idx&-idx;\r\n\t\t}\r\n\t}\r\n};\r\n#line\
     \ 10 \"math/inversion_number.cpp\"\n\r\ntemplate<typename T>\r\nlong long inv_count(vector<T>\
-    \ &v) {\r\n\tint N = v.size();\r\n\tlong long res = 0;\r\n\tBIT<T> bt(v);\r\n\t\
+    \ &v) {\r\n\tint N = v.size();\r\n\tlong long res = 0;\r\n\tBIT<T> bt(N);\r\n\t\
     map<T, int> mp;\r\n\tfor(T &a: v) mp.emplace(a, 0);\r\n\tint i = 1;\r\n\tfor(auto\
     \ &a: mp) {\r\n\t\ta.second = i;\r\n\t\ti++;\r\n\t}\r\n\r\n\tfor(T &a: v) {\r\n\
     \t\tbt.add(mp[a], 1);\r\n\t\tres += bt.sum(mp[a]+1, N);\r\n\t}\r\n\r\n\treturn\
@@ -55,7 +55,7 @@ data:
   isVerificationFile: true
   path: test/aoj_ALDS1_5_D.test.cpp
   requiredBy: []
-  timestamp: '2021-02-02 19:50:42+09:00'
+  timestamp: '2021-02-02 19:55:41+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj_ALDS1_5_D.test.cpp
