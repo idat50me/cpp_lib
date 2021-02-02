@@ -52,6 +52,9 @@ data:
     - icon: ':warning:'
       path: math/factorial.cpp
       title: "Factorial(\u968E\u4E57)"
+    - icon: ':x:'
+      path: math/inversion_number.cpp
+      title: math/inversion_number.cpp
     - icon: ':heavy_check_mark:'
       path: math/isprime.cpp
       title: "Isprime(\u7D20\u6570\u5224\u5B9A)"
@@ -97,7 +100,7 @@ data:
       title: test/aoj_0019.cpp
   - name: tree
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: tree/binary_indexed_tree.cpp
       title: binary_indexed_tree(BIT)
     - icon: ':heavy_check_mark:'
@@ -137,6 +140,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj_ALDS1_1_C_3.test.cpp
       title: test/aoj_ALDS1_1_C_3.test.cpp
+    - icon: ':x:'
+      path: test/aoj_ALDS1_5_D.test.cpp
+      title: test/aoj_ALDS1_5_D.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj_DPL_1_D.test.cpp
       title: test/aoj_DPL_1_D.test.cpp

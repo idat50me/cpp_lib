@@ -1,14 +1,20 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':x:'
+    path: math/inversion_number.cpp
+    title: math/inversion_number.cpp
   _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/aoj_ALDS1_5_D.test.cpp
+    title: test/aoj_ALDS1_5_D.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo_static_range_sum_2.test.cpp
     title: test/yosupo_static_range_sum_2.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"tree/binary_indexed_tree.cpp\"\n\r\n#ifndef call_include\r\
@@ -43,10 +49,12 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: tree/binary_indexed_tree.cpp
-  requiredBy: []
+  requiredBy:
+  - math/inversion_number.cpp
   timestamp: '2021-02-01 01:40:48+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/aoj_ALDS1_5_D.test.cpp
   - test/yosupo_static_range_sum_2.test.cpp
 documentation_of: tree/binary_indexed_tree.cpp
 layout: document
@@ -54,7 +62,8 @@ title: binary_indexed_tree(BIT)
 ---
 
 ## なにこれ
-一点加算・区間和を対数時間で求めることができるデータ構造．
+一点加算・区間和取得を対数時間で行うことができるデータ構造．
+セグメント木より定数倍が軽い．
 
 ## コンストラクタ
 - `BIT(n)`：要素数 `n` の BIT を構築する．

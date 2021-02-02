@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: tree/binary_indexed_tree.cpp
     title: binary_indexed_tree(BIT)
   _extendedRequiredBy: []
