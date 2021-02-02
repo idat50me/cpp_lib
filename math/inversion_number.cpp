@@ -12,7 +12,7 @@ template<typename T>
 long long inv_count(vector<T> &v) {
 	int N = v.size();
 	long long res = 0;
-	BIT<T> bt(v);
+	BIT<T> bt(N);
 	map<T, int> mp;
 	for(T &a: v) mp.emplace(a, 0);
 	int i = 1;
