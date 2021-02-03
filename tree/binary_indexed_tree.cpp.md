@@ -21,22 +21,22 @@ data:
     \n#define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n\
     #endif\r\n\r\ntemplate<typename T>\r\nstruct BIT {\r\nprivate:\r\n\tvector<T>\
     \ node;\r\n\tconst int N;\r\n\r\npublic:\r\n\tBIT(int n) : node(n+1, 0), N(n)\
-    \ {}\r\n\tBIT(vector<T>& v) : node(v.size()+1, 0), N(v.size()) {\r\n\t\tfor(int\
-    \ i=0; i<N; i++) node[i+1] = v[i];\r\n\t\tfor(int i=1; i<N; i++) {\r\n\t\t\tint\
-    \ j = i+(i&-i);\r\n\t\t\tif(j <= N) node[j] += node[i];\r\n\t\t}\r\n\t}\r\n\r\n\
-    \tT sum(int idx) {\r\n\t\tassert(0<=idx && idx<=N);\r\n\t\tT res = 0;\r\n\t\t\
-    while(idx) {\r\n\t\t\tres += node[idx];\r\n\t\t\tidx -= idx&-idx;\r\n\t\t}\r\n\
-    \t\treturn res;\r\n\t}\r\n\r\n\tT sum(int l, int r) {\r\n\t\tassert(0<=l && r<=N);\r\
-    \n\t\tif(l > r) return T(0);\r\n\t\treturn sum(r) - sum(max(l-1, 0));\r\n\t}\r\
-    \n\r\n\tvoid add(int idx, T& val) {\r\n\t\tassert(0<idx && idx<=N);\r\n\t\twhile(idx\
-    \ <= N) {\r\n\t\t\tnode[idx] += val;\r\n\t\t\tidx += idx&-idx;\r\n\t\t}\r\n\t\
-    }\r\n\tvoid add(int idx, T val) {\r\n\t\tassert(0<idx && idx<=N);\r\n\t\twhile(idx\
-    \ <= N) {\r\n\t\t\tnode[idx] += val;\r\n\t\t\tidx += idx&-idx;\r\n\t\t}\r\n\t\
-    }\r\n};\r\n"
+    \ {}\r\n\tBIT(const vector<T>& v) : node(v.size()+1, 0), N(v.size()) {\r\n\t\t\
+    for(int i=0; i<N; i++) node[i+1] = v[i];\r\n\t\tfor(int i=1; i<N; i++) {\r\n\t\
+    \t\tint j = i+(i&-i);\r\n\t\t\tif(j <= N) node[j] += node[i];\r\n\t\t}\r\n\t}\r\
+    \n\r\n\tT sum(int idx) {\r\n\t\tassert(0<=idx && idx<=N);\r\n\t\tT res = 0;\r\n\
+    \t\twhile(idx) {\r\n\t\t\tres += node[idx];\r\n\t\t\tidx -= idx&-idx;\r\n\t\t\
+    }\r\n\t\treturn res;\r\n\t}\r\n\r\n\tT sum(int l, int r) {\r\n\t\tassert(0<=l\
+    \ && r<=N);\r\n\t\tif(l > r) return T(0);\r\n\t\treturn sum(r) - sum(max(l-1,\
+    \ 0));\r\n\t}\r\n\r\n\tvoid add(int idx, T& val) {\r\n\t\tassert(0<idx && idx<=N);\r\
+    \n\t\twhile(idx <= N) {\r\n\t\t\tnode[idx] += val;\r\n\t\t\tidx += idx&-idx;\r\
+    \n\t\t}\r\n\t}\r\n\tvoid add(int idx, T val) {\r\n\t\tassert(0<idx && idx<=N);\r\
+    \n\t\twhile(idx <= N) {\r\n\t\t\tnode[idx] += val;\r\n\t\t\tidx += idx&-idx;\r\
+    \n\t\t}\r\n\t}\r\n};\r\n"
   code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
     \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\ntemplate<typename T>\r\
     \nstruct BIT {\r\nprivate:\r\n\tvector<T> node;\r\n\tconst int N;\r\n\r\npublic:\r\
-    \n\tBIT(int n) : node(n+1, 0), N(n) {}\r\n\tBIT(vector<T>& v) : node(v.size()+1,\
+    \n\tBIT(int n) : node(n+1, 0), N(n) {}\r\n\tBIT(const vector<T>& v) : node(v.size()+1,\
     \ 0), N(v.size()) {\r\n\t\tfor(int i=0; i<N; i++) node[i+1] = v[i];\r\n\t\tfor(int\
     \ i=1; i<N; i++) {\r\n\t\t\tint j = i+(i&-i);\r\n\t\t\tif(j <= N) node[j] += node[i];\r\
     \n\t\t}\r\n\t}\r\n\r\n\tT sum(int idx) {\r\n\t\tassert(0<=idx && idx<=N);\r\n\t\
@@ -53,7 +53,7 @@ data:
   path: tree/binary_indexed_tree.cpp
   requiredBy:
   - math/inversion_number.cpp
-  timestamp: '2021-02-03 22:51:33+09:00'
+  timestamp: '2021-02-03 23:13:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_ALDS1_5_D.test.cpp
