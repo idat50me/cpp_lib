@@ -6,7 +6,7 @@
 using namespace std;
 #endif
 
-#include "tree/binary_indexed_tree.cpp"
+#include "../tree/binary_indexed_tree.cpp"
 
 template<typename T>
 long long inv_count(vector<T> &v) {
@@ -14,7 +14,7 @@ long long inv_count(vector<T> &v) {
 	long long res = 0;
 	BIT<T> bt(N);
 	map<T, int> mp;
-	for(T &a: v) mp.emplace(a, 0);
+	for(const T &a: v) mp.emplace(a, 0);
 	int i = 1;
 	for(auto &a: mp) {
 		a.second = i;

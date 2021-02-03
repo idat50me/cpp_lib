@@ -33,8 +33,9 @@ public:
 	}
 
 	T sum(int l, int r) {
-		assert(0<=l && l<=r && r<=N);
-		return sum(r) - sum(l-1);
+		assert(0<=l && r<=N);
+		if(l > r) return T(0);
+		return sum(r) - sum(max(l-1, 0));
 	}
 
 	void add(int idx, T& val) {
