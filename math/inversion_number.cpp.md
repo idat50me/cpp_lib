@@ -36,20 +36,20 @@ data:
     map<T, int> mp;\r\n\tfor(const T &a: v) mp.emplace(a, 0);\r\n\tint i = 1;\r\n\t\
     for(auto &a: mp) {\r\n\t\ta.second = i;\r\n\t\ti++;\r\n\t}\r\n\r\n\tfor(T &a:\
     \ v) {\r\n\t\tbt.add(mp[a], 1);\r\n\t\tres += bt.sum(mp[a]+1, N);\r\n\t}\r\n\r\
-    \n\treturn res;\r\n}\r\n"
+    \n\treturn res;\r\n};\r\n"
   code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
     \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\n#include \"../tree/binary_indexed_tree.cpp\"\
     \r\n\r\ntemplate<typename T>\r\nlong long inv_count(vector<T> &v) {\r\n\tint N\
     \ = v.size();\r\n\tlong long res = 0;\r\n\tBIT<T> bt(N);\r\n\tmap<T, int> mp;\r\
     \n\tfor(const T &a: v) mp.emplace(a, 0);\r\n\tint i = 1;\r\n\tfor(auto &a: mp)\
     \ {\r\n\t\ta.second = i;\r\n\t\ti++;\r\n\t}\r\n\r\n\tfor(T &a: v) {\r\n\t\tbt.add(mp[a],\
-    \ 1);\r\n\t\tres += bt.sum(mp[a]+1, N);\r\n\t}\r\n\r\n\treturn res;\r\n}\r\n"
+    \ 1);\r\n\t\tres += bt.sum(mp[a]+1, N);\r\n\t}\r\n\r\n\treturn res;\r\n};\r\n"
   dependsOn:
   - tree/binary_indexed_tree.cpp
   isVerificationFile: false
   path: math/inversion_number.cpp
   requiredBy: []
-  timestamp: '2021-02-03 22:51:33+09:00'
+  timestamp: '2021-02-03 23:03:58+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_ALDS1_5_D.test.cpp

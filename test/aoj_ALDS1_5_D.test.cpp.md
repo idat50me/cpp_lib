@@ -41,7 +41,7 @@ data:
     \ res = 0;\r\n\tBIT<T> bt(N);\r\n\tmap<T, int> mp;\r\n\tfor(const T &a: v) mp.emplace(a,\
     \ 0);\r\n\tint i = 1;\r\n\tfor(auto &a: mp) {\r\n\t\ta.second = i;\r\n\t\ti++;\r\
     \n\t}\r\n\r\n\tfor(T &a: v) {\r\n\t\tbt.add(mp[a], 1);\r\n\t\tres += bt.sum(mp[a]+1,\
-    \ N);\r\n\t}\r\n\r\n\treturn res;\r\n}\r\n#line 10 \"test/aoj_ALDS1_5_D.test.cpp\"\
+    \ N);\r\n\t}\r\n\r\n\treturn res;\r\n};\r\n#line 10 \"test/aoj_ALDS1_5_D.test.cpp\"\
     \n\r\nint main() {\r\n\tint N; cin>>N;\r\n\tvector<int> A(N);\r\n\tfor(int &a:\
     \ A) cin>>a;\r\n\tcout<<inv_count(A)<<endl;\r\n}\r\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/ALDS1_5_D\"\r\
@@ -55,7 +55,7 @@ data:
   isVerificationFile: true
   path: test/aoj_ALDS1_5_D.test.cpp
   requiredBy: []
-  timestamp: '2021-02-03 22:51:33+09:00'
+  timestamp: '2021-02-03 23:03:58+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_ALDS1_5_D.test.cpp
