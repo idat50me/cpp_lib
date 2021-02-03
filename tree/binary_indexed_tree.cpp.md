@@ -2,19 +2,19 @@
 data:
   _extendedDependsOn: []
   _extendedRequiredBy:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/inversion_number.cpp
     title: math/inversion_number.cpp
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/aoj_ALDS1_5_D.test.cpp
     title: test/aoj_ALDS1_5_D.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yosupo_static_range_sum_2.test.cpp
     title: test/yosupo_static_range_sum_2.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"tree/binary_indexed_tree.cpp\"\n\r\n#ifndef call_include\r\
@@ -26,12 +26,13 @@ data:
     \ j = i+(i&-i);\r\n\t\t\tif(j <= N) node[j] += node[i];\r\n\t\t}\r\n\t}\r\n\r\n\
     \tT sum(int idx) {\r\n\t\tassert(0<=idx && idx<=N);\r\n\t\tT res = 0;\r\n\t\t\
     while(idx) {\r\n\t\t\tres += node[idx];\r\n\t\t\tidx -= idx&-idx;\r\n\t\t}\r\n\
-    \t\treturn res;\r\n\t}\r\n\r\n\tT sum(int l, int r) {\r\n\t\tassert(0<=l && l<=r\
-    \ && r<=N);\r\n\t\treturn sum(r) - sum(l-1);\r\n\t}\r\n\r\n\tvoid add(int idx,\
-    \ T& val) {\r\n\t\tassert(0<idx && idx<=N);\r\n\t\twhile(idx <= N) {\r\n\t\t\t\
-    node[idx] += val;\r\n\t\t\tidx += idx&-idx;\r\n\t\t}\r\n\t}\r\n\tvoid add(int\
-    \ idx, T val) {\r\n\t\tassert(0<idx && idx<=N);\r\n\t\twhile(idx <= N) {\r\n\t\
-    \t\tnode[idx] += val;\r\n\t\t\tidx += idx&-idx;\r\n\t\t}\r\n\t}\r\n};\r\n"
+    \t\treturn res;\r\n\t}\r\n\r\n\tT sum(int l, int r) {\r\n\t\tassert(0<=l && r<=N);\r\
+    \n\t\tif(l > r) return T(0);\r\n\t\treturn sum(r) - sum(max(l-1, 0));\r\n\t}\r\
+    \n\r\n\tvoid add(int idx, T& val) {\r\n\t\tassert(0<idx && idx<=N);\r\n\t\twhile(idx\
+    \ <= N) {\r\n\t\t\tnode[idx] += val;\r\n\t\t\tidx += idx&-idx;\r\n\t\t}\r\n\t\
+    }\r\n\tvoid add(int idx, T val) {\r\n\t\tassert(0<idx && idx<=N);\r\n\t\twhile(idx\
+    \ <= N) {\r\n\t\t\tnode[idx] += val;\r\n\t\t\tidx += idx&-idx;\r\n\t\t}\r\n\t\
+    }\r\n};\r\n"
   code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
     \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\ntemplate<typename T>\r\
     \nstruct BIT {\r\nprivate:\r\n\tvector<T> node;\r\n\tconst int N;\r\n\r\npublic:\r\
@@ -41,18 +42,19 @@ data:
     \n\t\t}\r\n\t}\r\n\r\n\tT sum(int idx) {\r\n\t\tassert(0<=idx && idx<=N);\r\n\t\
     \tT res = 0;\r\n\t\twhile(idx) {\r\n\t\t\tres += node[idx];\r\n\t\t\tidx -= idx&-idx;\r\
     \n\t\t}\r\n\t\treturn res;\r\n\t}\r\n\r\n\tT sum(int l, int r) {\r\n\t\tassert(0<=l\
-    \ && l<=r && r<=N);\r\n\t\treturn sum(r) - sum(l-1);\r\n\t}\r\n\r\n\tvoid add(int\
-    \ idx, T& val) {\r\n\t\tassert(0<idx && idx<=N);\r\n\t\twhile(idx <= N) {\r\n\t\
-    \t\tnode[idx] += val;\r\n\t\t\tidx += idx&-idx;\r\n\t\t}\r\n\t}\r\n\tvoid add(int\
-    \ idx, T val) {\r\n\t\tassert(0<idx && idx<=N);\r\n\t\twhile(idx <= N) {\r\n\t\
-    \t\tnode[idx] += val;\r\n\t\t\tidx += idx&-idx;\r\n\t\t}\r\n\t}\r\n};\r\n"
+    \ && r<=N);\r\n\t\tif(l > r) return T(0);\r\n\t\treturn sum(r) - sum(max(l-1,\
+    \ 0));\r\n\t}\r\n\r\n\tvoid add(int idx, T& val) {\r\n\t\tassert(0<idx && idx<=N);\r\
+    \n\t\twhile(idx <= N) {\r\n\t\t\tnode[idx] += val;\r\n\t\t\tidx += idx&-idx;\r\
+    \n\t\t}\r\n\t}\r\n\tvoid add(int idx, T val) {\r\n\t\tassert(0<idx && idx<=N);\r\
+    \n\t\twhile(idx <= N) {\r\n\t\t\tnode[idx] += val;\r\n\t\t\tidx += idx&-idx;\r\
+    \n\t\t}\r\n\t}\r\n};\r\n"
   dependsOn: []
   isVerificationFile: false
   path: tree/binary_indexed_tree.cpp
   requiredBy:
   - math/inversion_number.cpp
-  timestamp: '2021-02-01 01:40:48+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2021-02-03 22:51:33+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_ALDS1_5_D.test.cpp
   - test/yosupo_static_range_sum_2.test.cpp

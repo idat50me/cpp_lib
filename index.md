@@ -52,7 +52,7 @@ data:
     - icon: ':warning:'
       path: math/factorial.cpp
       title: "Factorial(\u968E\u4E57)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: math/inversion_number.cpp
       title: math/inversion_number.cpp
     - icon: ':heavy_check_mark:'
@@ -100,7 +100,7 @@ data:
       title: test/aoj_0019.cpp
   - name: tree
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: tree/binary_indexed_tree.cpp
       title: binary_indexed_tree(BIT)
     - icon: ':heavy_check_mark:'
@@ -140,7 +140,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj_ALDS1_1_C_3.test.cpp
       title: test/aoj_ALDS1_1_C_3.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/aoj_ALDS1_5_D.test.cpp
       title: test/aoj_ALDS1_5_D.test.cpp
     - icon: ':heavy_check_mark:'
