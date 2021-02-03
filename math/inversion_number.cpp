@@ -9,8 +9,8 @@ using namespace std;
 #include "../tree/binary_indexed_tree.cpp"
 
 template<typename T>
-long long inv_count(vector<T> &v) {
-	int N = v.size();
+long long inv_count(const vector<T> &v) {
+	const int N = v.size();
 	long long res = 0;
 	BIT<T> bt(N);
 	map<T, int> mp;
@@ -21,7 +21,7 @@ long long inv_count(vector<T> &v) {
 		i++;
 	}
 
-	for(T &a: v) {
+	for(const T &a: v) {
 		bt.add(mp[a], 1);
 		res += bt.sum(mp[a]+1, N);
 	}
