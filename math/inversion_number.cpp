@@ -27,4 +27,4 @@ long long inv_count(vector<T> &v) {
 	}
 
 	return res;
-}
+};
