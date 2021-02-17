@@ -8,7 +8,7 @@ documentation_of: ../sieve_of_eratosthenes.cpp
 前処理して素数判定を高速にやるなど．
 
 ## コンストラクタ
-- `Sieve(n)`：$n$ までの篩を前計算する．$n \leq 10^7$ 程度．
+- `Sieve(n)`：$n$ までの篩を前計算する．
 
 ## メンバ関数
 - `isprime(x)`：`x` が素数であれば `true`を，そうでなければ `false` を返す．
@@ -16,7 +16,7 @@ documentation_of: ../sieve_of_eratosthenes.cpp
 - `divisorcount(n)`：`n` の約数の個数を返す．
 	
 ## 計算量
-- `Sieve(n)`：$O(n\log\log n)$
+- `Sieve(n)`：$O(n)$
 - `isprime(x)`：$O(1)$
 - `primefact(n)`：$O(\log n)$
 - `divisorcount(n)`：$O(\log n)$
