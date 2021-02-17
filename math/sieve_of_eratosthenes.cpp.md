@@ -51,8 +51,8 @@ data:
   timestamp: '2021-01-30 16:48:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj_ALDS1_1_C.test.cpp
   - test/aoj_NTL_1_A.test.cpp
+  - test/aoj_ALDS1_1_C.test.cpp
 documentation_of: math/sieve_of_eratosthenes.cpp
 layout: document
 title: "Sieve-of-Eratosthenes(\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u7BE9\
@@ -64,7 +64,7 @@ title: "Sieve-of-Eratosthenes(\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u
 前処理して素数判定を高速にやるなど．
 
 ## コンストラクタ
-- `Sieve(n)`：$n$ までの篩を前計算する．$n \leq 10^7$ 程度．
+- `Sieve(n)`：$n$ までの篩を前計算する．
 
 ## メンバ関数
 - `isprime(x)`：`x` が素数であれば `true`を，そうでなければ `false` を返す．
@@ -72,7 +72,7 @@ title: "Sieve-of-Eratosthenes(\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u
 - `divisorcount(n)`：`n` の約数の個数を返す．
 	
 ## 計算量
-- `Sieve(n)`：$O(n\log\log n)$
+- `Sieve(n)`：$O(n)$
 - `isprime(x)`：$O(1)$
 - `primefact(n)`：$O(\log n)$
 - `divisorcount(n)`：$O(\log n)$

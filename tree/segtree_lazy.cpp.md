@@ -89,8 +89,8 @@ data:
   timestamp: '2021-02-01 00:48:25+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj_DSL_2_H.test.cpp
   - test/aoj_DSL_2_F.test.cpp
+  - test/aoj_DSL_2_H.test.cpp
 documentation_of: tree/segtree_lazy.cpp
 layout: document
 title: "segtree_lazy(\u9045\u5EF6\u8A55\u4FA1\u30BB\u30B0\u30E1\u30F3\u30C8\u6728)"

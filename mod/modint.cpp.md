@@ -129,8 +129,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yuki_1035.test.cpp
-  - test/aoj_0341.test.cpp
   - test/yuki_0599.test.cpp
+  - test/aoj_0341.test.cpp
 documentation_of: mod/modint.cpp
 layout: document
 title: ModInt

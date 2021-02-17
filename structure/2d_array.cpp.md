@@ -58,9 +58,9 @@ data:
   timestamp: '2021-01-31 15:36:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yuki_0177.test.cpp
-  - test/aoj_2429.test.cpp
   - test/aoj_ITP1_6_B.test.cpp
+  - test/aoj_2429.test.cpp
+  - test/yuki_0177.test.cpp
   - test/aoj_0341.test.cpp
 documentation_of: structure/2d_array.cpp
 layout: document
