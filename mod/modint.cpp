@@ -6,8 +6,6 @@
 using namespace std;
 #endif
 
-constexpr int MPRIME = 1000000007;
-
 template<int mod> struct modint {
 private:
 	long long val;
@@ -172,4 +170,4 @@ public:
 		return is;
 	}
 };
-using mint = modint<MPRIME>;
+using mint = modint<1000000007>;
