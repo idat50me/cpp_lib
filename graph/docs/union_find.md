@@ -9,16 +9,18 @@ $n$ 頂点を持つ Union-Find 木．
 ## コンストラクタ
 - `UnionFind(n)`
 - `UninoFind(n, f1)`
+- `UninoFind(n, f2)`
 - `UnionFind(n, f1, f2)`
 
 `n` 頂点の Union-Find 木を構築する．
 
+- `UnionFind(v, f2)`
 - `UnionFind(v, f1, f2)`
 
 各頂点が配列 `v` の要素をデータとして持つ Union-Find 木を構築する．
 
 `function<bool(int,int,T&,T&)> f1` はマージテクの swap 判定関数．  
-`function<void(T&,T&)> f2` はデータのマージを行う関数．  
+`function<void(T&,T&)> f2` はデータのマージを行う関数．(左の引数が親の値)  
 $n \leq 10^8$ 程度．(保持するデータの大きさによる)
 
 ## メンバ関数
