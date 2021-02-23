@@ -6,173 +6,170 @@
 using namespace std;
 #endif
 
-template<int mod>
-struct mint {
-private:
+constexpr int MPRIME = 1000000007;
 
+template<int mod> struct modint {
+private:
 	long long val;
 
 public:
-
-	mint(long long x=0) : val((mod+x%mod)%mod) {}
+	modint(long long x = 0) : val((mod + x % mod) % mod) {}
 
 private:
-	mint inv() const {
-		long long x_ = val, xd = 1, xdd = 0,
-		          y_ = mod, yd = 0, ydd = 1,
-		          div;
-		
-		while(true) {
-			if(!y_) return mint(xd);
-			div = x_/y_;
-			x_  -= div*y_;
-			xd  -= div*yd;
-			xdd -= div*ydd;
+	modint inv() const {
+		long long x_ = val, xd = 1, xdd = 0, y_ = mod, yd = 0, ydd = 1, div;
 
-			if(!x_) return mint(yd);
-			div = y_/x_;
-			y_  -= div*x_;
-			yd  -= div*xd;
-			ydd -= div*xdd;
+		while(true) {
+			if(!y_) return modint(xd);
+			div = x_ / y_;
+			x_ -= div * y_;
+			xd -= div * yd;
+			xdd -= div * ydd;
+
+			if(!x_) return modint(yd);
+			div = y_ / x_;
+			y_ -= div * x_;
+			yd -= div * xd;
+			ydd -= div * xdd;
 		}
 	}
 
 public:
-
-	mint operator-() const {
-		return mint(-val);
+	modint operator-() const {
+		return modint(-val);
 	}
 
-	mint& operator+=(const mint& a) {
+	modint &operator+=(const modint &a) {
 		val += a.val;
 		if(val >= mod) val -= mod;
 		return *this;
 	}
-	mint& operator-=(const mint& a) {
+	modint &operator-=(const modint &a) {
 		val -= a.val;
 		if(val < 0) val += mod;
 		return *this;
 	}
-	mint& operator*=(const mint& a) {
-		(val*=a.val) %= mod;
+	modint &operator*=(const modint &a) {
+		(val *= a.val) %= mod;
 		return *this;
 	}
-	mint& operator/=(const mint& a) {
+	modint &operator/=(const modint &a) {
 		return (*this) *= a.inv();
 	}
-	mint& operator+=(const long long& a) {
-		(val+=mod+a%mod) %= mod;
+	modint &operator+=(const long long &a) {
+		(val += mod + a % mod) %= mod;
 		return *this;
 	}
-	mint& operator-=(const long long& a) {
-		(val+=mod-a%mod) %= mod;
+	modint &operator-=(const long long &a) {
+		(val += mod - a % mod) %= mod;
 		return *this;
 	}
-	mint& operator*=(const long long& a) {
-		(val*=mod+a%mod) %= mod;
+	modint &operator*=(const long long &a) {
+		(val *= mod + a % mod) %= mod;
 		return *this;
 	}
-	mint& operator/=(const long long& a) {
-		return (*this)/=mint(a);
+	modint &operator/=(const long long &a) {
+		return (*this) /= modint(a);
 	}
 
-	mint operator+(const mint& a) const {
-		return mint(*this)+=a;
+	modint operator+(const modint &a) const {
+		return modint(*this) += a;
 	}
-	mint operator-(const mint& a) const {
-		return mint(*this)-=a;
+	modint operator-(const modint &a) const {
+		return modint(*this) -= a;
 	}
-	mint operator*(const mint& a) const {
-		return mint(*this)*=a;
+	modint operator*(const modint &a) const {
+		return modint(*this) *= a;
 	}
-	mint operator/(const mint& a) const {
-		return mint(*this)/=a;
+	modint operator/(const modint &a) const {
+		return modint(*this) /= a;
 	}
-	mint operator+(const long long& a) const {
-		return mint(*this)+=a;
+	modint operator+(const long long &a) const {
+		return modint(*this) += a;
 	}
-	mint operator-(const long long& a) const {
-		return mint(*this)-=a;
+	modint operator-(const long long &a) const {
+		return modint(*this) -= a;
 	}
-	mint operator*(const long long& a) const {
-		return mint(*this)*=a;
+	modint operator*(const long long &a) const {
+		return modint(*this) *= a;
 	}
-	mint operator/(const long long& a) const {
-		return mint(*this)/=mint(a);
+	modint operator/(const long long &a) const {
+		return modint(*this) /= modint(a);
 	}
 
-	mint& operator++() {
+	modint &operator++() {
 		(++val) %= mod;
 		return *this;
 	}
-	mint operator++(int) {
-		mint res(*this);
+	modint operator++(int) {
+		modint res(*this);
 		(++val) %= mod;
 		return res;
 	}
-	mint& operator--() {
-		(val+=mod-1) %= mod;
+	modint &operator--() {
+		(val += mod - 1) %= mod;
 		return *this;
 	}
-	mint operator--(int) {
-		mint res(*this);
-		(val+=mod-1) %= mod;
+	modint operator--(int) {
+		modint res(*this);
+		(val += mod - 1) %= mod;
 		return res;
 	}
 
-	bool operator==(const mint& a) const {
+	bool operator==(const modint &a) const {
 		return val == a.val;
 	}
-	bool operator!=(const mint& a) const {
+	bool operator!=(const modint &a) const {
 		return val != a.val;
 	}
-	bool operator<(const mint& a) const {
+	bool operator<(const modint &a) const {
 		return val < a.val;
 	}
-	bool operator>(const mint& a) const {
+	bool operator>(const modint &a) const {
 		return val > a.val;
 	}
-	bool operator<=(const mint& a) const {
+	bool operator<=(const modint &a) const {
 		return val <= a.val;
 	}
-	bool operator>=(const mint& a) const {
+	bool operator>=(const modint &a) const {
 		return val >= a.val;
 	}
-	bool operator==(const long long& a) const {
+	bool operator==(const long long &a) const {
 		return val == a;
 	}
-	bool operator!=(const long long& a) const {
+	bool operator!=(const long long &a) const {
 		return val != a;
 	}
-	bool operator<(const long long& a) const {
+	bool operator<(const long long &a) const {
 		return val < a;
 	}
-	bool operator>(const long long& a) const {
+	bool operator>(const long long &a) const {
 		return val > a;
 	}
-	bool operator<=(const long long& a) const {
+	bool operator<=(const long long &a) const {
 		return val <= a;
 	}
-	bool operator>=(const long long& a) const {
+	bool operator>=(const long long &a) const {
 		return val >= a;
 	}
 
-	mint& operator=(const mint& a) {
+	modint &operator=(const modint &a) {
 		val = a.val;
 		return *this;
 	}
-	mint& operator=(const long long& a) {
-		val = (mod+a%mod)%mod;
+	modint &operator=(const long long &a) {
+		val = (mod + a % mod) % mod;
 		return *this;
 	}
 
-	friend ostream& operator<<(ostream& os, const mint& a) {
+	friend ostream &operator<<(ostream &os, const modint &a) {
 		return os << a.val;
 	}
-	friend istream& operator>>(istream& is, mint &a) {
+	friend istream &operator>>(istream &is, modint &a) {
 		long long n;
 		is >> n;
-		a = mint(n);
+		a = modint(n);
 		return is;
 	}
 };
+using mint = modint<MPRIME>;

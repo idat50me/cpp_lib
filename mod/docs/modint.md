@@ -9,7 +9,7 @@ documentation_of: ../modint.cpp
 ModInt と Integer の演算もできる（下記参照）．
 
 ## コンストラクタ
-- `mint<mod>(x)`：`mod` を法としたときの `x`．`mod` は素数．
+- `modint<mod>(x)`：`mod` を法としたときの `x`．`mod` は素数．
 
 ## 補足
 以下の演算子に対応している．
