@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':heavy_check_mark:'
+  - icon: ':question:'
     path: combinatorics/combinatorics.cpp
     title: "Combinatorics(\u7D44\u5408\u305B\u6570\u5B66)"
   _extendedRequiredBy: []

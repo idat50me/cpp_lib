@@ -3,7 +3,7 @@ data:
   libraryCategories:
   - name: combinatorics
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: combinatorics/combinatorics.cpp
       title: "Combinatorics(\u7D44\u5408\u305B\u6570\u5B66)"
     - icon: ':heavy_check_mark:'
@@ -39,7 +39,7 @@ data:
       title: "Union-Find\u6728"
   - name: math
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: math/binpow.cpp
       title: "Binary-Power(\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5)"
     - icon: ':heavy_check_mark:'
@@ -71,7 +71,7 @@ data:
         \u7BE9)"
   - name: mod
     pages:
-    - icon: ':heavy_check_mark:'
+    - icon: ':question:'
       path: mod/modint.cpp
       title: ModInt
   - name: string
@@ -236,7 +236,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yuki_0888.test.cpp
       title: test/yuki_0888.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yuki_1035.test.cpp
       title: test/yuki_1035.test.cpp
     - icon: ':heavy_check_mark:'
