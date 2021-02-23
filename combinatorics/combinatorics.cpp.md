@@ -9,12 +9,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yuki_0117.test.cpp
     title: test/yuki_0117.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yuki_1035.test.cpp
     title: test/yuki_1035.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"combinatorics/combinatorics.cpp\"\n\r\n#ifndef call_include\r\
@@ -49,7 +49,7 @@ data:
   path: combinatorics/combinatorics.cpp
   requiredBy: []
   timestamp: '2020-12-11 23:24:55+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yuki_0117.test.cpp
   - test/yuki_1035.test.cpp

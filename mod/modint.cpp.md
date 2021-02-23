@@ -9,43 +9,43 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yuki_0599.test.cpp
     title: test/yuki_0599.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yuki_1035.test.cpp
     title: test/yuki_1035.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"mod/modint.cpp\"\n\r\n#ifndef call_include\r\n#define call_include\r\
-    \n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\nconstexpr\
-    \ int MPRIME = 1000000007;\r\n\r\ntemplate<int mod> struct modint {\r\nprivate:\r\
-    \n\tlong long val;\r\n\r\npublic:\r\n\tmodint(long long x = 0) : val((mod + x\
-    \ % mod) % mod) {}\r\n\r\nprivate:\r\n\tmodint inv() const {\r\n\t\tlong long\
-    \ x_ = val, xd = 1, xdd = 0, y_ = mod, yd = 0, ydd = 1, div;\r\n\r\n\t\twhile(true)\
-    \ {\r\n\t\t\tif(!y_) return modint(xd);\r\n\t\t\tdiv = x_ / y_;\r\n\t\t\tx_ -=\
-    \ div * y_;\r\n\t\t\txd -= div * yd;\r\n\t\t\txdd -= div * ydd;\r\n\r\n\t\t\t\
-    if(!x_) return modint(yd);\r\n\t\t\tdiv = y_ / x_;\r\n\t\t\ty_ -= div * x_;\r\n\
-    \t\t\tyd -= div * xd;\r\n\t\t\tydd -= div * xdd;\r\n\t\t}\r\n\t}\r\n\r\npublic:\r\
-    \n\tmodint operator-() const {\r\n\t\treturn modint(-val);\r\n\t}\r\n\r\n\tmodint\
-    \ &operator+=(const modint &a) {\r\n\t\tval += a.val;\r\n\t\tif(val >= mod) val\
-    \ -= mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmodint &operator-=(const modint &a)\
-    \ {\r\n\t\tval -= a.val;\r\n\t\tif(val < 0) val += mod;\r\n\t\treturn *this;\r\
-    \n\t}\r\n\tmodint &operator*=(const modint &a) {\r\n\t\t(val *= a.val) %= mod;\r\
-    \n\t\treturn *this;\r\n\t}\r\n\tmodint &operator/=(const modint &a) {\r\n\t\t\
-    return (*this) *= a.inv();\r\n\t}\r\n\tmodint &operator+=(const long long &a)\
-    \ {\r\n\t\t(val += mod + a % mod) %= mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmodint\
-    \ &operator-=(const long long &a) {\r\n\t\t(val += mod - a % mod) %= mod;\r\n\t\
-    \treturn *this;\r\n\t}\r\n\tmodint &operator*=(const long long &a) {\r\n\t\t(val\
-    \ *= mod + a % mod) %= mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmodint &operator/=(const\
-    \ long long &a) {\r\n\t\treturn (*this) /= modint(a);\r\n\t}\r\n\r\n\tmodint operator+(const\
-    \ modint &a) const {\r\n\t\treturn modint(*this) += a;\r\n\t}\r\n\tmodint operator-(const\
-    \ modint &a) const {\r\n\t\treturn modint(*this) -= a;\r\n\t}\r\n\tmodint operator*(const\
-    \ modint &a) const {\r\n\t\treturn modint(*this) *= a;\r\n\t}\r\n\tmodint operator/(const\
-    \ modint &a) const {\r\n\t\treturn modint(*this) /= a;\r\n\t}\r\n\tmodint operator+(const\
-    \ long long &a) const {\r\n\t\treturn modint(*this) += a;\r\n\t}\r\n\tmodint operator-(const\
-    \ long long &a) const {\r\n\t\treturn modint(*this) -= a;\r\n\t}\r\n\tmodint operator*(const\
-    \ long long &a) const {\r\n\t\treturn modint(*this) *= a;\r\n\t}\r\n\tmodint operator/(const\
+    \n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\ntemplate<int\
+    \ mod> struct modint {\r\nprivate:\r\n\tlong long val;\r\n\r\npublic:\r\n\tmodint(long\
+    \ long x = 0) : val((mod + x % mod) % mod) {}\r\n\r\nprivate:\r\n\tmodint inv()\
+    \ const {\r\n\t\tlong long x_ = val, xd = 1, xdd = 0, y_ = mod, yd = 0, ydd =\
+    \ 1, div;\r\n\r\n\t\twhile(true) {\r\n\t\t\tif(!y_) return modint(xd);\r\n\t\t\
+    \tdiv = x_ / y_;\r\n\t\t\tx_ -= div * y_;\r\n\t\t\txd -= div * yd;\r\n\t\t\txdd\
+    \ -= div * ydd;\r\n\r\n\t\t\tif(!x_) return modint(yd);\r\n\t\t\tdiv = y_ / x_;\r\
+    \n\t\t\ty_ -= div * x_;\r\n\t\t\tyd -= div * xd;\r\n\t\t\tydd -= div * xdd;\r\n\
+    \t\t}\r\n\t}\r\n\r\npublic:\r\n\tmodint operator-() const {\r\n\t\treturn modint(-val);\r\
+    \n\t}\r\n\r\n\tmodint &operator+=(const modint &a) {\r\n\t\tval += a.val;\r\n\t\
+    \tif(val >= mod) val -= mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmodint &operator-=(const\
+    \ modint &a) {\r\n\t\tval -= a.val;\r\n\t\tif(val < 0) val += mod;\r\n\t\treturn\
+    \ *this;\r\n\t}\r\n\tmodint &operator*=(const modint &a) {\r\n\t\t(val *= a.val)\
+    \ %= mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmodint &operator/=(const modint &a)\
+    \ {\r\n\t\treturn (*this) *= a.inv();\r\n\t}\r\n\tmodint &operator+=(const long\
+    \ long &a) {\r\n\t\t(val += mod + a % mod) %= mod;\r\n\t\treturn *this;\r\n\t\
+    }\r\n\tmodint &operator-=(const long long &a) {\r\n\t\t(val += mod - a % mod)\
+    \ %= mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmodint &operator*=(const long long\
+    \ &a) {\r\n\t\t(val *= mod + a % mod) %= mod;\r\n\t\treturn *this;\r\n\t}\r\n\t\
+    modint &operator/=(const long long &a) {\r\n\t\treturn (*this) /= modint(a);\r\
+    \n\t}\r\n\r\n\tmodint operator+(const modint &a) const {\r\n\t\treturn modint(*this)\
+    \ += a;\r\n\t}\r\n\tmodint operator-(const modint &a) const {\r\n\t\treturn modint(*this)\
+    \ -= a;\r\n\t}\r\n\tmodint operator*(const modint &a) const {\r\n\t\treturn modint(*this)\
+    \ *= a;\r\n\t}\r\n\tmodint operator/(const modint &a) const {\r\n\t\treturn modint(*this)\
+    \ /= a;\r\n\t}\r\n\tmodint operator+(const long long &a) const {\r\n\t\treturn\
+    \ modint(*this) += a;\r\n\t}\r\n\tmodint operator-(const long long &a) const {\r\
+    \n\t\treturn modint(*this) -= a;\r\n\t}\r\n\tmodint operator*(const long long\
+    \ &a) const {\r\n\t\treturn modint(*this) *= a;\r\n\t}\r\n\tmodint operator/(const\
     \ long long &a) const {\r\n\t\treturn modint(*this) /= modint(a);\r\n\t}\r\n\r\
     \n\tmodint &operator++() {\r\n\t\t(++val) %= mod;\r\n\t\treturn *this;\r\n\t}\r\
     \n\tmodint operator++(int) {\r\n\t\tmodint res(*this);\r\n\t\t(++val) %= mod;\r\
@@ -69,37 +69,37 @@ data:
     \ (mod + a % mod) % mod;\r\n\t\treturn *this;\r\n\t}\r\n\r\n\tfriend ostream &operator<<(ostream\
     \ &os, const modint &a) {\r\n\t\treturn os << a.val;\r\n\t}\r\n\tfriend istream\
     \ &operator>>(istream &is, modint &a) {\r\n\t\tlong long n;\r\n\t\tis >> n;\r\n\
-    \t\ta = modint(n);\r\n\t\treturn is;\r\n\t}\r\n};\r\nusing mint = modint<MPRIME>;\r\
+    \t\ta = modint(n);\r\n\t\treturn is;\r\n\t}\r\n};\r\nusing mint = modint<1000000007>;\r\
     \n"
   code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
-    \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\nconstexpr int MPRIME\
-    \ = 1000000007;\r\n\r\ntemplate<int mod> struct modint {\r\nprivate:\r\n\tlong\
-    \ long val;\r\n\r\npublic:\r\n\tmodint(long long x = 0) : val((mod + x % mod)\
-    \ % mod) {}\r\n\r\nprivate:\r\n\tmodint inv() const {\r\n\t\tlong long x_ = val,\
-    \ xd = 1, xdd = 0, y_ = mod, yd = 0, ydd = 1, div;\r\n\r\n\t\twhile(true) {\r\n\
-    \t\t\tif(!y_) return modint(xd);\r\n\t\t\tdiv = x_ / y_;\r\n\t\t\tx_ -= div *\
-    \ y_;\r\n\t\t\txd -= div * yd;\r\n\t\t\txdd -= div * ydd;\r\n\r\n\t\t\tif(!x_)\
-    \ return modint(yd);\r\n\t\t\tdiv = y_ / x_;\r\n\t\t\ty_ -= div * x_;\r\n\t\t\t\
-    yd -= div * xd;\r\n\t\t\tydd -= div * xdd;\r\n\t\t}\r\n\t}\r\n\r\npublic:\r\n\t\
-    modint operator-() const {\r\n\t\treturn modint(-val);\r\n\t}\r\n\r\n\tmodint\
-    \ &operator+=(const modint &a) {\r\n\t\tval += a.val;\r\n\t\tif(val >= mod) val\
-    \ -= mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmodint &operator-=(const modint &a)\
-    \ {\r\n\t\tval -= a.val;\r\n\t\tif(val < 0) val += mod;\r\n\t\treturn *this;\r\
-    \n\t}\r\n\tmodint &operator*=(const modint &a) {\r\n\t\t(val *= a.val) %= mod;\r\
-    \n\t\treturn *this;\r\n\t}\r\n\tmodint &operator/=(const modint &a) {\r\n\t\t\
-    return (*this) *= a.inv();\r\n\t}\r\n\tmodint &operator+=(const long long &a)\
-    \ {\r\n\t\t(val += mod + a % mod) %= mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmodint\
-    \ &operator-=(const long long &a) {\r\n\t\t(val += mod - a % mod) %= mod;\r\n\t\
-    \treturn *this;\r\n\t}\r\n\tmodint &operator*=(const long long &a) {\r\n\t\t(val\
-    \ *= mod + a % mod) %= mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmodint &operator/=(const\
-    \ long long &a) {\r\n\t\treturn (*this) /= modint(a);\r\n\t}\r\n\r\n\tmodint operator+(const\
-    \ modint &a) const {\r\n\t\treturn modint(*this) += a;\r\n\t}\r\n\tmodint operator-(const\
-    \ modint &a) const {\r\n\t\treturn modint(*this) -= a;\r\n\t}\r\n\tmodint operator*(const\
-    \ modint &a) const {\r\n\t\treturn modint(*this) *= a;\r\n\t}\r\n\tmodint operator/(const\
-    \ modint &a) const {\r\n\t\treturn modint(*this) /= a;\r\n\t}\r\n\tmodint operator+(const\
-    \ long long &a) const {\r\n\t\treturn modint(*this) += a;\r\n\t}\r\n\tmodint operator-(const\
-    \ long long &a) const {\r\n\t\treturn modint(*this) -= a;\r\n\t}\r\n\tmodint operator*(const\
-    \ long long &a) const {\r\n\t\treturn modint(*this) *= a;\r\n\t}\r\n\tmodint operator/(const\
+    \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\ntemplate<int mod> struct\
+    \ modint {\r\nprivate:\r\n\tlong long val;\r\n\r\npublic:\r\n\tmodint(long long\
+    \ x = 0) : val((mod + x % mod) % mod) {}\r\n\r\nprivate:\r\n\tmodint inv() const\
+    \ {\r\n\t\tlong long x_ = val, xd = 1, xdd = 0, y_ = mod, yd = 0, ydd = 1, div;\r\
+    \n\r\n\t\twhile(true) {\r\n\t\t\tif(!y_) return modint(xd);\r\n\t\t\tdiv = x_\
+    \ / y_;\r\n\t\t\tx_ -= div * y_;\r\n\t\t\txd -= div * yd;\r\n\t\t\txdd -= div\
+    \ * ydd;\r\n\r\n\t\t\tif(!x_) return modint(yd);\r\n\t\t\tdiv = y_ / x_;\r\n\t\
+    \t\ty_ -= div * x_;\r\n\t\t\tyd -= div * xd;\r\n\t\t\tydd -= div * xdd;\r\n\t\t\
+    }\r\n\t}\r\n\r\npublic:\r\n\tmodint operator-() const {\r\n\t\treturn modint(-val);\r\
+    \n\t}\r\n\r\n\tmodint &operator+=(const modint &a) {\r\n\t\tval += a.val;\r\n\t\
+    \tif(val >= mod) val -= mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmodint &operator-=(const\
+    \ modint &a) {\r\n\t\tval -= a.val;\r\n\t\tif(val < 0) val += mod;\r\n\t\treturn\
+    \ *this;\r\n\t}\r\n\tmodint &operator*=(const modint &a) {\r\n\t\t(val *= a.val)\
+    \ %= mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmodint &operator/=(const modint &a)\
+    \ {\r\n\t\treturn (*this) *= a.inv();\r\n\t}\r\n\tmodint &operator+=(const long\
+    \ long &a) {\r\n\t\t(val += mod + a % mod) %= mod;\r\n\t\treturn *this;\r\n\t\
+    }\r\n\tmodint &operator-=(const long long &a) {\r\n\t\t(val += mod - a % mod)\
+    \ %= mod;\r\n\t\treturn *this;\r\n\t}\r\n\tmodint &operator*=(const long long\
+    \ &a) {\r\n\t\t(val *= mod + a % mod) %= mod;\r\n\t\treturn *this;\r\n\t}\r\n\t\
+    modint &operator/=(const long long &a) {\r\n\t\treturn (*this) /= modint(a);\r\
+    \n\t}\r\n\r\n\tmodint operator+(const modint &a) const {\r\n\t\treturn modint(*this)\
+    \ += a;\r\n\t}\r\n\tmodint operator-(const modint &a) const {\r\n\t\treturn modint(*this)\
+    \ -= a;\r\n\t}\r\n\tmodint operator*(const modint &a) const {\r\n\t\treturn modint(*this)\
+    \ *= a;\r\n\t}\r\n\tmodint operator/(const modint &a) const {\r\n\t\treturn modint(*this)\
+    \ /= a;\r\n\t}\r\n\tmodint operator+(const long long &a) const {\r\n\t\treturn\
+    \ modint(*this) += a;\r\n\t}\r\n\tmodint operator-(const long long &a) const {\r\
+    \n\t\treturn modint(*this) -= a;\r\n\t}\r\n\tmodint operator*(const long long\
+    \ &a) const {\r\n\t\treturn modint(*this) *= a;\r\n\t}\r\n\tmodint operator/(const\
     \ long long &a) const {\r\n\t\treturn modint(*this) /= modint(a);\r\n\t}\r\n\r\
     \n\tmodint &operator++() {\r\n\t\t(++val) %= mod;\r\n\t\treturn *this;\r\n\t}\r\
     \n\tmodint operator++(int) {\r\n\t\tmodint res(*this);\r\n\t\t(++val) %= mod;\r\
@@ -123,14 +123,14 @@ data:
     \ (mod + a % mod) % mod;\r\n\t\treturn *this;\r\n\t}\r\n\r\n\tfriend ostream &operator<<(ostream\
     \ &os, const modint &a) {\r\n\t\treturn os << a.val;\r\n\t}\r\n\tfriend istream\
     \ &operator>>(istream &is, modint &a) {\r\n\t\tlong long n;\r\n\t\tis >> n;\r\n\
-    \t\ta = modint(n);\r\n\t\treturn is;\r\n\t}\r\n};\r\nusing mint = modint<MPRIME>;\r\
+    \t\ta = modint(n);\r\n\t\treturn is;\r\n\t}\r\n};\r\nusing mint = modint<1000000007>;\r\
     \n"
   dependsOn: []
   isVerificationFile: false
   path: mod/modint.cpp
   requiredBy: []
-  timestamp: '2021-02-23 15:21:37+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  timestamp: '2021-02-23 15:26:37+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yuki_1035.test.cpp
   - test/yuki_0599.test.cpp
