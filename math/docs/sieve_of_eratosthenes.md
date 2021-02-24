@@ -8,7 +8,7 @@ documentation_of: ../sieve_of_eratosthenes.cpp
 前処理して素数判定を高速にやるなど．
 
 ## コンストラクタ
-- `Sieve(n)`：$n$ までの篩を前計算する．
+- `Sieve(n)`：$n$ までの篩を前計算する．$n \leq 10^{8}$ 程度．
 
 ## メンバ関数
 - `isprime(x)`：`x` が素数であれば `true`を，そうでなければ `false` を返す．
@@ -20,3 +20,6 @@ documentation_of: ../sieve_of_eratosthenes.cpp
 - `isprime(x)`：$O(1)$
 - `primefact(n)`：$O(\log n)$
 - `divisorcount(n)`：$O(\log n)$
+
+## 参考
+- [Sieve of Eratosthenes With Linear Time Complexity  - Competitive Programming Algorithms](https://cp-algorithms.com/algebra/prime-sieve-linear.html)
