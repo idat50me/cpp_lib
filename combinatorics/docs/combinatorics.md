@@ -7,7 +7,7 @@ documentation_of: ../combinatorics.cpp
 ${}_nP_r, {}_nC_r, {}_nH_r\ (\mathrm{mod}\ p)$ を求める．
 
 ## コンストラクタ
-- `COMB(n, p)`：$n$ の最大値を `n`，法を `p` とする．${}_nH_r$ を求める場合は $(n+r-1)$ の最大値を `n` とする．$n \leq 10^7$ 程度．$p$ は素数．
+- `COMB(n, p)`：$n$ の最大値を `n`，法を `p` とする．${}_nH_r$ を求める場合は $(n+r-1)$ の最大値を `n` とする．$n \leq 10^7$, $p \leq$ `INT_MAX` 程度．$p$ は素数．
 
 ## メンバ関数
 - `npr(n, r)`
