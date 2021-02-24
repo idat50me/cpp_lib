@@ -16,39 +16,42 @@ data:
     links: []
   bundledCode: "#line 2 \"math/sieve_of_eratosthenes.cpp\"\n\r\n#ifndef call_include\r\
     \n#define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n\
-    #endif\r\n\r\nstruct Sieve {\r\nprivate:\r\n\tint N;\r\n\tvector<int> dv,primes;\r\
-    \n\r\npublic:\r\n\tSieve(int n=2) : N(n), dv(n+1,0) {\r\n\t\tdv[0] = dv[1] = -1;\r\
-    \n\t\tfor(int i=2; i<=N; i++) {\r\n\t\t\tif(dv[i]) continue;\r\n\t\t\tprimes.emplace_back(i);\r\
-    \n\t\t\tdv[i] = i;\r\n\t\t\tif(i > (1<<15)) continue;\r\n\t\t\tfor(int j=i*i;\
-    \ j<=N; j+=i) if(!dv[j]) dv[j] = i;\r\n\t\t}\r\n\t}\r\n\r\n\tbool isprime(int\
-    \ x) {\r\n\t\treturn dv[x] == x;\r\n\t}\r\n\r\n\tvector<pair<int,int>> primefact(int\
-    \ n) {\r\n\t\tif(n == 1) return vector<pair<int,int>>({});\r\n\t\tvector<pair<int,int>>\
-    \ res = {pair<int,int>(dv[n],1)};\r\n\t\tn /= dv[n];\r\n\t\twhile(n > 1) {\r\n\
-    \t\t\tint d = dv[n];\r\n\t\t\tif(res.back().first == d) res.back().second++;\r\
-    \n\t\t\telse res.emplace_back(d,1);\r\n\t\t\tn /= d;\r\n\t\t}\r\n\t\treturn res;\r\
-    \n\t}\r\n\r\n\tint divisorcount(int n) {\r\n\t\tint res = 1;\r\n\t\tvector<pair<int,int>>\
-    \ flist = primefact(n);\r\n\t\tfor(pair<int,int> &p: flist) {\r\n\t\t\tres *=\
-    \ p.second+1;\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\n};\r\n"
+    #endif\r\n\r\nstruct Sieve {\r\nprivate:\r\n\tint N;\r\n\tvector<int> dv, primes;\r\
+    \n\r\npublic:\r\n\tSieve(int n) : N(n), dv(n + 1, 0) {\r\n\t\tdv[0] = dv[1] =\
+    \ -1;\r\n\t\tfor(int i = 2; i <= N; i++) {\r\n\t\t\tif(!dv[i]) {\r\n\t\t\t\tprimes.emplace_back(i);\r\
+    \n\t\t\t\tdv[i] = i;\r\n\t\t\t}\r\n\t\t\tfor(int j = 0; j <= primes.size() &&\
+    \ primes[j] <= dv[i] && i * primes[j] <= N; j++)\r\n\t\t\t\tdv[i * primes[j]]\
+    \ = primes[j];\r\n\t\t}\r\n\t}\r\n\r\n\tbool isprime(int x) {\r\n\t\treturn dv[x]\
+    \ == x;\r\n\t}\r\n\r\n\tvector<pair<int, int>> primefact(int n) {\r\n\t\tif(n\
+    \ == 1) return vector<pair<int, int>>({});\r\n\t\tvector<pair<int, int>> res =\
+    \ {pair<int, int>(dv[n], 1)};\r\n\t\tn /= dv[n];\r\n\t\twhile(n > 1) {\r\n\t\t\
+    \tint d = dv[n];\r\n\t\t\tif(res.back().first == d) res.back().second++;\r\n\t\
+    \t\telse\r\n\t\t\t\tres.emplace_back(d, 1);\r\n\t\t\tn /= d;\r\n\t\t}\r\n\t\t\
+    return res;\r\n\t}\r\n\r\n\tint divisorcount(int n) {\r\n\t\tint res = 1;\r\n\t\
+    \tvector<pair<int, int>> flist = primefact(n);\r\n\t\tfor(pair<int, int> &p :\
+    \ flist) {\r\n\t\t\tres *= p.second + 1;\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\n\
+    };\r\n"
   code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
     \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\nstruct Sieve {\r\n\
-    private:\r\n\tint N;\r\n\tvector<int> dv,primes;\r\n\r\npublic:\r\n\tSieve(int\
-    \ n=2) : N(n), dv(n+1,0) {\r\n\t\tdv[0] = dv[1] = -1;\r\n\t\tfor(int i=2; i<=N;\
-    \ i++) {\r\n\t\t\tif(dv[i]) continue;\r\n\t\t\tprimes.emplace_back(i);\r\n\t\t\
-    \tdv[i] = i;\r\n\t\t\tif(i > (1<<15)) continue;\r\n\t\t\tfor(int j=i*i; j<=N;\
-    \ j+=i) if(!dv[j]) dv[j] = i;\r\n\t\t}\r\n\t}\r\n\r\n\tbool isprime(int x) {\r\
-    \n\t\treturn dv[x] == x;\r\n\t}\r\n\r\n\tvector<pair<int,int>> primefact(int n)\
-    \ {\r\n\t\tif(n == 1) return vector<pair<int,int>>({});\r\n\t\tvector<pair<int,int>>\
-    \ res = {pair<int,int>(dv[n],1)};\r\n\t\tn /= dv[n];\r\n\t\twhile(n > 1) {\r\n\
-    \t\t\tint d = dv[n];\r\n\t\t\tif(res.back().first == d) res.back().second++;\r\
-    \n\t\t\telse res.emplace_back(d,1);\r\n\t\t\tn /= d;\r\n\t\t}\r\n\t\treturn res;\r\
-    \n\t}\r\n\r\n\tint divisorcount(int n) {\r\n\t\tint res = 1;\r\n\t\tvector<pair<int,int>>\
-    \ flist = primefact(n);\r\n\t\tfor(pair<int,int> &p: flist) {\r\n\t\t\tres *=\
-    \ p.second+1;\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\n};\r\n"
+    private:\r\n\tint N;\r\n\tvector<int> dv, primes;\r\n\r\npublic:\r\n\tSieve(int\
+    \ n) : N(n), dv(n + 1, 0) {\r\n\t\tdv[0] = dv[1] = -1;\r\n\t\tfor(int i = 2; i\
+    \ <= N; i++) {\r\n\t\t\tif(!dv[i]) {\r\n\t\t\t\tprimes.emplace_back(i);\r\n\t\t\
+    \t\tdv[i] = i;\r\n\t\t\t}\r\n\t\t\tfor(int j = 0; j <= primes.size() && primes[j]\
+    \ <= dv[i] && i * primes[j] <= N; j++)\r\n\t\t\t\tdv[i * primes[j]] = primes[j];\r\
+    \n\t\t}\r\n\t}\r\n\r\n\tbool isprime(int x) {\r\n\t\treturn dv[x] == x;\r\n\t\
+    }\r\n\r\n\tvector<pair<int, int>> primefact(int n) {\r\n\t\tif(n == 1) return\
+    \ vector<pair<int, int>>({});\r\n\t\tvector<pair<int, int>> res = {pair<int, int>(dv[n],\
+    \ 1)};\r\n\t\tn /= dv[n];\r\n\t\twhile(n > 1) {\r\n\t\t\tint d = dv[n];\r\n\t\t\
+    \tif(res.back().first == d) res.back().second++;\r\n\t\t\telse\r\n\t\t\t\tres.emplace_back(d,\
+    \ 1);\r\n\t\t\tn /= d;\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\n\r\n\tint divisorcount(int\
+    \ n) {\r\n\t\tint res = 1;\r\n\t\tvector<pair<int, int>> flist = primefact(n);\r\
+    \n\t\tfor(pair<int, int> &p : flist) {\r\n\t\t\tres *= p.second + 1;\r\n\t\t}\r\
+    \n\t\treturn res;\r\n\t}\r\n};\r\n"
   dependsOn: []
   isVerificationFile: false
   path: math/sieve_of_eratosthenes.cpp
   requiredBy: []
-  timestamp: '2021-01-30 16:48:29+09:00'
+  timestamp: '2021-02-24 14:58:21+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_NTL_1_A.test.cpp
@@ -64,7 +67,7 @@ title: "Sieve-of-Eratosthenes(\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u
 前処理して素数判定を高速にやるなど．
 
 ## コンストラクタ
-- `Sieve(n)`：$n$ までの篩を前計算する．
+- `Sieve(n)`：$n$ までの篩を前計算する．$n \leq 10^{8}$ 程度．
 
 ## メンバ関数
 - `isprime(x)`：`x` が素数であれば `true`を，そうでなければ `false` を返す．
@@ -76,3 +79,6 @@ title: "Sieve-of-Eratosthenes(\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u
 - `isprime(x)`：$O(1)$
 - `primefact(n)`：$O(\log n)$
 - `divisorcount(n)`：$O(\log n)$
+
+## 参考
+- [Sieve of Eratosthenes With Linear Time Complexity  - Competitive Programming Algorithms](https://cp-algorithms.com/algebra/prime-sieve-linear.html)
