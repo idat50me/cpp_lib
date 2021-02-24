@@ -15,6 +15,9 @@ data:
   - name: dp
     pages:
     - icon: ':heavy_check_mark:'
+      path: dp/2d_cumulative_sum.cpp
+      title: 2D-Cumulative-Sum
+    - icon: ':heavy_check_mark:'
       path: dp/lcs.cpp
       title: "LCS(\u6700\u9577\u5171\u901A\u90E8\u5206\u5217)"
     - icon: ':heavy_check_mark:'
@@ -119,6 +122,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj_0341.test.cpp
       title: test/aoj_0341.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj_0560.test.cpp
+      title: test/aoj_0560.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/aoj_2429.test.cpp
       title: test/aoj_2429.test.cpp

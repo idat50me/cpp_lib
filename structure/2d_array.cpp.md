@@ -1,11 +1,17 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: dp/2d_cumulative_sum.cpp
+    title: 2D-Cumulative-Sum
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj_0341.test.cpp
     title: test/aoj_0341.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj_0560.test.cpp
+    title: test/aoj_0560.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj_2429.test.cpp
     title: test/aoj_2429.test.cpp
@@ -54,7 +60,8 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: structure/2d_array.cpp
-  requiredBy: []
+  requiredBy:
+  - dp/2d_cumulative_sum.cpp
   timestamp: '2021-01-31 15:36:56+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
@@ -62,6 +69,7 @@ data:
   - test/aoj_2429.test.cpp
   - test/yuki_0177.test.cpp
   - test/aoj_0341.test.cpp
+  - test/aoj_0560.test.cpp
 documentation_of: structure/2d_array.cpp
 layout: document
 title: "2D-Array( $2$ \u6B21\u5143\u914D\u5217)"
