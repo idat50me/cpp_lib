@@ -4,7 +4,7 @@ data:
   _extendedRequiredBy:
   - icon: ':heavy_check_mark:'
     path: dp/2d_cumulative_sum.cpp
-    title: 2D-Cumulative-Sum
+    title: "2D-Cumulative-Sum( $2$ \u6B21\u5143\u7D2F\u7A4D\u548C)"
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj_0341.test.cpp

@@ -16,7 +16,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: dp/2d_cumulative_sum.cpp
-      title: 2D-Cumulative-Sum
+      title: "2D-Cumulative-Sum( $2$ \u6B21\u5143\u7D2F\u7A4D\u548C)"
     - icon: ':heavy_check_mark:'
       path: dp/lcs.cpp
       title: "LCS(\u6700\u9577\u5171\u901A\u90E8\u5206\u5217)"

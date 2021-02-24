@@ -59,7 +59,7 @@ data:
   - test/aoj_0560.test.cpp
 documentation_of: dp/2d_cumulative_sum.cpp
 layout: document
-title: 2D-Cumulative-Sum
+title: "2D-Cumulative-Sum( $2$ \u6B21\u5143\u7D2F\u7A4D\u548C)"
 ---
 
 ## なにこれ
