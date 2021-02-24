@@ -1,5 +1,5 @@
 ---
-title: 2D-Cumulative-Sum
+title: 2D-Cumulative-Sum( $2$ 次元累積和)
 documentation_of: ../2d_cumulative_sum.cpp
 ---
 
