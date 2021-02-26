@@ -18,20 +18,22 @@ data:
     \r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
     \nusing namespace std;\r\n#endif\r\n\r\n#line 2 \"structure/2d_array.cpp\"\n\r\
     \n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\n\
-    using namespace std;\r\n#endif\r\n\r\ntemplate<typename T>\r\nstruct v2d {\r\n\
-    private:\r\n\tvector<vector<T>> m;\r\n\r\npublic:\r\n\tv2d() {}\r\n\tv2d(int h,\
-    \ int w) : m(h, vector<T>(w)) {}\r\n\tv2d(int h, int w, const T &init) : m(h,\
-    \ vector<T>(w, init)) {}\r\n\tv2d(const initializer_list<initializer_list<T>>\
-    \ m_init) : m(m_init.begin(), m_init.end()) {}\r\n\r\n\tvoid assign(int h, int\
-    \ w) { m.assign(h, vector<T>(w)); }\r\n\tvoid assign(int h, int w, const T init)\
-    \ { m.assign(h, vector<T>(w, init)); }\r\n\r\n\tinline int size() const {\r\n\t\
-    \treturn m.size();\r\n\t}\r\n\r\n\tvoid in() {\r\n\t\tfor(vector<T> &v: m) for(T\
-    \ &val: v) cin>>val;\r\n\t}\r\n\tvoid in(int h, int w) {\r\n\t\tm.resize(h, vector<T>(w));\r\
+    using namespace std;\r\n#endif\r\n\r\ntemplate<typename T> struct v2d {\r\nprivate:\r\
+    \n\tvector<vector<T>> m;\r\n\r\npublic:\r\n\tv2d() {}\r\n\tv2d(int h, int w) :\
+    \ m(h, vector<T>(w)) {}\r\n\tv2d(int h, int w, const T &init) : m(h, vector<T>(w,\
+    \ init)) {}\r\n\tv2d(const initializer_list<initializer_list<T>> m_init) : m(m_init.begin(),\
+    \ m_init.end()) {}\r\n\r\n\tvoid assign(int h, int w) {\r\n\t\tm.assign(h, vector<T>(w));\r\
+    \n\t}\r\n\tvoid assign(int h, int w, const T init) {\r\n\t\tm.assign(h, vector<T>(w,\
+    \ init));\r\n\t}\r\n\r\n\tinline int size() const {\r\n\t\treturn m.size();\r\n\
+    \t}\r\n\r\n\tvoid in() {\r\n\t\tfor(vector<T> &v : m)\r\n\t\t\tfor(T &val : v)\
+    \ cin >> val;\r\n\t}\r\n\tvoid in(int h, int w) {\r\n\t\tm.resize(h, vector<T>(w));\r\
     \n\t\tin();\r\n\t}\r\n\r\n\tvoid out() {\r\n\t\tint h = m.size();\r\n\t\tfor(vector<T>\
-    \ &v: m) {\r\n\t\t\tint sz = v.size();\r\n\t\t\tfor(int j=0; j<sz; j++) {\r\n\t\
-    \t\t\tcout<<v[j]<<(j==sz-1 ? '\\n' : ' ');\r\n\t\t\t}\r\n\t\t}\r\n\t\tcout<<flush;\r\
-    \n\t}\r\n\r\n\tinline vector<T> &operator[](int idx) {\r\n\t\tassert(0<=idx &&\
-    \ idx<m.size());\r\n\t\treturn m[idx];\r\n\t}\r\n};\r\n#line 10 \"test/aoj_ITP1_6_B.test.cpp\"\
+    \ &v : m) {\r\n\t\t\tint sz = v.size();\r\n\t\t\tfor(int j = 0; j < sz; j++) {\r\
+    \n\t\t\t\tcout << v[j] << (j == sz - 1 ? '\\n' : ' ');\r\n\t\t\t}\r\n\t\t}\r\n\
+    \t\tcout << flush;\r\n\t}\r\n\r\n\tinline vector<T> &operator[](int idx) {\r\n\
+    \t\tassert(0 <= idx && idx < m.size());\r\n\t\treturn m[idx];\r\n\t}\r\n\r\n\t\
+    bool rangeout(int x, int y) {\r\n\t\tif(x < 0 || y < 0 || x >= size() || y >=\
+    \ m[x].size()) return true;\r\n\t\treturn false;\r\n\t}\r\n};\r\n#line 10 \"test/aoj_ITP1_6_B.test.cpp\"\
     \n\r\nint main() {\r\n\tint N; cin>>N;\r\n\tv2d card(4,14,true);\r\n\tmap<char,int>\
     \ ch2i = {{'S',0}, {'H',1}, {'C',2}, {'D',3}};\r\n\tmap<int,char> i2ch = {{0,'S'},\
     \ {1,'H'}, {2,'C'}, {3,'D'}};\r\n\r\n\tfor(int i=0; i<N; i++) {\r\n\t\tchar ch;\
@@ -52,7 +54,7 @@ data:
   isVerificationFile: true
   path: test/aoj_ITP1_6_B.test.cpp
   requiredBy: []
-  timestamp: '2021-01-31 15:36:56+09:00'
+  timestamp: '2021-02-26 21:39:59+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_ITP1_6_B.test.cpp
