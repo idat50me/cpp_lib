@@ -17,32 +17,32 @@ data:
   bundledCode: "#line 2 \"math/extgcd.cpp\"\n\r\n#ifndef call_include\r\n#define call_include\r\
     \n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\nlong long\
     \ extgcd(long long a, long long b, long long &x, long long &y) {\r\n\tlong long\
-    \ x_ = a, xd = 1, xdd = 0,\r\n\t          y_ = b, yd = 0, ydd = 1,\r\n\t     \
-    \     div;\r\n\twhile(true) {\r\n\t\tif(!y_) {\r\n\t\t\tx = xd; y = xdd;\r\n\t\
-    \t\treturn x_;\r\n\t\t}\r\n\t\tdiv = x_/y_;\r\n\t\tx_  -= div*y_;\r\n\t\txd  -=\
-    \ div*yd;\r\n\t\txdd -= div*ydd;\r\n\r\n\t\tif(!x_) {\r\n\t\t\tx = yd; y = ydd;\r\
-    \n\t\t\treturn y_;\r\n\t\t}\r\n\t\tdiv = y_/x_;\r\n\t\ty_  -= div*x_;\r\n\t\t\
-    yd  -= div*xd;\r\n\t\tydd -= div*xdd;\r\n\t}\r\n}\r\n\r\nlong long extgcd(long\
+    \ x_ = abs(a), xd = 1, xdd = 0, y_ = abs(b), yd = 0, ydd = 1, div;\r\n\twhile(true)\
+    \ {\r\n\t\tif(!y_) {\r\n\t\t\tx = xd;\r\n\t\t\ty = xdd;\r\n\t\t\treturn x_;\r\n\
+    \t\t}\r\n\t\tdiv = x_ / y_;\r\n\t\tx_ -= div * y_;\r\n\t\txd -= div * yd;\r\n\t\
+    \txdd -= div * ydd;\r\n\r\n\t\tif(!x_) {\r\n\t\t\tx = yd;\r\n\t\t\ty = ydd;\r\n\
+    \t\t\treturn y_;\r\n\t\t}\r\n\t\tdiv = y_ / x_;\r\n\t\ty_ -= div * x_;\r\n\t\t\
+    yd -= div * xd;\r\n\t\tydd -= div * xdd;\r\n\t}\r\n}\r\n\r\nlong long extgcd(long\
     \ long a, long long b, long long c, long long &x, long long &y) {\r\n\tlong long\
-    \ d = extgcd(a, b, x, y);\r\n\tif(c % d) return -1;\r\n\tx *= c/d;\r\n\ty *= c/d;\r\
-    \n\treturn d;\r\n}\r\n"
+    \ d = extgcd(a, b, x, y);\r\n\tif(c % d) return -1;\r\n\tx *= c / d;\r\n\tif(a\
+    \ < 0) x = -x;\r\n\ty *= c / d;\r\n\tif(b < 0) y = -y;\r\n\treturn d;\r\n}\r\n"
   code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
     \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\nlong long extgcd(long\
-    \ long a, long long b, long long &x, long long &y) {\r\n\tlong long x_ = a, xd\
-    \ = 1, xdd = 0,\r\n\t          y_ = b, yd = 0, ydd = 1,\r\n\t          div;\r\n\
-    \twhile(true) {\r\n\t\tif(!y_) {\r\n\t\t\tx = xd; y = xdd;\r\n\t\t\treturn x_;\r\
-    \n\t\t}\r\n\t\tdiv = x_/y_;\r\n\t\tx_  -= div*y_;\r\n\t\txd  -= div*yd;\r\n\t\t\
-    xdd -= div*ydd;\r\n\r\n\t\tif(!x_) {\r\n\t\t\tx = yd; y = ydd;\r\n\t\t\treturn\
-    \ y_;\r\n\t\t}\r\n\t\tdiv = y_/x_;\r\n\t\ty_  -= div*x_;\r\n\t\tyd  -= div*xd;\r\
-    \n\t\tydd -= div*xdd;\r\n\t}\r\n}\r\n\r\nlong long extgcd(long long a, long long\
-    \ b, long long c, long long &x, long long &y) {\r\n\tlong long d = extgcd(a, b,\
-    \ x, y);\r\n\tif(c % d) return -1;\r\n\tx *= c/d;\r\n\ty *= c/d;\r\n\treturn d;\r\
-    \n}\r\n"
+    \ long a, long long b, long long &x, long long &y) {\r\n\tlong long x_ = abs(a),\
+    \ xd = 1, xdd = 0, y_ = abs(b), yd = 0, ydd = 1, div;\r\n\twhile(true) {\r\n\t\
+    \tif(!y_) {\r\n\t\t\tx = xd;\r\n\t\t\ty = xdd;\r\n\t\t\treturn x_;\r\n\t\t}\r\n\
+    \t\tdiv = x_ / y_;\r\n\t\tx_ -= div * y_;\r\n\t\txd -= div * yd;\r\n\t\txdd -=\
+    \ div * ydd;\r\n\r\n\t\tif(!x_) {\r\n\t\t\tx = yd;\r\n\t\t\ty = ydd;\r\n\t\t\t\
+    return y_;\r\n\t\t}\r\n\t\tdiv = y_ / x_;\r\n\t\ty_ -= div * x_;\r\n\t\tyd -=\
+    \ div * xd;\r\n\t\tydd -= div * xdd;\r\n\t}\r\n}\r\n\r\nlong long extgcd(long\
+    \ long a, long long b, long long c, long long &x, long long &y) {\r\n\tlong long\
+    \ d = extgcd(a, b, x, y);\r\n\tif(c % d) return -1;\r\n\tx *= c / d;\r\n\tif(a\
+    \ < 0) x = -x;\r\n\ty *= c / d;\r\n\tif(b < 0) y = -y;\r\n\treturn d;\r\n}\r\n"
   dependsOn: []
   isVerificationFile: false
   path: math/extgcd.cpp
   requiredBy: []
-  timestamp: '2020-12-23 15:21:02+09:00'
+  timestamp: '2021-02-28 01:32:23+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_ALDS1_1_B.test.cpp
