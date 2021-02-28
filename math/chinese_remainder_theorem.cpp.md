@@ -29,29 +29,29 @@ data:
     long long extgcd(long long a, long long b, long long c, long long &x, long long\
     \ &y) {\r\n\tlong long d = extgcd(a, b, x, y);\r\n\tif(c % d) return -1;\r\n\t\
     x *= c / d;\r\n\tif(a < 0) x = -x;\r\n\ty *= c / d;\r\n\tif(b < 0) y = -y;\r\n\
-    \treturn d;\r\n}\r\n#line 10 \"math/chinese_remainder_theorem.cpp\"\nconst long\
-    \ long inf = 9e18;\r\n\r\npair<long long, long long> crt(const vector<long long>\
-    \ &B, const vector<long long> &M) {\r\n\tlong long r = 0, m = 1, p, q, d, lcm;\r\
-    \n\tfor(int i = 0; i < B.size(); i++) {\r\n\t\td = extgcd(m, M[i], B[i] - r, p,\
-    \ q);\r\n\t\tif(d == -1) return make_pair(0LL, 0LL);\r\n\t\tr += p % (M[i] / d)\
-    \ * m; // r = r + m * p\r\n\t\tm *= M[i] / d;           // m = lcm(m, M[i])\r\n\
-    \t\tr %= m;                  // r = r % lcm(m, M[i])\r\n\t\tif(r < 0) r += m;\r\
-    \n\t}\r\n\treturn make_pair(r, m);\r\n}\r\n"
+    \treturn d;\r\n}\r\n#line 10 \"math/chinese_remainder_theorem.cpp\"\n\r\npair<long\
+    \ long, long long> crt(const vector<long long> &B, const vector<long long> &M)\
+    \ {\r\n\tlong long r = 0, m = 1, p, q, d, lcm;\r\n\tfor(int i = 0; i < B.size();\
+    \ i++) {\r\n\t\td = extgcd(m, M[i], B[i] - r, p, q);\r\n\t\tif(d == -1) return\
+    \ make_pair(0LL, 0LL);\r\n\t\tr += p % (M[i] / d) * m; // r = r + m * p\r\n\t\t\
+    m *= M[i] / d;           // m = lcm(m, M[i])\r\n\t\tr %= m;                  //\
+    \ r = r % lcm(m, M[i])\r\n\t\tif(r < 0) r += m;\r\n\t}\r\n\treturn make_pair(r,\
+    \ m);\r\n}\r\n"
   code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
     \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\n#include \"../math/extgcd.cpp\"\
-    \r\nconst long long inf = 9e18;\r\n\r\npair<long long, long long> crt(const vector<long\
-    \ long> &B, const vector<long long> &M) {\r\n\tlong long r = 0, m = 1, p, q, d,\
-    \ lcm;\r\n\tfor(int i = 0; i < B.size(); i++) {\r\n\t\td = extgcd(m, M[i], B[i]\
-    \ - r, p, q);\r\n\t\tif(d == -1) return make_pair(0LL, 0LL);\r\n\t\tr += p % (M[i]\
-    \ / d) * m; // r = r + m * p\r\n\t\tm *= M[i] / d;           // m = lcm(m, M[i])\r\
-    \n\t\tr %= m;                  // r = r % lcm(m, M[i])\r\n\t\tif(r < 0) r += m;\r\
-    \n\t}\r\n\treturn make_pair(r, m);\r\n}\r\n"
+    \r\n\r\npair<long long, long long> crt(const vector<long long> &B, const vector<long\
+    \ long> &M) {\r\n\tlong long r = 0, m = 1, p, q, d, lcm;\r\n\tfor(int i = 0; i\
+    \ < B.size(); i++) {\r\n\t\td = extgcd(m, M[i], B[i] - r, p, q);\r\n\t\tif(d ==\
+    \ -1) return make_pair(0LL, 0LL);\r\n\t\tr += p % (M[i] / d) * m; // r = r + m\
+    \ * p\r\n\t\tm *= M[i] / d;           // m = lcm(m, M[i])\r\n\t\tr %= m;     \
+    \             // r = r % lcm(m, M[i])\r\n\t\tif(r < 0) r += m;\r\n\t}\r\n\treturn\
+    \ make_pair(r, m);\r\n}\r\n"
   dependsOn:
   - math/extgcd.cpp
   isVerificationFile: false
   path: math/chinese_remainder_theorem.cpp
   requiredBy: []
-  timestamp: '2021-02-28 15:22:51+09:00'
+  timestamp: '2021-02-28 15:26:01+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yuki_0447.test.cpp
