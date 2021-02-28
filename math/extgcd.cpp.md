@@ -5,6 +5,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/chinese_remainder_theorem.cpp
     title: "Chinese-Remainder-Theorem(\u4E2D\u56FD\u5270\u4F59\u5B9A\u7406)"
+  - icon: ':x:'
+    path: math/garner.cpp
+    title: math/garner.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj_ALDS1_1_B.test.cpp
@@ -12,12 +15,15 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj_NTL_1_E.test.cpp
     title: test/aoj_NTL_1_E.test.cpp
+  - icon: ':x:'
+    path: test/yuki_0187.test.cpp
+    title: test/yuki_0187.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yuki_0447.test.cpp
     title: test/yuki_0447.test.cpp
-  _isVerificationFailed: false
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"math/extgcd.cpp\"\n\r\n#ifndef call_include\r\n#define call_include\r\
@@ -49,12 +55,14 @@ data:
   path: math/extgcd.cpp
   requiredBy:
   - math/chinese_remainder_theorem.cpp
+  - math/garner.cpp
   timestamp: '2021-02-28 01:32:23+09:00'
-  verificationStatus: LIBRARY_ALL_AC
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj_ALDS1_1_B.test.cpp
   - test/yuki_0447.test.cpp
   - test/aoj_NTL_1_E.test.cpp
+  - test/yuki_0187.test.cpp
 documentation_of: math/extgcd.cpp
 layout: document
 title: "extgcd(\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\u6CD5\
