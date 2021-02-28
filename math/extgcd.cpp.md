@@ -7,7 +7,7 @@ data:
     title: "Chinese-Remainder-Theorem(\u4E2D\u56FD\u5270\u4F59\u5B9A\u7406)"
   - icon: ':heavy_check_mark:'
     path: math/garner.cpp
-    title: math/garner.cpp
+    title: Garner's Algorithm
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj_ALDS1_1_B.test.cpp

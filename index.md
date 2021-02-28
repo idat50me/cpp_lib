@@ -60,7 +60,7 @@ data:
       title: "Factorial(\u968E\u4E57)"
     - icon: ':heavy_check_mark:'
       path: math/garner.cpp
-      title: math/garner.cpp
+      title: Garner's Algorithm
     - icon: ':heavy_check_mark:'
       path: math/inversion_number.cpp
       title: math/inversion_number.cpp
