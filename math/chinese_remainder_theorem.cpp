@@ -7,7 +7,6 @@ using namespace std;
 #endif
 
 #include "../math/extgcd.cpp"
-const long long inf = 9e18;
 
 pair<long long, long long> crt(const vector<long long> &B, const vector<long long> &M) {
 	long long r = 0, m = 1, p, q, d, lcm;
