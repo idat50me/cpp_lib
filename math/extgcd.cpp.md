@@ -5,7 +5,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: math/chinese_remainder_theorem.cpp
     title: "Chinese-Remainder-Theorem(\u4E2D\u56FD\u5270\u4F59\u5B9A\u7406)"
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: math/garner.cpp
     title: math/garner.cpp
   _extendedVerifiedWith:
@@ -18,12 +18,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yuki_0186.test.cpp
     title: test/yuki_0186.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yuki_0187.test.cpp
     title: test/yuki_0187.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"math/extgcd.cpp\"\n\r\n#ifndef call_include\r\n#define call_include\r\
@@ -57,7 +57,7 @@ data:
   - math/chinese_remainder_theorem.cpp
   - math/garner.cpp
   timestamp: '2021-02-28 01:32:23+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_ALDS1_1_B.test.cpp
   - test/yuki_0186.test.cpp
