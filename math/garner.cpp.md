@@ -29,48 +29,48 @@ data:
     \ long a, long long b, long long c, long long &x, long long &y) {\r\n\tlong long\
     \ d = extgcd(a, b, x, y);\r\n\tif(c % d) return -1;\r\n\tx *= c / d;\r\n\tif(a\
     \ < 0) x = -x;\r\n\ty *= c / d;\r\n\tif(b < 0) y = -y;\r\n\treturn d;\r\n}\r\n\
-    #line 10 \"math/garner.cpp\"\n\r\nlong long pregarner(vector<long long> &b, vector<long\
-    \ long> &m, const int p) {\r\n\tlong long lcm = 1, g, gi, gj;\r\n\tfor(int i =\
-    \ 0; i < m.size(); i++) {\r\n\t\tfor(int j = i + 1; j < m.size(); j++) {\r\n\t\
-    \t\tg = gcd(m[i], m[j]);\r\n\t\t\tif((b[j] - b[i]) % g) return -1;\r\n\r\n\t\t\
-    \tm[i] /= g, m[j] /= g;\r\n\t\t\tgi = gcd(m[i], g), gj = g / gi;\r\n\r\n\t\t\t\
+    #line 10 \"math/garner.cpp\"\n\r\nlong long pregarner(vector<long long> &B, vector<long\
+    \ long> &M, const int p) {\r\n\tlong long lcm = 1, g, gi, gj;\r\n\tfor(int i =\
+    \ 0; i < M.size(); i++) {\r\n\t\tfor(int j = i + 1; j < M.size(); j++) {\r\n\t\
+    \t\tg = gcd(M[i], M[j]);\r\n\t\t\tif((B[j] - B[i]) % g) return -1;\r\n\r\n\t\t\
+    \tM[i] /= g, M[j] /= g;\r\n\t\t\tgi = gcd(M[i], g), gj = g / gi;\r\n\r\n\t\t\t\
     do {\r\n\t\t\t\tg = gcd(gi, gj);\r\n\t\t\t\tgi *= g, gj /= g;\r\n\t\t\t} while(g\
-    \ > 1);\r\n\r\n\t\t\tm[i] *= gi, m[j] *= gj;\r\n\t\t\tb[i] %= m[i], b[j] %= m[j];\r\
-    \n\t\t}\r\n\t\t(lcm *= m[i]) %= p;\r\n\t}\r\n\treturn lcm;\r\n}\r\n\r\nlong long\
-    \ garner(const vector<long long> &b, const vector<long long> &m, const int p)\
-    \ {\r\n\tconst int n = m.size();\r\n\tvector<long long> mprod(n + 1, 1);\r\n\t\
+    \ > 1);\r\n\r\n\t\t\tM[i] *= gi, M[j] *= gj;\r\n\t\t\tB[i] %= M[i], B[j] %= M[j];\r\
+    \n\t\t}\r\n\t\t(lcm *= M[i]) %= p;\r\n\t}\r\n\treturn lcm;\r\n}\r\n\r\nlong long\
+    \ garner(const vector<long long> &B, const vector<long long> &M, const int p)\
+    \ {\r\n\tconst int n = M.size();\r\n\tvector<long long> mprod(n + 1, 1);\r\n\t\
     vector<long long> X(n + 1, 0);\r\n\tlong long t, x, y, inv;\r\n\r\n\tfor(int k\
-    \ = 0; k < n; k++) {\r\n\t\tif(extgcd(mprod[k], m[k], 1, x, y) == -1) return -1;\r\
-    \n\t\tinv = x % m[k];\r\n\t\tif(inv < 0) inv += m[k];\r\n\t\tt = (b[k] - X[k])\
-    \ * inv % m[k];\r\n\t\tif(t < 0) t += m[k];\r\n\t\tfor(int i = k + 1; i < n; i++)\
-    \ {\r\n\t\t\t(X[i] += t * mprod[i]) %= m[i];\r\n\t\t\t(mprod[i] *= m[k]) %= m[i];\r\
-    \n\t\t}\r\n\t\t(X[n] += t * mprod[n]) %= p;\r\n\t\t(mprod[n] *= m[k]) %= p;\r\n\
+    \ = 0; k < n; k++) {\r\n\t\tif(extgcd(mprod[k], M[k], 1, x, y) == -1) return -1;\r\
+    \n\t\tinv = x % M[k];\r\n\t\tif(inv < 0) inv += M[k];\r\n\t\tt = (B[k] - X[k])\
+    \ * inv % M[k];\r\n\t\tif(t < 0) t += M[k];\r\n\t\tfor(int i = k + 1; i < n; i++)\
+    \ {\r\n\t\t\t(X[i] += t * mprod[i]) %= M[i];\r\n\t\t\t(mprod[i] *= M[k]) %= M[i];\r\
+    \n\t\t}\r\n\t\t(X[n] += t * mprod[n]) %= p;\r\n\t\t(mprod[n] *= M[k]) %= p;\r\n\
     \t}\r\n\treturn X.back();\r\n}\r\n"
   code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
     \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\n#include \"../math/extgcd.cpp\"\
-    \r\n\r\nlong long pregarner(vector<long long> &b, vector<long long> &m, const\
-    \ int p) {\r\n\tlong long lcm = 1, g, gi, gj;\r\n\tfor(int i = 0; i < m.size();\
-    \ i++) {\r\n\t\tfor(int j = i + 1; j < m.size(); j++) {\r\n\t\t\tg = gcd(m[i],\
-    \ m[j]);\r\n\t\t\tif((b[j] - b[i]) % g) return -1;\r\n\r\n\t\t\tm[i] /= g, m[j]\
-    \ /= g;\r\n\t\t\tgi = gcd(m[i], g), gj = g / gi;\r\n\r\n\t\t\tdo {\r\n\t\t\t\t\
+    \r\n\r\nlong long pregarner(vector<long long> &B, vector<long long> &M, const\
+    \ int p) {\r\n\tlong long lcm = 1, g, gi, gj;\r\n\tfor(int i = 0; i < M.size();\
+    \ i++) {\r\n\t\tfor(int j = i + 1; j < M.size(); j++) {\r\n\t\t\tg = gcd(M[i],\
+    \ M[j]);\r\n\t\t\tif((B[j] - B[i]) % g) return -1;\r\n\r\n\t\t\tM[i] /= g, M[j]\
+    \ /= g;\r\n\t\t\tgi = gcd(M[i], g), gj = g / gi;\r\n\r\n\t\t\tdo {\r\n\t\t\t\t\
     g = gcd(gi, gj);\r\n\t\t\t\tgi *= g, gj /= g;\r\n\t\t\t} while(g > 1);\r\n\r\n\
-    \t\t\tm[i] *= gi, m[j] *= gj;\r\n\t\t\tb[i] %= m[i], b[j] %= m[j];\r\n\t\t}\r\n\
-    \t\t(lcm *= m[i]) %= p;\r\n\t}\r\n\treturn lcm;\r\n}\r\n\r\nlong long garner(const\
-    \ vector<long long> &b, const vector<long long> &m, const int p) {\r\n\tconst\
-    \ int n = m.size();\r\n\tvector<long long> mprod(n + 1, 1);\r\n\tvector<long long>\
+    \t\t\tM[i] *= gi, M[j] *= gj;\r\n\t\t\tB[i] %= M[i], B[j] %= M[j];\r\n\t\t}\r\n\
+    \t\t(lcm *= M[i]) %= p;\r\n\t}\r\n\treturn lcm;\r\n}\r\n\r\nlong long garner(const\
+    \ vector<long long> &B, const vector<long long> &M, const int p) {\r\n\tconst\
+    \ int n = M.size();\r\n\tvector<long long> mprod(n + 1, 1);\r\n\tvector<long long>\
     \ X(n + 1, 0);\r\n\tlong long t, x, y, inv;\r\n\r\n\tfor(int k = 0; k < n; k++)\
-    \ {\r\n\t\tif(extgcd(mprod[k], m[k], 1, x, y) == -1) return -1;\r\n\t\tinv = x\
-    \ % m[k];\r\n\t\tif(inv < 0) inv += m[k];\r\n\t\tt = (b[k] - X[k]) * inv % m[k];\r\
-    \n\t\tif(t < 0) t += m[k];\r\n\t\tfor(int i = k + 1; i < n; i++) {\r\n\t\t\t(X[i]\
-    \ += t * mprod[i]) %= m[i];\r\n\t\t\t(mprod[i] *= m[k]) %= m[i];\r\n\t\t}\r\n\t\
-    \t(X[n] += t * mprod[n]) %= p;\r\n\t\t(mprod[n] *= m[k]) %= p;\r\n\t}\r\n\treturn\
+    \ {\r\n\t\tif(extgcd(mprod[k], M[k], 1, x, y) == -1) return -1;\r\n\t\tinv = x\
+    \ % M[k];\r\n\t\tif(inv < 0) inv += M[k];\r\n\t\tt = (B[k] - X[k]) * inv % M[k];\r\
+    \n\t\tif(t < 0) t += M[k];\r\n\t\tfor(int i = k + 1; i < n; i++) {\r\n\t\t\t(X[i]\
+    \ += t * mprod[i]) %= M[i];\r\n\t\t\t(mprod[i] *= M[k]) %= M[i];\r\n\t\t}\r\n\t\
+    \t(X[n] += t * mprod[n]) %= p;\r\n\t\t(mprod[n] *= M[k]) %= p;\r\n\t}\r\n\treturn\
     \ X.back();\r\n}\r\n"
   dependsOn:
   - math/extgcd.cpp
   isVerificationFile: false
   path: math/garner.cpp
   requiredBy: []
-  timestamp: '2021-03-01 01:03:43+09:00'
+  timestamp: '2021-03-01 01:43:03+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yuki_0187.test.cpp
