@@ -22,7 +22,7 @@ int main() {
 	long long lcm = pregarner(X, Y, MPRIME);
 	if(lcm == -1) {
 		cout << -1 << endl;
-		return;
+		return 0;
 	}
 
 	long long ans = garner(X, Y, MPRIME);
