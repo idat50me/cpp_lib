@@ -46,6 +46,9 @@ data:
       path: math/binpow.cpp
       title: "Binary-Power(\u7E70\u308A\u8FD4\u3057\u4E8C\u4E57\u6CD5)"
     - icon: ':heavy_check_mark:'
+      path: math/chinese_remainder_theorem.cpp
+      title: math/chinese_remainder_theorem.cpp
+    - icon: ':heavy_check_mark:'
       path: math/divisor.cpp
       title: "Divisor(\u7D04\u6570\u5217\u6319)"
     - icon: ':heavy_check_mark:'
@@ -233,6 +236,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yuki_0177.test.cpp
       title: test/yuki_0177.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yuki_0447.test.cpp
+      title: test/yuki_0447.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yuki_0556.test.cpp
       title: test/yuki_0556.test.cpp

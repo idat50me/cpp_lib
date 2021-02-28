@@ -1,7 +1,10 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
+  _extendedRequiredBy:
+  - icon: ':heavy_check_mark:'
+    path: math/chinese_remainder_theorem.cpp
+    title: math/chinese_remainder_theorem.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj_ALDS1_1_B.test.cpp
@@ -9,6 +12,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj_NTL_1_E.test.cpp
     title: test/aoj_NTL_1_E.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yuki_0447.test.cpp
+    title: test/yuki_0447.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -41,11 +47,13 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: math/extgcd.cpp
-  requiredBy: []
+  requiredBy:
+  - math/chinese_remainder_theorem.cpp
   timestamp: '2021-02-28 01:32:23+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_ALDS1_1_B.test.cpp
+  - test/yuki_0447.test.cpp
   - test/aoj_NTL_1_E.test.cpp
 documentation_of: math/extgcd.cpp
 layout: document
