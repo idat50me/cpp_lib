@@ -15,12 +15,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj_NTL_1_E.test.cpp
     title: test/aoj_NTL_1_E.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yuki_0186.test.cpp
+    title: test/yuki_0186.test.cpp
   - icon: ':x:'
     path: test/yuki_0187.test.cpp
     title: test/yuki_0187.test.cpp
-  - icon: ':heavy_check_mark:'
-    path: test/yuki_0447.test.cpp
-    title: test/yuki_0447.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
   _verificationStatusIcon: ':question:'
@@ -60,7 +60,7 @@ data:
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/aoj_ALDS1_1_B.test.cpp
-  - test/yuki_0447.test.cpp
+  - test/yuki_0186.test.cpp
   - test/aoj_NTL_1_E.test.cpp
   - test/yuki_0187.test.cpp
 documentation_of: math/extgcd.cpp

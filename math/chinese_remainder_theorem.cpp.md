@@ -8,8 +8,8 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
-    path: test/yuki_0447.test.cpp
-    title: test/yuki_0447.test.cpp
+    path: test/yuki_0186.test.cpp
+    title: test/yuki_0186.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -53,7 +53,7 @@ data:
   timestamp: '2021-02-28 15:32:07+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yuki_0447.test.cpp
+  - test/yuki_0186.test.cpp
 documentation_of: math/chinese_remainder_theorem.cpp
 layout: document
 title: "Chinese-Remainder-Theorem(\u4E2D\u56FD\u5270\u4F59\u5B9A\u7406)"
