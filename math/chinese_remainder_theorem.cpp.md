@@ -56,8 +56,14 @@ data:
   - test/yuki_0447.test.cpp
 documentation_of: math/chinese_remainder_theorem.cpp
 layout: document
-redirect_from:
-- /library/math/chinese_remainder_theorem.cpp
-- /library/math/chinese_remainder_theorem.cpp.html
-title: math/chinese_remainder_theorem.cpp
+title: "Chinese-Remainder-Theorem(\u4E2D\u56FD\u5270\u4F59\u5B9A\u7406)"
 ---
+
+## なにこれ
+要素数 $n$ の配列 $B, M$ について，$x \equiv B_i \pmod{M_i}$ を満たす $x \equiv b \pmod m$ を求める．
+
+## 関数
+- `crt(B, M)`：配列 `B`, `M` を引数にとり，`pair(b, m)` を返す．条件を満たす $x$ が存在しない場合は `pair(0, 0)` を返す．$\operatorname{lcm}(M_1,\ M_2,\ ...\ ,\ M_n) \leq$ `LLONG_MAX`である必要がある．
+
+## 計算量
+- `crt(B, M)`：$O(n \log M_{\max})$
