@@ -11,3 +11,9 @@ documentation_of: ../chinese_remainder_theorem.cpp
 
 ## 計算量
 - `crt(B, M)`：$O(n \log M_{\max})$
+
+## 補足
+$x$ について，合同式 $x \equiv b \pmod m$ と表現できる最小の $m$ は $\operatorname{lcm}(M_1,\ M_2,\ ...\ ,\ M_n)$ である．
+
+## 参考
+- [中国剰余定理 (CRT) の解説と、それを用いる問題のまとめ - Qiita](https://qiita.com/drken/items/ae02240cd1f8edfc86fd)
