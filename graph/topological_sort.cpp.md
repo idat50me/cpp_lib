@@ -67,8 +67,17 @@ data:
   - test/aoj_GRL_4_B.test.cpp
 documentation_of: graph/topological_sort.cpp
 layout: document
-redirect_from:
-- /library/graph/topological_sort.cpp
-- /library/graph/topological_sort.cpp.html
-title: graph/topological_sort.cpp
+title: "Topological-Sort(\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8)"
 ---
+
+## なにこれ
+グラフの隣接リストを元に，各辺について終点より始点が先にくる頂点配列を求める．
+
+## 関数
+- `topological(lst)`：隣接リスト `lst` を元に，トポロジカルソートした頂点配列を返す．
+- `topological(lst, indeg)`：隣接リスト `lst`，頂点の入次数を格納した配列 `indeg` を元に，トポロジカルソートした頂点配列を返す．
+
+## 計算量
+頂点数を $V$，辺の数を $E$ とする．
+- `topological(lst)`：$O(V+E)$
+- `topological(lst, indeg)`：$O(V+E)$

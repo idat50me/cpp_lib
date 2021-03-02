@@ -3,7 +3,8 @@ data:
   _extendedDependsOn:
   - icon: ':x:'
     path: graph/topological_sort.cpp
-    title: graph/topological_sort.cpp
+    title: "Topological-Sort(\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8\
+      )"
   - icon: ':question:'
     path: structure/2d_array.cpp
     title: "2D-Array( $2$ \u6B21\u5143\u914D\u5217)"
