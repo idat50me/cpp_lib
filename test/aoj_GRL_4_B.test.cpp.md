@@ -14,19 +14,21 @@ data:
   _verificationStatusIcon: ':x:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
-    PROBLEM: https://onlinejudge.u-aizu.ac.jp/problems/GRL_4_B
+    IGNORE: ''
+    IGNORE_IF_GCC: ''
     links:
     - https://onlinejudge.u-aizu.ac.jp/problems/GRL_4_B
-  bundledCode: "#line 1 \"test/aoj_GRL_4_B.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/GRL_4_B\"\
-    \r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
-    \nusing namespace std;\r\n#endif\r\n\r\n#line 2 \"structure/2d_array.cpp\"\n\r\
-    \n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\n\
-    using namespace std;\r\n#endif\r\n\r\ntemplate<typename T> struct v2d {\r\nprivate:\r\
-    \n\tvector<vector<T>> m;\r\n\r\npublic:\r\n\tv2d() {}\r\n\tv2d(int h, int w) :\
-    \ m(h, vector<T>(w)) {}\r\n\tv2d(int h, int w, const T &init) : m(h, vector<T>(w,\
-    \ init)) {}\r\n\tv2d(const initializer_list<initializer_list<T>> m_init) : m(m_init.begin(),\
-    \ m_init.end()) {}\r\n\r\n\tvoid assign(int h, int w) {\r\n\t\tm.assign(h, vector<T>(w));\r\
-    \n\t}\r\n\tvoid assign(int h, int w, const T init) {\r\n\t\tm.assign(h, vector<T>(w,\
+  bundledCode: "#line 1 \"test/aoj_GRL_4_B.test.cpp\"\n#define IGNORE\r\n#define PROBLEM\
+    \ \"https://onlinejudge.u-aizu.ac.jp/problems/GRL_4_B\"\r\n\r\n#ifndef call_include\r\
+    \n#define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n\
+    #endif\r\n\r\n#line 2 \"structure/2d_array.cpp\"\n\r\n#ifndef call_include\r\n\
+    #define call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\
+    \n\r\ntemplate<typename T> struct v2d {\r\nprivate:\r\n\tvector<vector<T>> m;\r\
+    \n\r\npublic:\r\n\tv2d() {}\r\n\tv2d(int h, int w) : m(h, vector<T>(w)) {}\r\n\
+    \tv2d(int h, int w, const T &init) : m(h, vector<T>(w, init)) {}\r\n\tv2d(const\
+    \ initializer_list<initializer_list<T>> m_init) : m(m_init.begin(), m_init.end())\
+    \ {}\r\n\r\n\tvoid assign(int h, int w) {\r\n\t\tm.assign(h, vector<T>(w));\r\n\
+    \t}\r\n\tvoid assign(int h, int w, const T init) {\r\n\t\tm.assign(h, vector<T>(w,\
     \ init));\r\n\t}\r\n\r\n\tinline int size() const {\r\n\t\treturn m.size();\r\n\
     \t}\r\n\r\n\tvoid in() {\r\n\t\tfor(vector<T> &v : m)\r\n\t\t\tfor(T &val : v)\
     \ cin >> val;\r\n\t}\r\n\tvoid in(int h, int w) {\r\n\t\tm.resize(h, vector<T>(w));\r\
@@ -48,13 +50,13 @@ data:
     \n\r\n\tif(vtmp) return {-1};\r\n\treturn res;\r\n}\r\n\r\nvector<int> topological(v2d<int>\
     \ &lst) {\r\n\tvector<int> indeg(lst.size(), 0);\r\n\r\n\tfor(int i = 0; i < lst.size();\
     \ i++)\r\n\t\tfor(const int v : lst[i]) indeg[v]++;\r\n\r\n\treturn topological(lst,\
-    \ indeg);\r\n}\r\n#line 11 \"test/aoj_GRL_4_B.test.cpp\"\n\r\nint main() {\r\n\
+    \ indeg);\r\n}\r\n#line 12 \"test/aoj_GRL_4_B.test.cpp\"\n\r\nint main() {\r\n\
     \tint V, E;\r\n\tcin >> V >> E;\r\n\r\n\tv2d<int> lst(V, 0);\r\n\tfor(int i =\
     \ 0; i < E; i++) {\r\n\t\tint s, t;\r\n\t\tcin >> s >> t;\r\n\t\tlst[s].push_back(t);\r\
     \n\t}\r\n\r\n\tvector<int> ans = topological(lst);\r\n\tfor(int i : ans) cout\
     \ << i << endl;\r\n}\r\n"
-  code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/GRL_4_B\"\r\n\
-    \r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
+  code: "#define IGNORE\r\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/GRL_4_B\"\
+    \r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
     \nusing namespace std;\r\n#endif\r\n\r\n#include \"structure/2d_array.cpp\"\r\n\
     #include \"graph/topological_sort.cpp\"\r\n\r\nint main() {\r\n\tint V, E;\r\n\
     \tcin >> V >> E;\r\n\r\n\tv2d<int> lst(V, 0);\r\n\tfor(int i = 0; i < E; i++)\
@@ -67,7 +69,7 @@ data:
   isVerificationFile: true
   path: test/aoj_GRL_4_B.test.cpp
   requiredBy: []
-  timestamp: '2021-03-02 23:18:39+09:00'
+  timestamp: '2021-03-02 23:25:01+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/aoj_GRL_4_B.test.cpp
