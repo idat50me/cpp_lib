@@ -9,6 +9,9 @@ data:
   - icon: ':x:'
     path: test/aoj_GRL_4_B.test.cpp
     title: test/aoj_GRL_4_B.test.cpp
+  - icon: ':x:'
+    path: test/yuki_0497.test.cpp
+    title: test/yuki_0497.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
   _verificationStatusIcon: ':x:'
@@ -64,6 +67,7 @@ data:
   timestamp: '2021-03-02 23:16:05+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
+  - test/yuki_0497.test.cpp
   - test/aoj_GRL_4_B.test.cpp
 documentation_of: graph/topological_sort.cpp
 layout: document

@@ -28,6 +28,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yuki_0177.test.cpp
     title: test/yuki_0177.test.cpp
+  - icon: ':x:'
+    path: test/yuki_0497.test.cpp
+    title: test/yuki_0497.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
   _verificationStatusIcon: ':question:'
@@ -78,6 +81,7 @@ data:
   timestamp: '2021-02-26 21:39:59+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/yuki_0497.test.cpp
   - test/aoj_ITP1_6_B.test.cpp
   - test/aoj_GRL_4_B.test.cpp
   - test/aoj_2429.test.cpp

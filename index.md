@@ -252,6 +252,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yuki_0187.test.cpp
       title: test/yuki_0187.test.cpp
+    - icon: ':x:'
+      path: test/yuki_0497.test.cpp
+      title: test/yuki_0497.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yuki_0556.test.cpp
       title: test/yuki_0556.test.cpp
