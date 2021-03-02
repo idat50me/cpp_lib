@@ -33,5 +33,5 @@ int main() {
 		ans = max(ans, dp[v]);
 		for(int nv : lst[v]) dp[nv] = max(dp[nv], dp[v] + 1);
 	}
-	cout << ans << endl;
+	cout << ans;
 }
