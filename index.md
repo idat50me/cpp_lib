@@ -37,7 +37,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/mincostflow_nega.cpp
       title: "mincostflow_nega(\u6700\u5C0F\u8CBB\u7528\u6D41)"
-    - icon: ':x:'
+    - icon: ':question:'
       path: graph/topological_sort.cpp
       title: "Topological-Sort(\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8\
         )"
@@ -252,7 +252,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yuki_0187.test.cpp
       title: test/yuki_0187.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yuki_0497.test.cpp
       title: test/yuki_0497.test.cpp
     - icon: ':heavy_check_mark:'

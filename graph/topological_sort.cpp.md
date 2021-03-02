@@ -9,12 +9,12 @@ data:
   - icon: ':x:'
     path: test/aoj_GRL_4_B.test.cpp
     title: test/aoj_GRL_4_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yuki_0497.test.cpp
     title: test/yuki_0497.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':question:'
   attributes:
     links: []
   bundledCode: "#line 2 \"graph/topological_sort.cpp\"\n\r\n#ifndef call_include\r\
@@ -65,7 +65,7 @@ data:
   path: graph/topological_sort.cpp
   requiredBy: []
   timestamp: '2021-03-02 23:16:05+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
   - test/yuki_0497.test.cpp
   - test/aoj_GRL_4_B.test.cpp

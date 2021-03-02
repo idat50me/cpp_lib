@@ -5,7 +5,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: dp/2d_cumulative_sum.cpp
     title: "2D-Cumulative-Sum( $2$ \u6B21\u5143\u7D2F\u7A4D\u548C)"
-  - icon: ':x:'
+  - icon: ':question:'
     path: graph/topological_sort.cpp
     title: "Topological-Sort(\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8\
       )"
@@ -28,7 +28,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yuki_0177.test.cpp
     title: test/yuki_0177.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yuki_0497.test.cpp
     title: test/yuki_0497.test.cpp
   _isVerificationFailed: true
