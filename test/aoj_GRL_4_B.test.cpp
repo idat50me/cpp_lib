@@ -14,7 +14,7 @@ int main() {
 	cin >> V >> E;
 
 	v2d<int> lst(V, 0);
-	for(int i = 0; i, E; i++) {
+	for(int i = 0; i < E; i++) {
 		int s, t;
 		cin >> s >> t;
 		lst[s].push_back(t);
