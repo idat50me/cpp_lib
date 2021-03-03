@@ -6,12 +6,12 @@ data:
     title: "2D-Array( $2$ \u6B21\u5143\u914D\u5217)"
   _extendedRequiredBy: []
   _extendedVerifiedWith:
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yuki_1013.test.cpp
     title: test/yuki_1013.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"dp/doubling.cpp\"\n\r\n#ifndef call_include\r\n#define call_include\r\
@@ -48,11 +48,11 @@ data:
     \n\t\tdata.assign(k, n);\r\n\t\ttable[0] = v;\r\n\t\tdata[0] = v_data;\r\n\r\n\
     \t\tfor(int i = 0; i < k - 1; i++) {\r\n\t\t\tfor(int j = 0; j < n; j++) {\r\n\
     \t\t\t\ttable[i + 1][j] = table[i][table[i][j]];\r\n\t\t\t\tdata[i + 1][j] = f(data[i][j],\
-    \ data[i][table[i][j]]);\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\r\n\tint get(int x, T\
-    \ init, long long t) {\r\n\t\tassert(t <= max_t);\r\n\t\tint id = x;\r\n\t\tT\
-    \ res = init;\r\n\t\tfor(int k = 0; t; k++) {\r\n\t\t\tif(t & 1) {\r\n\t\t\t\t\
-    res = f(res, data[k][id]);\r\n\t\t\t\tid = table[k][id];\r\n\t\t\t}\r\n\t\t\t\
-    t >>= 1;\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\n};\r\n"
+    \ data[i][table[i][j]]);\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\r\n\tT get(int x, T init,\
+    \ long long t) {\r\n\t\tassert(t <= max_t);\r\n\t\tint id = x;\r\n\t\tT res =\
+    \ init;\r\n\t\tfor(int k = 0; t; k++) {\r\n\t\t\tif(t & 1) {\r\n\t\t\t\tres =\
+    \ f(res, data[k][id]);\r\n\t\t\t\tid = table[k][id];\r\n\t\t\t}\r\n\t\t\tt >>=\
+    \ 1;\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\n};\r\n"
   code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
     \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\n#include \"../structure/2d_array.cpp\"\
     \r\n\r\ntemplate<typename T = int> struct doubling {\r\nprivate:\r\n\tconst int\
@@ -69,18 +69,18 @@ data:
     \n\t\tdata.assign(k, n);\r\n\t\ttable[0] = v;\r\n\t\tdata[0] = v_data;\r\n\r\n\
     \t\tfor(int i = 0; i < k - 1; i++) {\r\n\t\t\tfor(int j = 0; j < n; j++) {\r\n\
     \t\t\t\ttable[i + 1][j] = table[i][table[i][j]];\r\n\t\t\t\tdata[i + 1][j] = f(data[i][j],\
-    \ data[i][table[i][j]]);\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\r\n\tint get(int x, T\
-    \ init, long long t) {\r\n\t\tassert(t <= max_t);\r\n\t\tint id = x;\r\n\t\tT\
-    \ res = init;\r\n\t\tfor(int k = 0; t; k++) {\r\n\t\t\tif(t & 1) {\r\n\t\t\t\t\
-    res = f(res, data[k][id]);\r\n\t\t\t\tid = table[k][id];\r\n\t\t\t}\r\n\t\t\t\
-    t >>= 1;\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\n};\r\n"
+    \ data[i][table[i][j]]);\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\r\n\tT get(int x, T init,\
+    \ long long t) {\r\n\t\tassert(t <= max_t);\r\n\t\tint id = x;\r\n\t\tT res =\
+    \ init;\r\n\t\tfor(int k = 0; t; k++) {\r\n\t\t\tif(t & 1) {\r\n\t\t\t\tres =\
+    \ f(res, data[k][id]);\r\n\t\t\t\tid = table[k][id];\r\n\t\t\t}\r\n\t\t\tt >>=\
+    \ 1;\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\n};\r\n"
   dependsOn:
   - structure/2d_array.cpp
   isVerificationFile: false
   path: dp/doubling.cpp
   requiredBy: []
-  timestamp: '2021-03-04 00:31:12+09:00'
-  verificationStatus: LIBRARY_ALL_WA
+  timestamp: '2021-03-04 00:39:50+09:00'
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yuki_1013.test.cpp
 documentation_of: dp/doubling.cpp

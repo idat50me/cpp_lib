@@ -17,7 +17,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: dp/2d_cumulative_sum.cpp
       title: "2D-Cumulative-Sum( $2$ \u6B21\u5143\u7D2F\u7A4D\u548C)"
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: dp/doubling.cpp
       title: dp/doubling.cpp
     - icon: ':heavy_check_mark:'
@@ -267,7 +267,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yuki_0888.test.cpp
       title: test/yuki_0888.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yuki_1013.test.cpp
       title: test/yuki_1013.test.cpp
     - icon: ':heavy_check_mark:'
