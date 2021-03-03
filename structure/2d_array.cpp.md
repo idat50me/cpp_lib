@@ -37,6 +37,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yuki_1013.test.cpp
     title: test/yuki_1013.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yuki_1097.test.cpp
+    title: test/yuki_1097.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
   _verificationStatusIcon: ':question:'
@@ -94,6 +97,7 @@ data:
   - test/aoj_2429.test.cpp
   - test/yuki_0177.test.cpp
   - test/yuki_1013.test.cpp
+  - test/yuki_1097.test.cpp
   - test/aoj_0341.test.cpp
   - test/aoj_0560.test.cpp
 documentation_of: structure/2d_array.cpp

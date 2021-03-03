@@ -274,6 +274,9 @@ data:
       path: test/yuki_1035.test.cpp
       title: test/yuki_1035.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/yuki_1097.test.cpp
+      title: test/yuki_1097.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/yuki_1301.test.cpp
       title: test/yuki_1301.test.cpp
 layout: toppage

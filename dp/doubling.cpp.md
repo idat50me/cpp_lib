@@ -9,6 +9,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yuki_1013.test.cpp
     title: test/yuki_1013.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yuki_1097.test.cpp
+    title: test/yuki_1097.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -83,6 +86,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yuki_1013.test.cpp
+  - test/yuki_1097.test.cpp
 documentation_of: dp/doubling.cpp
 layout: document
 redirect_from:
