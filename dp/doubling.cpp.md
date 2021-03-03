@@ -4,14 +4,14 @@ data:
   - icon: ':question:'
     path: structure/2d_array.cpp
     title: "2D-Array( $2$ \u6B21\u5143\u914D\u5217)"
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: test/yuki_1013.cpp
-    title: test/yuki_1013.cpp
-  _extendedVerifiedWith: []
-  _isVerificationFailed: false
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':x:'
+    path: test/yuki_1013.test.cpp
+    title: test/yuki_1013.test.cpp
+  _isVerificationFailed: true
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':x:'
   attributes:
     links: []
   bundledCode: "#line 2 \"dp/doubling.cpp\"\n\r\n#ifndef call_include\r\n#define call_include\r\
@@ -34,35 +34,55 @@ data:
     \ && idx < m.size());\r\n\t\treturn m[idx];\r\n\t}\r\n\r\n\tbool rangeout(int\
     \ x, int y) {\r\n\t\tif(x < 0 || y < 0 || x >= size() || y >= m[x].size()) return\
     \ true;\r\n\t\treturn false;\r\n\t}\r\n};\r\n#line 10 \"dp/doubling.cpp\"\n\r\n\
-    struct doubling {\r\nprivate:\r\n\tconst int n;\r\n\tconst long long max_t;\r\n\
-    \tv2d<int> table;\r\n\r\npublic:\r\n\tdoubling(const vector<int> &v, long long\
-    \ _max_t) : n(v.size()), max_t(_max_t) {\r\n\t\tint k = 0;\r\n\t\twhile((1LL <<\
-    \ k) <= max_t) k++;\r\n\t\ttable.assign(k, n);\r\n\t\ttable[0] = v;\r\n\r\n\t\t\
-    for(int i = 0; i < k - 1; i++) {\r\n\t\t\tfor(int j = 0; j < n; j++) {\r\n\t\t\
-    \t\ttable[i + 1][j] = table[i][table[i][j]];\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\r\n\
-    \tint get(int x, long long t) {\r\n\t\tassert(t <= max_t);\r\n\t\tint res = x;\r\
-    \n\t\tfor(int k = 0; t; k++) {\r\n\t\t\tif(t & 1) res = table[k][res];\r\n\t\t\
-    \tt >>= 1;\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\n};\r\n"
+    template<typename T = int> struct doubling {\r\nprivate:\r\n\tconst int n;\r\n\
+    \tconst long long max_t;\r\n\tv2d<int> table;\r\n\tv2d<T> data;\r\n\r\n\tfunction<T(T\
+    \ &, T &)> f = [this](T &l, T &r) { return r; };\r\n\r\npublic:\r\n\tdoubling(const\
+    \ vector<int> &v, long long _max_t) : n(v.size()), max_t(_max_t) {\r\n\t\tint\
+    \ k = 0;\r\n\t\twhile((1LL << k) <= max_t) k++;\r\n\t\ttable.assign(k, n);\r\n\
+    \t\tdata.assign(k, n);\r\n\t\ttable[0] = data[0] = v;\r\n\r\n\t\tfor(int i = 0;\
+    \ i < k - 1; i++) {\r\n\t\t\tfor(int j = 0; j < n; j++) {\r\n\t\t\t\ttable[i +\
+    \ 1][j] = data[i + 1][j] = table[i][table[i][j]];\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\
+    \n\tdoubling(const vector<int> &v, const vector<T> &v_data, long long _max_t,\
+    \ function<T(T &, T &)> _f) :\r\n\t\tn(v.size()), max_t(_max_t), f(_f) {\r\n\t\
+    \tint k = 0;\r\n\t\twhile((1LL << k) <= max_t) k++;\r\n\t\ttable.assign(k, n);\r\
+    \n\t\tdata.assign(k, n);\r\n\t\ttable[0] = v;\r\n\t\tdata[0] = v_data;\r\n\r\n\
+    \t\tfor(int i = 0; i < k - 1; i++) {\r\n\t\t\tfor(int j = 0; j < n; j++) {\r\n\
+    \t\t\t\ttable[i + 1][j] = table[i][table[i][j]];\r\n\t\t\t\tdata[i + 1][j] = f(data[i][j],\
+    \ data[i][table[i][j]]);\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\r\n\tint get(int x, T\
+    \ init, long long t) {\r\n\t\tassert(t <= max_t);\r\n\t\tint id = x;\r\n\t\tT\
+    \ res = init;\r\n\t\tfor(int k = 0; t; k++) {\r\n\t\t\tif(t & 1) {\r\n\t\t\t\t\
+    res = f(res, data[k][id]);\r\n\t\t\t\tid = table[k][id];\r\n\t\t\t}\r\n\t\t\t\
+    t >>= 1;\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\n};\r\n"
   code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
     \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\n#include \"../structure/2d_array.cpp\"\
-    \r\n\r\nstruct doubling {\r\nprivate:\r\n\tconst int n;\r\n\tconst long long max_t;\r\
-    \n\tv2d<int> table;\r\n\r\npublic:\r\n\tdoubling(const vector<int> &v, long long\
-    \ _max_t) : n(v.size()), max_t(_max_t) {\r\n\t\tint k = 0;\r\n\t\twhile((1LL <<\
-    \ k) <= max_t) k++;\r\n\t\ttable.assign(k, n);\r\n\t\ttable[0] = v;\r\n\r\n\t\t\
-    for(int i = 0; i < k - 1; i++) {\r\n\t\t\tfor(int j = 0; j < n; j++) {\r\n\t\t\
-    \t\ttable[i + 1][j] = table[i][table[i][j]];\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\r\n\
-    \tint get(int x, long long t) {\r\n\t\tassert(t <= max_t);\r\n\t\tint res = x;\r\
-    \n\t\tfor(int k = 0; t; k++) {\r\n\t\t\tif(t & 1) res = table[k][res];\r\n\t\t\
-    \tt >>= 1;\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\n};\r\n"
+    \r\n\r\ntemplate<typename T = int> struct doubling {\r\nprivate:\r\n\tconst int\
+    \ n;\r\n\tconst long long max_t;\r\n\tv2d<int> table;\r\n\tv2d<T> data;\r\n\r\n\
+    \tfunction<T(T &, T &)> f = [this](T &l, T &r) { return r; };\r\n\r\npublic:\r\
+    \n\tdoubling(const vector<int> &v, long long _max_t) : n(v.size()), max_t(_max_t)\
+    \ {\r\n\t\tint k = 0;\r\n\t\twhile((1LL << k) <= max_t) k++;\r\n\t\ttable.assign(k,\
+    \ n);\r\n\t\tdata.assign(k, n);\r\n\t\ttable[0] = data[0] = v;\r\n\r\n\t\tfor(int\
+    \ i = 0; i < k - 1; i++) {\r\n\t\t\tfor(int j = 0; j < n; j++) {\r\n\t\t\t\ttable[i\
+    \ + 1][j] = data[i + 1][j] = table[i][table[i][j]];\r\n\t\t\t}\r\n\t\t}\r\n\t\
+    }\r\n\tdoubling(const vector<int> &v, const vector<T> &v_data, long long _max_t,\
+    \ function<T(T &, T &)> _f) :\r\n\t\tn(v.size()), max_t(_max_t), f(_f) {\r\n\t\
+    \tint k = 0;\r\n\t\twhile((1LL << k) <= max_t) k++;\r\n\t\ttable.assign(k, n);\r\
+    \n\t\tdata.assign(k, n);\r\n\t\ttable[0] = v;\r\n\t\tdata[0] = v_data;\r\n\r\n\
+    \t\tfor(int i = 0; i < k - 1; i++) {\r\n\t\t\tfor(int j = 0; j < n; j++) {\r\n\
+    \t\t\t\ttable[i + 1][j] = table[i][table[i][j]];\r\n\t\t\t\tdata[i + 1][j] = f(data[i][j],\
+    \ data[i][table[i][j]]);\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\r\n\tint get(int x, T\
+    \ init, long long t) {\r\n\t\tassert(t <= max_t);\r\n\t\tint id = x;\r\n\t\tT\
+    \ res = init;\r\n\t\tfor(int k = 0; t; k++) {\r\n\t\t\tif(t & 1) {\r\n\t\t\t\t\
+    res = f(res, data[k][id]);\r\n\t\t\t\tid = table[k][id];\r\n\t\t\t}\r\n\t\t\t\
+    t >>= 1;\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\n};\r\n"
   dependsOn:
   - structure/2d_array.cpp
   isVerificationFile: false
   path: dp/doubling.cpp
-  requiredBy:
-  - test/yuki_1013.cpp
-  timestamp: '2021-03-03 23:55:06+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  requiredBy: []
+  timestamp: '2021-03-04 00:31:12+09:00'
+  verificationStatus: LIBRARY_ALL_WA
+  verifiedWith:
+  - test/yuki_1013.test.cpp
 documentation_of: dp/doubling.cpp
 layout: document
 redirect_from:

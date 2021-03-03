@@ -5,16 +5,13 @@ data:
   - icon: ':heavy_check_mark:'
     path: dp/2d_cumulative_sum.cpp
     title: "2D-Cumulative-Sum( $2$ \u6B21\u5143\u7D2F\u7A4D\u548C)"
-  - icon: ':warning:'
+  - icon: ':x:'
     path: dp/doubling.cpp
     title: dp/doubling.cpp
   - icon: ':question:'
     path: graph/topological_sort.cpp
     title: "Topological-Sort(\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8\
       )"
-  - icon: ':warning:'
-    path: test/yuki_1013.cpp
-    title: test/yuki_1013.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj_0341.test.cpp
@@ -37,6 +34,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yuki_0497.test.cpp
     title: test/yuki_0497.test.cpp
+  - icon: ':x:'
+    path: test/yuki_1013.test.cpp
+    title: test/yuki_1013.test.cpp
   _isVerificationFailed: true
   _pathExtension: cpp
   _verificationStatusIcon: ':question:'
@@ -82,7 +82,6 @@ data:
   isVerificationFile: false
   path: structure/2d_array.cpp
   requiredBy:
-  - test/yuki_1013.cpp
   - dp/2d_cumulative_sum.cpp
   - dp/doubling.cpp
   - graph/topological_sort.cpp
@@ -94,6 +93,7 @@ data:
   - test/aoj_GRL_4_B.test.cpp
   - test/aoj_2429.test.cpp
   - test/yuki_0177.test.cpp
+  - test/yuki_1013.test.cpp
   - test/aoj_0341.test.cpp
   - test/aoj_0560.test.cpp
 documentation_of: structure/2d_array.cpp
