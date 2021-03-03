@@ -55,7 +55,10 @@ data:
     \ long long t) {\r\n\t\tassert(t <= max_t);\r\n\t\tint id = x;\r\n\t\tT res =\
     \ init;\r\n\t\tfor(int k = 0; t; k++) {\r\n\t\t\tif(t & 1) {\r\n\t\t\t\tres =\
     \ f(res, data[k][id]);\r\n\t\t\t\tid = table[k][id];\r\n\t\t\t}\r\n\t\t\tt >>=\
-    \ 1;\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\n};\r\n"
+    \ 1;\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\n\r\n\tint get_idx(int x, long long\
+    \ t) {\r\n\t\tassert(t <= max_t);\r\n\t\tint id = x;\r\n\t\tfor(int k = 0; t;\
+    \ k++) {\r\n\t\t\tif(t & 1) {\r\n\t\t\t\tid = table[k][id];\r\n\t\t\t}\r\n\t\t\
+    \tt >>= 1;\r\n\t\t}\r\n\t\treturn id;\r\n\t}\r\n};\r\n"
   code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
     \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\n#include \"../structure/2d_array.cpp\"\
     \r\n\r\ntemplate<typename T = int> struct doubling {\r\nprivate:\r\n\tconst int\
@@ -76,13 +79,16 @@ data:
     \ long long t) {\r\n\t\tassert(t <= max_t);\r\n\t\tint id = x;\r\n\t\tT res =\
     \ init;\r\n\t\tfor(int k = 0; t; k++) {\r\n\t\t\tif(t & 1) {\r\n\t\t\t\tres =\
     \ f(res, data[k][id]);\r\n\t\t\t\tid = table[k][id];\r\n\t\t\t}\r\n\t\t\tt >>=\
-    \ 1;\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\n};\r\n"
+    \ 1;\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\n\r\n\tint get_idx(int x, long long\
+    \ t) {\r\n\t\tassert(t <= max_t);\r\n\t\tint id = x;\r\n\t\tfor(int k = 0; t;\
+    \ k++) {\r\n\t\t\tif(t & 1) {\r\n\t\t\t\tid = table[k][id];\r\n\t\t\t}\r\n\t\t\
+    \tt >>= 1;\r\n\t\t}\r\n\t\treturn id;\r\n\t}\r\n};\r\n"
   dependsOn:
   - structure/2d_array.cpp
   isVerificationFile: false
   path: dp/doubling.cpp
   requiredBy: []
-  timestamp: '2021-03-04 00:39:50+09:00'
+  timestamp: '2021-03-04 00:54:11+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yuki_1013.test.cpp
