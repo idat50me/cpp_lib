@@ -61,4 +61,16 @@ public:
 		}
 		return res;
 	}
+
+	int get_idx(int x, long long t) {
+		assert(t <= max_t);
+		int id = x;
+		for(int k = 0; t; k++) {
+			if(t & 1) {
+				id = table[k][id];
+			}
+			t >>= 1;
+		}
+		return id;
+	}
 };
