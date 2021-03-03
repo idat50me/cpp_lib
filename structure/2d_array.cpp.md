@@ -5,10 +5,16 @@ data:
   - icon: ':heavy_check_mark:'
     path: dp/2d_cumulative_sum.cpp
     title: "2D-Cumulative-Sum( $2$ \u6B21\u5143\u7D2F\u7A4D\u548C)"
+  - icon: ':warning:'
+    path: dp/doubling.cpp
+    title: dp/doubling.cpp
   - icon: ':question:'
     path: graph/topological_sort.cpp
     title: "Topological-Sort(\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8\
       )"
+  - icon: ':warning:'
+    path: test/yuki_1013.cpp
+    title: test/yuki_1013.cpp
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
     path: test/aoj_0341.test.cpp
@@ -76,7 +82,9 @@ data:
   isVerificationFile: false
   path: structure/2d_array.cpp
   requiredBy:
+  - test/yuki_1013.cpp
   - dp/2d_cumulative_sum.cpp
+  - dp/doubling.cpp
   - graph/topological_sort.cpp
   timestamp: '2021-02-26 21:39:59+09:00'
   verificationStatus: LIBRARY_SOME_WA
