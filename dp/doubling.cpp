@@ -48,7 +48,7 @@ public:
 		}
 	}
 
-	int get(int x, T init, long long t) {
+	T get(int x, T init, long long t) {
 		assert(t <= max_t);
 		int id = x;
 		T res = init;
