@@ -19,7 +19,7 @@ data:
       title: "2D-Cumulative-Sum( $2$ \u6B21\u5143\u7D2F\u7A4D\u548C)"
     - icon: ':heavy_check_mark:'
       path: dp/doubling.cpp
-      title: dp/doubling.cpp
+      title: "Doubling(\u30C0\u30D6\u30EA\u30F3\u30B0)"
     - icon: ':heavy_check_mark:'
       path: dp/lcs.cpp
       title: "LCS(\u6700\u9577\u5171\u901A\u90E8\u5206\u5217)"

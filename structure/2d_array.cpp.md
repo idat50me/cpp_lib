@@ -7,7 +7,7 @@ data:
     title: "2D-Cumulative-Sum( $2$ \u6B21\u5143\u7D2F\u7A4D\u548C)"
   - icon: ':heavy_check_mark:'
     path: dp/doubling.cpp
-    title: dp/doubling.cpp
+    title: "Doubling(\u30C0\u30D6\u30EA\u30F3\u30B0)"
   - icon: ':question:'
     path: graph/topological_sort.cpp
     title: "Topological-Sort(\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8\
