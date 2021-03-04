@@ -114,3 +114,9 @@ title: "Doubling(\u30C0\u30D6\u30EA\u30F3\u30B0)"
 - コンストラクタ：$O(N \log T)$
 - `get(x, init, t)`：$O(\log T)$
 - `get_idx(x, t)`：$O(\log T)$
+
+---
+
+## Verified with (AtCoder)
+- [abc167_d](https://atcoder.jp/contests/abc167/submissions/20642022)
+- [abc175_d](https://atcoder.jp/contests/abc175/submissions/20641894)
