@@ -14,3 +14,8 @@ documentation_of: ../topological_sort.cpp
 頂点数を $V$，辺の数を $E$ とする．
 - `topological(lst)`：$O(V+E)$
 - `topological(lst, indeg)`：$O(V+E)$
+
+---
+
+## Verified with (AtCoder)
+- [abs139_e](https://atcoder.jp/contests/abc139/submissions/20619125)
