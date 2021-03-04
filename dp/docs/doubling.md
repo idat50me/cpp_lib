@@ -19,3 +19,9 @@ documentation_of: ../doubling.cpp
 - コンストラクタ：$O(N \log T)$
 - `get(x, init, t)`：$O(\log T)$
 - `get_idx(x, t)`：$O(\log T)$
+
+---
+
+## Verified with (AtCoder)
+- [abc167_d](https://atcoder.jp/contests/abc167/submissions/20642022)
+- [abc175_d](https://atcoder.jp/contests/abc175/submissions/20641894)
