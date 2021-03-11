@@ -18,4 +18,5 @@ documentation_of: ../topological_sort.cpp
 ---
 
 ## Verified with (AtCoder)
-- [abs139_e](https://atcoder.jp/contests/abc139/submissions/20619125)
+- [abc139_e](https://atcoder.jp/contests/abc139/submissions/20619125)
+- [nikkei2019_qual_d](https://atcoder.jp/contests/nikkei2019-qual/submissions/20834858)
