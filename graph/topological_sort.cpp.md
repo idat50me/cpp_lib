@@ -89,4 +89,5 @@ title: "Topological-Sort(\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8)
 ---
 
 ## Verified with (AtCoder)
-- [abs139_e](https://atcoder.jp/contests/abc139/submissions/20619125)
+- [abc139_e](https://atcoder.jp/contests/abc139/submissions/20619125)
+- [nikkei2019_qual_d](https://atcoder.jp/contests/nikkei2019-qual/submissions/20834858)
