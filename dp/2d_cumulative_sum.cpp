@@ -20,7 +20,14 @@ public:
 				table[i][j] = m[i - 1][j - 1] + table[i][j - 1] + table[i - 1][j] - table[i - 1][j - 1];
 	}
 
+	T get(int x, int y) {
+		return table[x][y];
+	}
 	T get(int sx, int sy, int tx, int ty) {
 		return table[tx][ty] - table[sx][ty] - table[tx][sy] + table[sx][sy];
+	}
+
+	void out() {
+		table.out();
 	}
 };
