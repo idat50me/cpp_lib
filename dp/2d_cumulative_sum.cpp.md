@@ -38,24 +38,26 @@ data:
     \tv2d<T> table;\r\n\r\npublic:\r\n\tsum2d(v2d<T> &m) : H(m.size() + 1), W(m[0].size()\
     \ + 1), table(H, W, 0) {\r\n\t\tfor(int i = 1; i < H; i++)\r\n\t\t\tfor(int j\
     \ = 1; j < W; j++)\r\n\t\t\t\ttable[i][j] = m[i - 1][j - 1] + table[i][j - 1]\
-    \ + table[i - 1][j] - table[i - 1][j - 1];\r\n\t}\r\n\r\n\tT get(int sx, int sy,\
-    \ int tx, int ty) {\r\n\t\treturn table[tx][ty] - table[sx][ty] - table[tx][sy]\
-    \ + table[sx][sy];\r\n\t}\r\n};\r\n"
+    \ + table[i - 1][j] - table[i - 1][j - 1];\r\n\t}\r\n\r\n\tT get(int x, int y)\
+    \ {\r\n\t\treturn table[x][y];\r\n\t}\r\n\tT get(int sx, int sy, int tx, int ty)\
+    \ {\r\n\t\treturn table[tx][ty] - table[sx][ty] - table[tx][sy] + table[sx][sy];\r\
+    \n\t}\r\n\r\n\tvoid out() {\r\n\t\ttable.out();\r\n\t}\r\n};\r\n"
   code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
     \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\n#include \"../structure/2d_array.cpp\"\
     \r\n\r\ntemplate<typename T> struct sum2d {\r\nprivate:\r\n\tconst int H, W;\r\
     \n\tv2d<T> table;\r\n\r\npublic:\r\n\tsum2d(v2d<T> &m) : H(m.size() + 1), W(m[0].size()\
     \ + 1), table(H, W, 0) {\r\n\t\tfor(int i = 1; i < H; i++)\r\n\t\t\tfor(int j\
     \ = 1; j < W; j++)\r\n\t\t\t\ttable[i][j] = m[i - 1][j - 1] + table[i][j - 1]\
-    \ + table[i - 1][j] - table[i - 1][j - 1];\r\n\t}\r\n\r\n\tT get(int sx, int sy,\
-    \ int tx, int ty) {\r\n\t\treturn table[tx][ty] - table[sx][ty] - table[tx][sy]\
-    \ + table[sx][sy];\r\n\t}\r\n};\r\n"
+    \ + table[i - 1][j] - table[i - 1][j - 1];\r\n\t}\r\n\r\n\tT get(int x, int y)\
+    \ {\r\n\t\treturn table[x][y];\r\n\t}\r\n\tT get(int sx, int sy, int tx, int ty)\
+    \ {\r\n\t\treturn table[tx][ty] - table[sx][ty] - table[tx][sy] + table[sx][sy];\r\
+    \n\t}\r\n\r\n\tvoid out() {\r\n\t\ttable.out();\r\n\t}\r\n};\r\n"
   dependsOn:
   - structure/2d_array.cpp
   isVerificationFile: false
   path: dp/2d_cumulative_sum.cpp
   requiredBy: []
-  timestamp: '2021-02-26 21:39:59+09:00'
+  timestamp: '2021-03-16 17:39:42+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_0560.test.cpp
@@ -71,8 +73,14 @@ $2$ 次元配列をもとに $2$ 次元累積和を求める．
 - `sum2d(m)`：$2$ 次元配列 `m` をもとに $2$ 次元累積和のテーブルを構築する．
 
 ## メンバ関数
+- `get(x, y)`：$(x,y)$ までの累積和を返す．
 - `get(sx, sy, tx, ty)`：$(sx,sy)$ から $(tx,ty)$ までの累積和を返す．$sx \leq tx,\ sy \leq ty$ であり，$(sx,sy)$ 側が開区間である．
+- `out()`：累積和テーブルを出力する．
 
 ## 計算量
 - コンストラクタ：$O(HW)$
-- `get(sx, sy, tx, ty)`：$O(1)$
+- `get()`：$O(1)$
+- `out()`：$O(HW)$
+
+## 注意点
+累積和テーブルを構築する際に，index が1つずれることに注意．(1次元累積和テーブルで `table[0]` に $0$ を格納するように，`table[0][y]` と `table[x][0]` に $0$ を格納している．)
