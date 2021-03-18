@@ -20,7 +20,7 @@ public:
 				dv[i] = i;
 			}
 
-			for(int &p : primes) {
+			for(int p : primes) {
 				if(p > dv[i] || (long long)i * p > N) break;
 				dv[i * p] = p;
 			}
