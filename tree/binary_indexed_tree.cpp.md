@@ -56,8 +56,8 @@ data:
   timestamp: '2021-02-03 23:13:19+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo_static_range_sum_2.test.cpp
   - test/aoj_ALDS1_5_D.test.cpp
+  - test/yosupo_static_range_sum_2.test.cpp
 documentation_of: tree/binary_indexed_tree.cpp
 layout: document
 title: binary_indexed_tree(BIT)
