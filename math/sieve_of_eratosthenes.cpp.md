@@ -19,7 +19,7 @@ data:
     #endif\r\n\r\nstruct Sieve {\r\nprivate:\r\n\tint N;\r\n\tvector<int> dv, primes;\r\
     \n\r\npublic:\r\n\tSieve(int n) : N(n), dv(n + 1, 0) {\r\n\t\tdv[0] = dv[1] =\
     \ -1;\r\n\t\tfor(int i = 2; i <= N; i++) {\r\n\t\t\tif(!dv[i]) {\r\n\t\t\t\tprimes.emplace_back(i);\r\
-    \n\t\t\t\tdv[i] = i;\r\n\t\t\t}\r\n\r\n\t\t\tfor(int &p : primes) {\r\n\t\t\t\t\
+    \n\t\t\t\tdv[i] = i;\r\n\t\t\t}\r\n\r\n\t\t\tfor(int p : primes) {\r\n\t\t\t\t\
     if(p > dv[i] || (long long)i * p > N) break;\r\n\t\t\t\tdv[i * p] = p;\r\n\t\t\
     \t}\r\n\t\t}\r\n\t}\r\n\r\n\tbool isprime(int x) {\r\n\t\treturn dv[x] == x;\r\
     \n\t}\r\n\r\n\tvector<pair<int, int>> primefact(int n) {\r\n\t\tif(n == 1) return\
@@ -35,10 +35,10 @@ data:
     private:\r\n\tint N;\r\n\tvector<int> dv, primes;\r\n\r\npublic:\r\n\tSieve(int\
     \ n) : N(n), dv(n + 1, 0) {\r\n\t\tdv[0] = dv[1] = -1;\r\n\t\tfor(int i = 2; i\
     \ <= N; i++) {\r\n\t\t\tif(!dv[i]) {\r\n\t\t\t\tprimes.emplace_back(i);\r\n\t\t\
-    \t\tdv[i] = i;\r\n\t\t\t}\r\n\r\n\t\t\tfor(int &p : primes) {\r\n\t\t\t\tif(p\
-    \ > dv[i] || (long long)i * p > N) break;\r\n\t\t\t\tdv[i * p] = p;\r\n\t\t\t\
-    }\r\n\t\t}\r\n\t}\r\n\r\n\tbool isprime(int x) {\r\n\t\treturn dv[x] == x;\r\n\
-    \t}\r\n\r\n\tvector<pair<int, int>> primefact(int n) {\r\n\t\tif(n == 1) return\
+    \t\tdv[i] = i;\r\n\t\t\t}\r\n\r\n\t\t\tfor(int p : primes) {\r\n\t\t\t\tif(p >\
+    \ dv[i] || (long long)i * p > N) break;\r\n\t\t\t\tdv[i * p] = p;\r\n\t\t\t}\r\
+    \n\t\t}\r\n\t}\r\n\r\n\tbool isprime(int x) {\r\n\t\treturn dv[x] == x;\r\n\t\
+    }\r\n\r\n\tvector<pair<int, int>> primefact(int n) {\r\n\t\tif(n == 1) return\
     \ vector<pair<int, int>>({});\r\n\t\tvector<pair<int, int>> res = {pair<int, int>(dv[n],\
     \ 1)};\r\n\t\tn /= dv[n];\r\n\t\twhile(n > 1) {\r\n\t\t\tint d = dv[n];\r\n\t\t\
     \tif(res.back().first == d) res.back().second++;\r\n\t\t\telse\r\n\t\t\t\tres.emplace_back(d,\
@@ -50,7 +50,7 @@ data:
   isVerificationFile: false
   path: math/sieve_of_eratosthenes.cpp
   requiredBy: []
-  timestamp: '2021-03-18 15:08:53+09:00'
+  timestamp: '2021-03-18 15:13:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_NTL_1_A.test.cpp
