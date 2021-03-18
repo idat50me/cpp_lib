@@ -19,8 +19,11 @@ public:
 				primes.emplace_back(i);
 				dv[i] = i;
 			}
-			for(int j = 0; j < primes.size() && primes[j] <= dv[i] && (long long)i * primes[j] <= N; j++)
-				dv[i * primes[j]] = primes[j];
+
+			for(int p : primes) {
+				if(p > dv[i] || (long long)i * p > N) break;
+				dv[i * p] = p;
+			}
 		}
 	}
 
