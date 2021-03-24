@@ -13,7 +13,7 @@ bool isprime(long long n) {
 	long long i = 7;
 	while(i * i <= n) {
 		for(int k : {4, 2, 4, 2, 4, 6, 2, 6}) {
-			if(i * i <= n) break;
+			if(i * i > n) break;
 			if(n % i == 0) return false;
 			i += k;
 		}
