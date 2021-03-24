@@ -54,15 +54,15 @@ data:
   isVerificationFile: false
   path: math/extgcd.cpp
   requiredBy:
-  - math/garner.cpp
   - math/chinese_remainder_theorem.cpp
+  - math/garner.cpp
   timestamp: '2021-02-28 01:32:23+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj_NTL_1_E.test.cpp
+  - test/aoj_ALDS1_1_B.test.cpp
   - test/yuki_0186.test.cpp
   - test/yuki_0187.test.cpp
-  - test/aoj_ALDS1_1_B.test.cpp
+  - test/aoj_NTL_1_E.test.cpp
 documentation_of: math/extgcd.cpp
 layout: document
 title: "extgcd(\u62E1\u5F35\u30E6\u30FC\u30AF\u30EA\u30C3\u30C9\u306E\u4E92\u9664\u6CD5\

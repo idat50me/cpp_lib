@@ -132,8 +132,8 @@ data:
   timestamp: '2021-02-23 15:26:37+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yuki_0599.test.cpp
   - test/yuki_1035.test.cpp
+  - test/yuki_0599.test.cpp
   - test/aoj_0341.test.cpp
 documentation_of: mod/modint.cpp
 layout: document

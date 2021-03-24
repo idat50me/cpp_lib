@@ -14,32 +14,34 @@ data:
   bundledCode: "#line 2 \"math/millor_rabin.cpp\"\n\r\n#ifndef call_include\r\n#define\
     \ call_include\r\n#include <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\
     \n\r\nbool isprime(long long n) {\r\n\tif(n == 2) return true;\r\n\tif(n < 2 ||\
-    \ n%2 == 0) return false;\r\n\r\n\tif(n < 200000) {\r\n\t\tfor(long long i=2;\
-    \ i*i<=n; i++) if(n%i == 0) return false;\r\n\t\treturn true;\r\n\t}\r\n\r\n\t\
-    long long d = n>>1;\r\n\tint s = 1;\r\n\twhile(!(d&1)) {\r\n\t\ts++;\r\n\t\td\
-    \ >>= 1;\r\n\t}\r\n\r\n\tfor(int k: {2,3,5,7,11,13,17,19,23,29,31,37}) {\r\n\t\
-    \tif(k >= n) break;\r\n\t\t\r\n\t\t__int128_t r = 1, q = k;\r\n\t\twhile(d > 0)\
-    \ {\r\n\t\t\tif(d & 1) (r*=q) %= n;\r\n\t\t\td >>= 1;\r\n\t\t\t(q*=q) %= n;\r\n\
-    \t\t}\r\n\t\tif(r == 1 || r == n-1) continue;\r\n\t\t\r\n\t\tfor(int i = 1; i\
-    \ < s; i++) {\r\n\t\t\t(r*=r) %= n;\r\n\t\t\tif(r == n-1) break;\r\n\t\t}\r\n\t\
-    \tif(r != n-1) return false;\r\n\t}\r\n\r\n\treturn true;\r\n}\r\n"
+    \ n % 2 == 0) return false;\r\n\r\n\tif(n < 200000) {\r\n\t\tfor(long long i =\
+    \ 3; i * i <= n; i += 2)\r\n\t\t\tif(n % i == 0) return false;\r\n\t\treturn true;\r\
+    \n\t}\r\n\r\n\tlong long d = n >> 1;\r\n\tint s = 1;\r\n\twhile(!(d & 1)) {\r\n\
+    \t\ts++;\r\n\t\td >>= 1;\r\n\t}\r\n\r\n\tfor(int k : {2, 3, 5, 7, 11, 13, 17,\
+    \ 19, 23, 29, 31, 37}) {\r\n\t\tif(k >= n) break;\r\n\r\n\t\t__int128_t r = 1,\
+    \ q = k;\r\n\t\twhile(d > 0) {\r\n\t\t\tif(d & 1) (r *= q) %= n;\r\n\t\t\td >>=\
+    \ 1;\r\n\t\t\t(q *= q) %= n;\r\n\t\t}\r\n\t\tif(r == 1 || r == n - 1) continue;\r\
+    \n\r\n\t\tfor(int i = 1; i < s; i++) {\r\n\t\t\t(r *= r) %= n;\r\n\t\t\tif(r ==\
+    \ n - 1) break;\r\n\t\t}\r\n\t\tif(r != n - 1) return false;\r\n\t}\r\n\r\n\t\
+    return true;\r\n}\r\n"
   code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
     \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\nbool isprime(long long\
-    \ n) {\r\n\tif(n == 2) return true;\r\n\tif(n < 2 || n%2 == 0) return false;\r\
-    \n\r\n\tif(n < 200000) {\r\n\t\tfor(long long i=2; i*i<=n; i++) if(n%i == 0) return\
-    \ false;\r\n\t\treturn true;\r\n\t}\r\n\r\n\tlong long d = n>>1;\r\n\tint s =\
-    \ 1;\r\n\twhile(!(d&1)) {\r\n\t\ts++;\r\n\t\td >>= 1;\r\n\t}\r\n\r\n\tfor(int\
-    \ k: {2,3,5,7,11,13,17,19,23,29,31,37}) {\r\n\t\tif(k >= n) break;\r\n\t\t\r\n\
-    \t\t__int128_t r = 1, q = k;\r\n\t\twhile(d > 0) {\r\n\t\t\tif(d & 1) (r*=q) %=\
-    \ n;\r\n\t\t\td >>= 1;\r\n\t\t\t(q*=q) %= n;\r\n\t\t}\r\n\t\tif(r == 1 || r ==\
-    \ n-1) continue;\r\n\t\t\r\n\t\tfor(int i = 1; i < s; i++) {\r\n\t\t\t(r*=r) %=\
-    \ n;\r\n\t\t\tif(r == n-1) break;\r\n\t\t}\r\n\t\tif(r != n-1) return false;\r\
-    \n\t}\r\n\r\n\treturn true;\r\n}\r\n"
+    \ n) {\r\n\tif(n == 2) return true;\r\n\tif(n < 2 || n % 2 == 0) return false;\r\
+    \n\r\n\tif(n < 200000) {\r\n\t\tfor(long long i = 3; i * i <= n; i += 2)\r\n\t\
+    \t\tif(n % i == 0) return false;\r\n\t\treturn true;\r\n\t}\r\n\r\n\tlong long\
+    \ d = n >> 1;\r\n\tint s = 1;\r\n\twhile(!(d & 1)) {\r\n\t\ts++;\r\n\t\td >>=\
+    \ 1;\r\n\t}\r\n\r\n\tfor(int k : {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37})\
+    \ {\r\n\t\tif(k >= n) break;\r\n\r\n\t\t__int128_t r = 1, q = k;\r\n\t\twhile(d\
+    \ > 0) {\r\n\t\t\tif(d & 1) (r *= q) %= n;\r\n\t\t\td >>= 1;\r\n\t\t\t(q *= q)\
+    \ %= n;\r\n\t\t}\r\n\t\tif(r == 1 || r == n - 1) continue;\r\n\r\n\t\tfor(int\
+    \ i = 1; i < s; i++) {\r\n\t\t\t(r *= r) %= n;\r\n\t\t\tif(r == n - 1) break;\r\
+    \n\t\t}\r\n\t\tif(r != n - 1) return false;\r\n\t}\r\n\r\n\treturn true;\r\n}\r\
+    \n"
   dependsOn: []
   isVerificationFile: false
   path: math/millor_rabin.cpp
   requiredBy: []
-  timestamp: '2021-01-30 16:48:29+09:00'
+  timestamp: '2021-03-24 17:36:33+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_ALDS1_1_C_3.test.cpp
