@@ -71,7 +71,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: math/inversion_number.cpp
       title: math/inversion_number.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: math/isprime.cpp
       title: "Isprime(\u7D20\u6570\u5224\u5B9A)"
     - icon: ':heavy_check_mark:'
@@ -153,7 +153,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj_ALDS1_1_C.test.cpp
       title: test/aoj_ALDS1_1_C.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/aoj_ALDS1_1_C_2.test.cpp
       title: test/aoj_ALDS1_1_C_2.test.cpp
     - icon: ':heavy_check_mark:'
