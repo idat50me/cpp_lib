@@ -121,8 +121,8 @@ data:
   timestamp: '2020-12-26 00:26:25+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj_GRL_6_B_2.test.cpp
   - test/aoj_2429.test.cpp
+  - test/aoj_GRL_6_B_2.test.cpp
 documentation_of: graph/mincostflow_nega.cpp
 layout: document
 title: "mincostflow_nega(\u6700\u5C0F\u8CBB\u7528\u6D41)"
