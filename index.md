@@ -12,6 +12,9 @@ data:
     - icon: ':warning:'
       path: combinatorics/npr.cpp
       title: combinatorics/npr.cpp
+    - icon: ':warning:'
+      path: combinatorics/small_p_ncr.cpp
+      title: nCr mod p ($n > p$)
   - name: dp
     pages:
     - icon: ':heavy_check_mark:'
