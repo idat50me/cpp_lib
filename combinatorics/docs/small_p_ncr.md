@@ -4,7 +4,7 @@ documentation_of: ../small_p_ncr.cpp
 ---
 
 ## なにこれ
-${}_nC_r\ (\bmod\ p)$ を求める．$n > p$ でも動く．
+${}_nC_r\ (\mathrm{mod}\ p)$ を求める．$n > p$ でも動く．
 
 ## コンストラクタ
 - `spncr(n, p)`：$n$ の最大値を `n`，法を `p` とする．$p$ は素数．
