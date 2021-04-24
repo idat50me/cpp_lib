@@ -59,9 +59,9 @@ data:
   timestamp: '2021-02-28 01:32:23+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/yuki_0187.test.cpp
   - test/yuki_0186.test.cpp
   - test/aoj_NTL_1_E.test.cpp
-  - test/yuki_0187.test.cpp
   - test/aoj_ALDS1_1_B.test.cpp
 documentation_of: math/extgcd.cpp
 layout: document

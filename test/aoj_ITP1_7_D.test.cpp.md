@@ -50,11 +50,12 @@ data:
     \treturn matrix(*this) += a;\r\n\t}\r\n\tmatrix operator-(const matrix &a) const\
     \ {\r\n\t\treturn matrix(*this) -= a;\r\n\t}\r\n\tmatrix operator*(const matrix\
     \ &a) const {\r\n\t\treturn matrix(*this) *= a;\r\n\t}\r\n\r\n\tstatic matrix\
-    \ pow(matrix a, long long ex) {\r\n\t\tmatrix res = identity(a.height());\r\n\t\
-    \twhile(ex > 0) {\r\n\t\t\tif(ex & 1) res *= a;\r\n\t\t\tex >>= 1;\r\n\t\t\ta\
-    \ *= a;\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\n};\r\n#line 10 \"test/aoj_ITP1_7_D.test.cpp\"\
-    \n\r\nint main() {\r\n\tint N,M,L; cin>>N>>M>>L;\r\n\tmatrix<long long> A,B;\r\
-    \n\tA.in(N,M);\r\n\tB.in(M,L);\r\n\t(A*B).out();\r\n}\r\n"
+    \ pow(matrix a, long long ex) {\r\n\t\tassert(a.height() == a.width());\r\n\t\t\
+    matrix res = identity(a.height());\r\n\t\twhile(ex > 0) {\r\n\t\t\tif(ex & 1)\
+    \ res *= a;\r\n\t\t\tex >>= 1;\r\n\t\t\ta *= a;\r\n\t\t}\r\n\t\treturn res;\r\n\
+    \t}\r\n};\r\n#line 10 \"test/aoj_ITP1_7_D.test.cpp\"\n\r\nint main() {\r\n\tint\
+    \ N,M,L; cin>>N>>M>>L;\r\n\tmatrix<long long> A,B;\r\n\tA.in(N,M);\r\n\tB.in(M,L);\r\
+    \n\t(A*B).out();\r\n}\r\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/problems/ITP1_7_D\"\r\n\
     \r\n#ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\
     \nusing namespace std;\r\n#endif\r\n\r\n#include \"structure/matrix.cpp\"\r\n\r\
@@ -65,7 +66,7 @@ data:
   isVerificationFile: true
   path: test/aoj_ITP1_7_D.test.cpp
   requiredBy: []
-  timestamp: '2021-04-19 01:27:30+09:00'
+  timestamp: '2021-04-24 23:57:20+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/aoj_ITP1_7_D.test.cpp

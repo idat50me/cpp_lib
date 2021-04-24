@@ -34,8 +34,8 @@ data:
   timestamp: '2021-01-30 16:48:29+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj_NTL_1_B.test.cpp
   - test/yuki_1035.test.cpp
+  - test/aoj_NTL_1_B.test.cpp
 documentation_of: math/binpow.cpp
 layout: document
 redirect_from:

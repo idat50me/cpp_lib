@@ -35,8 +35,8 @@ data:
   timestamp: '2021-01-30 17:39:38+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj_NTL_1_A_2.test.cpp
   - test/aoj_2932.test.cpp
+  - test/aoj_NTL_1_A_2.test.cpp
 documentation_of: math/primefact.cpp
 layout: document
 redirect_from:

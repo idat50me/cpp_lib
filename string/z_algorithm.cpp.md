@@ -36,8 +36,8 @@ data:
   timestamp: '2021-01-07 08:32:51+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo_zalgorithm.test.cpp
   - test/yuki_0599.test.cpp
+  - test/yosupo_zalgorithm.test.cpp
 documentation_of: string/z_algorithm.cpp
 layout: document
 title: "Z-Algorithm(\u6700\u9577\u5171\u901A\u63A5\u982D\u8F9E)"

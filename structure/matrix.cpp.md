@@ -44,9 +44,10 @@ data:
     \ matrix &a) const {\r\n\t\treturn matrix(*this) += a;\r\n\t}\r\n\tmatrix operator-(const\
     \ matrix &a) const {\r\n\t\treturn matrix(*this) -= a;\r\n\t}\r\n\tmatrix operator*(const\
     \ matrix &a) const {\r\n\t\treturn matrix(*this) *= a;\r\n\t}\r\n\r\n\tstatic\
-    \ matrix pow(matrix a, long long ex) {\r\n\t\tmatrix res = identity(a.height());\r\
-    \n\t\twhile(ex > 0) {\r\n\t\t\tif(ex & 1) res *= a;\r\n\t\t\tex >>= 1;\r\n\t\t\
-    \ta *= a;\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\n};\r\n"
+    \ matrix pow(matrix a, long long ex) {\r\n\t\tassert(a.height() == a.width());\r\
+    \n\t\tmatrix res = identity(a.height());\r\n\t\twhile(ex > 0) {\r\n\t\t\tif(ex\
+    \ & 1) res *= a;\r\n\t\t\tex >>= 1;\r\n\t\t\ta *= a;\r\n\t\t}\r\n\t\treturn res;\r\
+    \n\t}\r\n};\r\n"
   code: "#pragma once\r\n\r\n#ifndef call_include\r\n#define call_include\r\n#include\
     \ <bits/stdc++.h>\r\nusing namespace std;\r\n#endif\r\n\r\ntemplate<typename T>\
     \ struct matrix {\r\nprivate:\r\n\tvector<vector<T>> m;\r\n\r\npublic:\r\n\tmatrix()\
@@ -80,14 +81,15 @@ data:
     \treturn matrix(*this) += a;\r\n\t}\r\n\tmatrix operator-(const matrix &a) const\
     \ {\r\n\t\treturn matrix(*this) -= a;\r\n\t}\r\n\tmatrix operator*(const matrix\
     \ &a) const {\r\n\t\treturn matrix(*this) *= a;\r\n\t}\r\n\r\n\tstatic matrix\
-    \ pow(matrix a, long long ex) {\r\n\t\tmatrix res = identity(a.height());\r\n\t\
-    \twhile(ex > 0) {\r\n\t\t\tif(ex & 1) res *= a;\r\n\t\t\tex >>= 1;\r\n\t\t\ta\
-    \ *= a;\r\n\t\t}\r\n\t\treturn res;\r\n\t}\r\n};\r\n"
+    \ pow(matrix a, long long ex) {\r\n\t\tassert(a.height() == a.width());\r\n\t\t\
+    matrix res = identity(a.height());\r\n\t\twhile(ex > 0) {\r\n\t\t\tif(ex & 1)\
+    \ res *= a;\r\n\t\t\tex >>= 1;\r\n\t\t\ta *= a;\r\n\t\t}\r\n\t\treturn res;\r\n\
+    \t}\r\n};\r\n"
   dependsOn: []
   isVerificationFile: false
   path: structure/matrix.cpp
   requiredBy: []
-  timestamp: '2021-04-19 01:27:30+09:00'
+  timestamp: '2021-04-24 23:57:20+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_ITP1_7_D.test.cpp
@@ -113,6 +115,7 @@ title: "Matrix(\u884C\u5217)"
 - `operator[](idx)`：`idx` 番目の要素である $1$ 次元配列の参照を返す．`vector` を用いた多次元配列と同様に扱える．
 - `identity(n)`：`n` 次単位行列を返す．
 - 各算術演算子：行列和・行列差・行列積を行う．
+- `pow(a, ex)`：行列累乗の結果を返す．
 
 ## 計算量
 $H$ 行 $W$ 列の行列を扱うとする．
@@ -127,6 +130,9 @@ $H$ 行 $W$ 列の行列を扱うとする．
 
 $H_1$ 行 $W_1$ 列の行列と $H_2$ 行 $W_2$ 列の行列を扱うとする．
 - 行列積：$O(H_1W_1W_2)$
+
+$k$ 次正方行列を扱うとする．
+- `pow(a, ex)`：$O(k^3)$
 
 ## 参考
 - [初期化子リスト - cpprefjp C++日本語リファレンス](https://cpprefjp.github.io/lang/cpp11/initializer_lists.html)
