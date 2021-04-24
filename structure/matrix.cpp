@@ -98,6 +98,7 @@ public:
 	}
 
 	static matrix pow(matrix a, long long ex) {
+		assert(a.height() == a.width());
 		matrix res = identity(a.height());
 		while(ex > 0) {
 			if(ex & 1) res *= a;

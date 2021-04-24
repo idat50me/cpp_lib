@@ -20,6 +20,7 @@ documentation_of: ../matrix.cpp
 - `operator[](idx)`：`idx` 番目の要素である $1$ 次元配列の参照を返す．`vector` を用いた多次元配列と同様に扱える．
 - `identity(n)`：`n` 次単位行列を返す．
 - 各算術演算子：行列和・行列差・行列積を行う．
+- `pow(a, ex)`：行列累乗の結果を返す．
 
 ## 計算量
 $H$ 行 $W$ 列の行列を扱うとする．
@@ -34,6 +35,9 @@ $H$ 行 $W$ 列の行列を扱うとする．
 
 $H_1$ 行 $W_1$ 列の行列と $H_2$ 行 $W_2$ 列の行列を扱うとする．
 - 行列積：$O(H_1W_1W_2)$
+
+$k$ 次正方行列を扱うとする．
+- `pow(a, ex)`：$O(k^3)$
 
 ## 参考
 - [初期化子リスト - cpprefjp C++日本語リファレンス](https://cpprefjp.github.io/lang/cpp11/initializer_lists.html)
