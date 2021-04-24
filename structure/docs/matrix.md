@@ -13,6 +13,7 @@ documentation_of: ../matrix.cpp
 
 ## メンバ関数
 - `assign(h, w)`：`h` 行 `w` 列の行列を作る．
+- `assign(h, w, init)`：`init` を初期値とする `h` 行 `w` 列の行列を作る．
 - `height()`, `width()`：行列の縦・横のサイズを返す．
 - `in()`：現在の要素サイズ分だけ標準入力する．
 - `in(h, w)`：`h` 行 `w` 列の行列を作り標準入力する．

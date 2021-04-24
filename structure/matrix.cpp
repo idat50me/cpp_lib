@@ -19,6 +19,9 @@ public:
 	void assign(int h, int w) {
 		m.assign(h, vector<T>(w));
 	}
+	void assign(int h, int w, const T init) {
+		m.assign(h, vector<T>(w, init));
+	}
 
 	int height() const {
 		return m.size();
