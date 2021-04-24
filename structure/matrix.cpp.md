@@ -18,8 +18,9 @@ data:
     \ {}\r\n\tmatrix(int h, int w, T init) : m(h, vector(w, init)) {}\r\n\tmatrix(const\
     \ initializer_list<initializer_list<T>> m_init) : m(m_init.begin(), m_init.end())\
     \ {}\r\n\r\n\tvoid assign(int h, int w) {\r\n\t\tm.assign(h, vector<T>(w));\r\n\
-    \t}\r\n\r\n\tint height() const {\r\n\t\treturn m.size();\r\n\t}\r\n\r\n\tint\
-    \ width() const {\r\n\t\tif(height() == 0) return 0;\r\n\t\treturn m[0].size();\r\
+    \t}\r\n\tvoid assign(int h, int w, const T init) {\r\n\t\tm.assign(h, vector<T>(w,\
+    \ init));\r\n\t}\r\n\r\n\tint height() const {\r\n\t\treturn m.size();\r\n\t}\r\
+    \n\r\n\tint width() const {\r\n\t\tif(height() == 0) return 0;\r\n\t\treturn m[0].size();\r\
     \n\t}\r\n\r\n\tvoid in() {\r\n\t\tfor(vector<T> &v : m)\r\n\t\t\tfor(T &val :\
     \ v) cin >> val;\r\n\t}\r\n\tvoid in(int h, int w) {\r\n\t\tm.resize(h, vector<T>(w));\r\
     \n\t\tin();\r\n\t}\r\n\r\n\tvoid out() {\r\n\t\tint w = width();\r\n\t\tfor(vector<T>\
@@ -54,42 +55,43 @@ data:
     \ {}\r\n\tmatrix(int h, int w) : m(h, vector<T>(w)) {}\r\n\tmatrix(int h, int\
     \ w, T init) : m(h, vector(w, init)) {}\r\n\tmatrix(const initializer_list<initializer_list<T>>\
     \ m_init) : m(m_init.begin(), m_init.end()) {}\r\n\r\n\tvoid assign(int h, int\
-    \ w) {\r\n\t\tm.assign(h, vector<T>(w));\r\n\t}\r\n\r\n\tint height() const {\r\
-    \n\t\treturn m.size();\r\n\t}\r\n\r\n\tint width() const {\r\n\t\tif(height()\
-    \ == 0) return 0;\r\n\t\treturn m[0].size();\r\n\t}\r\n\r\n\tvoid in() {\r\n\t\
-    \tfor(vector<T> &v : m)\r\n\t\t\tfor(T &val : v) cin >> val;\r\n\t}\r\n\tvoid\
-    \ in(int h, int w) {\r\n\t\tm.resize(h, vector<T>(w));\r\n\t\tin();\r\n\t}\r\n\
-    \r\n\tvoid out() {\r\n\t\tint w = width();\r\n\t\tfor(vector<T> &v : m)\r\n\t\t\
-    \tfor(int j = 0; j < w; j++) {\r\n\t\t\t\tcout << v[j] << (j == w - 1 ? '\\n'\
-    \ : ' ');\r\n\t\t\t}\r\n\t\tcout << flush;\r\n\t}\r\n\r\n\tinline const vector<T>\
-    \ &operator[](int idx) const {\r\n\t\tassert(0 <= idx && idx < m.size());\r\n\t\
-    \treturn m[idx];\r\n\t}\r\n\tinline vector<T> &operator[](int idx) {\r\n\t\tassert(0\
-    \ <= idx && idx < m.size());\r\n\t\treturn m[idx];\r\n\t}\r\n\r\n\tstatic matrix\
-    \ identity(int n) {\r\n\t\tmatrix res(n, n, 0);\r\n\t\tfor(int i = 0; i < n; i++)\
-    \ res[i][i] = 1;\r\n\t\treturn res;\r\n\t}\r\n\r\n\tmatrix &operator+=(const matrix\
-    \ &a) {\r\n\t\tint h = height(), w = width();\r\n\t\tassert(h == a.height() &&\
-    \ w == a.width());\r\n\t\tfor(int i = 0; i < h; i++)\r\n\t\t\tfor(int j = 0; j\
-    \ < w; j++) m[i][j] += a[i][j];\r\n\t\treturn *this;\r\n\t}\r\n\tmatrix &operator-=(const\
-    \ matrix &a) {\r\n\t\tint h = height(), w = width();\r\n\t\tassert(h == a.height()\
-    \ && w == a.width());\r\n\t\tfor(int i = 0; i < h; i++)\r\n\t\t\tfor(int j = 0;\
-    \ j < w; j++) m[i][j] -= a[i][j];\r\n\t\treturn *this;\r\n\t}\r\n\tmatrix &operator*=(const\
-    \ matrix &a) {\r\n\t\tint h = height(), w = a.width(), ah = a.height();\r\n\t\t\
-    assert(width() == ah);\r\n\t\tvector<vector<T>> tmp(h, vector(w, T(0)));\r\n\t\
-    \tfor(int i = 0; i < h; i++)\r\n\t\t\tfor(int j = 0; j < w; j++)\r\n\t\t\t\tfor(int\
-    \ k = 0; k < ah; k++) tmp[i][j] += m[i][k] * a[k][j];\r\n\t\tm.swap(tmp);\r\n\t\
-    \treturn *this;\r\n\t}\r\n\r\n\tmatrix operator+(const matrix &a) const {\r\n\t\
-    \treturn matrix(*this) += a;\r\n\t}\r\n\tmatrix operator-(const matrix &a) const\
-    \ {\r\n\t\treturn matrix(*this) -= a;\r\n\t}\r\n\tmatrix operator*(const matrix\
-    \ &a) const {\r\n\t\treturn matrix(*this) *= a;\r\n\t}\r\n\r\n\tstatic matrix\
-    \ pow(matrix a, long long ex) {\r\n\t\tassert(a.height() == a.width());\r\n\t\t\
-    matrix res = identity(a.height());\r\n\t\twhile(ex > 0) {\r\n\t\t\tif(ex & 1)\
-    \ res *= a;\r\n\t\t\tex >>= 1;\r\n\t\t\ta *= a;\r\n\t\t}\r\n\t\treturn res;\r\n\
-    \t}\r\n};\r\n"
+    \ w) {\r\n\t\tm.assign(h, vector<T>(w));\r\n\t}\r\n\tvoid assign(int h, int w,\
+    \ const T init) {\r\n\t\tm.assign(h, vector<T>(w, init));\r\n\t}\r\n\r\n\tint\
+    \ height() const {\r\n\t\treturn m.size();\r\n\t}\r\n\r\n\tint width() const {\r\
+    \n\t\tif(height() == 0) return 0;\r\n\t\treturn m[0].size();\r\n\t}\r\n\r\n\t\
+    void in() {\r\n\t\tfor(vector<T> &v : m)\r\n\t\t\tfor(T &val : v) cin >> val;\r\
+    \n\t}\r\n\tvoid in(int h, int w) {\r\n\t\tm.resize(h, vector<T>(w));\r\n\t\tin();\r\
+    \n\t}\r\n\r\n\tvoid out() {\r\n\t\tint w = width();\r\n\t\tfor(vector<T> &v :\
+    \ m)\r\n\t\t\tfor(int j = 0; j < w; j++) {\r\n\t\t\t\tcout << v[j] << (j == w\
+    \ - 1 ? '\\n' : ' ');\r\n\t\t\t}\r\n\t\tcout << flush;\r\n\t}\r\n\r\n\tinline\
+    \ const vector<T> &operator[](int idx) const {\r\n\t\tassert(0 <= idx && idx <\
+    \ m.size());\r\n\t\treturn m[idx];\r\n\t}\r\n\tinline vector<T> &operator[](int\
+    \ idx) {\r\n\t\tassert(0 <= idx && idx < m.size());\r\n\t\treturn m[idx];\r\n\t\
+    }\r\n\r\n\tstatic matrix identity(int n) {\r\n\t\tmatrix res(n, n, 0);\r\n\t\t\
+    for(int i = 0; i < n; i++) res[i][i] = 1;\r\n\t\treturn res;\r\n\t}\r\n\r\n\t\
+    matrix &operator+=(const matrix &a) {\r\n\t\tint h = height(), w = width();\r\n\
+    \t\tassert(h == a.height() && w == a.width());\r\n\t\tfor(int i = 0; i < h; i++)\r\
+    \n\t\t\tfor(int j = 0; j < w; j++) m[i][j] += a[i][j];\r\n\t\treturn *this;\r\n\
+    \t}\r\n\tmatrix &operator-=(const matrix &a) {\r\n\t\tint h = height(), w = width();\r\
+    \n\t\tassert(h == a.height() && w == a.width());\r\n\t\tfor(int i = 0; i < h;\
+    \ i++)\r\n\t\t\tfor(int j = 0; j < w; j++) m[i][j] -= a[i][j];\r\n\t\treturn *this;\r\
+    \n\t}\r\n\tmatrix &operator*=(const matrix &a) {\r\n\t\tint h = height(), w =\
+    \ a.width(), ah = a.height();\r\n\t\tassert(width() == ah);\r\n\t\tvector<vector<T>>\
+    \ tmp(h, vector(w, T(0)));\r\n\t\tfor(int i = 0; i < h; i++)\r\n\t\t\tfor(int\
+    \ j = 0; j < w; j++)\r\n\t\t\t\tfor(int k = 0; k < ah; k++) tmp[i][j] += m[i][k]\
+    \ * a[k][j];\r\n\t\tm.swap(tmp);\r\n\t\treturn *this;\r\n\t}\r\n\r\n\tmatrix operator+(const\
+    \ matrix &a) const {\r\n\t\treturn matrix(*this) += a;\r\n\t}\r\n\tmatrix operator-(const\
+    \ matrix &a) const {\r\n\t\treturn matrix(*this) -= a;\r\n\t}\r\n\tmatrix operator*(const\
+    \ matrix &a) const {\r\n\t\treturn matrix(*this) *= a;\r\n\t}\r\n\r\n\tstatic\
+    \ matrix pow(matrix a, long long ex) {\r\n\t\tassert(a.height() == a.width());\r\
+    \n\t\tmatrix res = identity(a.height());\r\n\t\twhile(ex > 0) {\r\n\t\t\tif(ex\
+    \ & 1) res *= a;\r\n\t\t\tex >>= 1;\r\n\t\t\ta *= a;\r\n\t\t}\r\n\t\treturn res;\r\
+    \n\t}\r\n};\r\n"
   dependsOn: []
   isVerificationFile: false
   path: structure/matrix.cpp
   requiredBy: []
-  timestamp: '2021-04-24 23:57:20+09:00'
+  timestamp: '2021-04-25 00:02:46+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_ITP1_7_D.test.cpp
@@ -108,6 +110,7 @@ title: "Matrix(\u884C\u5217)"
 
 ## メンバ関数
 - `assign(h, w)`：`h` 行 `w` 列の行列を作る．
+- `assign(h, w, init)`：`init` を初期値とする `h` 行 `w` 列の行列を作る．
 - `height()`, `width()`：行列の縦・横のサイズを返す．
 - `in()`：現在の要素サイズ分だけ標準入力する．
 - `in(h, w)`：`h` 行 `w` 列の行列を作り標準入力する．
