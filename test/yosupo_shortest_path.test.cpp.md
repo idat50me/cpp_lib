@@ -58,7 +58,7 @@ data:
     \ cost(N, 0);\r\n\tfor(int i = 0; i < M; i++) {\r\n\t\tint a, b, c;\r\n\t\tcin\
     \ >> a >> b >> c;\r\n\t\tpath[a].push_back(b);\r\n\t\tcost[a].push_back(c);\r\n\
     \t}\r\n\r\n\tdijkstra dijk(path, cost, s);\r\n\tauto ans = dijk.get_path(t);\r\
-    \n\r\n\tif(ans.size() == 1) {\r\n\t\tcout << -1 << endl;\r\n\t\treturn;\r\n\t\
+    \n\r\n\tif(ans.size() == 1) {\r\n\t\tcout << -1 << endl;\r\n\t\treturn 0;\r\n\t\
     }\r\n\r\n\tfor(int i = 0; i < ans.size() - 1; i++) {\r\n\t\tcout << ans[i] <<\
     \ \" \" << ans[i + 1] << endl;\r\n\t}\r\n}\r\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/shortest_path\"\r\n\r\n\
@@ -68,7 +68,7 @@ data:
     \ cost(N, 0);\r\n\tfor(int i = 0; i < M; i++) {\r\n\t\tint a, b, c;\r\n\t\tcin\
     \ >> a >> b >> c;\r\n\t\tpath[a].push_back(b);\r\n\t\tcost[a].push_back(c);\r\n\
     \t}\r\n\r\n\tdijkstra dijk(path, cost, s);\r\n\tauto ans = dijk.get_path(t);\r\
-    \n\r\n\tif(ans.size() == 1) {\r\n\t\tcout << -1 << endl;\r\n\t\treturn;\r\n\t\
+    \n\r\n\tif(ans.size() == 1) {\r\n\t\tcout << -1 << endl;\r\n\t\treturn 0;\r\n\t\
     }\r\n\r\n\tfor(int i = 0; i < ans.size() - 1; i++) {\r\n\t\tcout << ans[i] <<\
     \ \" \" << ans[i + 1] << endl;\r\n\t}\r\n}\r\n"
   dependsOn:
@@ -77,7 +77,7 @@ data:
   isVerificationFile: true
   path: test/yosupo_shortest_path.test.cpp
   requiredBy: []
-  timestamp: '2021-05-17 18:10:14+09:00'
+  timestamp: '2021-05-17 18:13:20+09:00'
   verificationStatus: TEST_WRONG_ANSWER
   verifiedWith: []
 documentation_of: test/yosupo_shortest_path.test.cpp
