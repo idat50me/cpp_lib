@@ -9,6 +9,9 @@ data:
     path: dp/doubling.cpp
     title: "Doubling(\u30C0\u30D6\u30EA\u30F3\u30B0)"
   - icon: ':question:'
+    path: graph/dijkstra.cpp
+    title: graph/dijkstra.cpp
+  - icon: ':question:'
     path: graph/topological_sort.cpp
     title: "Topological-Sort(\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8\
       )"
@@ -22,12 +25,18 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj_2429.test.cpp
     title: test/aoj_2429.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/aoj_GRL_1_A.test.cpp
+    title: test/aoj_GRL_1_A.test.cpp
   - icon: ':x:'
     path: test/aoj_GRL_4_B.test.cpp
     title: test/aoj_GRL_4_B.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/aoj_ITP1_6_B.test.cpp
     title: test/aoj_ITP1_6_B.test.cpp
+  - icon: ':x:'
+    path: test/yosupo_shortest_path.test.cpp
+    title: test/yosupo_shortest_path.test.cpp
   - icon: ':heavy_check_mark:'
     path: test/yuki_0177.test.cpp
     title: test/yuki_0177.test.cpp
@@ -85,21 +94,24 @@ data:
   isVerificationFile: false
   path: structure/2d_array.cpp
   requiredBy:
+  - graph/topological_sort.cpp
+  - graph/dijkstra.cpp
   - dp/2d_cumulative_sum.cpp
   - dp/doubling.cpp
-  - graph/topological_sort.cpp
   timestamp: '2021-02-26 21:39:59+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
+  - test/aoj_ITP1_6_B.test.cpp
+  - test/aoj_GRL_1_A.test.cpp
+  - test/yuki_0497.test.cpp
+  - test/aoj_2429.test.cpp
+  - test/yosupo_shortest_path.test.cpp
+  - test/aoj_GRL_4_B.test.cpp
+  - test/yuki_0177.test.cpp
   - test/aoj_0560.test.cpp
   - test/yuki_1013.test.cpp
-  - test/yuki_0177.test.cpp
-  - test/aoj_0341.test.cpp
-  - test/aoj_GRL_4_B.test.cpp
-  - test/yuki_0497.test.cpp
   - test/yuki_1097.test.cpp
-  - test/aoj_ITP1_6_B.test.cpp
-  - test/aoj_2429.test.cpp
+  - test/aoj_0341.test.cpp
 documentation_of: structure/2d_array.cpp
 layout: document
 title: "2D-Array( $2$ \u6B21\u5143\u914D\u5217)"

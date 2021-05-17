@@ -53,8 +53,8 @@ data:
   timestamp: '2021-03-18 15:13:10+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/aoj_NTL_1_A.test.cpp
   - test/aoj_ALDS1_1_C.test.cpp
+  - test/aoj_NTL_1_A.test.cpp
 documentation_of: math/sieve_of_eratosthenes.cpp
 layout: document
 title: "Sieve-of-Eratosthenes(\u30A8\u30E9\u30C8\u30B9\u30C6\u30CD\u30B9\u306E\u7BE9\

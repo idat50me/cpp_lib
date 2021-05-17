@@ -67,8 +67,8 @@ data:
   timestamp: '2021-03-02 23:16:05+09:00'
   verificationStatus: LIBRARY_SOME_WA
   verifiedWith:
-  - test/aoj_GRL_4_B.test.cpp
   - test/yuki_0497.test.cpp
+  - test/aoj_GRL_4_B.test.cpp
 documentation_of: graph/topological_sort.cpp
 layout: document
 title: "Topological-Sort(\u30C8\u30DD\u30ED\u30B8\u30AB\u30EB\u30BD\u30FC\u30C8)"

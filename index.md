@@ -34,6 +34,9 @@ data:
       title: "LIS(\u6700\u9577\u5897\u52A0\u90E8\u5206\u5217)"
   - name: graph
     pages:
+    - icon: ':question:'
+      path: graph/dijkstra.cpp
+      title: graph/dijkstra.cpp
     - icon: ':heavy_check_mark:'
       path: graph/maxflow.cpp
       title: "maxflow(\u6700\u5927\u6D41)"
@@ -192,6 +195,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/aoj_DSL_2_H.test.cpp
       title: test/aoj_DSL_2_H.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/aoj_GRL_1_A.test.cpp
+      title: test/aoj_GRL_1_A.test.cpp
     - icon: ':x:'
       path: test/aoj_GRL_4_B.test.cpp
       title: test/aoj_GRL_4_B.test.cpp
@@ -228,6 +234,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo_enumerate_palindromes.test.cpp
       title: test/yosupo_enumerate_palindromes.test.cpp
+    - icon: ':x:'
+      path: test/yosupo_shortest_path.test.cpp
+      title: test/yosupo_shortest_path.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo_static_range_sum.test.cpp
       title: test/yosupo_static_range_sum.test.cpp
