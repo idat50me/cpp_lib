@@ -24,7 +24,7 @@ int main() {
 
 	if(ans.size() == 1) {
 		cout << -1 << endl;
-		return;
+		return 0;
 	}
 
 	for(int i = 0; i < ans.size() - 1; i++) {
