@@ -30,6 +30,7 @@
 "test/aoj_NTL_1_B.test.cpp": "2021-01-30 16:48:29 +0900",
 "test/aoj_NTL_1_E.test.cpp": "2021-02-28 01:32:23 +0900",
 "test/yosupo_enumerate_palindromes.test.cpp": "2021-01-30 16:48:29 +0900",
+"test/yosupo_shortest_path.test.cpp": "2021-05-17 18:15:39 +0900",
 "test/yosupo_static_range_sum.test.cpp": "2021-02-01 00:51:23 +0900",
 "test/yosupo_static_range_sum_2.test.cpp": "2021-02-03 23:13:19 +0900",
 "test/yosupo_staticrmq.test.cpp": "2021-02-01 00:51:23 +0900",
