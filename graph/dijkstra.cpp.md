@@ -9,12 +9,12 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj_GRL_1_A.test.cpp
     title: test/aoj_GRL_1_A.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo_shortest_path.test.cpp
     title: test/yosupo_shortest_path.test.cpp
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':question:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"graph/dijkstra.cpp\"\n\r\n#ifndef call_include\r\n#define\
@@ -73,7 +73,7 @@ data:
   path: graph/dijkstra.cpp
   requiredBy: []
   timestamp: '2021-05-17 18:10:14+09:00'
-  verificationStatus: LIBRARY_SOME_WA
+  verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/aoj_GRL_1_A.test.cpp
   - test/yosupo_shortest_path.test.cpp

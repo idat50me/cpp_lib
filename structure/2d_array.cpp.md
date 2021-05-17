@@ -8,7 +8,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: dp/doubling.cpp
     title: "Doubling(\u30C0\u30D6\u30EA\u30F3\u30B0)"
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/dijkstra.cpp
     title: graph/dijkstra.cpp
   - icon: ':question:'
@@ -34,7 +34,7 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/aoj_ITP1_6_B.test.cpp
     title: test/aoj_ITP1_6_B.test.cpp
-  - icon: ':x:'
+  - icon: ':heavy_check_mark:'
     path: test/yosupo_shortest_path.test.cpp
     title: test/yosupo_shortest_path.test.cpp
   - icon: ':heavy_check_mark:'

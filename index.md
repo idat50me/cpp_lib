@@ -34,7 +34,7 @@ data:
       title: "LIS(\u6700\u9577\u5897\u52A0\u90E8\u5206\u5217)"
   - name: graph
     pages:
-    - icon: ':question:'
+    - icon: ':heavy_check_mark:'
       path: graph/dijkstra.cpp
       title: graph/dijkstra.cpp
     - icon: ':heavy_check_mark:'
@@ -234,7 +234,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo_enumerate_palindromes.test.cpp
       title: test/yosupo_enumerate_palindromes.test.cpp
-    - icon: ':x:'
+    - icon: ':heavy_check_mark:'
       path: test/yosupo_shortest_path.test.cpp
       title: test/yosupo_shortest_path.test.cpp
     - icon: ':heavy_check_mark:'

@@ -1,7 +1,7 @@
 ---
 data:
   _extendedDependsOn:
-  - icon: ':question:'
+  - icon: ':heavy_check_mark:'
     path: graph/dijkstra.cpp
     title: graph/dijkstra.cpp
   - icon: ':question:'
@@ -9,9 +9,9 @@ data:
     title: "2D-Array( $2$ \u6B21\u5143\u914D\u5217)"
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
-  _isVerificationFailed: true
+  _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':x:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     '*NOT_SPECIAL_COMMENTS*': ''
     PROBLEM: https://judge.yosupo.jp/problem/shortest_path
@@ -59,8 +59,9 @@ data:
     \ >> a >> b >> c;\r\n\t\tpath[a].push_back(b);\r\n\t\tcost[a].push_back(c);\r\n\
     \t}\r\n\r\n\tdijkstra dijk(path, cost, s);\r\n\tauto ans = dijk.get_path(t);\r\
     \n\r\n\tif(ans.size() == 1) {\r\n\t\tcout << -1 << endl;\r\n\t\treturn 0;\r\n\t\
-    }\r\n\r\n\tfor(int i = 0; i < ans.size() - 1; i++) {\r\n\t\tcout << ans[i] <<\
-    \ \" \" << ans[i + 1] << endl;\r\n\t}\r\n}\r\n"
+    }\r\n\r\n\tcout << dijk[t] << \" \" << ans.size() - 1 << endl;\r\n\tfor(int i\
+    \ = 0; i < ans.size() - 1; i++) {\r\n\t\tcout << ans[i] << \" \" << ans[i + 1]\
+    \ << endl;\r\n\t}\r\n}\r\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/shortest_path\"\r\n\r\n\
     #ifndef call_include\r\n#define call_include\r\n#include <bits/stdc++.h>\r\nusing\
     \ namespace std;\r\n#endif\r\n\r\n#include \"graph/dijkstra.cpp\"\r\n\r\nint main()\
@@ -69,16 +70,17 @@ data:
     \ >> a >> b >> c;\r\n\t\tpath[a].push_back(b);\r\n\t\tcost[a].push_back(c);\r\n\
     \t}\r\n\r\n\tdijkstra dijk(path, cost, s);\r\n\tauto ans = dijk.get_path(t);\r\
     \n\r\n\tif(ans.size() == 1) {\r\n\t\tcout << -1 << endl;\r\n\t\treturn 0;\r\n\t\
-    }\r\n\r\n\tfor(int i = 0; i < ans.size() - 1; i++) {\r\n\t\tcout << ans[i] <<\
-    \ \" \" << ans[i + 1] << endl;\r\n\t}\r\n}\r\n"
+    }\r\n\r\n\tcout << dijk[t] << \" \" << ans.size() - 1 << endl;\r\n\tfor(int i\
+    \ = 0; i < ans.size() - 1; i++) {\r\n\t\tcout << ans[i] << \" \" << ans[i + 1]\
+    \ << endl;\r\n\t}\r\n}\r\n"
   dependsOn:
   - graph/dijkstra.cpp
   - structure/2d_array.cpp
   isVerificationFile: true
   path: test/yosupo_shortest_path.test.cpp
   requiredBy: []
-  timestamp: '2021-05-17 18:13:20+09:00'
-  verificationStatus: TEST_WRONG_ANSWER
+  timestamp: '2021-05-17 18:15:39+09:00'
+  verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo_shortest_path.test.cpp
 layout: document
