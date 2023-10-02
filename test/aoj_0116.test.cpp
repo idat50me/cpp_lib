@@ -1,3 +1,4 @@
+#define IGNORE
 #define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/0116"
 
 #ifndef call_include
