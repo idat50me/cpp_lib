@@ -15,13 +15,15 @@ documentation_of: ../millor_rabin.cpp
 ## 補足
 定数倍 $(k=7)$ がついている．
 
-以下，ループさせたときの実行時間
+以下，ループさせたときの実行時間（Local / AtCoder $[\textrm{ms}]$）
 - $n \leq 2 \times 10^9$ で乱数
-	- ループ $10^5$ 回で $0.053 \sec$
-	- ループ $10^6$ 回で $0.529 \sec$
+	- loop = $10^5$ : $0.024$ / $0.015$
+	- loop = $10^6$ : $0.237$ / $0.150$
 - $n \leq 9 \times 10^{18}$ で乱数
-	- ループ $10^5$ 回で $0.529 \sec$
-	- ループ $10^6$ 回で $1.235 \sec$
+	- loop = $10^5$ : $0.064$ / $0.029$
+	- loop = $10^6$ : $0.639$ / $0.292$
+
+[テスト用コード](https://gist.github.com/idat50me/c6e7e2a528586c8e6b1ad512b3255fe7)
 
 ## 参考
 - [Miller–Rabin primality test - Wikipedia](https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test#Testing_against_small_sets_of_bases)
