@@ -27,3 +27,4 @@ documentation_of: ../millor_rabin.cpp
 
 ## 参考
 - [Miller–Rabin primality test - Wikipedia](https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test#Testing_against_small_sets_of_bases)
+- [Deterministic variants of the Miller-Rabin primality test](https://miller-rabin.appspot.com)
