@@ -13,7 +13,7 @@ documentation_of: ../millor_rabin.cpp
 - $O(\log^3 n)$
 
 ## 補足
-実際は重めの定数倍 $(k=12)$ がついている．
+定数倍 $(k=7)$ がついている．
 
 以下，ループさせたときの実行時間
 - $n \leq 2 \times 10^9$ で乱数
