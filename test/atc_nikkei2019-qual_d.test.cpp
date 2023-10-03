@@ -1,4 +1,4 @@
-#define PROBLEM ""
+#define PROBLEM "https://atcoder.jp/contests/nikkei2019-qual/tasks/nikkei2019_qual_a"
 
 #ifndef call_include
 #define call_include

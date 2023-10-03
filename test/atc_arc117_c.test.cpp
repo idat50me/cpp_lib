@@ -31,10 +31,9 @@ int main() {
 		ans += ncr(N - 1, i) * n;
 		ans %= 3;
 	}
-
 	ans *= binpow(2, N - 1, 3);
 	ans %= 3;
-	vector<string> v = {"B", "W", "R"};
 
+	vector<string> v = {"B", "W", "R"};
 	cout << v[ans] << endl;
 }
