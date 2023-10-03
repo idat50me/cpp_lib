@@ -33,8 +33,10 @@ struct RollingHash {
 	pair<long long, long long> get(int l, int r) {
 		assert(l <= r);
 		assert(0 <= l and r <= N);
-		long long h1 = (hash1[r] + MOD1 - hash1[l] * pw1[r - l] % MOD1) % MOD1;
-		long long h2 = (hash2[r] + MOD2 - hash2[l] * pw2[r - l] % MOD2) % MOD2;
+		long long h1 = hash1[r] - hash1[l] * pw1[r - l] % MOD1;
+		long long h2 = hash2[r] - hash2[l] * pw2[r - l] % MOD2;
+		if(h1 < 0) h1 += MOD1;
+		if(h2 < 0) h2 += MOD2;
 		return pair(h1, h2);
 	}
 
