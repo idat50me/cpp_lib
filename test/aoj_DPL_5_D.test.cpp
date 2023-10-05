@@ -10,7 +10,8 @@ using namespace std;
 #define MPRIME 1000000007LL
 
 int main() {
-	int n,k; cin>>n>>k;
-	COMB cb(2000,MPRIME);
-	cout<<cb.nhr(k,n)<<endl;
+	int n, k;
+	cin >> n >> k;
+	COMB cb(2000, MPRIME);
+	cout << cb.nhr(k, n) << endl;
 }

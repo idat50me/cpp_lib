@@ -9,11 +9,13 @@ using namespace std;
 #include "string/manacher.cpp"
 
 int main() {
-	string S; cin>>S;
+	string S;
+	cin >> S;
 	vector<int> R = manacher_even(S);
-	for(int i=0; i<R.size(); i++) {
-		if(i%2==0) cout<<2*R[i]-1;
-		else cout<<2*R[i];
-		cout<<(i==R.size()-1?'\n':' ');
+	for(int i = 0; i < R.size(); i++) {
+		if(i % 2 == 0) cout << 2 * R[i] - 1;
+		else
+			cout << 2 * R[i];
+		cout << (i == R.size() - 1 ? '\n' : ' ');
 	}
 }

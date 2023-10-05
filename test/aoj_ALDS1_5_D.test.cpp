@@ -9,8 +9,9 @@ using namespace std;
 #include "math/inversion_number.cpp"
 
 int main() {
-	int N; cin>>N;
+	int N;
+	cin >> N;
 	vector<int> A(N);
-	for(int &a: A) cin>>a;
-	cout<<inv_count(A)<<endl;
+	for(int &a : A) cin >> a;
+	cout << inv_count(A) << endl;
 }

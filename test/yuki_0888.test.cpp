@@ -10,10 +10,11 @@ using namespace std;
 using ll = long long;
 
 int main() {
-	ll N; cin>>N;
-	vector<ll> v=divisor(N);
-	ll res=0;
+	ll N;
+	cin >> N;
+	vector<ll> v = divisor(N);
+	ll res = 0;
 
-	for(int i=0; i<v.size(); i++) res+=v[i];
-	cout<<res<<endl;
+	for(int i = 0; i < v.size(); i++) res += v[i];
+	cout << res << endl;
 }

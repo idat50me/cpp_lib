@@ -9,11 +9,11 @@ using namespace std;
 vector<pair<long long, int>> primefact(long long x) {
 	vector<pair<long long, int>> res;
 
-	for(long long i=2; i*i<=x; i++) {
+	for(long long i = 2; i * i <= x; i++) {
 		if(x % i) continue;
 
 		int ex = 0;
-		while(x%i == 0) {
+		while(x % i == 0) {
 			x /= i;
 			ex++;
 		}
@@ -24,4 +24,3 @@ vector<pair<long long, int>> primefact(long long x) {
 
 	return res;
 }
-

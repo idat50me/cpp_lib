@@ -10,11 +10,13 @@ using namespace std;
 
 int main() {
 	Sieve sv(100000010);
-	int n; cin>>n;
-	int res=0;
-	for(int i=0; i<n; i++) {
-		int a; cin>>a;
+	int n;
+	cin >> n;
+	int res = 0;
+	for(int i = 0; i < n; i++) {
+		int a;
+		cin >> a;
 		if(sv.isprime(a)) res++;
 	}
-	cout<<res<<endl;
+	cout << res << endl;
 }

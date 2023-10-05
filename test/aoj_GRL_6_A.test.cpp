@@ -9,12 +9,14 @@ using namespace std;
 #include "graph/maxflow.cpp"
 
 int main() {
-	int V,E; cin>>V>>E;
+	int V, E;
+	cin >> V >> E;
 	maxflow mf(V);
-	for(int i=0; i<E; i++) {
-		int u,v,c; cin>>u>>v>>c;
-		mf.add(u,v,c);
+	for(int i = 0; i < E; i++) {
+		int u, v, c;
+		cin >> u >> v >> c;
+		mf.add(u, v, c);
 	}
 
-	cout<<mf.solve(0,V-1)<<endl;
+	cout << mf.solve(0, V - 1) << endl;
 }

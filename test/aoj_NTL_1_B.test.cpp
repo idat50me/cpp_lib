@@ -10,6 +10,7 @@ using namespace std;
 #define MPRIME 1000000007LL
 
 int main() {
-	int m,n; cin>>m>>n;
-	cout<<binpow(m,n,MPRIME)<<endl;
+	int m, n;
+	cin >> m >> n;
+	cout << binpow(m, n, MPRIME) << endl;
 }

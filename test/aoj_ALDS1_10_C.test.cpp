@@ -9,9 +9,11 @@ using namespace std;
 #include "dp/lcs.cpp"
 
 int main() {
-	int Q; cin>>Q;
+	int Q;
+	cin >> Q;
 	while(Q--) {
-		string X,Y; cin>>X>>Y;
-		cout<<LCS(X,Y)<<endl;
+		string X, Y;
+		cin >> X >> Y;
+		cout << LCS(X, Y) << endl;
 	}
 }

@@ -9,11 +9,12 @@ using namespace std;
 #include "math/primefact.cpp"
 
 int main() {
-	int n; cin>>n;
+	int n;
+	cin >> n;
 	vector<pair<long long, int>> v = primefact(n);
-	cout<<n<<":";
-	for(auto &p: v) {
-		while(p.second--) cout<<" "<<p.first;
+	cout << n << ":";
+	for(auto &p : v) {
+		while(p.second--) cout << " " << p.first;
 	}
-	cout<<endl;
+	cout << endl;
 }

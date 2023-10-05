@@ -9,14 +9,16 @@ using namespace std;
 #include "graph/mincostflow_nega.cpp"
 
 int main() {
-	int V,E,F; cin>>V>>E>>F;
+	int V, E, F;
+	cin >> V >> E >> F;
 	mincostflow mcf(V);
-	for(int i=0; i<E; i++) {
-		int u,v,c,d; cin>>u>>v>>c>>d;
-		mcf.add(u,v,c,d);
+	for(int i = 0; i < E; i++) {
+		int u, v, c, d;
+		cin >> u >> v >> c >> d;
+		mcf.add(u, v, c, d);
 	}
 
-	long long ans = mcf.solve(0,V-1,F);
-	assert(ans!=-mcf.inf);
-	cout<<(ans==mcf.inf?-1:ans)<<endl;
+	long long ans = mcf.solve(0, V - 1, F);
+	assert(ans != -mcf.inf);
+	cout << (ans == mcf.inf ? -1 : ans) << endl;
 }

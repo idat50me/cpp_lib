@@ -6,21 +6,22 @@
 using namespace std;
 #endif
 
-template<typename T>
-int LIS(const vector<T> &v, bool strict = true) {
+template<typename T> int LIS(const vector<T> &v, bool strict = true) {
 	vector<T> lis;
 	if(strict) {
-		for(T a: v) {
+		for(T a : v) {
 			auto itr = lower_bound(lis.begin(), lis.end(), a);
 			if(itr == lis.end()) lis.emplace_back(a);
-			else *itr = a;
+			else
+				*itr = a;
 		}
 	}
 	else {
-		for(T a: v) {
+		for(T a : v) {
 			auto itr = upper_bound(lis.begin(), lis.end(), a);
 			if(itr == lis.end()) lis.emplace_back(a);
-			else *itr = a;
+			else
+				*itr = a;
 		}
 	}
 	return lis.size();

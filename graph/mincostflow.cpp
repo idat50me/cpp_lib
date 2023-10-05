@@ -14,8 +14,9 @@ private:
 		long long cap;
 		long long cost;
 		bool isrev;
-		
-		edge(int next, int rev, long long cap, long long cost, bool isrev) : next(next), rev(rev), cap(cap), cost(cost), isrev(isrev) {}
+
+		edge(int next, int rev, long long cap, long long cost, bool isrev) :
+			next(next), rev(rev), cap(cap), cost(cost), isrev(isrev) {}
 	};
 
 	struct stat_e {
@@ -26,7 +27,7 @@ private:
 	};
 
 public:
-	const long long inf = (1LL<<62)-1;
+	const long long inf = (1LL << 62) - 1;
 
 private:
 	const int vnum;
@@ -35,46 +36,48 @@ private:
 	vector<int> pv, pe;
 
 public:
-	mincostflow(int V) : vnum(V), G(V), pot(V,0), pv(V), pe(V) {}
+	mincostflow(int V) : vnum(V), G(V), pot(V, 0), pv(V), pe(V) {}
 
 	void add(int from, int to, long long cap, long long cost) {
 		assert(cost >= 0);
 		G[from].emplace_back(to, G[to].size(), cap, cost, false);
-		G[to].emplace_back(from, G[from].size()-1, 0, -cost, true);
+		G[to].emplace_back(from, G[from].size() - 1, 0, -cost, true);
 	}
 
 private:
 	long long dijkstra(int s, int t) {
 		long long ans = 0;
-		priority_queue<pair<long long,int>, vector<pair<long long,int>>, greater<pair<long long,int>>> q;
+		priority_queue<pair<long long, int>, vector<pair<long long, int>>, greater<pair<long long, int>>>
+			q;
 		vector<long long> dist(vnum, inf);
 		pv.assign(vnum, -1);
 		pe.assign(vnum, -1);
-		q.emplace(0LL,s);
+		q.emplace(0LL, s);
 		dist[s] = 0;
 
 		while(!q.empty()) {
 			long long d = q.top().first, v = q.top().second;
 			q.pop();
 			if(dist[v] < d) continue;
-			for(int i=0; i<G[v].size(); i++) {
+			for(int i = 0; i < G[v].size(); i++) {
 				edge &ed = G[v][i];
-				long long nd = d+ed.cost+pot[v]-pot[ed.next];
-				if(ed.cap>0 && dist[ed.next]>nd) {
+				long long nd = d + ed.cost + pot[v] - pot[ed.next];
+				if(ed.cap > 0 && dist[ed.next] > nd) {
 					dist[ed.next] = nd;
 					pv[ed.next] = v;
 					pe[ed.next] = i;
-					q.emplace(nd,ed.next);
+					q.emplace(nd, ed.next);
 				}
 			}
 		}
 
 		if(dist[t] == inf) return inf;
 
-		ans = dist[t]+pot[t];
-		for(int v=0; v<vnum; v++) {
+		ans = dist[t] + pot[t];
+		for(int v = 0; v < vnum; v++) {
 			if(dist[v] == inf) pot[v] = inf;
-			else pot[v] += dist[v];
+			else
+				pot[v] += dist[v];
 		}
 		return ans;
 	}
@@ -88,10 +91,10 @@ public:
 			long long restmp = dijkstra(s, t);
 			int add_f = f;
 			if(restmp == inf) return inf;
-			for(int v=t; v!=s; v=pv[v]) add_f = min((long long)add_f, G[pv[v]][pe[v]].cap);
+			for(int v = t; v != s; v = pv[v]) add_f = min((long long)add_f, G[pv[v]][pe[v]].cap);
 			f -= add_f;
-			res += restmp*add_f;
-			for(int v=t; v!=s; v=pv[v]) {
+			res += restmp * add_f;
+			for(int v = t; v != s; v = pv[v]) {
 				edge &ed = G[pv[v]][pe[v]];
 				ed.cap -= add_f;
 				G[v][ed.rev].cap += add_f;
@@ -102,9 +105,10 @@ public:
 
 	vector<stat_e> stat() {
 		vector<stat_e> res;
-		for(int i=0; i<vnum; i++) for(const edge &ed: G[i]) {
-			if(!ed.isrev) res.emplace_back(i, ed.next, G[ed.next][ed.rev].cap);
-		}
+		for(int i = 0; i < vnum; i++)
+			for(const edge &ed : G[i]) {
+				if(!ed.isrev) res.emplace_back(i, ed.next, G[ed.next][ed.rev].cap);
+			}
 		return res;
 	}
 };

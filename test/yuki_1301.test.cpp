@@ -9,15 +9,17 @@ using namespace std;
 #include "graph/mincostflow.cpp"
 
 int main() {
-	int N,M; cin>>N>>M;
-	mincostflow mcf(N+1);
-	for(int i=0; i<M; i++) {
-		int u,v,c,d; cin>>u>>v>>c>>d;
-		mcf.add(u,v,1,c);
-		mcf.add(u,v,1,d);
-		mcf.add(v,u,1,c);
-		mcf.add(v,u,1,d);
+	int N, M;
+	cin >> N >> M;
+	mincostflow mcf(N + 1);
+	for(int i = 0; i < M; i++) {
+		int u, v, c, d;
+		cin >> u >> v >> c >> d;
+		mcf.add(u, v, 1, c);
+		mcf.add(u, v, 1, d);
+		mcf.add(v, u, 1, c);
+		mcf.add(v, u, 1, d);
 	}
 
-	cout<<mcf.solve(1,N,2)<<endl;
+	cout << mcf.solve(1, N, 2) << endl;
 }

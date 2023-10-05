@@ -9,15 +9,18 @@ using namespace std;
 #include "tree/segtree_RmQ.cpp"
 
 int main() {
-	int N,Q; cin>>N>>Q;
-	vector<int> v(N,(1<<31)-1);
+	int N, Q;
+	cin >> N >> Q;
+	vector<int> v(N, (1 << 31) - 1);
 	RmQ rmq_tree(v);
 
-	for(int i=0; i<Q; i++) {
-		int com,x,y; cin>>com>>x>>y;
+	for(int i = 0; i < Q; i++) {
+		int com, x, y;
+		cin >> com >> x >> y;
 
-		if(com==0) rmq_tree.update(x,y);
-		else cout<<rmq_tree.getmin(x,y+1)<<'\n';
+		if(com == 0) rmq_tree.update(x, y);
+		else
+			cout << rmq_tree.getmin(x, y + 1) << '\n';
 	}
-	cout<<flush;
+	cout << flush;
 }

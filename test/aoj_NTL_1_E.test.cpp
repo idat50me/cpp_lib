@@ -10,7 +10,7 @@ using namespace std;
 
 int main() {
 	long long a, b, x, y;
-	cin>>a>>b;
+	cin >> a >> b;
 	extgcd(a, b, x, y);
-	cout<<x<<" "<<y<<endl;
+	cout << x << " " << y << endl;
 }

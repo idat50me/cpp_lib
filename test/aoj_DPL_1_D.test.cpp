@@ -9,8 +9,9 @@ using namespace std;
 #include "dp/lis.cpp"
 
 int main() {
-	int N; cin>>N;
+	int N;
+	cin >> N;
 	vector<int> v(N);
-	for(int &a: v) cin>>a;
-	cout<<LIS(v)<<endl;
+	for(int &a : v) cin >> a;
+	cout << LIS(v) << endl;
 }

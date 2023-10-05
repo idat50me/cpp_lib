@@ -9,9 +9,10 @@ using namespace std;
 #include "structure/matrix.cpp"
 
 int main() {
-	int N,M,L; cin>>N>>M>>L;
-	matrix<long long> A,B;
-	A.in(N,M);
-	B.in(M,L);
-	(A*B).out();
+	int N, M, L;
+	cin >> N >> M >> L;
+	matrix<long long> A, B;
+	A.in(N, M);
+	B.in(M, L);
+	(A * B).out();
 }

@@ -9,15 +9,18 @@ using namespace std;
 #include "graph/union_find.cpp"
 
 int main() {
-	int N,Q; cin>>N>>Q;
+	int N, Q;
+	cin >> N >> Q;
 	UnionFind uf(N);
 
-	for(int i=0; i<Q; i++) {
-		int com,x,y; cin>>com>>x>>y;
+	for(int i = 0; i < Q; i++) {
+		int com, x, y;
+		cin >> com >> x >> y;
 
-		if(com==0) uf.merge(x,y);
-		else cout<<(uf.same(x,y) ? 1 : 0)<<'\n';
+		if(com == 0) uf.merge(x, y);
+		else
+			cout << (uf.same(x, y) ? 1 : 0) << '\n';
 	}
 
-	cout<<flush;
+	cout << flush;
 }

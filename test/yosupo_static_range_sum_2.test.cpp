@@ -9,14 +9,17 @@ using namespace std;
 #include "tree/binary_indexed_tree.cpp"
 
 int main() {
-	int N,Q; cin>>N>>Q;
+	int N, Q;
+	cin >> N >> Q;
 	BIT<long long> bt(N);
-	for(int i=1; i<=N; i++) {
-		int A; cin>>A;
+	for(int i = 1; i <= N; i++) {
+		int A;
+		cin >> A;
 		bt.add(i, A);
 	}
 	while(Q--) {
-		int l,r; cin>>l>>r;
-		cout<<bt.sum(l+1,r)<<endl;
+		int l, r;
+		cin >> l >> r;
+		cout << bt.sum(l + 1, r) << endl;
 	}
 }

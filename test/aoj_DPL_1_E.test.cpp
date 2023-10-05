@@ -9,6 +9,7 @@ using namespace std;
 #include "dp/levenshtein_distance.cpp"
 
 int main() {
-	string s1,s2; cin>>s1>>s2;
-	cout<<levenshtein(s1,s2)<<endl;
+	string s1, s2;
+	cin >> s1 >> s2;
+	cout << levenshtein(s1, s2) << endl;
 }

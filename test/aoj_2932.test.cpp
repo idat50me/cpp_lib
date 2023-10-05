@@ -11,11 +11,12 @@ using namespace std;
 using ll = long long;
 
 int main() {
-	ll N; cin>>N;
-	vector<pair<ll,int>> v=primefact(N);
+	ll N;
+	cin >> N;
+	vector<pair<ll, int>> v = primefact(N);
 
-	ll mx=1;
-	for(auto &p: v) mx *= p.second+1;
+	ll mx = 1;
+	for(auto &p : v) mx *= p.second + 1;
 
-	cout <<v.size()<<" "<<mx-1<<endl;
+	cout << v.size() << " " << mx - 1 << endl;
 }

@@ -13,17 +13,21 @@ using namespace std;
 vector<long long> divisor(long long x) {
 	vector<long long> res = {1};
 	long long i = 2, id = 0, sz;
-	while(i*i<=x || i==x) {
-		if(x % i) { i++; id=0; continue; }
+	while(i * i <= x || i == x) {
+		if(x % i) {
+			i++;
+			id = 0;
+			continue;
+		}
 		sz = res.size();
-		for( ; id<sz; id++) res.emplace_back(res[id]*i);
+		for(; id < sz; id++) res.emplace_back(res[id] * i);
 		x /= i;
 	}
 	if(x > 1) {
 		sz = res.size();
-		for(int j=0; j<sz; j++) res.emplace_back(res[j]*x);
+		for(int j = 0; j < sz; j++) res.emplace_back(res[j] * x);
 	}
 
-	sort(res.begin(),res.end());
+	sort(res.begin(), res.end());
 	return res;
 }

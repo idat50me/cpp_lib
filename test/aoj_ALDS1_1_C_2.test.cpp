@@ -9,11 +9,13 @@ using namespace std;
 #include "math/isprime.cpp"
 
 int main() {
-	int n; cin>>n;
-	int res=0;
-	for(int i=0; i<n; i++) {
-		int a; cin>>a;
+	int n;
+	cin >> n;
+	int res = 0;
+	for(int i = 0; i < n; i++) {
+		int a;
+		cin >> a;
 		if(isprime(a)) res++;
 	}
-	cout<<res<<endl;
+	cout << res << endl;
 }
