@@ -163,7 +163,7 @@ jobs:
         with:
           verify-result: ${{ steps.all-artifacts.outputs.artifacts-root }}/Result-*/result.json
   deploy:
-    if: always() && github.ref == 'refs/heads/test_competitive' && needs.docs-and-check.outputs.upload-pages == 'true'
+    if: always() && github.ref == 'refs/heads/master' && needs.docs-and-check.outputs.upload-pages == 'true'
     needs: docs-and-check
     environment:
       name: github-pages
