@@ -1,5 +1,6 @@
-#define IGNORE
 // competitive-verifier: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/GRL_4_B
+// competitive-verifier: IGNORE
+// special judges not supported
 
 #ifndef call_include
 #define call_include

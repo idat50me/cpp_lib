@@ -1,5 +1,6 @@
-#define IGNORE
 // competitive-verifier: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/0116
+// competitive-verifier: IGNORE
+// not available testcase
 
 #ifndef call_include
 #define call_include

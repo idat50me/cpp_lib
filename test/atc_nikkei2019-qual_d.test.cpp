@@ -1,5 +1,6 @@
-#define IGNORE
 // competitive-verifier: PROBLEM https://atcoder.jp/contests/nikkei2019-qual/tasks/nikkei2019_qual_a
+// competitive-verifier: IGNORE
+// testcase id is different from url
 
 #ifndef call_include
 #define call_include
