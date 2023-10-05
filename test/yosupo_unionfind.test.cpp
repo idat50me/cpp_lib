@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/unionfind"
+// competitive-verifier: PROBLEM https://judge.yosupo.jp/problem/unionfind
 
 #ifndef call_include
 #define call_include

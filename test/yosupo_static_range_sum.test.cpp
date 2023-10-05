@@ -1,4 +1,4 @@
-#define PROBLEM "https://judge.yosupo.jp/problem/static_range_sum"
+// competitive-verifier: PROBLEM https://judge.yosupo.jp/problem/static_range_sum
 
 #ifndef call_include
 #define call_include

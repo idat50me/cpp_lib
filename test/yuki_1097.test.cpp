@@ -1,4 +1,4 @@
-#define PROBLEM "https://yukicoder.me/problems/no/1097"
+// competitive-verifier: PROBLEM https://yukicoder.me/problems/no/1097
 
 #ifndef call_include
 #define call_include

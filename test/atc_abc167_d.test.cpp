@@ -1,4 +1,4 @@
-#define PROBLEM "https://atcoder.jp/contests/abc167/tasks/abc167_d"
+// competitive-verifier: PROBLEM https://atcoder.jp/contests/abc167/tasks/abc167_d
 
 #ifndef call_include
 #define call_include

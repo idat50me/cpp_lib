@@ -1,5 +1,5 @@
 #define IGNORE
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/0019"
+// competitive-verifier: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/0019
 
 #ifndef call_include
 #define call_include

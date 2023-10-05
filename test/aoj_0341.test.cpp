@@ -1,4 +1,4 @@
-#define PROBLEM "https://onlinejudge.u-aizu.ac.jp/problems/0341"
+// competitive-verifier: PROBLEM https://onlinejudge.u-aizu.ac.jp/problems/0341
 
 #ifndef call_include
 #define call_include
