@@ -8,7 +8,7 @@ using namespace std;
 
 bool isprime(long long n) {
 	if(n == 2) return true;
-	if(n < 2 || n % 2 == 0) return false;
+	if(n < 2 || (n & 1) == 0) return false;
 
 	if(n < 200000) {
 		for(long long i = 3; i * i <= n; i += 2)
@@ -16,20 +16,24 @@ bool isprime(long long n) {
 		return true;
 	}
 
-	long long d = n >> 1;
-	int s = 1;
+	long long d = n - 1;
+	int s = 0;
 	while(!(d & 1)) {
 		s++;
 		d >>= 1;
 	}
 
-	for(int k : {2, 325, 9375, 28178, 450775, 9780504, 1795265022}) {
+	vector<int> bases = (n < 4759123141ll) ? vector({2, 7, 61}) :
+											 vector({2, 325, 9375, 28178, 450775, 9780504, 1795265022});
+
+	for(int k : bases) {
 		if(k >= n) break;
 
 		__int128_t r = 1, q = k;
-		while(d > 0) {
-			if(d & 1) (r *= q) %= n;
-			d >>= 1;
+		long long t = d;
+		while(t > 0) {
+			if(t & 1) (r *= q) %= n;
+			t >>= 1;
 			(q *= q) %= n;
 		}
 		if(r == 1 || r == n - 1) continue;
