@@ -73,7 +73,7 @@ jobs:
             | jq -r '.["access_token"]' \
           )
           echo "::add-mask::$DROPBOX_TOKEN"
-          echo "dropbox_token=$DROPBOX_TOKEN" >> $GITHUB_OUTPUT
+          echo "dropbox_token=$(echo "$DROPBOX_TOKEN" | openssl enc -aes256 -e -pbkdf2 -base64 -k '${{secrets.AES256_KEY}}')" >> $GITHUB_OUTPUT
         env:
           DROPBOX_APP_KEY: ${{secrets.DROPBOX_APP_KEY}}
           DROPBOX_APP_SECRET: ${{secrets.DROPBOX_APP_SECRET}}
@@ -95,8 +95,9 @@ jobs:
 
       - name: Recieve dropbox token
         run: |
-          echo "::add-mask::${{needs.setup.outputs.dropbox_token}}"
-          echo "DROPBOX_TOKEN=${{needs.setup.outputs.dropbox_token}}" >> $GITHUB_ENV
+          DROPBOX_TOKEN=$(echo "${{needs.setup.outputs.dropbox_token}}" | openssl enc -aes256 -d -pbkdf2 -base64 -k '${{secrets.AES256_KEY}}')
+          echo "::add-mask::$DROPBOX_TOKEN"
+          echo "DROPBOX_TOKEN=$DROPBOX_TOKEN" >> $GITHUB_ENV
 
       - name: Download verify_files.json
         uses: competitive-verifier/actions/download-verify-artifact@v1
