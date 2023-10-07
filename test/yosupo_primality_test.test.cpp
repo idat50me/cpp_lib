@@ -10,6 +10,7 @@ using namespace std;
 
 int main() {
 	int Q;
+	cin >> Q;
 	for(int i = 0; i < Q; i++) {
 		long long N;
 		cin >> N;
