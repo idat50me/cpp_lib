@@ -85,6 +85,10 @@ jobs:
           )
           echo "::add-mask::$DROPBOX_TOKEN"
           echo "DROPBOX_TOKEN=$DROPBOX_TOKEN" >> $GITHUB_ENV
+        env:
+          DROPBOX_APP_KEY: ${{secrets.DROPBOX_APP_KEY}}
+          DROPBOX_APP_SECRET: ${{secrets.DROPBOX_APP_SECRET}}
+          DROPBOX_REFRESH_TOKEN: ${{secrets.DROPBOX__REFRESH_TOKEN}}
 
       - name: Download verify_files.json
         uses: competitive-verifier/actions/download-verify-artifact@v1
@@ -104,8 +108,7 @@ jobs:
           split-index: ${{ matrix.index }}
           timeout: 1200
         env:
-            YUKICODER_TOKEN: ${{secrets.YUKICODER_TOKEN}}
-            DROPBOX_TOKEN: ${{secrets.DROPBOX_TOKEN}}
+          YUKICODER_TOKEN: ${{secrets.YUKICODER_TOKEN}}
 
       - name: Upload result artifact
         uses: actions/upload-artifact@v3
