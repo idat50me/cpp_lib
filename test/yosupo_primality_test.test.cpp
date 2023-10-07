@@ -1,4 +1,4 @@
-// competitive-verifier: PROBLEM "https://judge.yosupo.jp/problem/primality_test"
+// competitive-verifier: PROBLEM https://judge.yosupo.jp/problem/primality_test
 
 #ifndef call_include
 #define call_include
