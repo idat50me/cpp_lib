@@ -19,6 +19,8 @@ concurrency:
 jobs:
   setup:
     runs-on: ubuntu-latest
+    outputs:
+      dropbox_token: ${{steps.set_dropbox_token.outputs.dropbox_token}}
     steps:
       - uses: actions/checkout@v3
 
@@ -60,6 +62,23 @@ jobs:
           path: .competitive-verifier/bundled
           retention-days: 1
 
+      - id: set_dropbox_token
+        name: Set dropbox token
+        run: |
+          DROPBOX_TOKEN=$( \
+            curl https://api.dropbox.com/oauth2/token \
+              -d grant_type=refresh_token \
+              -d refresh_token=$DROPBOX_REFRESH_TOKEN \
+              -u $DROPBOX_APP_KEY:$DROPBOX_APP_SECRET \
+            | jq -r '.["access_token"]' \
+          )
+          echo "::add-mask::$DROPBOX_TOKEN"
+          echo "dropbox_token=$DROPBOX_TOKEN" >> $GITHUB_OUTPUT
+        env:
+          DROPBOX_APP_KEY: ${{secrets.DROPBOX_APP_KEY}}
+          DROPBOX_APP_SECRET: ${{secrets.DROPBOX_APP_SECRET}}
+          DROPBOX_REFRESH_TOKEN: ${{secrets.DROPBOX__REFRESH_TOKEN}}
+
   verify:
     runs-on: ubuntu-latest
     needs: [setup]
@@ -74,21 +93,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set dropbox token
+      - name: Recieve dropbox token
         run: |
-          DROPBOX_TOKEN=$( \
-            curl https://api.dropbox.com/oauth2/token \
-              -d grant_type=refresh_token \
-              -d refresh_token=$DROPBOX_REFRESH_TOKEN \
-              -u $DROPBOX_APP_KEY:$DROPBOX_APP_SECRET \
-            | jq -r '.["access_token"]' \
-          )
-          echo "::add-mask::$DROPBOX_TOKEN"
-          echo "DROPBOX_TOKEN=$DROPBOX_TOKEN" >> $GITHUB_ENV
-        env:
-          DROPBOX_APP_KEY: ${{secrets.DROPBOX_APP_KEY}}
-          DROPBOX_APP_SECRET: ${{secrets.DROPBOX_APP_SECRET}}
-          DROPBOX_REFRESH_TOKEN: ${{secrets.DROPBOX__REFRESH_TOKEN}}
+          echo "::add-mask::${{needs.setup.outputs.dropbox_token}}"
+          echo "DROPBOX_TOKEN=${{needs.setup.outputs.dropbox_token}}" >> $GITHUB_ENV
 
       - name: Download verify_files.json
         uses: competitive-verifier/actions/download-verify-artifact@v1
