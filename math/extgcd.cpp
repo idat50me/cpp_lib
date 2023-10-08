@@ -29,14 +29,15 @@ long long extgcd(long long a, long long b, long long &x, long long &y) {
 		yd -= div * xd;
 		ydd -= div * xdd;
 	}
+	if(a < 0) x = -x;
+	if(b < 0) y = -y;
 }
 
 long long extgcd(long long a, long long b, long long c, long long &x, long long &y) {
 	long long d = extgcd(a, b, x, y);
 	if(c % d) return -1;
-	x *= c / d;
-	if(a < 0) x = -x;
-	y *= c / d;
-	if(b < 0) y = -y;
+	x *= c % a / d;
+	y *= c % a / d;
+	x += c / a;
 	return d;
 }
