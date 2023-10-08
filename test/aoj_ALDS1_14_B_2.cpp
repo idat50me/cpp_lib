@@ -13,6 +13,6 @@ int main() {
 	cin >> T >> P;
 
 	RollingHash rh(T);
-	vector<int> ans = rh.iscontain(P);
+	vector<int> ans = rh.match(P);
 	for(int &i : ans) cout << i << endl;
 }

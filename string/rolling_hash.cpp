@@ -48,11 +48,8 @@ public:
 		return pair(h1, h2);
 	}
 
-	vector<int> iscontain(string &t) {
+	pair<long long, long long> get(string &t) {
 		const int M = t.size();
-		if(N < M) return {};
-
-		vector<int> ret;
 		long long h1_t = 0, h2_t = 0;
 		for(int i = 0; i < M; i++) {
 			h1_t = h1_t * base1 % MOD1 + int(t[i]);
@@ -60,10 +57,18 @@ public:
 			if(h1_t >= MOD1) h1_t -= MOD1;
 			if(h2_t >= MOD2) h2_t -= MOD2;
 		}
+		return pair(h1_t, h2_t);
+	}
 
+	vector<int> match(string &t) {
+		const int M = t.size();
+		if(N < M) return {};
+
+		vector<int> ret;
+		pair<long long, long long> pt = get(t);
 		for(int i = 0; i + M <= N; i++) {
 			pair<long long, long long> p = get(i, i + M);
-			if(p.first == h1_t and p.second == h2_t) ret.emplace_back(i);
+			if(p.first == pt.first and p.second == pt.second) ret.emplace_back(i);
 		}
 
 		return ret;

@@ -11,13 +11,15 @@ documentation_of: ../rolling_hash.cpp
 
 ## メンバ関数
 - `get(l, r)`：$S$ の部分文字列 $S[l, r)$ のハッシュ値を返す．
-- `iscontain(t)`：文字列 $T$ と等しい，$S$ の部分文字列 $S[l, r)$ の $l$ を格納した配列を返す．
+- `get(t)`：文字列 $T$ のハッシュ値を返す．
+- `match(t)`：文字列 $T$ と等しい，$S$ の部分文字列 $S[l, r)$ の $l$ を格納した配列を返す．
 
 ## 計算量
 文字列 $S, T$ の長さをそれぞれ $n, m$ とする．
 - コンストラクタ：$O(n)$
 - `get(l, r)`：$O(1)$
-- `iscontain(t)`：$O(n)$
+- `get(t)`：$O(m)$
+- `match(t)`：$O(n)$
 
 ## 参考
 - [蟻本片手に学ぶアルゴリズム 〜ローリングハッシュ〜](https://qiita.com/hirominn/items/80464ee381c8d400725f)
