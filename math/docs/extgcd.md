@@ -38,7 +38,7 @@ x += c / a;
 これの正当性を以下に示す．
 <details><summary>正当性の証明</summary><div>
 
-$d = \gcd(a,b)$ とし，`extgcd(a, b, x, y)` で
+$d = \gcd(a,b)$ とし，extgcd(a, b, x, y) で
 $$
 ax_0 + by_0 = d \tag{1}
 $$
@@ -54,9 +54,9 @@ a\big[x_0(c \% a / d) + c/a\big] + b\big[y_0(c\%a/d)\big] = c \tag{*}
 $$
 となることを証明すればよい．
 
-除算と剰余算について，`(a/b)*b + a%b = a` を満たすことが規定されている（[参考](https://en.cppreference.com/w/cpp/language/operator_arithmetic)）ので，式変形すると `a%b = a - (a/b)*b` である．
+除算と剰余算について，(a/b)*b + a%b = a を満たすことが規定されている(https://en.cppreference.com/w/cpp/language/operator_arithmetic)ので，式変形すると a%b = a - (a/b)*b である．
 
-便宜上，各値の正負にかかわらず `a/b` を $\Big\lfloor\dfrac{a}{b}\Big\rfloor$ と表記する．
+便宜上，各値の正負にかかわらず a/b を $\Big\lfloor\dfrac{a}{b}\Big\rfloor$ と表記する．
 $(*)$ について，
 
 $$
