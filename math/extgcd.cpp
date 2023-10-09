@@ -41,5 +41,8 @@ long long extgcd(long long a, long long b, long long c, long long &x, long long 
 		y *= c % a / d;
 		x += c / a;
 	}
+	else {
+		y *= c / d;
+	}
 	return d;
 }
