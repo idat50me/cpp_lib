@@ -80,6 +80,6 @@ public:
 	}
 
 	void out() {
-		for(auto [l, r] : mp) cout << "[" << l << ", " << r << ']\n';
+		for(auto [l, r] : mp) cout << "[" << l << ", " << r << "]\n";
 	}
 };
