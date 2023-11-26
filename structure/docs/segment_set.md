@@ -10,10 +10,10 @@ documentation_of: ../segment_set.cpp
 - `SegmentSet()`：初期化した集合 $S$ を得る．
 
 ## メンバ関数
-- `insert(x)`：$S \leftarrow S \cup \{x\}$
-- `insert(l, r)`：$S \leftarrow S \cup \{l, l+1, ..., r-1, r\}$
-- `erase(x)`：$S \leftarrow S \setminus \{x\}$
-- `erase(l, r)`：$S \leftarrow S \setminus \{l, l+1, ..., r-1, r\}$
+- `insert(x)`：$S \leftarrow S \cup \\{x\\}$
+- `insert(l, r)`：$S \leftarrow S \cup \\{l, l+1, ..., r-1, r\\}$
+- `erase(x)`：$S \leftarrow S \setminus \\{x\\}$
+- `erase(l, r)`：$S \leftarrow S \setminus \\{l, l+1, ..., r-1, r\\}$
 
 - `get_seg(x)`：$x$ が所属する区間の両端の値をもつ `pair` を返す．$x$ がどの区間にも所属しない場合は `pair(0, -1)` を返す．
 - `min()`：最も左にある区間の左端の値を返す．
