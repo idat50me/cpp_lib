@@ -13,7 +13,7 @@ private:
 public:
 	matrix() {}
 	matrix(int h, int w) : m(h, vector<T>(w)) {}
-	matrix(int h, int w, T init) : m(h, vector(w, init)) {}
+	matrix(int h, int w, T init) : m(h, vector<T>(w, init)) {}
 	matrix(const initializer_list<initializer_list<T>> m_init) : m(m_init.begin(), m_init.end()) {}
 
 	void assign(int h, int w) {
@@ -59,12 +59,6 @@ public:
 		return m[idx];
 	}
 
-	static matrix identity(int n) {
-		matrix res(n, n, 0);
-		for(int i = 0; i < n; i++) res[i][i] = 1;
-		return res;
-	}
-
 	matrix &operator+=(const matrix &a) {
 		int h = height(), w = width();
 		assert(h == a.height() && w == a.width());
@@ -100,7 +94,8 @@ public:
 		return matrix(*this) *= a;
 	}
 
-	static matrix pow(matrix a, long long ex) {
+	matrix pow(long long ex) {
+		matrix a = this->m;
 		assert(a.height() == a.width());
 		matrix res = identity(a.height());
 		while(ex > 0) {
@@ -108,6 +103,12 @@ public:
 			ex >>= 1;
 			a *= a;
 		}
+		return res;
+	}
+
+	static matrix identity(int n) {
+		matrix res(n, n, 0);
+		for(int i = 0; i < n; i++) res[i][i] = 1;
 		return res;
 	}
 };
