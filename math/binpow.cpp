@@ -1,7 +1,4 @@
 #pragma once
-/*
- * @brief Binary-Power(繰り返し二乗法)
- */
 
 #ifndef call_include
 #define call_include
