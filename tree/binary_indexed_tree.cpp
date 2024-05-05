@@ -37,13 +37,6 @@ public:
 		return sum(r) - sum(max(l - 1, 0));
 	}
 
-	void add(int idx, T &val) {
-		assert(0 < idx && idx <= N);
-		while(idx <= N) {
-			node[idx] += val;
-			idx += idx & -idx;
-		}
-	}
 	void add(int idx, T val) {
 		assert(0 < idx && idx <= N);
 		while(idx <= N) {
