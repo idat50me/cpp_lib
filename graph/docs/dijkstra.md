@@ -1,4 +1,3 @@
-
 ---
 title: Dijkstra(経路復元付ダイクストラ)
 documentation_of: ../dijkstra.cpp
