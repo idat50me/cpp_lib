@@ -8,7 +8,7 @@ using namespace std;
 
 template<typename T, typename M> struct segtree_lazy {
 	using F = function<T(T, T)>;
-	using FU = function<M(T, M)>;
+	using FU = function<T(T, M)>;
 	using FM = function<M(M, M)>;
 
 private:
@@ -70,7 +70,7 @@ private:
 		lazy[idx] = em;
 	}
 
-	void upd__(int L, int R, int idx, T val, int l, int r) {
+	void upd__(int L, int R, int idx, M val, int l, int r) {
 		eval(idx);
 		if(r <= L || R <= l) return;
 		if(L <= l && r <= R) {
