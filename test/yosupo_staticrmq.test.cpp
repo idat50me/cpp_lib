@@ -6,7 +6,7 @@
 using namespace std;
 #endif
 
-#include "tree/segtree_RmQ.cpp"
+#include "tree/segtree.cpp"
 
 int main() {
 	int N, Q;
@@ -15,12 +15,13 @@ int main() {
 	cin >> N >> Q;
 	v.resize(N);
 	for(int i = 0; i < N; i++) cin >> v[i];
-	RmQ rmq_tree(v);
+	segtree tree(
+		v, [](int l, int r) { return min(l, r); }, numeric_limits<int>::max());
 
 	for(int i = 0; i < Q; i++) {
 		int l, r;
 		cin >> l >> r;
-		cout << rmq_tree.getmin(l, r) << '\n';
+		cout << tree.get(l, r) << '\n';
 	}
 	cout << flush;
 }

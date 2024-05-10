@@ -6,13 +6,15 @@
 using namespace std;
 #endif
 
-#include "tree/segtree_RmQ.cpp"
+#include "tree/segtree.cpp"
 
 int main() {
 	int N, Q;
 	cin >> N >> Q;
-	vector<int> v(N, (1 << 31) - 1);
-	RmQ rmq_tree(v);
+	const int INF = (1 << 31) - 1;
+	vector<int> v(N, INF);
+	auto op = [](int l, int r) { return min(l, r); };
+	auto rmq_tree = segtree(v, op, INF);
 
 	for(int i = 0; i < Q; i++) {
 		int com, x, y;
@@ -20,7 +22,7 @@ int main() {
 
 		if(com == 0) rmq_tree.update(x, y);
 		else
-			cout << rmq_tree.getmin(x, y + 1) << '\n';
+			cout << rmq_tree.get(x, y + 1) << '\n';
 	}
 	cout << flush;
 }
