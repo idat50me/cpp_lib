@@ -28,7 +28,7 @@ public:
 		node.resize(2 * siz - 1, ex);
 		lazy.resize(2 * siz - 1, em);
 	}
-	segtree_lazy(vector<T> &v, const F op, const FU f_upd, const FM f_lz, const T ex, const T em) :
+	segtree_lazy(vector<T> &v, const F op, const FU f_upd, const FM f_lz, const T ex, const M em) :
 		N(v.size()), op(op), f_upd(f_upd), f_lz(f_lz), ex(ex), em(em) {
 		while(siz < N) siz <<= 1;
 		node.resize(2 * siz - 1, ex);
@@ -37,11 +37,11 @@ public:
 		for(int i = siz - 2; i >= 0; i--) node[i] = op(node[2 * i + 1], node[2 * i + 2]);
 	}
 
-	void update(int idx, T val) {
+	void update(int idx, M val) {
 		assert(0 <= idx && idx < N);
 		upd__(idx, idx + 1, 0, val, 0, siz);
 	}
-	void update(int L, int R, T val) {
+	void update(int L, int R, M val) {
 		if(L < 0) L = 0;
 		if(R > N) R = N;
 		assert(L < R);
