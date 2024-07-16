@@ -8,7 +8,6 @@
 using namespace std;
 #endif
 
-#include "structure/2d_array.cpp"
 #include "graph/centroid_decomposition.cpp"
 
 int main() {
@@ -26,30 +25,21 @@ int main() {
 	}
 
 	vector<char> ans(N);
-	char c = 'A';
-	queue<int> q, qs;
+	queue<tuple<int, int, char>> q;
 	auto cd = centroid_decomposition(E);
-	q.push(0);
-	qs.push(N);
+	q.emplace(0, N, 'A');
 	while(not q.empty()) {
-		queue<int> q2, qs2;
-		while(not q.empty()) {
-			int x = q.front(), xs = qs.front();
-			q.pop(), qs.pop();
+		auto [x, xs, c] = q.front();
+		q.pop();
 
-			auto res = cd.get(x, xs);
-			int centroid = res.first;
-			auto v = res.second;
-			ans[centroid] = c;
-			cd.del(centroid);
-			for(int i = 0; i < v.size(); i++) {
-				q2.push(v[i].first);
-				qs2.push(v[i].second);
-			}
+		auto res = cd.get(x, xs);
+		int centroid = res.first;
+		auto v = res.second;
+		ans[centroid] = c;
+		cd.del(centroid);
+		for(int i = 0; i < v.size(); i++) {
+			q.emplace(v[i].first, v[i].second, c + 1);
 		}
-		swap(q, q2);
-		swap(qs, qs2);
-		c++;
 	}
 
 	for(int i = 0; i < N; i++) cout << ans[i] << (i < N - 1 ? ' ' : '\n');
