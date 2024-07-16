@@ -24,8 +24,6 @@ public:
 
 private:
 	int dfs(int x, int tsize, int prev = -1) {
-		if(found_cent) return -1;
-
 		int size = 1, cent_flag = 1;
 		for(int i = 0; i < E[x].size(); i++) {
 			int nx = E[x][i];
