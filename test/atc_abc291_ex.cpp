@@ -1,4 +1,6 @@
 // competitive-verifier: PROBLEM https://atcoder.jp/contests/abc291/tasks/abc291_h
+// competitive-verifier: IGNORE
+// to download testcases fails due to some problem
 
 #ifndef call_include
 #define call_include
