@@ -38,7 +38,7 @@ private:
 
 		for(int i = 0; i <= c_max; i++) bucket_now[i] = bucket_top[i];
 		for(int i = 0; i < n; i++) {
-			if(pseudo_sa[i] == -1) continue;
+			if(pseudo_sa[i] <= 0) continue;
 			int idx = pseudo_sa[i] - 1;
 			if(ls[idx]) continue;
 			pseudo_sa[bucket_now[s[idx]]++] = idx;
@@ -47,6 +47,7 @@ private:
 		for(int i = 0; i < c_max; i++) bucket_now[i] = bucket_top[i + 1] - 1;
 		bucket_now[c_max] = n - 1;
 		for(int i = n - 1; i >= 0; i--) {
+			if(pseudo_sa[i] == 0) continue;
 			int idx = pseudo_sa[i] - 1;
 			if(not ls[idx]) continue;
 			pseudo_sa[bucket_now[s[idx]]--] = idx;
@@ -57,6 +58,7 @@ private:
 
 	bool same_lms_strings(const vector<int> &s, const vector<bool> &lms, int idx1, int idx2) {
 		if(s[idx1++] != s[idx2++]) return false;
+		if(max(idx1, idx2) >= lms.size()) return false;
 		while(1) {
 			if(s[idx1] != s[idx2]) return false;
 			if(lms[idx1] and lms[idx2]) return true;
@@ -65,7 +67,7 @@ private:
 		}
 	}
 
-	vector<int> sa_is(const vector<int> &s, const int c_max = 255) {
+	vector<int> sa_is(const vector<int> &s, const int c_max = 127) {
 		int n = s.size();
 		vector<bool> ls(n, false), lms(n, false);
 		vector<int> lms_idx;
@@ -89,30 +91,41 @@ private:
 		vector<int> sa = induced_sort(s, lms_idx, ls, c_max);
 
 		vector<int> lms_str_c(n, -1);
-		int counter = 0;
-		for(int i = 2; i < n; i++) {
+		lms_str_c[sa[0]] = 1;
+		int counter = 1;
+		int prev_lms = 0;
+		for(int i = 1; i < n; i++) {
 			if(not lms[sa[i]]) continue;
-			if(lms[sa[i - 1]] and same_lms_strings(s, lms, sa[i - 1], sa[i])) {
+			if(same_lms_strings(s, lms, prev_lms, sa[i])) {
 				lms_str_c[sa[i]] = counter;
 			}
 			else {
 				lms_str_c[sa[i]] = ++counter;
 			}
+			prev_lms = sa[i];
 		}
 
+		int lms_n = lms_idx.size();
+		vector<int> new_lms_idx(lms_n);
 		if(counter == lms_idx.size()) {
-			return sa;
+			new_lms_idx[0] = sa[0];
+			for(int i = n - 1, j = 1; j < lms_n; i--) {
+				if(lms[sa[i]]) new_lms_idx[j++] = sa[i];
+			}
 		}
 		else {
-			int new_n = lms_idx.size() + 1;
-			vector<int> new_s(new_n);
-			for(int i = 0; i < new_n - 1; i++) {
+			vector<int> new_s(lms_n + 1);
+			for(int i = 0; i < lms_n; i++) {
 				new_s[i] = lms_str_c[lms_idx[i]];
 			}
-			new_s[new_n - 1] = 0;
-			lms_idx = sa_is(new_s, counter);
-			return induced_sort(s, lms_idx, ls, c_max);
+			new_s[lms_n] = 0;
+
+			vector<int> lms_idx_order = sa_is(new_s, counter);
+			lms_idx_order.erase(lms_idx_order.begin());
+			for(int i = 0; i < lms_n; i++) new_lms_idx[lms_n - 1 - i] = lms_idx[lms_idx_order[i]];
 		}
+
+		return induced_sort(s, new_lms_idx, ls, c_max);
 	}
 
 public:
