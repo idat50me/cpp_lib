@@ -12,9 +12,10 @@ documentation_of: ../binary_indexed_tree.cpp
 - `BIT(v)`：配列 `v` の要素で BIT を構築する．
 
 ## メンバ関数
-- `sum(idx)`：`idx` 番目までの要素の総和を返す．
-- `sum(l, r)`：`l` 番目から `r` 番目までの要素の総和を返す．
-- `add(idx, val)`：`idx` 番目の要素に `val` を加える．
+- `sum(idx)`：$[1, \mathrm{idx}]$ の要素の総和を返す．
+- `sum(l, r)`：$[l, r]$ の要素の総和を返す．
+- `get(idx)`：$\mathrm{idx}$ 番目の要素の値を返す．
+- `add(idx, val)`：$\mathrm{idx}$ 番目の要素に `val` を加える．
 
 `idx`, `l`, `r` は 1-indexed である．
 
@@ -23,4 +24,5 @@ documentation_of: ../binary_indexed_tree.cpp
 - `BIT(v)`：$O(n)$
 - `sum(idx)`：$O(\log n)$
 - `sum(l, r)`：$O(\log n)$
+- `get(idx)`：$O(\log n)$
 - `add(idx, val)`：$O(\log n)$

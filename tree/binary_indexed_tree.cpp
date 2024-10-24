@@ -37,6 +37,11 @@ public:
 		return sum(r) - sum(max(l - 1, 0));
 	}
 
+	inline T get(int idx) {
+		assert(0 < idx and idx <= N);
+		return sum(idx, idx);
+	}
+
 	void add(int idx, T val) {
 		assert(0 < idx && idx <= N);
 		while(idx <= N) {
